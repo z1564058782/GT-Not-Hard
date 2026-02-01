@@ -289,8 +289,7 @@ public class ChaosRecipeLoader {
                 if (recipe.mFluidInputs != null) {
                     ra.fluidInputs(Utils.sortNoNullArray(recipe.mFluidInputs));
                 }
-                ra.noOptimize()
-                    .eut(recipe.mEUt)
+                ra.eut(recipe.mEUt)
                     .duration(recipe.mDuration)
                     .addTo(AssemblyLineWithoutResearchRecipe);
 
@@ -317,8 +316,7 @@ public class ChaosRecipeLoader {
                     if (recipe.mFluidInputs != null) {
                         ra.fluidInputs(Utils.sortNoNullArray(recipe.mFluidInputs));
                     }
-                    ra.noOptimize()
-                        .eut(recipe.mEUt)
+                    ra.eut(recipe.mEUt)
                         .duration(recipe.mDuration)
                         .addTo(AssemblyLineWithoutResearchRecipe);
                 }

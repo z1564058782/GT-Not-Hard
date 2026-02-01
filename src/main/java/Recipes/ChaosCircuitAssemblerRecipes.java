@@ -1,4 +1,4 @@
-package util;
+package Recipes;
 
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
@@ -24,7 +24,7 @@ public class ChaosCircuitAssemblerRecipes {
         .minInputs(1, 1)
         .progressBar(GTUITextures.PROGRESSBAR_CIRCUIT_ASSEMBLER)
         // .disableRegisterNEI()
-        .disableOptimize()
+        // .disableOptimize()
         .build();
 
     public static void addChaosCircuitAssemblerRecipes() {

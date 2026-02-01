@@ -1,4 +1,4 @@
-package util;
+package Recipes;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;

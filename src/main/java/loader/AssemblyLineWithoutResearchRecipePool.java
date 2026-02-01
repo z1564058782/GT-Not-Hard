@@ -7,7 +7,6 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gtPlusPlus.core.material.MaterialMisc.MUTATED_LIVING_SOLDER;
 import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
-import static tectech.loader.recipe.BaseRecipeLoader.getItemContainer;
 import static tectech.thing.CustomItemList.*;
 import static util.Utils.setStackSize;
 
@@ -37,7 +36,6 @@ import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
-import gtPlusPlus.core.util.minecraft.ItemUtils;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import util.Utils;
 
@@ -144,8 +142,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                 if (recipe.mFluidInputs != null) {
                     ra.fluidInputs(Utils.sortNoNullArray(recipe.mFluidInputs));
                 }
-                ra.noOptimize()
-                    .eut(recipe.mEUt)
+                ra.eut(recipe.mEUt)
                     .duration(recipe.mDuration)
                     .addTo(AssemblyLineWithoutResearchRecipe);
 
@@ -165,8 +162,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                     if (recipe.mFluidInputs != null) {
                         ra.fluidInputs(Utils.sortNoNullArray(recipe.mFluidInputs));
                     }
-                    ra.noOptimize()
-                        .eut(recipe.mEUt)
+                    ra.eut(recipe.mEUt)
                         .duration(recipe.mDuration)
                         .addTo(AssemblyLineWithoutResearchRecipe);
                 }
@@ -465,7 +461,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                     Materials.Neutronium.getNanite(1),
                     setStackSize(Materials.Lanthanum.getPlates(1), 4096),
                     setStackSize(Materials.NaquadahAlloy.getPlates(1), 6144),
-                    ItemUtils.simpleMetaStack(ModItems.itemStandarParticleBase, 0, 1))
+                    new ItemStack(ModItems.itemStandarParticleBase, 1))
                 .fluidInputs(
                     new FluidStack(solderUEV, 144 * 1024),
                     Materials.Lead.getMolten(144 * 16 * 1024),
@@ -837,6 +833,30 @@ public class AssemblyLineWithoutResearchRecipePool {
                     TimeAccelerationFieldGeneratorTier6.get(1), TimeAccelerationFieldGeneratorTier7.get(1),
                     TimeAccelerationFieldGeneratorTier8.get(1) };
 
+                // Spectral Components
+                // Cycling should fix issues with conflicting recipes for T1-T2, T4-T5 & T7-T8
+                final ItemStack[] spectralComponents = new ItemStack[] {
+                    // Red Spectral Component
+                    getModItem(SuperSolarPanels.ID, "redcomponent", 64),
+                    // Green Spectral Component
+                    getModItem(SuperSolarPanels.ID, "greencomponent", 64),
+                    // Blue Spectral Component
+                    getModItem(SuperSolarPanels.ID, "bluecomponent", 64) };
+
+                final ItemStack[] plateList = new ItemStack[] {
+                    // Dense Shirabon plate.
+                    GTOreDictUnificator.get("boltShirabon", 2),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.WhiteDwarfMatter, 2),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.WhiteDwarfMatter, 8),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.WhiteDwarfMatter, 32),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.BlackDwarfMatter, 2),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.BlackDwarfMatter, 8),
+                    GTOreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.BlackDwarfMatter, 32),
+                    GTOreDictUnificator
+                        .get(OrePrefixes.bolt, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 2),
+                    GTOreDictUnificator
+                        .get(OrePrefixes.bolt, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 8) };
+
                 for (int absoluteTier = 0; absoluteTier < 9; absoluteTier++) {
                     GTValues.RA.stdBuilder()
                         .itemInputs(
@@ -845,17 +865,21 @@ public class AssemblyLineWithoutResearchRecipePool {
                             baseCasing,
                             fusionReactors[absoluteTier],
                             fusionCoils[absoluteTier],
-                            getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", absoluteTier + 1, 0),
+                            // UV Solar panel
+                            ItemList.Machine_UV_SolarPanel.get(absoluteTier + 1),
 
-                            getItemContainer("QuantumCircuit").get(absoluteTier + 1),
-                            getModItem(SuperSolarPanels.ID, "redcomponent", 64),
-                            getModItem(SuperSolarPanels.ID, "greencomponent", 64),
-                            getModItem(SuperSolarPanels.ID, "bluecomponent", 64),
+                            new Object[] { OrePrefixes.circuit.get(Materials.UXV), absoluteTier + 1 },
+                            // Red Spectral Component
+                            spectralComponents[absoluteTier % spectralComponents.length],
+                            // Green Spectral Component
+                            spectralComponents[(absoluteTier + 1) % spectralComponents.length],
+                            // Blue Spectral Component
+                            spectralComponents[(absoluteTier + 2) % spectralComponents.length],
 
-                            boltList[absoluteTier],
-                            getModItem(GalaxySpace.ID, "dysonswarmparts", (absoluteTier + 1) * 4, 2),
-                            getModItem(GalaxySpace.ID, "dysonswarmparts", (absoluteTier + 1) * 4, 1),
-                            getModItem(GregTech.ID, "gt.blockmachines", (absoluteTier + 1) * 4, 11107),
+                            plateList[absoluteTier],
+                            ItemList.DysonSwarmDeploymentUnitCasing.get((absoluteTier + 1) * 4),
+                            ItemList.DysonSwarmReceiverDish.get((absoluteTier + 1) * 4),
+                            ItemList.AcceleratorUV.get((absoluteTier + 1) * 4),
 
                             ItemList.Energy_Module.get(absoluteTier + 1),
                             GTOreDictUnificator
@@ -900,7 +924,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                             spatialCasings[absoluteTier],
                             baseCasing,
                             // Dyson Swarm Module.
-                            getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 4 * (absoluteTier + 1), 0),
+                            ItemList.DysonSwarmModule.get(4 * (absoluteTier + 1)),
 
                             GTOreDictUnificator
                                 .get(OrePrefixes.frameGt, Materials.SuperconductorUMVBase, 4 * (absoluteTier + 1)),
@@ -920,7 +944,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                             getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
 
                             boltList[absoluteTier],
-                            getItemContainer("QuantumCircuit").get(2 * (absoluteTier + 1)),
+                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 2 * (absoluteTier + 1)),
                             GTOreDictUnificator.get(OrePrefixes.gearGt, MaterialsUEVplus.SpaceTime, absoluteTier + 1),
                             GTOreDictUnificator
                                 .get(OrePrefixes.gearGtSmall, MaterialsUEVplus.SpaceTime, absoluteTier + 1))

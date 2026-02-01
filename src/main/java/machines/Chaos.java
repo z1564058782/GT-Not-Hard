@@ -2,29 +2,29 @@ package machines;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.GregTechAPI.METATILEENTITIES;
-import static gregtech.api.enums.GTValues.VN;
 import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.metatileentity.BaseTileEntity.TOOLTIP_DELAY;
 import static gregtech.api.metatileentity.implementations.MTEBasicMachine.isValidForLowGravity;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
-import static gregtech.api.util.GTUtility.validMTEList;
+import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.simpleWasherRecipes;
+import static java.lang.Math.pow;
 import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
 
+import java.math.BigInteger;
 import java.util.List;
+import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 
 import com.google.common.collect.ImmutableList;
@@ -38,11 +38,14 @@ import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
 import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 
+import Recipes.ChaosCircuitAssemblerRecipes;
+import Recipes.ChaosXtremeCraftingRecipes;
+import Recipes.ChaosZhuHaiRecipes;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Textures;
+import gregtech.api.enums.Materials;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.IHatchElement;
 import gregtech.api.interfaces.ITexture;
@@ -51,7 +54,6 @@ import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.logic.ProcessingLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEExtendedPowerMultiBlockBase;
-import gregtech.api.metatileentity.implementations.MTEHatch;
 import gregtech.api.metatileentity.implementations.MTEHatchInput;
 import gregtech.api.metatileentity.implementations.MTEHatchInputBus;
 import gregtech.api.metatileentity.implementations.MTEMultiBlockBase;
@@ -63,19 +65,13 @@ import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.recipe.check.SimpleCheckRecipeResult;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.render.TextureFactory;
-import gregtech.api.util.ExoticEnergyInputHelper;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.ItemMachines;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
-import mcp.mobius.waila.api.IWailaConfigHandler;
-import mcp.mobius.waila.api.IWailaDataAccessor;
-import util.ChaosCircuitAssemblerRecipes;
 import util.ChaosManager;
-import util.ChaosXtremeCraftingRecipes;
-import util.ChaosZhuHaiRecipes;
 
 public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISurvivalConstructable {
 
@@ -87,41 +83,95 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         super(aName);
     }
 
+    // 机器所有者UUID
+    protected UUID ownerUUID;
+    // 配方处理状态标志
+    protected boolean isRecipeProcessing = false;
+    // 无线模式标志
+    protected boolean wirelessMode = false;
+
+    // 上次使用的配方映射
     private RecipeMap<?> mLastRecipeMap;
+    // 上次控制器槽位物品
     private ItemStack lastControllerStack;
+    // 机器电压等级
     private int tTier = 0;
+    // 降频倍数
     private int mMult = 0;
+    // 机器模式（非矿石处理模式）
     private int mode = 0;
+    // 模式更新标志
     private boolean updateMode = false;
+    // UEV降频开关
     private boolean downtierUEV = true;
+    // 是否为多方块机器标志
     private boolean isMultiBlock = false;
 
-    // 保存NBT数据
+    // 矿石处理模式相关变量
+    protected int oreProcessingMode = 0;
+    protected boolean oreVoidStoneMode = false;
+    protected int currentOreParallelism = 0;
+    protected Recipes.ChaosRecipes.ChaosOreFactoryRecipes.OreProcessingConfig oreProcessingConfig = null;
+
+    /**
+     * 首次tick回调
+     * 初始化机器所有者UUID和矿石处理配方
+     */
+    @Override
+    public void onFirstTick(IGregTechTileEntity aBaseMetaTileEntity) {
+        super.onFirstTick(aBaseMetaTileEntity);
+        this.ownerUUID = aBaseMetaTileEntity.getOwnerUuid();
+    }
+
+    // === NBT数据保存 ===
+
+    /**
+     * 保存NBT数据
+     * 保存机器状态到NBT标签
+     */
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
+        aNBT.setBoolean("wirelessMode", wirelessMode);
         aNBT.setBoolean("downtierUEV", downtierUEV);
         aNBT.setInteger("mode", mode);
+
+        // 矿石处理数据
+        aNBT.setInteger("oreProcessingMode", oreProcessingMode);
+        aNBT.setBoolean("oreVoidStoneMode", oreVoidStoneMode);
+        aNBT.setInteger("currentOreParallelism", currentOreParallelism);
     }
 
-    // 加载NBT数据
+    /**
+     * 加载NBT数据
+     * 从NBT标签加载机器状态
+     */
     @Override
     public void loadNBTData(final NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
+        // 向后兼容性处理
         if (aNBT.hasKey("mSeparate")) {
-            // backward compatibility
             inputSeparation = aNBT.getBoolean("mSeparate");
         }
         if (aNBT.hasKey("mUseMultiparallelMode")) {
-            // backward compatibility
             batchMode = aNBT.getBoolean("mUseMultiparallelMode");
         }
+        // 加载基本状态
+        wirelessMode = aNBT.getBoolean("wirelessMode");
         downtierUEV = aNBT.getBoolean("downtierUEV");
         mode = aNBT.getInteger("mode");
+
+        // 矿石处理数据加载
+        oreProcessingMode = aNBT.getInteger("oreProcessingMode");
+        oreVoidStoneMode = aNBT.getBoolean("oreVoidStoneMode");
+        currentOreParallelism = aNBT.getInteger("currentOreParallelism");
     }
 
-    private static final int mcasingIndex = Textures.BlockIcons.getTextureIndex(
-        Textures.BlockIcons.getCasingTextureForId(GTUtility.getCasingTextureIndex(GregTechAPI.sBlockCasings4, 0)));
+    // === 机器结构和纹理 ===
+
+    // 机器外壳纹理索引
+    private static final int mcasingIndex = getTextureIndex(
+        getCasingTextureForId(GTUtility.getCasingTextureIndex(GregTechAPI.sBlockCasings4, 0)));
 
     // 定义机器结构
     private static final String STRUCTURE_PIECE_MAIN = "main";
@@ -138,45 +188,62 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 .buildAndChain(onElementPass(Chaos::onCasingAdded, ofBlock(GregTechAPI.sBlockCasings4, 0))))
         .build();
 
+    // 外壳数量计数器
     private int mCasingAmount;
 
+    /**
+     * 外壳添加回调
+     * 统计外壳数量
+     */
     private void onCasingAdded() {
         mCasingAmount++;
     }
 
+    /**
+     * 获取结构定义
+     */
     @Override
     public IStructureDefinition<Chaos> getStructureDefinition() {
         return STRUCTURE_DEFINITION;
     }
 
+    /**
+     * 获取机器纹理
+     */
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
         int colorIndex, boolean aActive, boolean redstoneLevel) {
         if (side == aFacing) {
             if (aActive) {
+                // 激活状态纹理
                 return new ITexture[] { casingTexturePages[0][mcasingIndex], TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_PROCESSING_ARRAY_ACTIVE)
+                    .addIcon(OVERLAY_FRONT_ORE_FACTORY_ACTIVE)
                     .extFacing()
                     .build(),
                     TextureFactory.builder()
-                        .addIcon(OVERLAY_FRONT_PROCESSING_ARRAY_ACTIVE_GLOW)
+                        .addIcon(OVERLAY_FRONT_ORE_FACTORY_ACTIVE_GLOW)
                         .extFacing()
                         .glow()
                         .build() };
             }
+            // 非激活状态纹理
             return new ITexture[] { casingTexturePages[0][mcasingIndex], TextureFactory.builder()
-                .addIcon(OVERLAY_FRONT_PROCESSING_ARRAY)
+                .addIcon(OVERLAY_FRONT_ORE_FACTORY)
                 .extFacing()
                 .build(),
                 TextureFactory.builder()
-                    .addIcon(OVERLAY_FRONT_PROCESSING_ARRAY_GLOW)
+                    .addIcon(OVERLAY_FRONT_ORE_FACTORY_GLOW)
                     .extFacing()
                     .glow()
                     .build() };
         }
+        // 侧面纹理
         return new ITexture[] { casingTexturePages[0][mcasingIndex] };
     }
 
+    /**
+     * 创建工具提示
+     */
     @Override
     public MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
@@ -202,13 +269,17 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         return tt;
     }
 
-    // 创造自动搭建
+    /**
+     * 创造模式自动搭建
+     */
     @Override
     public void construct(ItemStack aStack, boolean aHintsOnly) {
         buildPiece(STRUCTURE_PIECE_MAIN, aStack, aHintsOnly, 1, 1, 0);
     }
 
-    // 生存自动搭建
+    /**
+     * 生存模式自动搭建
+     */
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
         if (mMachine) {
@@ -217,58 +288,89 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         return survivialBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
     }
 
-    // 检查机器结构
+    /**
+     * 检查机器结构
+     */
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        mEnergyHatches.clear();
         mExoticEnergyHatches.clear();
         mCasingAmount = 0;
         return checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0) && mCasingAmount >= 4 && checkHatches();
     }
 
-    // 检查仓室
+    /**
+     * 检查仓室
+     * 确保有且仅有一个维护仓
+     */
     private boolean checkHatches() {
         return mMaintenanceHatches.size() == 1;
     }
 
+    /**
+     * 创建新的元实体实例
+     */
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
         return new Chaos(this.mName);
     }
 
-    // 设定机器最大效率
+    // === 机器属性和设置 ===
+
+    /**
+     * 获取最大效率
+     */
     @Override
     public int getMaxEfficiency(ItemStack aStack) {
         return 10000;
     }
 
+    /**
+     * 获取组件损坏值
+     */
     @Override
     public int getDamageToComponent(ItemStack aStack) {
         return 0;
     }
 
+    /**
+     * 检查组件损坏时是否爆炸
+     */
     @Override
     public boolean explodesOnComponentBreak(ItemStack aStack) {
         return false;
     }
 
+    /**
+     * 获取允许的仓室类型列表
+     */
     private List<IHatchElement<? super Chaos>> getAllowedHatches() {
         return ImmutableList.of(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy, ExoticEnergy);
     }
 
-    // 并行数目
+    // === 并行计算 ===
+
+    /**
+     * 计算最大并行数
+     * 基于控制器槽位中的机器数量计算：2^(机器数量)
+     */
     private int getMaxParallel() {
         if (getControllerSlot() == null) {
             return 1;
         }
-        // return getControllerSlot().stackSize << mMult;
         if (getControllerSlot().stackSize < 31) {
-            return (int) Math.pow(2, getControllerSlot().stackSize);
+            return (int) pow(2, getControllerSlot().stackSize);
         } else {
             return Integer.MAX_VALUE;
         }
     }
 
-    // 读取通常大机器配方
+    // === 配方映射处理 ===
+
+    /**
+     * 读取通常大机器配方
+     * 根据控制器槽位物品获取对应的配方映射
+     */
     private RecipeMap<?> fetchRecipeMap() {
         if (isCorrectMachinePart(getControllerSlot())) {
             getControllerSlot().getItemDamage();
@@ -290,7 +392,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         return null;
     }
 
-    // 多类型机器配方列表
+    // === 多类型机器配方列表 ===
+
     // 磁通量效应监视器-358
     private static final String[] Magnetic_Flux_Exhibitor_mod = { "Polarizer", "Electromagnetic Separator" };
     private static final RecipeMap<?>[] Magnetic_Flux_Exhibitor = { RecipeMaps.polarizerRecipes,
@@ -304,8 +407,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         RecipeMaps.benderRecipes };
     // 工业洗矿厂-850
     private static final String[] Ore_Washing_Plant_mod = { "Ore Washer", "Simple Washer", "Chemical Bath" };
-    private static final RecipeMap<?>[] Ore_Washing_Plant = { RecipeMaps.oreWasherRecipes,
-        GTPPRecipeMaps.simpleWasherRecipes, RecipeMaps.chemicalBathRecipes };
+    private static final RecipeMap<?>[] Ore_Washing_Plant = { RecipeMaps.oreWasherRecipes, simpleWasherRecipes,
+        RecipeMaps.chemicalBathRecipes };
     // 工业电弧炉-862
     private static final String[] High_Current_Industrial_Arc_Furnace_mod = { "Electric Arc Furnace",
         "Plasma Arc Furnace" };
@@ -341,63 +444,89 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final RecipeMap<?>[] Precise_Auto_Assembler_MT_3662 = {
         GoodGeneratorRecipeMaps.preciseAssemblerRecipes, RecipeMaps.assemblerRecipes };
 
-    // 潜行左键切换多类型机器的类型
+    // === 用户交互 ===
+
+    /**
+     * 左键点击处理
+     * 潜行左键切换机器模式
+     */
     @Override
     public void onLeftclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
-        if (aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
+        if (getBaseMetaTileEntity() != null && aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
+            // 矿石处理厂模式切换 (ID: 1132)
+            if (isOreProcessingMode()) {
+                // 潜行右键切换弃石模式，潜行左键切换处理模式
+                this.oreProcessingMode = (this.oreProcessingMode + 1) % 7;
+                List<String> modeDesc = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
+                    .getModeDescription(this.oreProcessingMode);
+                GTUtility.sendChatToPlayer(aPlayer, "矿石处理模式: " + String.join(" ", modeDesc));
+                updateMode = true;
+                return;
+            }
+
+            // 普通机器模式切换
             this.mode = (this.mode + 1) % 3;
             updateMode = true;
+            // 根据机器ID显示对应的模式名称
             switch (getControllerSlot().getItemDamage()) {
-                case 358 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Magnetic_Flux_Exhibitor_mod[Math.min(mode, 1)]);
-                }
-                case 360 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + TurboCan_Pro_mod[Math.min(mode, 1)]);
-                }
-                case 792 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Industrial_Material_Press_mod[Math.min(mode, 1)]);
-                }
-                case 850 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Ore_Washing_Plant_mod[Math.min(mode, 2)]);
-                }
-                case 862 -> {
-                    GTUtility.sendChatToPlayer(
-                        aPlayer,
-                        "mode:" + High_Current_Industrial_Arc_Furnace_mod[Math.min(mode, 1)]);
-                }
-                case 942 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Amazon_Warehousing_Depot_mod[Math.min(mode, 1)]);
-                }
-                case 992 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Industrial_Cutting_Factory_mod[Math.min(mode, 1)]);
-                }
-                case 995 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Utupu_Tanuri_mod[Math.min(mode, 1)]);
-                }
-                case 3008 -> {
-                    GTUtility.sendChatToPlayer(
-                        aPlayer,
-                        "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
-                }
-                case 12735 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
-                }
-                case 31021 -> {
-                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Dangote_Distillus_mod[Math.min(mode, 1)]);
-                }
-                case 32018 -> {
-                    GTUtility
-                        .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
-                }
-                default -> {
-                    break;
-                }
+                case 358 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Magnetic_Flux_Exhibitor_mod[Math.min(mode, 1)]);
+                case 360 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + TurboCan_Pro_mod[Math.min(mode, 1)]);
+                case 792 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Industrial_Material_Press_mod[Math.min(mode, 1)]);
+                case 850 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Ore_Washing_Plant_mod[Math.min(mode, 2)]);
+                case 862 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + High_Current_Industrial_Arc_Furnace_mod[Math.min(mode, 1)]);
+                case 942 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Amazon_Warehousing_Depot_mod[Math.min(mode, 1)]);
+                case 992 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Industrial_Cutting_Factory_mod[Math.min(mode, 1)]);
+                case 995 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Utupu_Tanuri_mod[Math.min(mode, 1)]);
+                case 3008 -> GTUtility.sendChatToPlayer(
+                    aPlayer,
+                    "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
+                case 12735 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
+                case 31021 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Dangote_Distillus_mod[Math.min(mode, 1)]);
+                case 32018 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
             }
         }
         super.onLeftclick(aBaseMetaTileEntity, aPlayer);
     }
 
-    // 读取多类型机器的配方
+    /**
+     * 右键点击处理，支持矿石处理弃石模式切换
+     */
+    @Override
+    public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ,
+        ItemStack aTool) {
+        if (isOreProcessingMode()) {
+            // 矿石处理模式：切换弃石模式
+            if (aPlayer.isSneaking()) {
+                this.oreVoidStoneMode = !this.oreVoidStoneMode;
+                GTUtility.sendChatToPlayer(
+                    aPlayer,
+                    StatCollector.translateToLocalFormatted("GT5U.machines.oreprocessor.void", this.oreVoidStoneMode));
+            } else {
+                // 非潜行右键切换处理模式
+                this.oreProcessingMode = (this.oreProcessingMode + 1) % 7;
+                List<String> modeDesc = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
+                    .getModeDescription(this.oreProcessingMode);
+                GTUtility.sendChatToPlayer(aPlayer, "矿石处理模式: " + String.join(" ", modeDesc));
+            }
+            updateMode = true;
+            return;
+        }
+
+        // 原有其他机器的螺丝刀逻辑...
+        super.onScrewdriverRightClick(side, aPlayer, aX, aY, aZ, aTool);
+    }
+
+    /**
+     * 读取多类型机器的配方
+     * 根据机器ID和当前模式获取对应的配方映射
+     */
     private RecipeMap<?> getMultifunctionalRecipeMap(int meta) {
         switch (meta) {
             case 358 -> {
@@ -448,41 +577,249 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         }
     }
 
+    /**
+     * 获取当前配方映射
+     */
     @Override
     public RecipeMap<?> getRecipeMap() {
         return mLastRecipeMap;
     }
 
+    /**
+     * 检查是否为正确的机器部件
+     * 检查物品是否是GT机器方块
+     */
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
         return aStack != null && aStack.getUnlocalizedName()
             .startsWith("gt.blockmachines.");
     }
 
+    // === 配方处理主逻辑 ===
+
+    /**
+     * 检查并处理配方
+     * 主配方处理入口
+     */
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
-        if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot()) || updateMode) {
-            if (updateMode) updateMode = false;
-            // controller slot has changed
-            lastControllerStack = getControllerSlot();
-            mLastRecipeMap = fetchRecipeMap();
-            setTierAndMult();
-        }
-        if (mLastRecipeMap == null) {
-            return SimpleCheckRecipeResult.ofFailure("no_machine");
-        }
-        if (mLockedToSingleRecipe && mSingleRecipeCheck != null) {
-            if (mSingleRecipeCheck.getRecipeMap() != mLastRecipeMap) {
-                return SimpleCheckRecipeResult.ofFailure("machine_mismatch");
+        try {
+            // === 矿石处理模式 ===
+            if (isOreProcessingMode()) {
+                return checkOreProcessing();
             }
+
+            // 普通机器处理逻辑
+            if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot()) || updateMode) {
+                if (updateMode) updateMode = false;
+                // controller slot has changed
+                lastControllerStack = getControllerSlot();
+                mLastRecipeMap = fetchRecipeMap();
+                setTierAndMult();
+            }
+            if (mLastRecipeMap == null) {
+                return SimpleCheckRecipeResult.ofFailure("no_machine");
+            }
+            if (mLockedToSingleRecipe && mSingleRecipeCheck != null) {
+                if (mSingleRecipeCheck.getRecipeMap() != mLastRecipeMap) {
+                    return SimpleCheckRecipeResult.ofFailure("machine_mismatch");
+                }
+            }
+
+            // 控制方块中机器数量大于8自动开启无线电网模式
+            wirelessMode = getControllerSlot().stackSize > 8;
+            if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
+                boolean succeeded = false;
+                CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
+
+                for (int i = 0; i < 128; i++) {
+                    CheckRecipeResult result = wirelessModeProcessingLogic();
+                    if (!result.wasSuccessful()) {
+                        finalResult = result;
+                        break;
+                    }
+                    succeeded = true;
+                }
+
+                updateSlots();
+                if (!succeeded) return finalResult;
+
+                mEfficiency = 10000;
+                mEfficiencyIncrease = 10000;
+                mMaxProgresstime = 128;
+
+                return CheckRecipeResultRegistry.SUCCESSFUL;
+            }
+            return super.checkProcessing();
+        } catch (Exception e) {
+            GTMod.GT_FML_LOGGER.error("Error in Chaos machine processing", e);
+            return CheckRecipeResultRegistry.INTERNAL_ERROR;
         }
-        return super.checkProcessing();
+    }
+
+    /**
+     * 检查是否为矿石处理模式
+     * 控制器槽位物品ID为1132时是矿石处理厂
+     */
+    private boolean isOreProcessingMode() {
+        return getControllerSlot() != null && getControllerSlot().getItemDamage() == 1132;
+    }
+
+    /**
+     * 矿石处理模式的checkProcessing方法
+     * 当控制器槽位是矿石处理厂时调用
+     */
+    @NotNull
+    public CheckRecipeResult checkOreProcessing() {
+        try {
+            // 初始化矿石处理配置
+            if (oreProcessingConfig == null) {
+                oreProcessingConfig = Recipes.ChaosRecipes.ChaosOreFactoryRecipes.createDefaultConfig();
+            }
+
+            // 更新配置参数
+            updateOreProcessingConfig();
+
+            // 执行矿石处理
+            Recipes.ChaosRecipes.ChaosOreFactoryRecipes.OreProcessingResult result = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
+                .processOres(oreProcessingConfig);
+
+            // 处理结果
+            if (!result.success) {
+                return SimpleCheckRecipeResult.ofFailure(result.errorMessage);
+            }
+
+            // 设置机器状态
+            this.mEfficiency = 10000;
+            this.mEfficiencyIncrease = 10000;
+            this.mOutputItems = result.outputItems;
+            this.mOutputFluids = result.outputFluids;
+            this.mMaxProgresstime = result.processingTime;
+            this.lEUt = -result.powerPerTick; // 每tick消耗电量，设为负值
+
+            // 更新当前并行数显示
+            this.currentOreParallelism = result.usedParallel;
+
+            // 消耗流体
+            consumeOreProcessingFluids(result.consumedLubricant, result.consumedDistilledWater);
+
+            // 消耗物品
+            if (result.consumedItems != null) {
+                for (ItemStack consumed : result.consumedItems) {
+                    depleteInput(consumed);
+                }
+            }
+
+            this.updateSlots();
+            return CheckRecipeResultRegistry.SUCCESSFUL;
+
+        } catch (Exception e) {
+            GTMod.GT_FML_LOGGER.error("Error in Chaos ore processing", e);
+            return CheckRecipeResultRegistry.INTERNAL_ERROR;
+        }
+    }
+
+    /**
+     * 更新矿石处理配置
+     */
+    private void updateOreProcessingConfig() {
+        if (oreProcessingConfig == null) return;
+
+        // 设置处理模式
+        oreProcessingConfig.processingMode = this.oreProcessingMode;
+        oreProcessingConfig.voidStoneMode = this.oreVoidStoneMode;
+
+        // 设置电压和并行
+        oreProcessingConfig.availableVoltage = getMaxInputVoltage();
+        oreProcessingConfig.maxParallel = getMaxParallel(); // 使用Chaos的getMaxParallel方法
+
+        // 设置输入
+        oreProcessingConfig.inputItems = getStoredInputs();
+        oreProcessingConfig.inputFluids = getStoredFluids();
+    }
+
+    /**
+     * 消耗矿石处理所需流体
+     */
+    private void consumeOreProcessingFluids(int lubricantAmount, int distilledWaterAmount) {
+        // 消耗润滑油
+        if (lubricantAmount > 0) {
+            depleteInput(Materials.Lubricant.getFluid(lubricantAmount));
+        }
+
+        // 消耗蒸馏水
+        if (distilledWaterAmount > 0) {
+            depleteInput(gregtech.api.util.GTModHandler.getDistilledWater(distilledWaterAmount));
+        }
+    }
+
+    @Override
+    public void startRecipeProcessing() {
+        isRecipeProcessing = true;
+        super.startRecipeProcessing();
+    }
+
+    @Override
+    public void endRecipeProcessing() {
+        super.endRecipeProcessing();
+        isRecipeProcessing = false;
+    }
+
+    // 设定无线模式配方耗电
+    protected void setupWirelessProcessingPowerLogic(ProcessingLogic logic) {
+        // wireless mode ignore voltage limit
+        logic.setAvailableVoltage(Long.MAX_VALUE);
+        logic.setAvailableAmperage(1);
+        logic.setAmperageOC(false);
+    }
+
+    // 无线模式逻辑
+    public CheckRecipeResult wirelessModeProcessingLogic() {
+        if (!isRecipeProcessing) startRecipeProcessing();
+        setupProcessingLogic(processingLogic);
+        setupWirelessProcessingPowerLogic(processingLogic);
+
+        CheckRecipeResult result = doCheckRecipe();
+        if (!result.wasSuccessful()) return result;
+
+        BigInteger costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
+            .multiply(BigInteger.valueOf(processingLogic.getDuration()))
+            .multiply(BigInteger.valueOf(getMaxParallel()))
+            .divide(BigInteger.valueOf(10_000));
+
+        if (!addEUToGlobalEnergyMap(ownerUUID, costEU.multiply(BigInteger.valueOf(-1)))) {
+            return CheckRecipeResultRegistry.insufficientStartupPower(costEU);
+        }
+
+        mOutputItems = ArrayUtils.addAll(mOutputItems, processingLogic.getOutputItems());
+        mOutputFluids = ArrayUtils.addAll(mOutputFluids, processingLogic.getOutputFluids());
+
+        endRecipeProcessing();
+        return result;
     }
 
     // 机器运行逻辑
     @Override
     protected ProcessingLogic createProcessingLogic() {
+        if (isOreProcessingMode()) {
+            // 矿石处理模式使用专门的逻辑
+            return new ProcessingLogic() {
+
+                @Nonnull
+                @Override
+                protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
+                    // 矿石处理不需要验证普通配方
+                    return CheckRecipeResultRegistry.SUCCESSFUL;
+                }
+
+                private void calculateRecipe(@Nonnull GTRecipe recipe) {
+                    // 矿石处理有自己的计算逻辑，这里不执行普通计算
+                }
+            };
+        }
+
+        // 普通机器逻辑
         return new ProcessingLogic() {
 
             @Nonnull
@@ -491,30 +828,31 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 if (recipe.getMetadataOrDefault(CompressionTierKey.INSTANCE, 0) > 0) {
                     return CheckRecipeResultRegistry.NO_RECIPE;
                 }
-                if (GTMod.gregtechproxy.mLowGravProcessing && recipe.mSpecialValue == -100
+                if (getBaseMetaTileEntity() != null && GTMod.gregtechproxy.mLowGravProcessing
+                    && recipe.mSpecialValue == -100
                     && !isValidForLowGravity(recipe, getBaseMetaTileEntity().getWorld().provider.dimensionId)) {
                     return SimpleCheckRecipeResult.ofFailure("high_gravity");
                 }
-                /*
-                 * if (recipe.mEUt > availableVoltage) {
-                 * return CheckRecipeResultRegistry.insufficientPower(recipe.mEUt);
-                 * }
-                 */
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
 
-            // 高炉线圈炉温设定逻辑
+            // 超频设计
             @NotNull
             @Override
             protected OverclockCalculator createOverclockCalculator(@Nonnull GTRecipe recipe) {
-                return super.createOverclockCalculator(recipe).setRecipeHeat(recipe.mSpecialValue)
-                    .setMachineHeat(999999)
-                    .setHeatOC(false)
-                    .setHeatDiscount(false);
+                if (wirelessMode) {
+                    return OverclockCalculator.ofNoOverclock(recipe);
+                } else {
+                    return super.createOverclockCalculator(recipe).enablePerfectOC()
+                        .setRecipeHeat(recipe.mSpecialValue)
+                        .setMachineHeat(4 * recipe.mSpecialValue)
+                        .setHeatOC(true)
+                        .setHeatDiscount(true)
+                        .setHeatDiscountMultiplier(0.95);
+                }
             }
-
         }.setMaxParallelSupplier(this::getMaxParallel)
-            .setEuModifier(0.00001F);
+            .setEuModifier(0.5F);
     }
 
     @Override
@@ -560,83 +898,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 tInputHatch.mRecipeMap = mLastRecipeMap;
             }
         }
-    }
-
-    @Override
-    public String[] getInfoData() {
-        long storedEnergy = 0;
-        long maxEnergy = 0;
-        for (MTEHatch tHatch : validMTEList(mExoticEnergyHatches)) {
-            storedEnergy += tHatch.getBaseMetaTileEntity()
-                .getStoredEU();
-            maxEnergy += tHatch.getBaseMetaTileEntity()
-                .getEUCapacity();
-        }
-        return new String[] {
-            StatCollector.translateToLocal("GT5U.multiblock.Progress") + ": "
-                + EnumChatFormatting.GREEN
-                + GTUtility.formatNumbers(mProgresstime / 20)
-                + EnumChatFormatting.RESET
-                + " s / "
-                + EnumChatFormatting.YELLOW
-                + GTUtility.formatNumbers(mMaxProgresstime / 20)
-                + EnumChatFormatting.RESET
-                + " s",
-            StatCollector.translateToLocal("GT5U.multiblock.energy") + ": "
-                + EnumChatFormatting.GREEN
-                + GTUtility.formatNumbers(storedEnergy)
-                + EnumChatFormatting.RESET
-                + " EU / "
-                + EnumChatFormatting.YELLOW
-                + GTUtility.formatNumbers(maxEnergy)
-                + EnumChatFormatting.RESET
-                + " EU",
-            StatCollector.translateToLocal("GT5U.multiblock.usage") + ": "
-                + EnumChatFormatting.RED
-                + GTUtility.formatNumbers(-lEUt)
-                + EnumChatFormatting.RESET
-                + " EU/t",
-            StatCollector.translateToLocal("GT5U.multiblock.mei") + ": "
-                + EnumChatFormatting.YELLOW
-                + GTUtility
-                    .formatNumbers(ExoticEnergyInputHelper.getMaxInputVoltageMulti(getExoticAndNormalEnergyHatchList()))
-                + EnumChatFormatting.RESET
-                + " EU/t(*"
-                + GTUtility
-                    .formatNumbers(ExoticEnergyInputHelper.getMaxInputAmpsMulti(getExoticAndNormalEnergyHatchList()))
-                + "A) "
-                + StatCollector.translateToLocal("GT5U.machines.tier")
-                + ": "
-                + EnumChatFormatting.YELLOW
-                + VN[GTUtility
-                    .getTier(ExoticEnergyInputHelper.getMaxInputVoltageMulti(getExoticAndNormalEnergyHatchList()))]
-                + EnumChatFormatting.RESET,
-            StatCollector.translateToLocal("GT5U.multiblock.problems") + ": "
-                + EnumChatFormatting.RED
-                + (getIdealStatus() - getRepairStatus())
-                + EnumChatFormatting.RESET
-                + " "
-                + StatCollector.translateToLocal("GT5U.multiblock.efficiency")
-                + ": "
-                + EnumChatFormatting.YELLOW
-                + mEfficiency / 100.0F
-                + EnumChatFormatting.RESET
-                + " %",
-            StatCollector.translateToLocal("GT5U.Chaos.machinetier") + ": "
-                + EnumChatFormatting.GREEN
-                + tTier
-                + EnumChatFormatting.RESET
-                + " "
-                + StatCollector.translateToLocal("GT5U.Chaos.discount")
-                + ": "
-                + EnumChatFormatting.GREEN
-                + 1
-                + EnumChatFormatting.RESET
-                + " x",
-            StatCollector.translateToLocal("GT5U.Chaos.parallel") + ": "
-                + EnumChatFormatting.GREEN
-                + GTUtility.formatNumbers(getMaxParallel())
-                + EnumChatFormatting.RESET };
     }
 
     @Override
@@ -687,26 +948,5 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addTooltip(StatCollector.translateToLocal("GT5U.gui.button.down_tier"))
             .setTooltipShowUpDelay(TOOLTIP_DELAY))
             .widget(new FakeSyncWidget.BooleanSyncer(() -> downtierUEV, val -> downtierUEV = val));
-    }
-
-    @Override
-    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
-        int z) {
-        super.getWailaNBTData(player, tile, tag, world, x, y, z);
-        if (mLastRecipeMap != null && getControllerSlot() != null) {
-            tag.setString("type", getControllerSlot().getDisplayName());
-        }
-    }
-
-    @Override
-    public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
-        IWailaConfigHandler config) {
-        super.getWailaBody(itemStack, currentTip, accessor, config);
-        final NBTTagCompound tag = accessor.getNBTData();
-        if (tag.hasKey("type")) {
-            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + tag.getString("type"));
-        } else {
-            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + "None");
-        }
     }
 }

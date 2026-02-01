@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import gregtech.api.enums.SoundResource;
 import gregtech.api.recipe.RecipeMap;
 
-@Deprecated
 public class ChaosManager {
 
     private static final HashMap<String, RecipeMap<?>> mRecipeSaves = new HashMap<>();

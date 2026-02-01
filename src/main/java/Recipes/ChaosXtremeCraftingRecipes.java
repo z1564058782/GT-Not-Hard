@@ -1,4 +1,4 @@
-package util;
+package Recipes;
 
 import static com.google.common.math.IntMath.pow;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
@@ -51,7 +51,7 @@ public class ChaosXtremeCraftingRecipes {
         .of("Chaos of Xtreme Crafting", RecipeMapBackend::new)
         .maxIO(16, 1, 4, 0)
         .minInputs(1, 0)
-        .useSpecialSlot()
+        // .useSpecialSlot()
         .neiTransferRect(88, 8, 18, 72)
         .neiTransferRect(124, 8, 18, 72)
         .neiTransferRect(142, 26, 18, 18)

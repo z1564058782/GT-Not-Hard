@@ -1,4 +1,4 @@
-package util;
+package Recipes;
 
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -19,7 +19,7 @@ public class ChaosZhuHaiRecipes {
         .of("Chaos of ZhuHai Fishery")
         .maxIO(1, 1, 0, 0)
         .minInputs(1, 0)
-        .disableOptimize()
+        // .disableOptimize()
         .build();
 
     public static void addChaosZhuHaiFisheryRecipes() {
