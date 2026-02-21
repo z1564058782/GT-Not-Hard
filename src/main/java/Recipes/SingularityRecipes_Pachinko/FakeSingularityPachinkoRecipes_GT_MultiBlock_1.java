@@ -11,7 +11,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.OneToManyItemsFrontend;
+import util.RecipesFrontend.OneToManyItemsFrontend_Large;
 
 public class FakeSingularityPachinkoRecipes_GT_MultiBlock_1 {
 
@@ -20,7 +20,7 @@ public class FakeSingularityPachinkoRecipes_GT_MultiBlock_1 {
         .maxIO(1, 135, 0, 0)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
-        .frontend(OneToManyItemsFrontend::new)
+        .frontend(OneToManyItemsFrontend_Large::new)
         .build();
 
     public static void addFakePachinkoRecipes_GT_MultiBlock_1() {

@@ -38,9 +38,12 @@ import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
 import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 
-import Recipes.ChaosCircuitAssemblerRecipes;
-import Recipes.ChaosXtremeCraftingRecipes;
-import Recipes.ChaosZhuHaiRecipes;
+import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
+import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
+import Recipes.ChaosRecipes.ChaosExoticRecipes;
+import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
+import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
+import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
@@ -435,10 +438,18 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final String[] Circuit_Assembly_Line_mod = { "Circuit Assembly Line", "Circuit Assembly" };
     private static final RecipeMap<?>[] Circuit_Assembly_Line = {
         ChaosCircuitAssemblerRecipes.addChaosCircuitAssemblerRecipes, RecipeMaps.circuitAssemblerRecipes };
+    // "Heliofusion Exoticizer"-15415
+    private static final String[] Heliofusion_Exoticizer_mod = { "Degenerate Quark Gluon", "Magmatter" };
+    private static final RecipeMap<?>[] Heliofusion_Exoticizer = {
+        ChaosExoticRecipes.ExoticRecipes_DegenerateQuarkGluon, ChaosExoticRecipes.ExoticRecipes_Magmatter };
     // 丹格特蒸馏厂-31021
     private static final String[] Dangote_Distillus_mod = { "Distillery", "distillation tower" };
     private static final RecipeMap<?>[] Dangote_Distillus = { RecipeMaps.distilleryRecipes,
         RecipeMaps.distillationTowerRecipes };
+    // "Elemental Duplicator"-31050
+    private static final String[] Elemental_Duplicator_mod = { "Replicator Item", "Replicator Fluid" };
+    private static final RecipeMap<?>[] Elemental_Duplicator = { ChaosReplicatorRecipes.ReplicatorRecipes_Item,
+        ChaosReplicatorRecipes.ReplicatorRecipes_Fluid };
     // 精密自动组装机MT-3662-32018
     private static final String[] Precise_Auto_Assembler_MT_3662_mod = { "Precise Assembler", "Assembler" };
     private static final RecipeMap<?>[] Precise_Auto_Assembler_MT_3662 = {
@@ -487,7 +498,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                     "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
                 case 12735 -> GTUtility
                     .sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
+                case 15415 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Heliofusion_Exoticizer_mod[Math.min(mode, 1)]);
                 case 31021 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Dangote_Distillus_mod[Math.min(mode, 1)]);
+                case 31050 -> GTUtility
+                    .sendChatToPlayer(aPlayer, "mode:" + Elemental_Duplicator_mod[Math.min(mode, 1)]);
                 case 32018 -> GTUtility
                     .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
             }
@@ -562,14 +577,23 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 12735 -> {
                 return Circuit_Assembly_Line[Math.min(mode, 1)];
             }
+            case 15415 -> {
+                return Heliofusion_Exoticizer[Math.min(mode, 1)];
+            }
             case 31021 -> {
                 return Dangote_Distillus[Math.min(mode, 1)];
+            }
+            case 31050 -> {
+                return Elemental_Duplicator[Math.min(mode, 1)];
             }
             case 31091 -> {
                 return ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes;
             }
             case 32018 -> {
                 return Precise_Auto_Assembler_MT_3662[Math.min(mode, 1)];
+            }
+            case 32027 -> {
+                return ChaosAntimatterRecipes.AntimatterRecipes;
             }
             default -> {
                 return null;
@@ -633,7 +657,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 boolean succeeded = false;
                 CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
 
-                for (int i = 0; i < 128; i++) {
+                for (int i = 0; i < 64; i++) {
                     CheckRecipeResult result = wirelessModeProcessingLogic();
                     if (!result.wasSuccessful()) {
                         finalResult = result;
@@ -647,7 +671,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
                 mEfficiency = 10000;
                 mEfficiencyIncrease = 10000;
-                mMaxProgresstime = 128;
+                mMaxProgresstime = 1;
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
@@ -696,6 +720,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             this.mOutputItems = result.outputItems;
             this.mOutputFluids = result.outputFluids;
             this.mMaxProgresstime = result.processingTime;
+            // 耗电仅与并行有关，与超频无关
             this.lEUt = -result.powerPerTick; // 每tick消耗电量，设为负值
 
             // 更新当前并行数显示
@@ -737,6 +762,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         // 设置输入
         oreProcessingConfig.inputItems = getStoredInputs();
         oreProcessingConfig.inputFluids = getStoredFluids();
+
+        // 设置无线模式标志
+        // oreProcessingConfig.wirelessMode = this.wirelessMode;
     }
 
     /**
@@ -811,10 +839,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
                     // 矿石处理不需要验证普通配方
                     return CheckRecipeResultRegistry.SUCCESSFUL;
-                }
-
-                private void calculateRecipe(@Nonnull GTRecipe recipe) {
-                    // 矿石处理有自己的计算逻辑，这里不执行普通计算
                 }
             };
         }

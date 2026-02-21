@@ -13,7 +13,7 @@ import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.FluidFuelOfGeneratorFrontend;
+import util.RecipesFrontend.FluidFuelOfGeneratorFrontend;
 
 public class OriginGeneratorRecipes_Semifluid {
 

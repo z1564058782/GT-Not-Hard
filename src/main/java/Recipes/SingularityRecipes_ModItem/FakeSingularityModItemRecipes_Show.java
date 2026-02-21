@@ -93,7 +93,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.OneToManyItemsFrontend;
+import util.RecipesFrontend.OneToManyItemsFrontend_Large;
 
 public class FakeSingularityModItemRecipes_Show {
 
@@ -102,7 +102,7 @@ public class FakeSingularityModItemRecipes_Show {
         .maxIO(1, 135, 0, 0)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
-        .frontend(OneToManyItemsFrontend::new)
+        .frontend(OneToManyItemsFrontend_Large::new)
         .build();
 
     public static void addFakeModItemRecipes_Show() {

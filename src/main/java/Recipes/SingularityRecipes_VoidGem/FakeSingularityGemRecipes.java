@@ -1,938 +1,957 @@
 package Recipes.SingularityRecipes_VoidGem;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.GalacticraftAmunRa;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NEIOrePlugin;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static util.AggregateItemStackArray.addCompressAggregateArray;
+import static util.AggregateItemStackArray.addSplitAggregateArray;
 
-import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
+import net.minecraft.item.ItemStack;
+
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
-import util.OneToManyItemsFrontend;
+import util.RecipesFrontend.OneToManyItemsFrontend_Large;
+import util.RecipesFrontend.OneToManyItemsFrontend_Small;
 
 public class FakeSingularityGemRecipes {
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes = RecipeMapBuilder.of("Singularity of Gem")
-        .maxIO(1, 135, 0, 0)
+    public static int NEI_ItemOutput_Size = 27;
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T0 = RecipeMapBuilder
+        .of("Singularity of T0 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(335))
-        .frontend(OneToManyItemsFrontend::new)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
         .build();
 
-    public static void addFakeVoidGemRecipes() {
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T1 = RecipeMapBuilder
+        .of("Singularity of T1 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T2 = RecipeMapBuilder
+        .of("Singularity of T2 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T3 = RecipeMapBuilder
+        .of("Singularity of T3 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T4 = RecipeMapBuilder
+        .of("Singularity of T4 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T5 = RecipeMapBuilder
+        .of("Singularity of T5 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T6 = RecipeMapBuilder
+        .of("Singularity of T6 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T7 = RecipeMapBuilder
+        .of("Singularity of T7 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T8 = RecipeMapBuilder
+        .of("Singularity of T8 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T9 = RecipeMapBuilder
+        .of("Singularity of T9 Gem")
+        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .frontend(OneToManyItemsFrontend_Small::new)
+        .build();
+
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T10 = RecipeMapBuilder
+        .of("Singularity of T10 Gem")
+        .maxIO(1, 90, 0, 0)
+        .minInputs(1, 0)
+        .neiHandlerInfo(builder -> builder.setHeight(335))
+        .frontend(OneToManyItemsFrontend_Large::new)
+        .build();
+
+    public static void addFakeVoidGemRecipes_T0() {
         // T0 - Overworld - Ow
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ow", 1L))
-            .itemOutputs(
-                Materials.Apatite.getGems(1),
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.RockSalt.getGems(1),
-                Materials.Ruby.getGems(1),
-                Materials.Salt.getGems(1),
-                Materials.Sodalite.getGems(1),
-                Materials.Spodumene.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T0_Overworld_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Coal_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Dolomite_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Lignite_Coal_Vein,
+            Vein_Gem.Apatite_Vein,
+            Vein_Gem.Tin_Vein,
+            Vein_Gem.Salt_Vein,
+            SmallOre_Gem.Diamond_SmallOre,
+            SmallOre_Gem.Lapis_SmallOre,
+            SmallOre_Gem.Coal_SmallOre);
+        ItemStack[][] Fake_T0_Overworld_Gem_Split = addSplitAggregateArray(Fake_T0_Overworld_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_Overworld_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ow", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
 
         // T0 - Nether - Ne
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ne", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.Quartz.getGems(1),
-                Materials.Quartzite.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T0_Nether_Gem = addCompressAggregateArray(
+            Vein_Gem.Quartzite_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Nether_Quartz_Vein,
+            SmallOre_Gem.Certus_Quartz_SmallOre,
+            SmallOre_Gem.Nether_Quartz_SmallOre);
+        ItemStack[][] Fake_T0_Nether_Gem_Split = addSplitAggregateArray(Fake_T0_Nether_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_Nether_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ne", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
 
         // T0 - Twilight - TF
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TF", 1L))
-            .itemOutputs(
-                Materials.Amber.getGems(1),
-                Materials.Amethyst.getGems(1),
-                Materials.Apatite.getGems(1),
-                Materials.BlueTopaz.getGems(1),
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.GreenSapphire.getGems(1),
-                Materials.Jasper.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.RockSalt.getGems(1),
-                Materials.Ruby.getGems(1),
-                Materials.Salt.getGems(1),
-                Materials.Sapphire.getGems(1),
-                Materials.Sodalite.getGems(1),
-                Materials.Spodumene.getGems(1),
-                Materials.Tanzanite.getGems(1),
-                Materials.Topaz.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 6),
-
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 0),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 1),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 2),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 4),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 5))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T0_Twilight_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Terra_Aer_Vein,
+            Vein_Gem.Coal_Vein,
+            Vein_Gem.Sapphire_Vein,
+            Vein_Gem.Perditio_Ordo_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Apatite_Vein,
+            Vein_Gem.Salt_Vein,
+            Vein_Gem.Aqua_Ignis_Amber_Vein,
+            SmallOre_Gem.Amethyst_SmallOre,
+            SmallOre_Gem.Yellow_Garnet_SmallOre,
+            SmallOre_Gem.Tanzanite_SmallOre,
+            SmallOre_Gem.Opal_SmallOre,
+            SmallOre_Gem.Ruby_SmallOre,
+            SmallOre_Gem.Emerald_SmallOre,
+            SmallOre_Gem.Amber_SmallOre,
+            SmallOre_Gem.Blue_Topaz_SmallOre,
+            SmallOre_Gem.Topaz_SmallOre,
+            SmallOre_Gem.Red_Garnet_SmallOre,
+            SmallOre_Gem.Green_Sapphire_SmallOre,
+            SmallOre_Gem.Sapphire_SmallOre,
+            SmallOre_Gem.Jasper_SmallOre,
+            SmallOre_Gem.Olivine_SmallOre);
+        ItemStack[][] Fake_T0_Twilight_Gem_Split = addSplitAggregateArray(Fake_T0_Twilight_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_Twilight_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TF", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
 
         // T0 - TheEnd - ED
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_ED", 1L))
-            .itemOutputs(Materials.Emerald.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T0_TheEnd_Gem = addCompressAggregateArray(Vein_Gem.Beryllium_Vein);
+        ItemStack[][] Fake_T0_TheEnd_Gem_Split = addSplitAggregateArray(Fake_T0_TheEnd_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_TheEnd_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_ED", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
 
         // T0 - EndAsteroid - EA
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_EA", 1L))
-            .itemOutputs(
-                Materials.Emerald.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Sodalite.getGems(1),
+        ItemStack[] Fake_T0_EndAsteroid_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Platinum_Vein);
+        ItemStack[][] Fake_T0_EndAsteroid_Gem_Split = addSplitAggregateArray(
+            Fake_T0_EndAsteroid_Gem,
+            NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_EndAsteroid_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_EA", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
+    }
 
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T1() {
         // T1 - Moon - Mo
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mo", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Quartzite.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T1_Moon_Gem = addCompressAggregateArray(
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Ilmenite_Vein);
+        ItemStack[][] Fake_T1_Moon_Gem_Split = addSplitAggregateArray(Fake_T1_Moon_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T1_Moon_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mo", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T1);
+        }
+    }
 
+    public static void addFakeVoidGemRecipes_T2() {
         // T2 - Deimos - De
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1L))
-            .itemOutputs(
-                Materials.Diamond.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Sodalite.getGems(1),
-                Materials.Tanzanite.getGems(1),
-                Materials.Vinteum.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T2_Deimos_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Oriharukon_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T2_Deimos_Gem_Split = addSplitAggregateArray(Fake_T2_Deimos_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T2_Deimos_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T2);
+        }
 
         // T2 - Mars - Ma
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ma", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.RockSalt.getGems(1),
-                Materials.Salt.getGems(1),
-                Materials.Spodumene.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T2_Mars_Gem = addCompressAggregateArray(
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Salt_Vein);
+        ItemStack[][] Fake_T2_Mars_Gem_Split = addSplitAggregateArray(Fake_T2_Mars_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T2_Mars_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ma", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T2);
+        }
 
         // T2 - Phobos - Ph
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ph", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.Tanzanite.getGems(1),
-                Materials.Vinteum.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T2_Phobos_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Oriharukon_Vein,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T2_Phobos_Gem_Split = addSplitAggregateArray(Fake_T2_Phobos_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T2_Phobos_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ph", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T2);
+        }
+    }
 
+    public static void addFakeVoidGemRecipes_T3() {
         // T3 - Asteroids - As
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_As", 1L))
-            .itemOutputs(Materials.Diamond.getGems(1), Materials.GarnetYellow.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Asteroids_Gem = addCompressAggregateArray(
+            Vein_Gem.Ilmenite_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T3_Asteroids_Gem_Split = addSplitAggregateArray(Fake_T3_Asteroids_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Asteroids_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_As", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
 
         // T3 - Callisto - Ca
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1L))
-            .itemOutputs(
-                Materials.BlueTopaz.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Topaz.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Callisto_Gem = addCompressAggregateArray(
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Callisto_Ice_Vein,
+            Vein_Gem.Iron_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T3_Callisto_Gem_Split = addSplitAggregateArray(Fake_T3_Callisto_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Callisto_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
 
         // T3 - Ceres - Ce
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ce", 1L))
-            .itemOutputs(
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Sodalite.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Ceres_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Beryllium_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T3_Ceres_Gem_Split = addSplitAggregateArray(Fake_T3_Ceres_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Ceres_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ce", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
 
         // T3 - Europa - Eu
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1L))
-            .itemOutputs(Materials.GarnetRed.getGems(1), Materials.Opal.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Europa_Gem = addCompressAggregateArray(
+            Vein_Gem.Magnesite_Vein,
+            Vein_Gem.Ledox_Vein,
+            Vein_Gem.Tin_Vein);
+        ItemStack[][] Fake_T3_Europa_Gem_Split = addSplitAggregateArray(Fake_T3_Europa_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Europa_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
 
         // T3 - Ganymede - Ga
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lignite.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Ganymede_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Iron_Vein,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T3_Ganymede_Gem_Split = addSplitAggregateArray(Fake_T3_Ganymede_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Ganymede_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
 
         // T3 - Ross128b - Rb
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Rb", 1L))
-            .itemOutputs(
-                WerkstoffLoader.Bismutite.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.ChromoAluminoPovondrait.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Fayalit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.FluorBuergerit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Forsterit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Olenit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.RedZircon.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Spodumen.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.VanadioOxyDravit.get(OrePrefixes.gem, 1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T3_Ross128b_Gem = addCompressAggregateArray(
+            Vein_Gem.Bismutite_Bismuthinite_Vein,
+            Vein_Gem.Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein,
+            Vein_Gem.Thorianite_Vein,
+            Vein_Gem.Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein,
+            Vein_Gem.Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein);
+        ItemStack[][] Fake_T3_Ross128b_Gem_Split = addSplitAggregateArray(Fake_T3_Ross128b_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T3_Ross128b_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Rb", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T3);
+        }
+    }
 
+    public static void addFakeVoidGemRecipes_T4() {
         // T4 - Io - Io
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Io", 1L))
-            .itemOutputs(
-                Materials.Apatite.getGems(1),
-                Materials.CertusQuartz.getGems(1),
-                Materials.Jasper.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L),
-
-                getModItem(Railcraft.ID, "firestone.raw", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T4_Io_Gem = addCompressAggregateArray(
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Pyrolusite_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Mytryl_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Firestone_SmallOre,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T4_Io_Gem_Split = addSplitAggregateArray(Fake_T4_Io_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T4_Io_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Io", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T4);
+        }
 
         // T4 - Mercury - Me
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Me", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Vinteum.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T4_Mercury_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Iridium_Vein);
+        ItemStack[][] Fake_T4_Mercury_Gem_Split = addSplitAggregateArray(Fake_T4_Mercury_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T4_Mercury_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Me", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T4);
+        }
 
         // T4 - Venus - Ve
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1L))
-            .itemOutputs(
-                Materials.Amethyst.getGems(1),
-                Materials.CertusQuartz.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Quartzite.getGems(1),
+        ItemStack[] Fake_T4_Venus_Gem = addCompressAggregateArray(
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Quantium_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Diamond_SmallOre,
+            SmallOre_Gem.Firestone_SmallOre);
+        ItemStack[][] Fake_T4_Venus_Gem_Split = addSplitAggregateArray(Fake_T4_Venus_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T4_Venus_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T4);
+        }
+    }
 
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L),
-
-                getModItem(Railcraft.ID, "firestone.raw", 1L),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T5() {
         // T5 - Enceladus - En
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_En", 1L))
-            .itemOutputs(
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Sodalite.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T5_Enceladus_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Ledox_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T5_Enceladus_Gem_Split = addSplitAggregateArray(Fake_T5_Enceladus_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T5_Enceladus_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_En", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T5);
+        }
 
         // T5 - Miranda - Mi
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mi", 1L))
-            .itemOutputs(
-                Materials.Apatite.getGems(1),
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1),
-                Materials.Vinteum.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T5_Miranda_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Pyrolusite_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Iridium_Vein);
+        ItemStack[][] Fake_T5_Miranda_Gem_Split = addSplitAggregateArray(Fake_T5_Miranda_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T5_Miranda_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mi", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T5);
+        }
 
         // T5 - Oberon - Ob
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ob", 1L))
-            .itemOutputs(
-                Materials.Diamond.getGems(1),
-                Materials.Lapis.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T5_Oberon_Gem = addCompressAggregateArray(
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Iron_Vein,
+            SmallOre_Gem.Diamond_SmallOre,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T5_Oberon_Gem_Split = addSplitAggregateArray(Fake_T5_Oberon_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T5_Oberon_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ob", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T5);
+        }
 
         // T5 - Titan - Ti
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ti", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Monazite.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T5_Titan_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T5_Titan_Gem_Split = addSplitAggregateArray(Fake_T5_Titan_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T5_Titan_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ti", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T5);
+        }
 
         // T5 - Ross128ba - Ra
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ra", 1L))
-            .itemOutputs(
-                Materials.Amethyst.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Olivine.getGems(1),
+        ItemStack[] Fake_T5_Ross128ba_Gem = addCompressAggregateArray(
+            Vein_Gem.Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein,
+            Vein_Gem.Hedenbergite_Fayalite_OrangeDescloizite_RedDescloizite_Vein,
+            Vein_Gem.Prasiolite_Hedenbergite_Vein,
+            Vein_Gem.BArTiMaEuSNeK_Vein,
+            Vein_Gem.Tiberium_Vein,
+            Vein_Gem.Fluorspar_Vein);
+        ItemStack[][] Fake_T5_Ross128ba_Gem_Split = addSplitAggregateArray(Fake_T5_Ross128ba_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T5_Ross128ba_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ra", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T5);
+        }
+    }
 
-                WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.ChromoAluminoPovondrait.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Fayalit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.FluorBuergerit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Fluorspar.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Hedenbergit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Olenit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Prasiolite.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Tiberium.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.VanadioOxyDravit.get(OrePrefixes.gem, 1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T6() {
         // T6 - Proteus - Pr
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pr", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Quartzite.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T6_Proteus_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Ilmenite_Vein);
+        ItemStack[][] Fake_T6_Proteus_Gem_Split = addSplitAggregateArray(Fake_T6_Proteus_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T6_Proteus_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pr", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T6);
+        }
 
         // T6 - Triton - Tr
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Tr", 1L))
-            .itemOutputs(
-                Materials.Diamond.getGems(1),
-                Materials.Monazite.getGems(1),
+        ItemStack[] Fake_T6_Triton_Gem = addCompressAggregateArray(
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T6_Triton_Gem_Split = addSplitAggregateArray(Fake_T6_Triton_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T6_Triton_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Tr", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T6);
+        }
+    }
 
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T7() {
         // T7 - Haumea - Ha
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1L))
-            .itemOutputs(
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Olivine.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
-        // T7 - Kuiperbelt - KB
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_KB", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Lignite.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T7_Haumea_Gem = addCompressAggregateArray(
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Beryllium_Vein);
+        ItemStack[][] Fake_T7_Haumea_Gem_Split = addSplitAggregateArray(Fake_T7_Haumea_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T7_Haumea_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T7);
+        }
 
         // T7 - Makemake - MM
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1L))
-            .itemOutputs(
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Olivine.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T7_Makemake_Gem = addCompressAggregateArray(
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Red_Garnet_Vein);
+        ItemStack[][] Fake_T7_Makemake_Gem_Split = addSplitAggregateArray(Fake_T7_Makemake_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T7_Makemake_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T7);
+        }
 
         // T7 - Pluto - Pl
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pl", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lignite.getGems(1),
+        ItemStack[] Fake_T7_Pluto_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Iron_Vein,
+            Vein_Gem.Beryllium_Vein);
+        ItemStack[][] Fake_T7_Pluto_Gem_Split = addSplitAggregateArray(Fake_T7_Pluto_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T7_Pluto_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pl", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T7);
+        }
+    }
 
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T8() {
         // T8 - BarnardC - BC
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BC", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.RockSalt.getGems(1),
-                Materials.Salt.getGems(1),
-                Materials.Spodumene.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T8_BarnardC_Gem = addCompressAggregateArray(
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Samarium_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Lignite_Coal_Vein,
+            Vein_Gem.Salt_Vein);
+        ItemStack[][] Fake_T8_BarnardC_Gem_Split = addSplitAggregateArray(Fake_T8_BarnardC_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_BarnardC_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BC", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
 
         // T8 - BarnardE - BE
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BE", 1L))
-            .itemOutputs(
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Olivine.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T8_BarnardE_Gem = addCompressAggregateArray(Vein_Gem.Olivine_Vein, Vein_Gem.Nether_Star_Vein);
+        ItemStack[][] Fake_T8_BarnardE_Gem_Split = addSplitAggregateArray(Fake_T8_BarnardE_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_BarnardE_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BE", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
 
         // T8 - BarnardF - BF
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lignite.getGems(1),
-                Materials.Monazite.getGems(1),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T8_BarnardF_Gem = addCompressAggregateArray(
+            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Red_Garnet_Vein);
+        ItemStack[][] Fake_T8_BarnardF_Gem_Split = addSplitAggregateArray(Fake_T8_BarnardF_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_BarnardF_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
 
         // T8 - α Centauri Bb - CB
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Quartz.getGems(1),
-                Materials.Quartzite.getGems(1),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T8_Centauri_Gem = addCompressAggregateArray(
+            Vein_Gem.Samarium_Vein,
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Tin_Vein,
+            Vein_Gem.Nether_Quartz_Vein);
+        ItemStack[][] Fake_T8_Centauri_Gem_Split = addSplitAggregateArray(Fake_T8_Centauri_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_Centauri_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
 
         // T8 - TCetiE - TE
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TE", 1L))
-            .itemOutputs(
-                Materials.Apatite.getGems(1),
-                Materials.CertusQuartz.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.RockSalt.getGems(1),
-                Materials.Salt.getGems(1),
-                Materials.Spodumene.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T8_TCetiE_Gem = addCompressAggregateArray(
+            Vein_Gem.Magnesite_Vein,
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Apatite_Vein,
+            Vein_Gem.Salt_Vein,
+            SmallOre_Gem.Lapis_SmallOre);
+        ItemStack[][] Fake_T8_TCetiE_Gem_Split = addSplitAggregateArray(Fake_T8_TCetiE_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_TCetiE_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TE", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
 
         // T8 - VegaB - VB
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1L))
-            .itemOutputs(
-                Materials.Diamond.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Sodalite.getGems(1),
+        ItemStack[] Fake_T8_VegaB_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Redstone_Vein,
+            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Red_Garnet_Vein,
+            SmallOre_Gem.Diamond_SmallOre);
+        ItemStack[][] Fake_T8_VegaB_Gem_Split = addSplitAggregateArray(Fake_T8_VegaB_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T8_VegaB_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T8);
+        }
+    }
 
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T9() {
         // T9 - Anubis - An
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1L))
-            .itemOutputs(
-                Materials.BlueTopaz.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Topaz.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T9_Anubis_Gem = addCompressAggregateArray(
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Dolomite_Vein,
+            Vein_Gem.Callisto_Ice_Vein,
+            Vein_Gem.Mytryl_Vein);
+        ItemStack[][] Fake_T9_Anubis_Gem_Split = addSplitAggregateArray(Fake_T9_Anubis_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_Anubis_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
 
         // T9 - Horus - Ho
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1L))
-            .itemOutputs(
-                Materials.Amethyst.getGems(1),
-                Materials.BlueTopaz.getGems(1),
-                Materials.CertusQuartz.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.GreenSapphire.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Jasper.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.Ruby.getGems(1),
-                Materials.Sapphire.getGems(1),
-                Materials.Tanzanite.getGems(1),
-                Materials.Topaz.getGems(1),
-                Materials.Vinteum.getGems(1),
-
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T9_Horus_Gem = addCompressAggregateArray(
+            Vein_Gem.Magnesite_Vein,
+            Vein_Gem.Certus_Quartz_Vein,
+            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Sapphire_Vein,
+            Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Mytryl_Vein,
+            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Red_Garnet_Vein,
+            Vein_Gem.Oriharukon_Vein,
+            Vein_Gem.Quantium_Vein,
+            Vein_Gem.Ledox_Vein,
+            SmallOre_Gem.Amethyst_SmallOre,
+            SmallOre_Gem.Red_Garnet_SmallOre,
+            SmallOre_Gem.Yellow_Garnet_SmallOre,
+            SmallOre_Gem.Tanzanite_SmallOre,
+            SmallOre_Gem.Opal_SmallOre,
+            SmallOre_Gem.Charged_Certus_Quartz_SmallOre,
+            SmallOre_Gem.Ruby_SmallOre,
+            SmallOre_Gem.Emerald_SmallOre,
+            SmallOre_Gem.Blue_Topaz_SmallOre,
+            SmallOre_Gem.Topaz_SmallOre,
+            SmallOre_Gem.Certus_Quartz_SmallOre,
+            SmallOre_Gem.Green_Sapphire_SmallOre,
+            SmallOre_Gem.Sapphire_SmallOre,
+            SmallOre_Gem.Jasper_SmallOre,
+            SmallOre_Gem.Olivine_SmallOre);
+        ItemStack[][] Fake_T9_Horus_Gem_Split = addSplitAggregateArray(Fake_T9_Horus_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_Horus_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
 
         // T9 - Maahes - Mh
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1L))
-            .itemOutputs(
-                Materials.Amethyst.getGems(1),
-                Materials.BlueTopaz.getGems(1),
-                Materials.Topaz.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T9_Maahes_Gem = addCompressAggregateArray(
+            Vein_Gem.Callisto_Ice_Vein,
+            Vein_Gem.Platinum_Vein,
+            Vein_Gem.Quantium_Vein);
+        ItemStack[][] Fake_T9_Maahes_Gem_Split = addSplitAggregateArray(Fake_T9_Maahes_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_Maahes_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
 
         // T9 - MehenBelt - MB
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MB", 1L))
-            .itemOutputs(
-                Materials.GarnetYellow.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Sodalite.getGems(1),
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T9_MehenBelt_Gem = addCompressAggregateArray(
+            Vein_Gem.Lapis_Vein,
+            Vein_Gem.Awakened_Draconium_Vein,
+            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Platinum_Vein,
+            Vein_Gem.Iridium_Vein,
+            SmallOre_Gem.Lapis_SmallOre,
+            SmallOre_Gem.Olivine_SmallOre);
+        ItemStack[][] Fake_T9_MehenBelt_Gem_Split = addSplitAggregateArray(Fake_T9_MehenBelt_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_MehenBelt_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MB", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
 
         // T9 - Neper - Np
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1L))
-            .itemOutputs(
-                Materials.CertusQuartz.getGems(1),
-                Materials.Dilithium.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Quartz.getGems(1),
-                Materials.Quartzite.getGems(1),
-
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 1),
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 6),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 0),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 1),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 2),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 4),
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 5))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[] Fake_T9_Neper_Gem = addCompressAggregateArray(
+            Vein_Gem.Terra_Aer_Vein,
+            Vein_Gem.Certus_Quartz_Vein,
+            Vein_Gem.Quartzite_Vein,
+            Vein_Gem.Dilithium_Vein,
+            Vein_Gem.Dolomite_Vein,
+            Vein_Gem.Perditio_Ordo_Vein,
+            Vein_Gem.Aqua_Ignis_Amber_Vein,
+            Vein_Gem.Nether_Quartz_Vein);
+        ItemStack[][] Fake_T9_Neper_Gem_Split = addSplitAggregateArray(Fake_T9_Neper_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_Neper_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
 
         // T9 - Seth - Se
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1L))
-            .itemOutputs(
-                Materials.Monazite.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Vinteum.getGems(1),
+        ItemStack[] Fake_T9_Seth_Gem = addCompressAggregateArray(
+            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Samarium_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Iridium_Vein);
+        ItemStack[][] Fake_T9_Seth_Gem_Split = addSplitAggregateArray(Fake_T9_Seth_Gem, NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T9_Seth_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T9);
+        }
+    }
 
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
+    public static void addFakeVoidGemRecipes_T10() {
         // T10 - DeepDark - DD
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
-            .itemOutputs(
-                Materials.Coal.getGems(1),
-                Materials.Charcoal.getGems(1),
-                Materials.Diamond.getGems(1),
-                Materials.Lapis.getGems(1),
-                Materials.EnderPearl.getGems(1),
-                Materials.EnderEye.getGems(1),
-                Materials.Emerald.getGems(1),
-                Materials.NetherStar.getGems(1),
-                Materials.NetherQuartz.getGems(1),
-
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 0), // Ender Amethyst
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 1), // Ruby
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 2), // Peridot
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 3), // Topaz
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 4), // Tanzanite
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 5), // Malachite
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 6), // Sapphire
-                getModItem(BiomesOPlenty.ID, "gems", 1L, 7), // Amber
-
-                getModItem(Botania.ID, "manaResource", 1L, 1), // Mana Pearl
-                getModItem(Botania.ID, "manaResource", 1L, 2), // Mana Diamond
-                getModItem(Botania.ID, "manaResource", 1L, 9), // Dragonstone
-
-                getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L, 6), // Ruby
-
-                getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L), // Iridium Ore
-                getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1L), // Industrial Diamond
-
-                getModItem(Railcraft.ID, "firestone.raw", 1L), // Raw Firestore
-
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3), // Quicksilver
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 6), // Amber
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 0), // Air Shard
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 1), // Fire Shard
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 2), // Water Shard
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 3), // Earth Shard
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 4), // Order Shard
-                getModItem(Thaumcraft.ID, "ItemShard", 1L, 5), // Entropy Shard
-
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 1), // Charged Certus Quartz Crystal
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 7), // Fluix Crystal
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 10), // Pure Certus Quartz Crystal
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 12) // Pure Fluix Crystal
-            )
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
-        // T10 - DeepDark - DD
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
-            .itemOutputs(
-                WerkstoffLoader.Bismutite.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.CubicZirconia.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.FluorBuergerit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.ChromoAluminoPovondrait.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.VanadioOxyDravit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Olenit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.RedZircon.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Salt.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Spodumen.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.RockSalt.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Fayalit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Forsterit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Hedenbergit.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Prasiolite.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Tiberium.get(OrePrefixes.gem, 1),
-                WerkstoffLoader.Fluorspar.get(OrePrefixes.gem, 1),
-
-                GGMaterial.orundum.get(OrePrefixes.gem, 1),
-
-                WerkstoffMaterialPool.CeriumDopedLutetiumAluminiumGarnet.get(OrePrefixes.gem, 1),
-                WerkstoffMaterialPool.LanthanumHexaboride.get(OrePrefixes.gem, 1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
-
-        // T10 - DeepDark - DD
-        GTValues.RA.stdBuilder()
-            .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
-            .itemOutputs(
-                Materials.Firestone.getGems(1),
-                Materials.Ruby.getGems(1),
-                Materials.Sapphire.getGems(1),
-                Materials.GreenSapphire.getGems(1),
-                Materials.Olivine.getGems(1),
-                Materials.Topaz.getGems(1),
-                Materials.Tanzanite.getGems(1),
-                Materials.Amethyst.getGems(1),
-                Materials.Opal.getGems(1),
-                Materials.Jasper.getGems(1),
-                Materials.BlueTopaz.getGems(1),
-                Materials.Amber.getGems(1),
-                Materials.Dilithium.getGems(1),
-                Materials.CertusQuartz.getGems(1),
-                Materials.Forcicium.getGems(1),
-                Materials.Forcillium.getGems(1),
-                Materials.Monazite.getGems(1),
-                Materials.Force.getGems(1),
-                Materials.Quartzite.getGems(1),
-                Materials.Lazurite.getGems(1),
-                Materials.Sodalite.getGems(1),
-                Materials.GarnetRed.getGems(1),
-                Materials.GarnetYellow.getGems(1),
-                Materials.Vinteum.getGems(1),
-                Materials.Apatite.getGems(1),
-                Materials.Niter.getGems(1),
-                Materials.TricalciumPhosphate.getGems(1),
-                Materials.Jade.getGems(1),
-                Materials.Lignite.getGems(1))
-            .fake()
-            .duration(3 * SECONDS)
-            .setNEIDesc("Singularity with Gem Mode")
-            .eut(0)
-            .addTo(addFakeVoidGemRecipes);
+        ItemStack[][] Fake_T10_DeepDark_Gem_Split = addSplitAggregateArray(Vein_Gem.T10_Gem, 90);
+        for (ItemStack[] tempItemStacks : Fake_T10_DeepDark_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T10);
+        }
     }
 }

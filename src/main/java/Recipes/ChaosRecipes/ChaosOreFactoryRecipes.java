@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -19,7 +18,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
-import gregtech.api.util.OverclockCalculator;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 
 /**
@@ -54,7 +52,17 @@ public abstract class ChaosOreFactoryRecipes {
     /**
      * 默认基础时间单位（秒对应的tick数）
      */
-    public static final int DEFAULT_SECOND_TICKS = 20;
+    public static final int DEFAULT_SECOND_TICKS = 1;
+
+    /**
+     * 超频计算常量 - 最小处理时间（防止过度超频）
+     */
+    public static final int MIN_PROCESSING_TIME_TICKS = 1;
+
+    /**
+     * 超频计算常量 - 超频速率（每电压等级时间减半）
+     */
+    public static final double OVERCLOCK_RATE = 0.5;
 
     // ====================== 矿石类型标识集 ======================
 
@@ -196,9 +204,9 @@ public abstract class ChaosOreFactoryRecipes {
         public List<ItemStack> inputItems = null;
 
         /**
-         * 超频计算器（由外部传入）
+         * 是否启用超频（默认为true）
          */
-        public OverclockCalculator overclockCalculator = null;
+        public boolean enableOverclocking = true;
     }
 
     /**
@@ -218,7 +226,7 @@ public abstract class ChaosOreFactoryRecipes {
         public int usedParallel = 0;
 
         /**
-         * 每tick消耗的电量
+         * 每tick消耗的电量（仅与并行有关，与超频无关）
          */
         public long powerPerTick = 0L;
 
@@ -228,7 +236,7 @@ public abstract class ChaosOreFactoryRecipes {
         public long totalPower = 0L;
 
         /**
-         * 处理时间（ticks）
+         * 处理时间（ticks，经过超频计算）
          */
         public int processingTime = 0;
 
@@ -261,6 +269,21 @@ public abstract class ChaosOreFactoryRecipes {
          * 错误消息（如果处理失败）
          */
         public String errorMessage = "";
+    }
+
+    // ====================== 超频计算逻辑 ======================
+
+    /**
+     * 计算每tick消耗的电量
+     * 耗电仅与并行有关，与超频无关
+     *
+     * @param powerPerOre 每矿石所需电量
+     * @param parallel    并行数
+     * @return 每tick总耗电量
+     */
+    public static long calculatePowerConsumption(long powerPerOre, int parallel) {
+        // 耗电 = 每矿石耗电 × 并行数
+        return powerPerOre * parallel;
     }
 
     // ====================== 核心处理逻辑 ======================
@@ -315,28 +338,20 @@ public abstract class ChaosOreFactoryRecipes {
         // 最终并行数为物品和流体限制中的较小值
         int finalParallel = Math.min(itemParallel, fluidParallel);
 
-        // 计算处理时间和功耗（使用外部传入的超频计算器）
-        OverclockCalculator calculator = config.overclockCalculator;
-        int processingTime = baseProcessingTime;
-        long powerPerTick = config.powerPerOre * finalParallel;
-
-        if (calculator != null) {
-            // 使用外部超频计算器
-            calculator.setEUt(config.availableVoltage)
-                .setRecipeEUt(config.powerPerOre * finalParallel)
-                .setDuration(baseProcessingTime)
-                .setParallel(finalParallel)
-                .calculate();
-
-            processingTime = calculator.getDuration();
-            powerPerTick = calculator.getConsumption();
+        // 计算处理时间（考虑超频）
+        int processingTime;
+        if (config.enableOverclocking) {
+            // 使用enablePerfectOC逻辑计算处理时间
+            processingTime = calculatePerfectOverclockedTime(baseProcessingTime, config.availableVoltage);
         } else {
-            // 无超频，简单计算
+            // 无超频
             processingTime = baseProcessingTime;
-            powerPerTick = config.powerPerOre * finalParallel;
         }
 
-        // 总电量消耗
+        // 计算耗电量（仅与并行有关，与超频无关）
+        long powerPerTick = calculatePowerConsumption(config.powerPerOre, finalParallel);
+
+        // 总电量消耗 = 每tick耗电 × 处理时间
         long totalPower = powerPerTick * processingTime;
 
         // 消耗流体
@@ -352,13 +367,38 @@ public abstract class ChaosOreFactoryRecipes {
         result.totalPower = totalPower;
         result.powerPerTick = powerPerTick;
         result.processingTime = processingTime;
+        // 直接使用处理后的输出物品
         result.outputItems = processedResult.outputItems;
-        result.outputFluids = new FluidStack[0]; // 矿石处理通常不产生流体输出
+        // 矿石处理通常不产生流体输出
+        result.outputFluids = new FluidStack[0];
         result.consumedLubricant = consumedLubricant;
         result.consumedDistilledWater = consumedDistilledWater;
         result.consumedItems = processedResult.consumedItems;
 
         return result;
+    }
+
+    /**
+     * 启用完美超频逻辑计算处理时间
+     * 完美超频：每次电压翻倍时，时间减半，耗电不变
+     *
+     * @param baseTime         基础处理时间（ticks）
+     * @param availableVoltage 可用电压
+     * @return 经过完美超频计算后的处理时间
+     */
+    public static int calculatePerfectOverclockedTime(int baseTime, long availableVoltage) {
+        int overclockedTime = baseTime;
+        long currentVoltage = availableVoltage;
+
+        // 完美超频逻辑：根据电压等级计算超频次数
+        while (currentVoltage > 0 && overclockedTime > MIN_PROCESSING_TIME_TICKS) {
+            // 每次电压翻倍，时间减半
+            overclockedTime = (int) Math.max(MIN_PROCESSING_TIME_TICKS, overclockedTime * OVERCLOCK_RATE);
+            // 降低电压以继续计算（每次除以2模拟电压等级下降）
+            currentVoltage /= 2;
+        }
+
+        return Math.max(MIN_PROCESSING_TIME_TICKS, overclockedTime);
     }
 
     /**
@@ -472,15 +512,15 @@ public abstract class ChaosOreFactoryRecipes {
                 // 部分消耗
                 oreStacks.add(copyAmount(remaining, stack));
                 consumedStacks.add(copyAmount(remaining, stack));
-                remaining = 0;
                 break;
             }
         }
 
-        // 处理矿石（根据模式）
+        // 处理矿石（根据模式）并考虑并行数
         ItemStack[] processedItems = oreStacks.toArray(new ItemStack[0]);
-        processedItems = applyProcessingMode(
+        processedItems = applyProcessingModeWithParallel(
             processedItems,
+            parallel,
             config.processingMode,
             config.voidStoneMode,
             config.inputFluids);
@@ -493,29 +533,44 @@ public abstract class ChaosOreFactoryRecipes {
     // ====================== 处理模式应用 ======================
 
     /**
-     * 应用处理模式到矿石
+     * 应用处理模式到矿石，并考虑并行数
      *
-     * @param inputItems  输入物品
-     * @param mode        处理模式
-     * @param voidStone   是否弃石
-     * @param inputFluids 输入流体（用于化学洗涤）
+     * @param inputItems    输入物品数组（每个物品堆代表一个矿石）
+     * @param totalParallel 总并行数（需要翻倍的总数量）
+     * @param mode          处理模式
+     * @param voidStone     是否弃石
+     * @param inputFluids   输入流体（用于化学洗涤）
      * @return 处理后的物品
      */
-    public static ItemStack[] applyProcessingMode(ItemStack[] inputItems, int mode, boolean voidStone,
-        List<FluidStack> inputFluids) {
+    public static ItemStack[] applyProcessingModeWithParallel(ItemStack[] inputItems, int totalParallel, int mode,
+        boolean voidStone, List<FluidStack> inputFluids) {
         if (inputItems == null || inputItems.length == 0) {
             return new ItemStack[0];
         }
 
+        // 计算每个物品堆的并行权重（基于其数量占总并行数的比例）
+        List<ItemStack> weightedItems = new ArrayList<>();
+        for (ItemStack stack : inputItems) {
+            if (stack == null) continue;
+            weightedItems.add(stack);
+        }
+
         // 根据模式应用不同的处理流程
+        ItemStack[] processedItems = weightedItems.toArray(new ItemStack[0]);
+
         switch (mode) {
             case 0 -> {
                 // 模式0: 破碎 -> 洗矿 -> 热离 -> 破碎
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyOreWasher(inputItems, crushedOreSet);
-                inputItems = applyThermalCentrifuge(inputItems, crushedPureOreSet, crushedOreSet);
-                inputItems = applyMacerator(
-                    inputItems,
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyOreWasherWithParallel(processedItems, totalParallel, crushedOreSet);
+                processedItems = applyThermalCentrifugeWithParallel(
+                    processedItems,
+                    totalParallel,
+                    crushedPureOreSet,
+                    crushedOreSet);
+                processedItems = applyMaceratorWithParallel(
+                    processedItems,
+                    totalParallel,
                     thermalCentrifugedSet,
                     oreSet,
                     crushedOreSet,
@@ -523,42 +578,67 @@ public abstract class ChaosOreFactoryRecipes {
             }
             case 1 -> {
                 // 模式1: 破碎 -> 洗矿 -> 破碎 -> 离心
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyOreWasher(inputItems, crushedOreSet);
-                inputItems = applyMacerator(inputItems, oreSet, crushedOreSet, crushedPureOreSet);
-                inputItems = applyCentrifuge(inputItems, impureDustSet, pureDustSet);
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyOreWasherWithParallel(processedItems, totalParallel, crushedOreSet);
+                processedItems = applyMaceratorWithParallel(
+                    processedItems,
+                    totalParallel,
+                    oreSet,
+                    crushedOreSet,
+                    crushedPureOreSet);
+                processedItems = applyCentrifugeWithParallel(processedItems, totalParallel, impureDustSet, pureDustSet);
             }
             case 2 -> {
                 // 模式2: 破碎 -> 破碎 -> 离心
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyMacerator(
-                    inputItems,
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyMaceratorWithParallel(
+                    processedItems,
+                    totalParallel,
                     thermalCentrifugedSet,
                     oreSet,
                     crushedOreSet,
                     crushedPureOreSet);
-                inputItems = applyCentrifuge(inputItems, impureDustSet, pureDustSet);
+                processedItems = applyCentrifugeWithParallel(processedItems, totalParallel, impureDustSet, pureDustSet);
             }
             case 3 -> {
                 // 模式3: 破碎 -> 洗矿 -> 筛矿
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyOreWasher(inputItems, crushedOreSet);
-                inputItems = applySifter(inputItems, crushedPureOreSet);
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyOreWasherWithParallel(processedItems, totalParallel, crushedOreSet);
+                processedItems = applySifterWithParallel(processedItems, totalParallel, crushedPureOreSet);
             }
             case 4 -> {
                 // 模式4: 破碎 -> 化学洗 -> 破碎 -> 离心
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyChemicalBath(inputItems, crushedOreSet, crushedPureOreSet, inputFluids);
-                inputItems = applyMacerator(inputItems, crushedOreSet, crushedPureOreSet);
-                inputItems = applyCentrifuge(inputItems, impureDustSet, pureDustSet);
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyChemicalBathWithParallel(
+                    processedItems,
+                    totalParallel,
+                    crushedOreSet,
+                    crushedPureOreSet,
+                    inputFluids);
+                processedItems = applyMaceratorWithParallel(
+                    processedItems,
+                    totalParallel,
+                    crushedOreSet,
+                    crushedPureOreSet);
+                processedItems = applyCentrifugeWithParallel(processedItems, totalParallel, impureDustSet, pureDustSet);
             }
             case 5 -> {
                 // 模式5: 破碎 -> 化学洗 -> 热离 -> 破碎
-                inputItems = applyMacerator(inputItems, oreSet);
-                inputItems = applyChemicalBath(inputItems, crushedOreSet, crushedPureOreSet, inputFluids);
-                inputItems = applyThermalCentrifuge(inputItems, crushedPureOreSet, crushedOreSet);
-                inputItems = applyMacerator(
-                    inputItems,
+                processedItems = applyMaceratorWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyChemicalBathWithParallel(
+                    processedItems,
+                    totalParallel,
+                    crushedOreSet,
+                    crushedPureOreSet,
+                    inputFluids);
+                processedItems = applyThermalCentrifugeWithParallel(
+                    processedItems,
+                    totalParallel,
+                    crushedPureOreSet,
+                    crushedOreSet);
+                processedItems = applyMaceratorWithParallel(
+                    processedItems,
+                    totalParallel,
                     thermalCentrifugedSet,
                     oreSet,
                     crushedOreSet,
@@ -566,20 +646,54 @@ public abstract class ChaosOreFactoryRecipes {
             }
             case 6 -> {
                 // 模式6: 锻压 -> 锻压 -> 简单洗
-                inputItems = applyHammer(inputItems, oreSet);
-                inputItems = applyHammer(inputItems, thermalCentrifugedSet, oreSet, crushedOreSet, crushedPureOreSet);
-                inputItems = applySimpleWasher(inputItems, impureDustSet, pureDustSet);
+                processedItems = applyHammerWithParallel(processedItems, totalParallel, oreSet);
+                processedItems = applyHammerWithParallel(
+                    processedItems,
+                    totalParallel,
+                    thermalCentrifugedSet,
+                    oreSet,
+                    crushedOreSet,
+                    crushedPureOreSet);
+                processedItems = applySimpleWasherWithParallel(
+                    processedItems,
+                    totalParallel,
+                    impureDustSet,
+                    pureDustSet);
             }
             default -> {
-                // 无效模式，返回原物品
-                return inputItems;
+                // 无效模式，返回原物品（但需要考虑并行数）
+                return applyParallelToOutputs(inputItems, totalParallel);
             }
         }
 
         // 应用弃石逻辑和压缩相同物品
-        inputItems = compressAndVoid(inputItems, voidStone);
+        processedItems = compressAndVoid(processedItems, voidStone);
 
-        return inputItems;
+        return processedItems;
+    }
+
+    /**
+     * 将输出物品按并行数翻倍，并确保不超过最大堆栈大小
+     */
+    private static ItemStack[] applyParallelToOutputs(ItemStack[] items, int parallel) {
+        if (items == null || items.length == 0) {
+            return new ItemStack[0];
+        }
+
+        List<ItemStack> result = new ArrayList<>();
+        for (ItemStack stack : items) {
+            if (stack == null) continue;
+
+            // 计算翻倍后的数量
+            long totalAmount = (long) stack.stackSize * parallel;
+
+            // 创建新堆栈
+            ItemStack newStack = stack.copy();
+            newStack.stackSize = (int) totalAmount;
+            result.add(newStack);
+        }
+
+        return result.toArray(new ItemStack[0]);
     }
 
     // ====================== 单个处理单元方法 ======================
@@ -588,23 +702,28 @@ public abstract class ChaosOreFactoryRecipes {
      * 应用破碎机处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applyMacerator(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyRecipeProcessing(items, RecipeMaps.maceratorRecipes, validTypes);
+    public static ItemStack[] applyMaceratorWithParallel(ItemStack[] items, int parallel,
+        IntOpenHashSet... validTypes) {
+        return applyRecipeProcessingWithParallel(items, parallel, RecipeMaps.maceratorRecipes, validTypes);
     }
 
     /**
      * 应用洗矿机处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applyOreWasher(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyFluidRecipeProcessing(
+    public static ItemStack[] applyOreWasherWithParallel(ItemStack[] items, int parallel,
+        IntOpenHashSet... validTypes) {
+        return applyFluidRecipeProcessingWithParallel(
             items,
+            parallel,
             RecipeMaps.oreWasherRecipes,
             getDistilledWater(Integer.MAX_VALUE),
             validTypes);
@@ -614,59 +733,56 @@ public abstract class ChaosOreFactoryRecipes {
      * 应用热力离心机处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applyThermalCentrifuge(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyRecipeProcessing(items, RecipeMaps.thermalCentrifugeRecipes, validTypes);
+    public static ItemStack[] applyThermalCentrifugeWithParallel(ItemStack[] items, int parallel,
+        IntOpenHashSet... validTypes) {
+        return applyRecipeProcessingWithParallel(items, parallel, RecipeMaps.thermalCentrifugeRecipes, validTypes);
     }
 
     /**
      * 应用离心机处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applyCentrifuge(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyRecipeProcessing(items, RecipeMaps.centrifugeRecipes, validTypes);
+    public static ItemStack[] applyCentrifugeWithParallel(ItemStack[] items, int parallel,
+        IntOpenHashSet... validTypes) {
+        return applyRecipeProcessingWithParallel(items, parallel, RecipeMaps.centrifugeRecipes, validTypes);
     }
 
     /**
      * 应用筛矿机处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applySifter(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyRecipeProcessing(items, RecipeMaps.sifterRecipes, validTypes);
+    public static ItemStack[] applySifterWithParallel(ItemStack[] items, int parallel, IntOpenHashSet... validTypes) {
+        return applyRecipeProcessingWithParallel(items, parallel, RecipeMaps.sifterRecipes, validTypes);
     }
 
     /**
      * 应用化学洗涤处理
      *
      * @param items       输入物品
-     * @param validTypes  有效的物品类型集合
+     * @param validType1  第一种有效物品类型集合
+     * @param validType2  第二种有效物品类型集合
      * @param inputFluids 输入流体列表
      * @return 处理后的物品
      */
-    public static ItemStack[] applyChemicalBath(ItemStack[] items, IntOpenHashSet[] validTypes,
-        List<FluidStack> inputFluids) {
-        // 转换参数格式
-        if (validTypes == null || validTypes.length == 0) {
-            return items;
-        }
-
-        IntOpenHashSet validType1 = validTypes[0];
-        IntOpenHashSet validType2 = validTypes.length > 1 ? validTypes[1] : null;
-
-        return applyChemicalBath(items, validType1, validType2, inputFluids);
+    public static ItemStack[] applyChemicalBathWithParallel(ItemStack[] items, int parallel, IntOpenHashSet validType1,
+        IntOpenHashSet validType2, List<FluidStack> inputFluids) {
+        // 这里简化处理，实际需要更复杂的并行逻辑
+        ItemStack[] processed = applyChemicalBath(items, validType1, validType2, inputFluids);
+        return applyParallelToOutputs(processed, parallel);
     }
 
-    /**
-     * 应用化学洗涤处理（重载）
-     */
     public static ItemStack[] applyChemicalBath(ItemStack[] items, IntOpenHashSet validType1, IntOpenHashSet validType2,
         List<FluidStack> inputFluids) {
         List<ItemStack> result = new ArrayList<>();
@@ -696,7 +812,7 @@ public abstract class ChaosOreFactoryRecipes {
                     FluidStack requiredFluid = recipe.getRepresentativeFluidInput(0)
                         .copy();
                     // 这里简化处理，实际实现需要检查可用流体
-                    result.addAll(getRecipeOutputs(recipe, stack.stackSize));
+                    result.addAll(getRecipeOutputsWithLimit(recipe, stack.stackSize));
                 } else {
                     result.add(stack);
                 }
@@ -712,25 +828,28 @@ public abstract class ChaosOreFactoryRecipes {
      * 应用锻压处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applyHammer(ItemStack[] items, IntOpenHashSet... validTypes) {
-        return applyRecipeProcessing(items, RecipeMaps.hammerRecipes, validTypes);
+    public static ItemStack[] applyHammerWithParallel(ItemStack[] items, int parallel, IntOpenHashSet... validTypes) {
+        return applyRecipeProcessingWithParallel(items, parallel, RecipeMaps.hammerRecipes, validTypes);
     }
 
     /**
      * 应用简单洗涤处理
      *
      * @param items      输入物品
+     * @param parallel   并行数
      * @param validTypes 有效的物品类型集合
      * @return 处理后的物品
      */
-    public static ItemStack[] applySimpleWasher(ItemStack[] items, IntOpenHashSet... validTypes) {
-        // 简单洗涤需要水
+    public static ItemStack[] applySimpleWasherWithParallel(ItemStack[] items, int parallel,
+        IntOpenHashSet... validTypes) {
         FluidStack water = Materials.Water.getFluid(100);
-        return applyFluidRecipeProcessing(
+        return applyFluidRecipeProcessingWithParallel(
             items,
+            parallel,
             gtPlusPlus.api.recipe.GTPPRecipeMaps.simpleWasherRecipes,
             water,
             validTypes);
@@ -741,42 +860,76 @@ public abstract class ChaosOreFactoryRecipes {
     /**
      * 应用配方处理（通用）
      */
-    private static ItemStack[] applyRecipeProcessing(ItemStack[] items, gregtech.api.recipe.RecipeMap<?> recipeMap,
-        IntOpenHashSet... validTypes) {
+    private static ItemStack[] applyRecipeProcessingWithParallel(ItemStack[] items, int parallel,
+        gregtech.api.recipe.RecipeMap<?> recipeMap, IntOpenHashSet... validTypes) {
         List<ItemStack> result = new ArrayList<>();
 
         if (items == null) return new ItemStack[0];
+
+        // 计算总物品数量
+        int totalItems = 0;
+        for (ItemStack stack : items) {
+            if (stack != null) totalItems += stack.stackSize;
+        }
+
+        if (totalItems == 0) return new ItemStack[0];
 
         for (ItemStack stack : items) {
             if (stack == null) continue;
 
             int itemId = GTUtility.stackToInt(stack);
             if (isInAnySet(itemId, validTypes)) {
+                // 查找配方
                 GTRecipe recipe = recipeMap.findRecipeQuery()
                     .items(stack)
                     .find();
 
                 if (recipe != null) {
-                    result.addAll(getRecipeOutputs(recipe, stack.stackSize));
+                    // 计算该物品堆的并行权重
+                    double weight = (double) stack.stackSize / totalItems;
+                    int itemParallel = (int) Math.round(parallel * weight);
+
+                    // 应用配方并乘以并行数，考虑堆栈大小限制
+                    List<ItemStack> outputs = getRecipeOutputsWithLimit(recipe, itemParallel);
+                    result.addAll(outputs);
                 } else {
-                    result.add(stack);
+                    // 没有配方，直接保留物品但乘以并行权重
+                    double weight = (double) stack.stackSize / totalItems;
+                    int itemParallel = (int) Math.round(parallel * weight);
+                    if (itemParallel > 0) {
+                        ItemStack newStack = stack.copy();
+                        newStack.stackSize = itemParallel;
+                        result.add(newStack);
+                    }
                 }
             } else {
-                result.add(stack);
+                // 不属于有效类型，直接保留物品但乘以并行权重
+                double weight = (double) stack.stackSize / totalItems;
+                int itemParallel = (int) Math.round(parallel * weight);
+                if (itemParallel > 0) {
+                    ItemStack newStack = stack.copy();
+                    newStack.stackSize = itemParallel;
+                    result.add(newStack);
+                }
             }
         }
 
         return result.toArray(new ItemStack[0]);
     }
 
-    /**
-     * 应用需要流体的配方处理
-     */
-    private static ItemStack[] applyFluidRecipeProcessing(ItemStack[] items, gregtech.api.recipe.RecipeMap<?> recipeMap,
-        FluidStack requiredFluid, IntOpenHashSet... validTypes) {
+    private static ItemStack[] applyFluidRecipeProcessingWithParallel(ItemStack[] items, int parallel,
+        gregtech.api.recipe.RecipeMap<?> recipeMap, FluidStack requiredFluid, IntOpenHashSet... validTypes) {
         List<ItemStack> result = new ArrayList<>();
 
         if (items == null) return new ItemStack[0];
+
+        // 计算总物品数量
+        int totalItems = 0;
+        for (ItemStack stack : items) {
+            if (stack != null) totalItems += stack.stackSize;
+        }
+
+        if (totalItems == 0) return new ItemStack[0];
 
         for (ItemStack stack : items) {
             if (stack == null) continue;
@@ -789,12 +942,32 @@ public abstract class ChaosOreFactoryRecipes {
                     .find();
 
                 if (recipe != null) {
-                    result.addAll(getRecipeOutputs(recipe, stack.stackSize));
+                    // 计算该物品堆的并行权重
+                    double weight = (double) stack.stackSize / totalItems;
+                    int itemParallel = (int) Math.round(parallel * weight);
+
+                    // 应用配方并乘以并行数，考虑堆栈大小限制
+                    List<ItemStack> outputs = getRecipeOutputsWithLimit(recipe, itemParallel);
+                    result.addAll(outputs);
                 } else {
-                    result.add(stack);
+                    // 没有配方，直接保留物品但乘以并行权重
+                    double weight = (double) stack.stackSize / totalItems;
+                    int itemParallel = (int) Math.round(parallel * weight);
+                    if (itemParallel > 0) {
+                        ItemStack newStack = stack.copy();
+                        newStack.stackSize = itemParallel;
+                        result.add(newStack);
+                    }
                 }
             } else {
-                result.add(stack);
+                // 不属于有效类型，直接保留物品但乘以并行权重
+                double weight = (double) stack.stackSize / totalItems;
+                int itemParallel = (int) Math.round(parallel * weight);
+                if (itemParallel > 0) {
+                    ItemStack newStack = stack.copy();
+                    newStack.stackSize = itemParallel;
+                    result.add(newStack);
+                }
             }
         }
 
@@ -816,9 +989,9 @@ public abstract class ChaosOreFactoryRecipes {
     }
 
     /**
-     * 获取配方输出（考虑概率）
+     * 获取配方输出（考虑概率），并确保不超过最大堆栈大小
      */
-    private static List<ItemStack> getRecipeOutputs(GTRecipe recipe, int multiplier) {
+    private static List<ItemStack> getRecipeOutputsWithLimit(GTRecipe recipe, int multiplier) {
         List<ItemStack> outputs = new ArrayList<>();
 
         if (recipe == null || recipe.mOutputs == null) return outputs;
@@ -830,7 +1003,10 @@ public abstract class ChaosOreFactoryRecipes {
             int chance = recipe.getOutputChance(i);
             if (chance == 10000) {
                 // 100%概率，直接相乘
-                outputs.add(copyAmountUnsafe(multiplier * output.stackSize, output));
+                int totalAmount = multiplier * output.stackSize;
+                ItemStack newStack = output.copy();
+                newStack.stackSize = totalAmount;
+                outputs.add(newStack);
             } else {
                 // 概率输出，使用正态分布
                 double mean = multiplier * (chance / 10000.0);
@@ -838,14 +1014,15 @@ public abstract class ChaosOreFactoryRecipes {
                 Random random = new Random();
                 int amount = (int) Math.ceil(Math.sqrt(variance) * random.nextGaussian() + mean);
                 if (amount > 0) {
-                    outputs.add(copyAmountUnsafe(amount * output.stackSize, output));
+                    int totalAmount = amount * output.stackSize;
+                    ItemStack newStack = output.copy();
+                    newStack.stackSize = totalAmount;
+                    outputs.add(newStack);
                 }
             }
         }
 
-        return outputs.stream()
-            .filter(stack -> stack != null && stack.stackSize > 0)
-            .collect(Collectors.toList());
+        return outputs;
     }
 
     /**
@@ -872,16 +1049,16 @@ public abstract class ChaosOreFactoryRecipes {
             }
         }
 
-        ItemStack[] result = new ItemStack[compressedMap.size()];
-        int index = 0;
+        List<ItemStack> resultList = new ArrayList<>();
 
         for (Integer itemId : compressedMap.keySet()) {
             ItemStack baseStack = GTUtility.intToStack(itemId);
-            result[index] = copyAmountUnsafe(compressedMap.get(itemId), baseStack);
-            index++;
+            int totalAmount = compressedMap.get(itemId);
+            ItemStack stack = copyAmountUnsafe(totalAmount, baseStack);
+            resultList.add(stack);
         }
 
-        return result;
+        return resultList.toArray(new ItemStack[0]);
     }
 
     /**
@@ -896,7 +1073,7 @@ public abstract class ChaosOreFactoryRecipes {
 
     /**
      * 根据处理模式获取处理时间
-     * 
+     *
      * @param mode     处理模式 (0-6)
      * @param tickTime 基础时间单位
      * @return 该模式下的处理时间
@@ -909,7 +1086,7 @@ public abstract class ChaosOreFactoryRecipes {
             case 3 -> 20 * tickTime; // 模式3: 20秒
             case 4 -> 17 * tickTime; // 模式4: 17秒
             case 5 -> 32 * tickTime; // 模式5: 32秒
-            case 6 -> 1 * tickTime; // 模式6: 1秒
+            case 6 -> tickTime; // 模式6: 1秒
             default -> 1000000000; // 默认: 极大值（错误模式）
         };
     }
@@ -927,6 +1104,7 @@ public abstract class ChaosOreFactoryRecipes {
         config.lubricantPerOre = DEFAULT_LUBRICANT_PER_ORE;
         config.distilledWaterPerOre = DEFAULT_DISTILLED_WATER_PER_ORE;
         config.maxParallel = DEFAULT_MAX_PARALLEL;
+        config.enableOverclocking = true;
         return config;
     }
 
@@ -950,22 +1128,4 @@ public abstract class ChaosOreFactoryRecipes {
         return description;
     }
 
-    /**
-     * 获取模式详细描述（带时间信息）
-     */
-    public static String getModeDetailedDescription(int mode) {
-        String modeName = switch (mode) {
-            case 0 -> "标准处理";
-            case 1 -> "快速离心";
-            case 2 -> "双重破碎离心";
-            case 3 -> "筛矿处理";
-            case 4 -> "化学洗涤离心";
-            case 5 -> "化学热离";
-            case 6 -> "锻压洗涤";
-            default -> "未知模式";
-        };
-
-        int timeSeconds = getProcessingTime(mode, 1) / 20; // 转换为秒
-        return String.format("%s (%d秒)", modeName, timeSeconds);
-    }
 }

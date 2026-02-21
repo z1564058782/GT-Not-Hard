@@ -32,9 +32,7 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
-import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes_Comb;
-import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes_Food;
-import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes_TreeGrowth;
+import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Cable;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Hatch;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Misc;
@@ -43,41 +41,13 @@ import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBl
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_3;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_4;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_Storage;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T0;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T1;
+import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T2;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T3;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T4;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T5;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T6;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T7;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T8;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T9;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T0;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T1;
+import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T10;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T2;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T3;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T4;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T5;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T6;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T7;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T8;
-import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T9;
 import Recipes.SingularityRecipes_VoidGem.SingularityGemRecipes;
-import Recipes.SingularityRecipes_VoidIngot.SingularityIngotRecipes_T10;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T0;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T1;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T10;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T2;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T3;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T4;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T5;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T6;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T7;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T8;
-import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes_T9;
+import Recipes.SingularityRecipes_VoidIngot.SingularityIngotRecipes;
+import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
@@ -319,17 +289,17 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             }
 
             ItemStack[] OreRecipes = switch (dim) {
-                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityOreRecipes_T0.VoidOreRecipes_T0.get(dim);
-                case "Mo" -> SingularityOreRecipes_T1.VoidOreRecipes_T1.get(dim);
-                case "De", "Ma", "Ph" -> SingularityOreRecipes_T2.VoidOreRecipes_T2.get(dim);
-                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityOreRecipes_T3.VoidOreRecipes_T3.get(dim);
-                case "Io", "Me", "Ve" -> SingularityOreRecipes_T4.VoidOreRecipes_T4.get(dim);
-                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityOreRecipes_T5.VoidOreRecipes_T5.get(dim);
-                case "Pr", "Tr" -> SingularityOreRecipes_T6.VoidOreRecipes_T6.get(dim);
-                case "Ha", "KB", "MM", "Pl" -> SingularityOreRecipes_T7.VoidOreRecipes_T7.get(dim);
-                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityOreRecipes_T8.VoidOreRecipes_T8.get(dim);
-                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityOreRecipes_T9.VoidOreRecipes_T9.get(dim);
-                case "DD" -> SingularityOreRecipes_T10.VoidOreRecipes_T10.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityOreRecipes.VoidOreRecipes_T0.get(dim);
+                case "Mo" -> SingularityOreRecipes.VoidOreRecipes_T1.get(dim);
+                case "De", "Ma", "Ph" -> SingularityOreRecipes.VoidOreRecipes_T2.get(dim);
+                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityOreRecipes.VoidOreRecipes_T3.get(dim);
+                case "Io", "Me", "Ve" -> SingularityOreRecipes.VoidOreRecipes_T4.get(dim);
+                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityOreRecipes.VoidOreRecipes_T5.get(dim);
+                case "Pr", "Tr" -> SingularityOreRecipes.VoidOreRecipes_T6.get(dim);
+                case "Ha", "KB", "MM", "Pl" -> SingularityOreRecipes.VoidOreRecipes_T7.get(dim);
+                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityOreRecipes.VoidOreRecipes_T8.get(dim);
+                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityOreRecipes.VoidOreRecipes_T9.get(dim);
+                case "DD" -> SingularityOreRecipes.VoidOreRecipes_T10.get(dim);
                 default -> null;
             };
 
@@ -346,14 +316,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack oreRecipe : OreRecipes) {
-                    System.out.println(oreRecipe.getDisplayName());
-                    oreRecipe.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(oreRecipe);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack oreRecipe : OreRecipes) {
+                // // System.out.println(oreRecipe.getDisplayName());
+                // oreRecipe.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(oreRecipe);
+                // }
+                // }
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
@@ -365,7 +335,20 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 mLastDimensionOverride = dim;
             }
 
-            ItemStack[] GemRecipes = SingularityGemRecipes.VoidGemRecipes.get(dim);
+            ItemStack[] GemRecipes = switch (dim) {
+                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityGemRecipes.VoidGemRecipes_T0.get(dim);
+                case "Mo" -> SingularityGemRecipes.VoidGemRecipes_T1.get(dim);
+                case "De", "Ma", "Ph" -> SingularityGemRecipes.VoidGemRecipes_T2.get(dim);
+                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityGemRecipes.VoidGemRecipes_T3.get(dim);
+                case "Io", "Me", "Ve" -> SingularityGemRecipes.VoidGemRecipes_T4.get(dim);
+                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityGemRecipes.VoidGemRecipes_T5.get(dim);
+                case "Pr", "Tr" -> SingularityGemRecipes.VoidGemRecipes_T6.get(dim);
+                case "Ha", "KB", "MM", "Pl" -> SingularityGemRecipes.VoidGemRecipes_T7.get(dim);
+                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityGemRecipes.VoidGemRecipes_T8.get(dim);
+                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityGemRecipes.VoidGemRecipes_T9.get(dim);
+                case "DD" -> SingularityGemRecipes.VoidGemRecipes_T10.get(dim);
+                default -> null;
+            };
 
             if (GemRecipes != null) {
                 // 随机输出
@@ -379,14 +362,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack gemRecipe : GemRecipes) {
-                    // System.out.println(gemRecipe.getItem());
-                    gemRecipe.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(gemRecipe);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack gemRecipe : GemRecipes) {
+                // // System.out.println(gemRecipe.getItem());
+                // gemRecipe.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(gemRecipe);
+                // }
+                // }
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
@@ -399,16 +382,16 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             }
 
             ItemStack[] DustRecipes = switch (dim) {
-                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityDustRecipes_T0.VoidDustRecipes_T0.get(dim);
-                case "Mo" -> SingularityDustRecipes_T1.VoidDustRecipes_T1.get(dim);
-                case "De", "Ma", "Ph" -> SingularityDustRecipes_T2.VoidDustRecipes_T2.get(dim);
-                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityDustRecipes_T3.VoidDustRecipes_T3.get(dim);
-                case "Io", "Me", "Ve" -> SingularityDustRecipes_T4.VoidDustRecipes_T4.get(dim);
-                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityDustRecipes_T5.VoidDustRecipes_T5.get(dim);
-                case "Pr", "Tr" -> SingularityDustRecipes_T6.VoidDustRecipes_T6.get(dim);
-                case "Ha", "KB", "MM", "Pl" -> SingularityDustRecipes_T7.VoidDustRecipes_T7.get(dim);
-                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityDustRecipes_T8.VoidDustRecipes_T8.get(dim);
-                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityDustRecipes_T9.VoidDustRecipes_T9.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityDustRecipes.VoidDustRecipes_T0.get(dim);
+                case "Mo" -> SingularityDustRecipes.VoidDustRecipes_T1.get(dim);
+                case "De", "Ma", "Ph" -> SingularityDustRecipes.VoidDustRecipes_T2.get(dim);
+                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityDustRecipes.VoidDustRecipes_T3.get(dim);
+                case "Io", "Me", "Ve" -> SingularityDustRecipes.VoidDustRecipes_T4.get(dim);
+                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityDustRecipes.VoidDustRecipes_T5.get(dim);
+                case "Pr", "Tr" -> SingularityDustRecipes.VoidDustRecipes_T6.get(dim);
+                case "Ha", "KB", "MM", "Pl" -> SingularityDustRecipes.VoidDustRecipes_T7.get(dim);
+                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityDustRecipes.VoidDustRecipes_T8.get(dim);
+                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityDustRecipes.VoidDustRecipes_T9.get(dim);
                 case "DD" -> SingularityDustRecipes_T10.VoidDustRecipes_T10.get(dim);
                 default -> null;
             };
@@ -425,14 +408,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack dustRecipe : DustRecipes) {
-                    // System.out.println(dustRecipe.getItem());
-                    dustRecipe.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(dustRecipe);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack dustRecipe : DustRecipes) {
+                // // System.out.println(dustRecipe.getItem());
+                // dustRecipe.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(dustRecipe);
+                // }
+                // }
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
@@ -445,16 +428,16 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             }
 
             FluidStack[] FluidRecipes = switch (dim) {
-                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityFluidRecipes_T0.VoidFluidRecipes_T0.get(dim);
-                case "Mo" -> SingularityFluidRecipes_T1.VoidFluidRecipes_T1.get(dim);
-                case "De", "Ma", "Ph" -> SingularityFluidRecipes_T2.VoidFluidRecipes_T2.get(dim);
-                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityFluidRecipes_T3.VoidFluidRecipes_T3.get(dim);
-                case "Io", "Me", "Ve" -> SingularityFluidRecipes_T4.VoidFluidRecipes_T4.get(dim);
-                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityFluidRecipes_T5.VoidFluidRecipes_T5.get(dim);
-                case "Pr", "Tr" -> SingularityFluidRecipes_T6.VoidFluidRecipes_T6.get(dim);
-                case "Ha", "KB", "MM", "Pl" -> SingularityFluidRecipes_T7.VoidFluidRecipes_T7.get(dim);
-                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityFluidRecipes_T8.VoidFluidRecipes_T8.get(dim);
-                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityFluidRecipes_T9.VoidFluidRecipes_T9.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityFluidRecipes.VoidFluidRecipes_T0.get(dim);
+                case "Mo" -> SingularityFluidRecipes.VoidFluidRecipes_T1.get(dim);
+                case "De", "Ma", "Ph" -> SingularityFluidRecipes.VoidFluidRecipes_T2.get(dim);
+                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityFluidRecipes.VoidFluidRecipes_T3.get(dim);
+                case "Io", "Me", "Ve" -> SingularityFluidRecipes.VoidFluidRecipes_T4.get(dim);
+                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityFluidRecipes.VoidFluidRecipes_T5.get(dim);
+                case "Pr", "Tr" -> SingularityFluidRecipes.VoidFluidRecipes_T6.get(dim);
+                case "Ha", "KB", "MM", "Pl" -> SingularityFluidRecipes.VoidFluidRecipes_T7.get(dim);
+                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityFluidRecipes.VoidFluidRecipes_T8.get(dim);
+                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityFluidRecipes.VoidFluidRecipes_T9.get(dim);
                 case "DD" -> SingularityFluidRecipes_T10.VoidFluidRecipes_T10.get(dim);
                 default -> null;
             };
@@ -472,14 +455,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (FluidStack fluidRecipes : FluidRecipes) {
-                    // System.out.println(fluidRecipes.getLocalizedName());
-                    fluidRecipes.amount = getMaxParallel();
-                    for (int mStack = 0; mStack < 1000; mStack++) {
-                        addOutput(fluidRecipes);
-                    }
-                }
+                // // Debug全部输出
+                // for (FluidStack fluidRecipes : FluidRecipes) {
+                // // System.out.println(fluidRecipes.getLocalizedName());
+                // fluidRecipes.amount = getMaxParallel();
+                // for (int mStack = 0; mStack < 1000; mStack++) {
+                // addOutput(fluidRecipes);
+                // }
+                // }
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
@@ -489,18 +472,17 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             }
 
             ItemStack[] IngotRecipes = switch (dim) {
-                // case "Ow", "Ne", "TF", "ED", "EA" -> SingularityIngotRecipes_T10.VoidIngotRecipes_T10.get(dim);
-
-                case "Mo" -> SingularityDustRecipes_T1.VoidDustRecipes_T1.get(dim);
-                case "De", "Ma", "Ph" -> SingularityDustRecipes_T2.VoidDustRecipes_T2.get(dim);
-                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityDustRecipes_T3.VoidDustRecipes_T3.get(dim);
-                case "Io", "Me", "Ve" -> SingularityDustRecipes_T4.VoidDustRecipes_T4.get(dim);
-                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityDustRecipes_T5.VoidDustRecipes_T5.get(dim);
-                case "Pr", "Tr" -> SingularityDustRecipes_T6.VoidDustRecipes_T6.get(dim);
-                case "Ha", "KB", "MM", "Pl" -> SingularityDustRecipes_T7.VoidDustRecipes_T7.get(dim);
-                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityDustRecipes_T8.VoidDustRecipes_T8.get(dim);
-                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityDustRecipes_T9.VoidDustRecipes_T9.get(dim);
-                case "DD" -> SingularityIngotRecipes_T10.VoidIngotRecipes_T10.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityIngotRecipes.VoidIngotRecipes_T0.get(dim);
+                case "Mo" -> SingularityIngotRecipes.VoidIngotRecipes_T1.get(dim);
+                case "De", "Ma", "Ph" -> SingularityIngotRecipes.VoidIngotRecipes_T2.get(dim);
+                case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityIngotRecipes.VoidIngotRecipes_T3.get(dim);
+                case "Io", "Me", "Ve" -> SingularityIngotRecipes.VoidIngotRecipes_T4.get(dim);
+                case "En", "Mi", "Ob", "Ti", "Ra" -> SingularityIngotRecipes.VoidIngotRecipes_T5.get(dim);
+                case "Pr", "Tr" -> SingularityIngotRecipes.VoidIngotRecipes_T6.get(dim);
+                case "Ha", "KB", "MM", "Pl" -> SingularityIngotRecipes.VoidIngotRecipes_T7.get(dim);
+                case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityIngotRecipes.VoidIngotRecipes_T8.get(dim);
+                case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityIngotRecipes.VoidIngotRecipes_T9.get(dim);
+                case "DD" -> SingularityIngotRecipes.VoidIngotRecipes_T10.get(dim);
 
                 default -> null;
             };
@@ -518,18 +500,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                /*
-                 * // Debug全部输出
-                 * for (ItemStack ingotRecipe : IngotRecipes) {
-                 * ItemStack recipeIngot = ingotRecipe
-                 * .copy();
-                 * System.out.println(recipeIngot.getDisplayName());
-                 * recipeIngot.stackSize = getMaxParallel();
-                 * for (int mStack = 0; mStack < 128; mStack++) {
-                 * addOutput(recipeIngot);
-                 * }
-                 * }
-                 */
+                // // Debug全部输出
+                // for (ItemStack ingotRecipes : IngotRecipes) {
+                // // System.out.println(ecosystemRecipes.getDisplayName());
+                // ingotRecipes.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(ingotRecipes);
+                // }
+                // }
             }
             return CheckRecipeResultRegistry.SUCCESSFUL;
         }
@@ -537,15 +515,20 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         // Singularity of Ecosystem
         else if (slot != null && mode == 6) {
             int machineID = getControllerSlot().getItemDamage();
+
             ItemStack[] EcosystemRecipes = switch (machineID) {
+                // "Algae Farm" of AlgaeFarm
+                case 997 -> SingularityEcosystemRecipes.EcosystemRecipes_AlgaeFarm.get(machineID);
+
                 // "Industrial Apiary" of Comb
-                case 9399 -> SingularityEcosystemRecipes_Comb.EcosystemRecipes_Comb.get(machineID);
+                case 9399 -> SingularityEcosystemRecipes.EcosystemRecipes_Comb.get(machineID);
 
                 // "Basic Microwave" of Food
-                case 311 -> SingularityEcosystemRecipes_Food.EcosystemRecipes_Food.get(machineID);
+                case 311 -> SingularityEcosystemRecipes.EcosystemRecipes_Food.get(machineID);
 
                 // "Tree Growth Simulator"
-                case 836 -> SingularityEcosystemRecipes_TreeGrowth.EcosystemRecipes_TreeGrowth.get(machineID);
+                case 836 -> SingularityEcosystemRecipes.EcosystemRecipes_TreeGrowth.get(machineID);
+
                 default -> null;
             };
 
@@ -562,22 +545,22 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack ecosystemRecipes : EcosystemRecipes) {
-                    System.out.println(ecosystemRecipes.getDisplayName());
-                    ecosystemRecipes.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(ecosystemRecipes);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack ecosystemRecipes : EcosystemRecipes) {
+                // // System.out.println(ecosystemRecipes.getDisplayName());
+                // ecosystemRecipes.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(ecosystemRecipes);
+                // }
+                // }
             }
             return CheckRecipeResultRegistry.SUCCESSFUL;
         }
 
         else if (slot != null && mode == 7) {
             String key = slot.getUnlocalizedName();
-            System.out.println("DisplayName = " + slot.getDisplayName());
-            System.out.println("Key = " + key);
+            // System.out.println("DisplayName = " + slot.getDisplayName());
+            // System.out.println("Key = " + key);
             ItemStack[] ModItemRecipes = switch (key) {
                 // AdvancedSolarPanel - Advanced Solar Panel
                 case "blockAdvancedSolarPanel" -> convertListToArray(getCreativeItemsByMod("AdvancedSolarPanel"));
@@ -797,14 +780,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack modItemRecipes : ModItemRecipes) {
-                    // System.out.println(modItemRecipes.getDisplayName());
-                    modItemRecipes.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(modItemRecipes);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack modItemRecipes : ModItemRecipes) {
+                // // System.out.println(modItemRecipes.getDisplayName());
+                // modItemRecipes.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(modItemRecipes);
+                // }
+                // }
             }
             return CheckRecipeResultRegistry.SUCCESSFUL;
         }
@@ -1151,14 +1134,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     }
                 }
 
-                // Debug全部输出
-                for (ItemStack pachinkoRecipes : PachinkoRecipes) {
-                    System.out.println(pachinkoRecipes.getDisplayName());
-                    pachinkoRecipes.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 128; mStack++) {
-                        addOutput(pachinkoRecipes);
-                    }
-                }
+                // // Debug全部输出
+                // for (ItemStack pachinkoRecipes : PachinkoRecipes) {
+                // // System.out.println(pachinkoRecipes.getDisplayName());
+                // pachinkoRecipes.stackSize = getMaxParallel();
+                // for (int mStack = 0; mStack < 128; mStack++) {
+                // addOutput(pachinkoRecipes);
+                // }
+                // }
 
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }

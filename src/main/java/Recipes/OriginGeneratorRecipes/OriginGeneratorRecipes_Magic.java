@@ -20,7 +20,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.ItemFuelOfGeneratorFrontend;
+import util.RecipesFrontend.ItemFuelOfGeneratorFrontend;
 
 public class OriginGeneratorRecipes_Magic {
 

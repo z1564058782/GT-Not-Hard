@@ -12,7 +12,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.OneToManyFluidsFrontend;
+import util.RecipesFrontend.OneToManyFluidsFrontend_Large;
 
 public class FakeSingularityFluidRecipes_T4 {
 
@@ -21,7 +21,7 @@ public class FakeSingularityFluidRecipes_T4 {
         .maxIO(1, 0, 0, 135)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
-        .frontend(OneToManyFluidsFrontend::new)
+        .frontend(OneToManyFluidsFrontend_Large::new)
         .build();
 
     public static void addFakeVoidFluidRecipes_T4() {
