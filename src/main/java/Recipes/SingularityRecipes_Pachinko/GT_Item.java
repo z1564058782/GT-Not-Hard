@@ -4878,7 +4878,7 @@ public class GT_Item {
         // "Quadruple Input Hatch (LuV)"
         getModItem(GregTech.ID, "gt.blockmachines", 1L, 711),
         // "LuV Beamline Input Hatch"
-        getModItem(GregTech.ID, "gt.blockmachines", 1L, 10513),
+        getModItem(GregTech.ID, "gt.blockmachines", 1L, 10503),
         // "Output Hatch (LuV)"
         getModItem(GregTech.ID, "gt.blockmachines", 1L, 66),
         // "LuV Beamline Output Hatch"
