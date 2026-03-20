@@ -50,7 +50,6 @@ import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
-import gregtech.api.enums.Materials;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.IHatchElement;
 import gregtech.api.interfaces.ITexture;
@@ -582,47 +581,47 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
-            if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot()) || updateMode) {
-                if (updateMode) updateMode = false;
-                // controller slot has changed
-                lastControllerStack = getControllerSlot();
-                mLastRecipeMap = fetchRecipeMap();
-                setTierAndMult();
+        if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot()) || updateMode) {
+            if (updateMode) updateMode = false;
+            // controller slot has changed
+            lastControllerStack = getControllerSlot();
+            mLastRecipeMap = fetchRecipeMap();
+            setTierAndMult();
+        }
+        if (mLastRecipeMap == null) {
+            return SimpleCheckRecipeResult.ofFailure("no_machine");
+        }
+        if (mLockedToSingleRecipe && mSingleRecipeCheck != null) {
+            if (mSingleRecipeCheck.getRecipeMap() != mLastRecipeMap) {
+                return SimpleCheckRecipeResult.ofFailure("machine_mismatch");
             }
-            if (mLastRecipeMap == null) {
-                return SimpleCheckRecipeResult.ofFailure("no_machine");
-            }
-            if (mLockedToSingleRecipe && mSingleRecipeCheck != null) {
-                if (mSingleRecipeCheck.getRecipeMap() != mLastRecipeMap) {
-                    return SimpleCheckRecipeResult.ofFailure("machine_mismatch");
+        }
+
+        // 控制方块中机器数量大于8自动开启无线电网模式
+        wirelessMode = getControllerSlot().stackSize > 8;
+        if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
+            boolean succeeded = false;
+            CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
+
+            for (int i = 0; i < 64; i++) {
+                CheckRecipeResult result = wirelessModeProcessingLogic();
+                if (!result.wasSuccessful()) {
+                    finalResult = result;
+                    break;
                 }
+                succeeded = true;
             }
 
-            // 控制方块中机器数量大于8自动开启无线电网模式
-            wirelessMode = getControllerSlot().stackSize > 8;
-            if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
-                boolean succeeded = false;
-                CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
+            updateSlots();
+            if (!succeeded) return finalResult;
 
-                for (int i = 0; i < 64; i++) {
-                    CheckRecipeResult result = wirelessModeProcessingLogic();
-                    if (!result.wasSuccessful()) {
-                        finalResult = result;
-                        break;
-                    }
-                    succeeded = true;
-                }
+            mEfficiency = 10000;
+            mEfficiencyIncrease = 10000;
+            mMaxProgresstime = 1;
 
-                updateSlots();
-                if (!succeeded) return finalResult;
-
-                mEfficiency = 10000;
-                mEfficiencyIncrease = 10000;
-                mMaxProgresstime = 1;
-
-                return CheckRecipeResultRegistry.SUCCESSFUL;
-            }
-            return super.checkProcessing();
+            return CheckRecipeResultRegistry.SUCCESSFUL;
+        }
+        return super.checkProcessing();
     }
 
     @Override
