@@ -1,0 +1,331 @@
+Item Name,Item ID,Item meta,Has NBT,Display Name
+bartworks:gt.bwMetaGeneratedrawOre,11596,1,FALSE,Raw Bismutite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,2,FALSE,Raw Bismuthinite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,5,FALSE,Raw Fluor-Buergerite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,7,FALSE,Raw Chromo-Alumino-Povondraite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,8,FALSE,Raw Vanadio-Oxy-Dravite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,9,FALSE,Raw Olenite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,10,FALSE,Raw Arsenopyrite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,11,FALSE,Raw Ferberite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,12,FALSE,Raw Loellingite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,13,FALSE,Raw Roquesite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,14,FALSE,Raw Bornite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,15,FALSE,Raw Wittichenite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,16,FALSE,Raw Djurleite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,17,FALSE,Raw Huebnerite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,18,FALSE,Raw Thorianite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,19,FALSE,Raw Red Zircon Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,23,FALSE,Raw Fayalite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,24,FALSE,Raw Forsterite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,25,FALSE,Raw Hedenbergite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,26,FALSE,Raw Red Descloizite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,27,FALSE,Raw Orange Descloizite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,28,FALSE,Raw Green Fuchsite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,29,FALSE,Raw Red Fuchsite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,35,FALSE,Raw Prasiolite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,43,FALSE,Raw BArTiMaEuSNeK Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,47,FALSE,Raw Platinum Metallic Powder Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,53,FALSE,Raw Palladium Metallic Powder Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,60,FALSE,Raw Leach Residue Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,69,FALSE,Raw Rarest Metal Residue Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,70,FALSE,Raw Iridium Metal Residue Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,79,FALSE,Raw Crude Rhodium Metal Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,89,FALSE,Raw Tiberium Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,91,FALSE,Raw Fluorspar Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,93,FALSE,Raw Atheneite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,94,FALSE,Raw Temagamite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,95,FALSE,Raw Terlinguaite Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,10023,FALSE,Raw Orundum Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,10054,FALSE,Raw Naquadah Oxide Mixture Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,10067,FALSE,Raw Enriched-Naquadah Oxide Mixture Ore
+bartworks:gt.bwMetaGeneratedrawOre,11596,10072,FALSE,Raw Naquadria Oxide Mixture Ore
+gregtech:gt.metaitem.03,6955,5006,FALSE,Raw Lithium Ore
+gregtech:gt.metaitem.03,6955,5008,FALSE,Raw Beryllium Ore
+gregtech:gt.metaitem.03,6955,5018,FALSE,Raw Magnesium Ore
+gregtech:gt.metaitem.03,6955,5019,FALSE,Raw Aluminium Ore
+gregtech:gt.metaitem.03,6955,5020,FALSE,Raw Raw Silicon Ore
+gregtech:gt.metaitem.03,6955,5022,FALSE,Raw Sulfur Ore
+gregtech:gt.metaitem.03,6955,5027,FALSE,Raw Scandium Ore
+gregtech:gt.metaitem.03,6955,5028,FALSE,Raw Titanium Ore
+gregtech:gt.metaitem.03,6955,5029,FALSE,Raw Vanadium Ore
+gregtech:gt.metaitem.03,6955,5030,FALSE,Raw Chrome Ore
+gregtech:gt.metaitem.03,6955,5031,FALSE,Raw Manganese Ore
+gregtech:gt.metaitem.03,6955,5032,FALSE,Raw Iron Ore
+gregtech:gt.metaitem.03,6955,5033,FALSE,Raw Cobalt Ore
+gregtech:gt.metaitem.03,6955,5034,FALSE,Raw Nickel Ore
+gregtech:gt.metaitem.03,6955,5035,FALSE,Raw Copper Ore
+gregtech:gt.metaitem.03,6955,5036,FALSE,Raw Zinc Ore
+gregtech:gt.metaitem.03,6955,5037,FALSE,Raw Gallium Ore
+gregtech:gt.metaitem.03,6955,5039,FALSE,Raw Arsenic Ore
+gregtech:gt.metaitem.03,6955,5043,FALSE,Raw Rubidium Ore
+gregtech:gt.metaitem.03,6955,5044,FALSE,Raw Strontium Ore
+gregtech:gt.metaitem.03,6955,5045,FALSE,Raw Yttrium Ore
+gregtech:gt.metaitem.03,6955,5047,FALSE,Raw Niobium Ore
+gregtech:gt.metaitem.03,6955,5048,FALSE,Raw Molybdenum Ore
+gregtech:gt.metaitem.03,6955,5052,FALSE,Raw Palladium Ore
+gregtech:gt.metaitem.03,6955,5054,FALSE,Raw Silver Ore
+gregtech:gt.metaitem.03,6955,5055,FALSE,Raw Cadmium Ore
+gregtech:gt.metaitem.03,6955,5056,FALSE,Raw Indium Ore
+gregtech:gt.metaitem.03,6955,5057,FALSE,Raw Tin Ore
+gregtech:gt.metaitem.03,6955,5058,FALSE,Raw Antimony Ore
+gregtech:gt.metaitem.03,6955,5059,FALSE,Raw Tellurium Ore
+gregtech:gt.metaitem.03,6955,5062,FALSE,Raw Caesium Ore
+gregtech:gt.metaitem.03,6955,5063,FALSE,Raw Barium Ore
+gregtech:gt.metaitem.03,6955,5064,FALSE,Raw Lanthanum Ore
+gregtech:gt.metaitem.03,6955,5065,FALSE,Raw Cerium Ore
+gregtech:gt.metaitem.03,6955,5066,FALSE,Raw Praseodymium Ore
+gregtech:gt.metaitem.03,6955,5067,FALSE,Raw Neodymium Ore
+gregtech:gt.metaitem.03,6955,5068,FALSE,Raw Promethium Ore
+gregtech:gt.metaitem.03,6955,5069,FALSE,Raw Samarium Ore
+gregtech:gt.metaitem.03,6955,5070,FALSE,Raw Europium Ore
+gregtech:gt.metaitem.03,6955,5071,FALSE,Raw Gadolinium Ore
+gregtech:gt.metaitem.03,6955,5072,FALSE,Raw Terbium Ore
+gregtech:gt.metaitem.03,6955,5073,FALSE,Raw Dysprosium Ore
+gregtech:gt.metaitem.03,6955,5074,FALSE,Raw Holmium Ore
+gregtech:gt.metaitem.03,6955,5075,FALSE,Raw Erbium Ore
+gregtech:gt.metaitem.03,6955,5076,FALSE,Raw Thulium Ore
+gregtech:gt.metaitem.03,6955,5077,FALSE,Raw Ytterbium Ore
+gregtech:gt.metaitem.03,6955,5078,FALSE,Raw Lutetium Ore
+gregtech:gt.metaitem.03,6955,5080,FALSE,Raw Tantalum Ore
+gregtech:gt.metaitem.03,6955,5081,FALSE,Raw Tungsten Ore
+gregtech:gt.metaitem.03,6955,5083,FALSE,Raw Osmium Ore
+gregtech:gt.metaitem.03,6955,5084,FALSE,Raw Iridium Ore
+gregtech:gt.metaitem.03,6955,5085,FALSE,Raw Platinum Ore
+gregtech:gt.metaitem.03,6955,5086,FALSE,Raw Gold Ore
+gregtech:gt.metaitem.03,6955,5089,FALSE,Raw Lead Ore
+gregtech:gt.metaitem.03,6955,5090,FALSE,Raw Bismuth Ore
+gregtech:gt.metaitem.03,6955,5096,FALSE,Raw Thorium Ore
+gregtech:gt.metaitem.03,6955,5097,FALSE,Raw Uranium 235 Ore
+gregtech:gt.metaitem.03,6955,5098,FALSE,Raw Uranium 238 Ore
+gregtech:gt.metaitem.03,6955,5100,FALSE,Raw Plutonium 239 Ore
+gregtech:gt.metaitem.03,6955,5101,FALSE,Raw Plutonium 241 Ore
+gregtech:gt.metaitem.03,6955,5103,FALSE,Raw Americium Ore
+gregtech:gt.metaitem.03,6955,5110,FALSE,Raw Raw Tengam Ore
+gregtech:gt.metaitem.03,6955,5129,FALSE,Raw Neutronium Ore
+gregtech:gt.metaitem.03,6955,5303,FALSE,Raw Electrum Ore
+gregtech:gt.metaitem.03,6955,5307,FALSE,Raw Pig Iron Ore
+gregtech:gt.metaitem.03,6955,5319,FALSE,Raw Adamantium Ore
+gregtech:gt.metaitem.03,6955,5320,FALSE,Raw Fluxed Electrum Ore
+gregtech:gt.metaitem.03,6955,5323,FALSE,Raw Infused Gold Ore
+gregtech:gt.metaitem.03,6955,5324,FALSE,Raw Naquadah Ore
+gregtech:gt.metaitem.03,6955,5326,FALSE,Raw Enriched Naquadah Ore
+gregtech:gt.metaitem.03,6955,5327,FALSE,Raw Naquadria Ore
+gregtech:gt.metaitem.03,6955,5329,FALSE,Raw Tritanium Ore
+gregtech:gt.metaitem.03,6955,5331,FALSE,Raw Mithril Ore
+gregtech:gt.metaitem.03,6955,5336,FALSE,Raw Shadow Iron Ore
+gregtech:gt.metaitem.03,6955,5340,FALSE,Raw Meteoric Iron Ore
+gregtech:gt.metaitem.03,6955,5342,FALSE,Raw Deep Dark Iron Ore
+gregtech:gt.metaitem.03,6955,5347,FALSE,Raw Firestone Ore
+gregtech:gt.metaitem.03,6955,5368,FALSE,Raw Shadow Metal Ore
+gregtech:gt.metaitem.03,6955,5375,FALSE,Raw Rutile Ore
+gregtech:gt.metaitem.03,6955,5382,FALSE,Raw Ardite Ore
+gregtech:gt.metaitem.03,6955,5386,FALSE,Raw Manyullyn Ore
+gregtech:gt.metaitem.03,6955,5387,FALSE,Raw Mytryl Ore
+gregtech:gt.metaitem.03,6955,5388,FALSE,Raw Black Plutonium Ore
+gregtech:gt.metaitem.03,6955,5389,FALSE,Raw Callisto Ice Ore
+gregtech:gt.metaitem.03,6955,5390,FALSE,Raw Ledox Ore
+gregtech:gt.metaitem.03,6955,5391,FALSE,Raw Quantium Ore
+gregtech:gt.metaitem.03,6955,5392,FALSE,Raw Duralumin Ore
+gregtech:gt.metaitem.03,6955,5393,FALSE,Raw Oriharukon Ore
+gregtech:gt.metaitem.03,6955,5394,FALSE,Raw Infinity Catalyst Ore
+gregtech:gt.metaitem.03,6955,5395,FALSE,Raw Bedrockium Ore
+gregtech:gt.metaitem.03,6955,5398,FALSE,Raw Mysterious Crystal Ore
+gregtech:gt.metaitem.03,6955,5485,FALSE,Raw Alduorite Ore
+gregtech:gt.metaitem.03,6955,5488,FALSE,Raw Rubracium Ore
+gregtech:gt.metaitem.03,6955,5489,FALSE,Raw Vulcanite Ore
+gregtech:gt.metaitem.03,6955,5500,FALSE,Raw Diamond Ore
+gregtech:gt.metaitem.03,6955,5501,FALSE,Raw Emerald Ore
+gregtech:gt.metaitem.03,6955,5502,FALSE,Raw Ruby Ore
+gregtech:gt.metaitem.03,6955,5503,FALSE,Raw Sapphire Ore
+gregtech:gt.metaitem.03,6955,5504,FALSE,Raw Green Sapphire Ore
+gregtech:gt.metaitem.03,6955,5505,FALSE,Raw Olivine Ore
+gregtech:gt.metaitem.03,6955,5506,FALSE,Raw Nether Star Ore
+gregtech:gt.metaitem.03,6955,5507,FALSE,Raw Topaz Ore
+gregtech:gt.metaitem.03,6955,5508,FALSE,Raw Tanzanite Ore
+gregtech:gt.metaitem.03,6955,5509,FALSE,Raw Amethyst Ore
+gregtech:gt.metaitem.03,6955,5510,FALSE,Raw Opal Ore
+gregtech:gt.metaitem.03,6955,5511,FALSE,Raw Jasper Ore
+gregtech:gt.metaitem.03,6955,5512,FALSE,Raw Spinel Ore
+gregtech:gt.metaitem.03,6955,5513,FALSE,Raw Blue Topaz Ore
+gregtech:gt.metaitem.03,6955,5514,FALSE,Raw Amber Ore
+gregtech:gt.metaitem.03,6955,5515,FALSE,Raw Dilithium Ore
+gregtech:gt.metaitem.03,6955,5516,FALSE,Raw Certus Quartz Ore
+gregtech:gt.metaitem.03,6955,5517,FALSE,Raw Charged Certus Quartz Ore
+gregtech:gt.metaitem.03,6955,5518,FALSE,Raw Forcicium Ore
+gregtech:gt.metaitem.03,6955,5519,FALSE,Raw Forcillium Ore
+gregtech:gt.metaitem.03,6955,5520,FALSE,Raw Monazite Ore
+gregtech:gt.metaitem.03,6955,5521,FALSE,Raw Force Ore
+gregtech:gt.metaitem.03,6955,5522,FALSE,Raw Nether Quartz Ore
+gregtech:gt.metaitem.03,6955,5523,FALSE,Raw Quartzite Ore
+gregtech:gt.metaitem.03,6955,5524,FALSE,Raw Lazurite Ore
+gregtech:gt.metaitem.03,6955,5525,FALSE,Raw Sodalite Ore
+gregtech:gt.metaitem.03,6955,5526,FALSE,Raw Lapis Ore
+gregtech:gt.metaitem.03,6955,5527,FALSE,Raw Red Garnet Ore
+gregtech:gt.metaitem.03,6955,5528,FALSE,Raw Yellow Garnet Ore
+gregtech:gt.metaitem.03,6955,5529,FALSE,Raw Vinteum Ore
+gregtech:gt.metaitem.03,6955,5530,FALSE,Raw Apatite Ore
+gregtech:gt.metaitem.03,6955,5531,FALSE,Raw Niter Ore
+gregtech:gt.metaitem.03,6955,5534,FALSE,Raw Tricalcium Phosphate Ore
+gregtech:gt.metaitem.03,6955,5535,FALSE,Raw Coal Ore
+gregtech:gt.metaitem.03,6955,5537,FALSE,Raw Jade Ore
+gregtech:gt.metaitem.03,6955,5538,FALSE,Raw Lignite Coal Ore
+gregtech:gt.metaitem.03,6955,5540,FALSE,Raw Aer Ore
+gregtech:gt.metaitem.03,6955,5541,FALSE,Raw Ignis Ore
+gregtech:gt.metaitem.03,6955,5542,FALSE,Raw Terra Ore
+gregtech:gt.metaitem.03,6955,5543,FALSE,Raw Aqua Ore
+gregtech:gt.metaitem.03,6955,5544,FALSE,Raw Perditio Ore
+gregtech:gt.metaitem.03,6955,5545,FALSE,Raw Ordo Ore
+gregtech:gt.metaitem.03,6955,5548,FALSE,Raw Roasted Iron Ore
+gregtech:gt.metaitem.03,6955,5549,FALSE,Raw Roasted Nickel Ore
+gregtech:gt.metaitem.03,6955,5607,FALSE,Raw Pyrochlore Ore
+gregtech:gt.metaitem.03,6955,5699,FALSE,Raw Cryolite Ore
+gregtech:gt.metaitem.03,6955,5770,FALSE,Raw Endium Ore
+gregtech:gt.metaitem.03,6955,5797,FALSE,Raw Calcium Hydride Ore
+gregtech:gt.metaitem.03,6955,5810,FALSE,Raw Redstone Ore
+gregtech:gt.metaitem.03,6955,5812,FALSE,Raw Electrotine Ore
+gregtech:gt.metaitem.03,6955,5817,FALSE,Raw Salt Ore
+gregtech:gt.metaitem.03,6955,5820,FALSE,Raw Almandine Ore
+gregtech:gt.metaitem.03,6955,5821,FALSE,Raw Andradite Ore
+gregtech:gt.metaitem.03,6955,5822,FALSE,Raw Bauxite Ore
+gregtech:gt.metaitem.03,6955,5823,FALSE,Raw Calcite Ore
+gregtech:gt.metaitem.03,6955,5824,FALSE,Raw Cassiterite Ore
+gregtech:gt.metaitem.03,6955,5825,FALSE,Raw Chromite Ore
+gregtech:gt.metaitem.03,6955,5826,FALSE,Raw Cinnabar Ore
+gregtech:gt.metaitem.03,6955,5827,FALSE,Raw Cobaltite Ore
+gregtech:gt.metaitem.03,6955,5828,FALSE,Raw Sheldonite Ore
+gregtech:gt.metaitem.03,6955,5829,FALSE,Raw Deep Iron Ore
+gregtech:gt.metaitem.03,6955,5830,FALSE,Raw Galena Ore
+gregtech:gt.metaitem.03,6955,5831,FALSE,Raw Grossular Ore
+gregtech:gt.metaitem.03,6955,5833,FALSE,Raw Phosphate Ore
+gregtech:gt.metaitem.03,6955,5834,FALSE,Raw Pyrite Ore
+gregtech:gt.metaitem.03,6955,5835,FALSE,Raw Pyrope Ore
+gregtech:gt.metaitem.03,6955,5836,FALSE,Raw Saltpeter Ore
+gregtech:gt.metaitem.03,6955,5838,FALSE,Raw Spessartine Ore
+gregtech:gt.metaitem.03,6955,5839,FALSE,Raw Sphalerite Ore
+gregtech:gt.metaitem.03,6955,5840,FALSE,Raw Tetrahedrite Ore
+gregtech:gt.metaitem.03,6955,5841,FALSE,Raw Tungstate Ore
+gregtech:gt.metaitem.03,6955,5842,FALSE,Raw Uvarovite Ore
+gregtech:gt.metaitem.03,6955,5855,FALSE,Raw Chalcopyrite Ore
+gregtech:gt.metaitem.03,6955,5856,FALSE,Raw Silicon Solar Grade (Poly SI) Ore
+gregtech:gt.metaitem.03,6955,5861,FALSE,Raw Emery Ore
+gregtech:gt.metaitem.03,6955,5865,FALSE,Raw Graphite Ore
+gregtech:gt.metaitem.03,6955,5868,FALSE,Raw Trinium Ore
+gregtech:gt.metaitem.03,6955,5870,FALSE,Raw Magnetite Ore
+gregtech:gt.metaitem.03,6955,5871,FALSE,Raw Malachite Ore
+gregtech:gt.metaitem.03,6955,5873,FALSE,Raw Pitchblende Ore
+gregtech:gt.metaitem.03,6955,5877,FALSE,Raw Soapstone Ore
+gregtech:gt.metaitem.03,6955,5878,FALSE,Raw Oilsands Ore
+gregtech:gt.metaitem.03,6955,5882,FALSE,Raw Wulfenite Ore
+gregtech:gt.metaitem.03,6955,5883,FALSE,Raw Powellite Ore
+gregtech:gt.metaitem.03,6955,5884,FALSE,Raw Desh Ore
+gregtech:gt.metaitem.03,6955,5894,FALSE,Raw Cheese Ore
+gregtech:gt.metaitem.03,6955,5900,FALSE,Raw Mirabilite Ore
+gregtech:gt.metaitem.03,6955,5901,FALSE,Raw Mica Ore
+gregtech:gt.metaitem.03,6955,5902,FALSE,Raw Talc Ore
+gregtech:gt.metaitem.03,6955,5903,FALSE,Raw Trona Ore
+gregtech:gt.metaitem.03,6955,5904,FALSE,Raw Barite Ore
+gregtech:gt.metaitem.03,6955,5905,FALSE,Raw Bastnasite Ore
+gregtech:gt.metaitem.03,6955,5906,FALSE,Raw Garnierite Ore
+gregtech:gt.metaitem.03,6955,5907,FALSE,Raw Lepidolite Ore
+gregtech:gt.metaitem.03,6955,5908,FALSE,Raw Magnesite Ore
+gregtech:gt.metaitem.03,6955,5909,FALSE,Raw Pentlandite Ore
+gregtech:gt.metaitem.03,6955,5910,FALSE,Raw Scheelite Ore
+gregtech:gt.metaitem.03,6955,5911,FALSE,Raw Alunite Ore
+gregtech:gt.metaitem.03,6955,5912,FALSE,Raw Chrysotile Ore
+gregtech:gt.metaitem.03,6955,5913,FALSE,Raw Realgar Ore
+gregtech:gt.metaitem.03,6955,5914,FALSE,Raw Dolomite Ore
+gregtech:gt.metaitem.03,6955,5915,FALSE,Raw Wollastonite Ore
+gregtech:gt.metaitem.03,6955,5916,FALSE,Raw Zeolite Ore
+gregtech:gt.metaitem.03,6955,5917,FALSE,Raw Banded Iron Ore
+gregtech:gt.metaitem.03,6955,5918,FALSE,Raw Ilmenite Ore
+gregtech:gt.metaitem.03,6955,5919,FALSE,Raw Pollucite Ore
+gregtech:gt.metaitem.03,6955,5920,FALSE,Raw Spodumene Ore
+gregtech:gt.metaitem.03,6955,5921,FALSE,Raw Tantalite Ore
+gregtech:gt.metaitem.03,6955,5922,FALSE,Raw Uraninite Ore
+gregtech:gt.metaitem.03,6955,5923,FALSE,Raw Vanadium Magnetite Ore
+gregtech:gt.metaitem.03,6955,5924,FALSE,Raw Kyanite Ore
+gregtech:gt.metaitem.03,6955,5925,FALSE,Raw Perlite Ore
+gregtech:gt.metaitem.03,6955,5926,FALSE,Raw Pumice Ore
+gregtech:gt.metaitem.03,6955,5927,FALSE,Raw Bentonite Ore
+gregtech:gt.metaitem.03,6955,5928,FALSE,Raw Fullers Earth Ore
+gregtech:gt.metaitem.03,6955,5929,FALSE,Raw Kaolinite Ore
+gregtech:gt.metaitem.03,6955,5930,FALSE,Raw Brown Limonite Ore
+gregtech:gt.metaitem.03,6955,5931,FALSE,Raw Yellow Limonite Ore
+gregtech:gt.metaitem.03,6955,5932,FALSE,Raw Vermiculite Ore
+gregtech:gt.metaitem.03,6955,5933,FALSE,Raw Glauconite Ore
+gregtech:gt.metaitem.03,6955,5934,FALSE,Raw Gypsum Ore
+gregtech:gt.metaitem.03,6955,5935,FALSE,Raw Basaltic Mineral Sand Ore
+gregtech:gt.metaitem.03,6955,5936,FALSE,Raw Granitic Mineral Sand Ore
+gregtech:gt.metaitem.03,6955,5937,FALSE,Raw Cassiterite Sand Ore
+gregtech:gt.metaitem.03,6955,5938,FALSE,Raw Garnet Sand Ore
+gregtech:gt.metaitem.03,6955,5939,FALSE,Raw Quartz Sand Ore
+gregtech:gt.metaitem.03,6955,5941,FALSE,Raw Borax Ore
+gregtech:gt.metaitem.03,6955,5942,FALSE,Raw Molybdenite Ore
+gregtech:gt.metaitem.03,6955,5943,FALSE,Raw Pyrolusite Ore
+gregtech:gt.metaitem.03,6955,5944,FALSE,Raw Rock Salt Ore
+gregtech:gt.metaitem.03,6955,5945,FALSE,Raw Stibnite Ore
+gregtech:gt.metaitem.03,6955,5946,FALSE,Raw Asbestos Ore
+gregtech:gt.metaitem.03,6955,5948,FALSE,Raw Diatomite Ore
+gregtech:gt.metaitem.03,6955,5949,FALSE,Raw Glauconite Sand Ore
+gregtech:gt.metaitem.03,6955,5951,FALSE,Raw Vyroxeres Ore
+gregtech:gt.metaitem.03,6955,5952,FALSE,Raw Ceruclase Ore
+gregtech:gt.metaitem.03,6955,5956,FALSE,Raw Tartarite Ore
+gregtech:gt.metaitem.03,6955,5966,FALSE,Raw Orichalcum Ore
+gregtech:gt.metaitem.03,6955,5969,FALSE,Raw Aluminium Fluoride Ore
+gregtech:gt.metaitem.03,6955,5971,FALSE,Raw Calcium Disilicide Ore
+gregtech:gt.metaitem.03,6955,5975,FALSE,Raw Draconium Ore
+gregtech:gt.metaitem.03,6955,5976,FALSE,Raw Awakened Draconium Ore
+gregtech:gt.metaitem.03,6955,5978,FALSE,Raw Ichorium Ore
+gregtech:gt.metaitem.03,6955,5982,FALSE,Raw Cosmic Neutronium Ore
+gregtech:gt.metaitem.03,6955,5984,FALSE,Raw Flerovium Ore
+miscutils:oreRawLanthaniteCe,11527,0,FALSE,Raw Lanthanite (Ce) Ore
+miscutils:oreRawPolycrase,11530,0,FALSE,Raw Polycrase Ore
+miscutils:oreRawGreenockite,11531,0,FALSE,Raw Greenockite Ore
+miscutils:oreRawYttrocerite,11533,0,FALSE,Raw Yttrocerite Ore
+miscutils:oreRawComancheite,11534,0,FALSE,Raw Comancheite Ore
+miscutils:oreRawAgarditeNd,11535,0,FALSE,Raw Agardite (Nd) Ore
+miscutils:oreRawFluorcaphite,11537,0,FALSE,Raw Fluorcaphite Ore
+miscutils:oreRawCryoliteF,11545,0,FALSE,Raw Cryolite (F) Ore
+miscutils:oreRawYttrialite,11546,0,FALSE,Raw Yttrialite Ore
+miscutils:oreRawCerite,11547,0,FALSE,Raw Cerite Ore
+miscutils:oreRawZircon,11552,0,FALSE,Raw Zircon Ore
+miscutils:oreRawFluoriteF,11555,0,FALSE,Raw Fluorite (F) Ore
+miscutils:oreRawBariteRa,11559,0,FALSE,Raw Barite (Ra) Ore
+miscutils:oreRawGadoliniteCe,11566,0,FALSE,Raw Gadolinite (Ce) Ore
+miscutils:oreRawKoboldite,11572,0,FALSE,Raw Koboldite Ore
+miscutils:oreRawZircophyllite,11574,0,FALSE,Raw Zircophyllite Ore
+miscutils:oreRawCrocoite,11581,0,FALSE,Raw Crocoite Ore
+miscutils:oreRawDemicheleiteBr,11583,0,FALSE,Raw Demicheleite (Br) Ore
+miscutils:oreRawNichromite,11587,0,FALSE,Raw Nichromite Ore
+miscutils:oreRawFlorencite,11589,0,FALSE,Raw Florencite Ore
+miscutils:oreRawHibonite,11593,0,FALSE,Raw Hibonite Ore
+miscutils:oreRawZirkelite,11594,0,FALSE,Raw Zirkelite Ore
+miscutils:oreRawRareEarthIII,11599,0,FALSE,Raw Rare Earth (III) Ore
+miscutils:oreRawAgarditeLa,11600,0,FALSE,Raw Agardite (La) Ore
+miscutils:oreRawYttriaite,11602,0,FALSE,Raw Yttriaite Ore
+miscutils:oreRawZirconolite,11603,0,FALSE,Raw Zirconolite Ore
+miscutils:oreRawZimbabweite,11619,0,FALSE,Raw Zimbabweite Ore
+miscutils:oreRawSamarskiteYb,11622,0,FALSE,Raw Samarskite (Yb) Ore
+miscutils:oreRawLautarite,11623,0,FALSE,Raw Lautarite Ore
+miscutils:oreRawPerroudite,11626,0,FALSE,Raw Perroudite Ore
+miscutils:oreRawAlburnite,11630,0,FALSE,Raw Alburnite Ore
+miscutils:oreRawRareEarthI,11633,0,FALSE,Raw Rare Earth (I) Ore
+miscutils:oreRawHoneaite,11634,0,FALSE,Raw Honeaite Ore
+miscutils:oreRawKashinite,11635,0,FALSE,Raw Kashinite Ore
+miscutils:oreRawLepersonnite,11641,0,FALSE,Raw Lepersonnite Ore
+miscutils:oreRawIrarsite,11646,0,FALSE,Raw Irarsite Ore
+miscutils:oreRawSamarskiteY,11647,0,FALSE,Raw Samarskite (Y) Ore
+miscutils:oreRawRunite,11651,0,FALSE,Raw Runite Ore
+miscutils:oreRawAgarditeY,11652,0,FALSE,Raw Agardite (Y) Ore
+miscutils:oreRawTitanite,11655,0,FALSE,Raw Titanite Ore
+miscutils:oreRawLafossaite,11658,0,FALSE,Raw Lafossaite Ore
+miscutils:oreRawRareEarthII,11659,0,FALSE,Raw Rare Earth (II) Ore
+miscutils:oreRawRadioactiveMineralMix,11662,0,FALSE,Raw Strange Ore
+miscutils:oreRawLanthaniteNd,11664,0,FALSE,Raw Lanthanite (Nd) Ore
+miscutils:oreRawGeikielite,11669,0,FALSE,Raw Geikielite Ore
+miscutils:oreRawGadoliniteY,11670,0,FALSE,Raw Gadolinite (Y) Ore
+miscutils:oreRawAncientGranite,11671,0,FALSE,Raw Ancient Granite Ore
+miscutils:oreRawAgarditeCd,11672,0,FALSE,Raw Agardite (Cd) Ore
+miscutils:oreRawLanthaniteLa,11683,0,FALSE,Raw Lanthanite (La) Ore
+miscutils:oreRawMiessiite,11685,0,FALSE,Raw Miessiite Ore
+miscutils:oreRawXenotime,11686,0,FALSE,Raw Xenotime Ore

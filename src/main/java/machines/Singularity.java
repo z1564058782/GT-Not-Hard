@@ -33,14 +33,7 @@ import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Cable;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Hatch;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Misc;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_1;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_2;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_3;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_4;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_Storage;
+import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes;
@@ -795,43 +788,6 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         else {
             ItemStack[] PachinkoRecipes = switch (getControllerSlot().getItemDamage()) {
 
-                // ULV Tier: "1x Red Alloy Wire" - 2000
-                // LV Tier: "1x Redstone Alloy Wire" - 30645
-                // MV Tier: "1x Superconductor MV Wire" - 2320
-                // HV Tier: "1x Superconductor HV Wire" - 2340
-                // EV Tier: "1x Superconductor EV Wire" - 2360
-                // IV Tier: "1x Superconductor IV Wire" - 2380
-                // LuV Tier: "1x Superconductor LuV Wire" - 2400
-                // ZPM Tier: "1x Superconductor ZPM Wire" - 2420
-                // UV Tier: "1x Superconductor UV Wire" - 2440
-                // UHV Tier: "1x Superconductor UHV Wire" - 2020
-                // UEV Tier: "1x Superconductor UEV Wire" - 2026
-                // UIV Tier: "1x Superconductor UIV Wire" - 2081
-                // UMV Tier: "1x Superconductor UMV Wire" - 2089
-                // UXV Tier: "1x Black Plutonium Wire" - 11390
-                // MAX Tier: "1x SpaceTime Wire" - 2606
-                case 2000, 30645, 2320, 2340, 2360, 2380, 2400, 2420, 2440, 2020, 2026, 2081, 2089, 11390, 2606 -> SingularityPachinkoRecipes_GT_Cable.PachinkoRecipes_GT_Cable
-                    .get(getControllerSlot().getItemDamage());
-
-                // Steam Tier: "Steam Hatch" - 31040
-                // ULV Tier: "ULV Energy Hatch" - 40
-                // LV Tier: "LV Energy Hatch" - 41
-                // MV Tier: "MV Energy Hatch" - 42
-                // HV Tier: "HV Energy Hatch" - 43
-                // EV Tier: "EV Energy Hatch" - 44
-                // IV Tier: "IV Energy Hatch" - 45
-                // LuV Tier: "LuV Energy Hatch" - 46
-                // ZPM Tier: "ZPM Energy Hatch" - 47
-                // UV Tier: "UV Energy Hatch" - 48
-                // UHV Tier: "UHV Energy Hatch" - 49
-                // UEV Tier: "UEV Energy Hatch" - 11300
-                // UIV Tier: "UIV Energy Hatch" - 11301
-                // UMV Tier: "UMV Energy Hatch" - 11302
-                // UXV Tier: "UXV Energy Hatch" - 11303
-                // MAX Tier: "MAX Wireless Energy Hatch" - 286
-                case 31040, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 11300, 11301, 11302, 11303, 286 -> SingularityPachinkoRecipes_GT_Hatch.PachinkoRecipes_GT_Hatch
-                    .get(getControllerSlot().getItemDamage());
-
                 // Steam Tier: "Bronze Hull" - 1
                 // ULV Tier: "ULV Machine Hull" - 10
                 // LV Tier: "LV Machine Hull" - 11
@@ -847,8 +803,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // UIV Tier: "UIV Machine Hull" - 11231
                 // UMV Tier: "UMV Machine Hull" - 11232
                 // UXV Tier: "UXV Machine Hull" - 11233
-                // MAX Tier: "MAX Machine Hull" - 11234
-                case 1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 11230, 11231, 11232, 11233, 11234 -> SingularityPachinkoRecipes_GT_Misc.PachinkoRecipes_GT_Misc
+                // MAX Tier: "1x SpaceTime Wire" - 2606
+                case 1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 11230, 11231, 11232, 11233, 2606 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Item
                     .get(getControllerSlot().getItemDamage());
 
                 // "Bricked Blast Furnace" - 140
@@ -861,7 +817,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "PCB Factory" - 356
                 // "Nano Forge" - 357
                 // "Magnetic Flux Exhibitor" - 358
-                case 140, 141, 142, 143, 144, 148, 149, 356, 357, 358 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 140, 141, 142, 143, 144, 148, 149, 356, 357, 358 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "TurboCan Pro" - 360
@@ -874,7 +830,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Industrial Centrifuge" - 790
                 // "Industrial Coke Oven" - 791
                 // "Industrial Material Press" - 792
-                case 360, 366, 367, 686, 687, 749, 751, 790, 791, 792 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 360, 366, 367, 686, 687, 749, 751, 790, 791, 792 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Industrial Electrolyzer" - 796
@@ -887,7 +843,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "COMET - Compact Cyclotron" - 828
                 // "Zhuhai - Fishing Port" - 829
                 // "Reactor Fuel Processing Plant" - 835
-                case 796, 797, 798, 799, 810, 811, 812, 828, 829, 835 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 796, 797, 798, 799, 810, 811, 812, 828, 829, 835 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Tree Growth Simulator" - 836
@@ -900,7 +856,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "XL Turbo Steam Turbine" - 865
                 // "XL Turbo HP Steam Turbine" - 866
                 // "Thermal Boiler" - 875
-                case 836, 840, 849, 850, 859, 862, 863, 865, 866, 875 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 836, 840, 849, 850, 859, 862, 863, 865, 866, 875 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Large Scale Auto-Assembler v1.01" - 876
@@ -913,12 +869,12 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Industrial Cutting Factory" - 992
                 // Utupu-Tanuri - 995
                 // "Rocketdyne F-1A Engine" - 996
-                case 876, 910, 942, 963, 964, 965, 975, 992, 995, 996 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 876, 910, 942, 963, 964, 965, 975, 992, 995, 996 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Algae Farm" - 997
                 // "ExxonMobil Chemical Plant" - 998
-                case 997, 998 -> SingularityPachinkoRecipes_GT_MultiBlock_1.PachinkoRecipes_GT_MultiBlock_1
+                case 997, 998 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Electric Blast Furnace" - 1000
@@ -931,7 +887,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Large Steel Boiler" - 1021
                 // "Large Titanium Boiler" - 1022
                 // "Large Tungstensteel Boiler" - 1023
-                case 1000, 1001, 1002, 1003, 1004, 1006, 1020, 1021, 1022, 1023 -> SingularityPachinkoRecipes_GT_MultiBlock_2.PachinkoRecipes_GT_MultiBlock_2
+                case 1000, 1001, 1002, 1003, 1004, 1006, 1020, 1021, 1022, 1023 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Distillation Tower" - 1126
@@ -944,7 +900,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Fluid Drilling Rig" - 1157
                 // "Ore Drilling Plant" - 1158
                 // "Pyrolyse Oven" - 1159
-                case 1126, 1131, 1132, 1151, 1152, 1153, 1154, 1157, 1158, 1159 -> SingularityPachinkoRecipes_GT_MultiBlock_2.PachinkoRecipes_GT_MultiBlock_2
+                case 1126, 1131, 1132, 1151, 1152, 1153, 1154, 1157, 1158, 1159 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Oil Cracking Unit" - 1160
@@ -957,7 +913,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Ore Drilling Plant IV" - 1179
                 // "Fusion Control Computer Mark I" - 1193
                 // "Fusion Control Computer Mark II" - 1194
-                case 1160, 1169, 1170, 1171, 1172, 1177, 1178, 1179, 1193, 1194 -> SingularityPachinkoRecipes_GT_MultiBlock_2.PachinkoRecipes_GT_MultiBlock_2
+                case 1160, 1169, 1170, 1171, 1172, 1177, 1178, 1179, 1193, 1194 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Fusion Control Computer Mark III" - 1195
@@ -970,14 +926,14 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Neutronium Compressor" - 3007
                 // "Pseudostable Black Hole Containment Field" - 3008
                 // "Dissection Apparatus" - 3010
-                case 1195, 2105, 2730, 2731, 3004, 3005, 3006, 3007, 3008, 3010 -> SingularityPachinkoRecipes_GT_MultiBlock_2.PachinkoRecipes_GT_MultiBlock_2
+                case 1195, 2105, 2730, 2731, 3004, 3005, 3006, 3007, 3008, 3010 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Big Barrel Brewery" - 3011
                 // "Draconic Evolution Fusion Crafter" - 5001
                 // "Drone Centre" - 9400
                 // "Water Purification Plant" - 9402
-                case 3011, 5001, 9400, 9402 -> SingularityPachinkoRecipes_GT_MultiBlock_2.PachinkoRecipes_GT_MultiBlock_2
+                case 3011, 5001, 9400, 9402 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // Digester - 10500
@@ -990,7 +946,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Electric Air Filter T2" - 12021
                 // "Electric Air Filter T3" - 12022
                 // "Manual Transformer" - 12697
-                case 10500, 10501, 10505, 10506, 10507, 10508, 12020, 12021, 12022, 12697 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 10500, 10501, 10505, 10506, 10507, 10508, 12020, 12021, 12022, 12697 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // Windmill - 12698
@@ -1003,7 +959,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Electric Implosion Compressor" - 12734
                 // "Circuit Assembly Line" - 12735
                 // "Mega Distillation Tower" - 12738
-                case 12698, 12712, 12729, 12730, 12731, 12732, 12733, 12734, 12735, 12738 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 12698, 12712, 12729, 12730, 12731, 12732, 12733, 12734, 12735, 12738 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Void Miner III" - 12739
@@ -1016,7 +972,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Solid-Oxide Fuel Cell Mk II" - 13102
                 // T.F.F.T - 13104
                 // "Lapotronic Supercapacitor" - 13106
-                case 12739, 12740, 12741, 12791, 12792, 13001, 13101, 13102, 13104, 13106 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 12739, 12740, 12741, 12791, 12792, 13001, 13101, 13102, 13104, 13106 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Miniature Wormhole Generator" - 13115
@@ -1029,7 +985,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Large Molecular Assembler" - 14101
                 // "Extreme Entity Crusher" - 14201
                 // "Industrial Apicultural Acclimatiser and Drone Domestication Station" - 14202
-                case 13115, 13366, 13367, 13532, 14001, 14002, 14003, 14101, 14201, 14202 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 13115, 13366, 13367, 13532, 14001, 14002, 14003, 14101, 14201, 14202 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Active Transformer" - 15300
@@ -1042,7 +998,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Research Station" - 15331
                 // "Energy Infuser" - 15350
                 // "Eye of Harmony" - 15410
-                case 15300, 15310, 15311, 15312, 15313, 15314, 15315, 15331, 15350, 15410 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 15300, 15310, 15311, 15312, 15313, 15314, 15315, 15331, 15350, 15410 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Forge of the Gods" - 15411
@@ -1052,7 +1008,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Hydro Dam" - 17000
                 // "Hydro Pump" - 17003
                 // "Hydro Turbine" - 17019
-                case 15411, 15750, 15751, 16999, 17000, 17003, 17019 -> SingularityPachinkoRecipes_GT_MultiBlock_3.PachinkoRecipes_GT_MultiBlock_3
+                case 15411, 15750, 15751, 16999, 17000, 17003, 17019 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Dangote Distillus" - 31021
@@ -1065,7 +1021,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Elemental Duplicator" - 31050
                 // Boldarnator - 31065
                 // "Industrial 3D Copying Machine" - 31069
-                case 31021, 31023, 31026, 31027, 31028, 31035, 31041, 31050, 31065, 31069 -> SingularityPachinkoRecipes_GT_MultiBlock_4.PachinkoRecipes_GT_MultiBlock_4
+                case 31021, 31023, 31026, 31027, 31028, 31035, 31041, 31050, 31065, 31069 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Molecular Transformer" - 31072
@@ -1078,7 +1034,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Whakawhiti Wera XL" - 31079
                 // "Steam Separator" - 31080
                 // "Steam Purifier" - 31082
-                case 31072, 31073, 31074, 31075, 31076, 31077, 31078, 31079, 31080, 31082 -> SingularityPachinkoRecipes_GT_MultiBlock_4.PachinkoRecipes_GT_MultiBlock_4
+                case 31072, 31073, 31074, 31075, 31076, 31077, 31078, 31079, 31080, 31082 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Steam Presser" - 31083
@@ -1091,7 +1047,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Neutron Activator" - 32013
                 // YOTTank - 32014
                 // "Large Supercritical Steam Turbine" - 32016
-                case 31083, 31084, 31085, 31086, 31150, 31151, 32001, 32013, 32014, 32016 -> SingularityPachinkoRecipes_GT_MultiBlock_4.PachinkoRecipes_GT_MultiBlock_4
+                case 31083, 31084, 31085, 31086, 31150, 31151, 32001, 32013, 32014, 32016 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Extreme Heat Exchanger" - 32017
@@ -1104,18 +1060,18 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 // "Large Essentia Smeltery" - 32024
                 // "Coolant Tower" - 32025
                 // "Component Assembly Line" - 32026
-                case 32017, 32018, 32019, 32020, 32021, 32022, 32023, 32024, 32025, 32026 -> SingularityPachinkoRecipes_GT_MultiBlock_4.PachinkoRecipes_GT_MultiBlock_4
+                case 32017, 32018, 32019, 32020, 32021, 32022, 32023, 32024, 32025, 32026 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // "Semi-Stable Antimatter Stabilization Sequencer" - 32027
                 // "Shielded Lagrangian Annihilation Matrix" - 32028
-                case 32027, 32028 -> SingularityPachinkoRecipes_GT_MultiBlock_4.PachinkoRecipes_GT_MultiBlock_4
+                case 32027, 32028 -> SingularityPachinkoRecipes.PachinkoRecipes_GT_Machine
                     .get(getControllerSlot().getItemDamage());
 
                 // Item Storage: "Super Chest I" - 135
                 // Fluid Storage: "Ultra Low Voltage Fluid Tank" - 817
                 // AppliedEnergistics2 Storage: "Super Tank I" - 130
-                case 135, 817, 130 -> SingularityPachinkoRecipes_Storage.PachinkoRecipes_Storage
+                case 135, 817, 130 -> SingularityPachinkoRecipes.PachinkoRecipes_Storage
                     .get(getControllerSlot().getItemDamage());
 
                 default -> null;

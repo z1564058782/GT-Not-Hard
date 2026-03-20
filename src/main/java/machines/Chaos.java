@@ -41,6 +41,8 @@ import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
 import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
+import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
+import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
@@ -110,12 +112,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     // 是否为多方块机器标志
     private boolean isMultiBlock = false;
 
-    // 矿石处理模式相关变量
-    protected int oreProcessingMode = 0;
-    protected boolean oreVoidStoneMode = false;
-    protected int currentOreParallelism = 0;
-    protected Recipes.ChaosRecipes.ChaosOreFactoryRecipes.OreProcessingConfig oreProcessingConfig = null;
-
     /**
      * 首次tick回调
      * 初始化机器所有者UUID和矿石处理配方
@@ -138,11 +134,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         aNBT.setBoolean("wirelessMode", wirelessMode);
         aNBT.setBoolean("downtierUEV", downtierUEV);
         aNBT.setInteger("mode", mode);
-
-        // 矿石处理数据
-        aNBT.setInteger("oreProcessingMode", oreProcessingMode);
-        aNBT.setBoolean("oreVoidStoneMode", oreVoidStoneMode);
-        aNBT.setInteger("currentOreParallelism", currentOreParallelism);
     }
 
     /**
@@ -163,11 +154,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         wirelessMode = aNBT.getBoolean("wirelessMode");
         downtierUEV = aNBT.getBoolean("downtierUEV");
         mode = aNBT.getInteger("mode");
-
-        // 矿石处理数据加载
-        oreProcessingMode = aNBT.getInteger("oreProcessingMode");
-        oreVoidStoneMode = aNBT.getBoolean("oreVoidStoneMode");
-        currentOreParallelism = aNBT.getInteger("currentOreParallelism");
     }
 
     // === 机器结构和纹理 ===
@@ -256,7 +242,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addInfo("x = Number of machines in the controller")
             .addInfo(
                 "If the machine within the controller contains multiple modes, sneak left click controller to switch machine mode")
-            .addInfo("Use Auto Workbench (LV) to crafting some Xtreme Crafting recipe")
+            .addInfo("Use Auto Workbench (LV) to crafting Xtreme Crafting recipe")
+            .addInfo("Use Auto Workbench (MV) to crafting Falling Tower recipe")
             .addInfo("Add By: GT Not Hard")
             .addSeparator()
             .beginStructureBlock(3, 3, 3, true)
@@ -464,18 +451,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     public void onLeftclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
         if (getBaseMetaTileEntity() != null && aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
-            // 矿石处理厂模式切换 (ID: 1132)
-            if (isOreProcessingMode()) {
-                // 潜行右键切换弃石模式，潜行左键切换处理模式
-                this.oreProcessingMode = (this.oreProcessingMode + 1) % 7;
-                List<String> modeDesc = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
-                    .getModeDescription(this.oreProcessingMode);
-                GTUtility.sendChatToPlayer(aPlayer, "矿石处理模式: " + String.join(" ", modeDesc));
-                updateMode = true;
-                return;
-            }
-
-            // 普通机器模式切换
+            // 机器模式切换
             this.mode = (this.mode + 1) % 3;
             updateMode = true;
             // 根据机器ID显示对应的模式名称
@@ -511,34 +487,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     /**
-     * 右键点击处理，支持矿石处理弃石模式切换
-     */
-    @Override
-    public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ,
-        ItemStack aTool) {
-        if (isOreProcessingMode()) {
-            // 矿石处理模式：切换弃石模式
-            if (aPlayer.isSneaking()) {
-                this.oreVoidStoneMode = !this.oreVoidStoneMode;
-                GTUtility.sendChatToPlayer(
-                    aPlayer,
-                    StatCollector.translateToLocalFormatted("GT5U.machines.oreprocessor.void", this.oreVoidStoneMode));
-            } else {
-                // 非潜行右键切换处理模式
-                this.oreProcessingMode = (this.oreProcessingMode + 1) % 7;
-                List<String> modeDesc = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
-                    .getModeDescription(this.oreProcessingMode);
-                GTUtility.sendChatToPlayer(aPlayer, "矿石处理模式: " + String.join(" ", modeDesc));
-            }
-            updateMode = true;
-            return;
-        }
-
-        // 原有其他机器的螺丝刀逻辑...
-        super.onScrewdriverRightClick(side, aPlayer, aX, aY, aZ, aTool);
-    }
-
-    /**
      * 读取多类型机器的配方
      * 根据机器ID和当前模式获取对应的配方映射
      */
@@ -571,6 +519,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 995 -> {
                 return Utupu_Tanuri[Math.min(mode, 1)];
             }
+            case 1132 -> {
+                return ChaosOreRecipes.addFakeChaosOreRecipes;
+            }
             case 3008 -> {
                 return Pseudostable_Black_Hole_Containment_Field[Math.min(mode, 1)];
             }
@@ -588,6 +539,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
             case 31091 -> {
                 return ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes;
+            }
+            case 31092 -> {
+                return ChaosFallingTowerRecipes.addChaosFallingTowerRecipes;
             }
             case 32018 -> {
                 return Precise_Auto_Assembler_MT_3662[Math.min(mode, 1)];
@@ -628,13 +582,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
-        try {
-            // === 矿石处理模式 ===
-            if (isOreProcessingMode()) {
-                return checkOreProcessing();
-            }
-
-            // 普通机器处理逻辑
             if (!GTUtility.areStacksEqual(lastControllerStack, getControllerSlot()) || updateMode) {
                 if (updateMode) updateMode = false;
                 // controller slot has changed
@@ -676,110 +623,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
             return super.checkProcessing();
-        } catch (Exception e) {
-            GTMod.GT_FML_LOGGER.error("Error in Chaos machine processing", e);
-            return CheckRecipeResultRegistry.INTERNAL_ERROR;
-        }
-    }
-
-    /**
-     * 检查是否为矿石处理模式
-     * 控制器槽位物品ID为1132时是矿石处理厂
-     */
-    private boolean isOreProcessingMode() {
-        return getControllerSlot() != null && getControllerSlot().getItemDamage() == 1132;
-    }
-
-    /**
-     * 矿石处理模式的checkProcessing方法
-     * 当控制器槽位是矿石处理厂时调用
-     */
-    @NotNull
-    public CheckRecipeResult checkOreProcessing() {
-        try {
-            // 初始化矿石处理配置
-            if (oreProcessingConfig == null) {
-                oreProcessingConfig = Recipes.ChaosRecipes.ChaosOreFactoryRecipes.createDefaultConfig();
-            }
-
-            // 更新配置参数
-            updateOreProcessingConfig();
-
-            // 执行矿石处理
-            Recipes.ChaosRecipes.ChaosOreFactoryRecipes.OreProcessingResult result = Recipes.ChaosRecipes.ChaosOreFactoryRecipes
-                .processOres(oreProcessingConfig);
-
-            // 处理结果
-            if (!result.success) {
-                return SimpleCheckRecipeResult.ofFailure(result.errorMessage);
-            }
-
-            // 设置机器状态
-            this.mEfficiency = 10000;
-            this.mEfficiencyIncrease = 10000;
-            this.mOutputItems = result.outputItems;
-            this.mOutputFluids = result.outputFluids;
-            this.mMaxProgresstime = result.processingTime;
-            // 耗电仅与并行有关，与超频无关
-            this.lEUt = -result.powerPerTick; // 每tick消耗电量，设为负值
-
-            // 更新当前并行数显示
-            this.currentOreParallelism = result.usedParallel;
-
-            // 消耗流体
-            consumeOreProcessingFluids(result.consumedLubricant, result.consumedDistilledWater);
-
-            // 消耗物品
-            if (result.consumedItems != null) {
-                for (ItemStack consumed : result.consumedItems) {
-                    depleteInput(consumed);
-                }
-            }
-
-            this.updateSlots();
-            return CheckRecipeResultRegistry.SUCCESSFUL;
-
-        } catch (Exception e) {
-            GTMod.GT_FML_LOGGER.error("Error in Chaos ore processing", e);
-            return CheckRecipeResultRegistry.INTERNAL_ERROR;
-        }
-    }
-
-    /**
-     * 更新矿石处理配置
-     */
-    private void updateOreProcessingConfig() {
-        if (oreProcessingConfig == null) return;
-
-        // 设置处理模式
-        oreProcessingConfig.processingMode = this.oreProcessingMode;
-        oreProcessingConfig.voidStoneMode = this.oreVoidStoneMode;
-
-        // 设置电压和并行
-        oreProcessingConfig.availableVoltage = getMaxInputVoltage();
-        oreProcessingConfig.maxParallel = getMaxParallel(); // 使用Chaos的getMaxParallel方法
-
-        // 设置输入
-        oreProcessingConfig.inputItems = getStoredInputs();
-        oreProcessingConfig.inputFluids = getStoredFluids();
-
-        // 设置无线模式标志
-        // oreProcessingConfig.wirelessMode = this.wirelessMode;
-    }
-
-    /**
-     * 消耗矿石处理所需流体
-     */
-    private void consumeOreProcessingFluids(int lubricantAmount, int distilledWaterAmount) {
-        // 消耗润滑油
-        if (lubricantAmount > 0) {
-            depleteInput(Materials.Lubricant.getFluid(lubricantAmount));
-        }
-
-        // 消耗蒸馏水
-        if (distilledWaterAmount > 0) {
-            depleteInput(gregtech.api.util.GTModHandler.getDistilledWater(distilledWaterAmount));
-        }
     }
 
     @Override
@@ -830,20 +673,6 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     // 机器运行逻辑
     @Override
     protected ProcessingLogic createProcessingLogic() {
-        if (isOreProcessingMode()) {
-            // 矿石处理模式使用专门的逻辑
-            return new ProcessingLogic() {
-
-                @Nonnull
-                @Override
-                protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
-                    // 矿石处理不需要验证普通配方
-                    return CheckRecipeResultRegistry.SUCCESSFUL;
-                }
-            };
-        }
-
-        // 普通机器逻辑
         return new ProcessingLogic() {
 
             @Nonnull

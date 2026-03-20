@@ -41,11 +41,11 @@ public class OriginGeneratorRecipes_Solar {
         // "Solar Panel (UV)" - 32759
         getModItem(GregTech.ID, "gt.metaitem.01", 0L, 32759),
         // "Solar Panel (UHV)" - 32130
-        getModItem(GregTech.ID, "gt.metaitem.01", 0L, 32130),
+        getModItem(GregTech.ID, "gt.metaitem.03", 0L, 32130),
         // "Solar Panel (UEV)" - 32131
-        getModItem(GregTech.ID, "gt.metaitem.01", 0L, 32131),
+        getModItem(GregTech.ID, "gt.metaitem.03", 0L, 32131),
         // "Solar Panel (UIV)" - 32132
-        getModItem(GregTech.ID, "gt.metaitem.01", 0L, 32132) };
+        getModItem(GregTech.ID, "gt.metaitem.03", 0L, 32132) };
 
     private static final String[] FuelBaseline_SolarPanel = new String[] {
         // "Solar Panel (LV)" - 32752

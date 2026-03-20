@@ -432,7 +432,7 @@ public class NEIConverter {
      */
     public static void main(String[] args) {
         // 方式1：使用资源目录路径（推荐）
-        String inputPath = "Tools_InputFile/itempanel_280_Ingot.csv";
+        String inputPath = "Tools_InputFile/itempanel_280_Dust.csv";
 
         // 方式2：使用相对路径（相对于项目根目录）
         // String inputPath = "src/main/resources/Tools_InputFile/itempanel_280_Ingot.csv";
@@ -441,7 +441,7 @@ public class NEIConverter {
         // String inputPath = "C:/YourProject/src/main/resources/Tools_InputFile/itempanel_280_Ingot.csv";
 
         // 输出路径（留空则自动生成到项目根目录的output文件夹）
-        String outputPath = "src/main/resources/Tools_OutputFile/itempanel_280_Ingot_converted.txt";
+        String outputPath = "src/main/resources/Tools_OutputFile/itempanel_280_Dust_converted.txt";
 
         System.out.println("=== NEI CSV转换工具 ===");
         System.out.println("输入文件: " + inputPath);

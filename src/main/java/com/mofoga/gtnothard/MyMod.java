@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
 import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
+import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
+import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
@@ -30,22 +32,8 @@ import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_Water;
 import Recipes.SingularityRecipes_Ecosystem.FakeSingularityEcosystemRecipes;
 import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes;
 import Recipes.SingularityRecipes_ModItem.FakeSingularityModItemRecipes_Show;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_Cable;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_Hatch;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_Misc;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_MultiBlock_1;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_MultiBlock_2;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_MultiBlock_3;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_GT_MultiBlock_4;
-import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes_Storage;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Cable;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Hatch;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_Misc;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_1;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_2;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_3;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_GT_MultiBlock_4;
-import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes_Storage;
+import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes;
+import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes;
 import Recipes.SingularityRecipes_VoidDust.FakeSingularityDustRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10;
@@ -117,6 +105,8 @@ public class MyMod {
         ChaosExoticRecipes.addExoticRecipes_DegenerateQuarkGluon();
         ChaosExoticRecipes.addExoticRecipes_Magmatter();
         ChaosAntimatterRecipes.addAntimatterRecipes();
+        ChaosFallingTowerRecipes.addChaosFallingTowerRecipes();
+        ChaosOreRecipes.addChaosOreRecipes();
 
         // OriginGeneratorRecipes
         OriginGeneratorRecipes_Steam.addGeneratorRecipes_Steam();
@@ -261,22 +251,14 @@ public class MyMod {
         SingularityEcosystemRecipes.addEcosystemRecipes_TreeGrowth();
         FakeSingularityEcosystemRecipes.addFakeEcosystemRecipes_TreeGrowth();
 
-        SingularityPachinkoRecipes_GT_Cable.addPachinkoRecipes_GT_Cable();
-        FakeSingularityPachinkoRecipes_GT_Cable.addFakePachinkoRecipes_GT_Cable();
-        SingularityPachinkoRecipes_GT_Hatch.addPachinkoRecipes_GT_Hatch();
-        FakeSingularityPachinkoRecipes_GT_Hatch.addFakePachinkoRecipes_GT_Hatch();
-        SingularityPachinkoRecipes_GT_Misc.addPachinkoRecipes_GT_Misc();
-        FakeSingularityPachinkoRecipes_GT_Misc.addFakePachinkoRecipes_GT_Misc();
-        SingularityPachinkoRecipes_GT_MultiBlock_1.addPachinkoRecipes_GT_MultiBlock_1();
-        FakeSingularityPachinkoRecipes_GT_MultiBlock_1.addFakePachinkoRecipes_GT_MultiBlock_1();
-        SingularityPachinkoRecipes_GT_MultiBlock_2.addPachinkoRecipes_GT_MultiBlock_2();
-        FakeSingularityPachinkoRecipes_GT_MultiBlock_2.addFakePachinkoRecipes_GT_MultiBlock_2();
-        SingularityPachinkoRecipes_GT_MultiBlock_3.addPachinkoRecipes_GT_MultiBlock_3();
-        FakeSingularityPachinkoRecipes_GT_MultiBlock_3.addFakePachinkoRecipes_GT_MultiBlock_3();
-        SingularityPachinkoRecipes_GT_MultiBlock_4.addPachinkoRecipes_GT_MultiBlock_4();
-        FakeSingularityPachinkoRecipes_GT_MultiBlock_4.addFakePachinkoRecipes_GT_MultiBlock_4();
-        SingularityPachinkoRecipes_Storage.addPachinkoRecipes_Storage();
-        FakeSingularityPachinkoRecipes_Storage.addFakePachinkoRecipes_Storage();
+        // Singularity of Pachinko
+        SingularityPachinkoRecipes.addPachinkoRecipes_GT_Item();
+        FakeSingularityPachinkoRecipes.addFakePachinkoRecipes_GT_Item();
+        SingularityPachinkoRecipes.addPachinkoRecipes_GT_Machine();
+        FakeSingularityPachinkoRecipes.addFakePachinkoRecipes_GT_Machine();
+        SingularityPachinkoRecipes.addPachinkoRecipes_Storage();
+        FakeSingularityPachinkoRecipes.addFakePachinkoRecipes_Storage();
+
         ChaosZhuHaiRecipes.addChaosZhuHaiFisheryRecipes();
         ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes();
 

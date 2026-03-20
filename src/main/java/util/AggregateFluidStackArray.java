@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 /**
@@ -218,5 +219,76 @@ public class AggregateFluidStackArray {
 
         // 第五步：返回分割后的二维数组
         return splitArrays;
+    }
+
+    /**
+     * 检查FluidStack数组中的每个流体是否实际存在
+     * 如果流体不存在（为null或流体注册名为空），自动替换为水（water）
+     * 此方法会创建新的数组，不会修改原始数组
+     *
+     * @param fluidStacks 需要检查的FluidStack数组
+     * @return 检查并替换后的新FluidStack数组
+     */
+    public static FluidStack[] checkFluidStack(FluidStack[] fluidStacks) {
+        // 第一步：检查输入参数是否为null
+        if (fluidStacks == null) {
+            // 如果输入为null，返回空数组
+            System.err.println("警告：输入的FluidStack数组为null，将返回空数组");
+            return new FluidStack[0];
+        }
+
+        // 第二步：如果数组长度为0，直接返回空数组
+        if (fluidStacks.length == 0) {
+            return new FluidStack[0];
+        }
+
+        // 第三步：创建水的静态实例，用于替换无效流体
+        // 使用FluidRegistry.getFluidStack("water", 1)获取水
+        FluidStack waterFluid = FluidRegistry.getFluidStack("water", 1);
+
+        // 检查水是否成功获取，如果水不存在（理论上不应该发生），则创建一个空的FluidStack占位符
+        if (waterFluid == null) {
+            System.err.println("严重警告：无法获取水（water）流体，将使用null作为替换值");
+            // 注意：这里如果水都不存在，我们只能使用null，但后续会再次检查
+        }
+
+        // 第四步：创建新数组，长度与原数组相同
+        FluidStack[] checkedArray = new FluidStack[fluidStacks.length];
+
+        // 第五步：遍历原数组的每个元素进行检查
+        for (int i = 0; i < fluidStacks.length; i++) {
+            FluidStack currentFluid = fluidStacks[i];
+
+            // 判断当前流体是否存在：
+            // 1. currentFluid不为null
+            // 2. currentFluid的getFluid()返回不为null
+            // 3. 流体的名称不为空（通过getFluid().getName()检查）
+            if (currentFluid != null && currentFluid.getFluid() != null
+                && currentFluid.getFluid()
+                    .getName() != null
+                && !currentFluid.getFluid()
+                    .getName()
+                    .isEmpty()) {
+
+                // 流体存在，保留原流体
+                // 注意：这里复制的是引用，如果需要深拷贝可以修改为copy()方法
+                checkedArray[i] = currentFluid;
+            } else {
+                // 流体不存在（null或无效），替换为水
+                // 输出调试信息，帮助定位问题
+                System.err.println("警告：位置 " + i + " 的流体不存在（无效流体或null），已自动替换为水");
+
+                // 使用水的copy()方法创建新的实例，避免多个位置共享同一个对象
+                if (waterFluid != null) {
+                    checkedArray[i] = waterFluid.copy();
+                } else {
+                    // 如果水都不存在，只能设置为null
+                    checkedArray[i] = null;
+                }
+            }
+        }
+
+        // 第六步：返回检查并替换后的新数组
+        return checkedArray;
     }
 }

@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.NEIOrePlugin;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateFluidStackArray.addSplitAggregateArray;
+import static util.AggregateFluidStackArray.checkFluidStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +33,7 @@ public class SingularityFluidRecipes_T10 {
         .build();
 
     public static final FluidStack[] T10_Fluid = new FluidStack[] {
+        // NEI Page 1/18
         // 1,1-Dimethylhydrazine
         FluidRegistry.getFluidStack("1,1dimethylhydrazine", 1),
 
@@ -302,6 +304,7 @@ public class SingularityFluidRecipes_T10 {
         // Boron Plasma
         FluidRegistry.getFluidStack("plasma.boron", 1),
 
+        // NEI Page 2/18
         // Boron Trichloride
         FluidRegistry.getFluidStack("boron trichloride", 1),
 
@@ -572,6 +575,7 @@ public class SingularityFluidRecipes_T10 {
         // Corpus Super Critical Fluid
         FluidRegistry.getFluidStack("gaseouscorpusessentia", 1),
 
+        // NEI Page 3/18
         // Cosmic Neutronium Plasma
         FluidRegistry.getFluidStack("plasma.cosmicneutronium", 1),
 
@@ -842,6 +846,7 @@ public class SingularityFluidRecipes_T10 {
         // Excited Dimensionally Transcendent Crude Catalyst
         FluidRegistry.getFluidStack("exciteddtcc", 1),
 
+        // NEI Page 4/18
         // Excited Dimensionally Transcendent Exotic Catalyst
         FluidRegistry.getFluidStack("exciteddtec", 1),
 
@@ -1112,6 +1117,7 @@ public class SingularityFluidRecipes_T10 {
         // H8N4C2O4 Rocket Fuel
         FluidRegistry.getFluidStack("fluid.rocketfuelmixa", 1),
 
+        // NEI Page 5/18
         // HG-1223
         FluidRegistry.getFluidStack("molten.hg1223", 1),
 
@@ -1382,6 +1388,7 @@ public class SingularityFluidRecipes_T10 {
         // Lame Brew
         FluidRegistry.getFluidStack("potion.slowness", 1),
 
+        // NEI Page 6/18
         // Lanthanum Chloride Concentrate
         FluidRegistry.getFluidStack("lanthanum chloride concentrate", 1),
 
@@ -1652,6 +1659,7 @@ public class SingularityFluidRecipes_T10 {
         // Melon Juice
         FluidRegistry.getFluidStack("melonjuice", 1),
 
+        // NEI Page 7/18
         // Mercury
         FluidRegistry.getFluidStack("mercury", 1),
 
@@ -1922,6 +1930,7 @@ public class SingularityFluidRecipes_T10 {
         // Molten Blood Infused Iron
         FluidRegistry.getFluidStack("molten.blood_infused_iron", 1),
 
+        // NEI Page 8/18
         // Molten Blood Infused Iron
         FluidRegistry.getFluidStack("molten.bloodinfusediron", 1),
 
@@ -2192,6 +2201,7 @@ public class SingularityFluidRecipes_T10 {
         // Molten Fluxed Electrum
         FluidRegistry.getFluidStack("molten.electrumflux", 1),
 
+        // NEI Page 9/18
         // Molten Fluxed Obsidian
         FluidRegistry.getFluidStack("molten.obsidianflux", 1),
 
@@ -2462,6 +2472,7 @@ public class SingularityFluidRecipes_T10 {
         // Molten Manasteel
         FluidRegistry.getFluidStack("molten.manasteel", 1),
 
+        // NEI Page 10/18
         // Molten Manganese
         FluidRegistry.getFluidStack("molten.manganese", 1),
 
@@ -2732,6 +2743,7 @@ public class SingularityFluidRecipes_T10 {
         // Molten Redstone Alloy
         FluidRegistry.getFluidStack("molten.redstonealloy", 1),
 
+        // NEI Page 11/18
         // Molten Reinforced
         FluidRegistry.getFluidStack("molten.reinforced", 1),
 
@@ -3002,6 +3014,7 @@ public class SingularityFluidRecipes_T10 {
         // Molten Titansteel
         FluidRegistry.getFluidStack("molten.titansteel", 1),
 
+        // NEI Page 12/18
         // Molten Transcendent Metal
         FluidRegistry.getFluidStack("molten.transcendentmetal", 1),
 
@@ -3272,6 +3285,7 @@ public class SingularityFluidRecipes_T10 {
         // Neodymium Chloride Concentrate
         FluidRegistry.getFluidStack("neodymium chloride concentrate", 1),
 
+        // NEI Page 13/18
         // Neodymium Extracting Nano Resin
         FluidRegistry.getFluidStack("neodymium extracting nano resin", 1),
 
@@ -3542,6 +3556,7 @@ public class SingularityFluidRecipes_T10 {
         // Potassium Permanganate Solution
         FluidRegistry.getFluidStack("potassium permanganate solution", 1),
 
+        // NEI Page 14/18
         // Potassium Plasma
         FluidRegistry.getFluidStack("plasma.potassium", 1),
 
@@ -3812,6 +3827,7 @@ public class SingularityFluidRecipes_T10 {
         // Selenium Plasma
         FluidRegistry.getFluidStack("plasma.selenium", 1),
 
+        // NEI Page 15/18
         // Semi-Stable Antimatter
         FluidRegistry.getFluidStack("antimatter", 1),
 
@@ -4082,6 +4098,7 @@ public class SingularityFluidRecipes_T10 {
         // Stretched Strength Brew
         FluidRegistry.getFluidStack("potion.strength.long", 1),
 
+        // NEI Page 16/18
         // Stretched Swiftness Brew
         FluidRegistry.getFluidStack("potion.speed.long", 1),
 
@@ -4352,6 +4369,7 @@ public class SingularityFluidRecipes_T10 {
         // Trichlorosilane
         FluidRegistry.getFluidStack("trichlorosilane", 1),
 
+        // NEI Page 17/18
         // Trimethyl Borate
         FluidRegistry.getFluidStack("trimethylborate", 1),
 
@@ -4553,9 +4571,6 @@ public class SingularityFluidRecipes_T10 {
         // Whine Yeast Fluid
         FluidRegistry.getFluidStack("saccharomycescerevisiaevarbayanusfluid", 1),
 
-        // White Dwarf Matter
-        FluidRegistry.getFluidStack("whitedwarfmatter", 1),
-
         // Wine
         FluidRegistry.getFluidStack("potion.wine", 1),
 
@@ -4625,6 +4640,7 @@ public class SingularityFluidRecipes_T10 {
         // fluid.sap
         FluidRegistry.getFluidStack("sap", 1),
 
+        // NEI Page 18/18
         // fluid.turpentine
         FluidRegistry.getFluidStack("turpentine", 1),
 
@@ -4652,13 +4668,15 @@ public class SingularityFluidRecipes_T10 {
         // tcetieisfucusserratusfluid
         FluidRegistry.getFluidStack("tcetieisfucusserratusfluid", 1) };
 
+    public static final FluidStack[] T10_Fluid_Result = checkFluidStack(T10_Fluid);
+
     public static void addVoidFluidRecipes_T10() {
-        VoidFluidRecipes_T10.put("DD", T10_Fluid);
+        VoidFluidRecipes_T10.put("DD", T10_Fluid_Result);
     }
 
     public static void addFakeVoidFluidRecipes_T10() {
         // T10 - DeepDark - DD
-        FluidStack[][] Fake_T10_DeepDark_Fluid_Split = addSplitAggregateArray(T10_Fluid, NEI_ItemOutput_Size);
+        FluidStack[][] Fake_T10_DeepDark_Fluid_Split = addSplitAggregateArray(T10_Fluid_Result, NEI_ItemOutput_Size);
         for (FluidStack[] tempFluidStacks : Fake_T10_DeepDark_Fluid_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
