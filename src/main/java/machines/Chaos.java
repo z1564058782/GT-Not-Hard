@@ -13,15 +13,21 @@ import static java.lang.Math.pow;
 import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
 
 import java.math.BigInteger;
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -75,6 +81,8 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.ItemMachines;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import mcp.mobius.waila.api.IWailaConfigHandler;
+import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
 
 public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISurvivalConstructable {
@@ -93,6 +101,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     protected boolean isRecipeProcessing = false;
     // 无线模式标志
     protected boolean wirelessMode = false;
+    // 无线电网消耗
+    private BigInteger costEU = BigInteger.ZERO;
 
     // 上次使用的配方映射
     private RecipeMap<?> mLastRecipeMap;
@@ -102,8 +112,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private int tTier = 0;
     // 降频倍数
     private int mMult = 0;
-    // 机器模式（非矿石处理模式）
+    // 机器模式
     private int mode = 0;
+    private String specialMachineType = null;
     // 模式更新标志
     private boolean updateMode = false;
     // UEV降频开关
@@ -133,6 +144,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         aNBT.setBoolean("wirelessMode", wirelessMode);
         aNBT.setBoolean("downtierUEV", downtierUEV);
         aNBT.setInteger("mode", mode);
+        if (getSpecialMachine()) {
+            aNBT.setString("MachineType", specialMachineType);
+        }
     }
 
     /**
@@ -148,6 +162,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         }
         if (aNBT.hasKey("mUseMultiparallelMode")) {
             batchMode = aNBT.getBoolean("mUseMultiparallelMode");
+        }
+        if (aNBT.hasKey("MachineType")) {
+            specialMachineType = aNBT.getString("MachineType");
         }
         // 加载基本状态
         wirelessMode = aNBT.getBoolean("wirelessMode");
@@ -239,12 +256,18 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addInfo("Runs supplied machines as if placed in the world")
             .addInfo("Parallel quantity = 2^x")
             .addInfo("x = Number of machines in the controller")
-            .addInfo(
-                "If the machine within the controller contains multiple modes, sneak left click controller to switch machine mode")
+            .addInfo("-------------------------------------------------------------------------")
+            .addInfo("If x > 16 the machine will force the wireless mode to be turned on")
+            .addInfo("In wireless mode, the formula run time will be fixed as follows 128 ticks")
+            .addInfo("and energy consume from wireless network rather than energy hatch")
+            .addInfo("-------------------------------------------------------------------------")
+            .addInfo("If the machine within the controller contains multiple modes, ")
+            .addInfo("sneak left click controller to switch machine mode")
+            .addInfo("-------------------------------------------------------------------------")
             .addInfo("Use Auto Workbench (LV) to crafting Xtreme Crafting recipe")
             .addInfo("Use Auto Workbench (MV) to crafting Falling Tower recipe")
+            .addInfo("-------------------------------------------------------------------------")
             .addInfo("Add By: GT Not Hard")
-            .addSeparator()
             .beginStructureBlock(3, 3, 3, true)
             .addController("Front center")
             .addCasingInfoRange("Robust Tungstensteel Machine Casing", 4, 24, false)
@@ -382,6 +405,14 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     // === 多类型机器配方列表 ===
+    private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3008, 12735, 15415, 31021,
+        31050, 32018 };
+
+    private boolean getSpecialMachine() {
+        Integer machineID = getControllerSlot().getItemDamage();
+        List<Integer> specialMachineList = Arrays.asList(specialMachine);
+        return specialMachineList.contains(machineID);
+    }
 
     // 磁通量效应监视器-358
     private static final String[] Magnetic_Flux_Exhibitor_mod = { "Polarizer", "Electromagnetic Separator" };
@@ -455,31 +486,67 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             updateMode = true;
             // 根据机器ID显示对应的模式名称
             switch (getControllerSlot().getItemDamage()) {
-                case 358 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Magnetic_Flux_Exhibitor_mod[Math.min(mode, 1)]);
-                case 360 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + TurboCan_Pro_mod[Math.min(mode, 1)]);
-                case 792 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Industrial_Material_Press_mod[Math.min(mode, 1)]);
-                case 850 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Ore_Washing_Plant_mod[Math.min(mode, 2)]);
-                case 862 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + High_Current_Industrial_Arc_Furnace_mod[Math.min(mode, 1)]);
-                case 942 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Amazon_Warehousing_Depot_mod[Math.min(mode, 1)]);
-                case 992 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Industrial_Cutting_Factory_mod[Math.min(mode, 1)]);
-                case 995 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Utupu_Tanuri_mod[Math.min(mode, 1)]);
-                case 3008 -> GTUtility.sendChatToPlayer(
-                    aPlayer,
-                    "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
-                case 12735 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
-                case 15415 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Heliofusion_Exoticizer_mod[Math.min(mode, 1)]);
-                case 31021 -> GTUtility.sendChatToPlayer(aPlayer, "mode:" + Dangote_Distillus_mod[Math.min(mode, 1)]);
-                case 31050 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Elemental_Duplicator_mod[Math.min(mode, 1)]);
-                case 32018 -> GTUtility
-                    .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
+                case 358 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Magnetic_Flux_Exhibitor_mod[Math.min(mode, 1)]);
+                    specialMachineType = Magnetic_Flux_Exhibitor_mod[Math.min(mode, 1)];
+                }
+                case 360 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + TurboCan_Pro_mod[Math.min(mode, 1)]);
+                    specialMachineType = TurboCan_Pro_mod[Math.min(mode, 1)];
+                }
+                case 792 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Industrial_Material_Press_mod[Math.min(mode, 1)]);
+                    specialMachineType = Industrial_Material_Press_mod[Math.min(mode, 1)];
+                }
+                case 850 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Ore_Washing_Plant_mod[Math.min(mode, 2)]);
+                    specialMachineType = Ore_Washing_Plant_mod[Math.min(mode, 2)];
+                }
+                case 862 -> {
+                    GTUtility.sendChatToPlayer(
+                        aPlayer,
+                        "mode:" + High_Current_Industrial_Arc_Furnace_mod[Math.min(mode, 1)]);
+                    specialMachineType = High_Current_Industrial_Arc_Furnace_mod[Math.min(mode, 1)];
+                }
+                case 942 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Amazon_Warehousing_Depot_mod[Math.min(mode, 1)]);
+                    specialMachineType = Amazon_Warehousing_Depot_mod[Math.min(mode, 1)];
+                }
+                case 992 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Industrial_Cutting_Factory_mod[Math.min(mode, 1)]);
+                    specialMachineType = Industrial_Cutting_Factory_mod[Math.min(mode, 1)];
+                }
+                case 995 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Utupu_Tanuri_mod[Math.min(mode, 1)]);
+                    specialMachineType = Utupu_Tanuri_mod[Math.min(mode, 1)];
+                }
+                case 3008 -> {
+                    GTUtility.sendChatToPlayer(
+                        aPlayer,
+                        "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
+                    specialMachineType = Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)];
+                }
+                case 12735 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
+                    specialMachineType = Circuit_Assembly_Line_mod[Math.min(mode, 1)];
+                }
+                case 15415 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Heliofusion_Exoticizer_mod[Math.min(mode, 1)]);
+                    specialMachineType = Heliofusion_Exoticizer_mod[Math.min(mode, 1)];
+                }
+                case 31021 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Dangote_Distillus_mod[Math.min(mode, 1)]);
+                    specialMachineType = Dangote_Distillus_mod[Math.min(mode, 1)];
+                }
+                case 31050 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Elemental_Duplicator_mod[Math.min(mode, 1)]);
+                    specialMachineType = Elemental_Duplicator_mod[Math.min(mode, 1)];
+                }
+                case 32018 -> {
+                    GTUtility
+                        .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
+                    specialMachineType = Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)];
+                }
             }
         }
         super.onLeftclick(aBaseMetaTileEntity, aPlayer);
@@ -597,13 +664,13 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
         }
 
-        // 控制方块中机器数量大于8自动开启无线电网模式
-        wirelessMode = getControllerSlot().stackSize > 8;
+        // 控制方块中机器数量大于16自动开启无线电网模式
+        wirelessMode = getControllerSlot().stackSize > 16;
         if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
             boolean succeeded = false;
             CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
 
-            for (int i = 0; i < 64; i++) {
+            for (int i = 0; i < 1024; i++) {
                 CheckRecipeResult result = wirelessModeProcessingLogic();
                 if (!result.wasSuccessful()) {
                     finalResult = result;
@@ -617,7 +684,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
             mEfficiency = 10000;
             mEfficiencyIncrease = 10000;
-            mMaxProgresstime = 1;
+            mMaxProgresstime = 128;
 
             return CheckRecipeResultRegistry.SUCCESSFUL;
         }
@@ -653,10 +720,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         CheckRecipeResult result = doCheckRecipe();
         if (!result.wasSuccessful()) return result;
 
-        BigInteger costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
+        costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
             .multiply(BigInteger.valueOf(processingLogic.getDuration()))
             .multiply(BigInteger.valueOf(getMaxParallel()))
-            .divide(BigInteger.valueOf(10_000));
+            .divide(BigInteger.valueOf(1_000_000));
 
         if (!addEUToGlobalEnergyMap(ownerUUID, costEU.multiply(BigInteger.valueOf(-1)))) {
             return CheckRecipeResultRegistry.insufficientStartupPower(costEU);
@@ -800,5 +867,43 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addTooltip(StatCollector.translateToLocal("GT5U.gui.button.down_tier"))
             .setTooltipShowUpDelay(TOOLTIP_DELAY))
             .widget(new FakeSyncWidget.BooleanSyncer(() -> downtierUEV, val -> downtierUEV = val));
+    }
+
+    @Override
+    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
+        int z) {
+        super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        if (mLastRecipeMap != null && getControllerSlot() != null) {
+            tag.setString("Machine", getControllerSlot().getDisplayName());
+            if (getSpecialMachine()) {
+                tag.setString("MachineType", specialMachineType);
+            }
+            if (wirelessMode) {
+                DecimalFormat process = new DecimalFormat("#,###");
+                tag.setString("EnergyConsume", process.format(costEU));
+            }
+        }
+    }
+
+    @Override
+    public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
+        IWailaConfigHandler config) {
+        super.getWailaBody(itemStack, currentTip, accessor, config);
+        final NBTTagCompound tag = accessor.getNBTData();
+        if (tag.hasKey("Machine")) {
+            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + tag.getString("Machine"));
+            if (tag.hasKey("MachineType")) {
+                currentTip.add("Machine type: " + EnumChatFormatting.YELLOW + tag.getString("MachineType"));
+            }
+            currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallel());
+            if (tag.hasKey("EnergyConsume")) {
+                currentTip.add("WirelessMode: " + EnumChatFormatting.GREEN + "True");
+                currentTip.add("Energy consume: " + EnumChatFormatting.YELLOW + tag.getString("EnergyConsume"));
+            } else {
+                currentTip.add("WirelessMode: " + EnumChatFormatting.RED + "False");
+            }
+        } else {
+            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + "None");
+        }
     }
 }

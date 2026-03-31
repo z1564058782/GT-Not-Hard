@@ -17,7 +17,7 @@ public class OriginGeneratorRecipes_Nuclear {
 
     public static final RecipeMap<RecipeMapBackend> GeneratorRecipes_Nuclear = RecipeMapBuilder
         .of("Origin of Generator with Nuclear")
-        .maxIO(2, 1, 0, 1)
+        .maxIO(2, 1, 0, 0)
         .minInputs(2, 0)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(ItemFuelOfGeneratorFrontend::new)

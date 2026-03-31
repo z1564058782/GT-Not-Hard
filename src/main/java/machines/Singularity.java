@@ -15,6 +15,7 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_G
 import static gregtech.api.enums.Textures.BlockIcons.casingTexturePages;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
@@ -22,8 +23,12 @@ import java.util.Random;
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -54,6 +59,8 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtneioreplugin.plugin.item.ItemDimensionDisplay;
+import mcp.mobius.waila.api.IWailaConfigHandler;
+import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> implements ISurvivalConstructable {
 
@@ -61,18 +68,19 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         super(aID, aName, aNameRegional);
     }
 
-    private String mLastDimensionOverride = "None";
-
     public Singularity(String aName) {
         super(aName);
     }
+
+    private String mLastDimensionOverride = "None";
+    private String machineType = null;
 
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
         aNBT.setString("mLastDimensionOverride", this.mLastDimensionOverride);
         aNBT.setInteger("mode", mode);
-        aNBT.setBoolean("mVoidFluidMode", VoidFluidMode);
+        aNBT.setString("MachineType", machineType);
     }
 
     @Override
@@ -80,7 +88,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         super.loadNBTData(aNBT);
         this.mLastDimensionOverride = aNBT.getString("mLastDimensionOverride");
         this.mode = aNBT.getInteger("mode");
-        this.VoidFluidMode = aNBT.getBoolean("mVoidFluidMode");
+        this.machineType = aNBT.getString("MachineType");
     }
 
     private static final int mcasingIndex = Textures.BlockIcons.getTextureIndex(
@@ -148,11 +156,13 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             .addInfo("Runs supplied machines as if placed in the world")
             .addInfo("Parallel quantity = 2^x")
             .addInfo("x = Number of machines in the controller")
-            .addInfo("You can only place 'GT NEI Ore Plugin' items in controller to get resources.")
-            .addInfo("This machine can get two types of resources: Ore and Fluid.")
-            .addInfo("Sneak left click controller to switch resources type.")
+            .addInfo("-----------------------------------------------------------------------------")
+            .addInfo("You can place some item in controller to get resources")
+            .addInfo("This machine can get eight types of resources:")
+            .addInfo("Void Ore/Void Gem/Void Dust/Void Fluid/Void Ingot/Ecosystem/Mod Item/Pachinko")
+            .addInfo("Sneak left click controller to switch resources type")
+            .addInfo("-----------------------------------------------------------------------------")
             .addInfo("Add By: GT Not Hard")
-            .addSeparator()
             .beginStructureBlock(3, 3, 3, true)
             .addController("Front center")
             .addCasingInfoRange("Stable Titanium Machine Casing", 4, 24, false)
@@ -235,7 +245,6 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         super.onPostTick(aBaseMetaTileEntity, aTick);
     }
 
-    private boolean VoidFluidMode = false;
     private int mode = 0;
 
     // 潜行左键切换虚空的类型
@@ -244,20 +253,28 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         if (aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
             mode = (mode + 1) % 8;
             if (mode == 1) {
+                machineType = "Void Ore";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Void Ore");
             } else if (mode == 2) {
+                machineType = "Void Gem";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Void Gem");
             } else if (mode == 3) {
+                machineType = "Void Dust";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Void Dust");
             } else if (mode == 4) {
+                machineType = "Void Fluid";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Void Fluid");
             } else if (mode == 5) {
+                machineType = "Void Ingot";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Void Ingot");
             } else if (mode == 6) {
+                machineType = "Ecosystem";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Ecosystem");
             } else if (mode == 7) {
-                GTUtility.sendChatToPlayer(aPlayer, "mode: Mode Item");
+                machineType = "Mod Item";
+                GTUtility.sendChatToPlayer(aPlayer, "mode: Mod Item");
             } else {
+                machineType = "Pachinko";
                 GTUtility.sendChatToPlayer(aPlayer, "mode: Pachinko");
             }
         }
@@ -1104,5 +1121,27 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         }
         this.stopMachine(ShutDownReasonRegistry.NONE);
         return CheckRecipeResultRegistry.NO_RECIPE;
+    }
+
+    @Override
+    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
+        int z) {
+        super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        if (getControllerSlot() != null) {
+            tag.setString("Item", getControllerSlot().getDisplayName());
+            tag.setString("Type", machineType);
+        }
+    }
+
+    @Override
+    public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
+        IWailaConfigHandler config) {
+        super.getWailaBody(itemStack, currentTip, accessor, config);
+        final NBTTagCompound tag = accessor.getNBTData();
+        if (tag.hasKey("Item")) {
+            currentTip.add("Item: " + EnumChatFormatting.YELLOW + tag.getString("Item"));
+            currentTip.add("Type: " + EnumChatFormatting.YELLOW + tag.getString("Type"));
+            currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallel());
+        }
     }
 }

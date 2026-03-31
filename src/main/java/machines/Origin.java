@@ -20,15 +20,21 @@ import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap
 import static gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase.GTPPHatchElement.TTDynamo;
 
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import org.jetbrains.annotations.NotNull;
@@ -68,6 +74,8 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
+import mcp.mobius.waila.api.IWailaConfigHandler;
+import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConstructable, ISecondaryDescribable {
 
@@ -158,17 +166,20 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
             .addInfo("Runs supplied machines as if placed in the world")
             .addInfo("Parallel quantity = 2^x")
             .addInfo("x = Number of machines in the controller")
-            .addInfo("You can put some single block generators of fluid in the host machine.")
-            .addInfo("Compared with the original generator, it has a sixteenfold increase.")
-            .addInfo("It is recommended to use the appropriate fluid fuel for the best experience.")
+            .addInfo("----------------------------------------------------------------")
+            .addInfo("If x > 8 can use wireless mode with sneak left click controller")
+            .addInfo("Energy will consume in wireless network rather than dynamo hatch")
+            .addInfo("----------------------------------------------------------------")
             .addInfo("Add By: GT Not Hard")
-            .addSeparator()
             .beginStructureBlock(3, 3, 3, true)
             .addController("Front center")
             .addCasingInfoRange("Clean Stainless Steel Machine Casing", 4, 24, false)
             .addDynamoHatch("Any casing", 1)
             .addMaintenanceHatch("Any casing", 1)
             .addInputHatch("Any casing", 1)
+            .addInputBus("Any casing", 1)
+            .addOutputHatch("Any casing", 1)
+            .addOutputBus("Any casing", 1)
             .toolTipFinisher();
         return tt;
     }
@@ -191,8 +202,6 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
     // 检查机器结构
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        this.mMaintenanceHatches.clear();
-        this.mInputHatches.clear();
         this.mDynamoHatches.clear();
         this.mTecTechDynamoHatches.clear();
         mCasingAmount = 0;
@@ -474,7 +483,9 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
             @Override
             protected CheckRecipeResult validateRecipe(@Nonnull GTRecipe recipe) {
                 int power = -recipe.mEUt;
-                if (power < 0) return CheckRecipeResultRegistry.NO_RECIPE;
+                if (power < 0) {
+                    return CheckRecipeResultRegistry.NO_RECIPE;
+                }
                 mMaxProgresstime = recipe.mDuration;
                 powers = BigInteger.valueOf(lEUt)
                     .multiply(BigInteger.valueOf(mMaxProgresstime))
@@ -484,8 +495,6 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
                         return CheckRecipeResultRegistry
                             .insufficientStartupPower(powers.multiply(BigInteger.valueOf(20)));
                     }
-                } else {
-                    return CheckRecipeResultRegistry.insufficientStartupPower(powers);
                 }
                 return CheckRecipeResultRegistry.GENERATING;
             }
@@ -495,8 +504,9 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
     @Override
     public RecipeMap<?> getRecipeMap() {
         ItemStack itemStack = getControllerSlot();
-        int GeneratorID = getControllerSlot().getItemDamage();
+        // if (itemStack == null) return null;
         if (itemStack.getItem() != null) {
+            int GeneratorID = getControllerSlot().getItemDamage();
             switch (GeneratorID) {
                 // Steam Small Generator
                 // "Advanced Boiler [LV]" - 753
@@ -709,13 +719,51 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
     @Override
     public void onLeftclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
         if (aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
-            wireless_mode = !wireless_mode;
-            if (canUseWireless() && wireless_mode) {
-                GTUtility.sendChatToPlayer(aPlayer, "mode: wireless_mode");
+            if (canUseWireless()) {
+                if (wireless_mode) {
+                    wireless_mode = false;
+                    GTUtility.sendChatToPlayer(aPlayer, "mode: no_wireless_mode");
+                } else {
+                    wireless_mode = true;
+                    GTUtility.sendChatToPlayer(aPlayer, "mode: wireless_mode");
+                }
             } else {
-                GTUtility.sendChatToPlayer(aPlayer, "mode: nowireless_mode");
+                wireless_mode = false;
+                GTUtility.sendChatToPlayer(aPlayer, "mode: no_wireless_mode");
             }
         }
         super.onLeftclick(aBaseMetaTileEntity, aPlayer);
+    }
+
+    @Override
+    public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
+        int z) {
+        super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        if (getControllerSlot() != null) {
+            tag.setString("Machine", getControllerSlot().getDisplayName());
+            if (wireless_mode) {
+                DecimalFormat process = new DecimalFormat("#,###");
+                tag.setString("EnergyGenerate", process.format(powers));
+            }
+        }
+    }
+
+    @Override
+    public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
+        IWailaConfigHandler config) {
+        super.getWailaBody(itemStack, currentTip, accessor, config);
+        final NBTTagCompound tag = accessor.getNBTData();
+        if (tag.hasKey("Machine")) {
+            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + tag.getString("Machine"));
+            currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallelRecipes());
+            if (tag.hasKey("EnergyGenerate")) {
+                currentTip.add("WirelessMode: " + EnumChatFormatting.GREEN + "True");
+                currentTip.add("Energy Generate: " + EnumChatFormatting.YELLOW + tag.getString("EnergyGenerate"));
+            } else {
+                currentTip.add("WirelessMode: " + EnumChatFormatting.RED + "False");
+            }
+        } else {
+            currentTip.add("Machine: " + EnumChatFormatting.YELLOW + "None");
+        }
     }
 }

@@ -2,7 +2,8 @@ package Recipes.OriginGeneratorRecipes;
 
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GTModHandler.getModItem;
-import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+
+import java.util.ArrayList;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -23,78 +24,74 @@ public class OriginGeneratorRecipes_Rocket {
         .frontend(FluidFuelOfGeneratorFrontend::new)
         .build();
 
-    private static final String[] FuelBaseline = new String[] {
-        // "Rp-1 Rocket Fuel"
-        "1,536,000",
-        // "Dense Hydrazine Fuel Mixture"
-        "3,072,000",
-        // "CN3H7O3 Rocket Fuel"
-        "6,144,000",
-        // "H8N4C2O4 Rocket Fuel"
-        "12,588,000" };
+    private static class FuelList {
 
-    private static final int[] FuelCalorificValue = new int[] {
-        // "Rp-1 Rocket Fuel"
-        1_536_000,
-        // "Dense Hydrazine Fuel Mixture"
-        3_072_000,
-        // "CN3H7O3 Rocket Fuel"
-        6_144_000,
-        // "H8N4C2O4 Rocket Fuel"
-        12_588_000 };
+        String FuelBaseline;
+        int FuelCalorificValue;
+        int Duration;
+        FluidStack Fuel;
 
-    private static final FluidStack[] Fuel = new FluidStack[] {
-        // "Rp-1 Rocket Fuel"
-        FluidRegistry.getFluidStack("fluid.rocketfuelmixb", 1),
-        // "Dense Hydrazine Fuel Mixture"
-        FluidRegistry.getFluidStack("fluid.rocketfuelmixd", 1),
-        // "CN3H7O3 Rocket Fuel"
-        FluidRegistry.getFluidStack("fluid.rocketfuelmixc", 1),
-        // "H8N4C2O4 Rocket Fuel"
-        FluidRegistry.getFluidStack("fluid.rocketfuelmixa", 1) };
+        public FuelList(String FuelBaseline, int FuelCalorificValue, int Duration, FluidStack Fuel) {
+            this.FuelBaseline = FuelBaseline;
+            this.FuelCalorificValue = FuelCalorificValue;
+            this.Duration = Duration;
+            this.Fuel = Fuel;
+        }
+    }
 
     public static void addGeneratorRecipes_Rocket() {
-        // "Basic Rocket Engine" - 793
-        for (int FuelID = 0; FuelID < Fuel.length; FuelID++) {
+        ArrayList<FuelList> fuelList = new ArrayList<>();
+
+        // "Rp-1 Rocket Fuel"
+        fuelList.add(new FuelList("1,536,000", 1_536_000, 20, FluidRegistry.getFluidStack("fluid.rocketfuelmixb", 1)));
+
+        // "Dense Hydrazine Fuel Mixture"
+        fuelList.add(new FuelList("3,072,000", 3_072_000, 20, FluidRegistry.getFluidStack("fluid.rocketfuelmixd", 1)));
+
+        // "CN3H7O3 Rocket Fuel"
+        fuelList.add(new FuelList("6,144,000", 6_144_000, 20, FluidRegistry.getFluidStack("fluid.rocketfuelmixc", 1)));
+
+        // "H8N4C2O4 Rocket Fuel"
+        fuelList
+            .add(new FuelList("12,588,000", 12_588_000, 20, FluidRegistry.getFluidStack("fluid.rocketfuelmixa", 1)));
+
+        FuelList[] fuel = fuelList.toArray(new FuelList[0]);
+
+        for (FuelList list : fuel) {
+            // "Basic Rocket Engine" - 793
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 0L, 793))
-                .fluidInputs(Fuel[FuelID])
-                .duration(SECONDS)
-                .setNEIDesc("Fuel Baseline = " + FuelBaseline[FuelID])
-                .eut(-FuelCalorificValue[FuelID])
+                .fluidInputs(list.Fuel)
+                .duration(list.Duration)
+                .setNEIDesc("Fuel Baseline = " + list.FuelBaseline)
+                .eut(-list.FuelCalorificValue)
                 .addTo(GeneratorRecipes_Rocket);
-        }
 
-        // "Advanced Rocket Engine" - 794
-        for (int FuelID = 0; FuelID < Fuel.length; FuelID++) {
+            // "Advanced Rocket Engine" - 794
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 0L, 794))
-                .fluidInputs(Fuel[FuelID])
-                .duration(SECONDS)
-                .setNEIDesc("Fuel Baseline = " + FuelBaseline[FuelID])
-                .eut(-FuelCalorificValue[FuelID])
+                .fluidInputs(list.Fuel)
+                .duration(list.Duration)
+                .setNEIDesc("Fuel Baseline = " + list.FuelBaseline)
+                .eut(-list.FuelCalorificValue)
                 .addTo(GeneratorRecipes_Rocket);
-        }
 
-        // "Turbo Rocket Engine" - 795
-        for (int FuelID = 0; FuelID < Fuel.length; FuelID++) {
+            // "Turbo Rocket Engine" - 795
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 0L, 795))
-                .fluidInputs(Fuel[FuelID])
-                .duration(SECONDS)
-                .setNEIDesc("Fuel Baseline = " + FuelBaseline[FuelID])
-                .eut(-FuelCalorificValue[FuelID])
+                .fluidInputs(list.Fuel)
+                .duration(list.Duration)
+                .setNEIDesc("Fuel Baseline = " + list.FuelBaseline)
+                .eut(-list.FuelCalorificValue)
                 .addTo(GeneratorRecipes_Rocket);
-        }
 
-        // "Rocketdyne F-1A Engine" - 996
-        for (int FuelID = 0; FuelID < Fuel.length; FuelID++) {
+            // "Rocketdyne F-1A Engine" - 996
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 0L, 996))
-                .fluidInputs(Fuel[FuelID])
-                .duration(SECONDS)
-                .setNEIDesc("Fuel Baseline = " + FuelBaseline[FuelID])
-                .eut(-FuelCalorificValue[FuelID])
+                .fluidInputs(list.Fuel)
+                .duration(list.Duration)
+                .setNEIDesc("Fuel Baseline = " + list.FuelBaseline)
+                .eut(-list.FuelCalorificValue)
                 .addTo(GeneratorRecipes_Rocket);
         }
     }
