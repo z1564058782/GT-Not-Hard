@@ -6,6 +6,9 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addCompressAggregateArray;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
@@ -1523,11 +1526,29 @@ public class FakeSingularityIngotRecipes {
 
     public static void addFakeVoidIngotRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[][] Fake_T10_DeepDark_Ingot_Split = addSplitAggregateArray(Vein_Ingot.T10_Ingot, NEI_ItemOutput_Size);
-        for (ItemStack[] tempItemStacks : Fake_T10_DeepDark_Ingot_Split) {
+        ItemStack[][] splitArrays = addSplitAggregateArray(Vein_Ingot.T10_Ingot, NEI_ItemOutput_Size);
+
+        for (ItemStack[] tempItemStacks : splitArrays) {
+            List<ItemStack> validOutputs = new ArrayList<>();
+
+            if (tempItemStacks != null) {
+                for (ItemStack stack : tempItemStacks) {
+                    if (stack != null) {
+                        validOutputs.add(stack);
+                    }
+                }
+            }
+
+            // 如果没有有效输出，直接跳过这个配方
+            if (validOutputs.isEmpty()) {
+                continue;
+            }
+
+            ItemStack[] filteredOutputs = validOutputs.toArray(new ItemStack[0]);
+
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))
-                .itemOutputs(tempItemStacks)
+                .itemOutputs(filteredOutputs)
                 .fake()
                 .duration(3 * SECONDS)
                 .setNEIDesc("Singularity with Void Ingot Mode")
