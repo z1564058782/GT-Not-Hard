@@ -1277,7 +1277,7 @@ public class GT_Machine {
         getModItem(GregTech.ID, "gt.blockframes", 1L, 992),
         // "Tinted Industrial Glass (White)"
         getModItem(GregTech.ID, "gt.blocktintedglass", 1L, 0),
-        // Neonite
+        //  Neonite
         getModItem(Chisel.ID, "neonite", 1L, 7),
 
         // "High Energy Laser Purification Unit"
