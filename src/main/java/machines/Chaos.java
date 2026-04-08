@@ -12,6 +12,10 @@ import static gtPlusPlus.api.recipe.GTPPRecipeMaps.simpleWasherRecipes;
 import static java.lang.Math.pow;
 import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -50,6 +54,7 @@ import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
+import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
@@ -84,6 +89,129 @@ import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
+
+/**
+ * 异常处理模式枚举
+ * 定义了三种不同的异常处理方式
+ */
+enum TryCatchMode {
+    /** 模式1：直接输出到终端（控制台） */
+    CONSOLE,
+    /** 模式2：统一输出到文件ChaosTryCatch.txt */
+    FILE,
+    /** 模式3：不进行任何显示，直接销毁（静默处理） */
+    SILENT
+}
+
+/**
+ * 异常处理管理器
+ * 负责统一管理所有try-catch语句的异常输出行为
+ */
+class ExceptionHandler {
+
+    // ==================== 开发者配置区 ====================
+    // 开发者可以通过修改此变量来切换异常处理模式
+    // 可选值：TryCatchMode.CONSOLE / TryCatchMode.FILE / TryCatchMode.SILENT
+    private static final TryCatchMode tryCatchMode = TryCatchMode.SILENT; // 在此处修改异常处理模式
+    // ====================================================
+
+    // 文件输出路径，当tryCatchMode为FILE时使用
+    private static final String LOG_FILE_PATH = "ChaosTryCatch.txt";
+
+    /**
+     * 处理异常信息
+     * 根据tryCatchMode的设置，以不同的方式处理异常输出
+     *
+     * @param tag     异常标识标签，用于区分不同位置的异常
+     * @param message 异常消息内容
+     * @param e       异常对象
+     */
+    public static void handleException(String tag, String message, Exception e) {
+        switch (tryCatchMode) {
+            case CONSOLE:
+                // 模式1：直接输出至终端
+                GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+                GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+                break;
+
+            case FILE:
+                // 模式2：统一输出到文件
+                writeToFile(tag, message, e);
+                break;
+
+            case SILENT:
+                // 模式3：不进行任何显示，直接销毁
+                // 静默处理，不输出任何内容
+                break;
+
+            default:
+                // 默认情况使用控制台输出
+                GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+                GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+                break;
+        }
+    }
+
+    /**
+     * 处理异常信息（简化版本）
+     * 根据tryCatchMode的设置，以不同的方式处理异常输出
+     *
+     * @param tag 异常标识标签
+     * @param e   异常对象
+     */
+    public static void handleException(String tag, Exception e) {
+        handleException(tag, e.getMessage() != null ? e.getMessage() : "Unknown error", e);
+    }
+
+    /**
+     * 将异常信息写入文件
+     * 采用追加写入模式，每次异常都会追加到文件末尾
+     *
+     * @param tag     异常标识标签
+     * @param message 异常消息
+     * @param e       异常对象
+     */
+    private static void writeToFile(String tag, String message, Exception e) {
+        PrintWriter writer = null;
+        try {
+            // 创建File对象，指向当前工作目录下的LOG_FILE_PATH文件
+            File logFile = new File(LOG_FILE_PATH);
+            // 使用FileWriter的追加模式（第二个参数true表示追加）
+            // 使用PrintWriter来方便地写入各种数据类型
+            writer = new PrintWriter(new FileWriter(logFile, true));
+
+            // 写入时间戳和异常分隔线
+            writer.println("========== " + new java.util.Date().toString() + " ==========");
+            writer.println("[Tag]: " + tag);
+            writer.println("[Message]: " + message);
+            writer.println(
+                "[Exception Type]: " + e.getClass()
+                    .getName());
+            writer.println("[Stack Trace]:");
+            // 写入完整的堆栈跟踪信息
+            e.printStackTrace(writer);
+            writer.println(); // 添加空行分隔不同的异常记录
+            writer.flush(); // 确保数据被写入文件
+
+        } catch (IOException ioException) {
+            // 如果文件写入失败，回退到控制台输出
+            GTMod.GT_FML_LOGGER.error("[Chaos] Failed to write exception to file: " + LOG_FILE_PATH);
+            GTMod.GT_FML_LOGGER.error("[Chaos] Fallback to console output");
+            GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+            GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+            GTMod.GT_FML_LOGGER.error("[Chaos] File write error: ", ioException);
+        } finally {
+            // 确保关闭writer资源
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (Exception closeException) {
+                    // 关闭资源时的异常静默处理，避免递归
+                }
+            }
+        }
+    }
+}
 
 public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISurvivalConstructable {
 
@@ -141,11 +269,53 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
-        aNBT.setBoolean("wirelessMode", wirelessMode);
-        aNBT.setBoolean("downtierUEV", downtierUEV);
-        aNBT.setInteger("mode", mode);
-        if (getSpecialMachine()) {
-            aNBT.setString("MachineType", specialMachineType);
+        try {
+            aNBT.setBoolean("wirelessMode", wirelessMode);
+            aNBT.setBoolean("downtierUEV", downtierUEV);
+            aNBT.setInteger("mode", mode);
+            if (getSpecialMachine()) {
+                // 添加空值检查：只有当 specialMachineType 不为 null 且不为空字符串时才保存
+                if (specialMachineType != null && !specialMachineType.trim()
+                    .isEmpty()) {
+                    aNBT.setString("MachineType", specialMachineType);
+                } else {
+                    // 如果 specialMachineType 为空，记录警告但不保存
+                    ExceptionHandler.handleException(
+                        "saveNBTData",
+                        "specialMachineType is null or empty, skipping save",
+                        new IllegalArgumentException("Empty specialMachineType"));
+                }
+            }
+        } catch (NullPointerException e) {
+            // 捕获getSpecialMachine()中可能发生的NPE，记录详细错误信息以便定位问题
+            ExceptionHandler.handleException("saveNBTData", "NullPointerException - controller slot may be null", e);
+            // 尝试安全地保存部分数据
+            try {
+                aNBT.setBoolean("wirelessMode", wirelessMode);
+                aNBT.setBoolean("downtierUEV", downtierUEV);
+                aNBT.setInteger("mode", mode);
+                // 不尝试保存MachineType
+            } catch (Exception ex) {
+                ExceptionHandler.handleException("saveNBTData", "Failed to save fallback NBT data", ex);
+            }
+        } catch (IllegalArgumentException e) {
+            // 专门捕获 IllegalArgumentException（包括空字符串错误）
+            ExceptionHandler
+                .handleException("saveNBTData", "IllegalArgumentException - likely empty string for MachineType", e);
+            // 尝试安全地保存除MachineType外的其他数据
+            try {
+                aNBT.setBoolean("wirelessMode", wirelessMode);
+                aNBT.setBoolean("downtierUEV", downtierUEV);
+                aNBT.setInteger("mode", mode);
+            } catch (Exception ex) {
+                ExceptionHandler.handleException(
+                    "saveNBTData",
+                    "Failed to save fallback NBT data after IllegalArgumentException",
+                    ex);
+            }
+        } catch (Exception e) {
+            // 捕获其他可能的异常
+            ExceptionHandler.handleException("saveNBTData", "Unexpected exception", e);
         }
     }
 
@@ -164,7 +334,17 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             batchMode = aNBT.getBoolean("mUseMultiparallelMode");
         }
         if (aNBT.hasKey("MachineType")) {
-            specialMachineType = aNBT.getString("MachineType");
+            String loadedMachineType = aNBT.getString("MachineType");
+            // 添加空值检查：只有非空字符串才赋值
+            if (loadedMachineType != null && !loadedMachineType.trim()
+                .isEmpty()) {
+                specialMachineType = loadedMachineType;
+            } else {
+                ExceptionHandler.handleException(
+                    "loadNBTData",
+                    "loaded MachineType is null or empty, ignoring",
+                    new IllegalArgumentException("Invalid MachineType"));
+            }
         }
         // 加载基本状态
         wirelessMode = aNBT.getBoolean("wirelessMode");
@@ -405,13 +585,29 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     // === 多类型机器配方列表 ===
-    private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3008, 12735, 15415, 31021,
-        31050, 32018 };
+    private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3006, 3008, 12735, 15415,
+        31021, 31050, 32018 };
 
     private boolean getSpecialMachine() {
-        Integer machineID = getControllerSlot().getItemDamage();
-        List<Integer> specialMachineList = Arrays.asList(specialMachine);
-        return specialMachineList.contains(machineID);
+        try {
+            // 获取控制器槽位物品
+            ItemStack controllerSlot = getControllerSlot();
+            // 空值检查：如果控制器槽位为空，返回false
+            if (controllerSlot == null) {
+                ExceptionHandler.handleException(
+                    "getSpecialMachine",
+                    "controller slot is null, returning false",
+                    new NullPointerException("Controller slot null"));
+                return false;
+            }
+            Integer machineID = controllerSlot.getItemDamage();
+            List<Integer> specialMachineList = Arrays.asList(specialMachine);
+            return specialMachineList.contains(machineID);
+        } catch (NullPointerException e) {
+            // 捕获NPE并记录详细信息以便定位
+            ExceptionHandler.handleException("getSpecialMachine", "NullPointerException", e);
+            return false;
+        }
     }
 
     // 磁通量效应监视器-358
@@ -446,11 +642,15 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final String[] Utupu_Tanuri_mod = { "Dehydrator", "Vacuum Furnace" };
     private static final RecipeMap<?>[] Utupu_Tanuri = { GTPPRecipeMaps.chemicalDehydratorNonCellRecipes,
         GTPPRecipeMaps.vacuumFurnaceRecipes };
+    // "Hot Isostatic Pressurization Unit"-3006
+    private static final String[] Hot_Isostatic_Pressurization_Unit_mod = { "Compressor", "HIP Compressor" };
+    private static final RecipeMap<?>[] Hot_Isostatic_Pressurization_Unit = { RecipeMaps.compressorRecipes,
+        ChaosSpecialCompressRecipes.SpecialCompressRecipes_HIP };
     // 黑洞压缩机-3008
-    private static final String[] Pseudostable_Black_Hole_Containment_Field_mod = { "Compressor",
+    private static final String[] Pseudostable_Black_Hole_Containment_Field_mod = { "Compressor", "BHC Compressor",
         "Advanced Neutronium Compressor" };
     private static final RecipeMap<?>[] Pseudostable_Black_Hole_Containment_Field = { RecipeMaps.compressorRecipes,
-        RecipeMaps.neutroniumCompressorRecipes };
+        ChaosSpecialCompressRecipes.SpecialCompressRecipes_BHC, RecipeMaps.neutroniumCompressorRecipes };
     // 电路装配线-12735
     private static final String[] Circuit_Assembly_Line_mod = { "Circuit Assembly Line", "Circuit Assembly" };
     private static final RecipeMap<?>[] Circuit_Assembly_Line = {
@@ -520,6 +720,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                     GTUtility.sendChatToPlayer(aPlayer, "mode:" + Utupu_Tanuri_mod[Math.min(mode, 1)]);
                     specialMachineType = Utupu_Tanuri_mod[Math.min(mode, 1)];
                 }
+                case 3006 -> {
+                    GTUtility
+                        .sendChatToPlayer(aPlayer, "mode:" + Hot_Isostatic_Pressurization_Unit_mod[Math.min(mode, 1)]);
+                    specialMachineType = Hot_Isostatic_Pressurization_Unit_mod[Math.min(mode, 1)];
+                }
                 case 3008 -> {
                     GTUtility.sendChatToPlayer(
                         aPlayer,
@@ -588,8 +793,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 1132 -> {
                 return ChaosOreRecipes.addFakeChaosOreRecipes;
             }
+            case 3006 -> {
+                return Hot_Isostatic_Pressurization_Unit[Math.min(mode, 1)];
+            }
             case 3008 -> {
-                return Pseudostable_Black_Hole_Containment_Field[Math.min(mode, 1)];
+                return Pseudostable_Black_Hole_Containment_Field[Math.min(mode, 2)];
             }
             case 12735 -> {
                 return Circuit_Assembly_Line[Math.min(mode, 1)];
@@ -791,7 +999,14 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
     // 运行时电压等级与无损降频
     private void setTierAndMult() {
-        IMetaTileEntity aMachine = ItemMachines.getMetaTileEntity(getControllerSlot());
+        // 空值检查：防止getControllerSlot()返回null导致NPE
+        ItemStack controllerSlot = getControllerSlot();
+        if (controllerSlot == null) {
+            tTier = 0;
+            mMult = 0;
+            return;
+        }
+        IMetaTileEntity aMachine = ItemMachines.getMetaTileEntity(controllerSlot);
         if (aMachine instanceof MTETieredMachineBlock) {
             tTier = ((MTETieredMachineBlock) aMachine).mTier;
         } else {
@@ -873,15 +1088,29 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
         int z) {
         super.getWailaNBTData(player, tile, tag, world, x, y, z);
-        if (mLastRecipeMap != null && getControllerSlot() != null) {
-            tag.setString("Machine", getControllerSlot().getDisplayName());
-            if (getSpecialMachine()) {
-                tag.setString("MachineType", specialMachineType);
+        try {
+            // 空值检查：防止getControllerSlot()返回null
+            ItemStack controllerSlot = getControllerSlot();
+            if (mLastRecipeMap != null && controllerSlot != null) {
+                tag.setString("Machine", controllerSlot.getDisplayName());
+                if (getSpecialMachine()) {
+                    tag.setString("MachineType", specialMachineType);
+                }
+                if (wirelessMode) {
+                    DecimalFormat process = new DecimalFormat("#,###");
+                    tag.setString("EnergyConsume", process.format(costEU));
+                }
+            } else if (controllerSlot == null) {
+                ExceptionHandler.handleException(
+                    "getWailaNBTData",
+                    "controller slot is null",
+                    new NullPointerException("Controller slot null"));
             }
-            if (wirelessMode) {
-                DecimalFormat process = new DecimalFormat("#,###");
-                tag.setString("EnergyConsume", process.format(costEU));
-            }
+        } catch (NullPointerException e) {
+            // 捕获NPE并记录日志，防止影响Waila显示
+            ExceptionHandler.handleException("getWailaNBTData", "NullPointerException", e);
+        } catch (Exception e) {
+            ExceptionHandler.handleException("getWailaNBTData", "Unexpected exception", e);
         }
     }
 
@@ -895,7 +1124,13 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             if (tag.hasKey("MachineType")) {
                 currentTip.add("Machine type: " + EnumChatFormatting.YELLOW + tag.getString("MachineType"));
             }
-            currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallel());
+            // 安全地获取并行数，防止getMaxParallel()中可能的NPE
+            try {
+                currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallel());
+            } catch (NullPointerException e) {
+                ExceptionHandler.handleException("getWailaBody", "NullPointerException in getMaxParallel", e);
+                currentTip.add("Parallel: " + EnumChatFormatting.RED + "Error");
+            }
             if (tag.hasKey("EnergyConsume")) {
                 currentTip.add("WirelessMode: " + EnumChatFormatting.GREEN + "True");
                 currentTip.add("Energy consume: " + EnumChatFormatting.YELLOW + tag.getString("EnergyConsume"));

@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.NEIOrePlugin;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -1860,12 +1861,14 @@ public class SingularityDustRecipes_T10 {
 
     public static void addVoidDustRecipes_T10() {
         // T10 - DeepDark - DD
-        VoidDustRecipes_T10.put("DD", T10_Dust);
+        ItemStack[] T10_Dust_Checked = checkItemStack(T10_Dust);
+        VoidDustRecipes_T10.put("DD", T10_Dust_Checked);
     }
 
     public static void addFakeVoidDustRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[][] Fake_T10_DeepDark_Dust_Split = addSplitAggregateArray(T10_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T10_Dust_Checked = checkItemStack(T10_Dust);
+        ItemStack[][] Fake_T10_DeepDark_Dust_Split = addSplitAggregateArray(Fake_T10_Dust_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T10_DeepDark_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))

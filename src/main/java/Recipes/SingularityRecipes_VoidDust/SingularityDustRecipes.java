@@ -1,6 +1,7 @@
 package Recipes.SingularityRecipes_VoidDust;
 
 import static util.AggregateItemStackArray.addAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,7 +55,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Coal_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T0.put("Ow", T0_Overworld_Dust);
+        ItemStack[] T0_Overworld_Dust_Checked = checkItemStack(T0_Overworld_Dust);
+        VoidDustRecipes_T0.put("Ow", T0_Overworld_Dust_Checked);
 
         // T0 - Nether - Ne
         ItemStack[] T0_Nether_Dust = addAggregateArray(
@@ -82,7 +84,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Realgar_SmallOre);
-        VoidDustRecipes_T0.put("Ne", T0_Nether_Dust);
+        ItemStack[] T0_Nether_Dust_Checked = checkItemStack(T0_Nether_Dust);
+        VoidDustRecipes_T0.put("Ne", T0_Nether_Dust_Checked);
 
         // T0 - Twilight - TF
         ItemStack[] T0_Twilight_Dust = addAggregateArray(
@@ -122,7 +125,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Sapphire_SmallOre,
             SmallOre_Dust.Jasper_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
-        VoidDustRecipes_T0.put("TF", T0_Twilight_Dust);
+        ItemStack[] T0_Twilight_Dust_Checked = checkItemStack(T0_Twilight_Dust);
+        VoidDustRecipes_T0.put("TF", T0_Twilight_Dust_Checked);
 
         // T0 - TheEnd - ED
         ItemStack[] T0_TheEnd_Dust = addAggregateArray(
@@ -141,7 +145,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T0.put("ED", T0_TheEnd_Dust);
+        ItemStack[] T0_TheEnd_Dust_Checked = checkItemStack(T0_TheEnd_Dust);
+        VoidDustRecipes_T0.put("ED", T0_TheEnd_Dust_Checked);
 
         // T0 - EndAsteroid - EA
         ItemStack[] T0_EndAsteroid_Dust = addAggregateArray(
@@ -164,7 +169,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T0.put("EA", T0_EndAsteroid_Dust);
+        ItemStack[] T0_EndAsteroid_Dust_Checked = checkItemStack(T0_EndAsteroid_Dust);
+        VoidDustRecipes_T0.put("EA", T0_EndAsteroid_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T1() {
@@ -179,7 +185,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Galena_Vein,
             Vein_Dust.Cassiterite_Vein,
             SmallOre_Dust.Meteoric_Iron_SmallOre);
-        VoidDustRecipes_T1.put("Mo", T1_Moon_Dust);
+        ItemStack[] T1_Moon_Dust_Checked = checkItemStack(T1_Moon_Dust);
+        VoidDustRecipes_T1.put("Mo", T1_Moon_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T2() {
@@ -206,7 +213,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Meteoric_Iron_SmallOre,
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T2.put("De", T2_Deimos_Dust);
+        ItemStack[] T2_Deimos_Dust_Checked = checkItemStack(T2_Deimos_Dust);
+        VoidDustRecipes_T2.put("De", T2_Deimos_Dust_Checked);
 
         // T2 - Mars - Ma
         ItemStack[] T2_Mars_Dust = addAggregateArray(
@@ -239,7 +247,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T2.put("Ma", T2_Mars_Dust);
+        ItemStack[] T2_Mars_Dust_Checked = checkItemStack(T2_Mars_Dust);
+        VoidDustRecipes_T2.put("Ma", T2_Mars_Dust_Checked);
 
         // T2 - Phobos - Ph
         ItemStack[] T2_Phobos_Dust = addAggregateArray(
@@ -265,7 +274,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Meteoric_Iron_SmallOre,
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        VoidDustRecipes_T2.put("Ph", T2_Phobos_Dust);
+        ItemStack[] T2_Phobos_Dust_Checked = checkItemStack(T2_Phobos_Dust);
+        VoidDustRecipes_T2.put("Ph", T2_Phobos_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T3() {
@@ -285,7 +295,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        VoidDustRecipes_T3.put("As", T3_Asteroids_Dust);
+        ItemStack[] T3_Asteroids_Dust_Checked = checkItemStack(T3_Asteroids_Dust);
+        VoidDustRecipes_T3.put("As", T3_Asteroids_Dust_Checked);
 
         // T3 - Callisto - Ca
         ItemStack[] T3_Callisto_Dust = addAggregateArray(
@@ -308,7 +319,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Bismuth_SmallOre);
-        VoidDustRecipes_T3.put("Ca", T3_Callisto_Dust);
+        ItemStack[] T3_Callisto_Dust_Checked = checkItemStack(T3_Callisto_Dust);
+        VoidDustRecipes_T3.put("Ca", T3_Callisto_Dust_Checked);
 
         // T3 - Ceres - Ce
         ItemStack[] T3_Ceres_Dust = addAggregateArray(
@@ -336,7 +348,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T3.put("Ce", T3_Ceres_Dust);
+        ItemStack[] T3_Ceres_Dust_Checked = checkItemStack(T3_Ceres_Dust);
+        VoidDustRecipes_T3.put("Ce", T3_Ceres_Dust_Checked);
 
         // T3 - Europa - Eu
         ItemStack[] T3_Europa_Dust = addAggregateArray(
@@ -345,7 +358,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Chrome_Vein,
             Vein_Dust.Ledox_Vein,
             Vein_Dust.Tin_Vein);
-        VoidDustRecipes_T3.put("Eu", T3_Europa_Dust);
+        ItemStack[] T3_Europa_Dust_Checked = checkItemStack(T3_Europa_Dust);
+        VoidDustRecipes_T3.put("Eu", T3_Europa_Dust_Checked);
 
         // T3 - Ganymede - Ga
         ItemStack[] T3_Ganymede_Dust = addAggregateArray(
@@ -371,7 +385,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Zinc_SmallOre);
-        VoidDustRecipes_T3.put("Ga", T3_Ganymede_Dust);
+        ItemStack[] T3_Ganymede_Dust_Checked = checkItemStack(T3_Ganymede_Dust);
+        VoidDustRecipes_T3.put("Ga", T3_Ganymede_Dust_Checked);
 
         // T3 - Ross128b - Rb
         ItemStack[] T3_Ross128b_Dust = addAggregateArray(
@@ -383,7 +398,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Thorianite_Vein,
             Vein_Dust.Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein,
             Vein_Dust.Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein);
-        VoidDustRecipes_T3.put("Rb", T3_Ross128b_Dust);
+        ItemStack[] T3_Ross128b_Dust_Checked = checkItemStack(T3_Ross128b_Dust);
+        VoidDustRecipes_T3.put("Rb", T3_Ross128b_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T4() {
@@ -417,7 +433,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T4.put("Io", T4_Io_Dust);
+        ItemStack[] T4_Io_Dust_Checked = checkItemStack(T4_Io_Dust);
+        VoidDustRecipes_T4.put("Io", T4_Io_Dust_Checked);
 
         // T4 - Mercury - Me
         ItemStack[] T4_Mercury_Dust = addAggregateArray(
@@ -445,7 +462,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T4.put("Me", T4_Mercury_Dust);
+        ItemStack[] T4_Mercury_Dust_Checked = checkItemStack(T4_Mercury_Dust);
+        VoidDustRecipes_T4.put("Me", T4_Mercury_Dust_Checked);
 
         // T4 - Venus - Ve
         ItemStack[] T4_Venus_Dust = addAggregateArray(
@@ -477,7 +495,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Tungsten_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T4.put("Ve", T4_Venus_Dust);
+        ItemStack[] T4_Venus_Dust_Checked = checkItemStack(T4_Venus_Dust);
+        VoidDustRecipes_T4.put("Ve", T4_Venus_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T5() {
@@ -503,7 +522,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T5.put("En", T5_Enceladus_Dust);
+        ItemStack[] T5_Enceladus_Dust_Checked = checkItemStack(T5_Enceladus_Dust);
+        VoidDustRecipes_T5.put("En", T5_Enceladus_Dust_Checked);
 
         // T5 - Miranda - Mi
         ItemStack[] T5_Miranda_Dust = addAggregateArray(
@@ -523,7 +543,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        VoidDustRecipes_T5.put("Mi", T5_Miranda_Dust);
+        ItemStack[] T5_Miranda_Dust_Checked = checkItemStack(T5_Miranda_Dust);
+        VoidDustRecipes_T5.put("Mi", T5_Miranda_Dust_Checked);
 
         // T5 - Oberon - Ob
         ItemStack[] T5_Oberon_Dust = addAggregateArray(
@@ -546,7 +567,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Lapis_SmallOre);
-        VoidDustRecipes_T5.put("Ob", T5_Oberon_Dust);
+        ItemStack[] T5_Oberon_Dust_Checked = checkItemStack(T5_Oberon_Dust);
+        VoidDustRecipes_T5.put("Ob", T5_Oberon_Dust_Checked);
 
         // T5 - Titan - Ti
         ItemStack[] T5_Titan_Dust = addAggregateArray(
@@ -576,7 +598,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        VoidDustRecipes_T5.put("Ti", T5_Titan_Dust);
+        ItemStack[] T5_Titan_Dust_Checked = checkItemStack(T5_Titan_Dust);
+        VoidDustRecipes_T5.put("Ti", T5_Titan_Dust_Checked);
 
         // T5 - Ross128ba - Ra
         ItemStack[] T5_Ross128ba_Dust = addAggregateArray(
@@ -587,7 +610,8 @@ public class SingularityDustRecipes {
             Vein_Dust.BArTiMaEuSNeK_Vein,
             Vein_Dust.Tiberium_Vein,
             Vein_Dust.Fluorspar_Vein);
-        VoidDustRecipes_T5.put("Ra", T5_Ross128ba_Dust);
+        ItemStack[] T5_Ross128ba_Dust_Checked = checkItemStack(T5_Ross128ba_Dust);
+        VoidDustRecipes_T5.put("Ra", T5_Ross128ba_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T6() {
@@ -619,7 +643,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T6.put("Pr", T6_Proteus_Dust);
+        ItemStack[] T6_Proteus_Dust_Checked = checkItemStack(T6_Proteus_Dust);
+        VoidDustRecipes_T6.put("Pr", T6_Proteus_Dust_Checked);
 
         // T6 - Triton - Tr
         ItemStack[] T6_Triton_Dust = addAggregateArray(
@@ -646,7 +671,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        VoidDustRecipes_T6.put("Tr", T6_Triton_Dust);
+        ItemStack[] T6_Triton_Dust_Checked = checkItemStack(T6_Triton_Dust);
+        VoidDustRecipes_T6.put("Tr", T6_Triton_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T7() {
@@ -675,7 +701,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        VoidDustRecipes_T7.put("Ha", T7_Haumea_Dust);
+        ItemStack[] T7_Haumea_Dust_Checked = checkItemStack(T7_Haumea_Dust);
+        VoidDustRecipes_T7.put("Ha", T7_Haumea_Dust_Checked);
 
         // T7 - Makemake - MM
         ItemStack[] T7_Makemake_Dust = addAggregateArray(
@@ -704,7 +731,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        VoidDustRecipes_T7.put("MM", T7_Makemake_Dust);
+        ItemStack[] T7_Makemake_Dust_Checked = checkItemStack(T7_Makemake_Dust);
+        VoidDustRecipes_T7.put("MM", T7_Makemake_Dust_Checked);
 
         // T7 - Pluto - Pl
         ItemStack[] T7_Pluto_Dust = addAggregateArray(
@@ -737,7 +765,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T7.put("Pl", T7_Pluto_Dust);
+        ItemStack[] T7_Pluto_Dust_Checked = checkItemStack(T7_Pluto_Dust);
+        VoidDustRecipes_T7.put("Pl", T7_Pluto_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T8() {
@@ -753,7 +782,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Lignite_Coal_Vein,
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             Vein_Dust.Salt_Vein);
-        VoidDustRecipes_T8.put("BC", T8_BarnardC_Dust);
+        ItemStack[] T8_BarnardC_Dust_Checked = checkItemStack(T8_BarnardC_Dust);
+        VoidDustRecipes_T8.put("BC", T8_BarnardC_Dust_Checked);
 
         // T8 - BarnardE - BE
         ItemStack[] T8_BarnardE_Dust = addAggregateArray(
@@ -778,7 +808,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        VoidDustRecipes_T8.put("BE", T8_BarnardE_Dust);
+        ItemStack[] T8_BarnardE_Dust_Checked = checkItemStack(T8_BarnardE_Dust);
+        VoidDustRecipes_T8.put("BE", T8_BarnardE_Dust_Checked);
 
         // T8 - BarnardF - BF
         ItemStack[] T8_BarnardF_Dust = addAggregateArray(
@@ -808,7 +839,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre,
             SmallOre_Dust.Bedrockium_SmallOre);
-        VoidDustRecipes_T8.put("BF", T8_BarnardF_Dust);
+        ItemStack[] T8_BarnardF_Dust_Checked = checkItemStack(T8_BarnardF_Dust);
+        VoidDustRecipes_T8.put("BF", T8_BarnardF_Dust_Checked);
 
         // T8 - α Centauri Bb - CB
         ItemStack[] T8_Centauri_Dust = addAggregateArray(
@@ -825,7 +857,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Tetrahedrite_Vein,
             Vein_Dust.Tin_Vein,
             Vein_Dust.Nether_Quartz_Vein);
-        VoidDustRecipes_T8.put("CB", T8_Centauri_Dust);
+        ItemStack[] T8_Centauri_Dust_Checked = checkItemStack(T8_Centauri_Dust);
+        VoidDustRecipes_T8.put("CB", T8_Centauri_Dust_Checked);
 
         // T8 - TCetiE - TE
         ItemStack[] T8_TCetiE_Dust = addAggregateArray(
@@ -845,7 +878,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Awakened_Draconium_SmallOre,
             SmallOre_Dust.Neutronium_SmallOre,
             SmallOre_Dust.Lapis_SmallOre);
-        VoidDustRecipes_T8.put("TE", T8_TCetiE_Dust);
+        ItemStack[] T8_TCetiE_Dust_Checked = checkItemStack(T8_TCetiE_Dust);
+        VoidDustRecipes_T8.put("TE", T8_TCetiE_Dust_Checked);
 
         // T8 - VegaB - VB
         ItemStack[] T8_VegaB_Dust = addAggregateArray(
@@ -875,7 +909,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Black_Plutonium_SmallOre,
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Bismuth_SmallOre);
-        VoidDustRecipes_T8.put("VB", T8_VegaB_Dust);
+        ItemStack[] T8_VegaB_Dust_Checked = checkItemStack(T8_VegaB_Dust);
+        VoidDustRecipes_T8.put("VB", T8_VegaB_Dust_Checked);
     }
 
     public static void addVoidDustRecipes_T9() {
@@ -894,7 +929,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Rutile_Vein,
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             SmallOre_Dust.Infinity_Catalyst_SmallOre);
-        VoidDustRecipes_T9.put("An", T9_Anubis_Dust);
+        ItemStack[] T9_Anubis_Dust_Checked = checkItemStack(T9_Anubis_Dust);
+        VoidDustRecipes_T9.put("An", T9_Anubis_Dust_Checked);
 
         // T9 - Horus - Ho
         ItemStack[] T9_Horus_Dust = addAggregateArray(
@@ -929,7 +965,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Sapphire_SmallOre,
             SmallOre_Dust.Jasper_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
-        VoidDustRecipes_T9.put("Ho", T9_Horus_Dust);
+        ItemStack[] T9_Horus_Dust_Checked = checkItemStack(T9_Horus_Dust);
+        VoidDustRecipes_T9.put("Ho", T9_Horus_Dust_Checked);
 
         // T9 - Maahes - Mh
         ItemStack[] T9_Maahes_Dust = addAggregateArray(
@@ -944,7 +981,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             Vein_Dust.Quantium_Vein,
             Vein_Dust.Chrome_Vein);
-        VoidDustRecipes_T9.put("Mh", T9_Maahes_Dust);
+        ItemStack[] T9_Maahes_Dust_Checked = checkItemStack(T9_Maahes_Dust);
+        VoidDustRecipes_T9.put("Mh", T9_Maahes_Dust_Checked);
 
         // T9 - MehenBelt - MB
         ItemStack[] T9_MehenBelt_Dust = addAggregateArray(
@@ -967,7 +1005,8 @@ public class SingularityDustRecipes {
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
-        VoidDustRecipes_T9.put("MB", T9_MehenBelt_Dust);
+        ItemStack[] T9_MehenBelt_Dust_Checked = checkItemStack(T9_MehenBelt_Dust);
+        VoidDustRecipes_T9.put("MB", T9_MehenBelt_Dust_Checked);
 
         // T9 - Neper - Np
         ItemStack[] T9_Neper_Dust = addAggregateArray(
@@ -983,7 +1022,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Kaolinite_Vein,
             Vein_Dust.Aqua_Ignis_Amber_Vein,
             Vein_Dust.Nether_Quartz_Vein);
-        VoidDustRecipes_T9.put("Np", T9_Neper_Dust);
+        ItemStack[] T9_Neper_Dust_Checked = checkItemStack(T9_Neper_Dust);
+        VoidDustRecipes_T9.put("Np", T9_Neper_Dust_Checked);
 
         // T9 - Seth - Se
         ItemStack[] T9_Seth_Dust = addAggregateArray(
@@ -1000,7 +1040,8 @@ public class SingularityDustRecipes {
             Vein_Dust.Cassiterite_Vein,
             SmallOre_Dust.Awakened_Draconium_SmallOre,
             SmallOre_Dust.Draconium_SmallOre);
-        VoidDustRecipes_T9.put("Se", T9_Seth_Dust);
+        ItemStack[] T9_Seth_Dust_Checked = checkItemStack(T9_Seth_Dust);
+        VoidDustRecipes_T9.put("Se", T9_Seth_Dust_Checked);
     }
 
 }

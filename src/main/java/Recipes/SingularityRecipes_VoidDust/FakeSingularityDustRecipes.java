@@ -5,6 +5,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addCompressAggregateArray;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import net.minecraft.item.ItemStack;
 
@@ -132,8 +133,9 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Coal_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
+        ItemStack[] Fake_T0_Overworld_Dust_Checked = checkItemStack(Fake_T0_Overworld_Dust);
         ItemStack[][] Fake_T0_Overworld_Dust_Split = addSplitAggregateArray(
-            Fake_T0_Overworld_Dust,
+            Fake_T0_Overworld_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T0_Overworld_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -172,7 +174,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Realgar_SmallOre);
-        ItemStack[][] Fake_T0_Nether_Dust_Split = addSplitAggregateArray(Fake_T0_Nether_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T0_Nether_Dust_Checked = checkItemStack(Fake_T0_Nether_Dust);
+        ItemStack[][] Fake_T0_Nether_Dust_Split = addSplitAggregateArray(
+            Fake_T0_Nether_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T0_Nether_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ne", 1L))
@@ -222,7 +227,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Sapphire_SmallOre,
             SmallOre_Dust.Jasper_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
-        ItemStack[][] Fake_T0_Twilight_Dust_Split = addSplitAggregateArray(Fake_T0_Twilight_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T0_Twilight_Dust_Checked = checkItemStack(Fake_T0_Twilight_Dust);
+        ItemStack[][] Fake_T0_Twilight_Dust_Split = addSplitAggregateArray(
+            Fake_T0_Twilight_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T0_Twilight_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TF", 1L))
@@ -251,7 +259,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        ItemStack[][] Fake_T0_TheEnd_Dust_Split = addSplitAggregateArray(Fake_T0_TheEnd_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T0_TheEnd_Dust_Checked = checkItemStack(Fake_T0_TheEnd_Dust);
+        ItemStack[][] Fake_T0_TheEnd_Dust_Split = addSplitAggregateArray(
+            Fake_T0_TheEnd_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T0_TheEnd_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_ED", 1L))
@@ -284,8 +295,9 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
+        ItemStack[] Fake_T0_EndAsteroid_Dust_Checked = checkItemStack(Fake_T0_EndAsteroid_Dust);
         ItemStack[][] Fake_T0_EndAsteroid_Dust_Split = addSplitAggregateArray(
-            Fake_T0_EndAsteroid_Dust,
+            Fake_T0_EndAsteroid_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T0_EndAsteroid_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -311,7 +323,8 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Galena_Vein,
             Vein_Dust.Cassiterite_Vein,
             SmallOre_Dust.Meteoric_Iron_SmallOre);
-        ItemStack[][] Fake_T1_Moon_Dust_Split = addSplitAggregateArray(Fake_T1_Moon_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T1_Moon_Dust_Checked = checkItemStack(Fake_T1_Moon_Dust);
+        ItemStack[][] Fake_T1_Moon_Dust_Split = addSplitAggregateArray(Fake_T1_Moon_Dust_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T1_Moon_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mo", 1L))
@@ -348,7 +361,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Meteoric_Iron_SmallOre,
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        ItemStack[][] Fake_T2_Deimos_Dust_Split = addSplitAggregateArray(Fake_T2_Deimos_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T2_Deimos_Dust_Checked = checkItemStack(Fake_T2_Deimos_Dust);
+        ItemStack[][] Fake_T2_Deimos_Dust_Split = addSplitAggregateArray(
+            Fake_T2_Deimos_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T2_Deimos_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1L))
@@ -391,7 +407,8 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
-        ItemStack[][] Fake_T2_Mars_Dust_Split = addSplitAggregateArray(Fake_T2_Mars_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T2_Mars_Dust_Checked = checkItemStack(Fake_T2_Mars_Dust);
+        ItemStack[][] Fake_T2_Mars_Dust_Split = addSplitAggregateArray(Fake_T2_Mars_Dust_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T2_Mars_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ma", 1L))
@@ -427,7 +444,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Meteoric_Iron_SmallOre,
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        ItemStack[][] Fake_T2_Phobos_Dust_Split = addSplitAggregateArray(Fake_T2_Phobos_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T2_Phobos_Dust_Checked = checkItemStack(Fake_T2_Phobos_Dust);
+        ItemStack[][] Fake_T2_Phobos_Dust_Split = addSplitAggregateArray(
+            Fake_T2_Phobos_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T2_Phobos_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ph", 1L))
@@ -457,8 +477,9 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Nickel_SmallOre);
+        ItemStack[] Fake_T3_Asteroids_Dust_Checked = checkItemStack(Fake_T3_Asteroids_Dust);
         ItemStack[][] Fake_T3_Asteroids_Dust_Split = addSplitAggregateArray(
-            Fake_T3_Asteroids_Dust,
+            Fake_T3_Asteroids_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Asteroids_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -492,7 +513,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Bismuth_SmallOre);
-        ItemStack[][] Fake_T3_Callisto_Dust_Split = addSplitAggregateArray(Fake_T3_Callisto_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T3_Callisto_Dust_Checked = checkItemStack(Fake_T3_Callisto_Dust);
+        ItemStack[][] Fake_T3_Callisto_Dust_Split = addSplitAggregateArray(
+            Fake_T3_Callisto_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Callisto_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1L))
@@ -530,7 +554,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T3_Ceres_Dust_Split = addSplitAggregateArray(Fake_T3_Ceres_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T3_Ceres_Dust_Checked = checkItemStack(Fake_T3_Ceres_Dust);
+        ItemStack[][] Fake_T3_Ceres_Dust_Split = addSplitAggregateArray(
+            Fake_T3_Ceres_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Ceres_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ce", 1L))
@@ -549,7 +576,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Chrome_Vein,
             Vein_Dust.Ledox_Vein,
             Vein_Dust.Tin_Vein);
-        ItemStack[][] Fake_T3_Europa_Dust_Split = addSplitAggregateArray(Fake_T3_Europa_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T3_Europa_Dust_Checked = checkItemStack(Fake_T3_Europa_Dust);
+        ItemStack[][] Fake_T3_Europa_Dust_Split = addSplitAggregateArray(
+            Fake_T3_Europa_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Europa_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1L))
@@ -585,7 +615,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Zinc_SmallOre);
-        ItemStack[][] Fake_T3_Ganymede_Dust_Split = addSplitAggregateArray(Fake_T3_Ganymede_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T3_Ganymede_Dust_Checked = checkItemStack(Fake_T3_Ganymede_Dust);
+        ItemStack[][] Fake_T3_Ganymede_Dust_Split = addSplitAggregateArray(
+            Fake_T3_Ganymede_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Ganymede_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1L))
@@ -607,7 +640,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Thorianite_Vein,
             Vein_Dust.Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein,
             Vein_Dust.Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein);
-        ItemStack[][] Fake_T3_Ross128b_Dust_Split = addSplitAggregateArray(Fake_T3_Ross128b_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T3_Ross128b_Dust_Checked = checkItemStack(Fake_T3_Ross128b_Dust);
+        ItemStack[][] Fake_T3_Ross128b_Dust_Split = addSplitAggregateArray(
+            Fake_T3_Ross128b_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Ross128b_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Rb", 1L))
@@ -651,7 +687,8 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T4_Io_Dust_Split = addSplitAggregateArray(Fake_T4_Io_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T4_Io_Dust_Checked = checkItemStack(Fake_T4_Io_Dust);
+        ItemStack[][] Fake_T4_Io_Dust_Split = addSplitAggregateArray(Fake_T4_Io_Dust_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T4_Io_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Io", 1L))
@@ -689,7 +726,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T4_Mercury_Dust_Split = addSplitAggregateArray(Fake_T4_Mercury_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T4_Mercury_Dust_Checked = checkItemStack(Fake_T4_Mercury_Dust);
+        ItemStack[][] Fake_T4_Mercury_Dust_Split = addSplitAggregateArray(
+            Fake_T4_Mercury_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T4_Mercury_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Me", 1L))
@@ -731,7 +771,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Tungsten_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T4_Venus_Dust_Split = addSplitAggregateArray(Fake_T4_Venus_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T4_Venus_Dust_Checked = checkItemStack(Fake_T4_Venus_Dust);
+        ItemStack[][] Fake_T4_Venus_Dust_Split = addSplitAggregateArray(
+            Fake_T4_Venus_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T4_Venus_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1L))
@@ -767,8 +810,9 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
+        ItemStack[] Fake_T5_Enceladus_Dust_Checked = checkItemStack(Fake_T5_Enceladus_Dust);
         ItemStack[][] Fake_T5_Enceladus_Dust_Split = addSplitAggregateArray(
-            Fake_T5_Enceladus_Dust,
+            Fake_T5_Enceladus_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Enceladus_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -799,7 +843,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Gold_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        ItemStack[][] Fake_T5_Miranda_Dust_Split = addSplitAggregateArray(Fake_T5_Miranda_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T5_Miranda_Dust_Checked = checkItemStack(Fake_T5_Miranda_Dust);
+        ItemStack[][] Fake_T5_Miranda_Dust_Split = addSplitAggregateArray(
+            Fake_T5_Miranda_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Miranda_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mi", 1L))
@@ -832,7 +879,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Lapis_SmallOre);
-        ItemStack[][] Fake_T5_Oberon_Dust_Split = addSplitAggregateArray(Fake_T5_Oberon_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T5_Oberon_Dust_Checked = checkItemStack(Fake_T5_Oberon_Dust);
+        ItemStack[][] Fake_T5_Oberon_Dust_Split = addSplitAggregateArray(
+            Fake_T5_Oberon_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Oberon_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ob", 1L))
@@ -872,7 +922,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        ItemStack[][] Fake_T5_Titan_Dust_Split = addSplitAggregateArray(Fake_T5_Titan_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T5_Titan_Dust_Checked = checkItemStack(Fake_T5_Titan_Dust);
+        ItemStack[][] Fake_T5_Titan_Dust_Split = addSplitAggregateArray(
+            Fake_T5_Titan_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Titan_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ti", 1L))
@@ -893,8 +946,9 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.BArTiMaEuSNeK_Vein,
             Vein_Dust.Tiberium_Vein,
             Vein_Dust.Fluorspar_Vein);
+        ItemStack[] Fake_T5_Ross128ba_Dust_Checked = checkItemStack(Fake_T5_Ross128ba_Dust);
         ItemStack[][] Fake_T5_Ross128ba_Dust_Split = addSplitAggregateArray(
-            Fake_T5_Ross128ba_Dust,
+            Fake_T5_Ross128ba_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Ross128ba_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -937,7 +991,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T6_Proteus_Dust_Split = addSplitAggregateArray(Fake_T6_Proteus_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T6_Proteus_Dust_Checked = checkItemStack(Fake_T6_Proteus_Dust);
+        ItemStack[][] Fake_T6_Proteus_Dust_Split = addSplitAggregateArray(
+            Fake_T6_Proteus_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T6_Proteus_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pr", 1L))
@@ -974,7 +1031,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Tungstate_SmallOre,
             SmallOre_Dust.Desh_SmallOre);
-        ItemStack[][] Fake_T6_Triton_Dust_Split = addSplitAggregateArray(Fake_T6_Triton_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T6_Triton_Dust_Checked = checkItemStack(Fake_T6_Triton_Dust);
+        ItemStack[][] Fake_T6_Triton_Dust_Split = addSplitAggregateArray(
+            Fake_T6_Triton_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T6_Triton_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Tr", 1L))
@@ -1013,7 +1073,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Desh_SmallOre,
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        ItemStack[][] Fake_T7_Haumea_Dust_Split = addSplitAggregateArray(Fake_T7_Haumea_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T7_Haumea_Dust_Checked = checkItemStack(Fake_T7_Haumea_Dust);
+        ItemStack[][] Fake_T7_Haumea_Dust_Split = addSplitAggregateArray(
+            Fake_T7_Haumea_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T7_Haumea_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1L))
@@ -1052,7 +1115,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Bismuth_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre);
-        ItemStack[][] Fake_T7_Makemake_Dust_Split = addSplitAggregateArray(Fake_T7_Makemake_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T7_Makemake_Dust_Checked = checkItemStack(Fake_T7_Makemake_Dust);
+        ItemStack[][] Fake_T7_Makemake_Dust_Split = addSplitAggregateArray(
+            Fake_T7_Makemake_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T7_Makemake_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1L))
@@ -1095,7 +1161,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Quantium_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T7_Pluto_Dust_Split = addSplitAggregateArray(Fake_T7_Pluto_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T7_Pluto_Dust_Checked = checkItemStack(Fake_T7_Pluto_Dust);
+        ItemStack[][] Fake_T7_Pluto_Dust_Split = addSplitAggregateArray(
+            Fake_T7_Pluto_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T7_Pluto_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pl", 1L))
@@ -1120,7 +1189,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Lignite_Coal_Vein,
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             Vein_Dust.Salt_Vein);
-        ItemStack[][] Fake_T8_BarnardC_Dust_Split = addSplitAggregateArray(Fake_T8_BarnardC_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_BarnardC_Dust_Checked = checkItemStack(Fake_T8_BarnardC_Dust);
+        ItemStack[][] Fake_T8_BarnardC_Dust_Split = addSplitAggregateArray(
+            Fake_T8_BarnardC_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_BarnardC_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BC", 1L))
@@ -1155,7 +1227,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Zinc_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre);
-        ItemStack[][] Fake_T8_BarnardE_Dust_Split = addSplitAggregateArray(Fake_T8_BarnardE_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_BarnardE_Dust_Checked = checkItemStack(Fake_T8_BarnardE_Dust);
+        ItemStack[][] Fake_T8_BarnardE_Dust_Split = addSplitAggregateArray(
+            Fake_T8_BarnardE_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_BarnardE_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BE", 1L))
@@ -1195,7 +1270,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Naquadah_SmallOre,
             SmallOre_Dust.Bedrockium_SmallOre);
-        ItemStack[][] Fake_T8_BarnardF_Dust_Split = addSplitAggregateArray(Fake_T8_BarnardF_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_BarnardF_Dust_Checked = checkItemStack(Fake_T8_BarnardF_Dust);
+        ItemStack[][] Fake_T8_BarnardF_Dust_Split = addSplitAggregateArray(
+            Fake_T8_BarnardF_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_BarnardF_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1L))
@@ -1222,7 +1300,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Tetrahedrite_Vein,
             Vein_Dust.Tin_Vein,
             Vein_Dust.Nether_Quartz_Vein);
-        ItemStack[][] Fake_T8_Centauri_Dust_Split = addSplitAggregateArray(Fake_T8_Centauri_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_Centauri_Dust_Checked = checkItemStack(Fake_T8_Centauri_Dust);
+        ItemStack[][] Fake_T8_Centauri_Dust_Split = addSplitAggregateArray(
+            Fake_T8_Centauri_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_Centauri_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1L))
@@ -1252,7 +1333,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Awakened_Draconium_SmallOre,
             SmallOre_Dust.Neutronium_SmallOre,
             SmallOre_Dust.Lapis_SmallOre);
-        ItemStack[][] Fake_T8_TCetiE_Dust_Split = addSplitAggregateArray(Fake_T8_TCetiE_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_TCetiE_Dust_Checked = checkItemStack(Fake_T8_TCetiE_Dust);
+        ItemStack[][] Fake_T8_TCetiE_Dust_Split = addSplitAggregateArray(
+            Fake_T8_TCetiE_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_TCetiE_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TE", 1L))
@@ -1292,7 +1376,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Black_Plutonium_SmallOre,
             SmallOre_Dust.Chromite_SmallOre,
             SmallOre_Dust.Bismuth_SmallOre);
-        ItemStack[][] Fake_T8_VegaB_Dust_Split = addSplitAggregateArray(Fake_T8_VegaB_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T8_VegaB_Dust_Checked = checkItemStack(Fake_T8_VegaB_Dust);
+        ItemStack[][] Fake_T8_VegaB_Dust_Split = addSplitAggregateArray(
+            Fake_T8_VegaB_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_VegaB_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1L))
@@ -1321,7 +1408,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Rutile_Vein,
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             SmallOre_Dust.Infinity_Catalyst_SmallOre);
-        ItemStack[][] Fake_T9_Anubis_Dust_Split = addSplitAggregateArray(Fake_T9_Anubis_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T9_Anubis_Dust_Checked = checkItemStack(Fake_T9_Anubis_Dust);
+        ItemStack[][] Fake_T9_Anubis_Dust_Split = addSplitAggregateArray(
+            Fake_T9_Anubis_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Anubis_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1L))
@@ -1366,7 +1456,10 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Sapphire_SmallOre,
             SmallOre_Dust.Jasper_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
-        ItemStack[][] Fake_T9_Horus_Dust_Split = addSplitAggregateArray(Fake_T9_Horus_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T9_Horus_Dust_Checked = checkItemStack(Fake_T9_Horus_Dust);
+        ItemStack[][] Fake_T9_Horus_Dust_Split = addSplitAggregateArray(
+            Fake_T9_Horus_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Horus_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1L))
@@ -1391,7 +1484,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Basaltic_Mineral_Sand_Vein,
             Vein_Dust.Quantium_Vein,
             Vein_Dust.Chrome_Vein);
-        ItemStack[][] Fake_T9_Maahes_Dust_Split = addSplitAggregateArray(Fake_T9_Maahes_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T9_Maahes_Dust_Checked = checkItemStack(Fake_T9_Maahes_Dust);
+        ItemStack[][] Fake_T9_Maahes_Dust_Split = addSplitAggregateArray(
+            Fake_T9_Maahes_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Maahes_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1L))
@@ -1424,8 +1520,9 @@ public class FakeSingularityDustRecipes {
             SmallOre_Dust.Lapis_SmallOre,
             SmallOre_Dust.Nickel_SmallOre,
             SmallOre_Dust.Olivine_SmallOre);
+        ItemStack[] Fake_T9_MehenBelt_Dust_Checked = checkItemStack(Fake_T9_MehenBelt_Dust);
         ItemStack[][] Fake_T9_MehenBelt_Dust_Split = addSplitAggregateArray(
-            Fake_T9_MehenBelt_Dust,
+            Fake_T9_MehenBelt_Dust_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_MehenBelt_Dust_Split) {
             GTValues.RA.stdBuilder()
@@ -1452,7 +1549,10 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Kaolinite_Vein,
             Vein_Dust.Aqua_Ignis_Amber_Vein,
             Vein_Dust.Nether_Quartz_Vein);
-        ItemStack[][] Fake_T9_Neper_Dust_Split = addSplitAggregateArray(Fake_T9_Neper_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T9_Neper_Dust_Checked = checkItemStack(Fake_T9_Neper_Dust);
+        ItemStack[][] Fake_T9_Neper_Dust_Split = addSplitAggregateArray(
+            Fake_T9_Neper_Dust_Checked,
+            NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Neper_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1L))
@@ -1479,7 +1579,8 @@ public class FakeSingularityDustRecipes {
             Vein_Dust.Cassiterite_Vein,
             SmallOre_Dust.Awakened_Draconium_SmallOre,
             SmallOre_Dust.Draconium_SmallOre);
-        ItemStack[][] Fake_T9_Seth_Dust_Split = addSplitAggregateArray(Fake_T9_Seth_Dust, NEI_ItemOutput_Size);
+        ItemStack[] Fake_T9_Seth_Dust_Checked = checkItemStack(Fake_T9_Seth_Dust);
+        ItemStack[][] Fake_T9_Seth_Dust_Split = addSplitAggregateArray(Fake_T9_Seth_Dust_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Seth_Dust_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1L))

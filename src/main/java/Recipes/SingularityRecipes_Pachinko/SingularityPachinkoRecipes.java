@@ -22,7 +22,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.Steam_Tier_Hatch,
             GT_Item.Steam_Tier_Machine,
             GT_Item.Steam_Tier_Misc);
-        PachinkoRecipes_GT_Item.put(1, checkItemStack(Steam_Tier));
+        ItemStack[] Steam_Tier_Checked = checkItemStack(Steam_Tier);
+        PachinkoRecipes_GT_Item.put(1, Steam_Tier_Checked);
 
         // ULV Tier
         // "ULV Machine Hull" - 10
@@ -32,7 +33,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.ULV_Tier_Hatch,
             GT_Item.ULV_Tier_Misc,
             GT_Item.ULV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(10, checkItemStack(ULV_Tier));
+        ItemStack[] ULV_Tier_Checked = checkItemStack(ULV_Tier);
+        PachinkoRecipes_GT_Item.put(10, ULV_Tier_Checked);
 
         // LV Tier
         // "LV Machine Hull" - 11
@@ -43,7 +45,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.LV_Tier_Machine,
             GT_Item.LV_Tier_Misc,
             GT_Item.LV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(11, checkItemStack(LV_Tier));
+        ItemStack[] LV_Tier_Checked = checkItemStack(LV_Tier);
+        PachinkoRecipes_GT_Item.put(11, LV_Tier_Checked);
 
         // MV Tier
         // "MV Machine Hull" - 12
@@ -54,7 +57,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.MV_Tier_Machine,
             GT_Item.MV_Tier_Misc,
             GT_Item.MV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(12, checkItemStack(MV_Tier));
+        ItemStack[] MV_Tier_Checked = checkItemStack(MV_Tier);
+        PachinkoRecipes_GT_Item.put(12, MV_Tier_Checked);
 
         // HV Tier
         // "HV Machine Hull" - 13
@@ -65,7 +69,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.HV_Tier_Machine,
             GT_Item.HV_Tier_Misc,
             GT_Item.HV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(13, checkItemStack(HV_Tier));
+        ItemStack[] HV_Tier_Checked = checkItemStack(HV_Tier);
+        PachinkoRecipes_GT_Item.put(13, HV_Tier_Checked);
 
         // EV Tier
         // "EV Machine Hull" - 14
@@ -76,7 +81,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.EV_Tier_Machine,
             GT_Item.EV_Tier_Misc,
             GT_Item.EV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(14, checkItemStack(EV_Tier));
+        ItemStack[] EV_Tier_Checked = checkItemStack(EV_Tier);
+        PachinkoRecipes_GT_Item.put(14, EV_Tier_Checked);
 
         // IV Tier
         // "IV Machine Hull" - 15
@@ -87,7 +93,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.IV_Tier_Machine,
             GT_Item.IV_Tier_Misc,
             GT_Item.IV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(15, checkItemStack(IV_Tier));
+        ItemStack[] IV_Tier_Checked = checkItemStack(IV_Tier);
+        PachinkoRecipes_GT_Item.put(15, IV_Tier_Checked);
 
         // LuV Tier
         // "LuV Machine Hull" - 16
@@ -98,7 +105,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.LuV_Tier_Machine,
             GT_Item.LuV_Tier_Misc,
             GT_Item.LuV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(16, checkItemStack(LuV_Tier));
+        ItemStack[] LuV_Tier_Checked = checkItemStack(LuV_Tier);
+        PachinkoRecipes_GT_Item.put(16, LuV_Tier_Checked);
 
         // ZPM Tier
         // "ZPM Machine Hull" - 17
@@ -109,7 +117,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.ZPM_Tier_Machine,
             GT_Item.ZPM_Tier_Misc,
             GT_Item.ZPM_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(17, checkItemStack(ZPM_Tier));
+        ItemStack[] ZPM_Tier_Checked = checkItemStack(ZPM_Tier);
+        PachinkoRecipes_GT_Item.put(17, ZPM_Tier_Checked);
 
         // UV Tier
         // "UV Machine Hull" - 18
@@ -120,7 +129,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UV_Tier_Machine,
             GT_Item.UV_Tier_Misc,
             GT_Item.UV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(18, checkItemStack(UV_Tier));
+        ItemStack[] UV_Tier_Checked = checkItemStack(UV_Tier);
+        PachinkoRecipes_GT_Item.put(18, UV_Tier_Checked);
 
         // UHV Tier
         // "UHV Machine Hull" - 19
@@ -131,7 +141,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UHV_Tier_Machine,
             GT_Item.UHV_Tier_Misc,
             GT_Item.UHV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(19, checkItemStack(UHV_Tier));
+        ItemStack[] UHV_Tier_Checked = checkItemStack(UHV_Tier);
+        PachinkoRecipes_GT_Item.put(19, UHV_Tier_Checked);
 
         // UEV Tier
         // "UEV Machine Hull" - 11230
@@ -142,7 +153,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UEV_Tier_Machine,
             GT_Item.UEV_Tier_Misc,
             GT_Item.UEV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(11230, checkItemStack(UEV_Tier));
+        ItemStack[] UEV_Tier_Checked = checkItemStack(UEV_Tier);
+        PachinkoRecipes_GT_Item.put(11230, UEV_Tier_Checked);
 
         // UIV Tier
         // "UIV Machine Hull" - 11231
@@ -153,7 +165,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UIV_Tier_Machine,
             GT_Item.UIV_Tier_Misc,
             GT_Item.UIV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(11231, checkItemStack(UIV_Tier));
+        ItemStack[] UIV_Tier_Checked = checkItemStack(UIV_Tier);
+        PachinkoRecipes_GT_Item.put(11231, UIV_Tier_Checked);
 
         // UMV Tier
         // "UMV Machine Hull" - 11232
@@ -164,7 +177,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UMV_Tier_Machine,
             GT_Item.UMV_Tier_Misc,
             GT_Item.UMV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(11232, checkItemStack(UMV_Tier));
+        ItemStack[] UMV_Tier_Checked = checkItemStack(UMV_Tier);
+        PachinkoRecipes_GT_Item.put(11232, UMV_Tier_Checked);
 
         // UXV Tier
         // "UXV Machine Hull" - 11233
@@ -174,7 +188,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.UXV_Tier_Machine,
             GT_Item.UXV_Tier_Misc,
             GT_Item.UXV_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(11233, checkItemStack(UXV_Tier));
+        ItemStack[] UXV_Tier_Checked = checkItemStack(UXV_Tier);
+        PachinkoRecipes_GT_Item.put(11233, UXV_Tier_Checked);
 
         // MAX Tier
         // "1x SpaceTime Wire" - 2606
@@ -184,7 +199,8 @@ public class SingularityPachinkoRecipes {
             GT_Item.MAX_Tier_Machine,
             GT_Item.MAX_Tier_Misc,
             GT_Item.MAX_Tier_Wire);
-        PachinkoRecipes_GT_Item.put(2606, checkItemStack(MAX_Tier));
+        ItemStack[] MAX_Tier_Checked = checkItemStack(MAX_Tier);
+        PachinkoRecipes_GT_Item.put(2606, MAX_Tier_Checked);
     }
 
     public static void addPachinkoRecipes_GT_Machine() {
@@ -248,7 +264,7 @@ public class SingularityPachinkoRecipes {
             GT_Machine.Item_Pipe_Casing);
         PachinkoRecipes_GT_Machine.put(687, Industrial_Autoclave_Machine);
 
-        // "Nuclear Salt Processing Plant" -749
+        // "Nuclear Salt Processing Plant" - 749
         PachinkoRecipes_GT_Machine.put(749, GT_Machine.Nuclear_Salt_Processing_Plant);
 
         // "Thorium Reactor [LFTR]" - 751

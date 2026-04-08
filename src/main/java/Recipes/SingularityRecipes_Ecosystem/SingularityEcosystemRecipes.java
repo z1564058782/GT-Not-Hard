@@ -1,6 +1,7 @@
 package Recipes.SingularityRecipes_Ecosystem;
 
 import static util.AggregateItemStackArray.addAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,8 @@ public class SingularityEcosystemRecipes {
 
     public static void addEcosystemRecipes_AlgaeFarm() {
         ItemStack[] Ecosystem_AlgaeFarm_List = addAggregateArray(Ecosystem_AlgaeFarm.Pure_AlgaeFarm);
-        EcosystemRecipes_AlgaeFarm.put(997, Ecosystem_AlgaeFarm_List);
+        ItemStack[] Ecosystem_AlgaeFarm_List_Checked = checkItemStack(Ecosystem_AlgaeFarm_List);
+        EcosystemRecipes_AlgaeFarm.put(997, Ecosystem_AlgaeFarm_List_Checked);
     }
 
     public static void addEcosystemRecipes_Comb() {
@@ -29,7 +31,8 @@ public class SingularityEcosystemRecipes {
             Ecosystem_Comb.MagicBees_Comb,
             Ecosystem_Comb.Gendustry_Comb,
             Ecosystem_Comb.GregTech_Comb);
-        EcosystemRecipes_Comb.put(9399, Ecosystem_Comb_List);
+        ItemStack[] Ecosystem_Comb_List_Checked = checkItemStack(Ecosystem_Comb_List);
+        EcosystemRecipes_Comb.put(9399, Ecosystem_Comb_List_Checked);
     }
 
     public static void addEcosystemRecipes_Food() {
@@ -64,7 +67,8 @@ public class SingularityEcosystemRecipes {
             Ecosystem_Food.PamsHarvestTheNether_Food,
             Ecosystem_Food.GTPlusPlus_Food,
             Ecosystem_Food.Witchery_Food);
-        EcosystemRecipes_Food.put(311, Ecosystem_Food_List);
+        ItemStack[] Ecosystem_Food_List_Checked = checkItemStack(Ecosystem_Food_List);
+        EcosystemRecipes_Food.put(311, Ecosystem_Food_List_Checked);
     }
 
     public static void addEcosystemRecipes_TreeGrowth() {
@@ -88,6 +92,7 @@ public class SingularityEcosystemRecipes {
             Ecosystem_TreeGrowth.EtFuturumRequiem_TreeGrowth,
             Ecosystem_TreeGrowth.Forestry_TreeGrowth,
             Ecosystem_TreeGrowth.ExtraTrees_TreeGrowth);
-        EcosystemRecipes_TreeGrowth.put(836, Ecosystem_TreeGrowth_List);
+        ItemStack[] Ecosystem_TreeGrowth_List_Checked = checkItemStack(Ecosystem_TreeGrowth_List);
+        EcosystemRecipes_TreeGrowth.put(836, Ecosystem_TreeGrowth_List_Checked);
     }
 }

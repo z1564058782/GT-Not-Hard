@@ -14,6 +14,7 @@ import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
+import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
 import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_Acid;
@@ -107,6 +108,7 @@ public class MyMod {
         ChaosAntimatterRecipes.addAntimatterRecipes();
         ChaosFallingTowerRecipes.addChaosFallingTowerRecipes();
         ChaosOreRecipes.addChaosOreRecipes();
+        ChaosSpecialCompressRecipes.addSpecialCompressRecipes();
 
         // OriginGeneratorRecipes
         OriginGeneratorRecipes_Steam.addGeneratorRecipes_Steam();

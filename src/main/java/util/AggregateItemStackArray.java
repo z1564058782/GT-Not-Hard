@@ -225,53 +225,18 @@ public class AggregateItemStackArray {
      * @return 检查并替换后的新ItemStack数组
      */
     public static ItemStack[] checkItemStack(ItemStack[] itemStacks) {
-        // 第一步：检查输入参数是否为null
-        if (itemStacks == null) {
-            // 如果输入为null，返回空数组
-            System.err.println("警告：输入的ItemStack数组为null，将返回空数组");
-            return new ItemStack[0];
-        }
-
-        // 第二步：如果数组长度为0，直接返回空数组
-        if (itemStacks.length == 0) {
-            return new ItemStack[0];
-        }
-
-        // 第三步：创建石头物品的静态实例，用于替换无效物品
-        ItemStack stoneItem = getModItem(Minecraft.ID, "stone", 1L);
-
-        // 第四步：创建新数组，长度与原数组相同
-        ItemStack[] checkedArray = new ItemStack[itemStacks.length];
-
-        // 第五步：遍历原数组的每个元素进行检查
-        for (int i = 0; i < itemStacks.length; i++) {
-            ItemStack currentItem = itemStacks[i];
-
-            // 判断当前物品是否存在：
-            // 1. currentItem不为null
-            // 2. currentItem的getItem()返回不为null
-            // 3. 物品的注册名不为空（通过getUnlocalizedName()检查）
-            if (currentItem != null && currentItem.getItem() != null
-                && currentItem.getItem()
-                    .getUnlocalizedName() != null
-                && !currentItem.getItem()
-                    .getUnlocalizedName()
-                    .isEmpty()) {
-
-                // 物品存在，保留原物品
-                // 注意：这里复制的是引用，如果需要深拷贝可以修改为copy()方法
-                checkedArray[i] = currentItem;
-            } else {
-                // 物品不存在（null或无效），替换为石头
-                // 输出调试信息，帮助定位问题
-                System.err.println("警告：位置 " + i + " 的物品不存在（无效物品或null），已自动替换为石头");
-
-                // 使用stoneItem的copy()方法创建新的实例，避免多个位置共享同一个对象
-                checkedArray[i] = stoneItem.copy();
+        List<ItemStack> checkArray = new ArrayList<>();
+        if (itemStacks != null) {
+            for (ItemStack stack : itemStacks) {
+                if (stack != null) {
+                    checkArray.add(stack);
+                } else {
+                    checkArray.add(getModItem(Minecraft.ID, "stone", 1L));
+                }
             }
+            return checkArray.toArray(new ItemStack[0]);
+        } else {
+            return new ItemStack[0];
         }
-
-        // 第六步：返回检查并替换后的新数组
-        return checkedArray;
     }
 }

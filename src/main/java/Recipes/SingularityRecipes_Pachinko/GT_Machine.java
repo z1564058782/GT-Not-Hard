@@ -2176,7 +2176,7 @@ public class GT_Machine {
 
         // "Helioflux Melting Core" - 14513
         // "Helioflux Melting Core"
-        getModItem(GregTech.ID, "gt.blockmachines", 1L, 14513),
+        getModItem(GregTech.ID, "gt.blockmachines", 1L, 15413),
         // "Singularity Reinforced Stellar Shielding Casing"
         getModItem(TecTech.ID, "gt.godforgecasing", 1L, 0),
         // "Celestial Matter Guidance Casing"
@@ -2192,7 +2192,7 @@ public class GT_Machine {
 
         // "Heliothermal Plasma Fabricator" - 14514
         // "Heliothermal Plasma Fabricator"
-        getModItem(GregTech.ID, "gt.blockmachines", 1L, 14514),
+        getModItem(GregTech.ID, "gt.blockmachines", 1L, 15414),
         // "Singularity Reinforced Stellar Shielding Casing"
         getModItem(TecTech.ID, "gt.godforgecasing", 1L, 0),
         // "Celestial Matter Guidance Casing"
@@ -2208,7 +2208,7 @@ public class GT_Machine {
 
         // "Heliofusion Exoticizer" - 14515
         // "Heliofusion Exoticizer"
-        getModItem(GregTech.ID, "gt.blockmachines", 1L, 14515),
+        getModItem(GregTech.ID, "gt.blockmachines", 1L, 15415),
         // "Singularity Reinforced Stellar Shielding Casing"
         getModItem(TecTech.ID, "gt.godforgecasing", 1L, 0),
         // "Celestial Matter Guidance Casing"

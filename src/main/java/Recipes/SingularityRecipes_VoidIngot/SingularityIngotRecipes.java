@@ -1,6 +1,7 @@
 package Recipes.SingularityRecipes_VoidIngot;
 
 import static util.AggregateItemStackArray.addAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +57,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Coal_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T0.put("Ow", T0_Overworld_Ingot);
+        ItemStack[] T0_Overworld_Ingot_Checked = checkItemStack(T0_Overworld_Ingot);
+        VoidIngotRecipes_T0.put("Ow", T0_Overworld_Ingot_Checked);
 
         // T0 - Nether - Ne
         ItemStack[] T0_Nether_Ingot = addAggregateArray(
@@ -84,7 +86,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Bismuth_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Realgar_SmallOre);
-        VoidIngotRecipes_T0.put("Ne", T0_Nether_Ingot);
+        ItemStack[] T0_Nether_Ingot_Checked = checkItemStack(T0_Nether_Ingot);
+        VoidIngotRecipes_T0.put("Ne", T0_Nether_Ingot_Checked);
 
         // T0 - Twilight - TF
         ItemStack[] T0_Twilight_Ingot = addAggregateArray(
@@ -124,7 +127,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Sapphire_SmallOre,
             SmallOre_Ingot.Jasper_SmallOre,
             SmallOre_Ingot.Olivine_SmallOre);
-        VoidIngotRecipes_T0.put("TF", T0_Twilight_Ingot);
+        ItemStack[] T0_Twilight_Ingot_Checked = checkItemStack(T0_Twilight_Ingot);
+        VoidIngotRecipes_T0.put("TF", T0_Twilight_Ingot_Checked);
 
         // T0 - TheEnd - ED
         ItemStack[] T0_TheEnd_Ingot = addAggregateArray(
@@ -143,7 +147,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Gold_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T0.put("ED", T0_TheEnd_Ingot);
+        ItemStack[] T0_TheEnd_Ingot_Checked = checkItemStack(T0_TheEnd_Ingot);
+        VoidIngotRecipes_T0.put("ED", T0_TheEnd_Ingot_Checked);
 
         // T0 - EndAsteroid - EA
         ItemStack[] T0_EndAsteroid_Ingot = addAggregateArray(
@@ -166,7 +171,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Gold_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T0.put("EA", T0_EndAsteroid_Ingot);
+        ItemStack[] T0_EndAsteroid_Ingot_Checked = checkItemStack(T0_EndAsteroid_Ingot);
+        VoidIngotRecipes_T0.put("EA", T0_EndAsteroid_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T1() {
@@ -181,7 +187,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Galena_Vein,
             Vein_Ingot.Cassiterite_Vein,
             SmallOre_Ingot.Meteoric_Iron_SmallOre);
-        VoidIngotRecipes_T1.put("Mo", T1_Moon_Ingot);
+        ItemStack[] T1_Moon_Ingot_Checked = checkItemStack(T1_Moon_Ingot);
+        VoidIngotRecipes_T1.put("Mo", T1_Moon_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T2() {
@@ -208,7 +215,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Meteoric_Iron_SmallOre,
             SmallOre_Ingot.Desh_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T2.put("De", T2_Deimos_Ingot);
+        ItemStack[] T2_Deimos_Ingot_Checked = checkItemStack(T2_Deimos_Ingot);
+        VoidIngotRecipes_T2.put("De", T2_Deimos_Ingot_Checked);
 
         // T2 - Mars - Ma
         ItemStack[] T2_Mars_Ingot = addAggregateArray(
@@ -241,7 +249,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Bismuth_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T2.put("Ma", T2_Mars_Ingot);
+        ItemStack[] T2_Mars_Ingot_Checked = checkItemStack(T2_Mars_Ingot);
+        VoidIngotRecipes_T2.put("Ma", T2_Mars_Ingot_Checked);
 
         // T2 - Phobos - Ph
         ItemStack[] T2_Phobos_Ingot = addAggregateArray(
@@ -267,7 +276,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Meteoric_Iron_SmallOre,
             SmallOre_Ingot.Lapis_SmallOre,
             SmallOre_Ingot.Desh_SmallOre);
-        VoidIngotRecipes_T2.put("Ph", T2_Phobos_Ingot);
+        ItemStack[] T2_Phobos_Ingot_Checked = checkItemStack(T2_Phobos_Ingot);
+        VoidIngotRecipes_T2.put("Ph", T2_Phobos_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T3() {
@@ -287,7 +297,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Chromite_SmallOre,
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre);
-        VoidIngotRecipes_T3.put("As", T3_Asteroids_Ingot);
+        ItemStack[] T3_Asteroids_Ingot_Checked = checkItemStack(T3_Asteroids_Ingot);
+        VoidIngotRecipes_T3.put("As", T3_Asteroids_Ingot_Checked);
 
         // T3 - Callisto - Ca
         ItemStack[] T3_Callisto_Ingot = addAggregateArray(
@@ -310,7 +321,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Desh_SmallOre,
             SmallOre_Ingot.Bismuth_SmallOre);
-        VoidIngotRecipes_T3.put("Ca", T3_Callisto_Ingot);
+        ItemStack[] T3_Callisto_Ingot_Checked = checkItemStack(T3_Callisto_Ingot);
+        VoidIngotRecipes_T3.put("Ca", T3_Callisto_Ingot_Checked);
 
         // T3 - Ceres - Ce
         ItemStack[] T3_Ceres_Ingot = addAggregateArray(
@@ -338,7 +350,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T3.put("Ce", T3_Ceres_Ingot);
+        ItemStack[] T3_Ceres_Ingot_Checked = checkItemStack(T3_Ceres_Ingot);
+        VoidIngotRecipes_T3.put("Ce", T3_Ceres_Ingot_Checked);
 
         // T3 - Europa - Eu
         ItemStack[] T3_Europa_Ingot = addAggregateArray(
@@ -347,7 +360,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Chrome_Vein,
             Vein_Ingot.Ledox_Vein,
             Vein_Ingot.Tin_Vein);
-        VoidIngotRecipes_T3.put("Eu", T3_Europa_Ingot);
+        ItemStack[] T3_Europa_Ingot_Checked = checkItemStack(T3_Europa_Ingot);
+        VoidIngotRecipes_T3.put("Eu", T3_Europa_Ingot_Checked);
 
         // T3 - Ganymede - Ga
         ItemStack[] T3_Ganymede_Ingot = addAggregateArray(
@@ -373,7 +387,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Lapis_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre);
-        VoidIngotRecipes_T3.put("Ga", T3_Ganymede_Ingot);
+        ItemStack[] T3_Ganymede_Ingot_Checked = checkItemStack(T3_Ganymede_Ingot);
+        VoidIngotRecipes_T3.put("Ga", T3_Ganymede_Ingot_Checked);
 
         // T3 - Ross128b - Rb
         ItemStack[] T3_Ross128b_Ingot = addAggregateArray(
@@ -385,7 +400,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Thorianite_Vein,
             Vein_Ingot.Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein,
             Vein_Ingot.Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein);
-        VoidIngotRecipes_T3.put("Rb", T3_Ross128b_Ingot);
+        ItemStack[] T3_Ross128b_Ingot_Checked = checkItemStack(T3_Ross128b_Ingot);
+        VoidIngotRecipes_T3.put("Rb", T3_Ross128b_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T4() {
@@ -419,7 +435,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T4.put("Io", T4_Io_Ingot);
+        ItemStack[] T4_Io_Ingot_Checked = checkItemStack(T4_Io_Ingot);
+        VoidIngotRecipes_T4.put("Io", T4_Io_Ingot_Checked);
 
         // T4 - Mercury - Me
         ItemStack[] T4_Mercury_Ingot = addAggregateArray(
@@ -447,7 +464,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T4.put("Me", T4_Mercury_Ingot);
+        ItemStack[] T4_Mercury_Ingot_Checked = checkItemStack(T4_Mercury_Ingot);
+        VoidIngotRecipes_T4.put("Me", T4_Mercury_Ingot_Checked);
 
         // T4 - Venus - Ve
         ItemStack[] T4_Venus_Ingot = addAggregateArray(
@@ -479,7 +497,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Tungsten_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T4.put("Ve", T4_Venus_Ingot);
+        ItemStack[] T4_Venus_Ingot_Checked = checkItemStack(T4_Venus_Ingot);
+        VoidIngotRecipes_T4.put("Ve", T4_Venus_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T5() {
@@ -505,7 +524,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Lapis_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T5.put("En", T5_Enceladus_Ingot);
+        ItemStack[] T5_Enceladus_Ingot_Checked = checkItemStack(T5_Enceladus_Ingot);
+        VoidIngotRecipes_T5.put("En", T5_Enceladus_Ingot_Checked);
 
         // T5 - Miranda - Mi
         ItemStack[] T5_Miranda_Ingot = addAggregateArray(
@@ -525,7 +545,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Gold_SmallOre,
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Desh_SmallOre);
-        VoidIngotRecipes_T5.put("Mi", T5_Miranda_Ingot);
+        ItemStack[] T5_Miranda_Ingot_Checked = checkItemStack(T5_Miranda_Ingot);
+        VoidIngotRecipes_T5.put("Mi", T5_Miranda_Ingot_Checked);
 
         // T5 - Oberon - Ob
         ItemStack[] T5_Oberon_Ingot = addAggregateArray(
@@ -548,7 +569,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Chromite_SmallOre,
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Lapis_SmallOre);
-        VoidIngotRecipes_T5.put("Ob", T5_Oberon_Ingot);
+        ItemStack[] T5_Oberon_Ingot_Checked = checkItemStack(T5_Oberon_Ingot);
+        VoidIngotRecipes_T5.put("Ob", T5_Oberon_Ingot_Checked);
 
         // T5 - Titan - Ti
         ItemStack[] T5_Titan_Ingot = addAggregateArray(
@@ -578,7 +600,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre);
-        VoidIngotRecipes_T5.put("Ti", T5_Titan_Ingot);
+        ItemStack[] T5_Titan_Ingot_Checked = checkItemStack(T5_Titan_Ingot);
+        VoidIngotRecipes_T5.put("Ti", T5_Titan_Ingot_Checked);
 
         // T5 - Ross128ba - Ra
         ItemStack[] T5_Ross128ba_Ingot = addAggregateArray(
@@ -589,7 +612,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.BArTiMaEuSNeK_Vein,
             Vein_Ingot.Tiberium_Vein,
             Vein_Ingot.Fluorspar_Vein);
-        VoidIngotRecipes_T5.put("Ra", T5_Ross128ba_Ingot);
+        ItemStack[] T5_Ross128ba_Ingot_Checked = checkItemStack(T5_Ross128ba_Ingot);
+        VoidIngotRecipes_T5.put("Ra", T5_Ross128ba_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T6() {
@@ -621,7 +645,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Bismuth_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T6.put("Pr", T6_Proteus_Ingot);
+        ItemStack[] T6_Proteus_Ingot_Checked = checkItemStack(T6_Proteus_Ingot);
+        VoidIngotRecipes_T6.put("Pr", T6_Proteus_Ingot_Checked);
 
         // T6 - Triton - Tr
         ItemStack[] T6_Triton_Ingot = addAggregateArray(
@@ -648,7 +673,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Chromite_SmallOre,
             SmallOre_Ingot.Tungstate_SmallOre,
             SmallOre_Ingot.Desh_SmallOre);
-        VoidIngotRecipes_T6.put("Tr", T6_Triton_Ingot);
+        ItemStack[] T6_Triton_Ingot_Checked = checkItemStack(T6_Triton_Ingot);
+        VoidIngotRecipes_T6.put("Tr", T6_Triton_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T7() {
@@ -677,7 +703,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Desh_SmallOre,
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre);
-        VoidIngotRecipes_T7.put("Ha", T7_Haumea_Ingot);
+        ItemStack[] T7_Haumea_Ingot_Checked = checkItemStack(T7_Haumea_Ingot);
+        VoidIngotRecipes_T7.put("Ha", T7_Haumea_Ingot_Checked);
 
         // T7 - Makemake - MM
         ItemStack[] T7_Makemake_Ingot = addAggregateArray(
@@ -706,7 +733,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Bismuth_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre);
-        VoidIngotRecipes_T7.put("MM", T7_Makemake_Ingot);
+        ItemStack[] T7_Makemake_Ingot_Checked = checkItemStack(T7_Makemake_Ingot);
+        VoidIngotRecipes_T7.put("MM", T7_Makemake_Ingot_Checked);
 
         // T7 - Pluto - Pl
         ItemStack[] T7_Pluto_Ingot = addAggregateArray(
@@ -739,7 +767,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Quantium_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T7.put("Pl", T7_Pluto_Ingot);
+        ItemStack[] T7_Pluto_Ingot_Checked = checkItemStack(T7_Pluto_Ingot);
+        VoidIngotRecipes_T7.put("Pl", T7_Pluto_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T8() {
@@ -755,7 +784,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Lignite_Coal_Vein,
             Vein_Ingot.Basaltic_Mineral_Sand_Vein,
             Vein_Ingot.Salt_Vein);
-        VoidIngotRecipes_T8.put("BC", T8_BarnardC_Ingot);
+        ItemStack[] T8_BarnardC_Ingot_Checked = checkItemStack(T8_BarnardC_Ingot);
+        VoidIngotRecipes_T8.put("BC", T8_BarnardC_Ingot_Checked);
 
         // T8 - BarnardE - BE
         ItemStack[] T8_BarnardE_Ingot = addAggregateArray(
@@ -780,7 +810,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Zinc_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre);
-        VoidIngotRecipes_T8.put("BE", T8_BarnardE_Ingot);
+        ItemStack[] T8_BarnardE_Ingot_Checked = checkItemStack(T8_BarnardE_Ingot);
+        VoidIngotRecipes_T8.put("BE", T8_BarnardE_Ingot_Checked);
 
         // T8 - BarnardF - BF
         ItemStack[] T8_BarnardF_Ingot = addAggregateArray(
@@ -810,7 +841,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Naquadah_SmallOre,
             SmallOre_Ingot.Bedrockium_SmallOre);
-        VoidIngotRecipes_T8.put("BF", T8_BarnardF_Ingot);
+        ItemStack[] T8_BarnardF_Ingot_Checked = checkItemStack(T8_BarnardF_Ingot);
+        VoidIngotRecipes_T8.put("BF", T8_BarnardF_Ingot_Checked);
 
         // T8 - α Centauri Bb - CB
         ItemStack[] T8_Centauri_Ingot = addAggregateArray(
@@ -827,7 +859,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Tetrahedrite_Vein,
             Vein_Ingot.Tin_Vein,
             Vein_Ingot.Nether_Quartz_Vein);
-        VoidIngotRecipes_T8.put("CB", T8_Centauri_Ingot);
+        ItemStack[] T8_Centauri_Ingot_Checked = checkItemStack(T8_Centauri_Ingot);
+        VoidIngotRecipes_T8.put("CB", T8_Centauri_Ingot_Checked);
 
         // T8 - TCetiE - TE
         ItemStack[] T8_TCetiE_Ingot = addAggregateArray(
@@ -848,7 +881,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Awakened_Draconium_SmallOre,
             SmallOre_Ingot.Neutronium_SmallOre,
             SmallOre_Ingot.Lapis_SmallOre);
-        VoidIngotRecipes_T8.put("TE", T8_TCetiE_Ingot);
+        ItemStack[] T8_TCetiE_Ingot_Checked = checkItemStack(T8_TCetiE_Ingot);
+        VoidIngotRecipes_T8.put("TE", T8_TCetiE_Ingot_Checked);
 
         // T8 - VegaB - VB
         ItemStack[] T8_VegaB_Ingot = addAggregateArray(
@@ -878,7 +912,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Black_Plutonium_SmallOre,
             SmallOre_Ingot.Chromite_SmallOre,
             SmallOre_Ingot.Bismuth_SmallOre);
-        VoidIngotRecipes_T8.put("VB", T8_VegaB_Ingot);
+        ItemStack[] T8_VegaB_Ingot_Checked = checkItemStack(T8_VegaB_Ingot);
+        VoidIngotRecipes_T8.put("VB", T8_VegaB_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T9() {
@@ -897,7 +932,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Rutile_Vein,
             Vein_Ingot.Basaltic_Mineral_Sand_Vein,
             SmallOre_Ingot.Infinity_Catalyst_SmallOre);
-        VoidIngotRecipes_T9.put("An", T9_Anubis_Ingot);
+        ItemStack[] T9_Anubis_Ingot_Checked = checkItemStack(T9_Anubis_Ingot);
+        VoidIngotRecipes_T9.put("An", T9_Anubis_Ingot_Checked);
 
         // T9 - Horus - Ho
         ItemStack[] T9_Horus_Ingot = addAggregateArray(
@@ -932,7 +968,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Sapphire_SmallOre,
             SmallOre_Ingot.Jasper_SmallOre,
             SmallOre_Ingot.Olivine_SmallOre);
-        VoidIngotRecipes_T9.put("Ho", T9_Horus_Ingot);
+        ItemStack[] T9_Horus_Ingot_Checked = checkItemStack(T9_Horus_Ingot);
+        VoidIngotRecipes_T9.put("Ho", T9_Horus_Ingot_Checked);
 
         // T9 - Maahes - Mh
         ItemStack[] T9_Maahes_Ingot = addAggregateArray(
@@ -947,7 +984,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Basaltic_Mineral_Sand_Vein,
             Vein_Ingot.Quantium_Vein,
             Vein_Ingot.Chrome_Vein);
-        VoidIngotRecipes_T9.put("Mh", T9_Maahes_Ingot);
+        ItemStack[] T9_Maahes_Ingot_Checked = checkItemStack(T9_Maahes_Ingot);
+        VoidIngotRecipes_T9.put("Mh", T9_Maahes_Ingot_Checked);
 
         // T9 - MehenBelt - MB
         ItemStack[] T9_MehenBelt_Ingot = addAggregateArray(
@@ -970,7 +1008,8 @@ public class SingularityIngotRecipes {
             SmallOre_Ingot.Lapis_SmallOre,
             SmallOre_Ingot.Nickel_SmallOre,
             SmallOre_Ingot.Olivine_SmallOre);
-        VoidIngotRecipes_T9.put("MB", T9_MehenBelt_Ingot);
+        ItemStack[] T9_MehenBelt_Ingot_Checked = checkItemStack(T9_MehenBelt_Ingot);
+        VoidIngotRecipes_T9.put("MB", T9_MehenBelt_Ingot_Checked);
 
         // T9 - Neper - Np
         ItemStack[] T9_Neper_Ingot = addAggregateArray(
@@ -986,7 +1025,8 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Kaolinite_Vein,
             // Aqua, Ignis & Amber Vein
             Vein_Ingot.Nether_Quartz_Vein);
-        VoidIngotRecipes_T9.put("Np", T9_Neper_Ingot);
+        ItemStack[] T9_Neper_Ingot_Checked = checkItemStack(T9_Neper_Ingot);
+        VoidIngotRecipes_T9.put("Np", T9_Neper_Ingot_Checked);
 
         // T9 - Seth - Se
         ItemStack[] T9_Seth_Ingot = addAggregateArray(
@@ -1003,11 +1043,13 @@ public class SingularityIngotRecipes {
             Vein_Ingot.Cassiterite_Vein,
             SmallOre_Ingot.Awakened_Draconium_SmallOre,
             SmallOre_Ingot.Draconium_SmallOre);
-        VoidIngotRecipes_T9.put("Se", T9_Seth_Ingot);
+        ItemStack[] T9_Seth_Ingot_Checked = checkItemStack(T9_Seth_Ingot);
+        VoidIngotRecipes_T9.put("Se", T9_Seth_Ingot_Checked);
     }
 
     public static void addVoidIngotRecipes_T10() {
         // T10 - DeepDark - DD
-        VoidIngotRecipes_T10.put("DD", Vein_Ingot.T10_Ingot);
+        ItemStack[] T10_Ingot_Checked = checkItemStack(Vein_Ingot.T10_Ingot);
+        VoidIngotRecipes_T10.put("DD", T10_Ingot_Checked);
     }
 }

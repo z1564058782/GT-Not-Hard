@@ -5,6 +5,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addCompressAggregateArray;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
+import static util.AggregateItemStackArray.checkItemStack;
 
 import net.minecraft.item.ItemStack;
 
@@ -52,8 +53,9 @@ public class FakeSingularityEcosystemRecipes {
 
     public static void addFakeEcosystemRecipes_AlgaeFarm() {
         ItemStack[] Fake_Ecosystem_AlgaeFarm_List = addCompressAggregateArray(Ecosystem_AlgaeFarm.Pure_AlgaeFarm);
+        ItemStack[] Fake_Ecosystem_AlgaeFarm_List_Checked = checkItemStack(Fake_Ecosystem_AlgaeFarm_List);
         ItemStack[][] Fake_Ecosystem_AlgaeFarm_List_Split = addSplitAggregateArray(
-            Fake_Ecosystem_AlgaeFarm_List,
+            Fake_Ecosystem_AlgaeFarm_List_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_Ecosystem_AlgaeFarm_List_Split) {
             GTValues.RA.stdBuilder()
@@ -77,8 +79,9 @@ public class FakeSingularityEcosystemRecipes {
             Ecosystem_Comb.MagicBees_Comb,
             Ecosystem_Comb.Gendustry_Comb,
             Ecosystem_Comb.GregTech_Comb);
+        ItemStack[] Fake_Ecosystem_Comb_List_Checked = checkItemStack(Fake_Ecosystem_Comb_List);
         ItemStack[][] Fake_Ecosystem_Comb_List_Split = addSplitAggregateArray(
-            Fake_Ecosystem_Comb_List,
+            Fake_Ecosystem_Comb_List_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_Ecosystem_Comb_List_Split) {
             GTValues.RA.stdBuilder()
@@ -124,8 +127,9 @@ public class FakeSingularityEcosystemRecipes {
             Ecosystem_Food.PamsHarvestTheNether_Food,
             Ecosystem_Food.GTPlusPlus_Food,
             Ecosystem_Food.Witchery_Food);
+        ItemStack[] Fake_Ecosystem_Food_List_Checked = checkItemStack(Fake_Ecosystem_Food_List);
         ItemStack[][] Fake_Ecosystem_Food_List_Split = addSplitAggregateArray(
-            Fake_Ecosystem_Food_List,
+            Fake_Ecosystem_Food_List_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_Ecosystem_Food_List_Split) {
             GTValues.RA.stdBuilder()
@@ -160,8 +164,9 @@ public class FakeSingularityEcosystemRecipes {
             Ecosystem_TreeGrowth.EtFuturumRequiem_TreeGrowth,
             Ecosystem_TreeGrowth.Forestry_TreeGrowth,
             Ecosystem_TreeGrowth.ExtraTrees_TreeGrowth);
+        ItemStack[] Fake_Ecosystem_TreeGrowth_List_Checked = checkItemStack(Fake_Ecosystem_TreeGrowth_List);
         ItemStack[][] Fake_Ecosystem_TreeGrowth_List_Split = addSplitAggregateArray(
-            Fake_Ecosystem_TreeGrowth_List,
+            Fake_Ecosystem_TreeGrowth_List_Checked,
             NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_Ecosystem_TreeGrowth_List_Split) {
             GTValues.RA.stdBuilder()

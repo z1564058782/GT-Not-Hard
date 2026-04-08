@@ -1,0 +1,241 @@
+Item Name,Item ID,Item meta,Has NBT,Display Name
+gregtech:gt.metaitem.03,6955,6006,FALSE,Superdense Lithium Plate
+gregtech:gt.metaitem.03,6955,6008,FALSE,Superdense Beryllium Plate
+gregtech:gt.metaitem.03,6955,6010,FALSE,Superdense Carbon Plate
+gregtech:gt.metaitem.03,6955,6018,FALSE,Superdense Magnesium Plate
+gregtech:gt.metaitem.03,6955,6019,FALSE,Superdense Aluminium Plate
+gregtech:gt.metaitem.03,6955,6020,FALSE,Superdense Raw Silicon Plate
+gregtech:gt.metaitem.03,6955,6025,FALSE,Superdense Potassium Plate
+gregtech:gt.metaitem.03,6955,6027,FALSE,Superdense Scandium Plate
+gregtech:gt.metaitem.03,6955,6028,FALSE,Superdense Titanium Plate
+gregtech:gt.metaitem.03,6955,6029,FALSE,Superdense Vanadium Plate
+gregtech:gt.metaitem.03,6955,6030,FALSE,Superdense Chrome Plate
+gregtech:gt.metaitem.03,6955,6031,FALSE,Superdense Manganese Plate
+gregtech:gt.metaitem.03,6955,6032,FALSE,Superdense Iron Plate
+gregtech:gt.metaitem.03,6955,6033,FALSE,Superdense Cobalt Plate
+gregtech:gt.metaitem.03,6955,6034,FALSE,Superdense Nickel Plate
+gregtech:gt.metaitem.03,6955,6035,FALSE,Superdense Copper Plate
+gregtech:gt.metaitem.03,6955,6036,FALSE,Superdense Zinc Plate
+gregtech:gt.metaitem.03,6955,6037,FALSE,Superdense Gallium Plate
+gregtech:gt.metaitem.03,6955,6039,FALSE,Superdense Arsenic Plate
+gregtech:gt.metaitem.03,6955,6043,FALSE,Superdense Rubidium Plate
+gregtech:gt.metaitem.03,6955,6044,FALSE,Superdense Strontium Plate
+gregtech:gt.metaitem.03,6955,6045,FALSE,Superdense Yttrium Plate
+gregtech:gt.metaitem.03,6955,6047,FALSE,Superdense Niobium Plate
+gregtech:gt.metaitem.03,6955,6048,FALSE,Superdense Molybdenum Plate
+gregtech:gt.metaitem.03,6955,6052,FALSE,Superdense Palladium Plate
+gregtech:gt.metaitem.03,6955,6054,FALSE,Superdense Silver Plate
+gregtech:gt.metaitem.03,6955,6056,FALSE,Superdense Indium Plate
+gregtech:gt.metaitem.03,6955,6057,FALSE,Superdense Tin Plate
+gregtech:gt.metaitem.03,6955,6058,FALSE,Superdense Antimony Plate
+gregtech:gt.metaitem.03,6955,6059,FALSE,Superdense Tellurium Plate
+gregtech:gt.metaitem.03,6955,6062,FALSE,Superdense Caesium Plate
+gregtech:gt.metaitem.03,6955,6063,FALSE,Superdense Barium Plate
+gregtech:gt.metaitem.03,6955,6064,FALSE,Superdense Lanthanum Plate
+gregtech:gt.metaitem.03,6955,6065,FALSE,Superdense Cerium Plate
+gregtech:gt.metaitem.03,6955,6066,FALSE,Superdense Praseodymium Plate
+gregtech:gt.metaitem.03,6955,6067,FALSE,Superdense Neodymium Plate
+gregtech:gt.metaitem.03,6955,6068,FALSE,Superdense Promethium Plate
+gregtech:gt.metaitem.03,6955,6069,FALSE,Superdense Samarium Plate
+gregtech:gt.metaitem.03,6955,6070,FALSE,Superdense Europium Plate
+gregtech:gt.metaitem.03,6955,6071,FALSE,Superdense Gadolinium Plate
+gregtech:gt.metaitem.03,6955,6072,FALSE,Superdense Terbium Plate
+gregtech:gt.metaitem.03,6955,6073,FALSE,Superdense Dysprosium Plate
+gregtech:gt.metaitem.03,6955,6074,FALSE,Superdense Holmium Plate
+gregtech:gt.metaitem.03,6955,6075,FALSE,Superdense Erbium Plate
+gregtech:gt.metaitem.03,6955,6076,FALSE,Superdense Thulium Plate
+gregtech:gt.metaitem.03,6955,6077,FALSE,Superdense Ytterbium Plate
+gregtech:gt.metaitem.03,6955,6078,FALSE,Superdense Lutetium Plate
+gregtech:gt.metaitem.03,6955,6080,FALSE,Superdense Tantalum Plate
+gregtech:gt.metaitem.03,6955,6081,FALSE,Superdense Tungsten Plate
+gregtech:gt.metaitem.03,6955,6083,FALSE,Superdense Osmium Plate
+gregtech:gt.metaitem.03,6955,6084,FALSE,Superdense Iridium Plate
+gregtech:gt.metaitem.03,6955,6085,FALSE,Superdense Platinum Plate
+gregtech:gt.metaitem.03,6955,6086,FALSE,Superdense Gold Plate
+gregtech:gt.metaitem.03,6955,6089,FALSE,Superdense Lead Plate
+gregtech:gt.metaitem.03,6955,6090,FALSE,Superdense Bismuth Plate
+gregtech:gt.metaitem.03,6955,6096,FALSE,Superdense Thorium Plate
+gregtech:gt.metaitem.03,6955,6097,FALSE,Superdense Uranium 235 Plate
+gregtech:gt.metaitem.03,6955,6098,FALSE,Superdense Uranium 238 Plate
+gregtech:gt.metaitem.03,6955,6100,FALSE,Superdense Plutonium 239 Plate
+gregtech:gt.metaitem.03,6955,6101,FALSE,Superdense Plutonium 241 Plate
+gregtech:gt.metaitem.03,6955,6103,FALSE,Superdense Americium Plate
+gregtech:gt.metaitem.03,6955,6111,FALSE,Superdense Purified Tengam Plate
+gregtech:gt.metaitem.03,6955,6112,FALSE,Superdense Attuned Tengam Plate
+gregtech:gt.metaitem.03,6955,6125,FALSE,Superdense Hellish Metal Plate
+gregtech:gt.metaitem.03,6955,6129,FALSE,Superdense Neutronium Plate
+gregtech:gt.metaitem.03,6955,6131,FALSE,Superdense Superconductor Base UIV Plate
+gregtech:gt.metaitem.03,6955,6132,FALSE,Superdense Netherite Plate
+gregtech:gt.metaitem.03,6955,6134,FALSE,Superdense Superconductor Base UMV Plate
+gregtech:gt.metaitem.03,6955,6139,FALSE,Superdense Universium Plate
+gregtech:gt.metaitem.03,6955,6141,FALSE,Superdense Eternity Plate
+gregtech:gt.metaitem.03,6955,6143,FALSE,Superdense Magmatter Plate
+gregtech:gt.metaitem.03,6955,6147,FALSE,Superdense Six-Phased Copper Plate
+gregtech:gt.metaitem.03,6955,6148,FALSE,Superdense Mellion Plate
+gregtech:gt.metaitem.03,6955,6149,FALSE,Superdense Creon Plate
+gregtech:gt.metaitem.03,6955,6153,FALSE,Superdense Hot Proto-Halkonite Steel Plate
+gregtech:gt.metaitem.03,6955,6154,FALSE,Superdense Proto-Halkonite Steel Plate
+gregtech:gt.metaitem.03,6955,6163,FALSE,Superdense Prismatic Naquadah Plate
+gregtech:gt.metaitem.03,6955,6201,FALSE,Superdense Manasteel Plate
+gregtech:gt.metaitem.03,6955,6202,FALSE,Superdense Terrasteel Plate
+gregtech:gt.metaitem.03,6955,6203,FALSE,Superdense Elven Elementium Plate
+gregtech:gt.metaitem.03,6955,6205,FALSE,Superdense Gaia Spirit Plate
+gregtech:gt.metaitem.03,6955,6300,FALSE,Superdense Bronze Plate
+gregtech:gt.metaitem.03,6955,6301,FALSE,Superdense Brass Plate
+gregtech:gt.metaitem.03,6955,6302,FALSE,Superdense Invar Plate
+gregtech:gt.metaitem.03,6955,6303,FALSE,Superdense Electrum Plate
+gregtech:gt.metaitem.03,6955,6304,FALSE,Superdense Wrought Iron Plate
+gregtech:gt.metaitem.03,6955,6305,FALSE,Superdense Steel Plate
+gregtech:gt.metaitem.03,6955,6306,FALSE,Superdense Stainless Steel Plate
+gregtech:gt.metaitem.03,6955,6307,FALSE,Superdense Pig Iron Plate
+gregtech:gt.metaitem.03,6955,6308,FALSE,Superdense Red Alloy Plate
+gregtech:gt.metaitem.03,6955,6309,FALSE,Superdense Blue Alloy Plate
+gregtech:gt.metaitem.03,6955,6310,FALSE,Superdense Cupronickel Plate
+gregtech:gt.metaitem.03,6955,6311,FALSE,Superdense Nichrome Plate
+gregtech:gt.metaitem.03,6955,6312,FALSE,Superdense Kanthal Plate
+gregtech:gt.metaitem.03,6955,6313,FALSE,Superdense Magnalium Plate
+gregtech:gt.metaitem.03,6955,6314,FALSE,Superdense Soldering Alloy Plate
+gregtech:gt.metaitem.03,6955,6315,FALSE,Superdense Battery Alloy Plate
+gregtech:gt.metaitem.03,6955,6316,FALSE,Superdense Tungstensteel Plate
+gregtech:gt.metaitem.03,6955,6317,FALSE,Superdense Osmiridium Plate
+gregtech:gt.metaitem.03,6955,6318,FALSE,Superdense Sunnarium Plate
+gregtech:gt.metaitem.03,6955,6319,FALSE,Superdense Adamantium Plate
+gregtech:gt.metaitem.03,6955,6320,FALSE,Superdense Fluxed Electrum Plate
+gregtech:gt.metaitem.03,6955,6321,FALSE,Superdense Enderium Plate
+gregtech:gt.metaitem.03,6955,6323,FALSE,Superdense Infused Gold Plate
+gregtech:gt.metaitem.03,6955,6324,FALSE,Superdense Naquadah Plate
+gregtech:gt.metaitem.03,6955,6325,FALSE,Superdense Naquadah Alloy Plate
+gregtech:gt.metaitem.03,6955,6326,FALSE,Superdense Enriched Naquadah Plate
+gregtech:gt.metaitem.03,6955,6327,FALSE,Superdense Naquadria Plate
+gregtech:gt.metaitem.03,6955,6328,FALSE,Superdense Duranium Plate
+gregtech:gt.metaitem.03,6955,6329,FALSE,Superdense Tritanium Plate
+gregtech:gt.metaitem.03,6955,6330,FALSE,Superdense Thaumium Plate
+gregtech:gt.metaitem.03,6955,6331,FALSE,Superdense Mithril Plate
+gregtech:gt.metaitem.03,6955,6333,FALSE,Superdense Astral Silver Plate
+gregtech:gt.metaitem.03,6955,6334,FALSE,Superdense Black Steel Plate
+gregtech:gt.metaitem.03,6955,6335,FALSE,Superdense Damascus Steel Plate
+gregtech:gt.metaitem.03,6955,6336,FALSE,Superdense Shadow Iron Plate
+gregtech:gt.metaitem.03,6955,6337,FALSE,Superdense Shadow Steel Plate
+gregtech:gt.metaitem.03,6955,6338,FALSE,Superdense Ironwood Plate
+gregtech:gt.metaitem.03,6955,6339,FALSE,Superdense Steeleaf Plate
+gregtech:gt.metaitem.03,6955,6340,FALSE,Superdense Meteoric Iron Plate
+gregtech:gt.metaitem.03,6955,6341,FALSE,Superdense Meteoric Steel Plate
+gregtech:gt.metaitem.03,6955,6342,FALSE,Superdense Deep Dark Iron Plate
+gregtech:gt.metaitem.03,6955,6343,FALSE,Superdense Cobalt Brass Plate
+gregtech:gt.metaitem.03,6955,6344,FALSE,Superdense Ultimet Plate
+gregtech:gt.metaitem.03,6955,6345,FALSE,Superdense Annealed Copper Plate
+gregtech:gt.metaitem.03,6955,6346,FALSE,Superdense Fiery Steel Plate
+gregtech:gt.metaitem.03,6955,6348,FALSE,Superdense Red Steel Plate
+gregtech:gt.metaitem.03,6955,6349,FALSE,Superdense Blue Steel Plate
+gregtech:gt.metaitem.03,6955,6350,FALSE,Superdense Sterling Silver Plate
+gregtech:gt.metaitem.03,6955,6351,FALSE,Superdense Rose Gold Plate
+gregtech:gt.metaitem.03,6955,6352,FALSE,Superdense Black Bronze Plate
+gregtech:gt.metaitem.03,6955,6353,FALSE,Superdense Bismuth Bronze Plate
+gregtech:gt.metaitem.03,6955,6354,FALSE,Superdense Magnetic Iron Plate
+gregtech:gt.metaitem.03,6955,6355,FALSE,Superdense Magnetic Steel Plate
+gregtech:gt.metaitem.03,6955,6356,FALSE,Superdense Magnetic Neodymium Plate
+gregtech:gt.metaitem.03,6955,6357,FALSE,Superdense Vanadium-Gallium Plate
+gregtech:gt.metaitem.03,6955,6358,FALSE,Superdense Yttrium Barium Cuprate Plate
+gregtech:gt.metaitem.03,6955,6359,FALSE,Superdense Niobium Nitride Plate
+gregtech:gt.metaitem.03,6955,6360,FALSE,Superdense Niobium-Titanium Plate
+gregtech:gt.metaitem.03,6955,6361,FALSE,Superdense Chromium Dioxide Plate
+gregtech:gt.metaitem.03,6955,6362,FALSE,Superdense Knightmetal Plate
+gregtech:gt.metaitem.03,6955,6363,FALSE,Superdense Tin Alloy Plate
+gregtech:gt.metaitem.03,6955,6364,FALSE,Superdense Dark Steel Plate
+gregtech:gt.metaitem.03,6955,6365,FALSE,Superdense Electrical Steel Plate
+gregtech:gt.metaitem.03,6955,6366,FALSE,Superdense Energetic Alloy Plate
+gregtech:gt.metaitem.03,6955,6367,FALSE,Superdense Vibrant Alloy Plate
+gregtech:gt.metaitem.03,6955,6368,FALSE,Superdense Shadow Metal Plate
+gregtech:gt.metaitem.03,6955,6369,FALSE,Superdense Conductive Iron Plate
+gregtech:gt.metaitem.03,6955,6370,FALSE,Superdense Tungstencarbide Plate
+gregtech:gt.metaitem.03,6955,6371,FALSE,Superdense Vanadiumsteel Plate
+gregtech:gt.metaitem.03,6955,6372,FALSE,Superdense HSS-G Plate
+gregtech:gt.metaitem.03,6955,6373,FALSE,Superdense HSS-E Plate
+gregtech:gt.metaitem.03,6955,6374,FALSE,Superdense HSS-S Plate
+gregtech:gt.metaitem.03,6955,6378,FALSE,Superdense Pulsating Iron Plate
+gregtech:gt.metaitem.03,6955,6379,FALSE,Superdense Soularium Plate
+gregtech:gt.metaitem.03,6955,6380,FALSE,Superdense Enderium Base Plate
+gregtech:gt.metaitem.03,6955,6381,FALSE,Superdense Redstone Alloy Plate
+gregtech:gt.metaitem.03,6955,6382,FALSE,Superdense Ardite Plate
+gregtech:gt.metaitem.03,6955,6383,FALSE,Superdense Reinforced Plate
+gregtech:gt.metaitem.03,6955,6384,FALSE,Superdense Galgadorian Plate
+gregtech:gt.metaitem.03,6955,6385,FALSE,Superdense Enhanced Galgadorian Plate
+gregtech:gt.metaitem.03,6955,6386,FALSE,Superdense Manyullyn Plate
+gregtech:gt.metaitem.03,6955,6387,FALSE,Superdense Mytryl Plate
+gregtech:gt.metaitem.03,6955,6388,FALSE,Superdense Black Plutonium Plate
+gregtech:gt.metaitem.03,6955,6389,FALSE,Superdense Callisto Ice Plate
+gregtech:gt.metaitem.03,6955,6390,FALSE,Superdense Ledox Plate
+gregtech:gt.metaitem.03,6955,6391,FALSE,Superdense Quantium Plate
+gregtech:gt.metaitem.03,6955,6392,FALSE,Superdense Duralumin Plate
+gregtech:gt.metaitem.03,6955,6393,FALSE,Superdense Oriharukon Plate
+gregtech:gt.metaitem.03,6955,6394,FALSE,Superdense Infinity Catalyst Plate
+gregtech:gt.metaitem.03,6955,6395,FALSE,Superdense Bedrockium Plate
+gregtech:gt.metaitem.03,6955,6397,FALSE,Superdense Infinity Plate
+gregtech:gt.metaitem.03,6955,6398,FALSE,Superdense Mysterious Crystal Plate
+gregtech:gt.metaitem.03,6955,6399,FALSE,Superdense Magnetic Samarium Plate
+gregtech:gt.metaitem.03,6955,6400,FALSE,Superdense Obzinite Plate
+gregtech:gt.metaitem.03,6955,6401,FALSE,Superdense End Steel Plate
+gregtech:gt.metaitem.03,6955,6402,FALSE,Superdense Clay Compound Plate
+gregtech:gt.metaitem.03,6955,6403,FALSE,Superdense Crystalline Alloy Plate
+gregtech:gt.metaitem.03,6955,6404,FALSE,Superdense Melodic Alloy Plate
+gregtech:gt.metaitem.03,6955,6405,FALSE,Superdense Stellar Alloy Plate
+gregtech:gt.metaitem.03,6955,6406,FALSE,Superdense Crystalline Pink Slime Plate
+gregtech:gt.metaitem.03,6955,6407,FALSE,Superdense Energetic Silver Plate
+gregtech:gt.metaitem.03,6955,6408,FALSE,Superdense Vivid Alloy Plate
+gregtech:gt.metaitem.03,6955,6470,FALSE,Superdense Epoxid Sheet
+gregtech:gt.metaitem.03,6955,6471,FALSE,Superdense Silicone Rubber Sheet
+gregtech:gt.metaitem.03,6955,6472,FALSE,Superdense Polycaprolactam Sheet
+gregtech:gt.metaitem.03,6955,6473,FALSE,Superdense Polytetrafluoroethylene Sheet
+gregtech:gt.metaitem.03,6955,6485,FALSE,Superdense Alduorite Plate
+gregtech:gt.metaitem.03,6955,6488,FALSE,Superdense Rubracium Plate
+gregtech:gt.metaitem.03,6955,6489,FALSE,Superdense Vulcanite Plate
+gregtech:gt.metaitem.03,6955,6521,FALSE,Superdense Force Plate
+gregtech:gt.metaitem.03,6955,6529,FALSE,Superdense Vinteum Plate
+gregtech:gt.metaitem.03,6955,6576,FALSE,Superdense TPV-Alloy Plate
+gregtech:gt.metaitem.03,6955,6581,FALSE,Superdense Transcendent Metal Plate
+gregtech:gt.metaitem.03,6955,6582,FALSE,Superdense Enriched Holmium Plate
+gregtech:gt.metaitem.03,6955,6583,FALSE,Superdense Magnetohydrodynamically Constrained Star Matter Plate
+gregtech:gt.metaitem.03,6955,6585,FALSE,Superdense White Dwarf Matter Plate
+gregtech:gt.metaitem.03,6955,6586,FALSE,Superdense Black Dwarf Matter Plate
+gregtech:gt.metaitem.03,6955,6588,FALSE,Superdense SpaceTime Plate
+gregtech:gt.metaitem.03,6955,6599,FALSE,Superdense Polybenzimidazole Plate
+gregtech:gt.metaitem.03,6955,6610,FALSE,Superdense Fiber-Reinforced Epoxy Resin Sheet
+gregtech:gt.metaitem.03,6955,6613,FALSE,Superdense Nickel-Zinc Ferrite Plate
+gregtech:gt.metaitem.03,6955,6631,FALSE,Superdense Polyphenylene Sulfide Plate
+gregtech:gt.metaitem.03,6955,6635,FALSE,Superdense Styrene-Butadiene Rubber Sheet
+gregtech:gt.metaitem.03,6955,6636,FALSE,Superdense Polystyrene Sheet
+gregtech:gt.metaitem.03,6955,6649,FALSE,Superdense Polyvinyl Chloride Sheet
+gregtech:gt.metaitem.03,6955,6765,FALSE,Superdense Kevlar Plate
+gregtech:gt.metaitem.03,6955,6770,FALSE,Superdense Endium Plate
+gregtech:gt.metaitem.03,6955,6772,FALSE,Superdense Nickel Aluminide Plate
+gregtech:gt.metaitem.03,6955,6829,FALSE,Superdense Deep Iron Plate
+gregtech:gt.metaitem.03,6955,6856,FALSE,Superdense Silicon Solar Grade (Poly SI) Plate
+gregtech:gt.metaitem.03,6955,6868,FALSE,Superdense Trinium Plate
+gregtech:gt.metaitem.03,6955,6874,FALSE,Superdense Polyethylene Sheet
+gregtech:gt.metaitem.03,6955,6880,FALSE,Superdense Rubber Sheet
+gregtech:gt.metaitem.03,6955,6884,FALSE,Superdense Desh Plate
+gregtech:gt.metaitem.03,6955,6912,FALSE,Superdense Chrysotile Plate
+gregtech:gt.metaitem.03,6955,6913,FALSE,Superdense Realgar Plate
+gregtech:gt.metaitem.03,6955,6951,FALSE,Superdense Vyroxeres Plate
+gregtech:gt.metaitem.03,6955,6952,FALSE,Superdense Ceruclase Plate
+gregtech:gt.metaitem.03,6955,6956,FALSE,Superdense Tartarite Plate
+gregtech:gt.metaitem.03,6955,6966,FALSE,Superdense Orichalcum Plate
+gregtech:gt.metaitem.03,6955,6970,FALSE,Superdense Void Plate
+gregtech:gt.metaitem.03,6955,6974,FALSE,Superdense Superconductor Base UEV Plate
+gregtech:gt.metaitem.03,6955,6975,FALSE,Superdense Draconium Plate
+gregtech:gt.metaitem.03,6955,6976,FALSE,Superdense Awakened Draconium Plate
+gregtech:gt.metaitem.03,6955,6977,FALSE,Superdense Blood Infused Iron Plate
+gregtech:gt.metaitem.03,6955,6978,FALSE,Superdense Ichorium Plate
+gregtech:gt.metaitem.03,6955,6979,FALSE,Superdense Radox Polymer Plate
+gregtech:gt.metaitem.03,6955,6980,FALSE,Superdense Gallium Arsenide Plate
+gregtech:gt.metaitem.03,6955,6981,FALSE,Superdense Indium Gallium Phosphide Plate
+gregtech:gt.metaitem.03,6955,6982,FALSE,Superdense Cosmic Neutronium Plate
+gregtech:gt.metaitem.03,6955,6984,FALSE,Superdense Flerovium Plate
+gregtech:gt.metaitem.03,6955,6985,FALSE,Superdense Superconductor Base UHV Plate
+gregtech:gt.metaitem.03,6955,6986,FALSE,Superdense Superconductor Base UV Plate
+gregtech:gt.metaitem.03,6955,6987,FALSE,Superdense Superconductor Base MV Plate
+gregtech:gt.metaitem.03,6955,6988,FALSE,Superdense Superconductor Base HV Plate
+gregtech:gt.metaitem.03,6955,6989,FALSE,Superdense Superconductor Base EV Plate
+gregtech:gt.metaitem.03,6955,6990,FALSE,Superdense Superconductor Base IV Plate
+gregtech:gt.metaitem.03,6955,6991,FALSE,Superdense Superconductor Base LuV Plate
+gregtech:gt.metaitem.03,6955,6992,FALSE,Superdense Superconductor Base ZPM Plate
