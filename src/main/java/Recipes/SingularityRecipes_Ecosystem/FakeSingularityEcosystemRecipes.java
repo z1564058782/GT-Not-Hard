@@ -25,6 +25,7 @@ public class FakeSingularityEcosystemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeEcosystemRecipes_Comb = RecipeMapBuilder
@@ -33,6 +34,7 @@ public class FakeSingularityEcosystemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeEcosystemRecipes_Food = RecipeMapBuilder
@@ -41,6 +43,7 @@ public class FakeSingularityEcosystemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeEcosystemRecipes_TreeGrowth = RecipeMapBuilder
@@ -49,6 +52,7 @@ public class FakeSingularityEcosystemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addFakeEcosystemRecipes_AlgaeFarm() {

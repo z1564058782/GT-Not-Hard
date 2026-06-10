@@ -9,11 +9,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
+import Recipes.ChaosRecipes.ChaosArcaneWorktableRecipes;
+import Recipes.ChaosRecipes.ChaosBloodMagicRecipes;
+import Recipes.ChaosRecipes.ChaosBotaniaRecipes;
 import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
+import Recipes.ChaosRecipes.ChaosCrucibleRecipes;
+import Recipes.ChaosRecipes.ChaosEssenceFarmRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
+import Recipes.ChaosRecipes.ChaosRunicMatrixRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
@@ -264,6 +270,23 @@ public class MyMod {
         ChaosZhuHaiRecipes.addChaosZhuHaiFisheryRecipes();
         ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes();
 
+        ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes();
+        ChaosBloodMagicRecipes.addBloodMagicRecipes();
+        ChaosBotaniaRecipes.addBotaniaRecipes();
+        ChaosCrucibleRecipes.addCrucibleRecipes();
+        ChaosEssenceFarmRecipes.addEssenceFarmRecipes();
+        ChaosRunicMatrixRecipes.addRunicMatrixRecipes_1();
+        ChaosRunicMatrixRecipes.addRunicMatrixRecipes_2();
+
+        // Debug
+        // ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes_test();
+        // ChaosBloodMagicRecipes.addBloodMagicRecipes_test();
+        // ChaosBotaniaRecipes.addBotaniaRecipes_test();
+        // ChaosCrucibleRecipes.addCrucibleRecipes_test();
+        // ChaosEssenceFarmRecipes.addEssenceFarmRecipes_test();
+        // ChaosRunicMatrixRecipes.addRunicMatrixRecipes_test();
+        // ItemNBTCheck.addItemNBTCheckRecipes();
+
         FMLCommonHandler.instance()
             .bus()
             .register(new CommandHandler());
@@ -277,6 +300,15 @@ public class MyMod {
         SingularityDustRecipes_T10.addVoidDustRecipes_T10();
         SingularityDustRecipes_T10.addFakeVoidDustRecipes_T10();
         FakeSingularityModItemRecipes_Show.addFakeModItemRecipes_Show();
+
+        // Debug
+
+        // ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes();
+        // ChaosBloodMagicRecipes.addBloodMagicRecipes();
+        // ChaosBotaniaRecipes.addBotaniaRecipes();
+        // ChaosCrucibleRecipes.addCrucibleRecipes();
+        // ChaosRunicMatrixRecipes.addRunicMatrixRecipes_1();
+        // ChaosRunicMatrixRecipes.addRunicMatrixRecipes_2();
     }
 
     @Mod.EventHandler

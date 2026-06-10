@@ -30,6 +30,7 @@ public class SingularityFluidRecipes_T10 {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final FluidStack[] T10_Fluid = new FluidStack[] {

@@ -51,6 +51,7 @@ public class ChaosFallingTowerRecipes {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(FallingTowerOfChaosFrontend::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addChaosFallingTowerRecipes() {

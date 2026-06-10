@@ -26,6 +26,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T1 = RecipeMapBuilder
@@ -34,6 +35,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T2 = RecipeMapBuilder
@@ -42,6 +44,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T3 = RecipeMapBuilder
@@ -50,6 +53,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T4 = RecipeMapBuilder
@@ -58,6 +62,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T5 = RecipeMapBuilder
@@ -66,6 +71,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T6 = RecipeMapBuilder
@@ -74,6 +80,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T7 = RecipeMapBuilder
@@ -82,6 +89,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T8 = RecipeMapBuilder
@@ -90,6 +98,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T9 = RecipeMapBuilder
@@ -98,6 +107,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T10 = RecipeMapBuilder
@@ -106,6 +116,7 @@ public class FakeSingularityGemRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addFakeVoidGemRecipes_T0() {

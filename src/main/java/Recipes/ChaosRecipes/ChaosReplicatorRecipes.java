@@ -23,6 +23,7 @@ public class ChaosReplicatorRecipes {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(ItemReplicatorOfChaosFrontend::new)
+        .neiTransferRect(90, 10, 20, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> ReplicatorRecipes_Fluid = RecipeMapBuilder
@@ -31,6 +32,7 @@ public class ChaosReplicatorRecipes {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(FluidReplicatorOfChaosFrontend::new)
+        .neiTransferRect(90, 10, 20, 16)
         .build();
 
     public static void addReplicatorRecipes_Item() {

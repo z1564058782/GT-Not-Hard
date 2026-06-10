@@ -14,6 +14,7 @@ import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_A
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_ACTIVE_GLOW;
 import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_GLOW;
 import static gregtech.api.enums.Textures.BlockIcons.casingTexturePages;
+import static gregtech.api.metatileentity.BaseTileEntity.TOOLTIP_DELAY;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.api.util.GTUtility.validMTEList;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
@@ -36,12 +37,12 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -51,6 +52,11 @@ import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructa
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+import com.gtnewhorizons.modularui.api.drawable.IDrawable;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
+import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
+import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 
 import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_Acid;
 import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_Combustion;
@@ -67,6 +73,7 @@ import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_UCFE;
 import Recipes.OriginGeneratorRecipes.OriginGeneratorRecipes_Water;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Textures;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ISecondaryDescribable;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -82,6 +89,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
+import kekztech.client.gui.KTUITextures;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
@@ -1278,44 +1286,27 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
 
     private boolean wireless_mode = false;
 
-    // 开启无线电网条件
-    protected boolean canUseWireless() {
-        try {
-            if (getControllerSlot().getItemDamage() == 11430) {
-                return true;
-            } else if (getControllerSlot().stackSize >= 8) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception e) {
-            handleException("Origin", "canUseWireless", e);
-            return false;
-        }
-    }
-
-    // 开启无线电网模式
     @Override
-    public void onLeftclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
-        try {
-            if (aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
-                if (canUseWireless()) {
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+
+        builder.widget(
+            new ButtonWidget().setOnClick((clickData, widget) -> { wireless_mode = !wireless_mode; })
+                .setPlayClickSound(true)
+                .setBackground(() -> {
                     if (wireless_mode) {
-                        wireless_mode = false;
-                        GTUtility.sendChatToPlayer(aPlayer, "mode: no_wireless_mode");
+                        return new IDrawable[] { GTUITextures.BUTTON_STANDARD_PRESSED,
+                            KTUITextures.OVERLAY_BUTTON_WIRELESS_ON };
                     } else {
-                        wireless_mode = true;
-                        GTUtility.sendChatToPlayer(aPlayer, "mode: wireless_mode");
+                        return new IDrawable[] { GTUITextures.BUTTON_STANDARD,
+                            KTUITextures.OVERLAY_BUTTON_WIRELESS_OFF };
                     }
-                } else {
-                    wireless_mode = false;
-                    GTUtility.sendChatToPlayer(aPlayer, "mode: no_wireless_mode");
-                }
-            }
-            super.onLeftclick(aBaseMetaTileEntity, aPlayer);
-        } catch (Exception e) {
-            handleException("Origin", "onLeftclick", e);
-        }
+                })
+                .setPos(80, 91)
+                .setSize(16, 16)
+                .addTooltip(StatCollector.translateToLocal("Wireless Mode"))
+                .setTooltipShowUpDelay(TOOLTIP_DELAY))
+            .widget(new FakeSyncWidget.BooleanSyncer(() -> wireless_mode, val -> wireless_mode = val));
     }
 
     @Override

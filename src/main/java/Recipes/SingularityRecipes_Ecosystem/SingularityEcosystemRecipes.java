@@ -12,6 +12,7 @@ public class SingularityEcosystemRecipes {
 
     public static final Map<Integer, ItemStack[]> EcosystemRecipes_AlgaeFarm = new HashMap<>();
     public static final Map<Integer, ItemStack[]> EcosystemRecipes_Comb = new HashMap<>();
+    public static final Map<Integer, ItemStack[]> EcosystemRecipes_EssenceFarm = new HashMap<>();
     public static final Map<Integer, ItemStack[]> EcosystemRecipes_Food = new HashMap<>();
     public static final Map<Integer, ItemStack[]> EcosystemRecipes_TreeGrowth = new HashMap<>();
 

@@ -22,6 +22,7 @@ public class OriginGeneratorRecipes_Rocket {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(FluidFuelOfGeneratorFrontend::new)
+        .neiTransferRect(90, 10, 20, 16)
         .build();
 
     private static class FuelList {

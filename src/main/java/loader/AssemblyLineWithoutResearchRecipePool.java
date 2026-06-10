@@ -561,7 +561,7 @@ public class AssemblyLineWithoutResearchRecipePool {
         }
 
         {
-            // Dimensionally Injection Casing
+            // "Dimensional Injection Casing"
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     GTUtility.getIntegratedCircuit(2),
@@ -570,7 +570,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                     GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.CallistoIce, 1),
                     ItemList.Reactor_Coolant_Sp_6.get(1L),
                     getModItem(GTPlusPlus.ID, "itemScrewLaurenium", 12, 0),
-                    new Object[] { OrePrefixes.circuit.get(Materials.Elite), 2L },
+                    new Object[] { OrePrefixes.circuit.get(Materials.IV), 2L },
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 2),
                     ItemList.Super_Chest_IV.get(1),
                     ItemList.Super_Tank_IV.get(1),

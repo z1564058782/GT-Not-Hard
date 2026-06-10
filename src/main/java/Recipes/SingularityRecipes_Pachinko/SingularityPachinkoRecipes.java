@@ -919,6 +919,6 @@ public class SingularityPachinkoRecipes {
 
         // AppliedEnergistics2 Storage
         // "Super Tank I" - 130
-        PachinkoRecipes_Storage.put(130, Storage.Fluid_Storage);
+        PachinkoRecipes_Storage.put(130, Storage.AppliedEnergistics2_Storage);
     }
 }

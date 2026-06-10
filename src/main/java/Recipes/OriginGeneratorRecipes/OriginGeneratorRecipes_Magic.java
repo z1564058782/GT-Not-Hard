@@ -32,6 +32,7 @@ public class OriginGeneratorRecipes_Magic {
         .minInputs(2, 0)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(ItemFuelOfGeneratorFrontend::new)
+        .neiTransferRect(90, 10, 20, 16)
         .build();
 
     private static class FuelList {

@@ -50,6 +50,7 @@ public class ChaosOreRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OreProcessOfChaosFrontend::new)
+        .neiTransferRect(62, 44, 20, 16)
         .build();
 
     public static void addChaosOreRecipes() {

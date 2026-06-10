@@ -25,6 +25,7 @@ public class ChaosExoticRecipes {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(ExoticOfChaosFrontend::new)
+        .neiTransferRect(100, 10, 20, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> ExoticRecipes_Magmatter = RecipeMapBuilder
@@ -33,6 +34,7 @@ public class ChaosExoticRecipes {
         .minInputs(1, 2)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(ExoticOfChaosFrontend::new)
+        .neiTransferRect(100, 10, 20, 16)
         .build();
 
     public static void addExoticRecipes_DegenerateQuarkGluon() {

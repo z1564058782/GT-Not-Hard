@@ -103,6 +103,7 @@ public class FakeSingularityModItemRecipes_Show {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addFakeModItemRecipes_Show() {

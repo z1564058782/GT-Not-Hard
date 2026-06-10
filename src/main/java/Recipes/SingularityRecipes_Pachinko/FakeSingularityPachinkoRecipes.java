@@ -30,6 +30,7 @@ public class FakeSingularityPachinkoRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakePachinkoRecipes_GT_Machine = RecipeMapBuilder
@@ -38,6 +39,7 @@ public class FakeSingularityPachinkoRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(165))
         .frontend(OneToManyItemsFrontend_Small::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakePachinkoRecipes_GT_Machine_Special = RecipeMapBuilder
@@ -46,6 +48,7 @@ public class FakeSingularityPachinkoRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakePachinkoRecipes_Storage = RecipeMapBuilder
@@ -54,6 +57,7 @@ public class FakeSingularityPachinkoRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyItemsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addFakePachinkoRecipes_GT_Item() {

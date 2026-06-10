@@ -21,6 +21,7 @@ public class ChaosAntimatterRecipes {
         .minInputs(0, 5)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(AntimatterOfChaosFrontend::new)
+        .neiTransferRect(123, 10, 20, 16)
         .build();
 
     private static class MagneticStabilization {

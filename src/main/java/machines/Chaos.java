@@ -49,11 +49,17 @@ import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
 import com.gtnewhorizons.modularui.common.widget.FakeSyncWidget;
 
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
+import Recipes.ChaosRecipes.ChaosArcaneWorktableRecipes;
+import Recipes.ChaosRecipes.ChaosBloodMagicRecipes;
+import Recipes.ChaosRecipes.ChaosBotaniaRecipes;
 import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
+import Recipes.ChaosRecipes.ChaosCrucibleRecipes;
+import Recipes.ChaosRecipes.ChaosEssenceFarmRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
+import Recipes.ChaosRecipes.ChaosRunicMatrixRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
@@ -86,6 +92,7 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.ItemMachines;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
+import kekztech.client.gui.KTUITextures;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
@@ -436,17 +443,18 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addInfo("Runs supplied machines as if placed in the world")
             .addInfo("Parallel quantity = 2^x")
             .addInfo("x = Number of machines in the controller")
-            .addInfo("-------------------------------------------------------------------------")
-            .addInfo("If x > 16 the machine will force the wireless mode to be turned on")
+            .addInfo("-----------------------------------------------------------------------------")
             .addInfo("In wireless mode, the formula run time will be fixed as follows 128 ticks")
             .addInfo("and energy consume from wireless network rather than energy hatch")
-            .addInfo("-------------------------------------------------------------------------")
+            .addInfo("-----------------------------------------------------------------------------")
             .addInfo("If the machine within the controller contains multiple modes, ")
             .addInfo("sneak left click controller to switch machine mode")
-            .addInfo("-------------------------------------------------------------------------")
+            .addInfo("-----------------------------------------------------------------------------")
             .addInfo("Use Auto Workbench (LV) to crafting Xtreme Crafting recipe")
             .addInfo("Use Auto Workbench (MV) to crafting Falling Tower recipe")
-            .addInfo("-------------------------------------------------------------------------")
+            .addInfo("Use Large Essentia Smeltery to crafting Thaumcraft recipe")
+            .addInfo("Use Research Completer to crafting Blood Magic & Botania & EssenceFarm recipe")
+            .addInfo("-----------------------------------------------------------------------------")
             .addInfo("Add By: GT Not Hard")
             .beginStructureBlock(3, 3, 3, true)
             .addController("Front center")
@@ -585,8 +593,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     // === 多类型机器配方列表 ===
-    private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3006, 3008, 12735, 15415,
-        31021, 31050, 32018 };
+    private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3006, 3008, 12735, 13001,
+        15415, 31021, 31050, 32018, 32024 };
 
     private boolean getSpecialMachine() {
         try {
@@ -655,6 +663,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final String[] Circuit_Assembly_Line_mod = { "Circuit Assembly Line", "Circuit Assembly" };
     private static final RecipeMap<?>[] Circuit_Assembly_Line = {
         ChaosCircuitAssemblerRecipes.addChaosCircuitAssemblerRecipes, RecipeMaps.circuitAssemblerRecipes };
+    // "Research Completer"-13001
+    private static final String[] Research_Completer_mod = { "Blood Magic", "Botania", "Essence Farm" };
+    private static final RecipeMap<?>[] Research_Completer = { ChaosBloodMagicRecipes.addBloodMagicRecipes,
+        ChaosBotaniaRecipes.addBotaniaRecipes, ChaosEssenceFarmRecipes.addEssenceFarmRecipes };
     // "Heliofusion Exoticizer"-15415
     private static final String[] Heliofusion_Exoticizer_mod = { "Degenerate Quark Gluon", "Magmatter" };
     private static final RecipeMap<?>[] Heliofusion_Exoticizer = {
@@ -671,6 +683,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final String[] Precise_Auto_Assembler_MT_3662_mod = { "Precise Assembler", "Assembler" };
     private static final RecipeMap<?>[] Precise_Auto_Assembler_MT_3662 = {
         GoodGeneratorRecipeMaps.preciseAssemblerRecipes, RecipeMaps.assemblerRecipes };
+    // "Large Essentia Smeltery"-32024
+    private static final String[] Large_Essentia_Smeltery_mod = { "Arcane Worktable", "Crucible", "Runic Matrix" };
+    private static final RecipeMap<?>[] Large_Essentia_Smeltery = {
+        ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes, ChaosCrucibleRecipes.addCrucibleRecipes,
+        ChaosRunicMatrixRecipes.addRunicMatrixRecipes };
 
     // === 用户交互 ===
 
@@ -728,12 +745,16 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 case 3008 -> {
                     GTUtility.sendChatToPlayer(
                         aPlayer,
-                        "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)]);
-                    specialMachineType = Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 1)];
+                        "mode:" + Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 2)]);
+                    specialMachineType = Pseudostable_Black_Hole_Containment_Field_mod[Math.min(mode, 2)];
                 }
                 case 12735 -> {
                     GTUtility.sendChatToPlayer(aPlayer, "mode:" + Circuit_Assembly_Line_mod[Math.min(mode, 1)]);
                     specialMachineType = Circuit_Assembly_Line_mod[Math.min(mode, 1)];
+                }
+                case 13001 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Research_Completer_mod[Math.min(mode, 2)]);
+                    specialMachineType = Research_Completer_mod[Math.min(mode, 2)];
                 }
                 case 15415 -> {
                     GTUtility.sendChatToPlayer(aPlayer, "mode:" + Heliofusion_Exoticizer_mod[Math.min(mode, 1)]);
@@ -751,6 +772,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                     GTUtility
                         .sendChatToPlayer(aPlayer, "mode:" + Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)]);
                     specialMachineType = Precise_Auto_Assembler_MT_3662_mod[Math.min(mode, 1)];
+                }
+                case 32024 -> {
+                    GTUtility.sendChatToPlayer(aPlayer, "mode:" + Large_Essentia_Smeltery_mod[Math.min(mode, 2)]);
+                    specialMachineType = Large_Essentia_Smeltery_mod[Math.min(mode, 2)];
                 }
             }
         }
@@ -802,6 +827,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 12735 -> {
                 return Circuit_Assembly_Line[Math.min(mode, 1)];
             }
+            case 13001 -> {
+                return Research_Completer[Math.min(mode, 2)];
+            }
             case 15415 -> {
                 return Heliofusion_Exoticizer[Math.min(mode, 1)];
             }
@@ -817,8 +845,14 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 31092 -> {
                 return ChaosFallingTowerRecipes.addChaosFallingTowerRecipes;
             }
+            case 31093 -> {
+                return ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes;
+            }
             case 32018 -> {
                 return Precise_Auto_Assembler_MT_3662[Math.min(mode, 1)];
+            }
+            case 32024 -> {
+                return Large_Essentia_Smeltery[Math.min(mode, 2)];
             }
             case 32027 -> {
                 return ChaosAntimatterRecipes.AntimatterRecipes;
@@ -873,12 +907,12 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         }
 
         // 控制方块中机器数量大于16自动开启无线电网模式
-        wirelessMode = getControllerSlot().stackSize > 16;
+        // wirelessMode = getControllerSlot().stackSize > 16;
         if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
             boolean succeeded = false;
             CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
 
-            for (int i = 0; i < 1024; i++) {
+            for (int i = 0; i < 16; i++) {
                 CheckRecipeResult result = wirelessModeProcessingLogic();
                 if (!result.wasSuccessful()) {
                     finalResult = result;
@@ -1082,6 +1116,25 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .addTooltip(StatCollector.translateToLocal("GT5U.gui.button.down_tier"))
             .setTooltipShowUpDelay(TOOLTIP_DELAY))
             .widget(new FakeSyncWidget.BooleanSyncer(() -> downtierUEV, val -> downtierUEV = val));
+
+        builder.widget(new ButtonWidget().setOnClick((clickData, widget) -> {
+            wirelessMode = !wirelessMode;
+            setTierAndMult();
+        })
+            .setPlayClickSound(true)
+            .setBackground(() -> {
+                if (wirelessMode) {
+                    return new IDrawable[] { GTUITextures.BUTTON_STANDARD_PRESSED,
+                        KTUITextures.OVERLAY_BUTTON_WIRELESS_ON };
+                } else {
+                    return new IDrawable[] { GTUITextures.BUTTON_STANDARD, KTUITextures.OVERLAY_BUTTON_WIRELESS_OFF };
+                }
+            })
+            .setPos(98, 91)
+            .setSize(16, 16)
+            .addTooltip(StatCollector.translateToLocal("Wireless Mode"))
+            .setTooltipShowUpDelay(TOOLTIP_DELAY))
+            .widget(new FakeSyncWidget.BooleanSyncer(() -> wirelessMode, val -> wirelessMode = val));
     }
 
     @Override

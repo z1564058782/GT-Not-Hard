@@ -21,6 +21,7 @@ public class OriginGeneratorRecipes_Solar {
         .minInputs(1, 1)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(FluidFuelOfGeneratorFrontend::new)
+        .neiTransferRect(90, 10, 20, 16)
         .build();
 
     private static final ItemStack[] GeneratorType_SolarPanel = new ItemStack[] {

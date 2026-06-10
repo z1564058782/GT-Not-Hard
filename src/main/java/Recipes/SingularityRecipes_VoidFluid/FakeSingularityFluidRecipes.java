@@ -24,6 +24,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T1 = RecipeMapBuilder
@@ -32,6 +33,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T2 = RecipeMapBuilder
@@ -40,6 +42,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T3 = RecipeMapBuilder
@@ -48,6 +51,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T4 = RecipeMapBuilder
@@ -56,6 +60,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T5 = RecipeMapBuilder
@@ -64,6 +69,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T6 = RecipeMapBuilder
@@ -72,6 +78,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T7 = RecipeMapBuilder
@@ -80,6 +87,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T8 = RecipeMapBuilder
@@ -88,6 +96,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T9 = RecipeMapBuilder
@@ -96,6 +105,7 @@ public class FakeSingularityFluidRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(335))
         .frontend(OneToManyFluidsFrontend_Large::new)
+        .neiTransferRect(81, 27, 14, 16)
         .build();
 
     public static void addFakeVoidFluidRecipes_T0() {

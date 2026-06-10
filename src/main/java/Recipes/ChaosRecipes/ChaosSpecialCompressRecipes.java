@@ -21,6 +21,7 @@ public class ChaosSpecialCompressRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(SpecialCompressOfChaosFrontend::new)
+        .neiTransferRect(80, 10, 20, 16)
         .build();
 
     public static final RecipeMap<RecipeMapBackend> SpecialCompressRecipes_BHC = RecipeMapBuilder
@@ -29,6 +30,7 @@ public class ChaosSpecialCompressRecipes {
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(128))
         .frontend(SpecialCompressOfChaosFrontend::new)
+        .neiTransferRect(80, 10, 20, 16)
         .build();
 
     private static class CompressList {
