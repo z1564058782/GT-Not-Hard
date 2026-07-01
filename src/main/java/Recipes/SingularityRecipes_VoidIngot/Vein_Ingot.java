@@ -29,6 +29,7 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import EnumList.EnumItemList.EnumMaterialList.IngotList;
 import net.minecraft.item.ItemStack;
 
 public class Vein_Ingot {
@@ -1558,864 +1559,416 @@ public class Vein_Ingot {
         getModItem(Minecraft.ID, "iron_ingot", 1L) };
 
     public static final ItemStack[] T10_Ingot = new ItemStack[] {
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Brick"
-        getModItem(Minecraft.ID, "brick", 1L),
-        // "Nether Brick"
-        getModItem(Minecraft.ID, "netherbrick", 1L),
-        // "Iridium Ingot"
-        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 10),
-        // "Uranium Ingot"
-        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 11),
-        // "Crystal Matrix Ingot"
-        getModItem(Avaritia.ID, "Resource", 1L, 1),
-        // "Cosmic Neutronium Ingot"
-        getModItem(Avaritia.ID, "Resource", 1L, 4),
-        // "Infinity Ingot"
-        getModItem(Avaritia.ID, "Resource", 1L, 6),
-        // "Blood Infused Iron Ingot"
-        getModItem(BloodArsenal.ID, "blood_infused_iron", 1L),
-        // "Manasteel Ingot"
-        getModItem(Botania.ID, "manaResource", 1L),
-        // "Terrasteel Ingot"
-        getModItem(Botania.ID, "manaResource", 1L, 4),
-        // "Elementium Ingot"
-        getModItem(Botania.ID, "manaResource", 1L, 7),
-        // "Gaia Spirit Ingot"
-        getModItem(Botania.ID, "manaResource", 1L, 14),
-        // "Draconium Ingot"
-        getModItem(DraconicEvolution.ID, "draconiumIngot", 1L),
-        // "Awakened Draconium Ingot"
-        getModItem(DraconicEvolution.ID, "draconicIngot", 1L),
-        // "Electrical Steel"
-        getModItem(EnderIO.ID, "itemAlloy", 1L),
-        // "Energetic Alloy"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 1),
-        // "Vibrant Alloy"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 2),
-        // "Redstone Alloy"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 3),
-        // "Conductive Iron"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 4),
-        // "Pulsating Iron"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 5),
-        // "Dark Steel"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 6),
-        // "Soularium"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 7),
-        // "End Steel"
-        getModItem(EnderIO.ID, "itemAlloy", 1L, 8),
-        // "Clay Compound"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L),
-        // "Crystalline Alloy"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 1),
-        // "Melodic Alloy"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 2),
-        // "Stellar Alloy"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 3),
-        // "Crystalline Pink Slime"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 4),
-        // "Energetic Silver"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 5),
-        // "Vivid Alloy"
-        getModItem(EnderIO.ID, "itemAlloyEndergy", 1L, 6),
-        // "Enderium Base"
-        getModItem(EnderIO.ID, "itemPowderIngot", 1L, 6),
-        // "Unstable Ingot"
-        getModItem(ExtraUtilities.ID, "unstableingot", 1L),
-        // '"Mobius ""Unstable/Stable"" Ingot"'
-        getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2),
-        // "Bedrockium Ingot"
-        getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L),
-        // "Uranium Ingot"
-        getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1L, 11),
-        // "Endium Ingot"
-        getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1L),
-        // "Naquadah Alloy Ingot"
-        getModItem(SGCraft.ID, "naquadahIngot", 1L),
-        // "Cobalt Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 3),
-        // "Ardite Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 4),
-        // "Manyullyn Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 5),
-        // "Bronze Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 13),
-        // "Aluminum Brass Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 14),
-        // "Obzinite Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 15),
-        // "Obsidian Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 18),
-        // "Pig Iron Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 34),
-        // "Shadowmetal Ingot"
-        getModItem(TaintedMagic.ID, "ItemMaterial", 1L),
-        // "Thaumium Ingot"
-        getModItem(Thaumcraft.ID, "ItemResource", 1L, 2),
-        // "Void Metal Ingot"
-        getModItem(Thaumcraft.ID, "ItemResource", 1L, 16),
-        // "Ichorium"
-        getModItem(ThaumicTinkerer.ID, "kamiResource", 1L, 2),
-        // "Ironwood Ingot"
-        getModItem(TwilightForest.ID, "item.ironwoodIngot", 1L),
-        // "Fiery Ingot"
-        getModItem(TwilightForest.ID, "item.fieryIngot", 1L),
-        // "Knightmetal Ingot"
-        getModItem(TwilightForest.ID, "item.knightMetal", 1L),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 3),
-        // "Thorium 232 Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 30),
-        // "Californium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 39),
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "BArTiMaEuSNeK Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 43),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Rhodium-Plated Palladium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 88),
-        // "Ruridit Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 90),
-        // "High Durability Compound Steel Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 92),
-        // "Ademic Steel Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 96),
-        // "Fluorophlogopite Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 104),
-        // "Tantalum Hafnium Carbide Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11503),
-        // "Magnesia Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 32237),
-        // "Atomic Separation Catalyst Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10022),
-        // "Extremely Unstable Naquadah Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10024),
-        // "Zn-Th Alloy Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10053),
-        // "Zircaloy-4 Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10082),
-        // "Zircaloy-2 Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10083),
-        // "Incoloy-903 Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10084),
-        // "Adamantium Alloy Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10085),
-        // "MAR-M200 Steel Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10096),
-        // "MAR-Ce-M200 Steel Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10097),
-        // "Lithium Chloride Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10098),
-        // "Signalium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10099),
-        // "Lumiium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10101),
-        // "Artherium-Sn Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10102),
-        // "Tanmolyium Beta-C Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10103),
-        // "Dalisenite Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10104),
-        // "Hikarium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10105),
-        // "Tairitsu Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10106),
-        // "Precious Metals Alloy Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10109),
-        // "Enriched Naquadah Alloy Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10110),
-        // "Metastable Oganesson Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10111),
-        // "Shirabon Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 10112),
-        // "Hafnium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11000),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "PTMEG Elastomer Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11312),
-        // "Permalloy Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11350),
-        // "Mu-metal Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11351),
-        // "Silicon Nitride Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11353),
-        // "Coke Oven Brick"
-        getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1L),
-        // "Netherite Ingot"
-        getModItem(EtFuturumRequiem.ID, "netherite_ingot", 1L),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Beryllium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11008),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Scandium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11027),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Rubidium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11043),
-        // "Strontium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11044),
-        // "Yttrium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11045),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Indium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11056),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Antimony Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11058),
-        // "Tellurium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11059),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Praseodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11066),
-        // "Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11067),
-        // "Promethium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11068),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Europium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11070),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Terbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11072),
-        // "Dysprosium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11073),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Erbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11075),
-        // "Thulium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11076),
-        // "Ytterbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11077),
-        // "Lutetium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11078),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098),
-        // "Plutonium 239 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11100),
-        // "Plutonium 241 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11101),
-        // "Americium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11103),
-        // "Purified Tengam Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11111),
-        // "Attuned Tengam Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11112),
-        // "Hellish Metal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11125),
-        // "Neutronium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11129),
-        // "Superconductor Base UIV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11131),
-        // "Netherite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11132),
-        // "Superconductor Base UMV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11134),
-        // "Universium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11139),
-        // "Eternity Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11141),
-        // "Magmatter Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11143),
-        // "Six-Phased Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11147),
-        // "Mellion Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11148),
-        // "Creon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11149),
-        // "Proto-Halkonite Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11154),
-        // "Exo-Halkonite Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11157),
-        // "Prismatic Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11163),
-        // "Bronze Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11300),
-        // "Brass Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11301),
-        // "Invar Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11302),
-        // "Electrum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11303),
-        // "Wrought Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11304),
-        // "Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11305),
-        // "Stainless Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11306),
-        // "Pig Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11307),
-        // "Red Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11308),
-        // "Blue Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11309),
-        // "Cupronickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11310),
-        // "Nichrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11311),
-        // "Kanthal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11312),
-        // "Magnalium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11313),
-        // "Soldering Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11314),
-        // "Battery Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11315),
-        // "Tungstensteel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11316),
-        // "Osmiridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11317),
-        // "Sunnarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11318),
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Fluxed Electrum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11320),
-        // "Enderium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11321),
-        // "Infused Gold Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11323),
-        // "Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11324),
-        // "Naquadah Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11325),
-        // "Enriched Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11326),
-        // "Naquadria Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11327),
-        // "Duranium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11328),
-        // "Tritanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11329),
-        // "Thaumium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11330),
-        // "Mithril Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11331),
-        // "Astral Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11333),
-        // "Black Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11334),
-        // "Damascus Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11335),
-        // "Shadow Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11336),
-        // "Shadow Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11337),
-        // "Ironwood Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11338),
-        // "Meteoric Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11340),
-        // "Meteoric Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11341),
-        // "Deep Dark Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11342),
-        // "Cobalt Brass Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11343),
-        // "Ultimet Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11344),
-        // "Annealed Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11345),
-        // "Fiery Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11346),
-        // "Red Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11348),
-        // "Blue Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11349),
-        // "Sterling Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11350),
-        // "Rose Gold Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11351),
-        // "Black Bronze Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11352),
-        // "Bismuth Bronze Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11353),
-        // "Magnetic Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11354),
-        // "Magnetic Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11355),
-        // "Magnetic Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11356),
-        // "Vanadium-Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11357),
-        // "Yttrium Barium Cuprate Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11358),
-        // "Niobium Nitride Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11359),
-        // "Niobium-Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11360),
-        // "Chromium Dioxide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11361),
-        // "Knightmetal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11362),
-        // "Tin Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11363),
-        // "Dark Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11364),
-        // "Electrical Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11365),
-        // "Energetic Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11366),
-        // "Vibrant Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11367),
-        // "Shadow Metal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11368),
-        // "Conductive Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11369),
-        // "Tungstencarbide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11370),
-        // "Vanadiumsteel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11371),
-        // "HSS-G Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11372),
-        // "HSS-E Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11373),
-        // "HSS-S Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11374),
-        // "Pulsating Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11378),
-        // "Soularium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11379),
-        // "Enderium Base Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11380),
-        // "Redstone Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11381),
-        // "Ardite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11382),
-        // "Reinforced Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11383),
-        // "Galgadorian Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11384),
-        // "Enhanced Galgadorian Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11385),
-        // "Manyullyn Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11386),
-        // "Mytryl Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11387),
-        // "Black Plutonium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11388),
-        // "Callisto Ice Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11389),
-        // "Ledox Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11390),
-        // "Quantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11391),
-        // "Duralumin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11392),
-        // "Oriharukon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11393),
-        // "Infinity Catalyst Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11394),
-        // "Bedrockium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11395),
-        // "Infinity Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11397),
-        // "Mysterious Crystal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11398),
-        // "Magnetic Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11399),
-        // "Obzinite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11400),
-        // "End Steel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11401),
-        // "Clay Compound Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11402),
-        // "Crystalline Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11403),
-        // "Melodic Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11404),
-        // "Stellar Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11405),
-        // "Crystalline Pink Slime Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11406),
-        // "Energetic Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11407),
-        // "Vivid Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11408),
-        // "Epoxid Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11470),
-        // "Silicone Rubber Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11471),
-        // "Polycaprolactam Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11472),
-        // "Polytetrafluoroethylene Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11473),
-        // "Alduorite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11485),
-        // "Rubracium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11488),
-        // "Vulcanite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11489),
-        // "Force Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11521),
-        // "Vinteum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11529),
-        // "TPV-Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11576),
-        // "Transcendent Metal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11581),
-        // "Enriched Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11582),
-        // "Magnetohydrodynamically Constrained Star Matter Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11583),
-        // "White Dwarf Matter Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11585),
-        // "Black Dwarf Matter Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11586),
-        // "SpaceTime Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11588),
-        // "Polybenzimidazole Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11599),
-        // "Fiber-Reinforced Epoxy Resin Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11610),
-        // "Borosilicate Glass Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11611),
-        // "Nickel-Zinc Ferrite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11613),
-        // "Polyphenylene Sulfide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11631),
-        // "Styrene-Butadiene Rubber Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11635),
-        // "Polystyrene Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11636),
-        // "Polyvinyl Chloride Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11649),
-        // "Kevlar Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11765),
-        // "Endium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11770),
-        // "Nickel Aluminide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11772),
-        // "Obsidian Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11804),
-        // "Deep Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11829),
-        // "Silicon Solar Grade (Poly SI) Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11856),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868),
-        // "Polyethylene Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11874),
-        // "Desh Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11884),
-        // "Chrysotile Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11912),
-        // "Realgar Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11913),
-        // "Vyroxeres Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11951),
-        // "Ceruclase Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11952),
-        // "Tartarite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11956),
-        // "Orichalcum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11966),
-        // "Void Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11970),
-        // "Superconductor Base UEV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11974),
-        // "Draconium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11975),
-        // "Awakened Draconium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11976),
-        // "Blood Infused Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11977),
-        // "Ichorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11978),
-        // "Radox Polymer Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11979),
-        // "Gallium Arsenide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11980),
-        // "Indium Gallium Phosphide Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11981),
-        // "Cosmic Neutronium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11982),
-        // "Flerovium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11984),
-        // "Superconductor Base UHV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11985),
-        // "Superconductor Base UV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11986),
-        // "Superconductor Base MV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11987),
-        // "Superconductor Base HV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11988),
-        // "Superconductor Base EV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11989),
-        // "Superconductor Base IV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11990),
-        // "Superconductor Base LuV Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11991),
-        // "Superconductor Base ZPM Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11992),
-        // "Quartz Ingot"
-        getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1L),
-        // "Selenium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotSelenium", 1L),
-        // "Iodine Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIodine", 1L),
-        // "Rhenium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRhenium", 1L),
-        // "Thallium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotThallium", 1L),
-        // "Germanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotGermanium", 1L),
-        // "Polonium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotPolonium", 1L),
-        // "Radium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRadium", 1L),
-        // "Protactinium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotProtactinium", 1L),
-        // "Curium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotCurium", 1L),
-        // "Neptunium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotNeptunium", 1L),
-        // "Fermium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotFermium", 1L),
-        // "Lithium 7 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotLithium7", 1L),
-        // "Uranium 232 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotUranium232", 1L),
-        // "Uranium 233 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotUranium233", 1L),
-        // "Plutonium-238 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotPlutonium238", 1L),
-        // "Advanced Nitinol Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotAdvancedNitinol", 1L),
-        // "Astral Titanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotAstralTitanium", 1L),
-        // "Celestial Tungsten Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotCelestialTungsten", 1L),
-        // "Hypogen Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHypogen", 1L),
-        // "Chromatic Glass Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotChromaticGlass", 1L),
-        // "Black Metal Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotBlackMetal", 1L),
-        // "White Metal Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotWhiteMetal", 1L),
-        // "Ancient Granite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotAncientGranite", 1L),
-        // "Runite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRunite", 1L),
-        // "Dragonblood Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotDragonblood", 1L),
-        // "Silicon Carbide Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotSiliconCarbide", 1L),
-        // "Zirconium Carbide Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotZirconiumCarbide", 1L),
-        // "Tantalum Carbide Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTantalumCarbide", 1L),
-        // "Niobium Carbide Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotNiobiumCarbide", 1L),
-        // "Tungsten Titanium Carbide Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTungstenTitaniumCarbide", 1L),
-        // "Energy Crystal Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotEnergyCrystal", 1L),
-        // "Blood Steel Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotBloodSteel", 1L),
-        // "Zeron-100 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotZeron100", 1L),
-        // "Tumbaga Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTumbaga", 1L),
-        // "Potin Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotPotin", 1L),
-        // "Staballoy Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotStaballoy", 1L),
-        // "Tantalloy-60 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTantalloy60", 1L),
-        // "Tantalloy-61 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTantalloy61", 1L),
-        // "Inconel-625 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotInconel625", 1L),
-        // "Inconel-690 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotInconel690", 1L),
-        // "Inconel-792 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotInconel792", 1L),
-        // "Eglin Steel Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotEglinSteel", 1L),
-        // "Maraging Steel 250 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotMaragingSteel250", 1L),
-        // "Maraging Steel 300 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotMaragingSteel300", 1L),
-        // "Maraging Steel 350 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotMaragingSteel350", 1L),
-        // "Watertight Steel Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotWatertightSteel", 1L),
-        // "Nitinol 60 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotNitinol60", 1L),
-        // "Stellite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotStellite", 1L),
-        // "Talonite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTalonite", 1L),
-        // "Hastelloy-W Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHastelloyW", 1L),
-        // "Hastelloy-X Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHastelloyX", 1L),
-        // "Hastelloy-C276 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHastelloyC276", 1L),
-        // "Hastelloy-N Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHastelloyN", 1L),
-        // "Incoloy-020 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIncoloy020", 1L),
-        // "Incoloy-DS Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIncoloyDS", 1L),
-        // "Incoloy-MA956 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIncoloyMA956", 1L),
-        // "Grisium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotGrisium", 1L),
-        // "HG-1223 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHG1223", 1L),
-        // "Trinium Titanium Alloy Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTriniumTitaniumAlloy", 1L),
-        // "Trinium Naquadah Alloy Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTriniumNaquadahAlloy", 1L),
-        // "Trinium Naquadah Carbonite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTriniumNaquadahCarbonite", 1L),
-        // "Arceus Alloy 2B Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotArceusAlloy2B", 1L),
-        // "HeLiCoPtEr Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHeLiCoPtEr", 1L),
-        // "Lafium Compound Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotLafiumCompound", 1L),
-        // "Cinobite A243 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotCinobiteA243", 1L),
-        // "Pikyonium 64B Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotPikyonium64B", 1L),
-        // "Abyssal Alloy Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotAbyssalAlloy", 1L),
-        // "Laurenium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotLaurenium", 1L),
-        // "Botmium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotBotmium", 1L),
-        // "HS188-A Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotHS188A", 1L),
-        // "Titansteel Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotTitansteel", 1L),
-        // "Arcanite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotArcanite", 1L),
-        // "Octiron Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotOctiron", 1L),
-        // "Babbit Alloy Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotBabbitAlloy", 1L),
-        // "Black Titanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotBlackTitanium", 1L),
-        // "Indalloy 140 Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIndalloy140", 1L),
-        // "Rhugnor Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRhugnor", 1L),
-        // "Quantum Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotQuantum", 1L),
-        // "Thauminite Ingot"
-        getModItem(ThaumicBases.ID, "resource", 1L, 1),
-        // "Koboldite Ingot"
-        getModItem(Witchery.ID, "ingredient", 1L, 150),
-        // "Wrapped Uranium Ingot"
-        getModItem(GoodGenerator.ID, "wrappedUraniumIngot", 1L),
-        // "Wrapped Thorium Ingot"
-        getModItem(GoodGenerator.ID, "wrappedThoriumIngot", 1L),
-        // "Wrapped Plutonium Ingot"
-        getModItem(GoodGenerator.ID, "wrappedPlutoniumIngot", 1L),
-        // "Rubber"
-        getModItem(IndustrialCraft2.ID, "itemRubber", 1L),
-        // "Mixed Metal Ingot"
-        getModItem(IndustrialCraft2.ID, "itemIngot", 1L, 4),
-        // "Heavy Duty Alloy Ingot T4"
-        getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 1L),
-        // "Heavy Duty Alloy Ingot T6"
-        getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 1L),
-        // "Heavy Duty Alloy Ingot T5"
-        getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 1L),
-        // "Heavy Duty Alloy Ingot T8"
-        getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT8", 1L),
-        // "Heavy Duty Alloy Ingot T7"
-        getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT7", 1L),
-        // "Rubber Bar"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11880),
-        // "Heavy Duty Alloy Ingot T1"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32462),
-        // "Heavy Duty Alloy Ingot T2"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32463),
-        // "Heavy Duty Alloy Ingot T3"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32464),
-        // "Iridium Alloy Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32480),
-        // "Aeon Steel Ingot"
-        getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1L),
-        // "Queen's Gold Ingot"
-        getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1L),
-        // "Dogbearium Ingot"
-        getModItem(TinkersDefence.ID, "DogbeariumIngot", 1L) };
+        IngotList.Iron_Ingot,
+        IngotList.Gold_Ingot,
+        IngotList.Brick,
+        IngotList.Nether_Brick,
+        IngotList.Crystal_Matrix_Ingot,
+        IngotList.Cosmic_Neutronium_Ingot,
+        IngotList.Infinity_Ingot,
+        IngotList.Manasteel_Ingot,
+        IngotList.Terrasteel_Ingot,
+        IngotList.Elementium_Ingot,
+        IngotList.Gaia_Spirit_Ingot,
+        IngotList.Electrical_Steel,
+        IngotList.Energetic_Alloy,
+        IngotList.Vibrant_Alloy,
+        IngotList.Redstone_Alloy,
+        IngotList.Conductive_Iron,
+        IngotList.Pulsating_Iron,
+        IngotList.Dark_Steel,
+        IngotList.Soularium,
+        IngotList.End_Steel,
+        IngotList.Clay_Compound,
+        IngotList.Crystalline_Alloy,
+        IngotList.Melodic_Alloy,
+        IngotList.Stellar_Alloy,
+        IngotList.Crystalline_Pink_Slime,
+        IngotList.Energetic_Silver,
+        IngotList.Vivid_Alloy,
+        IngotList.Unstable_Ingot,
+        IngotList.Mobius_,
+        IngotList.Endium_Ingot,
+        IngotList.Electrotine_Alloy_Ingot,
+        IngotList.Seared_Brick,
+        IngotList.Aluminum_Brass_Ingot,
+        IngotList.Pig_Iron_Ingot_TC,
+        IngotList.Shadowmetal_Ingot,
+        IngotList.Thaumium_Ingot,
+        IngotList.Void_Metal_Ingot,
+        IngotList.Ichorium,
+        IngotList.Ironwood_Ingot,
+        IngotList.Fiery_Ingot,
+        IngotList.Knightmetal_Ingot,
+        IngotList.Zirconium_Ingot,
+        IngotList.Thorium_232_Ingot,
+        IngotList.Californium_Ingot,
+        IngotList.Calcium_Ingot,
+        IngotList.BArTiMaEuSNeK_Ingot,
+        IngotList.Ruthenium_Ingot,
+        IngotList.Rhodium_Ingot,
+        IngotList.Rhodium_Plated_Palladium_Ingot,
+        IngotList.Ruridit_Ingot,
+        IngotList.High_Durability_Compound_Steel_Ingot,
+        IngotList.Ademic_Steel_Ingot,
+        IngotList.Fluorophlogopite_Ingot,
+        IngotList.Tantalum_Hafnium_Carbide_Ingot,
+        IngotList.Magnesia_Ingot,
+        IngotList.Atomic_Separation_Catalyst_Ingot,
+        IngotList.Extremely_Unstable_Naquadah_Ingot,
+        IngotList.Zn_Th_Alloy_Ingot,
+        IngotList.Zircaloy_4_Ingot,
+        IngotList.Zircaloy_2_Ingot,
+        IngotList.Incoloy_903_Ingot,
+        IngotList.Adamantium_Alloy_Ingot,
+        IngotList.MAR_M200_Steel_Ingot,
+        IngotList.MAR_Ce_M200_Steel_Ingot,
+        IngotList.Lithium_Chloride_Ingot,
+        IngotList.Signalium_Ingot,
+        IngotList.Lumiium_Ingot,
+        IngotList.Artherium_Sn_Ingot,
+        IngotList.Tanmolyium_Beta_C_Ingot,
+        IngotList.Dalisenite_Ingot,
+        IngotList.Hikarium_Ingot,
+        IngotList.Tairitsu_Ingot,
+        IngotList.Precious_Metals_Alloy_Ingot,
+        IngotList.Enriched_Naquadah_Alloy_Ingot,
+        IngotList.Metastable_Oganesson_Ingot,
+        IngotList.Shirabon_Ingot,
+        IngotList.Hafnium_Ingot,
+        IngotList.Permalloy_Ingot,
+        IngotList.Mu_metal_Ingot,
+        IngotList.Silicon_Nitride_Ingot,
+        IngotList.Coke_Oven_Brick,
+        IngotList.Quartz_Ingot,
+        IngotList.Lithium_Ingot,
+        IngotList.Beryllium_Ingot,
+        IngotList.Carbon_Ingot,
+        IngotList.Magnesium_Ingot,
+        IngotList.Aluminium_Ingot,
+        IngotList.Raw_Silicon_Ingot,
+        IngotList.Potassium_Ingot,
+        IngotList.Scandium_Ingot,
+        IngotList.Titanium_Ingot,
+        IngotList.Vanadium_Ingot,
+        IngotList.Chrome_Ingot,
+        IngotList.Manganese_Ingot,
+        IngotList.Cobalt_Ingot,
+        IngotList.Nickel_Ingot,
+        IngotList.Copper_Ingot,
+        IngotList.Zinc_Ingot,
+        IngotList.Gallium_Ingot,
+        IngotList.Arsenic_Ingot,
+        IngotList.Rubidium_Ingot,
+        IngotList.Strontium_Ingot,
+        IngotList.Yttrium_Ingot,
+        IngotList.Niobium_Ingot,
+        IngotList.Molybdenum_Ingot,
+        IngotList.Palladium_Ingot,
+        IngotList.Silver_Ingot,
+        IngotList.Indium_Ingot,
+        IngotList.Tin_Ingot,
+        IngotList.Antimony_Ingot,
+        IngotList.Tellurium_Ingot,
+        IngotList.Caesium_Ingot,
+        IngotList.Barium_Ingot,
+        IngotList.Lanthanum_Ingot,
+        IngotList.Cerium_Ingot,
+        IngotList.Praseodymium_Ingot,
+        IngotList.Neodymium_Ingot,
+        IngotList.Promethium_Ingot,
+        IngotList.Samarium_Ingot,
+        IngotList.Europium_Ingot,
+        IngotList.Gadolinium_Ingot,
+        IngotList.Terbium_Ingot,
+        IngotList.Dysprosium_Ingot,
+        IngotList.Holmium_Ingot,
+        IngotList.Erbium_Ingot,
+        IngotList.Thulium_Ingot,
+        IngotList.Ytterbium_Ingot,
+        IngotList.Lutetium_Ingot,
+        IngotList.Tantalum_Ingot,
+        IngotList.Tungsten_Ingot,
+        IngotList.Osmium_Ingot,
+        IngotList.Iridium_Ingot,
+        IngotList.Platinum_Ingot,
+        IngotList.Lead_Ingot,
+        IngotList.Bismuth_Ingot,
+        IngotList.Thorium_Ingot,
+        IngotList.Uranium_235_Ingot,
+        IngotList.Uranium_238_Ingot,
+        IngotList.Plutonium_239_Ingot,
+        IngotList.Plutonium_241_Ingot,
+        IngotList.Americium_Ingot,
+        IngotList.Purified_Tengam_Ingot,
+        IngotList.Attuned_Tengam_Ingot,
+        IngotList.Hellish_Metal_Ingot,
+        IngotList.Neutronium_Ingot,
+        IngotList.Superconductor_Base_UIV_Ingot,
+        IngotList.Netherite_Ingot,
+        IngotList.Superconductor_Base_UMV_Ingot,
+        IngotList.Universium_Ingot,
+        IngotList.Eternity_Ingot,
+        IngotList.Magmatter_Ingot,
+        IngotList.Six_Phased_Copper_Ingot,
+        IngotList.Mellion_Ingot,
+        IngotList.Creon_Ingot,
+        IngotList.Proto_Halkonite_Steel_Ingot,
+        IngotList.Exo_Halkonite_Steel_Ingot,
+        IngotList.Prismatic_Naquadah_Ingot,
+        IngotList.Hexanite_Ingot,
+        IngotList.Shijima_Ingot,
+        IngotList.Churitsu_Ingot,
+        IngotList.Bronze_Ingot,
+        IngotList.Brass_Ingot,
+        IngotList.Invar_Ingot,
+        IngotList.Electrum_Ingot,
+        IngotList.Cast_Iron_Ingot,
+        IngotList.Steel_Ingot,
+        IngotList.Stainless_Steel_Ingot,
+        IngotList.Pig_Iron_Ingot_GT,
+        IngotList.Red_Alloy_Ingot,
+        IngotList.Blue_Alloy_Ingot,
+        IngotList.Cupronickel_Ingot,
+        IngotList.Nichrome_Ingot,
+        IngotList.Kanthal_Ingot,
+        IngotList.Magnalium_Ingot,
+        IngotList.Soldering_Alloy_Ingot,
+        IngotList.Battery_Alloy_Ingot,
+        IngotList.Tungstensteel_Ingot,
+        IngotList.Osmiridium_Ingot,
+        IngotList.Sunnarium_Ingot,
+        IngotList.Adamantium_Ingot,
+        IngotList.Fluxed_Electrum_Ingot,
+        IngotList.Enderium_Ingot,
+        IngotList.Infused_Gold_Ingot,
+        IngotList.Naquadah_Ingot,
+        IngotList.Naquadah_Alloy_Ingot,
+        IngotList.Enriched_Naquadah_Ingot,
+        IngotList.Naquadria_Ingot,
+        IngotList.Duranium_Ingot,
+        IngotList.Tritanium_Ingot,
+        IngotList.Mithril_Ingot,
+        IngotList.Astral_Silver_Ingot,
+        IngotList.Black_Steel_Ingot,
+        IngotList.Damascus_Steel_Ingot,
+        IngotList.Shadow_Iron_Ingot,
+        IngotList.Shadow_Steel_Ingot,
+        IngotList.Meteoric_Iron_Ingot,
+        IngotList.Meteoric_Steel_Ingot,
+        IngotList.Deep_Dark_Iron_Ingot,
+        IngotList.Cobalt_Brass_Ingot,
+        IngotList.Ultimet_Ingot,
+        IngotList.Annealed_Copper_Ingot,
+        IngotList.Fiery_Steel_Ingot,
+        IngotList.Red_Steel_Ingot,
+        IngotList.Blue_Steel_Ingot,
+        IngotList.Sterling_Silver_Ingot,
+        IngotList.Rose_Gold_Ingot,
+        IngotList.Black_Bronze_Ingot,
+        IngotList.Bismuth_Bronze_Ingot,
+        IngotList.Magnetic_Iron_Ingot,
+        IngotList.Magnetic_Steel_Ingot,
+        IngotList.Magnetic_Neodymium_Ingot,
+        IngotList.Vanadium_Gallium_Ingot,
+        IngotList.Yttrium_Barium_Cuprate_Ingot,
+        IngotList.Niobium_Nitride_Ingot,
+        IngotList.Niobium_Titanium_Ingot,
+        IngotList.Chromium_Dioxide_Ingot,
+        IngotList.Tin_Alloy_Ingot,
+        IngotList.Dark_Steel_Ingot,
+        IngotList.Electrical_Steel_Ingot,
+        IngotList.Energetic_Alloy_Ingot,
+        IngotList.Vibrant_Alloy_Ingot,
+        IngotList.Shadow_Metal_Ingot,
+        IngotList.Conductive_Iron_Ingot,
+        IngotList.Tungstencarbide_Ingot,
+        IngotList.Vanadiumsteel_Ingot,
+        IngotList.HSSG_Ingot,
+        IngotList.HSSE_Ingot,
+        IngotList.HSSS_Ingot,
+        IngotList.Pulsating_Iron_Ingot,
+        IngotList.Soularium_Ingot,
+        IngotList.Enderium_Base_Ingot,
+        IngotList.Redstone_Alloy_Ingot,
+        IngotList.Ardite_Ingot,
+        IngotList.Reinforced_Ingot,
+        IngotList.Galgadorian_Ingot,
+        IngotList.Enhanced_Galgadorian_Ingot,
+        IngotList.Manyullyn_Ingot,
+        IngotList.Mytryl_Ingot,
+        IngotList.Black_Plutonium_Ingot,
+        IngotList.Callisto_Ice_Ingot,
+        IngotList.Ledox_Ingot,
+        IngotList.Quantium_Ingot,
+        IngotList.Duralumin_Ingot,
+        IngotList.Oriharukon_Ingot,
+        IngotList.Infinity_Catalyst_Ingot,
+        IngotList.Bedrockium_Ingot,
+        IngotList.Mysterious_Crystal_Ingot,
+        IngotList.Magnetic_Samarium_Ingot,
+        IngotList.Obzinite_Ingot,
+        IngotList.End_Steel_Ingot,
+        IngotList.Clay_Compound_Ingot,
+        IngotList.Crystalline_Alloy_Ingot,
+        IngotList.Melodic_Alloy_Ingot,
+        IngotList.Stellar_Alloy_Ingot,
+        IngotList.Crystalline_Pink_Slime_Ingot,
+        IngotList.Energetic_Silver_Ingot,
+        IngotList.Vivid_Alloy_Ingot,
+        IngotList.Epoxid_Bar,
+        IngotList.Silicone_Rubber_Bar,
+        IngotList.Polycaprolactam_PCL_Bar,
+        IngotList.Polytetrafluoroethylene_PTFE_Bar,
+        IngotList.Alduorite_Ingot,
+        IngotList.Rubracium_Ingot,
+        IngotList.Vulcanite_Ingot,
+        IngotList.Force_Ingot,
+        IngotList.Vinteum_Ingot,
+        IngotList.TPV_Alloy_Ingot,
+        IngotList.Transcendent_Metal_Ingot,
+        IngotList.Enriched_Holmium_Ingot,
+        IngotList.Magnetohydrodynamically_Constrained_Star_Matter_Ingot,
+        IngotList.White_Dwarf_Matter_Ingot,
+        IngotList.Black_Dwarf_Matter_Ingot,
+        IngotList.SpaceTime_Ingot,
+        IngotList.Polybenzimidazole_PBI_Bar,
+        IngotList.Fiber_Reinforced_Epoxy_Resin_Bar,
+        IngotList.Borosilicate_Glass_Bar,
+        IngotList.Nickel_Zinc_Ferrite_Ingot,
+        IngotList.Polyphenylene_Sulfide_PPS_Bar,
+        IngotList.Styrene_Butadiene_Rubber_SBR_Bar,
+        IngotList.Polystyrene_PS_Bar,
+        IngotList.Polyvinyl_Chloride_PVC_Bar,
+        IngotList.Kevlar_Ingot,
+        IngotList.Nickel_Aluminide_Ingot,
+        IngotList.Obsidian_Ingot,
+        IngotList.Deep_Iron_Ingot,
+        IngotList.Silicon_Solar_Grade_Poly_SI_Ingot,
+        IngotList.Trinium_Ingot,
+        IngotList.Polyethylene_PE_Bar,
+        IngotList.Desh_Ingot,
+        IngotList.Chrysotile_Ingot,
+        IngotList.Realgar_Ingot,
+        IngotList.Vyroxeres_Ingot,
+        IngotList.Ceruclase_Ingot,
+        IngotList.Tartarite_Ingot,
+        IngotList.Orichalcum_Ingot,
+        IngotList.Superconductor_Base_UEV_Ingot,
+        IngotList.Draconium_Ingot,
+        IngotList.Awakened_Draconium_Ingot,
+        IngotList.Blood_Infused_Iron_Ingot,
+        IngotList.Ichorium_Ingot,
+        IngotList.Radox_Polymer_Bar,
+        IngotList.Gallium_Arsenide_Ingot,
+        IngotList.Indium_Gallium_Phosphide_Ingot,
+        IngotList.Flerovium_Ingot,
+        IngotList.Superconductor_Base_UHV_Ingot,
+        IngotList.Superconductor_Base_UV_Ingot,
+        IngotList.Superconductor_Base_MV_Ingot,
+        IngotList.Superconductor_Base_HV_Ingot,
+        IngotList.Superconductor_Base_EV_Ingot,
+        IngotList.Superconductor_Base_IV_Ingot,
+        IngotList.Superconductor_Base_LuV_Ingot,
+        IngotList.Superconductor_Base_ZPM_Ingot,
+        IngotList.Firebrick,
+        IngotList.Selenium_Ingot,
+        IngotList.Iodine_Ingot,
+        IngotList.Rhenium_Ingot,
+        IngotList.Thallium_Ingot,
+        IngotList.Germanium_Ingot,
+        IngotList.Technetium_Ingot,
+        IngotList.Polonium_Ingot,
+        IngotList.Radium_Ingot,
+        IngotList.Protactinium_Ingot,
+        IngotList.Curium_Ingot,
+        IngotList.Neptunium_Ingot,
+        IngotList.Fermium_Ingot,
+        IngotList.Lithium_7_Ingot,
+        IngotList.Uranium_232_Ingot,
+        IngotList.Uranium_233_Ingot,
+        IngotList.Plutonium_238_Ingot,
+        IngotList.Advanced_Nitinol_Ingot,
+        IngotList.Astral_Titanium_Ingot,
+        IngotList.Celestial_Tungsten_Ingot,
+        IngotList.Hypogen_Ingot,
+        IngotList.Chromatic_Glass_Ingot,
+        IngotList.Black_Metal_Ingot,
+        IngotList.Ancient_Granite_Ingot,
+        IngotList.Runite_Ingot,
+        IngotList.Dragonblood_Ingot,
+        IngotList.Silicon_Carbide_Ingot,
+        IngotList.Zirconium_Carbide_Ingot,
+        IngotList.Tantalum_Carbide_Ingot,
+        IngotList.Niobium_Carbide_Ingot,
+        IngotList.Tungsten_Titanium_Carbide_Ingot,
+        IngotList.Energy_Crystal_Ingot,
+        IngotList.Blood_Steel_Ingot,
+        IngotList.Zeron_100_Ingot,
+        IngotList.Tumbaga_Ingot,
+        IngotList.Potin_Ingot,
+        IngotList.Staballoy_Ingot,
+        IngotList.Tantalloy_60_Ingot,
+        IngotList.Tantalloy_61_Ingot,
+        IngotList.Inconel_625_Ingot,
+        IngotList.Inconel_690_Ingot,
+        IngotList.Inconel_792_Ingot,
+        IngotList.Eglin_Steel_Ingot,
+        IngotList.Maraging_Steel_250_Ingot,
+        IngotList.Maraging_Steel_300_Ingot,
+        IngotList.Maraging_Steel_350_Ingot,
+        IngotList.Watertight_Steel_Ingot,
+        IngotList.Nitinol_60_Ingot,
+        IngotList.Stellite_Ingot,
+        IngotList.Talonite_Ingot,
+        IngotList.Hastelloy_W_Ingot,
+        IngotList.Hastelloy_X_Ingot,
+        IngotList.Hastelloy_C276_Ingot,
+        IngotList.Hastelloy_N_Ingot,
+        IngotList.Incoloy_020_Ingot,
+        IngotList.Incoloy_DS_Ingot,
+        IngotList.Incoloy_MA956_Ingot,
+        IngotList.Grisium_Ingot,
+        IngotList.HG_1223_Ingot,
+        IngotList.Trinium_Titanium_Alloy_Ingot,
+        IngotList.Trinium_Naquadah_Alloy_Ingot,
+        IngotList.Trinium_Naquadah_Carbonite_Ingot,
+        IngotList.Arceus_Alloy_2B_Ingot,
+        IngotList.HeLiCoPtEr_Ingot,
+        IngotList.Lafium_Compound_Ingot,
+        IngotList.Cinobite_A243_Ingot,
+        IngotList.Pikyonium_64B_Ingot,
+        IngotList.Abyssal_Alloy_Ingot,
+        IngotList.Laurenium_Ingot,
+        IngotList.Botmium_Ingot,
+        IngotList.HS188_A_Ingot,
+        IngotList.Titansteel_Ingot,
+        IngotList.Arcanite_Ingot,
+        IngotList.Octiron_Ingot,
+        IngotList.Babbit_Alloy_Ingot,
+        IngotList.Black_Titanium_Ingot,
+        IngotList.Indalloy_140_Ingot,
+        IngotList.Rhugnor_Ingot,
+        IngotList.Quantum_Ingot,
+        IngotList.Thauminite_Ingot,
+        IngotList.Koboldite_Ingot,
+        IngotList.Wrapped_Uranium_Ingot,
+        IngotList.Wrapped_Thorium_Ingot,
+        IngotList.Wrapped_Plutonium_Ingot,
+        IngotList.Mixed_Metal_Ingot,
+        IngotList.Heavy_Duty_Alloy_Ingot_T4,
+        IngotList.Heavy_Duty_Alloy_Ingot_T5,
+        IngotList.Heavy_Duty_Alloy_Ingot_T6,
+        IngotList.Heavy_Duty_Alloy_Ingot_T7,
+        IngotList.Heavy_Duty_Alloy_Ingot_T8,
+        IngotList.Lightweight_Alloy_Ingot,
+        IngotList.Rubber_Bar,
+        IngotList.Heavy_Duty_Alloy_Ingot_T1,
+        IngotList.Heavy_Duty_Alloy_Ingot_T2,
+        IngotList.Heavy_Duty_Alloy_Ingot_T3,
+        IngotList.Iridium_Alloy_Ingot,
+        IngotList.Aeon_Steel_Ingot,
+        IngotList.Queens_Gold_Ingot,
+        IngotList.Dogbearium_Ingot
+    };
 }

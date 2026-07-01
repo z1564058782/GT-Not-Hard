@@ -376,7 +376,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             buildHatchAdder(Chaos.class)
                 .atLeast(InputHatch, OutputHatch, InputBus, OutputBus, Maintenance, Energy.or(ExoticEnergy))
                 .casingIndex(mcasingIndex)
-                .dot(1)
+                .hint(1)
                 .buildAndChain(onElementPass(Chaos::onCasingAdded, ofBlock(GregTechAPI.sBlockCasings4, 0))))
         .build();
 
@@ -624,7 +624,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         RecipeMaps.electroMagneticSeparatorRecipes };
     // 涡轮装罐机Pro-360
     private static final String[] TurboCan_Pro_mod = { "Fluid Canner", "Canner" };
-    private static final RecipeMap<?>[] TurboCan_Pro = { RecipeMaps.fluidCannerRecipes, RecipeMaps.cannerRecipes };
+    private static final RecipeMap<?>[] TurboCan_Pro = { RecipeMaps.cannerRecipes };
     // 工业辊压机-792
     private static final String[] Industrial_Material_Press_mod = { "Forming Press", "Bending Machine" };
     private static final RecipeMap<?>[] Industrial_Material_Press = { RecipeMaps.formingPressRecipes,
@@ -636,16 +636,14 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     // 工业电弧炉-862
     private static final String[] High_Current_Industrial_Arc_Furnace_mod = { "Electric Arc Furnace",
         "Plasma Arc Furnace" };
-    private static final RecipeMap<?>[] High_Current_Industrial_Arc_Furnace = { RecipeMaps.arcFurnaceRecipes,
-        RecipeMaps.plasmaArcFurnaceRecipes };
+    private static final RecipeMap<?>[] High_Current_Industrial_Arc_Furnace = { RecipeMaps.arcFurnaceRecipes };
     // 亚马逊仓库-942
     private static final String[] Amazon_Warehousing_Depot_mod = { "Packager", "Unpackeager" };
     private static final RecipeMap<?>[] Amazon_Warehousing_Depot = { RecipeMaps.packagerRecipes,
         RecipeMaps.unpackagerRecipes };
     // 工业切割机-992
     private static final String[] Industrial_Cutting_Factory_mod = { "Cutting", "Slicing" };
-    private static final RecipeMap<?>[] Industrial_Cutting_Factory = { RecipeMaps.cutterRecipes,
-        RecipeMaps.slicerRecipes };
+    private static final RecipeMap<?>[] Industrial_Cutting_Factory = { RecipeMaps.cutterRecipes};
     // 真空干燥炉-995
     private static final String[] Utupu_Tanuri_mod = { "Dehydrator", "Vacuum Furnace" };
     private static final RecipeMap<?>[] Utupu_Tanuri = { GTPPRecipeMaps.chemicalDehydratorNonCellRecipes,
@@ -906,13 +904,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
         }
 
-        // 控制方块中机器数量大于16自动开启无线电网模式
-        // wirelessMode = getControllerSlot().stackSize > 16;
         if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
             boolean succeeded = false;
             CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
 
-            for (int i = 0; i < 16; i++) {
+            for (int i = 0; i < 32; i++) {
                 CheckRecipeResult result = wirelessModeProcessingLogic();
                 if (!result.wasSuccessful()) {
                     finalResult = result;
@@ -965,7 +961,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
             .multiply(BigInteger.valueOf(processingLogic.getDuration()))
             .multiply(BigInteger.valueOf(getMaxParallel()))
-            .divide(BigInteger.valueOf(1_000_000));
+            .divide(BigInteger.valueOf(Integer.MAX_VALUE));
 
         if (!addEUToGlobalEnergyMap(ownerUUID, costEU.multiply(BigInteger.valueOf(-1)))) {
             return CheckRecipeResultRegistry.insufficientStartupPower(costEU);

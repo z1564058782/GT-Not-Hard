@@ -82,7 +82,7 @@ public class OriginGeneratorRecipes_UCFE {
         fuelList_Combustion.add(new FuelList("400,000", 400_000, 20, FluidRegistry.getFluidStack("butanol", 1)));
 
         // Fuel
-        fuelList_Combustion.add(new FuelList("480,000", 480_000, 20, Materials.Fuel.getFluid(1)));
+        //fuelList_Combustion.add(new FuelList("480,000", 480_000, 20, Materials.Fuel.getFluid(1)));
 
         // Ether
         fuelList_Combustion.add(new FuelList("537,000", 537_000, 20, GGMaterial.ether.getFluidOrGas(1)));

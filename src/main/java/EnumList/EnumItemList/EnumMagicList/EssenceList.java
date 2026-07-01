@@ -1,4 +1,4 @@
-package Item;
+package EnumList.EnumItemList.EnumMagicList;
 
 import static gregtech.api.enums.Mods.Thaumcraft;
 
@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 import util.ItemUtils;
 
-public class MagicItemNBT {
+public class EssenceList {
 
     // Thaumcraft:ItemEssence
     public static final ItemStack Phial_of_Essentia_Aer = ItemUtils

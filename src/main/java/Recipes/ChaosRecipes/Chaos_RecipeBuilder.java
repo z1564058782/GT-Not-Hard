@@ -79,7 +79,7 @@ public class Chaos_RecipeBuilder {
     public Chaos_RecipeBuilder noOptimize() {
         return this;
     }
-
+/*
     public Chaos_RecipeBuilder addTo(RecipeMap<?> recipeMap) {
         GTRecipe tempRecipe = new GTRecipe(
             false,
@@ -99,4 +99,6 @@ public class Chaos_RecipeBuilder {
         recipeMap.add(tempRecipe);
         return this;
     }
+
+ */
 }

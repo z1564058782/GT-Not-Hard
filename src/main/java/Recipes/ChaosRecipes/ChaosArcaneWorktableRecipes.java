@@ -48,7 +48,7 @@ import static util.Utils.setStackSize;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import Item.MagicItemNBT;
+import EnumList.EnumItemList.EnumMagicList.EssenceList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -165,7 +165,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 2L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -187,9 +187,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Automagy.ID, "blockBoiler", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -211,7 +211,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10))
             .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalAmp", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -233,7 +233,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10))
             .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalDense", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -255,7 +255,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalDim", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -277,8 +277,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -300,8 +300,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -323,8 +323,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -346,8 +346,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -369,8 +369,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -392,8 +392,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -415,9 +415,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(Automagy.ID, "blockRemoteComparator", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -439,8 +439,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalRes", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -462,11 +462,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalMerc", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -488,9 +488,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
             .itemOutputs(getModItem(Automagy.ID, "blockThirstyTank", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -512,8 +512,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -535,8 +535,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -558,9 +558,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -582,8 +582,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -605,8 +605,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -628,8 +628,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -651,9 +651,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -675,9 +675,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 3))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -699,8 +699,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3))
             .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -723,9 +723,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50))
             .itemOutputs(getModItem(Botania.ID, "livingwood", 4L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -747,9 +747,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 40))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 40))
             .itemOutputs(getModItem(Botania.ID, "alchemyCatalyst", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -771,9 +771,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 150))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 150))
             .itemOutputs(getModItem(Botania.ID, "conjurationCatalyst", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -795,9 +795,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Botania.ID, "pylon", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -819,9 +819,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 100))
             .itemOutputs(getModItem(Botania.ID, "pylon", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -843,7 +843,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25))
             .itemOutputs(getModItem(Botania.ID, "vial", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -866,12 +866,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(BloodArsenal.ID, "compacter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -893,10 +893,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_helmet", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -918,10 +918,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 60))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 60))
             .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_chestplate", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -943,10 +943,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 45))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
             .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_leggings", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -968,10 +968,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_boots", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -993,12 +993,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 175),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 175),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 175),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 175),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 175),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 175))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 175),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 175),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 175),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 175),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 175),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 175))
             .itemOutputs(getModItem(BloodArsenal.ID, "transparent_orb", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1021,12 +1021,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(BloodMagic.ID, "Altar", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1048,10 +1048,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(BloodMagic.ID, "sacrificialKnife", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1073,9 +1073,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 6))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 6))
             .itemOutputs(getModItem(BloodMagic.ID, "imperfectRitualStone", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1097,9 +1097,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 18))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 18))
             .itemOutputs(getModItem(BloodMagic.ID, "ritualStone", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1121,12 +1121,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1148,12 +1148,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodMagic.ID, "itemBloodPack", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1175,12 +1175,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(BloodMagic.ID, "emptySocket", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1202,10 +1202,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodMagic.ID, "blockPedestal", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1227,12 +1227,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1254,9 +1254,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(BloodMagic.ID, "itemAttunedCrystal", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1278,9 +1278,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(BloodMagic.ID, "itemDestinationClearer", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1302,9 +1302,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15))
             .itemOutputs(getModItem(BloodMagic.ID, "itemTankSegmenter", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1326,9 +1326,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(BloodMagic.ID, "blockCrystalBelljar", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1350,10 +1350,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(BloodMagic.ID, "blockReagentConduit", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1375,12 +1375,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(BloodMagic.ID, "blockStabilityGlyph", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1402,12 +1402,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1429,12 +1429,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1457,12 +1457,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(DraconicEvolution.ID, "dissEnchanter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1485,9 +1485,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 2L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1510,10 +1510,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 100))
             .itemOutputs(getModItem(EnderStorage.ID, "enderChest", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1535,11 +1535,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 100))
             .itemOutputs(getModItem(EnderStorage.ID, "enderChest", 1L, 4096))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1561,12 +1561,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
             .itemOutputs(getModItem(EnderStorage.ID, "enderPouch", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1589,12 +1589,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
             .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.clay", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1616,12 +1616,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
             .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1643,12 +1643,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
             .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.cage", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1670,12 +1670,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.soul", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1698,12 +1698,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2L, 14))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1725,12 +1725,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1752,7 +1752,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50))
             .itemOutputs(getModItem(ExtraUtilities.ID, "angelBlock", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1775,12 +1775,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(Forestry.ID, "frameProven", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1803,12 +1803,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 70))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 70))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaFilterCasing", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1830,9 +1830,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
             .itemOutputs(getModItem(GoodGenerator.ID, "magicCasing", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1855,10 +1855,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 35))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 35))
             .itemOutputs(getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1880,12 +1880,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 180),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 120),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 160),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 140))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 180),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 120),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 160),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 140))
             .itemOutputs(getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1908,12 +1908,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 128))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 128))
             .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11978))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1935,9 +1935,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings8", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1959,12 +1959,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 13001))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -1987,12 +1987,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(MagicBees.ID, "item.bloodFrame", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2014,12 +2014,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(MagicBees.ID, "item.frenziedFrame", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2041,12 +2041,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
             .itemOutputs(getModItem(MagicBees.ID, "frameMagic", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2068,12 +2068,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(MagicBees.ID, "frameGentle", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2095,12 +2095,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(MagicBees.ID, "frameResilient", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2122,12 +2122,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(MagicBees.ID, "frameNecrotic", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2149,12 +2149,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(MagicBees.ID, "frameMetabolic", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2176,12 +2176,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(MagicBees.ID, "frameTemporal", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2203,12 +2203,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32))
             .itemOutputs(getModItem(MagicBees.ID, "frameOblivion", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2230,9 +2230,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(MagicBees.ID, "item.thaumiumScoop", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2254,9 +2254,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(MagicBees.ID, "item.voidScoop", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2278,9 +2278,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(MagicBees.ID, "item.thaumiumGrafter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2302,9 +2302,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
             .itemOutputs(getModItem(MagicBees.ID, "item.voidGrafter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2326,9 +2326,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2351,12 +2351,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 45))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
             .itemOutputs(getModItem(Minecraft.ID, "enchanting_table", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2378,12 +2378,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Minecraft.ID, "brewing_stand", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2406,10 +2406,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(OpenBlocks.ID, "autoenchantmenttable", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2432,8 +2432,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 45))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2455,9 +2455,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2478,11 +2478,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2505,8 +2505,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2528,8 +2528,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2551,8 +2551,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2574,8 +2574,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2597,7 +2597,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2619,8 +2619,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2642,9 +2642,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 14))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2666,10 +2666,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 25))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockEldritch", 3L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2691,9 +2691,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 12))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 6L, 11))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2715,8 +2715,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResonator", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2738,9 +2738,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2762,12 +2762,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2789,12 +2789,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2816,12 +2816,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2843,12 +2843,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2870,12 +2870,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2897,12 +2897,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2924,12 +2924,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2951,9 +2951,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2975,7 +2975,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -2997,12 +2997,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 40))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 40))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3024,9 +3024,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3048,9 +3048,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3072,9 +3072,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3096,10 +3096,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 4L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3121,9 +3121,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 12))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3145,8 +3145,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 4L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3168,8 +3168,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3191,9 +3191,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3215,8 +3215,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3238,8 +3238,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 4L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3261,8 +3261,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3283,9 +3283,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3307,9 +3307,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3331,12 +3331,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3358,8 +3358,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 3L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3381,9 +3381,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 10))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3405,8 +3405,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3428,9 +3428,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3452,12 +3452,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 15))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3479,8 +3479,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 4))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3502,9 +3502,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 12))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3526,9 +3526,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 12))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3550,9 +3550,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3574,9 +3574,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusPouch", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3598,9 +3598,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3622,10 +3622,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockChestHungry", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3647,12 +3647,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 64L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3674,12 +3674,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 4L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3701,10 +3701,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCandle", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3726,12 +3726,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGoggles", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3753,9 +3753,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemCore", 1L, 100))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3777,9 +3777,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3802,7 +3802,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
             .itemOutputs(getModItem(ThaumicBases.ID, "oldGold", 8L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3824,12 +3824,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(ThaumicBases.ID, "thaumicAnvil", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3852,8 +3852,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "material", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3875,8 +3875,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "material", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3898,8 +3898,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3921,10 +3921,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 35))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 35))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.vibration.chamber", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3946,10 +3946,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3971,10 +3971,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -3996,10 +3996,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4021,10 +4021,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4046,9 +4046,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4070,9 +4070,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4094,9 +4094,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4118,9 +4118,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 40))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 40))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4142,9 +4142,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4166,9 +4166,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 60))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 60))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4190,9 +4190,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 70))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 70))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4214,9 +4214,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 80))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 80))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4238,9 +4238,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.casing", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4262,9 +4262,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4286,9 +4286,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4310,9 +4310,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4334,9 +4334,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 35))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 35))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4358,9 +4358,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 45),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 45))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 45),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 45))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4382,9 +4382,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 55),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 55),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 55))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 55),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 55),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 55))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4406,9 +4406,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 65),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 65),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 65))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 65),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 65),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 65))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4430,9 +4430,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4454,9 +4454,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4478,12 +4478,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4505,9 +4505,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4529,12 +4529,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4557,12 +4557,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "planarConduit", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4585,9 +4585,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "interface", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4609,9 +4609,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "animationTablet", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4633,12 +4633,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 125),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 125),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 125),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 125),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 125),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 125))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 125),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 125),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 125),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 125),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 125),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 125))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4660,9 +4660,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 48))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 48))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "dislocator", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4685,12 +4685,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
             .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 25))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4712,12 +4712,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4739,12 +4739,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4766,12 +4766,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 200))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 200))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4794,10 +4794,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
             .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 10))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4819,9 +4819,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 5),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4843,9 +4843,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4867,9 +4867,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
             .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 73))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4891,10 +4891,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 40))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 40))
             .itemOutputs(getModItem(Witchery.ID, "kettle", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4916,10 +4916,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 60),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 60))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 60),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 60))
             .itemOutputs(getModItem(Witchery.ID, "spinningwheel", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4941,11 +4941,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 80))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 80))
             .itemOutputs(getModItem(Witchery.ID, "distilleryidle", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4967,9 +4967,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2))
             .itemOutputs(getModItem(Witchery.ID, "cauldron", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -4991,10 +4991,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(Witchery.ID, "chalkritual", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5016,9 +5016,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
             .itemOutputs(getModItem(Witchery.ID, "circletalisman", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5040,9 +5040,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Witchery.ID, "altar", 2L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5064,9 +5064,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 15))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
             .itemOutputs(getModItem(Witchery.ID, "arthana", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5088,9 +5088,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30))
             .itemOutputs(getModItem(Witchery.ID, "fumefunnel", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5113,8 +5113,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(WitchingGadgets.ID, "WG_WoodenDevice", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5137,7 +5137,7 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 2))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockJar", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5160,11 +5160,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(Automagy.ID, "focusCrafting", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5186,9 +5186,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5201,7 +5201,7 @@ public class ChaosArcaneWorktableRecipes {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 2L, 3),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 2L, 4),
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
-                setStackSize(MagicItemNBT.Ethereal_Essence_Aer, 2),
+                setStackSize(EssenceList.Ethereal_Essence_Aer, 2),
                 setStackSize(Mixed_Crystal_Cluster, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5210,9 +5210,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5234,9 +5234,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusFire", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5258,9 +5258,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusShock", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5282,9 +5282,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusFrost", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5306,10 +5306,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 30))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusTrade", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5331,9 +5331,9 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusExcavation", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5354,12 +5354,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusPrimal", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5381,8 +5381,8 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
@@ -5404,10 +5404,10 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 12))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusSmelt", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)

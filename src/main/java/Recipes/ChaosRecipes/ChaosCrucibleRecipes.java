@@ -18,7 +18,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.Utils.setStackSize;
 
-import Item.MagicItemNBT;
+import EnumList.EnumItemList.EnumMagicList.EssenceList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
@@ -77,8 +77,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -90,8 +90,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -103,8 +103,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -116,8 +116,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -129,8 +129,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -142,8 +142,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
             .itemOutputs(getModItem(Automagy.ID, "crystalBrain", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -155,7 +155,7 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "ender_pearl", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 5))
             .itemOutputs(getModItem(Automagy.ID, "avaricePearl", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -168,9 +168,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -182,9 +182,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -196,9 +196,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Arbor, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Arbor, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -210,9 +210,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -225,8 +225,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8530),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Messis, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Messis, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 3))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -238,10 +238,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "red_flower", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Herba, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Herba, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -253,10 +253,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "rotten_flesh", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Mortuus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Mortuus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -268,10 +268,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "clock", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 9))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -283,10 +283,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "iron_chestplate", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 10))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -298,10 +298,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(MagicBees.ID, "propolis", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Limus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Limus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 12))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -314,9 +314,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 16),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16))
             .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -328,9 +328,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemShard", 1L, 6),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -342,9 +342,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemShard", 1L, 6),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -357,9 +357,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 14))
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 14))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -371,8 +371,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -384,10 +384,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCustomPlant", 1L, 2),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Herba, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Herba, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -399,9 +399,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "bucket", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Mortuus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Venenum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Mortuus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Venenum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemBucketDeath", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -410,11 +410,11 @@ public class ChaosCrucibleRecipes {
         // "Bottled Taint"
         GTValues.RA.stdBuilder()
             .itemInputs(
-                setStackSize(MagicItemNBT.Phial_of_Essentia_Vitium, 1),
+                setStackSize(EssenceList.Phial_of_Essentia_Vitium, 1),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemBottleTaint", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -426,10 +426,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 5),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemSanitySoap", 2L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -441,9 +441,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2877),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Corpus, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Mortuus, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Corpus, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Mortuus, 2))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -455,9 +455,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "glowstone_dust", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lux, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Lux, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 4))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -469,9 +469,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2535),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 3))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -483,10 +483,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemBathSalts", 2L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -498,9 +498,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "wheat_seeds", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 17))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -512,7 +512,7 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 17),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 16))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -525,13 +525,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -543,13 +543,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -561,13 +561,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -579,13 +579,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 3),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -597,13 +597,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -615,13 +615,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 3))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 3))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -633,13 +633,13 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -651,14 +651,14 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 2),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 1),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 1))
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 2),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
             .itemOutputs(getModItem(ThaumicBases.ID, "crystalBlock", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -671,9 +671,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 4),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 4),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 4))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "golemPowder", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -686,8 +686,8 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemSanitySoap", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 16))
             .itemOutputs(getModItem(ThaumicInsurgence.ID, "item.ItemSanitySoapAlpha", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -699,9 +699,9 @@ public class ChaosCrucibleRecipes {
                 getModItem(ThaumicInsurgence.ID, "item.ItemSanitySoapAlpha", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16))
             .itemOutputs(getModItem(ThaumicInsurgence.ID, "item.ItemSanitySoapBeta", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -714,10 +714,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 1),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lux, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Lux, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "brightNitor", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -729,10 +729,10 @@ public class ChaosCrucibleRecipes {
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "spellCloth", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -745,12 +745,12 @@ public class ChaosCrucibleRecipes {
                 getModItem(Minecraft.ID, "bone", 1L),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Mortuus, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Venenum, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Corpus, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Mortuus, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Venenum, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Corpus, 5))
             .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 8))
             .duration(SECONDS)
             .eut(RECIPE_IV)

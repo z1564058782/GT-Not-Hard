@@ -21,7 +21,7 @@ import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.CompactKineticGenerators;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.CookingForBlockheads;
-import static gregtech.api.enums.Mods.CropsPlusPlus;
+//import static gregtech.api.enums.Mods.CropsPlusPlus;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
@@ -156,7 +156,7 @@ public class FakeSingularityModItemRecipes_Show {
                 // CookingForBlockheads - Cooking Table
                 getModItem(CookingForBlockheads.ID, "cookingtable", 1L),
                 // CropsPlusPlus - Goldfish
-                getModItem(CropsPlusPlus.ID, "foodGoldfish", 1L),
+                //getModItem(CropsPlusPlus.ID, "foodGoldfish", 1L),
 
                 // DraconicEvolution - Draconium Infused Obsidian
                 getModItem(DraconicEvolution.ID, "infusedObsidian", 1L),

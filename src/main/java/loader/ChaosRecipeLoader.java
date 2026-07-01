@@ -87,9 +87,6 @@ public class ChaosRecipeLoader {
         // Fermenter
         ChaosManager.addRecipeMapToChaos("basicmachine.fermenter", RecipeMaps.fermentingRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.fermenter", SoundResource.NONE);
-        // Fluid Canner
-        ChaosManager.addRecipeMapToChaos("basicmachine.fluidcanner", RecipeMaps.fluidCannerRecipes);
-        ChaosManager.addSoundResourceToChaos("basicmachine.fluidcanner", SoundResource.IC2_MACHINES_EXTRACTOR_OP);
         // Fluid Extractor
         ChaosManager.addRecipeMapToChaos("basicmachine.fluidextractor", RecipeMaps.fluidExtractionRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.fluidextractor", SoundResource.IC2_MACHINES_EXTRACTOR_OP);
@@ -132,10 +129,6 @@ public class ChaosRecipeLoader {
         // Ore Washer
         ChaosManager.addRecipeMapToChaos("basicmachine.orewasher", RecipeMaps.oreWasherRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.orewasher", SoundResource.NONE);
-        // Plasma Arc Furnace
-        ChaosManager.addRecipeMapToChaos("basicmachine.plasmaarcfurnace", RecipeMaps.plasmaArcFurnaceRecipes);
-        ChaosManager
-            .addSoundResourceToChaos("basicmachine.plasmaarcfurnace", SoundResource.IC2_MACHINES_INDUCTION_LOOP);
         // Polarizer
         ChaosManager.addRecipeMapToChaos("basicmachine.polarizer", RecipeMaps.polarizerRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.polarizer", SoundResource.IC2_MACHINES_MAGNETIZER_LOOP);
@@ -151,9 +144,6 @@ public class ChaosRecipeLoader {
         // Sifter
         ChaosManager.addRecipeMapToChaos("basicmachine.sifter", RecipeMaps.sifterRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.sifter", SoundResource.NONE);
-        // Slicer
-        ChaosManager.addRecipeMapToChaos("basicmachine.slicer", RecipeMaps.slicerRecipes);
-        ChaosManager.addSoundResourceToChaos("basicmachine.slicer", SoundResource.NONE);
         // Thermal Centrifuge
         ChaosManager.addRecipeMapToChaos("basicmachine.thermalcentrifuge", RecipeMaps.thermalCentrifugeRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.thermalcentrifuge", SoundResource.NONE);

@@ -10,7 +10,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
+//import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
@@ -94,7 +94,7 @@ public class OriginGeneratorRecipes_Semifluid {
         fuelList.add(new FuelList("90,000", 90_000, 20, Materials.OilExtraHeavy.getFluid(1)));
 
         // "Naphthenic Acid"
-        fuelList.add(new FuelList("160,000", 160_000, 20, MaterialsKevlar.NaphthenicAcid.getFluid(1)));
+        // fuelList.add(new FuelList("160,000", 160_000, 20, MaterialsKevlar.NaphthenicAcid.getFluid(1)));
 
         // Glycerol
         fuelList.add(new FuelList("328,000", 328_000, 20, FluidRegistry.getFluidStack("glycerol", 1)));

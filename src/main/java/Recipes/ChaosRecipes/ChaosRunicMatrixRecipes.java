@@ -51,7 +51,7 @@ import static util.Utils.setStackSize;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import Item.MagicItemNBT;
+import EnumList.EnumItemList.EnumMagicList.EssenceList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -214,11 +214,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sensus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Sensus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
             .itemOutputs(getModItem(Automagy.ID, "blockEssentiaLocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -258,12 +258,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terminus, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sensus, 96),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Luxuria, 96),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Terminus, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Sensus, 96),
+                setStackSize(EssenceList.Crystallized_Essence_Luxuria, 96),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 64))
             .itemOutputs(getModItem(Avaritia.ID, "Akashic_Record", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -302,15 +302,15 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terminus, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Terminus, 32))
             .itemOutputs(getModItem(Avaritia.ID, "big_pearl", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -350,10 +350,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 6208),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 4608),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempestas, 1584),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 1536))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 6208),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 4608),
+                setStackSize(EssenceList.Crystallized_Essence_Tempestas, 1584),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 1536))
             .itemOutputs(getModItem(Botania.ID, "laputaShard", 1L, 19))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -392,9 +392,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16))
             .itemOutputs(getModItem(Botania.ID, "brewery", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -433,11 +433,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 64))
             .itemOutputs(getModItem(Botania.ID, "pylon", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -476,11 +476,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Herba, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Herba, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32))
             .itemOutputs(getModItem(Botania.ID, "alfheimPortal", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -519,12 +519,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 16))
             .itemOutputs(getModItem(Botania.ID, "terraPlate", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -563,10 +563,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Herba, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Herba, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 16))
             .itemOutputs(getModItem(Botania.ID, "runeAltar", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -606,12 +606,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ira, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Ira, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -650,12 +650,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(BloodArsenal.ID, "amorphic_catalyst", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -695,12 +695,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -739,12 +739,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -783,11 +783,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -826,12 +826,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -870,13 +870,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -915,13 +915,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 96),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 96),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8))
             .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -960,11 +960,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Volatus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Volatus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "speedRune", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1003,11 +1003,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "runeOfSacrifice", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1046,11 +1046,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 4))
             .itemOutputs(getModItem(BloodMagic.ID, "runeOfSelfSacrifice", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1089,11 +1089,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 9),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 6),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 3),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 2))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 9),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 6),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 3),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 2))
             .itemOutputs(getModItem(BloodMagic.ID, "ritualStone", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1132,12 +1132,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 36),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 36),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8))
             .itemOutputs(getModItem(BloodMagic.ID, "masterStone", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1176,12 +1176,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 8))
             .itemOutputs(getModItem(BloodMagic.ID, "armourForge", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1220,11 +1220,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 18),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 18),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 12))
             .itemOutputs(getModItem(BloodMagic.ID, "blockWritingTable", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1263,12 +1263,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8))
             .itemOutputs(getModItem(BloodMagic.ID, "blockPlinth", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1307,13 +1307,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 16))
             .itemOutputs(getModItem(BloodMagic.ID, "blockCrystal", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1353,12 +1353,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 28),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Superbia, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 12))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 28),
+                setStackSize(EssenceList.Crystallized_Essence_Superbia, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 12))
             .itemOutputs(getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1398,12 +1398,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 16))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTMachines", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1442,11 +1442,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 28),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 28),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTMachines", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1485,11 +1485,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 16))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1528,10 +1528,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Nebrisum, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Nebrisum, 16))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EssentiaGenerators", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1571,11 +1571,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 150),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 150),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 150),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 150),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 100))
             .itemOutputs(getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1615,13 +1615,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Luxuria, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terminus, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Gula, 512),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Superbia, 512))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Luxuria, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Terminus, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Gula, 512),
+                setStackSize(EssenceList.Crystallized_Essence_Superbia, 512))
             .itemOutputs(getModItem(ExtraUtilities.ID, "dark_portal", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1660,11 +1660,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sensus, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Sensus, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 25))
             .itemOutputs(getModItem(ExtraUtilities.ID, "dark_portal", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1703,12 +1703,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Volatus, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempestas, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Nebrisum, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terminus, 200))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Volatus, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Tempestas, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Nebrisum, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Terminus, 200))
             .itemOutputs(getModItem(ExtraUtilities.ID, "angelRing", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1748,12 +1748,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 8))
             .itemOutputs(getModItem(ForbiddenMagic.ID, "EldritchOrb", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1793,10 +1793,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Arbor, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Arbor, 10))
             .itemOutputs(getModItem(Forestry.ID, "grafterProven", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1836,13 +1836,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 8))
             .itemOutputs(getModItem(Gadomancy.ID, "BlockNodeManipulator", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1918,10 +1918,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaOutputHatch", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -1960,10 +1960,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Strontio, 256))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Strontio, 256))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaOutputHatch_ME", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2002,9 +2002,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaCell", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2043,9 +2043,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaCell", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2084,9 +2084,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 64))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaCell", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2125,9 +2125,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 128))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 128))
             .itemOutputs(getModItem(GoodGenerator.ID, "essentiaCell", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2167,13 +2167,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Superbia, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Superbia, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 8))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmetal8", 1L, 13))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2212,7 +2212,7 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 8))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmetal9", 1L, 12))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2251,9 +2251,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 16))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1123))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2292,9 +2292,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 32))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1124))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2333,9 +2333,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 64))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1125))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2374,12 +2374,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Strontio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Strontio, 4))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1127))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2418,12 +2418,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Strontio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Strontio, 8))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1128))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2462,12 +2462,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Strontio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Strontio, 16))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1129))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2506,12 +2506,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Strontio, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Strontio, 64))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 1130))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2550,12 +2550,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Electrum, 256))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Electrum, 256))
             .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 32024))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2595,10 +2595,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Bestia, 75))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Bestia, 75))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 11))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2637,10 +2637,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16))
             .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1L, 17))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2679,12 +2679,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Herba, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Herba, 20))
             .itemOutputs(getModItem(MagicBees.ID, "magicApiary", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2724,10 +2724,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Bestia, 56),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 48))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Bestia, 56),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 48))
             .itemOutputs(getModItem(Minecraft.ID, "dragon_egg", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2766,12 +2766,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lux, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Lux, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 64))
             .itemOutputs(getModItem(Minecraft.ID, "beacon", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2813,11 +2813,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 64))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemMaterial", 2L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2857,10 +2857,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "TrunkSpawner", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2899,10 +2899,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Telum, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Telum, 20))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemSwordElemental", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2941,9 +2941,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -2982,9 +2982,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3023,10 +3023,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3065,10 +3065,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sensus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Sensus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemSanityChecker", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3107,10 +3107,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMirror", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3149,10 +3149,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 8))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockMirror", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3191,10 +3191,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3233,11 +3233,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 14))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3276,10 +3276,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3318,12 +3318,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 2))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3362,13 +3362,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 384),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 384),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 64))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3407,15 +3407,15 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 64))
             .itemOutputs(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3454,10 +3454,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 10))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3497,15 +3497,15 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32))
             .itemOutputs(getModItem(ThaumicBases.ID, "overchanter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3544,11 +3544,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 16))
             .itemOutputs(getModItem(ThaumicBases.ID, "advAlchFurnace", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3588,13 +3588,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 4))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3633,13 +3633,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 8))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3678,12 +3678,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 8))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3722,11 +3722,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 64))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.advanced.infusion.provider", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3765,12 +3765,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 2000),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 2000),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 2000),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 2000),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 2000),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 2000))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 2000),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 2000),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 2000),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 2000),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2000),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2000))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 4))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3810,12 +3810,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 75),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 75),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 25))
             .itemOutputs(getModItem(ThaumicInsurgence.ID, "infusionIntercepter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3855,11 +3855,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lux, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Lux, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3898,12 +3898,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "enchanter", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3942,11 +3942,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 8))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "repairer", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -3986,11 +3986,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 50),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 50),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 25))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 1))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4029,11 +4029,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 100),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 70),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 50))
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 100),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 70),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 50))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4072,11 +4072,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 200),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 150),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 150),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Exanimis, 100))
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 200),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 150),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 150),
+                setStackSize(EssenceList.Crystallized_Essence_Exanimis, 100))
             .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 5))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4115,9 +4115,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 25))
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 25))
             .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 6))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4156,10 +4156,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 20))
             .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 7))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4198,11 +4198,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 35),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 20))
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 35),
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 20))
             .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 26))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4242,10 +4242,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 16))
             .itemOutputs(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4284,11 +4284,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 32))
             .itemOutputs(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4328,9 +4328,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
             .itemOutputs(getModItem(WitchingGadgets.ID, "WG_MetalDevice", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4370,10 +4370,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 7),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 7),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 7),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 7))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 7),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 7),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 7),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 7))
             .itemOutputs(getModItem(Thaumcraft.ID, "blockJar", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4412,12 +4412,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fames, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Fames, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 8))
             .itemOutputs(getModItem(ThaumicExploration.ID, "trashJar", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4456,12 +4456,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 8))
             .itemOutputs(getModItem(KekzTech.ID, "kekztech_thaumiumreinforcedjar_block", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4500,10 +4500,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 14))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 14))
             .itemOutputs(getModItem(KekzTech.ID, "kekztech_thaumiumreinforcedjar_block", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4542,13 +4542,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 256),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 256),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32))
             .itemOutputs(getModItem(KekzTech.ID, "kekztech_ichorjar_block", 1L, 0))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4587,10 +4587,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 14),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 14))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 14),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 14))
             .itemOutputs(getModItem(KekzTech.ID, "kekztech_ichorjar_block", 1L, 3))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4630,12 +4630,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Telum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Mortuus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Telum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Mortuus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 16))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "ExplosionFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4674,12 +4674,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "ShieldFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4718,11 +4718,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "ChargingFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4761,13 +4761,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "WandChargingFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4806,10 +4806,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 6))
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 6))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "EnergyBallFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4848,12 +4848,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Instrumentum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Machina, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Instrumentum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32))
             .itemOutputs(getModItem(ElectroMagicTools.ID, "MaintenanceFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4892,12 +4892,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Desidia, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Infernus, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Desidia, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Infernus, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 8))
             .itemOutputs(getModItem(ForbiddenMagic.ID, "BlinkFocus", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4936,12 +4936,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Limus, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Limus, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 32))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusTaint", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -4980,12 +4980,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 84),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ira, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Potentia, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 84),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Ira, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Potentia, 16))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5024,13 +5024,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 84),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempestas, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Volatus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 84),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Tempestas, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Volatus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5069,13 +5069,13 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 84),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lux, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempus, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 84),
+                setStackSize(EssenceList.Crystallized_Essence_Lux, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tempus, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusTime", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5114,11 +5114,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Telum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Telum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 8))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5157,12 +5157,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 84),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 80),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Telum, 72),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 84),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 80),
+                setStackSize(EssenceList.Crystallized_Essence_Telum, 72),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32))
             .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5201,11 +5201,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Bestia, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Bestia, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusHellbat", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5244,11 +5244,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 40),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 20),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 10),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 5))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 40),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 10),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 5))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusPortableHole", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5287,11 +5287,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Terra, 30),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 25),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 15),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 10))
+                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 25),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 15),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 10))
             .itemOutputs(getModItem(Thaumcraft.ID, "FocusWarding", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5330,9 +5330,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vinculum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 8))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vinculum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 8))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "focusContainment", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5371,9 +5371,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ignis, 12),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Metallum, 8),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 4))
+                setStackSize(EssenceList.Crystallized_Essence_Ignis, 12),
+                setStackSize(EssenceList.Crystallized_Essence_Metallum, 8),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 4))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "focusLiquefaction", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5412,10 +5412,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "focusDisintegration", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5454,10 +5454,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Fabrico, 64))
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Fabrico, 64))
             .itemOutputs(getModItem(ThaumicHorizons.ID, "focusAnimation", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5496,11 +5496,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 16))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusTelekinesis", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5539,12 +5539,12 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusDislocation", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5583,10 +5583,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Spiritus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Victus, 24))
+                setStackSize(EssenceList.Crystallized_Essence_Spiritus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Victus, 24))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusHeal", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5625,11 +5625,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 128),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 96),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Volatus, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 128),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 96),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Volatus, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusRecall", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5668,10 +5668,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Volatus, 24))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Volatus, 24))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusFlight", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5710,10 +5710,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 32))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusXPDrain", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5752,11 +5752,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tutamen, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Auram, 24),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Tutamen, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Auram, 24),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusDeflect", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5795,11 +5795,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Telum, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tenebrae, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Tempestas, 32))
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Telum, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Tempestas, 32))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusShadowbeam", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5838,10 +5838,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Motus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Iter, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sensus, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Motus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Iter, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Sensus, 16))
             .itemOutputs(getModItem(ThaumicBases.ID, "fociActivation", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5880,9 +5880,9 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aqua, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Aqua, 16))
             .itemOutputs(getModItem(ThaumicBases.ID, "fociDrain", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5921,10 +5921,10 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Lucrum, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitreus, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Cognitio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Permutatio, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Lucrum, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Vitreus, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Cognitio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Permutatio, 16))
             .itemOutputs(getModItem(ThaumicBases.ID, "fociExperience", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -5963,11 +5963,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vitium, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Perditio, 32),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Ordo, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Praecantatio, 16),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Sano, 16))
+                setStackSize(EssenceList.Crystallized_Essence_Vitium, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Perditio, 32),
+                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Praecantatio, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Sano, 16))
             .itemOutputs(getModItem(ThaumicBases.ID, "fociFlux", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
@@ -6006,11 +6006,11 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
 
                 // Crystallized Essence
-                setStackSize(MagicItemNBT.Crystallized_Essence_Vacuos, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Aer, 64),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Humanus, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Pannus, 48),
-                setStackSize(MagicItemNBT.Crystallized_Essence_Alienis, 48))
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Aer, 64),
+                setStackSize(EssenceList.Crystallized_Essence_Humanus, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Pannus, 48),
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 48))
             .itemOutputs(getModItem(ThaumicTinkerer.ID, "ichorPouch", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)

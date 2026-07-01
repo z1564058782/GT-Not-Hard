@@ -19,6 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import EnumList.EnumItemList.EnumMaterialList.CrushedOreList;
+import EnumList.EnumItemList.EnumMaterialList.DustList;
+import EnumList.EnumItemList.EnumMaterialList.GemList;
+import EnumList.EnumItemList.EnumMaterialList.OreList;
+import EnumList.EnumItemList.EnumMaterialList.RawOreList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -30,14 +35,14 @@ import util.RecipesFrontend.OreProcessOfChaosFrontend;
 
 public class ChaosOreRecipes {
 
-    private static class OreList {
+    private static class Ore_List {
 
         ItemStack[] Ore;
         ItemStack RawOre;
         ItemStack CrushedOre;
         Map<ItemStack, Integer> Product;
 
-        public OreList(ItemStack[] Ore, ItemStack RawOre, ItemStack CrushedOre, Map<ItemStack, Integer> Product) {
+        public Ore_List(ItemStack[] Ore, ItemStack RawOre, ItemStack CrushedOre, Map<ItemStack, Integer> Product) {
             this.Ore = Ore;
             this.RawOre = RawOre;
             this.CrushedOre = CrushedOre;
@@ -54,127 +59,85 @@ public class ChaosOreRecipes {
         .build();
 
     public static void addChaosOreRecipes() {
-        ArrayList<OreList> Ore_List = new ArrayList<>();
+        ArrayList<Ore_List> ore_List = new ArrayList<>();
 
         // "Bismutite Ore"
-        Ore_List.add(
-            new OreList(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 1) },
-                // "Raw Bismutite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 1),
-                // "Crushed Bismutite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 1),
+        ore_List.add(
+            new Ore_List(
+                new ItemStack[] {OreList.Bismutite_Ore},
+                RawOreList.Raw_Bismutite_Ore,
+                CrushedOreList.Crushed_Bismutite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bismutite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 1), 6);
-                        // Bismutite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 1), 3);
-                        // "Exquisite Bismutite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 1), 1);
-                        // "Flawless Bismutite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 1), 1);
-                        // "Flawed Bismutite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 1), 1);
-                        // "Chipped Bismutite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 1), 1);
-                        // "Bismuth Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2090), 7);
+                        put(DustList.Bismutite_Dust, 6);
+                        put(GemList.Bismutite, 3);
+                        put(GemList.Exquisite_Bismutite, 1);
+                        put(GemList.Flawless_Bismutite, 1);
+                        put(GemList.Flawed_Bismutite, 1);
+                        put(GemList.Chipped_Bismutite, 1);
+                        put(DustList.Bismuth_Dust, 7);
                     }
                 }));
 
         // "Bismuthinite Ore"
-        Ore_List.add(
-            new OreList(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 2) },
-                // "Raw Bismuthinite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 2),
-                // "Crushed Bismuthinite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 2),
+        ore_List.add(
+            new Ore_List(
+                new ItemStack[] { OreList.Bismuthinite_Ore },
+                RawOreList.Raw_Bismuthinite_Ore,
+                CrushedOreList.Crushed_Bismuthinite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bismuthinite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 2), 6);
-                        // "Bismuth Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2090), 4);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 4);
+                        put(DustList.Bismuthinite_Dust, 6);
+                        put(DustList.Bismuth_Dust, 4);
+                        put(DustList.Sulfur_Dust, 4);
                     }
                 }));
 
         // "Fluor-Buergerite Ore"
-        Ore_List.add(
-            new OreList(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 5) },
-                // "Raw Fluor-Buergerite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 5),
-                // "Crushed Fluor-Buergerite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 5),
+        ore_List.add(
+            new Ore_List(
+                new ItemStack[] { OreList.Fluor_Buergerite_Ore },
+                RawOreList.Raw_Fluor_Buergerite_Ore,
+                CrushedOreList.Crushed_Fluor_Buergerite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Fluor-Buergerite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 5), 6);
-                        // Fluor-Buergerite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 5), 3);
-                        // "Exquisite Fluor-Buergerite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 5), 1);
-                        // "Flawless Fluor-Buergerite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 5), 1);
-                        // "Flawed Fluor-Buergerite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 5), 1);
-                        // "Chipped Fluor-Buergerite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 5), 1);
-                        // "Boron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2009), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 3);
+                        put(DustList.Fluor_Buergerite_Dust, 6);
+                        put(GemList.Fluor_Buergerite, 3);
+                        put(GemList.Exquisite_Fluor_Buergerite, 1);
+                        put(GemList.Flawless_Fluor_Buergerite, 1);
+                        put(GemList.Flawed_Fluor_Buergerite, 1);
+                        put(GemList.Chipped_Fluor_Buergerite, 1);
+                        put(DustList.Boron_Dust, 3);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
+                        put(DustList.Sodium_Dust, 3);
                     }
                 }));
 
         // "Chromo-Alumino-Povondraite Ore"
-        Ore_List.add(
-            new OreList(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 7) },
-                // "Raw Chromo-Alumino-Povondraite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 7),
-                // "Crushed Chromo-Alumino-Povondraite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 7),
+        ore_List.add(
+            new Ore_List(
+                new ItemStack[] { OreList.Chromo_Alumino_Povondraite_Ore },
+                RawOreList.Raw_Chromo_Alumino_Povondraite_Ore,
+                CrushedOreList.Crushed_Chromo_Alumino_Povondraite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chromo-Alumino-Povondraite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 7), 6);
-                        // Chromo-Alumino-Povondraite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 7), 3);
-                        // "Exquisite Chromo-Alumino-Povondraite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 7), 1);
-                        // "Flawless Chromo-Alumino-Povondraite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 7), 1);
-                        // "Flawed Chromo-Alumino-Povondraite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 7), 1);
-                        // "Chipped Chromo-Alumino-Povondraite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 7), 1);
-                        // "Boron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2009), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 3);
+                        put(DustList.Chromo_Alumino_Povondraite_Dust, 6);
+                        put(GemList.Chromo_Alumino_Povondraite, 3);
+                        put(GemList.Exquisite_Chromo_Alumino_Povondraite, 1);
+                        put(GemList.Flawless_Chromo_Alumino_Povondraite, 1);
+                        put(GemList.Flawed_Chromo_Alumino_Povondraite, 1);
+                        put(GemList.Chipped_Chromo_Alumino_Povondraite, 1);
+                        put(DustList.Boron_Dust, 3);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
+                        put(DustList.Sodium_Dust, 3);
                     }
                 }));
 
         // "Vanadio-Oxy-Dravite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 8) },
                 // "Raw Vanadio-Oxy-Dravite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 8),
@@ -207,8 +170,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Olenite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 9) },
                 // "Raw Olenite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 9),
@@ -241,8 +204,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Arsenopyrite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10) },
                 // "Raw Arsenopyrite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10),
@@ -263,8 +226,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ferberite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 11) },
                 // "Raw Ferberite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 11),
@@ -283,8 +246,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Loellingite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 12) },
                 // "Raw Loellingite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 12),
@@ -303,8 +266,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Roquesite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 13) },
                 // "Raw Roquesite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 13),
@@ -323,8 +286,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bornite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 14) },
                 // "Raw Bornite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 14),
@@ -345,8 +308,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Wittichenite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 15) },
                 // "Raw Wittichenite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 15),
@@ -367,8 +330,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Djurleite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 16) },
                 // "Raw Djurleite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 16),
@@ -387,8 +350,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Huebnerite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 17) },
                 // "Raw Huebnerite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 17),
@@ -409,8 +372,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Thorianite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 18) },
                 // "Raw Thorianite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 18),
@@ -429,8 +392,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Red Zircon Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 19) },
                 // "Raw Red Zircon Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 19),
@@ -459,8 +422,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fayalite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23) },
                 // "Raw Fayalite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 23),
@@ -489,8 +452,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Forsterite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 24) },
                 // "Raw Forsterite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 24),
@@ -519,8 +482,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Hedenbergite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 25) },
                 // "Raw Hedenbergite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 25),
@@ -551,8 +514,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Red Descloizite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 26) },
                 // "Raw Red Descloizite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 26),
@@ -573,8 +536,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Orange Descloizite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 27) },
                 // "Raw Orange Descloizite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 27),
@@ -595,8 +558,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Green Fuchsite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 28) },
                 // "Raw Green Fuchsite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 28),
@@ -617,8 +580,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Red Fuchsite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 29) },
                 // "Raw Red Fuchsite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 29),
@@ -641,8 +604,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Prasiolite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 35) },
                 // "Raw Prasiolite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 35),
@@ -669,8 +632,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "BArTiMaEuSNeK Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 43) },
                 // "Raw BArTiMaEuSNeK Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 43),
@@ -701,8 +664,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Platinum Metallic Powder Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 47) },
                 // "Raw Platinum Metallic Powder Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 47),
@@ -717,8 +680,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Palladium Metallic Powder Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 53) },
                 // "Raw Palladium Metallic Powder Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 53),
@@ -733,8 +696,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Leach Residue Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 60) },
                 // "Raw Leach Residue Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 60),
@@ -749,8 +712,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rarest Metal Residue Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 69) },
                 // "Raw Rarest Metal Residue Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 69),
@@ -765,8 +728,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Iridium Metal Residue Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 70) },
                 // "Raw Iridium Metal Residue Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 70),
@@ -781,8 +744,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Crude Rhodium Metal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 79) },
                 // "Raw Crude Rhodium Metal Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 79),
@@ -797,8 +760,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tiberium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 89) },
                 // "Raw Tiberium Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 89),
@@ -823,8 +786,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fluorspar Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 91) },
                 // "Raw Fluorspar Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 91),
@@ -849,8 +812,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Atheneite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 93) },
                 // "Raw Atheneite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 93),
@@ -865,8 +828,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Temagamite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 94) },
                 // "Raw Temagamite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 94),
@@ -881,8 +844,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Terlinguaite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 95) },
                 // "Raw Terlinguaite Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 95),
@@ -897,8 +860,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Orundum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10023) },
                 // "Raw Orundum Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10023),
@@ -923,8 +886,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Naquadah Oxide Mixture Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10054) },
                 // "Raw Naquadah Oxide Mixture Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10054),
@@ -939,8 +902,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Enriched-Naquadah Oxide Mixture Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10067) },
                 // "Raw Enriched-Naquadah Oxide Mixture Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10067),
@@ -955,8 +918,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Naquadria Oxide Mixture Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10072) },
                 // "Raw Naquadria Oxide Mixture Ore"
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10072),
@@ -971,8 +934,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lithium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 6),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1006),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2006),
@@ -993,8 +956,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Beryllium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 8),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1008),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2008),
@@ -1019,8 +982,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Magnesium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 18),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1018),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2018),
@@ -1045,8 +1008,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Aluminium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 19),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1019),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2019),
@@ -1069,8 +1032,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Raw Silicon Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 20),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1020),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2020),
@@ -1093,8 +1056,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Sulfur Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 22),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1022),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2022),
@@ -1115,8 +1078,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Scandium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 27),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1027),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2027),
@@ -1137,8 +1100,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Titanium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 28),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1028),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2028),
@@ -1161,8 +1124,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vanadium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 29),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1029),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2029),
@@ -1183,8 +1146,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Chrome Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 30),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1030),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2030),
@@ -1209,8 +1172,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Manganese Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 31),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1031),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2031),
@@ -1235,8 +1198,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 32),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1032),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2032),
@@ -1261,8 +1224,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cobalt Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 33),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1033),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2033),
@@ -1285,8 +1248,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Nickel Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 34),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1034),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2034),
@@ -1313,8 +1276,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Copper Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 35),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1035),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2035),
@@ -1341,8 +1304,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zinc Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 36),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1036),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2036),
@@ -1367,8 +1330,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gallium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 37),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1037),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2037),
@@ -1389,8 +1352,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Arsenic Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 39),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1039),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2039),
@@ -1411,8 +1374,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rubidium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 43),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1043),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2043),
@@ -1433,8 +1396,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Strontium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 44),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1044),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2044),
@@ -1455,8 +1418,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yttrium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 45),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1045),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2045),
@@ -1477,8 +1440,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Niobium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 47),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1047),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2047),
@@ -1499,8 +1462,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Molybdenum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 48),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1048),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2048),
@@ -1521,8 +1484,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Palladium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 52),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1052),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2052),
@@ -1543,8 +1506,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Silver Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 54),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1054),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2054),
@@ -1569,8 +1532,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cadmium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 55),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1055),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2055),
@@ -1591,8 +1554,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Indium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 56),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1056),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2056),
@@ -1613,8 +1576,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tin Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 57),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1057),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2057),
@@ -1641,8 +1604,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Antimony Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 58),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1058),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2058),
@@ -1667,8 +1630,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tellurium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 59),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1059),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2059),
@@ -1689,8 +1652,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Caesium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 62),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1062),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2062),
@@ -1711,8 +1674,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Barium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 63),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1063),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2063),
@@ -1733,8 +1696,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lanthanum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 64),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1064),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2064),
@@ -1755,8 +1718,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cerium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 65),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1065),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2065),
@@ -1777,8 +1740,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Praseodymium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 66),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1066),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2066),
@@ -1799,8 +1762,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Neodymium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 67),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1067),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2067),
@@ -1827,8 +1790,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Promethium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 68),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1068),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2068),
@@ -1849,8 +1812,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Samarium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 69),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1069),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2069),
@@ -1871,8 +1834,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Europium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 70),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1070),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2070),
@@ -1893,8 +1856,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gadolinium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 71),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1071),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2071),
@@ -1915,8 +1878,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Terbium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 72),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1072),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2072),
@@ -1937,8 +1900,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Dysprosium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 73),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1073),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2073),
@@ -1959,8 +1922,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Holmium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 74),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1074),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2074),
@@ -1981,8 +1944,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Erbium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 75),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1075),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2075),
@@ -2003,8 +1966,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Thulium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 76),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1076),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2076),
@@ -2025,8 +1988,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ytterbium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 77),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1077),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2077),
@@ -2047,8 +2010,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lutetium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 78),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1078),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2078),
@@ -2069,8 +2032,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tantalum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 80),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1080),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2080),
@@ -2091,8 +2054,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tungsten Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 81),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1081),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2081),
@@ -2117,8 +2080,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Osmium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 83),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1083),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2083),
@@ -2143,8 +2106,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Iridium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 84),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1084),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2084),
@@ -2171,8 +2134,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Platinum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 85),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1085),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2085),
@@ -2197,8 +2160,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gold Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 86),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1086),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2086),
@@ -2223,8 +2186,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lead Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 89),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1089),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2089),
@@ -2249,8 +2212,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bismuth Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 90),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1090),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2090),
@@ -2271,8 +2234,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Thorium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 96),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1096),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2096),
@@ -2299,8 +2262,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Uranium 235 Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 97),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1097),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2097),
@@ -2321,8 +2284,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Uranium 238 Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 98),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1098),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2098),
@@ -2351,8 +2314,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Plutonium 239 Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 100),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1100),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2100),
@@ -2377,8 +2340,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Plutonium 241 Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 101),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1101),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2101),
@@ -2399,8 +2362,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Americium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 103),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1103),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2103),
@@ -2421,8 +2384,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Raw Tengam Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 110),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1110),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2110),
@@ -2447,8 +2410,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Neutronium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 129),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1129),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2129),
@@ -2469,8 +2432,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Electrum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 303),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1303),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2303),
@@ -2495,8 +2458,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pig Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 307),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1307),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2307),
@@ -2521,8 +2484,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Adamantium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 319),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1319),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2319),
@@ -2543,8 +2506,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fluxed Electrum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 320),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1320),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2320),
@@ -2565,8 +2528,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Infused Gold Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 323),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1323),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2323),
@@ -2589,8 +2552,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Naquadah Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 324),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1324),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2324),
@@ -2613,8 +2576,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Enriched Naquadah Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 326),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1326),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2326),
@@ -2639,8 +2602,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Naquadria Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 327),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1327),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2327),
@@ -2661,8 +2624,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tritanium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 329),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1329),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2329),
@@ -2683,8 +2646,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Mithril Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 331),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1331),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2331),
@@ -2707,8 +2670,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Shadow Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 336),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1336),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2336),
@@ -2731,8 +2694,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Meteoric Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 340),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1340),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2340),
@@ -2761,8 +2724,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Deep Dark Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 342),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1342),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2342),
@@ -2785,8 +2748,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Firestone Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 347),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1347),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2347),
@@ -2809,8 +2772,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Shadow Metal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 368),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1368),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2368),
@@ -2831,8 +2794,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rutile Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 375),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1375),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2375),
@@ -2853,8 +2816,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ardite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 382),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1382),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2382),
@@ -2875,8 +2838,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Manyullyn Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 386),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1386),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2386),
@@ -2897,8 +2860,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Mytryl Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 387),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1387),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2387),
@@ -2923,8 +2886,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Black Plutonium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 388),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1388),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2388),
@@ -2945,8 +2908,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Callisto Ice Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 389),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1389),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2389),
@@ -2967,8 +2930,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ledox Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 390),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1390),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2390),
@@ -2989,8 +2952,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Quantium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 391),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1391),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2391),
@@ -3011,8 +2974,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Duralumin Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 392),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1392),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2392),
@@ -3033,8 +2996,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Oriharukon Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 393),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1393),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2393),
@@ -3055,8 +3018,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Infinity Catalyst Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 394),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1394),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2394),
@@ -3077,8 +3040,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bedrockium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 395),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1395),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2395),
@@ -3099,8 +3062,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Mysterious Crystal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 398),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1398),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2398),
@@ -3121,8 +3084,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Alduorite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 485),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1485),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2485),
@@ -3143,8 +3106,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rubracium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 488),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1488),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2488),
@@ -3167,8 +3130,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vulcanite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 489),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1489),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2489),
@@ -3189,8 +3152,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Diamond Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 500),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1500),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2500),
@@ -3223,8 +3186,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Emerald Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 501),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1501),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2501),
@@ -3259,8 +3222,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ruby Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 502),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1502),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2502),
@@ -3295,8 +3258,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Sapphire Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 503),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1503),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2503),
@@ -3331,8 +3294,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Green Sapphire Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 504),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1504),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2504),
@@ -3367,8 +3330,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Olivine Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 505),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1505),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2505),
@@ -3403,8 +3366,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Nether Star Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 506),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1506),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2506),
@@ -3427,8 +3390,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Topaz Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 507),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1507),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2507),
@@ -3463,8 +3426,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tanzanite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 508),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1508),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2508),
@@ -3499,8 +3462,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Amethyst Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 509),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1509),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2509),
@@ -3531,8 +3494,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Opal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 510),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1510),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2510),
@@ -3567,8 +3530,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Jasper Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 511),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1511),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2511),
@@ -3599,8 +3562,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Spinel Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 512),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1512),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2512),
@@ -3635,8 +3598,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Blue Topaz Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 513),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1513),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2513),
@@ -3671,8 +3634,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Amber Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 514),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1514),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2514),
@@ -3703,8 +3666,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Dilithium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 515),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1515),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2515),
@@ -3727,8 +3690,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Certus Quartz Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 516),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1516),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2516),
@@ -3759,8 +3722,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Charged Certus Quartz Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 517),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1517),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2517),
@@ -3789,8 +3752,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Forcicium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 518),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1518),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2518),
@@ -3819,8 +3782,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Forcillium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 519),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1519),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2519),
@@ -3849,8 +3812,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Monazite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 520),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1520),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2520),
@@ -3879,8 +3842,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Force Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 521),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1521),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2521),
@@ -3903,8 +3866,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Nether Quartz Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 522),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1522),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2522),
@@ -3929,8 +3892,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Quartzite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 523),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1523),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2523),
@@ -3959,8 +3922,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lazurite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 524),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1524),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2524),
@@ -3989,8 +3952,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Sodalite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 525),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1525),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2525),
@@ -4019,8 +3982,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lapis Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 526),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1526),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2526),
@@ -4051,8 +4014,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Red Garnet Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 527),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1527),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2527),
@@ -4089,8 +4052,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yellow Garnet Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 528),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1528),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2528),
@@ -4127,8 +4090,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vinteum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 529),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1529),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2529),
@@ -4151,8 +4114,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Apatite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 530),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1530),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2530),
@@ -4183,8 +4146,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Niter Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 531),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1531),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2531),
@@ -4209,8 +4172,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tricalcium Phosphate Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 534),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1534),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2534),
@@ -4241,8 +4204,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Coal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 535),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1535),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2535),
@@ -4271,8 +4234,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Jade Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 537),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1537),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2537),
@@ -4295,8 +4258,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lignite Coal Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 538),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1538),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2538),
@@ -4323,8 +4286,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Aer Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 540),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1540),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2540),
@@ -4347,8 +4310,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ignis Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 541),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1541),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2541),
@@ -4371,8 +4334,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Terra Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 542),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1542),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2542),
@@ -4395,8 +4358,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Aqua Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 543),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1543),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2543),
@@ -4419,8 +4382,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Perditio Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 544),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1544),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2544),
@@ -4443,8 +4406,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ordo Infused Stone"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 545),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1545),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2545),
@@ -4467,8 +4430,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Roasted Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 548),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1548),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2548),
@@ -4489,8 +4452,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Roasted Nickel Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 549),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1549),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2549),
@@ -4513,8 +4476,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pyrochlore Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 607),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1607),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2607),
@@ -4543,8 +4506,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cryolite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 699),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1699),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2699),
@@ -4569,8 +4532,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Endium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 770),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1770),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2770),
@@ -4591,8 +4554,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Calcium Hydride Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 797),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1797),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2797),
@@ -4613,8 +4576,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Redstone Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 810),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1810),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2810),
@@ -4641,8 +4604,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Electrotine Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 812),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1812),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2812),
@@ -4669,8 +4632,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Salt Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 817),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1817),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2817),
@@ -4707,8 +4670,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Almandine Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 820),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1820),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2820),
@@ -4735,8 +4698,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Andradite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 821),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1821),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2821),
@@ -4763,8 +4726,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bauxite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 822),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1822),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2822),
@@ -4791,8 +4754,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Calcite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 823),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1823),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2823),
@@ -4817,8 +4780,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cassiterite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 824),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1824),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2824),
@@ -4843,8 +4806,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Chromite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 825),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1825),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2825),
@@ -4869,8 +4832,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cinnabar Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 826),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1826),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2826),
@@ -4899,8 +4862,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cobaltite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 827),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1827),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2827),
@@ -4923,8 +4886,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Sheldonite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 828),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1828),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2828),
@@ -4951,8 +4914,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Deep Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 829),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1829),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2829),
@@ -4977,8 +4940,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Galena Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 830),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1830),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2830),
@@ -5005,8 +4968,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Grossular Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 831),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1831),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2831),
@@ -5033,8 +4996,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Phosphate Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 833),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1833),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2833),
@@ -5057,8 +5020,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pyrite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 834),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1834),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2834),
@@ -5085,8 +5048,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pyrope Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 835),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1835),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2835),
@@ -5113,8 +5076,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Saltpeter Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 836),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1836),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2836),
@@ -5135,8 +5098,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Spessartine Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 838),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1838),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2838),
@@ -5163,8 +5126,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Sphalerite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 839),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1839),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2839),
@@ -5195,8 +5158,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tetrahedrite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 840),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1840),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2840),
@@ -5221,8 +5184,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tungstate Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 841),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1841),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2841),
@@ -5249,8 +5212,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Uvarovite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 842),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1842),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2842),
@@ -5277,8 +5240,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Chalcopyrite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 855),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1855),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2855),
@@ -5307,8 +5270,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Silicon Solar Grade (Poly SI) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 856),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1856),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2856),
@@ -5329,8 +5292,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Emery Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 861),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1861),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2861),
@@ -5351,8 +5314,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Graphite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 865),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1865),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2865),
@@ -5375,8 +5338,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Trinium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 868),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1868),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2868),
@@ -5397,8 +5360,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Magnetite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 870),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1870),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2870),
@@ -5423,8 +5386,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Malachite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 871),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1871),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2871),
@@ -5453,8 +5416,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pitchblende"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 873),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1873),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2873),
@@ -5490,8 +5453,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Soapstone Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 877),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1877),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2877),
@@ -5512,8 +5475,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Wulfenite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 882),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1882),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2882),
@@ -5534,8 +5497,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Powellite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 883),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1883),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2883),
@@ -5556,8 +5519,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Desh Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 884),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1884),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2884),
@@ -5578,8 +5541,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cheese Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 894),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1894),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2894),
@@ -5600,8 +5563,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Mirabilite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 900),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1900),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2900),
@@ -5622,8 +5585,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Mica Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 901),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1901),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2901),
@@ -5644,8 +5607,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Talc"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 902),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1902),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2902),
@@ -5666,8 +5629,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Trona Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 903),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1903),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2903),
@@ -5688,8 +5651,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Barite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 904),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1904),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2904),
@@ -5710,8 +5673,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bastnasite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 905),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1905),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2905),
@@ -5736,8 +5699,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Garnierite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 906),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1906),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2906),
@@ -5760,8 +5723,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lepidolite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 907),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1907),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2907),
@@ -5786,8 +5749,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Magnesite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 908),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1908),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2908),
@@ -5810,8 +5773,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pentlandite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 909),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1909),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2909),
@@ -5838,8 +5801,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Scheelite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 910),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1910),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2910),
@@ -5866,8 +5829,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Alunite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 911),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1911),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2911),
@@ -5888,8 +5851,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Chrysotile Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 912),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1912),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2912),
@@ -5916,8 +5879,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Realgar Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 913),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1913),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2913),
@@ -5938,8 +5901,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Dolomite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 914),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1914),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2914),
@@ -5960,8 +5923,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Wollastonite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 915),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1915),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2915),
@@ -5982,8 +5945,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zeolite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 916),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1916),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2916),
@@ -6004,8 +5967,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Banded Iron Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 917),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1917),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2917),
@@ -6028,8 +5991,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ilmenite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 918),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1918),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2918),
@@ -6060,8 +6023,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pollucite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 919),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1919),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2919),
@@ -6088,8 +6051,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Spodumene Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 920),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1920),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2920),
@@ -6124,8 +6087,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tantalite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 921),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1921),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2921),
@@ -6152,8 +6115,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Uraninite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 922),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1922),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2922),
@@ -6182,8 +6145,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vanadium Magnetite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 923),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1923),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2923),
@@ -6210,8 +6173,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Kyanite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 924),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1924),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2924),
@@ -6232,8 +6195,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Perlite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 925),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1925),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2925),
@@ -6254,8 +6217,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pumice Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 926),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1926),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2926),
@@ -6276,8 +6239,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Bentonite"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 927),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1927),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2927),
@@ -6304,8 +6267,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fullers Earth"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 928),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1928),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2928),
@@ -6332,8 +6295,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Kaolinite"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 929),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1929),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2929),
@@ -6354,8 +6317,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Brown Limonite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 930),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1930),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2930),
@@ -6384,8 +6347,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yellow Limonite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 931),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1931),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2931),
@@ -6414,8 +6377,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vermiculite"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 932),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1932),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2932),
@@ -6442,8 +6405,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Glauconite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 933),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1933),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2933),
@@ -6470,8 +6433,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gypsum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 934),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1934),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2934),
@@ -6492,8 +6455,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Basaltic Mineral Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 935),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1935),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2935),
@@ -6520,8 +6483,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Granitic Mineral Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 936),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1936),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2936),
@@ -6548,8 +6511,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cassiterite Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 937),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1937),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2937),
@@ -6572,8 +6535,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Garnet Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 938),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1938),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2938),
@@ -6600,8 +6563,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Quartz Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 939),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1939),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2939),
@@ -6630,8 +6593,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Borax Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 941),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1941),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2941),
@@ -6652,8 +6615,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Molybdenite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 942),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1942),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2942),
@@ -6676,8 +6639,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Pyrolusite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 943),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1943),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2943),
@@ -6704,8 +6667,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rock Salt Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 944),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1944),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2944),
@@ -6742,8 +6705,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Stibnite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 945),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1945),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2945),
@@ -6766,8 +6729,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Asbestos Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 946),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1946),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2946),
@@ -6792,8 +6755,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Diatomite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 948),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1948),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2948),
@@ -6818,8 +6781,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Glauconite Sand"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 949),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1949),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2949),
@@ -6846,8 +6809,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Vyroxeres Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 951),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1951),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2951),
@@ -6868,8 +6831,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ceruclase Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 952),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1952),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2952),
@@ -6890,8 +6853,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Tartarite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 956),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1956),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2956),
@@ -6912,8 +6875,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Orichalcum Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 966),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1966),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2966),
@@ -6934,8 +6897,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Aluminium Fluoride Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 969),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1969),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2969),
@@ -6956,8 +6919,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Calcium Disilicide Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 971),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1971),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2971),
@@ -6978,8 +6941,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Draconium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 975),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1975),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2975),
@@ -7000,8 +6963,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Awakened Draconium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 976),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1976),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2976),
@@ -7022,8 +6985,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ichorium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 978),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1978),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2978),
@@ -7044,8 +7007,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cosmic Neutronium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 982),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1982),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2982),
@@ -7066,8 +7029,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Flerovium Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 984),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 1984),
                     getModItem(GregTech.ID, "gt.blockores", 1L, 2984),
@@ -7088,8 +7051,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fluorite (F) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFluoriteF", 1L) },
                 // "Raw Fluorite (F) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawFluoriteF", 1L),
@@ -7104,8 +7067,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Koboldite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreKoboldite", 1L) },
                 // "Raw Koboldite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawKoboldite", 1L),
@@ -7124,8 +7087,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Crocoite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCrocoite", 1L) },
                 // "Raw Crocoite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawCrocoite", 1L),
@@ -7144,8 +7107,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Geikielite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGeikielite", 1L) },
                 // "Raw Geikielite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawGeikielite", 1L),
@@ -7164,8 +7127,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Nichromite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreNichromite", 1L) },
                 // "Raw Nichromite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawNichromite", 1L),
@@ -7184,8 +7147,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Titanite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreTitanite", 1L) },
                 // "Raw Titanite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawTitanite", 1L),
@@ -7204,8 +7167,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zimbabweite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZimbabweite", 1L) },
                 // "Raw Zimbabweite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawZimbabweite", 1L),
@@ -7224,8 +7187,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zirconolite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZirconolite", 1L) },
                 // "Raw Zirconolite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawZirconolite", 1L),
@@ -7244,8 +7207,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gadolinite (Ce) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGadoliniteCe", 1L) },
                 // "Raw Gadolinite (Ce) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawGadoliniteCe", 1L),
@@ -7264,8 +7227,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Gadolinite (Y) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGadoliniteY", 1L) },
                 // "Raw Gadolinite (Y) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawGadoliniteY", 1L),
@@ -7284,8 +7247,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lepersonnite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLepersonnite", 1L) },
                 // "Raw Lepersonnite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLepersonnite", 1L),
@@ -7304,8 +7267,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Samarskite (Y) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreSamarskiteY", 1L) },
                 // "Raw Samarskite (Y) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawSamarskiteY", 1L),
@@ -7324,8 +7287,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Samarskite (Yb) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreSamarskiteYb", 1L) },
                 // "Raw Samarskite (Yb) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawSamarskiteYb", 1L),
@@ -7344,8 +7307,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Xenotime Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreXenotime", 1L) },
                 // "Raw Xenotime Ore"
                 getModItem(GTPlusPlus.ID, "oreRawXenotime", 1L),
@@ -7364,8 +7327,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yttriaite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttriaite", 1L) },
                 // "Raw Yttriaite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawYttriaite", 1L),
@@ -7384,8 +7347,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yttrialite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttrialite", 1L) },
                 // "Raw Yttrialite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawYttrialite", 1L),
@@ -7404,8 +7367,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Yttrocerite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttrocerite", 1L) },
                 // "Raw Yttrocerite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawYttrocerite", 1L),
@@ -7424,8 +7387,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zircon Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZircon", 1L) },
                 // "Raw Zircon Ore"
                 getModItem(GTPlusPlus.ID, "oreRawZircon", 1L),
@@ -7444,8 +7407,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Polycrase Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "orePolycrase", 1L) },
                 // "Raw Polycrase Ore"
                 getModItem(GTPlusPlus.ID, "oreRawPolycrase", 1L),
@@ -7464,8 +7427,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zircophyllite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZircophyllite", 1L) },
                 // "Raw Zircophyllite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawZircophyllite", 1L),
@@ -7484,8 +7447,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Zirkelite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZirkelite", 1L) },
                 // "Raw Zirkelite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawZirkelite", 1L),
@@ -7504,8 +7467,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lanthanite (La) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteLa", 1L) },
                 // "Raw Lanthanite (La) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLanthaniteLa", 1L),
@@ -7524,8 +7487,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lanthanite (Ce) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteCe", 1L) },
                 // "Raw Lanthanite (Ce) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLanthaniteCe", 1L),
@@ -7544,8 +7507,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lanthanite (Nd) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteNd", 1L) },
                 // "Raw Lanthanite (Nd) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLanthaniteNd", 1L),
@@ -7564,8 +7527,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Agardite (Y) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeY", 1L) },
                 // "Raw Agardite (Y) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAgarditeY", 1L),
@@ -7584,8 +7547,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Agardite (Cd) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeCd", 1L) },
                 // "Raw Agardite (Cd) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAgarditeCd", 1L),
@@ -7604,8 +7567,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Agardite (La) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeLa", 1L) },
                 // "Raw Agardite (La) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAgarditeLa", 1L),
@@ -7624,8 +7587,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Agardite (Nd) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeNd", 1L) },
                 // "Raw Agardite (Nd) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAgarditeNd", 1L),
@@ -7644,8 +7607,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Hibonite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreHibonite", 1L) },
                 // "Raw Hibonite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawHibonite", 1L),
@@ -7664,8 +7627,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cerite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCerite", 1L) },
                 // "Raw Cerite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawCerite", 1L),
@@ -7684,8 +7647,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Fluorcaphite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFluorcaphite", 1L) },
                 // "Raw Fluorcaphite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawFluorcaphite", 1L),
@@ -7704,8 +7667,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Florencite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFlorencite", 1L) },
                 // "Raw Florencite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawFlorencite", 1L),
@@ -7724,8 +7687,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Cryolite (F) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCryoliteF", 1L) },
                 // "Raw Cryolite (F) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawCryoliteF", 1L),
@@ -7742,8 +7705,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lautarite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLautarite", 1L) },
                 // "Raw Lautarite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLautarite", 1L),
@@ -7762,8 +7725,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Lafossaite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLafossaite", 1L) },
                 // "Raw Lafossaite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawLafossaite", 1L),
@@ -7780,8 +7743,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Demicheleite (Br) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreDemicheleiteBr", 1L) },
                 // "Raw Demicheleite (Br) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawDemicheleiteBr", 1L),
@@ -7798,8 +7761,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Comancheite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreComancheite", 1L) },
                 // "Raw Comancheite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawComancheite", 1L),
@@ -7814,8 +7777,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Perroudite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "orePerroudite", 1L) },
                 // "Raw Perroudite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawPerroudite", 1L),
@@ -7834,8 +7797,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Honeaite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreHoneaite", 1L) },
                 // "Raw Honeaite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawHoneaite", 1L),
@@ -7854,8 +7817,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Alburnite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAlburnite", 1L) },
                 // "Raw Alburnite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAlburnite", 1L),
@@ -7874,8 +7837,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Miessiite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreMiessiite", 1L) },
                 // "Raw Miessiite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawMiessiite", 1L),
@@ -7894,8 +7857,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Kashinite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreKashinite", 1L) },
                 // "Raw Kashinite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawKashinite", 1L),
@@ -7914,8 +7877,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Irarsite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreIrarsite", 1L) },
                 // "Raw Irarsite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawIrarsite", 1L),
@@ -7934,8 +7897,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Greenockite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGreenockite", 1L) },
                 // "Raw Greenockite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawGreenockite", 1L),
@@ -7950,8 +7913,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Strange Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRadioactiveMineralMix", 1L) },
                 // "Raw Strange Ore"
                 getModItem(GTPlusPlus.ID, "oreRawRadioactiveMineralMix", 1L),
@@ -7970,8 +7933,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Ancient Granite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAncientGranite", 1L) },
                 // "Raw Ancient Granite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawAncientGranite", 1L),
@@ -7990,8 +7953,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Runite Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRunite", 1L) },
                 // "Raw Runite Ore"
                 getModItem(GTPlusPlus.ID, "oreRawRunite", 1L),
@@ -8006,8 +7969,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rare Earth (I) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthI", 1L) },
                 // "Raw Rare Earth (I) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawRareEarthI", 1L),
@@ -8026,8 +7989,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rare Earth (II) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthII", 1L) },
                 // "Raw Rare Earth (II) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawRareEarthII", 1L),
@@ -8046,8 +8009,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Rare Earth (III) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthIII", 1L) },
                 // "Raw Rare Earth (III) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawRareEarthIII", 1L),
@@ -8066,8 +8029,8 @@ public class ChaosOreRecipes {
                 }));
 
         // "Barite (Ra) Ore"
-        Ore_List.add(
-            new OreList(
+        ore_List.add(
+            new Ore_List(
                 new ItemStack[] { getModItem(GTPlusPlus.ID, "oreBariteRa", 1L) },
                 // "Raw Barite (Ra) Ore"
                 getModItem(GTPlusPlus.ID, "oreRawBariteRa", 1L),
@@ -8084,10 +8047,10 @@ public class ChaosOreRecipes {
                 }));
 
         // 遍历所有矿石列表
-        for (OreList oreEntry : Ore_List) {
+        for (Ore_List oreEntry : ore_List) {
             // 安全检查：防止oreEntry为null
             if (oreEntry == null) {
-                System.err.println("【警告】检测到null的OreList条目，跳过处理");
+                System.err.println("【警告】检测到null的Ore_List条目，跳过处理");
                 continue;
             }
 

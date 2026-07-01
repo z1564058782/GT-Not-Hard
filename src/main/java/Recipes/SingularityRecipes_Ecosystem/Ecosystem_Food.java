@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.CropsPlusPlus;
+// import static gregtech.api.enums.Mods.CropsPlusPlus;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraTrees;
@@ -471,12 +471,13 @@ public class Ecosystem_Food {
 
     // CropsPlusPlus
     public static final ItemStack[] CropsPlusPlus_Food = new ItemStack[] {
+        /*
         // Goldfish
         getModItem(CropsPlusPlus.ID, "foodGoldfish", 1L),
         // Huckleberry
         getModItem(CropsPlusPlus.ID, "foodBerries", 1L, 0),
         // "Sugar Beet"
-        getModItem(CropsPlusPlus.ID, "foodBerries", 1L, 1) };
+        getModItem(CropsPlusPlus.ID, "foodBerries", 1L, 1) */};
 
     // EtFuturumRequiem
     public static final ItemStack[] EtFuturumRequiem_Food = new ItemStack[] {

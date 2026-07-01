@@ -336,7 +336,7 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
             buildHatchAdder(Origin.class)
                 .atLeast(InputBus, OutputBus, InputHatch, OutputHatch, Maintenance, Dynamo.or(TTDynamo))
                 .casingIndex(mcasingIndex)
-                .dot(1)
+                .hint(1)
                 .buildAndChain(onElementPass(Origin::onCasingAdded, ofBlock(GregTechAPI.sBlockCasings4, 1))))
         .build();
 

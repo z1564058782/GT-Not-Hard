@@ -105,7 +105,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             'h',
             buildHatchAdder(Singularity.class).atLeast(OutputHatch, OutputBus, Maintenance)
                 .casingIndex(mcasingIndex)
-                .dot(1)
+                .hint(1)
                 .buildAndChain(onElementPass(Singularity::onCasingAdded, ofBlock(GregTechAPI.sBlockCasings4, 2))))
         .build();
 
@@ -322,7 +322,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeOre = OreRecipes[index];
                     recipeOre.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeOre);
+                        // addOutput(recipeOre);
+                        addOutputAtomic(recipeOre);
                     }
                 }
 
@@ -368,7 +369,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeGem = GemRecipes[index];
                     recipeGem.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeGem);
+                        // addOutput(recipeGem);
+                        addOutputAtomic(recipeGem);
                     }
                 }
 
@@ -414,7 +416,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeDust = DustRecipes[index];
                     recipeDust.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeDust);
+                        //addOutput(recipeDust);
+                        addOutputAtomic(recipeDust);
                     }
                 }
 
@@ -506,7 +509,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeIngot = IngotRecipes[index];
                     recipeIngot.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeIngot);
+                        // addOutput(recipeIngot);
+                        addOutputAtomic(recipeIngot);
                     }
                 }
 
@@ -551,7 +555,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeEcosystem = EcosystemRecipes[index];
                     recipeEcosystem.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeEcosystem);
+                        // addOutput(recipeEcosystem);
+                        addOutputAtomic(recipeEcosystem);
                     }
                 }
 
@@ -786,7 +791,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipeModItem = ModItemRecipes[index];
                     recipeModItem.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipeModItem);
+                        // addOutput(recipeModItem);
+                        addOutputAtomic(recipeModItem);
                     }
                 }
 
@@ -1103,7 +1109,8 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                     ItemStack recipePachinko = PachinkoRecipes[index];
                     recipePachinko.stackSize = getMaxParallel();
                     for (int mStack = 0; mStack < 64; mStack++) {
-                        addOutput(recipePachinko);
+                        // addOutput(recipePachinko);
+                        addOutputAtomic(recipePachinko);
                     }
                 }
 

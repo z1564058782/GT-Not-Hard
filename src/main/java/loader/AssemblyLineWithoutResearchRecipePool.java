@@ -18,14 +18,14 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.dreammaster.gthandler.CustomItemList;
+// import com.dreammaster.gthandler.CustomItemList;
 
 import bartworks.system.material.WerkstoffLoader;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsUEVplus;
+// import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.objects.ItemData;
 import gregtech.api.recipe.RecipeMap;
@@ -40,7 +40,7 @@ import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import util.Utils;
 
 public class AssemblyLineWithoutResearchRecipePool {
-
+/*
     public ItemStack transToWildCircuit(ItemStack items) {
         ItemData tPrefixMaterial = GTOreDictUnificator.getAssociation(items);
 
@@ -961,4 +961,6 @@ public class AssemblyLineWithoutResearchRecipePool {
             }
         }
     }
+
+ */
 }

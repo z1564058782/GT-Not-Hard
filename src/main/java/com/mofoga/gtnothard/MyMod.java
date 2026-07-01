@@ -295,7 +295,7 @@ public class MyMod {
     @Mod.EventHandler
     public void completeInit(FMLLoadCompleteEvent event) {
         AssemblyLineWithoutResearchRecipePool assemblyLineWithoutResearchRecipePool = new AssemblyLineWithoutResearchRecipePool();
-        assemblyLineWithoutResearchRecipePool.loadRecipes();
+        // assemblyLineWithoutResearchRecipePool.loadRecipes();
         ChaosCircuitAssemblerRecipes.addChaosCircuitAssemblerRecipes();
         SingularityDustRecipes_T10.addVoidDustRecipes_T10();
         SingularityDustRecipes_T10.addFakeVoidDustRecipes_T10();
