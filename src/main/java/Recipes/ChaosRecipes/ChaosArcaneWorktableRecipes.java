@@ -1165,7 +1165,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Arcane Worktable Item 0-9
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 4L, 25),
                 getModItem(BloodMagic.ID, "weakBloodShard", 4L),
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "DiamondFrameBox", 1L),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3588,8 +3588,8 @@ public class ChaosArcaneWorktableRecipes {
                 // Arcane Worktable Item 0-9
                 getModItem(GregTech.ID, "gt.blockmachines", 1L, 2000),
                 getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27305),
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "AluminiumBars", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 2L),
                 Single_Use_Screwdriver,
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4034,7 +4034,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
                 new Object[] { OrePrefixes.circuit.get(Materials.ULV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4058,7 +4058,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 0),
                 new Object[] { OrePrefixes.circuit.get(Materials.LV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4082,7 +4082,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 1),
                 new Object[] { OrePrefixes.circuit.get(Materials.MV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4106,7 +4106,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 2),
                 new Object[] { OrePrefixes.circuit.get(Materials.HV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4130,7 +4130,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 3),
                 new Object[] { OrePrefixes.circuit.get(Materials.EV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4154,7 +4154,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 5),
                 new Object[] { OrePrefixes.circuit.get(Materials.IV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4178,7 +4178,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 6),
                 new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4202,7 +4202,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore"),
+                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
                 getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 7),
                 new Object[] { OrePrefixes.circuit.get(Materials.UV), 4L },
                 new ItemStack(Blocks.air, 0),
@@ -4434,30 +4434,6 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 75))
             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 8))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Essentia Cell Workbench"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1L),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 22),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17545),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27542),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 0),
-                Single_Use_Screwdriver,
-                Single_Use_Wrench,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1L))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4882,7 +4858,7 @@ public class ChaosArcaneWorktableRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17305),
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
                 getModItem(Minecraft.ID, "cauldron", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 1L),
                 getModItem(Witchery.ID, "ingredient", 1L, 10),
                 Single_Use_Hammer,
                 Single_Use_Screwdriver,
@@ -5080,7 +5056,7 @@ public class ChaosArcaneWorktableRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17811),
                 getModItem(Minecraft.ID, "lava_bucket", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 2L),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5295,7 +5271,7 @@ public class ChaosArcaneWorktableRecipes {
             .itemInputs(
                 // Arcane Worktable Item 0-9
                 getModItem(Botania.ID, "quartz", 4L, 3),
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "ReinforcedGlassLense", 1L),
                 setStackSize(Mixed_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),

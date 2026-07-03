@@ -317,7 +317,7 @@ public class ChaosCrucibleRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "VoidEssence", 2L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addCrucibleRecipes);

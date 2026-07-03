@@ -225,7 +225,7 @@ public class ChaosBloodMagicRecipes {
                 getModItem(BloodMagic.ID, "Altar", 0L),
 
                 // Synthetic Materials
-                getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "ArcaneSlate", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1_000))
             .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 1L))
             .duration(SECONDS)
@@ -409,7 +409,7 @@ public class ChaosBloodMagicRecipes {
                 // Synthetic Materials
                 getModItem(GregTech.ID, "gt.blockmetal8", 1L, 13))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyIchorium", 1L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyIchorium", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
@@ -422,7 +422,7 @@ public class ChaosBloodMagicRecipes {
                 // Synthetic Materials
                 getModItem(ThaumicBases.ID, "voidBlock", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyVoid", 1L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyVoid", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
@@ -435,7 +435,7 @@ public class ChaosBloodMagicRecipes {
                 // Synthetic Materials
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 5_000))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyThaumium", 1L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyThaumium", 1L))
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
@@ -565,7 +565,7 @@ public class ChaosBloodMagicRecipes {
                 // Synthetic Materials
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 3),
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 2346),
-                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 2L))
+                getModItem(NewHorizonsCoreMod.ID, "ChargedCertusQuartzDust", 2L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 4_000))
             .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 6))
             .duration(SECONDS)

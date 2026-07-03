@@ -1,7 +1,6 @@
 package Recipes.SingularityRecipes_ModItem;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
@@ -60,7 +59,6 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.OpenSecurity;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.RemoteIO;
@@ -115,8 +113,6 @@ public class FakeSingularityModItemRecipes_Show {
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0),
                 // AE2FluidCraft - Certus Quartz Tank
                 getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1L),
-                // AE2Stuff - Advanced Wireless Setup Kit
-                getModItem(AE2Stuff.ID, "AdvWirelessKit", 1L),
                 // AppliedEnergistics2 - Quartz Glass
                 getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1L),
                 // Automagy - Redcrystal
@@ -244,9 +240,6 @@ public class FakeSingularityModItemRecipes_Show {
 
                 // PamsHarvestCraft - Fish Trap
                 getModItem(PamsHarvestCraft.ID, "fishtrap", 1L),
-                // PamsHarvestTheNether - Ignis Fruit Sapling
-                getModItem(PamsHarvestTheNether.ID, "netherSapling", 1L),
-
                 // Railcraft - Block of Coal Coke
                 getModItem(Railcraft.ID, "cube", 1L, 0),
                 // RandomThings - Void Stone

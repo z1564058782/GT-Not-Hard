@@ -227,7 +227,7 @@ public class Vein_Dust {
         //
         Materials.QuartzSand.getDust(1),
         // Charged Certus Quartz Dust
-        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1L) };
+        getModItem(NewHorizonsCoreMod.ID, "ChargedCertusQuartzDust", 1L) };
 
     // Chrome Vein
     public static final ItemStack[] Chrome_Vein = new ItemStack[] {

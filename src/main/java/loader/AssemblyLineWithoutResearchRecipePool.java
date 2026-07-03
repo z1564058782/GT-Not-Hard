@@ -574,7 +574,7 @@ public class AssemblyLineWithoutResearchRecipePool {
                     GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 2),
                     ItemList.Super_Chest_IV.get(1),
                     ItemList.Super_Tank_IV.get(1),
-                    getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 1, 0))
+                    getModItem(NewHorizonsCoreMod.ID, "PicoWafer", 1, 0))
                 .fluidInputs(
                     WerkstoffLoader.Oganesson.getFluidOrGas(1000),
                     new FluidStack(solderUEV, 576),

@@ -1261,7 +1261,7 @@ public class ChaosFallingTowerRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Heavy Duty Plate Tier 4"
-                getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier4", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier4", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 7_500_000))
             .itemOutputs(
                 // "Venus Subsurface Block"
@@ -1363,7 +1363,7 @@ public class ChaosFallingTowerRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Heavy Duty Plate Tier 5"
-                getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier5", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier5", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000_000))
             .itemOutputs(
                 // "Enceladus Subsurface Block"
@@ -1423,7 +1423,7 @@ public class ChaosFallingTowerRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Heavy Duty Plate Tier 6"
-                getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier6", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier6", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 15_000_000))
             .itemOutputs(
                 // "Triton Stone"
@@ -1463,7 +1463,7 @@ public class ChaosFallingTowerRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Heavy Duty Plate Tier 7"
-                getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier7", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier7", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 30_000_000))
             .itemOutputs(
                 // "Haumea Surface Block"
@@ -1557,7 +1557,7 @@ public class ChaosFallingTowerRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Heavy Duty Plate Tier 8"
-                getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier8", 1L))
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier8", 1L))
             .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000_000))
             .itemOutputs(
                 // "Barnarda E Subsurface Block"
@@ -1829,15 +1829,15 @@ public class ChaosFallingTowerRecipes {
                 // "Block of Manasteel"
                 setStackSize(getModItem(Botania.ID, "storage", 1L, 0), 82),
                 // "Mana Pearl Block"
-                setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.ManaPearl", 1L), 66),
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "ManaPearl", 1L), 66),
                 // "Mana Powder Block"
-                setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.ManaPowder", 1L), 66),
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "ManaPowder", 1L), 66),
                 // "Block of Elementium"
                 setStackSize(getModItem(Botania.ID, "storage", 1L, 2), 17),
                 // "Pixie Dust Block"
-                setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.PixieDust", 1L), 17),
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "PixieDust", 1L), 17),
                 // "Gaia Spirit Block"
-                setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.Gaia", 1L), 4),
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "Gaia", 1L), 4),
                 // Prismarine
                 setStackSize(getModItem(Botania.ID, "prismarine", 1L, 0), 884))
             .duration(3 * SECONDS)

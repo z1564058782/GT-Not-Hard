@@ -69,7 +69,7 @@ public class SmallOre_Dust {
         //
         Materials.Quartzite.getDust(1),
         // Charged Certus Quartz Dust
-        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1L) };
+        getModItem(NewHorizonsCoreMod.ID, "ChargedCertusQuartzDust", 1L) };
 
     // Chromite Ore
     public static final ItemStack[] Chromite_SmallOre = new ItemStack[] {

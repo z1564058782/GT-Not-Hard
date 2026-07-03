@@ -328,7 +328,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30500),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30510),
                 setStackSize(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319), 10),
-                setStackSize(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1L), 80),
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "EngravedQuantumChip", 1L), 80),
                 setStackSize(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0), 204),
                 setStackSize(Awakened_Draconium_Ingot, 10),
                 // Runic Item 10-19
@@ -366,7 +366,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(Botania.ID, "livingrock0Slab", 6L, 0),
                 getModItem(Botania.ID, "manaGlass", 4L),
                 getModItem(Minecraft.ID, "brewing_stand", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "EngravedQuantumChip", 2L),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -407,7 +407,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(Botania.ID, "manaResource", 2L, 9),
                 getModItem(Botania.ID, "pylon", 1L, 0),
                 getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17324),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedManyullynCrystalChip", 4L),
+                getModItem(NewHorizonsCoreMod.ID, "EngravedManyullynCrystalChip", 4L),
                 getModItem(Thaumcraft.ID, "WandCap", 2L, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -450,7 +450,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(Botania.ID, "alchemyCatalyst", 1L),
                 getModItem(Botania.ID, "livingwood", 4L, 5),
                 getModItem(Minecraft.ID, "glowstone", 2L),
-                getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal"),
+                getModItem(NewHorizonsCoreMod.ID, "QuantumCrystal"),
                 getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17202),
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 4L, 9),
                 new ItemStack(Blocks.air, 0),
@@ -512,7 +512,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(Botania.ID, "storage", 2L, 0),
                 getModItem(Minecraft.ID, "lapis_block", 2L),
                 // Runic Item 20-24
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "EngravedDiamondCrystalChip", 2L),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1324,7 +1324,7 @@ public class ChaosRunicMatrixRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Runic Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.Marshmallow", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "Marshmallow", 1L),
                 getModItem(PamsHarvestCraft.ID, "beefwellingtonItem", 1L),
                 getModItem(PamsHarvestCraft.ID, "deluxechickencurryItem", 1L),
                 getModItem(PamsHarvestCraft.ID, "epicbaconItem", 1L),
@@ -1680,7 +1680,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 28084),
                 getModItem(GTPlusPlus.ID, "magicfeather", 2L),
                 getModItem(Minecraft.ID, "nether_star", 2L),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "EngravedGoldChip", 2L),
                 getModItem(Thaumcraft.ID, "ItemResource", 2L, 15),
                 getModItem(TinkerConstruct.ID, "travelWings", 1L),
                 new ItemStack(Blocks.air, 0),
@@ -2142,7 +2142,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 28),
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 29),
                 getModItem(BloodMagic.ID, "standardBindingAgent", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "Mytryl", 1L),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 0),
                 setStackSize(Ichorium_Ingot, 2),
                 new ItemStack(Blocks.air, 0),
@@ -2785,7 +2785,7 @@ public class ChaosRunicMatrixRecipes {
             .itemInputs(
                 // Runic Item 0-9
                 getModItem(Minecraft.ID, "nether_star", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "VoidEssence", 2L),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1),
                 getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2),
@@ -3204,7 +3204,7 @@ public class ChaosRunicMatrixRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Runic Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 2L),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 7),
                 getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
                 getModItem(Thaumcraft.ID, "blockTube", 1L, 1),
@@ -3378,7 +3378,7 @@ public class ChaosRunicMatrixRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Runic Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.PrimordialPearlFragment", 1L),
+                getModItem(NewHorizonsCoreMod.ID, "PrimordialPearlFragment", 1L),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 4L, 0),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 6),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 7),
@@ -3918,7 +3918,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17086),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17330),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17500),
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "ReinforcedGlassPlate", 2L),
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1L),
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
                 new ItemStack(Blocks.air, 0),
@@ -4604,7 +4604,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1L),
                 getModItem(Minecraft.ID, "firework_charge", 2L),
                 getModItem(Minecraft.ID, "tnt", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "ReinforcedGlassLense", 2L),
                 getModItem(Thaumcraft.ID, "FocusHellbat", 1L),
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 0),
                 getModItem(Thaumcraft.ID, "ItemResource", 1L, 1),
@@ -4648,7 +4648,7 @@ public class ChaosRunicMatrixRecipes {
                 getModItem(GregTech.ID, "gt.blockreinforced", 4L, 3),
                 getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17383),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 2L),
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 2L),
+                getModItem(NewHorizonsCoreMod.ID, "ReinforcedGlassPlate", 2L),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1L),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4995,7 +4995,7 @@ public class ChaosRunicMatrixRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Runic Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 4L),
+                getModItem(NewHorizonsCoreMod.ID, "VoidEssence", 4L),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 5),
                 getModItem(Thaumcraft.ID, "FocusFrost", 1L),
                 getModItem(Thaumcraft.ID, "FocusShock", 1L),
@@ -5041,7 +5041,7 @@ public class ChaosRunicMatrixRecipes {
             .itemInputs(
                 // Runic Item 0-9
                 getModItem(Minecraft.ID, "clock", 4L),
-                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 4L),
+                getModItem(NewHorizonsCoreMod.ID, "VoidEssence", 4L),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 5),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1L),
                 setStackSize(Air_Crystal_Cluster, 4),

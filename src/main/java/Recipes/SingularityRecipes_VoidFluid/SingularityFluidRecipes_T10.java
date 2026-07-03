@@ -899,9 +899,6 @@ public class SingularityFluidRecipes_T10 {
         // Ferrocene Waste
         FluidRegistry.getFluidStack("ferrocene waste", 1),
 
-        // Fertile Manure Slurry
-        FluidRegistry.getFluidStack("fluid.fertile.manure.slurry", 1),
-
         // Fertiliser
         FluidRegistry.getFluidStack("fluid.fertiliser", 1),
 
@@ -1641,9 +1638,6 @@ public class SingularityFluidRecipes_T10 {
 
         // Manganese Plasma
         FluidRegistry.getFluidStack("plasma.manganese", 1),
-
-        // Manure Slurry
-        FluidRegistry.getFluidStack("fluid.manure.slurry", 1),
 
         // Mash
         FluidRegistry.getFluidStack("potion.mash", 1),
@@ -3668,9 +3662,6 @@ public class SingularityFluidRecipes_T10 {
 
         // Raisin Juice
         FluidRegistry.getFluidStack("fluid.raisinjuice", 1),
-
-        // Raw Animal Waste
-        FluidRegistry.getFluidStack("fluid.raw.waste", 1),
 
         // Raw Bio Catalyst Medium
         FluidRegistry.getFluidStack("biomediumraw", 1),

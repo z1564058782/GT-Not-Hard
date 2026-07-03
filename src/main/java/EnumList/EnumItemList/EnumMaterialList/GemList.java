@@ -186,24 +186,4 @@ public class GemList {
     public static final ItemStack Flawless_Chromo_Alumino_Povondraite = getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 7);
     public static final ItemStack Flawed_Chromo_Alumino_Povondraite = getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 7);
     public static final ItemStack Chipped_Chromo_Alumino_Povondraite = getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 7);
-    public static final ItemStack Exquisite_  = ;
-    public static final ItemStack Flawless_  = ;
-    public static final ItemStack Flawed_  = ;
-    public static final ItemStack Chipped_  = ;
-    public static final ItemStack Exquisite_  = ;
-    public static final ItemStack Flawless_  = ;
-    public static final ItemStack Flawed_  = ;
-    public static final ItemStack Chipped_  = ;
-    public static final ItemStack Exquisite_  = ;
-    public static final ItemStack Flawless_  = ;
-    public static final ItemStack Flawed_  = ;
-    public static final ItemStack Chipped_  = ;
-    public static final ItemStack Exquisite_  = ;
-    public static final ItemStack Flawless_  = ;
-    public static final ItemStack Flawed_  = ;
-    public static final ItemStack Chipped_  = ;
-    public static final ItemStack Exquisite_  = ;
-    public static final ItemStack Flawless_  = ;
-    public static final ItemStack Flawed_  = ;
-    public static final ItemStack Chipped_  = ;
 }

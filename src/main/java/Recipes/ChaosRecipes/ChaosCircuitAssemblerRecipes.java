@@ -574,7 +574,7 @@ public class ChaosCircuitAssemblerRecipes {
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2L, 32720),
                 getModItem(GregTech.ID, "gt.blockmachines", 64L, 2425))
             .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 288))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.HighEnergyFlowCircuit", 16L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "HighEnergyFlowCircuit", 16L))
             .duration(1440 * SECONDS)
             .eut(7680)
             .addTo(addChaosCircuitAssemblerRecipes);
@@ -589,7 +589,7 @@ public class ChaosCircuitAssemblerRecipes {
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2L, 32720),
                 getModItem(GregTech.ID, "gt.blockmachines", 64L, 2425))
             .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 288))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.HighEnergyFlowCircuit", 16L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "HighEnergyFlowCircuit", 16L))
             .duration(1440 * SECONDS)
             .eut(7680)
             .addTo(addChaosCircuitAssemblerRecipes);
@@ -604,7 +604,7 @@ public class ChaosCircuitAssemblerRecipes {
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2L, 32720),
                 getModItem(GregTech.ID, "gt.blockmachines", 64L, 2425))
             .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 288))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.HighEnergyFlowCircuit", 16L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "HighEnergyFlowCircuit", 16L))
             .duration(1440 * SECONDS)
             .eut(7680)
             .addTo(addChaosCircuitAssemblerRecipes);
@@ -619,7 +619,7 @@ public class ChaosCircuitAssemblerRecipes {
                 getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2L, 32720),
                 getModItem(GregTech.ID, "gt.blockmachines", 64L, 2425))
             .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 288))
-            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.HighEnergyFlowCircuit", 16L))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "HighEnergyFlowCircuit", 16L))
             .duration(1440 * SECONDS)
             .eut(7680)
             .addTo(addChaosCircuitAssemblerRecipes);
