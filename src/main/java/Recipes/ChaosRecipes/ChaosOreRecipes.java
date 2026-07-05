@@ -1,23 +1,10 @@
 package Recipes.ChaosRecipes;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.ProjectRedCore;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import EnumList.EnumItemList.EnumMaterialList.CrushedOreList;
 import EnumList.EnumItemList.EnumMaterialList.DustList;
@@ -138,7911 +125,5276 @@ public class ChaosOreRecipes {
         // "Vanadio-Oxy-Dravite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 8) },
-                // "Raw Vanadio-Oxy-Dravite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 8),
-                // "Crushed Vanadio-Oxy-Dravite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 8),
+                new ItemStack[] { OreList.Vanadio_Oxy_Dravite_Ore },
+                RawOreList.Raw_Vanadio_Oxy_Dravite_Ore,
+                CrushedOreList.Crushed_Vanadio_Oxy_Dravite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Vanadio-Oxy-Dravite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 8), 6);
-                        // Vanadio-Oxy-Dravite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 8), 3);
-                        // "Exquisite Vanadio-Oxy-Dravite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 8), 1);
-                        // "Flawless Vanadio-Oxy-Dravite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 8), 1);
-                        // "Flawed Vanadio-Oxy-Dravite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 8), 1);
-                        // "Chipped Vanadio-Oxy-Dravite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 8), 1);
-                        // "Boron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2009), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 3);
+                        put(DustList.Vanadio_Oxy_Dravite_Dust, 6);
+                        put(GemList.Vanadio_Oxy_Dravite, 3);
+                        put(GemList.Exquisite_Vanadio_Oxy_Dravite, 1);
+                        put(GemList.Flawless_Vanadio_Oxy_Dravite, 1);
+                        put(GemList.Flawed_Vanadio_Oxy_Dravite, 1);
+                        put(GemList.Chipped_Vanadio_Oxy_Dravite, 1);
+                        put(DustList.Boron_Dust, 3);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
+                        put(DustList.Sodium_Dust, 3);
                     }
                 }));
 
         // "Olenite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 9) },
-                // "Raw Olenite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 9),
-                // "Crushed Olenite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 9),
+                new ItemStack[] { OreList.Olenite_Ore },
+                RawOreList.Raw_Olenite_Ore,
+                CrushedOreList.Crushed_Olenite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Olenite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 9), 6);
-                        // Olenite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 9), 3);
-                        // "Exquisite Olenite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 9), 1);
-                        // "Flawless Olenite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 9), 1);
-                        // "Flawed Olenite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 9), 1);
-                        // "Chipped Olenite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 9), 1);
-                        // "Boron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2009), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 3);
+                        put(DustList.Olenite_Dust, 6);
+                        put(GemList.Olenite, 3);
+                        put(GemList.Exquisite_Olenite, 1);
+                        put(GemList.Flawless_Olenite, 1);
+                        put(GemList.Flawed_Olenite, 1);
+                        put(GemList.Chipped_Olenite, 1);
+                        put(DustList.Boron_Dust, 3);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
+                        put(DustList.Sodium_Dust, 3);
                     }
                 }));
 
         // "Arsenopyrite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10) },
-                // "Raw Arsenopyrite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10),
-                // "Crushed Arsenopyrite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 10),
+                new ItemStack[] { OreList.Arsenopyrite_Ore },
+                RawOreList.Raw_Arsenopyrite_Ore,
+                CrushedOreList.Crushed_Arsenopyrite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Arsenopyrite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10), 7);
-                        // "Arsenic Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2039), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 2);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 4);
+                        put(DustList.Arsenopyrite_Dust, 7);
+                        put(DustList.Arsenic_Dust, 3);
+                        put(DustList.Iron_Dust, 2);
+                        put(DustList.Sulfur_Dust, 4);
                     }
                 }));
 
         // "Ferberite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 11) },
-                // "Raw Ferberite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 11),
-                // "Crushed Ferberite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 11),
+                new ItemStack[] { OreList.Ferberite_Ore },
+                RawOreList.Raw_Ferberite_Ore,
+                CrushedOreList.Crushed_Ferberite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ferberite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11), 7);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Tungsten Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2081), 4);
+                        put(DustList.Ferberite_Dust, 7);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Tungsten_Dust, 4);
                     }
                 }));
 
         // "Loellingite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 12) },
-                // "Raw Loellingite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 12),
-                // "Crushed Loellingite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 12),
+                new ItemStack[] { OreList.Loellingite_Ore },
+                RawOreList.Raw_Loellingite_Ore,
+                CrushedOreList.Crushed_Loellingite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Loellingite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 12), 7);
-                        // "Arsenic Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2039), 4);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
+                        put(DustList.Loellingite_Dust, 7);
+                        put(DustList.Arsenic_Dust, 4);
+                        put(DustList.Iron_Dust, 5);
                     }
                 }));
 
         // "Roquesite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 13) },
-                // "Raw Roquesite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 13),
-                // "Crushed Roquesite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 13),
+                new ItemStack[] { OreList.Roquesite_Ore },
+                RawOreList.Raw_Roquesite_Ore,
+                CrushedOreList.Crushed_Roquesite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Roquesite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 13), 6);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 4);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 5);
+                        put(DustList.Roquesite_Dust, 6);
+                        put(DustList.Copper_Dust, 4);
+                        put(DustList.Sulfur_Dust, 5);
                     }
                 }));
 
         // "Bornite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 14) },
-                // "Raw Bornite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 14),
-                // "Crushed Bornite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 14),
+                new ItemStack[] { OreList.Bornite_Ore },
+                RawOreList.Raw_Bornite_Ore,
+                CrushedOreList.Crushed_Bornite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bornite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 14), 7);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 4);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 1);
+                        put(DustList.Bornite_Dust, 7);
+                        put(DustList.Copper_Dust, 4);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Sulfur_Dust, 1);
                     }
                 }));
 
         // "Wittichenite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 15) },
-                // "Raw Wittichenite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 15),
-                // "Crushed Wittichenite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 15),
+                new ItemStack[] { OreList.Wittichenite_Ore },
+                RawOreList.Raw_Wittichenite_Ore,
+                CrushedOreList.Crushed_Wittichenite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Wittichenite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 15), 6);
-                        // "Bismuth Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2090), 4);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 4);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 1);
+                        put(DustList.Wittichenite_Dust, 6);
+                        put(DustList.Bismuth_Dust, 4);
+                        put(DustList.Copper_Dust, 4);
+                        put(DustList.Sulfur_Dust, 1);
                     }
                 }));
 
         // "Djurleite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 16) },
-                // "Raw Djurleite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 16),
-                // "Crushed Djurleite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 16),
+                new ItemStack[] { OreList.Djurleite_Ore },
+                RawOreList.Raw_Djurleite_Ore,
+                CrushedOreList.Crushed_Djurleite_Ore,
                 new HashMap<>() {
 
                     {
                         // "Djurleite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 16), 6);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 8);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 1);
+                        put(DustList.Djurleite_Dust, 6);
+                        put(DustList.Copper_Dust, 8);
+                        put(DustList.Sulfur_Dust, 1);
                     }
                 }));
 
         // "Huebnerite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 17) },
-                // "Raw Huebnerite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 17),
-                // "Crushed Huebnerite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 17),
+                new ItemStack[] { OreList.Huebnerite_Ore },
+                RawOreList.Raw_Huebnerite_Ore,
+                CrushedOreList.Crushed_Huebnerite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Huebnerite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 17), 7);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 4);
-                        // "Tungsten Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2081), 4);
+                        put(DustList.Huebnerite_Dust, 7);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Manganese_Dust, 4);
+                        put(DustList.Tungsten_Dust, 4);
                     }
                 }));
 
         // "Thorianite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 18) },
-                // "Raw Thorianite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 18),
-                // "Crushed Thorianite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 18),
+                new ItemStack[] { OreList.Thorianite_Ore },
+                RawOreList.Raw_Thorianite_Ore,
+                CrushedOreList.Crushed_Thorianite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Thorianite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 18), 9);
-                        // "Thorium 232 Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 30), 1);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 10);
+                        put(DustList.Thorianite_Dust, 9);
+                        put(DustList.Thorium_232_Dust, 1);
+                        put(DustList.Thorium_Dust, 10);
                     }
                 }));
 
         // "Red Zircon Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 19) },
-                // "Raw Red Zircon Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 19),
-                // "Crushed Thorianite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 19),
+                new ItemStack[] { OreList.Red_Zircon_Ore },
+                RawOreList.Raw_Red_Zircon_Ore,
+                CrushedOreList.Crushed_Red_Zircon_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Red Zircon Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 19), 6);
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 3);
-                        // "Red Zircon"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 19), 3);
-                        // "Exquisite Red Zircon"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 19), 1);
-                        // "Flawless Red Zircon"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 19), 1);
-                        // "Flawed Red Zircon"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 19), 1);
-                        // "Chipped Red Zircon"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 19), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 4);
+                        put(DustList.Red_Zircon_Dust, 6);
+                        put(DustList.Zirconium_Dust, 3);
+                        put(GemList.Red_Zircon, 3);
+                        put(GemList.Exquisite_Red_Zircon, 1);
+                        put(GemList.Flawless_Red_Zircon, 1);
+                        put(GemList.Flawed_Red_Zircon, 1);
+                        put(GemList.Chipped_Red_Zircon, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 4);
                     }
                 }));
 
         // "Fayalite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23) },
-                // "Raw Fayalite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 23),
-                // "Crushed Fayalite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 23),
+                new ItemStack[] { OreList.Fayalite_Ore },
+                RawOreList.Raw_Fayalite_Ore,
+                CrushedOreList.Crushed_Fayalite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Fayalite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 23), 7);
-                        // Fayalite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 23), 3);
-                        // "Exquisite Fayalite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 23), 1);
-                        // "Flawless Fayalite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 23), 1);
-                        // "Flawed Fayalite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 23), 1);
-                        // "Chipped Fayalite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 23), 1);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 4);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 4);
+                        put(DustList.Fayalite_Dust, 7);
+                        put(GemList.Fayalite, 3);
+                        put(GemList.Exquisite_Fayalite, 1);
+                        put(GemList.Flawless_Fayalite, 1);
+                        put(GemList.Flawed_Fayalite, 1);
+                        put(GemList.Chipped_Fayalite, 1);
+                        put(DustList.Iron_Dust, 4);
+                        put(DustList.Silicon_Dioxide_Dust, 4);
                     }
                 }));
 
         // "Forsterite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 24) },
-                // "Raw Forsterite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 24),
-                // "Crushed Forsterite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 24),
+                new ItemStack[] { OreList.Forsterite_Ore },
+                RawOreList.Raw_Forsterite_Ore,
+                CrushedOreList.Crushed_Forsterite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Forsterite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 24), 6);
-                        // Forsterite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 24), 3);
-                        // "Exquisite Forsterite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 24), 1);
-                        // "Flawless Forsterite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 24), 1);
-                        // "Flawed Forsterite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 24), 1);
-                        // "Chipped Forsterite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 24), 1);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 3);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 4);
+                        put(DustList.Forsterite_Dust, 6);
+                        put(GemList.Forsterite, 3);
+                        put(GemList.Exquisite_Forsterite, 1);
+                        put(GemList.Flawless_Forsterite, 1);
+                        put(GemList.Flawed_Forsterite, 1);
+                        put(GemList.Chipped_Forsterite, 1);
+                        put(DustList.Magnesium_Dust, 3);
+                        put(DustList.Silicon_Dioxide_Dust, 4);
                     }
                 }));
 
         // "Hedenbergite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 25) },
-                // "Raw Hedenbergite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 25),
-                // "Crushed Hedenbergite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 25),
+                new ItemStack[] { OreList.Hedenbergite_Ore },
+                RawOreList.Raw_Hedenbergite_Ore,
+                CrushedOreList.Crushed_Hedenbergite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Hedenbergite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 25), 7);
-                        // Hedenbergite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 25), 3);
-                        // "Exquisite Hedenbergite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 25), 1);
-                        // "Flawless Hedenbergite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 25), 1);
-                        // "Flawed Hedenbergite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 25), 1);
-                        // "Chipped Hedenbergite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 25), 1);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 4);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
+                        put(DustList.Hedenbergite_Dust, 7);
+                        put(GemList.Hedenbergite, 3);
+                        put(GemList.Exquisite_Hedenbergite, 1);
+                        put(GemList.Flawless_Hedenbergite, 1);
+                        put(GemList.Flawed_Hedenbergite, 1);
+                        put(GemList.Chipped_Hedenbergite, 1);
+                        put(DustList.Calcium_Dust, 3);
+                        put(DustList.Iron_Dust, 4);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
                     }
                 }));
 
         // "Red Descloizite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 26) },
-                // "Raw Red Descloizite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 26),
-                // "Crushed Red Descloizite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 26),
+                new ItemStack[] { OreList.Red_Descloizite_Ore },
+                RawOreList.Raw_Red_Descloizite_Ore,
+                CrushedOreList.Crushed_Red_Descloizite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Red Descloizite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 26), 6);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 4);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 4);
-                        // "Vanadium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2029), 1);
+                        put(DustList.Red_Descloizite_Dust, 6);
+                        put(DustList.Lead_Dust, 4);
+                        put(DustList.Copper_Dust, 4);
+                        put(DustList.Vanadium_Dust, 1);
                     }
                 }));
 
         // "Orange Descloizite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 27) },
-                // "Raw Orange Descloizite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 27),
-                // "Crushed Orange Descloizite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 27),
+                new ItemStack[] { OreList.Orange_Descloizite_Ore },
+                RawOreList.Raw_Orange_Descloizite_Ore,
+                CrushedOreList.Crushed_Orange_Descloizite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Orange Descloizite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 27), 6);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 4);
-                        // "Vanadium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2029), 1);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 4);
+                        put(DustList.Orange_Descloizite_Dust, 6);
+                        put(DustList.Lead_Dust, 4);
+                        put(DustList.Vanadium_Dust, 1);
+                        put(DustList.Zinc_Dust, 4);
                     }
                 }));
 
         // "Green Fuchsite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 28) },
-                // "Raw Green Fuchsite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 28),
-                // "Crushed Green Fuchsite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 28),
+                new ItemStack[] { OreList.Green_Fuchsite_Ore },
+                RawOreList.Raw_Green_Fuchsite_Ore,
+                CrushedOreList.Crushed_Green_Fuchsite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Green Fuchsite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 28), 6);
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Potassium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2025), 4);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
+                        put(DustList.Green_Fuchsite_Dust, 6);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Potassium_Dust, 4);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
                     }
                 }));
 
         // "Red Fuchsite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 29) },
-                // "Raw Red Fuchsite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 29),
-                // "Crushed Red Fuchsite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 29),
+                new ItemStack[] { OreList.Red_Fuchsite_Ore },
+                RawOreList.Raw_Red_Fuchsite_Ore,
+                CrushedOreList.Crushed_Red_Fuchsite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Red Fuchsite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 29), 7);
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Potassium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2025), 4);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 1);
+                        put(DustList.Red_Fuchsite_Dust, 7);
+                        put(DustList.Chrome_Dust, 3);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Potassium_Dust, 4);
+                        put(DustList.Silicon_Dioxide_Dust, 1);
                     }
                 }));
 
         // "Prasiolite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 35) },
-                // "Raw Prasiolite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 35),
-                // "Crushed Prasiolite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 35),
+                new ItemStack[] { OreList.Prasiolite_Ore },
+                RawOreList.Raw_Prasiolite_Ore,
+                CrushedOreList.Crushed_Prasiolite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Prasiolite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 35), 13);
-                        // Prasiolite
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 35), 3);
-                        // "Exquisite Prasiolite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 35), 1);
-                        // "Flawless Prasiolite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 35), 1);
-                        // "Flawed Prasiolite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 35), 1);
-                        // "Chipped Prasiolite"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 35), 1);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
+                        put(DustList.Prasiolite_Dust, 13);
+                        put(GemList.Prasiolite, 3);
+                        put(GemList.Exquisite_Prasiolite, 1);
+                        put(GemList.Flawless_Prasiolite, 1);
+                        put(GemList.Flawed_Prasiolite, 1);
+                        put(GemList.Chipped_Prasiolite, 1);
+                        put(DustList.Iron_Dust, 1);
                     }
                 }));
 
         // "BArTiMaEuSNeK Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 43) },
-                // "Raw BArTiMaEuSNeK Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 43),
-                // "Crushed BArTiMaEuSNeK Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 43),
+                new ItemStack[] { OreList.BArTiMaEuSNeK_Ore },
+                RawOreList.Raw_BArTiMaEuSNeK_Ore,
+                CrushedOreList.Crushed_BArTiMaEuSNeK_Ore,
                 new HashMap<>() {
-
                     {
-                        // "BArTiMaEuSNeK Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 43), 6);
-                        // BArTiMaEuSNeK
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 43), 3);
-                        // "Exquisite BArTiMaEuSNeK"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 43), 1);
-                        // "Flawless BArTiMaEuSNeK"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 43), 1);
-                        // "Flawed BArTiMaEuSNeK"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 43), 1);
-                        // "Chipped BArTiMaEuSNeK"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 43), 1);
-                        // "Boron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2009), 3);
-                        // "Europium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2070), 1);
-                        // "Titanium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2028), 3);
+                        put(DustList.BArTiMaEuSNeK_Dust, 6);
+                        put(GemList.BArTiMaEuSNeK, 3);
+                        put(GemList.Exquisite_BArTiMaEuSNeK, 1);
+                        put(GemList.Flawless_BArTiMaEuSNeK, 1);
+                        put(GemList.Flawed_BArTiMaEuSNeK, 1);
+                        put(GemList.Chipped_BArTiMaEuSNeK, 1);
+                        put(DustList.Boron_Dust, 3);
+                        put(DustList.Europium_Dust, 1);
+                        put(DustList.Titanium_Dust, 3);
                     }
                 }));
 
         // "Platinum Metallic Powder Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 47) },
-                // "Raw Platinum Metallic Powder Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 47),
-                // "Crushed Platinum Metallic Powder Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 47),
+                new ItemStack[] { OreList.Platinum_Metallic_Powder_Ore },
+                RawOreList.Raw_Platinum_Metallic_Powder_Ore,
+                CrushedOreList.Crushed_Platinum_Metallic_Powder_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 15);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 15);
                     }
                 }));
 
         // "Palladium Metallic Powder Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 53) },
-                // "Raw Palladium Metallic Powder Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 53),
-                // "Crushed Palladium Metallic Powder Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 53),
+                new ItemStack[] { OreList.Palladium_Metallic_Powder_Ore },
+                RawOreList.Raw_Palladium_Metallic_Powder_Ore,
+                CrushedOreList.Crushed_Palladium_Metallic_Powder_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Palladium Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 53), 14);
+                        put(DustList.Palladium_Metallic_Powder_Dust, 14);
                     }
                 }));
 
         // "Leach Residue Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 60) },
-                // "Raw Leach Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 60),
-                // "Crushed Leach Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 60),
+                new ItemStack[] { OreList.Leach_Residue_Ore },
+                RawOreList.Raw_Leach_Residue_Ore,
+                CrushedOreList.Crushed_Leach_Residue_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Leach Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 60), 14);
+                        put(DustList.Leach_Residue_Dust, 14);
                     }
                 }));
 
         // "Rarest Metal Residue Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 69) },
-                // "Raw Rarest Metal Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 69),
-                // "Crushed Rarest Metal Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 69),
+                new ItemStack[] { OreList.Rarest_Metal_Residue_Ore },
+                RawOreList.Raw_Rarest_Metal_Residue_Ore,
+                CrushedOreList.Crushed_Rarest_Metal_Residue_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Rarest Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 69), 14);
+                        put(DustList.Rarest_Metal_Residue_Dust, 14);
                     }
                 }));
 
         // "Iridium Metal Residue Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 70) },
-                // "Raw Iridium Metal Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 70),
-                // "Crushed Iridium Metal Residue Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 70),
+                new ItemStack[] { OreList.Iridium_Metal_Residue_Ore },
+                RawOreList.Raw_Iridium_Metal_Residue_Ore,
+                CrushedOreList.Crushed_Iridium_Metal_Residue_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 14);
+                        put(DustList.Iridium_Metal_Residue_Dust, 14);
                     }
                 }));
 
         // "Crude Rhodium Metal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 79) },
-                // "Raw Crude Rhodium Metal Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 79),
-                // "Crushed Crude Rhodium Metal Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 79),
+                new ItemStack[] { OreList.Crude_Rhodium_Metal_Ore },
+                RawOreList.Raw_Crude_Rhodium_Metal_Ore,
+                CrushedOreList.Crushed_Crude_Rhodium_Metal_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Crude Rhodium Metal Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 79), 14);
+                        put(DustList.Crude_Rhodium_Metal_Dust, 14);
                     }
                 }));
 
         // "Tiberium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 89) },
-                // "Raw Tiberium Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 89),
-                // "Crushed Tiberium Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 89),
+                new ItemStack[] { OreList.Tiberium_Ore },
+                RawOreList.Raw_Tiberium_Ore,
+                CrushedOreList.Crushed_Tiberium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tiberium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 89), 13);
-                        // Tiberium
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 89), 3);
-                        // "Exquisite Tiberium"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 89), 1);
-                        // "Flawless Tiberium"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 89), 1);
-                        // "Flawed Tiberium"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 89), 1);
-                        // "Chipped Tiberium"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 89), 1);
+                        put(DustList.Tiberium_Dust, 13);
+                        put(GemList.Tiberium, 3);
+                        put(GemList.Exquisite_Tiberium, 1);
+                        put(GemList.Flawless_Tiberium, 1);
+                        put(GemList.Flawed_Tiberium, 1);
+                        put(GemList.Chipped_Tiberium, 1);
                     }
                 }));
 
         // "Fluorspar Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 91) },
-                // "Raw Fluorspar Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 91),
-                // "Crushed Fluorspar Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 91),
+                new ItemStack[] { OreList.Fluorspar_Ore },
+                RawOreList.Raw_Fluorspar_Ore,
+                CrushedOreList.Crushed_Fluorspar_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Fluorspar Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 91), 13);
-                        // Fluorspar
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 91), 3);
-                        // "Exquisite Fluorspar"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 91), 1);
-                        // "Flawless Fluorspar"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 91), 1);
-                        // "Flawed Fluorspar"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 91), 1);
-                        // "Chipped Fluorspar"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 91), 1);
+                        put(DustList.Fluorspar_Dust, 13);
+                        put(GemList.Fluorspar, 3);
+                        put(GemList.Exquisite_Fluorspar, 1);
+                        put(GemList.Flawless_Fluorspar, 1);
+                        put(GemList.Flawed_Fluorspar, 1);
+                        put(GemList.Chipped_Fluorspar, 1);
                     }
                 }));
 
         // "Atheneite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 93) },
-                // "Raw Atheneite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 93),
-                // "Crushed Atheneite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 93),
+                new ItemStack[] { OreList.Atheneite_Ore },
+                RawOreList.Raw_Atheneite_Ore,
+                CrushedOreList.Crushed_Atheneite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Atheneite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 93), 14);
+                        put(DustList.Atheneite_Dust, 14);
                     }
                 }));
 
         // "Temagamite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 94) },
-                // "Raw Temagamite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 94),
-                // "Crushed Temagamite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 94),
+                new ItemStack[] { OreList.Temagamite_Ore },
+                RawOreList.Raw_Temagamite_Ore,
+                CrushedOreList.Crushed_Temagamite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Temagamite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 94), 14);
+                        put(DustList.Temagamite_Dust, 14);
                     }
                 }));
 
         // "Terlinguaite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 95) },
-                // "Raw Terlinguaite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 95),
-                // "Crushed Terlinguaite Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 95),
+                new ItemStack[] { OreList.Terlinguaite_Ore },
+                RawOreList.Raw_Terlinguaite_Ore,
+                CrushedOreList.Crushed_Terlinguaite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Terlinguaite Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 95), 14);
+                        put(DustList.Terlinguaite_Dust, 14);
                     }
                 }));
 
         // "Orundum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10023) },
-                // "Raw Orundum Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10023),
-                // "Crushed Orundum Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 10023),
+                new ItemStack[] { OreList.Orundum_Ore },
+                RawOreList.Raw_Orundum_Ore,
+                CrushedOreList.Crushed_Orundum_Ore,
                 new HashMap<>() {
 
                     {
-                        // "Orundum Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10023), 13);
-                        // Orundum
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 10023), 3);
-                        // "Exquisite Orundum"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 10023), 1);
-                        // "Flawless Orundum"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 10023), 1);
-                        // "Flawed Orundum"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 10023), 1);
-                        // "Chipped Orundum"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 10023), 1);
+                        put(DustList.Orundum_Dust, 13);
+                        put(GemList.Orundum, 3);
+                        put(GemList.Exquisite_Orundum, 1);
+                        put(GemList.Flawless_Orundum, 1);
+                        put(GemList.Flawed_Orundum, 1);
+                        put(GemList.Chipped_Orundum, 1);
                     }
                 }));
 
         // "Naquadah Oxide Mixture Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10054) },
-                // "Raw Naquadah Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10054),
-                // "Crushed Naquadah Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 10054),
+                new ItemStack[] { OreList.Naquadah_Oxide_Mixture_Ore },
+                RawOreList.Raw_Naquadah_Oxide_Mixture_Ore,
+                CrushedOreList.Crushed_Naquadah_Oxide_Mixture_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10054), 14);
+                        put(DustList.Naquadah_Oxide_Mixture_Dust, 14);
                     }
                 }));
 
         // "Enriched-Naquadah Oxide Mixture Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10067) },
-                // "Raw Enriched-Naquadah Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10067),
-                // "Crushed Enriched-Naquadah Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 10067),
+                new ItemStack[] { OreList.Enriched_Naquadah_Oxide_Mixture_Ore },
+                RawOreList.Raw_Enriched_Naquadah_Oxide_Mixture_Ore,
+                CrushedOreList.Crushed_Enriched_Naquadah_Oxide_Mixture,
                 new HashMap<>() {
-
                     {
-                        // "Enriched-Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10067), 14);
+                        put(DustList.Enriched_Naquadah_Oxide_Mixture_Dust, 14);
                     }
                 }));
 
         // "Naquadria Oxide Mixture Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10072) },
-                // "Raw Naquadria Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedrawOre", 1L, 10072),
-                // "Crushed Naquadria Oxide Mixture Ore"
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedcrushed", 1L, 10072),
+                new ItemStack[] { OreList.Naquadria_Oxide_Mixture_Ore },
+                RawOreList.Raw_Naquadria_Oxide_Mixture_Ore,
+                CrushedOreList.Crushed_Naquadria_Oxide_Mixture_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Naquadria Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10072), 14);
+                        put(DustList.Naquadria_Oxide_Mixture_Dust, 14);
                     }
                 }));
 
         // "Lithium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 6),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1006),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2006),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3006),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4006),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5006),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6006) },
-                // "Raw Lithium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5006),
-                // "Crushed Lithium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5006),
+                new ItemStack[] {
+                    OreList.Lithium_Ore_Stone,
+                    OreList.Lithium_Ore_Netherrack,
+                    OreList.Lithium_Ore_EndStone
+                },
+                RawOreList.Raw_Lithium_Ore,
+                CrushedOreList.Crushed_Lithium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lithium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2006), 14);
+                        put(DustList.Lithium_Dust, 14);
                     }
                 }));
 
         // "Beryllium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 8),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1008),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2008),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3008),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4008),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5008),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6008) },
-                // "Raw Beryllium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5008),
-                // "Crushed Beryllium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5008),
+                new ItemStack[] {
+                    OreList.Beryllium_Ore_Stone,
+                    OreList.Beryllium_Ore_Netherrack,
+                    OreList.Beryllium_Ore_EndStone },
+                RawOreList.Raw_Beryllium_Ore,
+                CrushedOreList.Crushed_Beryllium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Beryllium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2008), 5);
-                        // "Emerald Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2501), 7);
-                        // Emerald
-                        put(getModItem(Minecraft.ID, "emerald", 1L), 2);
+                        put(DustList.Beryllium_Dust, 5);
+                        put(DustList.Emerald_Dust, 7);
+                        put(GemList.Emerald, 2);
                     }
                 }));
 
         // "Magnesium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 18),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1018),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2018),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3018),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4018),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5018),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6018) },
-                // "Raw Magnesium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5018),
-                // "Crushed Magnesium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5018),
+                new ItemStack[] {
+                    OreList.Magnesium_Ore_Stone,
+                    OreList.Magnesium_Ore_Netherrack,
+                    OreList.Magnesium_Ore_EndStone },
+                RawOreList.Raw_Magnesium_Ore,
+                CrushedOreList.Crushed_Magnesium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 5);
-                        // "Olivine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2505), 7);
-                        // Olivine
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8505), 2);
+                        put(DustList.Magnesium_Dust, 5);
+                        put(DustList.Olivine_Dust, 7);
+                        put(GemList.Olivine, 2);
                     }
                 }));
 
         // "Aluminium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 19),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1019),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2019),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3019),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4019),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5019),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6019) },
-                // "Raw Aluminium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5019),
-                // "Crushed Aluminium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5019),
+                new ItemStack[] {
+                    OreList.Aluminium_Ore_Stone,
+                    OreList.Aluminium_Ore_Netherrack,
+                    OreList.Aluminium_Ore_EndStone },
+                RawOreList.Raw_Aluminium_Ore,
+                CrushedOreList.Crushed_Aluminium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Aluminium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2019), 5);
-                        // "Bauxite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2822), 9);
+                        put(DustList.Aluminium_Dust, 5);
+                        put(DustList.Bauxite_Dust, 9);
                     }
                 }));
 
         // "Raw Silicon Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 20),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1020),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2020),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3020),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4020),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5020),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6020) },
-                // "Raw Raw Silicon Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5020),
-                // "Crushed Raw Silicon Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5020),
+                new ItemStack[] {
+                    OreList.Raw_Silicon_Ore_Stone,
+                    OreList.Raw_Silicon_Ore_Netherrack,
+                    OreList.Raw_Silicon_Ore_EndStone },
+                RawOreList.Raw_Raw_Silicon_Ore,
+                CrushedOreList.Crushed_Raw_Silicon_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Raw Silicon Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2020), 5);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 9);
+                        put(DustList.Raw_Silicon_Dust, 5);
+                        put(DustList.Silicon_Dioxide_Dust, 9);
                     }
                 }));
 
         // "Sulfur Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 22),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1022),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2022),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3022),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4022),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5022),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6022) },
-                // "Raw Sulfur Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5022),
-                // "Crushed Sulfur Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5022),
+                new ItemStack[] {
+                    OreList.Sulfur_Ore_Stone,
+                    OreList.Sulfur_Ore_Netherrack,
+                    OreList.Sulfur_Ore_EndStone },
+                RawOreList.Raw_Sulfur_Ore,
+                CrushedOreList.Crushed_Sulfur_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 14);
+                        put(DustList.Sulfur_Dust, 14);
                     }
                 }));
 
         // "Scandium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 27),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1027),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2027),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3027),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4027),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5027),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6027) },
-                // "Raw Scandium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5027),
-                // "Crushed Scandium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5027),
+                new ItemStack[] {
+                    OreList.Scandium_Ore_Stone,
+                    OreList.Scandium_Ore_Netherrack,
+                    OreList.Scandium_Ore_EndStone },
+                RawOreList.Raw_Scandium_Ore,
+                CrushedOreList.Crushed_Scandium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Scandium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2027), 14);
+                        put(DustList.Scandium_Dust, 14);
                     }
                 }));
 
         // "Titanium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 28),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1028),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2028),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3028),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4028),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5028),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6028) },
-                // "Raw Titanium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5028),
-                // "Raw Titanium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5028),
+                new ItemStack[] {
+                    OreList.Titanium_Ore_Stone,
+                    OreList.Titanium_Ore_Netherrack,
+                    OreList.Titanium_Ore_EndStone },
+                RawOreList.Raw_Titanium_Ore,
+                CrushedOreList.Crushed_Titanium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Titanium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2028), 5);
-                        // "Almandine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2820), 9);
+                        put(DustList.Titanium_Dust, 5);
+                        put(DustList.Almandine_Dust, 9);
                     }
                 }));
 
         // "Vanadium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 29),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1029),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2029),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3029),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4029),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5029),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6029) },
-                // "Raw Vanadium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5029),
-                // "Crushed Vanadium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5029),
+                new ItemStack[] {
+                    OreList.Vanadium_Ore_Stone,
+                    OreList.Vanadium_Ore_Netherrack,
+                    OreList.Vanadium_Ore_EndStone },
+                RawOreList.Raw_Vanadium_Ore,
+                CrushedOreList.Crushed_Vanadium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Vanadium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2029), 14);
+                        put(DustList.Vanadium_Dust, 14);
                     }
                 }));
 
         // "Chrome Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 30),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1030),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2030),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3030),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4030),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5030),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6030) },
-                // "Raw Chrome Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5030),
-                // "Crushed Chrome Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5030),
+                new ItemStack[] {
+                    OreList.Chrome_Ore_Stone,
+                    OreList.Chrome_Ore_Netherrack,
+                    OreList.Chrome_Ore_EndStone },
+                RawOreList.Raw_Chrome_Ore,
+                CrushedOreList.Crushed_Chrome_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 5);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 6);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 4);
+                        put(DustList.Chrome_Dust, 5);
+                        put(DustList.Iron_Dust, 6);
+                        put(DustList.Magnesium_Dust, 4);
                     }
                 }));
 
         // "Manganese Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 31),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1031),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2031),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3031),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4031),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5031),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6031) },
-                // "Raw Manganese Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5031),
-                // "Crushed Manganese Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5031),
+                new ItemStack[] {
+                    OreList.Manganese_Ore_Stone,
+                    OreList.Manganese_Ore_Netherrack,
+                    OreList.Manganese_Ore_EndStone },
+                RawOreList.Raw_Manganese_Ore,
+                CrushedOreList.Crushed_Manganese_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 5);
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 5);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
+                        put(DustList.Manganese_Dust, 5);
+                        put(DustList.Chrome_Dust, 5);
+                        put(DustList.Iron_Dust, 5);
                     }
                 }));
 
         // "Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 32),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1032),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2032),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3032),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4032),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5032),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6032) },
-                // "Raw Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5032),
-                // "Crushed Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5032),
+                new ItemStack[] {
+                    OreList.Iron_Ore_Stone,
+                    OreList.Iron_Ore_Netherrack,
+                    OreList.Iron_Ore_EndStone },
+                RawOreList.Raw_Iron_Ore,
+                CrushedOreList.Crushed_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 7);
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 4);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Nickel_Dust, 7);
+                        put(DustList.Tin_Dust, 4);
                     }
                 }));
 
         // "Cobalt Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 33),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1033),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2033),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3033),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4033),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5033),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6033) },
-                // "Raw Cobalt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5033),
-                // "Crushed Cobalt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5033),
+                new ItemStack[] {
+                    OreList.Cobalt_Ore_Stone,
+                    OreList.Cobalt_Ore_Netherrack,
+                    OreList.Cobalt_Ore_EndStone },
+                RawOreList.Raw_Cobalt_Ore,
+                CrushedOreList.Crushed_Cobalt_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 6);
-                        // "Cobaltite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2827), 9);
+                        put(DustList.Cobalt_Dust, 6);
+                        put(DustList.Cobaltite_Dust, 9);
                     }
                 }));
 
         // "Nickel Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 34),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1034),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2034),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3034),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4034),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5034),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6034) },
-                // "Raw Nickel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5034),
-                // "Crushed Nickel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5034),
+                new ItemStack[] {
+                    OreList.Nickel_Ore_Stone,
+                    OreList.Nickel_Ore_Netherrack,
+                    OreList.Nickel_Ore_EndStone },
+                RawOreList.Raw_Nickel_Ore,
+                CrushedOreList.Crushed_Nickel_Ore,
                 new HashMap<>() {
 
                     {
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 7);
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 5);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 2);
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 4);
+                        put(DustList.Nickel_Dust, 7);
+                        put(DustList.Cobalt_Dust, 5);
+                        put(DustList.Iron_Dust, 2);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 4);
                     }
                 }));
 
         // "Copper Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 35),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1035),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2035),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3035),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4035),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5035),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6035) },
-                // "Raw Copper Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5035),
-                // "Crushed Copper Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5035),
+                new ItemStack[] {
+                    OreList.Copper_Ore_Stone,
+                    OreList.Copper_Ore_Netherrack,
+                    OreList.Copper_Ore_EndStone },
+                RawOreList.Raw_Copper_Ore,
+                CrushedOreList.Crushed_Copper_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 6);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 1);
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 5);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 4);
+                        put(DustList.Copper_Dust, 6);
+                        put(DustList.Nickel_Dust, 1);
+                        put(DustList.Cobalt_Dust, 5);
+                        put(DustList.Gold_Dust, 4);
                     }
                 }));
 
         // "Zinc Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 36),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1036),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2036),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3036),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4036),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5036),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6036) },
-                // "Raw Zinc Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5036),
-                // "Crushed Zinc Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5036),
+                new ItemStack[] {
+                    OreList.Zinc_Ore_Stone,
+                    OreList.Zinc_Ore_Netherrack,
+                    OreList.Zinc_Ore_EndStone },
+                RawOreList.Raw_Zinc_Ore,
+                CrushedOreList.Crushed_Zinc_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 6);
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 5);
-                        // "Gallium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2037), 4);
+                        put(DustList.Zinc_Dust, 6);
+                        put(DustList.Tin_Dust, 5);
+                        put(DustList.Gallium_Dust, 4);
                     }
                 }));
 
         // "Gallium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 37),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1037),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2037),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3037),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4037),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5037),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6037) },
-                // "Raw Gallium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5037),
-                // "Crushed Gallium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5037),
+                new ItemStack[] {
+                    OreList.Gallium_Ore_Stone,
+                    OreList.Gallium_Ore_Netherrack,
+                    OreList.Gallium_Ore_EndStone },
+                RawOreList.Raw_Gallium_Ore,
+                CrushedOreList.Crushed_Gallium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gallium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2037), 14);
+                        put(DustList.Gallium_Dust, 14);
                     }
                 }));
 
         // "Arsenic Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 39),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1039),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2039),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3039),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4039),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5039),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6039) },
-                // "Raw Arsenic Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5039),
-                // "Crushed Arsenic Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5039),
+                new ItemStack[] {
+                    OreList.Arsenic_Ore_Stone,
+                    OreList.Arsenic_Ore_Netherrack,
+                    OreList.Arsenic_Ore_EndStone },
+                RawOreList.Raw_Arsenic_Ore,
+                CrushedOreList.Crushed_Arsenic_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Arsenic Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2039), 14);
+                        put(DustList.Arsenic_Dust, 14);
                     }
                 }));
 
         // "Rubidium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 43),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1043),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2043),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3043),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4043),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5043),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6043) },
-                // "Raw Rubidium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5043),
-                // "Crushed Rubidium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5043),
+                new ItemStack[] {
+                    OreList.Rubidium_Ore_Stone,
+                    OreList.Rubidium_Ore_Netherrack,
+                    OreList.Rubidium_Ore_EndStone },
+                RawOreList.Raw_Rubidium_Ore,
+                CrushedOreList.Crushed_Rubidium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Rubidium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2043), 14);
+                        put(DustList.Rubidium_Dust, 14);
                     }
                 }));
 
         // "Strontium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 44),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1044),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2044),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3044),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4044),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5044),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6044) },
-                // "Raw Strontium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5044),
-                // "Crushed Strontium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5044),
+                new ItemStack[] {
+                    OreList.Strontium_Ore_Stone,
+                    OreList.Strontium_Ore_Netherrack,
+                    OreList.Strontium_Ore_EndStone },
+                RawOreList.Raw_Strontium_Ore,
+                CrushedOreList.Crushed_Strontium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Strontium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2044), 14);
+                        put(DustList.Strontium_Dust, 14);
                     }
                 }));
 
         // "Yttrium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 45),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1045),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2045),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3045),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4045),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5045),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6045) },
-                // "Raw Yttrium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5045),
-                // "Crushed Yttrium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5045),
+                new ItemStack[] {
+                    OreList.Yttrium_Ore_Stone,
+                    OreList.Yttrium_Ore_Netherrack,
+                    OreList.Yttrium_Ore_EndStone },
+                RawOreList.Raw_Yttrium_Ore,
+                CrushedOreList.Crushed_Yttrium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 14);
+                        put(DustList.Yttrium_Dust, 14);
                     }
                 }));
 
         // "Niobium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 47),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1047),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2047),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3047),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4047),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5047),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6047) },
-                // "Raw Niobium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5047),
-                // "Crushed Niobium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5047),
+                new ItemStack[] {
+                    OreList.Niobium_Ore_Stone,
+                    OreList.Niobium_Ore_Netherrack,
+                    OreList.Niobium_Ore_EndStone },
+                RawOreList.Raw_Niobium_Ore,
+                CrushedOreList.Crushed_Niobium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Niobium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2047), 14);
+                        put(DustList.Niobium_Dust, 14);
                     }
                 }));
 
         // "Molybdenum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 48),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1048),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2048),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3048),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4048),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5048),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6048) },
-                // "Raw Molybdenum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5048),
-                // "Crushed Molybdenum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5048),
+                new ItemStack[] {
+                    OreList.Molybdenum_Ore_Stone,
+                    OreList.Molybdenum_Ore_Netherrack,
+                    OreList.Molybdenum_Ore_EndStone },
+                RawOreList.Raw_Molybdenum_Ore,
+                CrushedOreList.Crushed_Molybdenum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Molybdenum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2048), 14);
+                        put(DustList.Molybdenum_Dust, 14);
                     }
                 }));
 
         // "Palladium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 52),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1052),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2052),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3052),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4052),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5052),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6052) },
-                // "Raw Palladium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5052),
-                // "Crushed Palladium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5052),
+                new ItemStack[] {
+                    OreList.Palladium_Ore_Stone,
+                    OreList.Palladium_Ore_Netherrack,
+                    OreList.Palladium_Ore_EndStone },
+                RawOreList.Raw_Palladium_Ore,
+                CrushedOreList.Crushed_Palladium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Palladium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2052), 10);
+                        put(DustList.Palladium_Dust, 10);
                     }
                 }));
 
         // "Silver Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 54),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1054),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2054),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3054),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4054),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5054),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6054) },
-                // "Raw Silver Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5054),
-                // "Crushed Silver Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5054),
+                new ItemStack[] {
+                    OreList.Silver_Ore_Stone,
+                    OreList.Silver_Ore_Netherrack,
+                    OreList.Silver_Ore_EndStone },
+                RawOreList.Raw_Silver_Ore,
+                CrushedOreList.Crushed_Silver_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 6);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 4);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 5);
+                        put(DustList.Silver_Dust, 6);
+                        put(DustList.Sulfur_Dust, 4);
+                        put(DustList.Lead_Dust, 5);
                     }
                 }));
 
         // "Cadmium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 55),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1055),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2055),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3055),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4055),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5055),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6055) },
-                // "Raw Cadmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5055),
-                // "Crushed Cadmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5055),
+                new ItemStack[] {
+                    OreList.Cadmium_Ore_Stone,
+                    OreList.Cadmium_Ore_Netherrack,
+                    OreList.Cadmium_Ore_EndStone },
+                RawOreList.Raw_Cadmium_Ore,
+                CrushedOreList.Crushed_Cadmium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cadmium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2055), 14);
+                        put(DustList.Cadmium_Dust, 14);
                     }
                 }));
 
         // "Indium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 56),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1056),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2056),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3056),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4056),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5056),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6056) },
-                // "Raw Indium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5056),
-                // "Crushed Indium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5056),
+                new ItemStack[] {
+                    OreList.Indium_Ore_Stone,
+                    OreList.Indium_Ore_Netherrack,
+                    OreList.Indium_Ore_EndStone },
+                RawOreList.Raw_Indium_Ore,
+                CrushedOreList.Crushed_Indium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Indium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2056), 14);
+                        put(DustList.Indium_Dust, 14);
                     }
                 }));
 
         // "Tin Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 57),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1057),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2057),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3057),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4057),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5057),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6057) },
-                // "Raw Tin Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5057),
-                // "Crushed Tin Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5057),
+                new ItemStack[] {
+                    OreList.Tin_Ore_Stone,
+                    OreList.Tin_Ore_Netherrack,
+                    OreList.Tin_Ore_EndStone },
+                RawOreList.Raw_Tin_Ore,
+                CrushedOreList.Crushed_Tin_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 7);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 6);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 6);
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 4);
+                        put(DustList.Tin_Dust, 7);
+                        put(DustList.Iron_Dust, 6);
+                        put(DustList.Zinc_Dust, 6);
+                        put(DustList.Zirconium_Dust, 4);
                     }
                 }));
 
         // "Antimony Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 58),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1058),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2058),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3058),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4058),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5058),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6058) },
-                // "Raw Antimony Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5058),
-                // "Crushed Antimony Ore"
+                new ItemStack[] {
+                    OreList.Antimony_Ore_Stone,
+                    OreList.Antimony_Ore_Netherrack,
+                    OreList.Antimony_Ore_EndStone },
+                RawOreList.Raw_Antimony_Ore,
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5058),
                 new HashMap<>() {
-
                     {
-                        // "Antimony Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2058), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 6);
+                        put(DustList.Antimony_Dust, 6);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Zinc_Dust, 6);
                     }
                 }));
 
         // "Tellurium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 59),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1059),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2059),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3059),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4059),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5059),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6059) },
-                // "Raw Tellurium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5059),
-                // "Crushed Tellurium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5059),
+                new ItemStack[] {
+                    OreList.Tellurium_Ore_Stone,
+                    OreList.Tellurium_Ore_Netherrack,
+                    OreList.Tellurium_Ore_EndStone },
+                RawOreList.Raw_Tellurium_Ore,
+                CrushedOreList.Crushed_Tellurium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tellurium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2059), 14);
+                        put(DustList.Tellurium_Dust, 14);
                     }
                 }));
 
         // "Caesium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 62),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1062),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2062),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3062),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4062),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5062),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6062) },
-                // "Raw Caesium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5062),
-                // "Crushed Caesium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5062),
+                new ItemStack[] {
+                    OreList.Caesium_Ore_Stone,
+                    OreList.Caesium_Ore_Netherrack,
+                    OreList.Caesium_Ore_EndStone },
+                RawOreList.Raw_Caesium_Ore,
+                CrushedOreList.Crushed_Caesium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Caesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2062), 14);
+                        put(DustList.Caesium_Dust, 14);
                     }
                 }));
 
         // "Barium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 63),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1063),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2063),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3063),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4063),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5063),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6063) },
-                // "Raw Barium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5063),
-                // "Crushed Barium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5063),
+                new ItemStack[] {
+                    OreList.Barium_Ore_Stone,
+                    OreList.Barium_Ore_Netherrack,
+                    OreList.Barium_Ore_EndStone },
+                RawOreList.Raw_Barium_Ore,
+                CrushedOreList.Crushed_Barium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Barium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2063), 14);
+                        put(DustList.Barium_Dust, 14);
                     }
                 }));
 
         // "Lanthanum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 64),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1064),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2064),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3064),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4064),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5064),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6064) },
-                // "Raw Lanthanum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5064),
-                // "Crushed Lanthanum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5064),
+                new ItemStack[] {
+                    OreList.Lanthanum_Ore_Stone,
+                    OreList.Lanthanum_Ore_Netherrack,
+                    OreList.Lanthanum_Ore_EndStone },
+                RawOreList.Raw_Lanthanum_Ore,
+                CrushedOreList.Crushed_Lanthanum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lanthanum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2064), 14);
+                        put(DustList.Lanthanum_Dust, 14);
                     }
                 }));
 
         // "Cerium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 65),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1065),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2065),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3065),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4065),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5065),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6065) },
-                // "Raw Cerium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5065),
-                // "Crushed Cerium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5065),
+                new ItemStack[] {
+                    OreList.Cerium_Ore_Stone,
+                    OreList.Cerium_Ore_Netherrack,
+                    OreList.Cerium_Ore_EndStone },
+                RawOreList.Raw_Cerium_Ore,
+                CrushedOreList.Crushed_Cerium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 32);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 32);
                     }
                 }));
 
         // "Praseodymium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 66),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1066),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2066),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3066),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4066),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5066),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6066) },
-                // "Raw Praseodymium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5066),
-                // "Crushed Praseodymium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5066),
+                new ItemStack[] {
+                    OreList.Praseodymium_Ore_Stone,
+                    OreList.Praseodymium_Ore_Netherrack,
+                    OreList.Praseodymium_Ore_EndStone },
+                RawOreList.Raw_Praseodymium_Ore,
+                CrushedOreList.Crushed_Praseodymium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Praseodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2066), 14);
+                        put(DustList.Praseodymium_Dust, 14);
                     }
                 }));
 
         // "Neodymium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 67),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1067),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2067),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3067),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4067),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5067),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6067) },
-                // "Raw Neodymium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5067),
-                // "Crushed Neodymium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5067),
+                new ItemStack[] {
+                    OreList.Neodymium_Ore_Stone,
+                    OreList.Neodymium_Ore_Netherrack,
+                    OreList.Neodymium_Ore_EndStone },
+                RawOreList.Raw_Neodymium_Ore,
+                CrushedOreList.Crushed_Neodymium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 5);
-                        // "Monazite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2520), 3);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 4);
-                        // Monazite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8520), 2);
+                        put(DustList.Neodymium_Dust, 5);
+                        put(DustList.Monazite_Dust, 3);
+                        put(DustList.Rare_Earth, 4);
+                        put(GemList.Monazite, 2);
                     }
                 }));
 
         // "Promethium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 68),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1068),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2068),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3068),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4068),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5068),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6068) },
-                // "Raw Promethium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5068),
-                // "Crushed Promethium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5068),
+                new ItemStack[] {
+                    OreList.Promethium_Ore_Stone,
+                    OreList.Promethium_Ore_Netherrack,
+                    OreList.Promethium_Ore_EndStone },
+                RawOreList.Raw_Promethium_Ore,
+                CrushedOreList.Crushed_Promethium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Promethium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2068), 14);
+                        put(DustList.Promethium_Dust, 14);
                     }
                 }));
 
         // "Samarium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 69),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1069),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2069),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3069),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4069),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5069),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6069) },
-                // "Raw Samarium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5069),
-                // "Crushed Samarium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5069),
+                new ItemStack[] {
+                    OreList.Samarium_Ore_Stone,
+                    OreList.Samarium_Ore_Netherrack,
+                    OreList.Samarium_Ore_EndStone },
+                RawOreList.Raw_Samarium_Ore,
+                CrushedOreList.Crushed_Samarium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Samarium Ore Concentrate Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11128), 32);
+                        put(DustList.Samarium_Ore_Concentrate_Dust, 32);
                     }
                 }));
 
         // "Europium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 70),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1070),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2070),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3070),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4070),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5070),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6070) },
-                // "Raw Europium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5070),
-                // "Crushed Europium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5070),
+                new ItemStack[] {
+                    OreList.Europium_Ore_Stone,
+                    OreList.Europium_Ore_Netherrack,
+                    OreList.Europium_Ore_EndStone },
+                RawOreList.Raw_Europium_Ore,
+                CrushedOreList.Crushed_Europium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Europium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2070), 14);
+                        put(DustList.Europium_Dust, 14);
                     }
                 }));
 
         // "Gadolinium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 71),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1071),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2071),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3071),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4071),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5071),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6071) },
-                // "Raw Gadolinium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5071),
-                // "Crushed Gadolinium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5071),
+                new ItemStack[] {
+                    OreList.Gadolinium_Ore_Stone,
+                    OreList.Gadolinium_Ore_Netherrack,
+                    OreList.Gadolinium_Ore_EndStone },
+                RawOreList.Raw_Gadolinium_Ore,
+                CrushedOreList.Crushed_Gadolinium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gadolinium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2071), 14);
+                        put(DustList.Gadolinium_Dust, 14);
                     }
                 }));
 
         // "Terbium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 72),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1072),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2072),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3072),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4072),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5072),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6072) },
-                // "Raw Terbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5072),
-                // "Crushed Terbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5072),
+                new ItemStack[] {
+                    OreList.Terbium_Ore_Stone,
+                    OreList.Terbium_Ore_Netherrack,
+                    OreList.Terbium_Ore_EndStone },
+                RawOreList.Raw_Terbium_Ore,
+                CrushedOreList.Crushed_Terbium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Terbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2072), 14);
+                        put(DustList.Terbium_Dust, 14);
                     }
                 }));
 
         // "Dysprosium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 73),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1073),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2073),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3073),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4073),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5073),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6073) },
-                // "Raw Dysprosium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5073),
-                // "Crushed Dysprosium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5073),
+                new ItemStack[] {
+                    OreList.Dysprosium_Ore_Stone,
+                    OreList.Dysprosium_Ore_Netherrack,
+                    OreList.Dysprosium_Ore_EndStone },
+                RawOreList.Raw_Dysprosium_Ore,
+                CrushedOreList.Crushed_Dysprosium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Dysprosium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2073), 14);
+                        put(DustList.Dysprosium_Dust, 14);
                     }
                 }));
 
         // "Holmium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 74),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1074),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2074),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3074),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4074),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5074),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6074) },
-                // "Raw Holmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5074),
-                // "Crushed Holmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5074),
+                new ItemStack[] {
+                    OreList.Holmium_Ore_Stone,
+                    OreList.Holmium_Ore_Netherrack,
+                    OreList.Holmium_Ore_EndStone },
+                RawOreList.Raw_Holmium_Ore,
+                CrushedOreList.Crushed_Holmium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Holmium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2074), 14);
+                        put(DustList.Holmium_Dust, 14);
                     }
                 }));
 
         // "Erbium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 75),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1075),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2075),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3075),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4075),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5075),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6075) },
-                // "Raw Erbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5075),
-                // "Crushed Erbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5075),
+                new ItemStack[] {
+                    OreList.Erbium_Ore_Stone,
+                    OreList.Erbium_Ore_Netherrack,
+                    OreList.Erbium_Ore_EndStone },
+                RawOreList.Raw_Erbium_Ore,
+                CrushedOreList.Crushed_Erbium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Erbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2075), 14);
+                        put(DustList.Erbium_Dust, 14);
                     }
                 }));
 
         // "Thulium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 76),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1076),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2076),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3076),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4076),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5076),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6076) },
-                // "Raw Thulium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5076),
-                // "Crushed Thulium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5076),
+                new ItemStack[] {
+                    OreList.Thulium_Ore_Stone,
+                    OreList.Thulium_Ore_Netherrack,
+                    OreList.Thulium_Ore_EndStone },
+                RawOreList.Raw_Thulium_Ore,
+                CrushedOreList.Crushed_Thulium_Ore,
                 new HashMap<>() {
 
                     {
-                        // "Thulium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2076), 14);
+                        put(DustList.Thulium_Dust, 14);
                     }
                 }));
 
         // "Ytterbium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 77),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1077),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2077),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3077),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4077),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5077),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6077) },
-                // "Raw Ytterbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5077),
-                // "Crushed Ytterbium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5077),
+                new ItemStack[] {
+                    OreList.Ytterbium_Ore_Stone,
+                    OreList.Ytterbium_Ore_Netherrack,
+                    OreList.Ytterbium_Ore_EndStone },
+                RawOreList.Raw_Ytterbium_Ore,
+                CrushedOreList.Crushed_Ytterbium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ytterbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2077), 14);
+                        put(DustList.Ytterbium_Dust, 14);
                     }
                 }));
 
         // "Lutetium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 78),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1078),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2078),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3078),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4078),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5078),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6078) },
-                // "Raw Lutetium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5078),
-                // "Crushed Lutetium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5078),
+                new ItemStack[] {
+                    OreList.Lutetium_Ore_Stone,
+                    OreList.Lutetium_Ore_Netherrack,
+                    OreList.Lutetium_Ore_EndStone },
+                RawOreList.Raw_Lutetium_Ore,
+                CrushedOreList.Crushed_Lutetium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lutetium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2078), 14);
+                        put(DustList.Lutetium_Dust, 14);
                     }
                 }));
 
         // "Tantalum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 80),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1080),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2080),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3080),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4080),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5080),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6080) },
-                // "Raw Tantalum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5080),
-                // "Crushed Tantalum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5080),
+                new ItemStack[] {
+                    OreList.Tantalum_Ore_Stone,
+                    OreList.Tantalum_Ore_Netherrack,
+                    OreList.Tantalum_Ore_EndStone },
+                RawOreList.Raw_Tantalum_Ore,
+                CrushedOreList.Crushed_Tantalum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tantalum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2080), 14);
+                        put(DustList.Tantalum_Dust, 14);
                     }
                 }));
 
         // "Tungsten Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 81),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1081),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2081),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3081),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4081),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5081),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6081) },
-                // "Raw Tungsten Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5081),
-                // "Crushed Tungsten Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5081),
+                new ItemStack[] {
+                    OreList.Tungsten_Ore_Stone,
+                    OreList.Tungsten_Ore_Netherrack,
+                    OreList.Tungsten_Ore_EndStone },
+                RawOreList.Raw_Tungsten_Ore,
+                CrushedOreList.Crushed_Tungsten_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tungsten Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2081), 5);
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 5);
-                        // "Molybdenum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2048), 4);
+                        put(DustList.Tungsten_Dust, 5);
+                        put(DustList.Manganese_Dust, 5);
+                        put(DustList.Molybdenum_Dust, 4);
                     }
                 }));
 
         // "Osmium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 83),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1083),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2083),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3083),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4083),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5083),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6083) },
-                // "Raw Osmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5083),
-                // "Crushed Osmium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5083),
+                new ItemStack[] {
+                    OreList.Osmium_Ore_Stone,
+                    OreList.Osmium_Ore_Netherrack,
+                    OreList.Osmium_Ore_EndStone },
+                RawOreList.Raw_Osmium_Ore,
+                CrushedOreList.Crushed_Osmium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Osmium Dust"
-                        put(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L), 2);
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 5);
-                        // "Rarest Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 69), 4);
+                        put(DustList.Osmium_Dust, 2);
+                        put(DustList.Iridium_Metal_Residue_Dust, 5);
+                        put(DustList.Rarest_Metal_Residue_Dust, 4);
                     }
                 }));
 
         // "Iridium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 84),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1084),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2084),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3084),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4084),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5084),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6084) },
-                // "Raw Iridium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5084),
-                // "Crushed Iridium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5084),
+                new ItemStack[] {
+                    OreList.Iridium_Ore_Stone,
+                    OreList.Iridium_Ore_Netherrack,
+                    OreList.Iridium_Ore_EndStone },
+                RawOreList.Raw_Iridium_Ore,
+                CrushedOreList.Crushed_Iridium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 4);
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 10);
-                        // "Rarest Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 69), 3);
-                        // "Osmium Dust"
-                        put(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L), 5);
+                        put(DustList.Iridium_Metal_Residue_Dust, 4);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 10);
+                        put(DustList.Rarest_Metal_Residue_Dust, 3);
+                        put(DustList.Osmium_Dust, 5);
                     }
                 }));
 
         // "Platinum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 85),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1085),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2085),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3085),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4085),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5085),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6085) },
-                // "Raw Platinum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5085),
-                // "Crushed Platinum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5085),
+                new ItemStack[] {
+                    OreList.Platinum_Ore_Stone,
+                    OreList.Platinum_Ore_Netherrack,
+                    OreList.Platinum_Ore_EndStone },
+                RawOreList.Raw_Platinum_Ore,
+                CrushedOreList.Crushed_Platinum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 3);
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 8);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 5);
+                        put(DustList.Iridium_Metal_Residue_Dust, 3);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 8);
+                        put(DustList.Nickel_Dust, 5);
                     }
                 }));
 
         // "Gold Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 86),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1086),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2086),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3086),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4086),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5086),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6086) },
-                // "Raw Gold Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5086),
-                // "Crushed Gold Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5086),
+                new ItemStack[] {
+                    OreList.Gold_Ore_Stone,
+                    OreList.Gold_Ore_Netherrack,
+                    OreList.Gold_Ore_EndStone },
+                RawOreList.Raw_Gold_Ore,
+                CrushedOreList.Crushed_Gold_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 6);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 6);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 4);
+                        put(DustList.Copper_Dust, 6);
+                        put(DustList.Gold_Dust, 6);
+                        put(DustList.Nickel_Dust, 4);
                     }
                 }));
 
         // "Lead Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 89),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1089),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2089),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3089),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4089),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5089),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6089) },
-                // "Raw Lead Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5089),
-                // "Crushed Lead Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5089),
+                new ItemStack[] {
+                    OreList.Lead_Ore_Stone,
+                    OreList.Lead_Ore_Netherrack,
+                    OreList.Lead_Ore_EndStone },
+                RawOreList.Raw_Lead_Ore,
+                CrushedOreList.Crushed_Lead_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 5);
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 6);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 4);
+                        put(DustList.Lead_Dust, 5);
+                        put(DustList.Silver_Dust, 6);
+                        put(DustList.Sulfur_Dust, 4);
                     }
                 }));
 
         // "Bismuth Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 90),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1090),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2090),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3090),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4090),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5090),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6090) },
-                // "Raw Bismuth Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5090),
-                // "Crushed Bismuth Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5090),
+                new ItemStack[] {
+                    OreList.Bismuth_Ore_Stone,
+                    OreList.Bismuth_Ore_Netherrack,
+                    OreList.Bismuth_Ore_EndStone },
+                RawOreList.Raw_Bismuth_Ore,
+                CrushedOreList.Crushed_Bismuth_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bismuth Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2090), 14);
+                        put(DustList.Bismuth_Dust, 14);
                     }
                 }));
 
         // "Thorium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 96),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1096),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2096),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3096),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4096),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5096),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6096) },
-                // "Raw Thorium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5096),
-                // "Crushed Thorium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5096),
+                new ItemStack[] {
+                    OreList.Thorium_Ore_Stone,
+                    OreList.Thorium_Ore_Netherrack,
+                    OreList.Thorium_Ore_EndStone },
+                RawOreList.Raw_Thorium_Ore,
+                CrushedOreList.Crushed_Thorium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 5);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 6);
-                        // "Uranium 238 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2098), 6);
-                        // "Radium 226 Dust"
-                        put(getModItem(GTPlusPlus.ID, "dustRadium226", 1L), 4);
+                        put(DustList.Lead_Dust, 5);
+                        put(DustList.Thorium_Dust, 6);
+                        put(DustList.Uranium_238_Dust, 6);
+                        put(DustList.Radium_226_Dust, 4);
                     }
                 }));
 
         // "Uranium 235 Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 97),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1097),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2097),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3097),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4097),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5097),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6097) },
-                // "Raw Uranium 235 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5097),
-                // "Crushed Uranium 235 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5097),
+                new ItemStack[] {
+                    OreList.Uranium_235_Ore_Stone,
+                    OreList.Uranium_235_Ore_Netherrack,
+                    OreList.Uranium_235_Ore_EndStone },
+                RawOreList.Raw_Uranium_235_Ore,
+                CrushedOreList.Crushed_Uranium_235_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Uranium 235 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2097), 14);
+                        put(DustList.Uranium_235_Dust, 14);
                     }
                 }));
 
         // "Uranium 238 Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 98),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1098),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2098),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3098),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4098),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5098),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6098) },
-                // "Raw Uranium 238 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5098),
-                // "Crushed Uranium 238 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5098),
+                new ItemStack[] {
+                    OreList.Uranium_238_Ore_Stone,
+                    OreList.Uranium_238_Ore_Netherrack,
+                    OreList.Uranium_238_Ore_EndStone },
+                RawOreList.Raw_Uranium_238_Ore,
+                CrushedOreList.Crushed_Uranium_238_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 6);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 1);
-                        // "Uranium 235 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2097), 3);
-                        // "Uranium 238 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2098), 5);
-                        // "Radium 226 Dust"
-                        put(getModItem(GTPlusPlus.ID, "dustRadium226", 1L), 4);
+                        put(DustList.Lead_Dust, 6);
+                        put(DustList.Thorium_Dust, 1);
+                        put(DustList.Uranium_235_Dust, 3);
+                        put(DustList.Uranium_238_Dust, 5);
+                        put(DustList.Radium_226_Dust, 4);
                     }
                 }));
 
         // "Plutonium 239 Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5100),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6100) },
-                // "Raw Plutonium 239 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5100),
-                // "Crushed Plutonium 239 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5100),
+                new ItemStack[] {
+                    OreList.Plutonium_239_Ore_Stone,
+                    OreList.Plutonium_239_Ore_Netherrack,
+                    OreList.Plutonium_239_Ore_EndStone },
+                RawOreList.Raw_Plutonium_239_Ore,
+                CrushedOreList.Crushed_Plutonium_239_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 4);
-                        // "Plutonium 239 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2100), 5);
-                        // "Uranium 238 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2098), 5);
+                        put(DustList.Lead_Dust, 4);
+                        put(DustList.Plutonium_239_Dust, 5);
+                        put(DustList.Uranium_238_Dust, 5);
                     }
                 }));
 
         // "Plutonium 241 Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5101),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6101) },
-                // "Raw Plutonium 241 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5101),
-                // "Crushed Plutonium 241 Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5101),
+                new ItemStack[] {
+                    OreList.Plutonium_241_Ore_Stone,
+                    OreList.Plutonium_241_Ore_Netherrack,
+                    OreList.Plutonium_241_Ore_EndStone },
+                RawOreList.Raw_Plutonium_241_Ore,
+                CrushedOreList.Crushed_Plutonium_241_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Plutonium 241 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2101), 14);
+                        put(DustList.Plutonium_241_Dust, 14);
                     }
                 }));
 
         // "Americium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5103),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6103) },
-                // "Raw Americium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5103),
-                // "Crushed Americium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5103),
+                new ItemStack[] {
+                    OreList.Americium_Ore_Stone,
+                    OreList.Americium_Ore_Netherrack,
+                    OreList.Americium_Ore_EndStone },
+                RawOreList.Raw_Americium_Ore,
+                CrushedOreList.Crushed_Americium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Americium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2103), 14);
+                        put(DustList.Americium_Dust, 14);
                     }
                 }));
 
         // "Raw Tengam Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5110),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6110) },
-                // "Raw Raw Tengam Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5110),
-                // "Crushed Raw Tengam Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5110),
+                new ItemStack[] {
+                    OreList.Raw_Tengam_Ore_Stone,
+                    OreList.Raw_Tengam_Ore_Netherrack,
+                    OreList.Raw_Tengam_Ore_EndStone },
+                RawOreList.Raw_Raw_Tengam_Ore,
+                CrushedOreList.Crushed_Raw_Tengam_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Raw Tengam Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2110), 5);
-                        // "Magnetic Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2356), 5);
-                        // "Magnetic Samarium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2399), 4);
+                        put(DustList.Raw_Tengam_Dust, 5);
+                        put(DustList.Magnetic_Neodymium_Dust, 5);
+                        put(DustList.Magnetic_Samarium_Dust, 4);
                     }
                 }));
 
         // "Neutronium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5129),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6129) },
-                // "Raw Neutronium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5129),
-                // "Crushed Neutronium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5129),
+                new ItemStack[] {
+                    OreList.Neutronium_Ore_Stone,
+                    OreList.Neutronium_Ore_Netherrack,
+                    OreList.Neutronium_Ore_EndStone },
+                RawOreList.Raw_Neutronium_Ore,
+                CrushedOreList.Crushed_Neutronium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Neutronium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2129), 14);
+                        put(DustList.Neutronium_Dust, 14);
                     }
                 }));
 
         // "Electrum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5303),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6303) },
-                // "Raw Electrum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5303),
-                // "Crushed Electrum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5303),
+                new ItemStack[] {
+                    OreList.Electrum_Ore_Stone,
+                    OreList.Electrum_Ore_Netherrack,
+                    OreList.Electrum_Ore_EndStone },
+                RawOreList.Raw_Electrum_Ore,
+                CrushedOreList.Crushed_Electrum_Ore,
                 new HashMap<>() {
 
                     {
-                        // "Electrum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2303), 5);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 6);
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 4);
+                        put(DustList.Electrum_Dust, 5);
+                        put(DustList.Gold_Dust, 6);
+                        put(DustList.Silver_Dust, 4);
                     }
                 }));
 
         // "Pig Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5307),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6307) },
-                // "Raw Pig Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5307),
-                // "Crushed Pig Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5307),
+                new ItemStack[] {
+                    OreList.Pig_Iron_Ore_Stone,
+                    OreList.Pig_Iron_Ore_Netherrack,
+                    OreList.Pig_Iron_Ore_EndStone },
+                RawOreList.Raw_Pig_Iron_Ore,
+                CrushedOreList.Crushed_Pig_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 9);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 1);
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 1);
+                        put(DustList.Iron_Dust, 9);
+                        put(DustList.Nickel_Dust, 1);
+                        put(DustList.Tin_Dust, 1);
                     }
                 }));
 
         // "Adamantium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5319),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6319) },
-                // "Raw Adamantium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5319),
-                // "Crushed Adamantium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5319),
+                new ItemStack[] {
+                    OreList.Adamantium_Ore_Stone,
+                    OreList.Adamantium_Ore_Netherrack,
+                    OreList.Adamantium_Ore_EndStone },
+                RawOreList.Raw_Adamantium_Ore,
+                CrushedOreList.Crushed_Adamantium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Adamantium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2319), 14);
+                        put(DustList.Adamantium_Dust, 14);
                     }
                 }));
 
         // "Fluxed Electrum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5320),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6320) },
-                // "Raw Fluxed Electrum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5320),
-                // "Crushed Fluxed Electrum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5320),
+                new ItemStack[] {
+                    OreList.Fluxed_Electrum_Ore_Stone,
+                    OreList.Fluxed_Electrum_Ore_Netherrack,
+                    OreList.Fluxed_Electrum_Ore_EndStone },
+                RawOreList.Raw_Fluxed_Electrum_Ore,
+                CrushedOreList.Crushed_Fluxed_Electrum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Fluxed Electrum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2320), 14);
+                        put(DustList.Fluxed_Electrum_Dust, 14);
                     }
                 }));
 
         // "Infused Gold Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5323),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6323) },
-                // "Raw Infused Gold Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5323),
-                // "Crushed Infused Gold Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5323),
+                new ItemStack[] {
+                    OreList.Infused_Gold_Ore_Stone,
+                    OreList.Infused_Gold_Ore_Netherrack,
+                    OreList.Infused_Gold_Ore_EndStone },
+                RawOreList.Raw_Infused_Gold_Ore,
+                CrushedOreList.Crushed_Infused_Gold_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 10);
-                        // "Infused Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2323), 5);
+                        put(DustList.Gold_Dust, 10);
+                        put(DustList.Infused_Gold_Dust, 5);
                     }
                 }));
 
         // "Naquadah Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5324),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6324) },
-                // "Raw Naquadah Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5324),
-                // "Crushed Naquadah Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5324),
+                new ItemStack[] {
+                    OreList.Naquadah_Ore_Stone,
+                    OreList.Naquadah_Ore_Netherrack,
+                    OreList.Naquadah_Ore_EndStone },
+                RawOreList.Raw_Naquadah_Ore,
+                CrushedOreList.Crushed_Naquadah_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Enriched-Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10067), 22);
-                        // "Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10054), 10);
+                        put(DustList.Enriched_Naquadah_Oxide_Mixture_Dust, 22);
+                        put(DustList.Naquadah_Oxide_Mixture_Dust, 10);
                     }
                 }));
 
         // "Enriched Naquadah Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5326),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6326) },
-                // "Raw Enriched Naquadah Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5326),
-                // "Crushed Enriched Naquadah Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5326),
+                new ItemStack[] {
+                    OreList.Enriched_Naquadah_Ore_Stone,
+                    OreList.Enriched_Naquadah_Ore_Netherrack,
+                    OreList.Enriched_Naquadah_Ore_EndStone },
+                RawOreList.Raw_Enriched_Naquadah_Ore,
+                CrushedOreList.Crushed_Enriched_Naquadah_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Enriched-Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10067), 8);
-                        // "Naquadah Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10054), 12);
-                        // "Naquadria Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10072), 10);
+                        put(DustList.Enriched_Naquadah_Oxide_Mixture_Dust, 8);
+                        put(DustList.Naquadah_Oxide_Mixture_Dust, 12);
+                        put(DustList.Naquadria_Oxide_Mixture_Dust, 10);
                     }
                 }));
 
         // "Naquadria Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5327),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6327) },
-                // "Raw Naquadria Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5327),
-                // "Crushed Naquadria Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5327),
+                new ItemStack[] {
+                    OreList.Naquadria_Ore_Stone,
+                    OreList.Naquadria_Ore_Netherrack,
+                    OreList.Naquadria_Ore_EndStone },
+                RawOreList.Raw_Naquadria_Ore,
+                CrushedOreList.Crushed_Naquadria_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Naquadria Oxide Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10072), 32);
+                        put(DustList.Naquadria_Oxide_Mixture_Dust, 32);
                     }
                 }));
 
         // "Tritanium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5329),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6329) },
-                // "Raw Tritanium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5329),
-                // "Crushed Tritanium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5329),
+                new ItemStack[] {
+                    OreList.Tritanium_Ore_Stone,
+                    OreList.Tritanium_Ore_Netherrack,
+                    OreList.Tritanium_Ore_EndStone },
+                RawOreList.Raw_Tritanium_Ore,
+                CrushedOreList.Crushed_Tritanium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tritanium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2329), 14);
+                        put(DustList.Tritanium_Dust, 14);
                     }
                 }));
 
         // "Mithril Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5331),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6331) },
-                // "Raw Mithril Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5331),
-                // "Crushed Mithril Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5331),
+                new ItemStack[] {
+                    OreList.Mithril_Ore_Stone,
+                    OreList.Mithril_Ore_Netherrack,
+                    OreList.Mithril_Ore_EndStone },
+                RawOreList.Raw_Mithril_Ore,
+                CrushedOreList.Crushed_Mithril_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 18);
-                        // "Mithril Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2331), 6);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 18);
+                        put(DustList.Mithril_Dust, 6);
                     }
                 }));
 
         // "Shadow Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5336),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6336) },
-                // "Raw Shadow Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5336),
-                // "Crushed Shadow Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5336),
+                new ItemStack[] {
+                    OreList.Shadow_Iron_Ore_Stone,
+                    OreList.Shadow_Iron_Ore_Netherrack,
+                    OreList.Shadow_Iron_Ore_EndStone },
+                RawOreList.Raw_Shadow_Iron_Ore,
+                CrushedOreList.Crushed_Shadow_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 9);
-                        // "Shadow Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2336), 5);
+                        put(DustList.Iron_Dust, 9);
+                        put(DustList.Shadow_Iron_Dust, 5);
                     }
                 }));
 
         // "Meteoric Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5340),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6340) },
-                // "Raw Meteoric Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5340),
-                // "Crushed Meteoric Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5340),
+                new ItemStack[] {
+                    OreList.Meteoric_Iron_Ore_Stone,
+                    OreList.Meteoric_Iron_Ore_Netherrack,
+                    OreList.Meteoric_Iron_Ore_EndStone },
+                RawOreList.Raw_Meteoric_Iron_Ore,
+                CrushedOreList.Crushed_Meteoric_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 1);
-                        // "Platinum Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 47), 2);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Meteoric Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2340), 5);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 4);
+                        put(DustList.Iridium_Metal_Residue_Dust, 1);
+                        put(DustList.Platinum_Metallic_Powder_Dust, 2);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Meteoric_Iron_Dust, 5);
+                        put(DustList.Nickel_Dust, 4);
                     }
                 }));
 
         // "Deep Dark Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5342),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6342) },
-                // "Raw Deep Dark Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5342),
-                // "Crushed Deep Dark Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5342),
+                new ItemStack[] {
+                    OreList.Deep_Dark_Iron_Ore_Stone,
+                    OreList.Deep_Dark_Iron_Ore_Netherrack,
+                    OreList.Deep_Dark_Iron_Ore_EndStone },
+                RawOreList.Raw_Deep_Dark_Iron_Ore,
+                CrushedOreList.Crushed_Deep_Dark_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Deep Dark Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2342), 5);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 9);
+                        put(DustList.Deep_Dark_Iron_Dust, 5);
+                        put(DustList.Iron_Dust, 9);
                     }
                 }));
 
         // "Firestone Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5347),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6347) },
-                // "Raw Firestone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5347),
-                // "Crushed Firestone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5347),
+                new ItemStack[] {
+                    OreList.Firestone_Ore_Stone,
+                    OreList.Firestone_Ore_Netherrack,
+                    OreList.Firestone_Ore_EndStone },
+                RawOreList.Raw_Firestone_Ore,
+                CrushedOreList.Crushed_Firestone_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Firestone Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2347), 12);
-                        // "Raw Firestone"
-                        put(getModItem(Railcraft.ID, "firestone.raw", 1L), 7);
+                        put(DustList.Firestone_Dust, 12);
+                        put(GemList.Raw_Firestone, 7);
                     }
                 }));
 
         // "Shadow Metal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5368),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6368) },
-                // "Raw Shadow Metal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5368),
-                // "Crushed Shadow Metal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5368),
+                new ItemStack[] {
+                    OreList.Shadow_Metal_Ore_Stone,
+                    OreList.Shadow_Metal_Ore_Netherrack,
+                    OreList.Shadow_Metal_Ore_EndStone },
+                RawOreList.Raw_Shadow_Metal_Ore,
+                CrushedOreList.Crushed_Shadow_Metal_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Shadow Metal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2368), 14);
+                        put(DustList.Shadow_Metal_Dust, 14);
                     }
                 }));
 
         // "Rutile Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5375),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6375) },
-                // "Raw Rutile Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5375),
-                // "Crushed Rutile Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5375),
+                new ItemStack[] {
+                    OreList.Rutile_Ore_Stone,
+                    OreList.Rutile_Ore_Netherrack,
+                    OreList.Rutile_Ore_EndStone },
+                RawOreList.Raw_Rutile_Ore,
+                CrushedOreList.Crushed_Rutile_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Rutile Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2375), 14);
+                        put(DustList.Rutile_Dust, 14);
                     }
                 }));
 
         // "Ardite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5382),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6382) },
-                // "Raw Ardite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5382),
-                // "Crushed Ardite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5382),
+                new ItemStack[] {
+                    OreList.Ardite_Ore_Stone,
+                    OreList.Ardite_Ore_Netherrack,
+                    OreList.Ardite_Ore_EndStone },
+                RawOreList.Raw_Ardite_Ore,
+                CrushedOreList.Crushed_Ardite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ardite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2382), 14);
+                        put(DustList.Ardite_Dust, 14);
                     }
                 }));
 
         // "Manyullyn Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5386),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6386) },
-                // "Raw Manyullyn Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5386),
-                // "Crushed Manyullyn Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5386),
+                new ItemStack[] {
+                    OreList.Manyullyn_Ore_Stone,
+                    OreList.Manyullyn_Ore_Netherrack,
+                    OreList.Manyullyn_Ore_EndStone },
+                RawOreList.Raw_Manyullyn_Ore,
+                CrushedOreList.Crushed_Manyullyn_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Manyullyn Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2386), 14);
+                        put(DustList.Manyullyn_Dust, 14);
                     }
                 }));
 
         // "Mytryl Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5387),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6387) },
-                // "Raw Mytryl Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5387),
-                // "Crushed Mytryl Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5387),
+                new ItemStack[] {
+                    OreList.Mytryl_Ore_Stone,
+                    OreList.Mytryl_Ore_Netherrack,
+                    OreList.Mytryl_Ore_EndStone },
+                RawOreList.Raw_Mytryl_Ore,
+                CrushedOreList.Crushed_Mytryl_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Samarium Ore Concentrate Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11128), 10);
-                        // "Mytryl Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2387), 5);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 5);
+                        put(DustList.Samarium_Ore_Concentrate_Dust, 10);
+                        put(DustList.Mytryl_Dust, 5);
+                        put(DustList.Zinc_Dust, 5);
                     }
                 }));
 
         // "Black Plutonium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5388),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6388) },
-                // "Raw Black Plutonium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5388),
-                // "Crushed Black Plutonium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5388),
+                new ItemStack[] {
+                    OreList.Black_Plutonium_Ore_Stone,
+                    OreList.Black_Plutonium_Ore_Netherrack,
+                    OreList.Black_Plutonium_Ore_EndStone },
+                RawOreList.Raw_Black_Plutonium_Ore,
+                CrushedOreList.Crushed_Black_Plutonium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Black Plutonium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2388), 14);
+                        put(DustList.Black_Plutonium_Dust, 14);
                     }
                 }));
 
         // "Callisto Ice Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5389),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6389) },
-                // "Raw Callisto Ice Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5389),
-                // "Crushed Callisto Ice Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5389),
+                new ItemStack[] {
+                    OreList.Callisto_Ice_Ore_Stone,
+                    OreList.Callisto_Ice_Ore_Netherrack,
+                    OreList.Callisto_Ice_Ore_EndStone },
+                RawOreList.Raw_Callisto_Ice_Ore,
+                CrushedOreList.Crushed_Callisto_Ice_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Callisto Ice Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2389), 14);
+                        put(DustList.Callisto_Ice_Dust, 14);
                     }
                 }));
 
         // "Ledox Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5390),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6390) },
-                // "Raw Ledox Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5390),
-                // "Crushed Ledox Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5390),
+                new ItemStack[] {
+                    OreList.Ledox_Ore_Stone,
+                    OreList.Ledox_Ore_Netherrack,
+                    OreList.Ledox_Ore_EndStone },
+                RawOreList.Raw_Ledox_Ore,
+                CrushedOreList.Crushed_Ledox_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ledox Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2390), 14);
+                        put(DustList.Ledox_Dust, 14);
                     }
                 }));
 
         // "Quantium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5391),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6391) },
-                // "Raw Quantium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5391),
-                // "Crushed Quantium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5391),
+                new ItemStack[] {
+                    OreList.Quantium_Ore_Stone,
+                    OreList.Quantium_Ore_Netherrack,
+                    OreList.Quantium_Ore_EndStone },
+                RawOreList.Raw_Quantium_Ore,
+                CrushedOreList.Crushed_Quantium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Quantium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2391), 14);
+                        put(DustList.Quantium_Dust, 14);
                     }
                 }));
 
         // "Duralumin Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5392),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6392) },
-                // "Raw Duralumin Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5392),
-                // "Crushed Duralumin Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5392),
+                new ItemStack[] {
+                    OreList.Duralumin_Ore_Stone,
+                    OreList.Duralumin_Ore_Netherrack,
+                    OreList.Duralumin_Ore_EndStone },
+                RawOreList.Raw_Duralumin_Ore,
+                CrushedOreList.Crushed_Duralumin_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Duralumin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2392), 14);
+                        put(DustList.Duralumin_Dust, 14);
                     }
                 }));
 
         // "Oriharukon Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5393),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6393) },
-                // "Raw Oriharukon Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5393),
-                // "Crushed Oriharukon Ore"
-                getModItem(GregTech.ID, "gt.metaitem.031", 1L, 5393),
+                new ItemStack[] {
+                    OreList.Oriharukon_Ore_Stone,
+                    OreList.Oriharukon_Ore_Netherrack,
+                    OreList.Oriharukon_Ore_EndStone },
+                RawOreList.Raw_Oriharukon_Ore,
+                CrushedOreList.Crushed_Oriharukon_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Oriharukon Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2393), 14);
+                        put(DustList.Oriharukon_Dust, 14);
                     }
                 }));
 
         // "Infinity Catalyst Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5394),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6394) },
-                // "Raw Infinity Catalyst Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5394),
-                // "Crushed Infinity Catalyst Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5394),
+                new ItemStack[] {
+                    OreList.Infinity_Catalyst_Ore_Stone,
+                    OreList.Infinity_Catalyst_Ore_Netherrack,
+                    OreList.Infinity_Catalyst_Ore_EndStone },
+                RawOreList.Raw_Infinity_Catalyst_Ore,
+                CrushedOreList.Crushed_Infinity_Catalyst_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Infinity Catalyst Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2394), 14);
+                        put(DustList.Infinity_Catalyst_Dust, 14);
                     }
                 }));
 
         // "Bedrockium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5395),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6395) },
-                // "Raw Bedrockium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5395),
-                // "Crushed Bedrockium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5395),
+                new ItemStack[] {
+                    OreList.Bedrockium_Ore_Stone,
+                    OreList.Bedrockium_Ore_Netherrack,
+                    OreList.Bedrockium_Ore_EndStone },
+                RawOreList.Raw_Bedrockium_Ore,
+                CrushedOreList.Crushed_Bedrockium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bedrockium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2395), 14);
+                        put(DustList.Bedrockium_Dust, 14);
                     }
                 }));
 
         // "Mysterious Crystal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5398),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6398) },
-                // "Raw Mysterious Crystal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5398),
-                // "Crushed Mysterious Crystal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5398),
+                new ItemStack[] {
+                    OreList.Mysterious_Crystal_Ore_Stone,
+                    OreList.Mysterious_Crystal_Ore_Netherrack,
+                    OreList.Mysterious_Crystal_Ore_EndStone },
+                RawOreList.Raw_Mysterious_Crystal_Ore,
+                CrushedOreList.Crushed_Mysterious_Crystal_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Mysterious Crystal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2398), 14);
+                        put(DustList.Mysterious_Crystal_Dust, 14);
                     }
                 }));
 
         // "Alduorite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5485),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6485) },
-                // "Raw Alduorite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5485),
-                // "Crushed Alduorite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5485),
+                new ItemStack[] {
+                    OreList.Alduorite_Ore_Stone,
+                    OreList.Alduorite_Ore_Netherrack,
+                    OreList.Alduorite_Ore_EndStone },
+                RawOreList.Raw_Alduorite_Ore,
+                CrushedOreList.Crushed_Alduorite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alduorite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2485), 14);
+                        put(DustList.Alduorite_Dust, 14);
                     }
                 }));
 
         // "Rubracium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5488),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6488) },
-                // "Raw Rubracium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5488),
-                // "Crushed Rubracium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5488),
+                new ItemStack[] {
+                    OreList.Rubracium_Ore_Stone,
+                    OreList.Rubracium_Ore_Netherrack,
+                    OreList.Rubracium_Ore_EndStone },
+                RawOreList.Raw_Rubracium_Ore,
+                CrushedOreList.Crushed_Rubracium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Samarium Ore Concentrate Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11128), 18);
-                        // "Rubracium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2488), 5);
+                        put(DustList.Samarium_Ore_Concentrate_Dust, 18);
+                        put(DustList.Rubracium_Dust, 5);
                     }
                 }));
 
         // "Vulcanite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5489),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6489) },
-                // "Raw Vulcanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5489),
-                // "Crushed Vulcanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5489),
+                new ItemStack[] {
+                    OreList.Vulcanite_Ore_Stone,
+                    OreList.Vulcanite_Ore_Netherrack,
+                    OreList.Vulcanite_Ore_EndStone },
+                RawOreList.Raw_Vulcanite_Ore,
+                CrushedOreList.Crushed_Vulcanite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Vulcanite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2489), 14);
+                        put(DustList.Vulcanite_Dust, 14);
                     }
                 }));
 
         // "Diamond Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5500),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6500) },
-                // "Raw Diamond Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5500),
-                // "Crushed Diamond Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5500),
+                new ItemStack[] {
+                    OreList.Diamond_Ore_Stone,
+                    OreList.Diamond_Ore_Netherrack,
+                    OreList.Diamond_Ore_EndStone },
+                RawOreList.Raw_Diamond_Ore,
+                CrushedOreList.Crushed_Diamond_Ore,
                 new HashMap<>() {
 
                     {
                         // Diamond
-                        put(getModItem(Minecraft.ID, "diamond", 1L), 1);
-                        // "Diamond Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2500), 6);
-                        // "Graphite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2865), 9);
-                        // "Exquisite Diamond"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30500), 1);
-                        // "Flawless Diamond"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29500), 1);
-                        // "Flawed Diamond"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28500), 1);
-                        // "Chipped Diamond"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27500), 1);
+                        put(GemList.Diamond, 1);
+                        put(DustList.Diamond_Dust, 6);
+                        put(DustList.Graphite_Dust, 9);
+                        put(GemList.Exquisite_Diamond, 1);
+                        put(GemList.Flawless_Diamond, 1);
+                        put(GemList.Flawed_Diamond, 1);
+                        put(GemList.Chipped_Diamond, 1);
                     }
                 }));
 
         // "Emerald Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5501),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6501) },
-                // "Raw Emerald Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5501),
-                // "Crushed Emerald Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5501),
+                new ItemStack[] {
+                    OreList.Emerald_Ore_Stone,
+                    OreList.Emerald_Ore_Netherrack,
+                    OreList.Emerald_Ore_EndStone },
+                RawOreList.Raw_Emerald_Ore,
+                CrushedOreList.Crushed_Emerald_Ore,
                 new HashMap<>() {
 
                     {
                         // Emerald
-                        put(getModItem(Minecraft.ID, "emerald", 1L), 1);
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Beryllium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2008), 5);
-                        // "Emerald Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2501), 6);
-                        // "Exquisite Emerald"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30501), 1);
-                        // "Flawless Emerald"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29501), 1);
-                        // "Flawed Emerald"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28501), 1);
-                        // "Chipped Emerald"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27501), 1);
+                        put(GemList.Emerald, 1);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Beryllium_Dust, 5);
+                        put(DustList.Emerald_Dust, 6);
+                        put(GemList.Exquisite_Emerald, 1);
+                        put(GemList.Flawless_Emerald, 1);
+                        put(GemList.Flawed_Emerald, 1);
+                        put(GemList.Chipped_Emerald, 1);
                     }
                 }));
 
         // "Ruby Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5502),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6502) },
-                // "Raw Ruby Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5502),
-                // "Crushed Ruby Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5502),
+                new ItemStack[] {
+                    OreList.Ruby_Ore_Stone,
+                    OreList.Ruby_Ore_Netherrack,
+                    OreList.Ruby_Ore_EndStone },
+                RawOreList.Raw_Ruby_Ore,
+                CrushedOreList.Crushed_Ruby_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 5);
-                        // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 4);
-                        // "Ruby Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2502), 6);
-                        // Ruby
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8502), 1);
-                        // "Exquisite Ruby"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30502), 1);
-                        // "Flawless Ruby"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29502), 1);
-                        // "Flawed Ruby"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28502), 1);
-                        // "Chipped Ruby"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27502), 1);
+                        put(DustList.Chrome_Dust, 5);
+                        put(DustList.Red_Garnet_Dust, 4);
+                        put(DustList.Ruby_Dust, 6);
+                        put(GemList.Ruby, 1);
+                        put(GemList.Exquisite_Ruby, 1);
+                        put(GemList.Flawless_Ruby, 1);
+                        put(GemList.Flawed_Ruby, 1);
+                        put(GemList.Chipped_Ruby, 1);
                     }
                 }));
 
         // "Sapphire Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5503),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6503) },
-                // "Raw Sapphire Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5503),
-                // "Crushed Sapphire Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5503),
+                new ItemStack[] {
+                    OreList.Sapphire_Ore_Stone,
+                    OreList.Sapphire_Ore_Netherrack,
+                    OreList.Sapphire_Ore_EndStone },
+                RawOreList.Raw_Sapphire_Ore,
+                CrushedOreList.Crushed_Sapphire_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 5);
-                        // "Green Sapphire Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2504), 4);
-                        // "Sapphire Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2503), 6);
-                        // Sapphire
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8503), 1);
-                        // "Exquisite Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30503), 1);
-                        // "Flawless Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29503), 1);
-                        // "Flawed Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28503), 1);
-                        // "Chipped Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27503), 1);
+                        put(DustList.Alumina_Dust, 5);
+                        put(DustList.Green_Sapphire_Dust, 4);
+                        put(DustList.Sapphire_Dust, 6);
+                        put(GemList.Sapphire, 1);
+                        put(GemList.Exquisite_Sapphire, 1);
+                        put(GemList.Flawless_Sapphire, 1);
+                        put(GemList.Flawed_Sapphire, 1);
+                        put(GemList.Chipped_Sapphire, 1);
                     }
                 }));
 
         // "Green Sapphire Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5504),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6504) },
-                // "Raw Green Sapphire Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5504),
-                // "Crushed Green Sapphire Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5504),
+                new ItemStack[] {
+                    OreList.Green_Sapphire_Ore_Stone,
+                    OreList.Green_Sapphire_Ore_Netherrack,
+                    OreList.Green_Sapphire_Ore_EndStone },
+                RawOreList.Raw_Green_Sapphire_Ore,
+                CrushedOreList.Crushed_Green_Sapphire_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 5);
-                        // "Green Sapphire Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2504), 6);
-                        // "Sapphire Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2503), 4);
-                        // "Green Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8504), 1);
-                        // "Exquisite Green Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30504), 1);
-                        // "Flawless Green Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29504), 1);
-                        // "Flawed Green Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28504), 1);
-                        // "Chipped Green Sapphire"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27504), 1);
+                        put(DustList.Alumina_Dust, 5);
+                        put(DustList.Green_Sapphire_Dust, 6);
+                        put(DustList.Sapphire_Dust, 4);
+                        put(GemList.Green_Sapphire, 1);
+                        put(GemList.Exquisite_Green_Sapphire, 1);
+                        put(GemList.Flawless_Green_Sapphire, 1);
+                        put(GemList.Flawed_Green_Sapphire, 1);
+                        put(GemList.Chipped_Green_Sapphire, 1);
                     }
                 }));
 
         // "Olivine Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5505),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6505) },
-                // "Raw Olivine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5505),
-                // "Crushed Olivine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5505),
+                new ItemStack[] {
+                    OreList.Olivine_Ore_Stone,
+                    OreList.Olivine_Ore_Netherrack,
+                    OreList.Olivine_Ore_EndStone },
+                RawOreList.Raw_Olivine_Ore,
+                CrushedOreList.Crushed_Olivine_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 4);
-                        // "Olivine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2505), 6);
-                        // "Pyrope Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2835), 5);
-                        // Olivine
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8505), 1);
-                        // "Exquisite Olivine"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30505), 1);
-                        // "Flawless Olivine"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29505), 1);
-                        // "Flawed Olivine"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28505), 1);
-                        // "Chipped Olivine"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27505), 1);
+                        put(DustList.Magnesium_Dust, 4);
+                        put(DustList.Olivine_Dust, 6);
+                        put(DustList.Pyrope_Dust, 5);
+                        put(GemList.Olivine, 1);
+                        put(GemList.Exquisite_Olivine, 1);
+                        put(GemList.Flawless_Olivine, 1);
+                        put(GemList.Flawed_Olivine, 1);
+                        put(GemList.Chipped_Olivine, 1);
                     }
                 }));
 
         // "Nether Star Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5506),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6506) },
-                // "Raw Nether Star Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5506),
-                // "Crushed Nether Star Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5506),
+                new ItemStack[] {
+                    OreList.Nether_Star_Ore_Stone,
+                    OreList.Nether_Star_Ore_Netherrack,
+                    OreList.Nether_Star_Ore_EndStone },
+                RawOreList.Raw_Nether_Star_Ore,
+                CrushedOreList.Crushed_Nether_Star_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Nether Star Dust"
-                        put(getModItem(Minecraft.ID, "nether_star", 1L), 7);
-                        // "Nether Star Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2506), 13);
+                        put(GemList.Nether_Star, 7);
+                        put(DustList.Nether_Star_Dust, 13);
                     }
                 }));
 
         // "Topaz Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5507),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6507) },
-                // "Raw Topaz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5507),
-                // "Crushed Topaz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5507),
+                new ItemStack[] {
+                    OreList.Topaz_Ore_Stone,
+                    OreList.Topaz_Ore_Netherrack,
+                    OreList.Topaz_Ore_EndStone },
+                RawOreList.Raw_Topaz_Ore,
+                CrushedOreList.Crushed_Topaz_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Blue Topaz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2513), 7);
-                        // "Topaz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2507), 6);
-                        // "Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8513), 2);
-                        // Topaz
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8507), 1);
-                        // "Exquisite Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30507), 1);
-                        // "Flawless Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29507), 1);
-                        // "Flawed Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28507), 1);
-                        // "Chipped Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27507), 1);
+                        put(DustList.Blue_Topaz_Dust, 7);
+                        put(DustList.Topaz_Dust, 6);
+                        put(GemList.Blue_Topaz, 2);
+                        put(GemList.Topaz, 1);
+                        put(GemList.Exquisite_Topaz, 1);
+                        put(GemList.Flawless_Topaz, 1);
+                        put(GemList.Flawed_Topaz, 1);
+                        put(GemList.Chipped_Topaz, 1);
                     }
                 }));
 
         // "Tanzanite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5508),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6508) },
-                // "Raw Tanzanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5508),
-                // "Crushed Tanzanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5508),
+                new ItemStack[] {
+                    OreList.Tanzanite_Ore_Stone,
+                    OreList.Tanzanite_Ore_Netherrack,
+                    OreList.Tanzanite_Ore_EndStone },
+                RawOreList.Raw_Tanzanite_Ore,
+                CrushedOreList.Crushed_Tanzanite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Opal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2510), 7);
-                        // "Tanzanite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2508), 6);
-                        // Opal
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8510), 2);
-                        // Tanzanite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8508), 1);
-                        // "Exquisite Tanzanite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30508), 1);
-                        // "Flawless Tanzanite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29508), 1);
-                        // "Flawed Tanzanite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28508), 1);
-                        // "Chipped Tanzanite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27508), 1);
+                        put(DustList.Opal_Dust, 7);
+                        put(DustList.Tanzanite_Dust, 6);
+                        put(GemList.Opal, 2);
+                        put(GemList.Tanzanite, 1);
+                        put(GemList.Exquisite_Tanzanite, 1);
+                        put(GemList.Flawless_Tanzanite, 1);
+                        put(GemList.Flawed_Tanzanite, 1);
+                        put(GemList.Chipped_Tanzanite, 1);
                     }
                 }));
 
         // "Amethyst Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5509),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6509) },
-                // "Raw Amethyst Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5509),
-                // "Crushed Amethyst Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5509),
+                new ItemStack[] {
+                    OreList.Amethyst_Ore_Stone,
+                    OreList.Amethyst_Ore_Netherrack,
+                    OreList.Amethyst_Ore_EndStone },
+                RawOreList.Raw_Amethyst_Ore,
+                CrushedOreList.Crushed_Amethyst_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Amethyst Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2509), 13);
-                        // Amethyst
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8509), 3);
-                        // "Exquisite Amethyst"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30509), 1);
-                        // "Flawless Amethyst"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29509), 1);
-                        // "Flawed Amethyst"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28509), 1);
-                        // "Chipped Amethyst"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27509), 1);
+                        put(DustList.Amethyst_Dust, 13);
+                        put(GemList.Amethyst, 3);
+                        put(GemList.Exquisite_Amethyst, 1);
+                        put(GemList.Flawless_Amethyst, 1);
+                        put(GemList.Flawed_Amethyst, 1);
+                        put(GemList.Chipped_Amethyst, 1);
                     }
                 }));
 
         // "Opal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5510),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6510) },
-                // "Raw Opal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5510),
-                // "Crushed Opal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5510),
+                new ItemStack[] {
+                    OreList.Opal_Ore_Stone,
+                    OreList.Opal_Ore_Netherrack,
+                    OreList.Opal_Ore_EndStone },
+                RawOreList.Raw_Opal_Ore,
+                CrushedOreList.Crushed_Opal_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Opal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2510), 6);
-                        // "Tanzanite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2508), 7);
-                        // Opal
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8510), 1);
-                        // Tanzanite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8508), 2);
-                        // "Exquisite Opal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30510), 1);
-                        // "Flawless Opal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29510), 1);
-                        // "Flawed Opal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28510), 1);
-                        // "Chipped Opal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27510), 1);
+                        put(DustList.Opal_Dust, 6);
+                        put(DustList.Tanzanite_Dust, 7);
+                        put(GemList.Opal, 1);
+                        put(GemList.Tanzanite, 2);
+                        put(GemList.Exquisite_Opal, 1);
+                        put(GemList.Flawless_Opal, 1);
+                        put(GemList.Flawed_Opal, 1);
+                        put(GemList.Chipped_Opal, 1);
                     }
                 }));
 
         // "Jasper Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5511),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6511) },
-                // "Raw Jasper Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5511),
-                // "Crushed Jasper Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5511),
+                new ItemStack[] {
+                    OreList.Jasper_Ore_Stone,
+                    OreList.Jasper_Ore_Netherrack,
+                    OreList.Jasper_Ore_EndStone },
+                RawOreList.Raw_Jasper_Ore,
+                CrushedOreList.Crushed_Jasper_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Jasper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2511), 13);
-                        // Jasper
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8511), 3);
-                        // "Exquisite Jasper"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30511), 1);
-                        // "Flawless Jasper"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29511), 1);
-                        // "Flawed Jasper"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28511), 1);
-                        // "Chipped Jasper"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27511), 1);
+                        put(DustList.Jasper_Dust, 13);
+                        put(GemList.Jasper, 3);
+                        put(GemList.Exquisite_Jasper, 1);
+                        put(GemList.Flawless_Jasper, 1);
+                        put(GemList.Flawed_Jasper, 1);
+                        put(GemList.Chipped_Jasper, 1);
                     }
                 }));
 
         // "Spinel Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5512),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6512) },
-                // "Raw Spinel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5512),
-                // "Crushed Spinel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5512),
+                new ItemStack[] {
+                    OreList.Spinel_Ore_Stone,
+                    OreList.Spinel_Ore_Netherrack,
+                    OreList.Spinel_Ore_EndStone },
+                RawOreList.Raw_Spinel_Ore,
+                CrushedOreList.Crushed_Spinel_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Jasper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2511), 7);
-                        // "Spinel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2512), 6);
-                        // Jasper
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8511), 2);
-                        // Spinel
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8512), 1);
-                        // "Exquisite Spinel"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30512), 1);
-                        // "Flawless Spinel"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29512), 1);
-                        // "Flawed Spinel"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28512), 1);
-                        // "Chipped Spinel"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27512), 1);
+                        put(DustList.Jasper_Dust, 7);
+                        put(DustList.Spinel_Dust, 6);
+                        put(GemList.Jasper, 2);
+                        put(GemList.Spinel, 1);
+                        put(GemList.Exquisite_Spinel, 1);
+                        put(GemList.Flawless_Spinel, 1);
+                        put(GemList.Flawed_Spinel, 1);
+                        put(GemList.Chipped_Spinel, 1);
                     }
                 }));
 
         // "Blue Topaz Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5513),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6513) },
-                // "Raw Blue Topaz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5513),
-                // "Crushed Blue Topaz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5513),
+                new ItemStack[] {
+                    OreList.Blue_Topaz_Ore_Stone,
+                    OreList.Blue_Topaz_Ore_Netherrack,
+                    OreList.Blue_Topaz_Ore_EndStone },
+                RawOreList.Raw_Blue_Topaz_Ore,
+                CrushedOreList.Crushed_Blue_Topaz_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Blue Topaz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2513), 6);
-                        // "Topaz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2507), 7);
-                        // "Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8513), 1);
-                        // Topaz
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8507), 2);
-                        // "Exquisite Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30513), 1);
-                        // "Flawless Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29513), 1);
-                        // "Flawed Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28513), 1);
-                        // "Chipped Blue Topaz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27513), 1);
+                        put(DustList.Blue_Topaz_Dust, 6);
+                        put(DustList.Topaz_Dust, 7);
+                        put(GemList.Blue_Topaz, 1);
+                        put(GemList.Topaz, 2);
+                        put(GemList.Exquisite_Blue_Topaz, 1);
+                        put(GemList.Flawless_Blue_Topaz, 1);
+                        put(GemList.Flawed_Blue_Topaz, 1);
+                        put(GemList.Chipped_Blue_Topaz, 1);
                     }
                 }));
 
         // "Amber Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5514),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6514) },
-                // "Raw Amber Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5514),
-                // "Crushed Amber Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5514),
+                new ItemStack[] {
+                    OreList.Amber_Ore_Stone,
+                    OreList.Amber_Ore_Netherrack,
+                    OreList.Amber_Ore_EndStone },
+                RawOreList.Raw_Amber_Ore,
+                CrushedOreList.Crushed_Amber_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Amber Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2514), 26);
-                        // Amber
-                        put(getModItem(Thaumcraft.ID, "ItemResource", 1L, 6), 6);
-                        // "Exquisite Amber"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30514), 2);
-                        // "Flawless Amber"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29514), 2);
-                        // "Flawed Amber"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28514), 2);
-                        // "Chipped Amber"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27514), 2);
+                        put(DustList.Amber_Dust, 26);
+                        put(GemList.Amber, 6);
+                        put(GemList.Exquisite_Amber, 2);
+                        put(GemList.Flawless_Amber, 2);
+                        put(GemList.Flawed_Amber, 2);
+                        put(GemList.Chipped_Amber, 2);
                     }
                 }));
 
         // "Dilithium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5515),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6515) },
-                // "Raw Dilithium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5515),
-                // "Crushed Dilithium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5515),
+                new ItemStack[] {
+                    OreList.Dilithium_Ore_Stone,
+                    OreList.Dilithium_Ore_Netherrack,
+                    OreList.Dilithium_Ore_EndStone },
+                RawOreList.Raw_Dilithium_Ore,
+                CrushedOreList.Crushed_Dilithium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Dilithium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2515), 13);
-                        // Dilithium
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8515), 7);
+                        put(DustList.Dilithium_Dust, 13);
+                        put(GemList.Dilithium, 7);
                     }
                 }));
 
         // "Certus Quartz Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5516),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6516) },
-                // "Raw Certus Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5516),
-                // "Crushed Certus Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5516),
+                new ItemStack[] {
+                    OreList.Certus_Quartz_Ore_Stone,
+                    OreList.Certus_Quartz_Ore_Netherrack,
+                    OreList.Certus_Quartz_Ore_EndStone },
+                RawOreList.Raw_Certus_Quartz_Ore,
+                CrushedOreList.Crushed_Certus_Quartz_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Barite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2904), 8);
-                        // "Barium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2063), 2);
-                        // "Certus Quartz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8516), 10);
-                        // "Certus Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2516), 12);
-                        // Quartzite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8523), 4);
-                        // "Quartzite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2523), 6);
+                        put(DustList.Barite_Dust, 8);
+                        put(DustList.Barium_Dust, 2);
+                        put(GemList.Certus_Quartz, 10);
+                        put(DustList.Certus_Quartz_Dust, 12);
+                        put(GemList.Quartzite, 4);
+                        put(DustList.Quartzite_Dust, 6);
                     }
                 }));
 
         // "Charged Certus Quartz Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5517),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6517) },
-                // "Raw Charged Certus Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5517),
-                // "Crushed Charged Certus Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5517),
+                new ItemStack[] {
+                    OreList.Charged_Certus_Quartz_Ore_Stone,
+                    OreList.Charged_Certus_Quartz_Ore_Netherrack,
+                    OreList.Charged_Certus_Quartz_Ore_EndStone },
+                RawOreList.Raw_Charged_Certus_Quartz_Ore,
+                CrushedOreList.Crushed_Charged_Certus_Quartz_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Charged Certus Quartz Crystal"
-                        put(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 1), 10);
-                        // "Barite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2904), 2);
-                        // "Certus Quartz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8516), 4);
-                        // "Certus Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2516), 6);
-                        // Quartzite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8523), 6);
+                        put(GemList.Charged_Certus_Quartz_Crystal, 10);
+                        put(DustList.Barite_Dust, 2);
+                        put(GemList.Certus_Quartz, 4);
+                        put(DustList.Certus_Quartz_Dust, 6);
+                        put(GemList.Quartzite, 6);
                     }
                 }));
 
         // "Forcicium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5518),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6518) },
-                // "Raw Forcicium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5518),
-                // "Crushed Forcicium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5518),
+                new ItemStack[] {
+                    OreList.Forcicium_Ore_Stone,
+                    OreList.Forcicium_Ore_Netherrack,
+                    OreList.Forcicium_Ore_EndStone },
+                RawOreList.Raw_Forcicium_Ore,
+                CrushedOreList.Crushed_Forcicium_Ore,
                 new HashMap<>() {
-
                     {
-                        // Forcicium
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8518), 5);
-                        // "Forcicium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2518), 7);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 4);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 1);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 5);
+                        put(GemList.Forcicium, 5);
+                        put(DustList.Forcicium_Dust, 7);
+                        put(DustList.Neodymium_Dust, 4);
+                        put(DustList.Rare_Earth, 1);
+                        put(DustList.Thorium_Dust, 5);
                     }
                 }));
 
         // "Forcillium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5519),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6519) },
-                // "Raw Forcillium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5519),
-                // "Crushed Forcillium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5519),
+                new ItemStack[] {
+                    OreList.Forcillium_Ore_Stone,
+                    OreList.Forcillium_Ore_Netherrack,
+                    OreList.Forcillium_Ore_EndStone },
+                RawOreList.Raw_Forcillium_Ore,
+                CrushedOreList.Crushed_Forcillium_Ore,
                 new HashMap<>() {
-
                     {
-                        // Forcillium
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8519), 5);
-                        // "Forcillium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2519), 7);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 4);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 1);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 5);
+                        put(GemList.Forcillium, 5);
+                        put(DustList.Forcillium_Dust, 7);
+                        put(DustList.Neodymium_Dust, 4);
+                        put(DustList.Rare_Earth, 1);
+                        put(DustList.Thorium_Dust, 5);
                     }
                 }));
 
         // "Monazite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5520),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6520) },
-                // "Raw Monazite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5520),
-                // "Crushed Monazite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5520),
+                new ItemStack[] {
+                    OreList.Monazite_Ore_Stone,
+                    OreList.Monazite_Ore_Netherrack,
+                    OreList.Monazite_Ore_EndStone },
+                RawOreList.Raw_Monazite_Ore,
+                CrushedOreList.Crushed_Monazite_Ore,
                 new HashMap<>() {
-
                     {
-                        // Monazite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8520), 40);
-                        // "Monazite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2520), 56);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 32);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 8);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 40);
+                        put(GemList.Monazite, 40);
+                        put(DustList.Monazite_Dust, 56);
+                        put(DustList.Neodymium_Dust, 32);
+                        put(DustList.Rare_Earth, 8);
+                        put(DustList.Thorium_Dust, 40);
                     }
                 }));
 
         // "Force Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5521),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6521) },
-                // "Raw Force Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5521),
-                // "Crushed Force Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5521),
+                new ItemStack[] {
+                    OreList.Force_Ore_Stone,
+                    OreList.Force_Ore_Netherrack,
+                    OreList.Force_Ore_EndStone },
+                RawOreList.Raw_Force_Ore,
+                CrushedOreList.Crushed_Force_Ore,
                 new HashMap<>() {
-
                     {
-                        // Force
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8521), 7);
-                        // "Force Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2521), 13);
+                        put(GemList.Force, 7);
+                        put(DustList.Force_Dust, 13);
                     }
                 }));
 
         // "Nether Quartz Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5522),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6522) },
-                // "Raw Nether Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5522),
-                // "Crushed Nether Quartz Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5522),
+                new ItemStack[] {
+                    OreList.Nether_Quartz_Ore_Stone,
+                    OreList.Nether_Quartz_Ore_Netherrack,
+                    OreList.Nether_Quartz_Ore_EndStone },
+                RawOreList.Raw_Nether_Quartz_Ore,
+                CrushedOreList.Crushed_Nether_Quartz_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Nether Quartz"
-                        put(getModItem(Minecraft.ID, "quartz", 1L), 10);
-                        // "Nether Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2522), 12);
-                        // "Netherrack Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2807), 18);
+                        put(GemList.Nether_Quartz, 10);
+                        put(DustList.Nether_Quartz_Dust, 12);
+                        put(DustList.Netherrack_Dust, 18);
                     }
                 }));
 
         // "Quartzite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5523),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6523) },
-                // "Raw Quartzite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5523),
-                // "Crushed Quartzite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5523),
+                new ItemStack[] {
+                    OreList.Quartzite_Ore_Stone,
+                    OreList.Quartzite_Ore_Netherrack,
+                    OreList.Quartzite_Ore_EndStone },
+                RawOreList.Raw_Quartzite_Ore,
+                CrushedOreList.Crushed_Quartzite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Barite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2904), 4);
-                        // "Certus Quartz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8516), 2);
-                        // "Certus Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2516), 4);
-                        // Quartzite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8523), 5);
-                        // "Quartzite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2523), 6);
+                        put(DustList.Barite_Dust, 4);
+                        put(GemList.Certus_Quartz, 2);
+                        put(DustList.Certus_Quartz_Dust, 4);
+                        put(GemList.Quartzite, 5);
+                        put(DustList.Quartzite_Dust, 6);
                     }
                 }));
 
         // "Lazurite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5524),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6524) },
-                // "Raw Lazurite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5524),
-                // "Crushed Lazurite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5524),
+                new ItemStack[] {
+                    OreList.Lazurite_Ore_Stone,
+                    OreList.Lazurite_Ore_Netherrack,
+                    OreList.Lazurite_Ore_EndStone },
+                RawOreList.Raw_Lazurite_Ore,
+                CrushedOreList.Crushed_Lazurite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lapis Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2526), 24);
-                        // Lazurite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8524), 30);
-                        // "Lazurite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2524), 36);
-                        // Sodalite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8525), 12);
-                        // "Sodalite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2525), 18);
+                        put(DustList.Lapis_Dust, 24);
+                        put(GemList.Lazurite, 30);
+                        put(DustList.Lazurite_Dust, 36);
+                        put(GemList.Sodalite, 12);
+                        put(DustList.Sodalite_Dust, 18);
                     }
                 }));
 
         // "Sodalite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5525),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6525) },
-                // "Raw Sodalite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5525),
-                // "Crushed Sodalite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5525),
+                new ItemStack[] {
+                    OreList.Sodalite_Ore_Stone,
+                    OreList.Sodalite_Ore_Netherrack,
+                    OreList.Sodalite_Ore_EndStone },
+                RawOreList.Raw_Sodalite_Ore,
+                CrushedOreList.Crushed_Sodalite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lapis Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2526), 24);
-                        // Lazurite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8524), 12);
-                        // "Lazurite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2524), 18);
-                        // Sodalite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8525), 30);
-                        // "Sodalite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2525), 36);
+                        put(DustList.Lapis_Dust, 24);
+                        put(GemList.Lazurite, 12);
+                        put(DustList.Lazurite_Dust, 18);
+                        put(GemList.Sodalite, 30);
+                        put(DustList.Sodalite_Dust, 36);
                     }
                 }));
 
         // "Lapis Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5526),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6526) },
-                // "Raw Lapis Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5526),
-                // "Crushed Lapis Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5526),
+                new ItemStack[] {
+                    OreList.Lapis_Ore_Stone,
+                    OreList.Lapis_Ore_Netherrack,
+                    OreList.Lapis_Ore_EndStone },
+                RawOreList.Raw_Lapis_Ore,
+                CrushedOreList.Crushed_Lapis_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lapis Lazuli"
-                        put(getModItem(Minecraft.ID, "dye", 1L, 4), 30);
-                        // "Lapis Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2526), 36);
-                        // Lazurite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8524), 12);
-                        // "Lazurite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2524), 18);
-                        // "Pyrite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2834), 6);
-                        // "Sodalite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2525), 18);
+                        put(GemList.Lapis_Lazuli, 30);
+                        put(DustList.Lapis_Dust, 36);
+                        put(GemList.Lazurite, 12);
+                        put(DustList.Lazurite_Dust, 18);
+                        put(DustList.Pyrite_Dust, 6);
+                        put(DustList.Sodalite_Dust, 18);
                     }
                 }));
 
         // "Red Garnet Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5527),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6527) },
-                // "Raw Red Garnet Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5527),
-                // "Crushed Red Garnet Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5527),
+                new ItemStack[] {
+                    OreList.Red_Garnet_Ore_Stone,
+                    OreList.Red_Garnet_Ore_Netherrack,
+                    OreList.Red_Garnet_Ore_EndStone },
+                RawOreList.Raw_Red_Garnet_Ore,
+                CrushedOreList.Crushed_Red_Garnet_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Almandine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2820), 1);
-                        // "Pyrope Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2835), 3);
-                        // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 6);
-                        // "Spessartine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2838), 5);
-                        // "Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8527), 3);
-                        // "Exquisite Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30527), 1);
-                        // "Flawless Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29527), 1);
-                        // "Flawed Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28527), 1);
-                        // "Chipped Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27527), 1);
+                        put(DustList.Almandine_Dust, 1);
+                        put(DustList.Pyrope_Dust, 3);
+                        put(DustList.Red_Garnet_Dust, 6);
+                        put(DustList.Spessartine_Dust, 5);
+                        put(GemList.Red_Garnet, 3);
+                        put(GemList.Exquisite_Red_Garnet, 1);
+                        put(GemList.Flawless_Red_Garnet, 1);
+                        put(GemList.Flawed_Red_Garnet, 1);
+                        put(GemList.Chipped_Red_Garnet, 1);
                     }
                 }));
 
         // "Yellow Garnet Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5528),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6528) },
-                // "Raw Yellow Garnet Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5528),
-                // "Crushed Yellow Garnet Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5528),
+                new ItemStack[] {
+                    OreList.Yellow_Garnet_Ore_Stone,
+                    OreList.Yellow_Garnet_Ore_Netherrack,
+                    OreList.Yellow_Garnet_Ore_EndStone },
+                RawOreList.Raw_Yellow_Garnet_Ore,
+                CrushedOreList.Crushed_Yellow_Garnet_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Andradite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2821), 5);
-                        // "Grossular Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2831), 3);
-                        // "Uvarovite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2842), 1);
-                        // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 6);
-                        // "Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8528), 3);
-                        // "Exquisite Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30528), 1);
-                        // "Flawless Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29528), 1);
-                        // "Flawed Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 28528), 1);
-                        // "Chipped Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.02", 1L, 27528), 1);
+                        put(DustList.Andradite_Dust, 5);
+                        put(DustList.Grossular_Dust, 3);
+                        put(DustList.Uvarovite_Dust, 1);
+                        put(DustList.Yellow_Garnet_Dust, 6);
+                        put(GemList.Yellow_Garnet, 3);
+                        put(GemList.Exquisite_Yellow_Garnet, 1);
+                        put(GemList.Flawless_Yellow_Garnet, 1);
+                        put(GemList.Flawed_Yellow_Garnet, 1);
+                        put(GemList.Chipped_Yellow_Garnet, 1);
                     }
                 }));
 
         // "Vinteum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5529),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6529) },
-                // "Raw Vinteum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5529),
-                // "Crushed Vinteum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5529),
+                new ItemStack[] {
+                    OreList.Vinteum_Ore_Stone,
+                    OreList.Vinteum_Ore_Netherrack,
+                    OreList.Vinteum_Ore_EndStone },
+                RawOreList.Raw_Vinteum_Ore,
+                CrushedOreList.Crushed_Vinteum_Ore,
                 new HashMap<>() {
-
                     {
-                        // Vinteum
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8529), 7);
-                        // "Vinteum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2529), 13);
+                        put(GemList.Vinteum, 7);
+                        put(DustList.Vinteum_Dust, 13);
                     }
                 }));
 
         // "Apatite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5530),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6530) },
-                // "Raw Apatite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5530),
-                // "Crushed Apatite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5530),
+                new ItemStack[] {
+                    OreList.Apatite_Ore_Stone,
+                    OreList.Apatite_Ore_Netherrack,
+                    OreList.Apatite_Ore_EndStone },
+                RawOreList.Raw_Apatite_Ore,
+                CrushedOreList.Crushed_Apatite_Ore,
                 new HashMap<>() {
-
                     {
-                        // Apatite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8530), 20);
-                        // "Apatite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2530), 24);
-                        // "Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2833), 12);
-                        // "Pyrochlore Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2607), 4);
-                        // "Tricalcium Phosphate"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8534), 8);
-                        // "Tricalcium Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2534), 12);
+                        put(GemList.Apatite, 20);
+                        put(DustList.Apatite_Dust, 24);
+                        put(DustList.Phosphate_Dust, 12);
+                        put(DustList.Pyrochlore_Dust, 4);
+                        put(GemList.Tricalcium_Phosphate, 8);
+                        put(DustList.Tricalcium_Phosphate_Dust, 12);
                     }
                 }));
 
         // "Niter Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5531),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6531) },
-                // "Raw Niter Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5531),
-                // "Crushed Niter Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5531),
+                new ItemStack[] {
+                    OreList.Niter_Ore_Stone,
+                    OreList.Niter_Ore_Netherrack,
+                    OreList.Niter_Ore_EndStone },
+                RawOreList.Raw_Niter_Ore,
+                CrushedOreList.Crushed_Niter_Ore,
                 new HashMap<>() {
-
                     {
-                        // Niter
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8531), 5);
-                        // "Niter Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2531), 6);
-                        // "Saltpeter Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2836), 9);
+                        put(GemList.Niter, 5);
+                        put(DustList.Niter_Dust, 6);
+                        put(DustList.Saltpeter_Dust, 9);
                     }
                 }));
 
         // "Tricalcium Phosphate Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5534),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6534) },
-                // "Raw Tricalcium Phosphate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5534),
-                // "Crushed Tricalcium Phosphate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5534),
+                new ItemStack[] {
+                    OreList.Tricalcium_Phosphate_Ore_Stone,
+                    OreList.Tricalcium_Phosphate_Ore_Netherrack,
+                    OreList.Tricalcium_Phosphate_Ore_EndStone },
+                RawOreList.Raw_Tricalcium_Phosphate_Ore,
+                CrushedOreList.Crushed_Tricalcium_Phosphate_Ore,
                 new HashMap<>() {
-
                     {
-                        // Apatite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8530), 6);
-                        // "Apatite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2530), 9);
-                        // "Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2833), 9);
-                        // "Pyrochlore Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2607), 3);
-                        // "Tricalcium Phosphate"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8534), 15);
-                        // "Tricalcium Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2534), 18);
+                        put(GemList.Apatite, 6);
+                        put(DustList.Apatite_Dust, 9);
+                        put(DustList.Phosphate_Dust, 9);
+                        put(DustList.Pyrochlore_Dust, 3);
+                        put(GemList.Tricalcium_Phosphate, 15);
+                        put(DustList.Tricalcium_Phosphate_Dust, 18);
                     }
                 }));
 
         // "Coal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5535),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6535) },
-                // "Raw Coal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5535),
-                // "Crushed Coal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5535),
+                new ItemStack[] {
+                    OreList.Coal_Ore_Stone,
+                    OreList.Coal_Ore_Netherrack,
+                    OreList.Coal_Ore_EndStone },
+                RawOreList.Raw_Coal_Ore,
+                CrushedOreList.Crushed_Coal_Ore,
                 new HashMap<>() {
-
                     {
-                        // Coal
-                        put(getModItem(Minecraft.ID, "coal", 1L, 0), 10);
-                        // "Coal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2535), 12);
-                        // "Lignite Coal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8538), 4);
-                        // "Lignite Coal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2538), 6);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 8);
+                        put(GemList.Coal, 10);
+                        put(DustList.Coal_Dust, 12);
+                        put(GemList.Lignite_Coal, 4);
+                        put(DustList.Lignite_Coal_Dust, 6);
+                        put(DustList.Thorium_Dust, 8);
                     }
                 }));
 
         // "Jade Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5537),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6537) },
-                // "Raw Jade Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5537),
-                // "Crushed Jade Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5537),
+                new ItemStack[] {
+                    OreList.Jade_Ore_Stone,
+                    OreList.Jade_Ore_Netherrack,
+                    OreList.Jade_Ore_EndStone },
+                RawOreList.Raw_Jade_Ore,
+                CrushedOreList.Crushed_Jade_Ore,
                 new HashMap<>() {
-
                     {
-                        // Jade
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8537), 7);
-                        // "Jade Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2537), 12);
+                        put(GemList.Jade, 7);
+                        put(DustList.Jade_Dust, 12);
                     }
                 }));
 
         // "Lignite Coal Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5538),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6538) },
-                // "Raw Lignite Coal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5538),
-                // "Crushed Lignite Coal Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5538),
+                new ItemStack[] {
+                    OreList.Lignite_Coal_Ore_Stone,
+                    OreList.Lignite_Coal_Ore_Netherrack,
+                    OreList.Lignite_Coal_Ore_EndStone },
+                RawOreList.Raw_Lignite_Coal_Ore,
+                CrushedOreList.Crushed_Lignite_Coal_Ore,
                 new HashMap<>() {
-
                     {
-                        // Coal
-                        put(getModItem(Minecraft.ID, "coal", 1L, 0), 2);
-                        // "Coal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2535), 7);
-                        // "Lignite Coal"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8538), 5);
-                        // "Lignite Coal Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2538), 6);
+                        put(GemList.Coal, 2);
+                        put(DustList.Coal_Dust, 7);
+                        put(GemList.Lignite_Coal, 5);
+                        put(DustList.Lignite_Coal_Dust, 6);
                     }
                 }));
 
         // "Aer Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5540),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6540) },
-                // "Raw Aer Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5540),
-                // "Crushed Aer Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5540),
+                new ItemStack[] {
+                    OreList.Aer_Infused_Stone_Stone,
+                    OreList.Aer_Infused_Stone_Netherrack,
+                    OreList.Aer_Infused_Stone_EndStone },
+                RawOreList.Raw_Aer_Ore,
+                CrushedOreList.Crushed_Aer_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Aer Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2540), 26);
-                        // "Air Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 0), 14);
+                        put(DustList.Aer_Crystal_Powder, 26);
+                        put(GemList.Air_Shard, 14);
                     }
                 }));
 
         // "Ignis Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5541),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6541) },
-                // "Raw Ignis Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5541),
-                // "Crushed Ignis Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5541),
+                new ItemStack[] {
+                    OreList.Ignis_Infused_Stone_Stone,
+                    OreList.Ignis_Infused_Stone_Netherrack,
+                    OreList.Ignis_Infused_Stone_EndStone },
+                RawOreList.Raw_Ignis_Ore,
+                CrushedOreList.Crushed_Ignis_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Ignis Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2541), 26);
-                        // "Fire Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 1), 14);
+                        put(DustList.Ignis_Crystal_Powder, 26);
+                        put(GemList.Fire_Shard, 14);
                     }
                 }));
 
         // "Terra Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5542),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6542) },
-                // "Raw Terra Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5542),
-                // "Crushed Terra Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5542),
+                new ItemStack[] {
+                    OreList.Terra_Infused_Stone_Stone,
+                    OreList.Terra_Infused_Stone_Netherrack,
+                    OreList.Terra_Infused_Stone_EndStone },
+                RawOreList.Raw_Terra_Ore,
+                CrushedOreList.Crushed_Terra_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Terra Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2542), 26);
-                        // "Earth Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 3), 14);
+                        put(DustList.Terra_Crystal_Powder, 26);
+                        put(GemList.Earth_Shard, 14);
                     }
                 }));
 
         // "Aqua Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5543),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6543) },
-                // "Raw Aqua Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5543),
-                // "Crushed Aqua Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5543),
+                new ItemStack[] {
+                    OreList.Aqua_Infused_Stone_Stone,
+                    OreList.Aqua_Infused_Stone_Netherrack,
+                    OreList.Aqua_Infused_Stone_EndStone },
+                RawOreList.Raw_Aqua_Ore,
+                CrushedOreList.Crushed_Aqua_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Aqua Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2543), 26);
-                        // "Water Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 2), 14);
+                        put(DustList.Aqua_Crystal_Powder, 26);
+                        put(GemList.Water_Shard, 14);
                     }
                 }));
 
         // "Perditio Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5544),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6544) },
-                // "Raw Perditio Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5544),
-                // "Crushed Perditio Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5544),
+                new ItemStack[] {
+                    OreList.Perditio_Infused_Stone_Stone,
+                    OreList.Perditio_Infused_Stone_Netherrack,
+                    OreList.Perditio_Infused_Stone_EndStone },
+                RawOreList.Raw_Perditio_Ore,
+                CrushedOreList.Crushed_Perditio_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Perditio Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2544), 26);
-                        // "Entropy Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 5), 14);
+                        put(DustList.Perditio_Crystal_Powder, 26);
+                        put(GemList.Entropy_Shard, 14);
                     }
                 }));
 
         // "Ordo Infused Stone"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5545),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6545) },
+                new ItemStack[] {
+                    OreList.Ordo_Infused_Stone_Stone,
+                    OreList.Ordo_Infused_Stone_Netherrack,
+                    OreList.Ordo_Infused_Stone_EndStone },
                 // "Raw Ordo Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5545),
+                RawOreList.Raw_Ordo_Ore,
                 // "Crushed Ordo Crystals"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5545),
+                CrushedOreList.Crushed_Ordo_Crystals,
                 new HashMap<>() {
 
                     {
                         // "Ordo Crystal Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2545), 26);
+                        put(DustList.Ordo_Crystal_Powder, 26);
                         // "Order Shard"
-                        put(getModItem(Thaumcraft.ID, "ItemShard", 1L, 4), 14);
+                        put(GemList.Order_Shard, 14);
                     }
                 }));
 
         // "Roasted Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5548),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6548) },
-                // "Raw Roasted Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5548),
-                // "Crushed Roasted Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5548),
+                new ItemStack[] {
+                    OreList.Roasted_Iron_Ore_Stone,
+                    OreList.Roasted_Iron_Ore_Netherrack,
+                    OreList.Roasted_Iron_Ore_EndStone },
+                RawOreList.Raw_Roasted_Iron_Ore,
+                CrushedOreList.Crushed_Roasted_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Roasted Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2548), 13);
+                        put(DustList.Roasted_Iron_Dust, 13);
                     }
                 }));
 
         // "Roasted Nickel Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5549),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6549) },
-                // "Raw Roasted Nickel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5549),
-                // "Crushed Roasted Nickel Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5549),
+                new ItemStack[] {
+                    OreList.Roasted_Nickel_Ore_Stone,
+                    OreList.Roasted_Nickel_Ore_Netherrack,
+                    OreList.Roasted_Nickel_Ore_EndStone },
+                RawOreList.Raw_Roasted_Nickel_Ore,
+                CrushedOreList.Crushed_Roasted_Nickel_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 10);
-                        // "Roasted Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2549), 5);
+                        put(DustList.Nickel_Dust, 10);
+                        put(DustList.Roasted_Nickel_Dust, 5);
                     }
                 }));
 
         // "Pyrochlore Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5607),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6607) },
-                // "Raw Pyrochlore Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5607),
-                // "Crushed Pyrochlore Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5607),
+                new ItemStack[] {
+                    OreList.Pyrochlore_Ore_Stone,
+                    OreList.Pyrochlore_Ore_Netherrack,
+                    OreList.Pyrochlore_Ore_EndStone },
+                RawOreList.Raw_Pyrochlore_Ore,
+                CrushedOreList.Crushed_Pyrochlore_Ore,
                 new HashMap<>() {
-
                     {
-                        // Apatite
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8530), 2);
-                        // "Apatite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2530), 3);
-                        // "Calcite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2823), 3);
-                        // "Niobium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2047), 1);
-                        // "Pyrochlore Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2607), 5);
+                        put(GemList.Apatite, 2);
+                        put(DustList.Apatite_Dust, 3);
+                        put(DustList.Calcite_Dust, 3);
+                        put(DustList.Niobium_Dust, 1);
+                        put(DustList.Pyrochlore_Dust, 5);
                     }
                 }));
 
         // "Cryolite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5699),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6699) },
-                // "Raw Cryolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5699),
-                // "Crushed Cryolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5699),
+                new ItemStack[] {
+                    OreList.Cryolite_Ore_Stone,
+                    OreList.Cryolite_Ore_Netherrack,
+                    OreList.Cryolite_Ore_EndStone },
+                RawOreList.Raw_Cryolite_Ore,
+                CrushedOreList.Crushed_Cryolite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 20);
-                        // "Cryolite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2699), 20);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 16);
+                        put(DustList.Alumina_Dust, 20);
+                        put(DustList.Cryolite_Dust, 20);
+                        put(DustList.Sodium_Dust, 16);
                     }
                 }));
 
         // "Endium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5770),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6770) },
-                // "Raw Endium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5770),
-                // "Crushed Endium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5770),
+                new ItemStack[] {
+                    OreList.Endium_Ore_Stone,
+                    OreList.Endium_Ore_Netherrack,
+                    OreList.Endium_Ore_EndStone },
+                RawOreList.Raw_Endium_Ore,
+                CrushedOreList.Crushed_Endium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Endium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2770), 14);
+                        put(DustList.Endium_Dust, 14);
                     }
                 }));
 
         // "Calcium Hydride Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5797),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6797) },
-                // "Raw Calcium Hydride Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5797),
-                // "Crushed Calcium Hydride Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5797),
+                new ItemStack[] {
+                    OreList.Calcium_Hydride_Ore_Stone,
+                    OreList.Calcium_Hydride_Ore_Netherrack,
+                    OreList.Calcium_Hydride_Ore_EndStone },
+                RawOreList.Raw_Calcium_Hydride_Ore,
+                CrushedOreList.Crushed_Calcium_Hydride_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Hydride Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2797), 14);
+                        put(DustList.Calcium_Hydride_Dust, 14);
                     }
                 }));
 
         // "Redstone Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5810),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6810) },
-                // "Raw Redstone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5810),
-                // "Crushed Redstone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5810),
+                new ItemStack[] {
+                    OreList.Redstone_Ore_Stone,
+                    OreList.Redstone_Ore_Netherrack,
+                    OreList.Redstone_Ore_EndStone },
+                RawOreList.Raw_Redstone_Ore,
+                CrushedOreList.Crushed_Redstone_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Glowstone Dust"
-                        put(getModItem(Minecraft.ID, "glowstone_dust", 1L), 5);
-                        // "Redstone Dust"
-                        put(getModItem(Minecraft.ID, "redstone", 1L), 20);
-                        // "Cinnabar Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2826), 25);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 15);
+                        put(DustList.Glowstone_Dust, 5);
+                        put(DustList.Redstone_Dust, 20);
+                        put(DustList.Cinnabar_Dust, 25);
+                        put(DustList.Rare_Earth, 15);
                     }
                 }));
 
         // "Electrotine Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5812),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6812) },
-                // "Raw Electrotine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5812),
-                // "Crushed Electrotine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5812),
+                new ItemStack[] {
+                    OreList.Electrotine_Ore_Stone,
+                    OreList.Electrotine_Ore_Netherrack,
+                    OreList.Electrotine_Ore_EndStone },
+                RawOreList.Raw_Electrotine_Ore,
+                CrushedOreList.Crushed_Electrotine_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Redstone Dust"
-                        put(getModItem(Minecraft.ID, "redstone", 1L), 25);
-                        // "Diamond Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2500), 5);
-                        // "Electrum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2303), 15);
-                        // Electrotine
-                        put(getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 56), 25);
+                        put(DustList.Redstone_Dust, 25);
+                        put(DustList.Diamond_Dust, 5);
+                        put(DustList.Electrotine_Dust, 15);
+                        put(DustList.Electrotine, 25);
                     }
                 }));
 
         // "Salt Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5817),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6817) },
-                // "Raw Salt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5817),
-                // "Crushed Salt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5817),
+                new ItemStack[] {
+                    OreList.Salt_Ore_Stone,
+                    OreList.Salt_Ore_Netherrack,
+                    OreList.Salt_Ore_EndStone },
+                RawOreList.Raw_Salt_Ore,
+                CrushedOreList.Crushed_Salt_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 22), 4);
-                        // Salt
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 20), 2);
-                        // "Exquisite Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 20), 2);
-                        // "Flawless Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 20), 2);
-                        // "Flawed Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 20), 2);
-                        // "Chipped Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 20), 2);
-                        // "Borax Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2941), 8);
-                        // "Rock Salt"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2944), 6);
-                        // Salt
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2817), 12);
+                        put(GemList.Rock_Salt, 4);
+                        put(GemList.Salt, 2);
+                        put(GemList.Exquisite_Salt, 2);
+                        put(GemList.Flawless_Salt, 2);
+                        put(GemList.Flawed_Salt, 2);
+                        put(GemList.Chipped_Salt, 2);
+                        put(DustList.Borax_Dust, 8);
+                        put(DustList.Rock_Salt, 6);
+                        put(DustList.Salt, 12);
                     }
                 }));
 
         // "Almandine Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5820),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6820) },
-                // "Raw Almandine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5820),
-                // "Crushed Almandine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5820),
+                new ItemStack[] {
+                    OreList.Almandine_Ore_Stone,
+                    OreList.Almandine_Ore_Netherrack,
+                    OreList.Almandine_Ore_EndStone },
+                RawOreList.Raw_Almandine_Ore,
+                CrushedOreList.Crushed_Almandine_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Almandine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2820), 5);
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 4);
-                        // "Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8527), 2);
-                        // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 3);
+                        put(DustList.Almandine_Dust, 5);
+                        put(DustList.Alumina_Dust, 4);
+                        put(GemList.Red_Garnet, 2);
+                        put(DustList.Red_Garnet_Dust, 3);
                     }
                 }));
 
         // "Andradite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5821),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6821) },
-                // "Raw Andradite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5821),
-                // "Crushed Andradite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5821),
+                new ItemStack[] {
+                    OreList.Andradite_Ore_Stone,
+                    OreList.Andradite_Ore_Netherrack,
+                    OreList.Andradite_Ore_EndStone },
+                RawOreList.Raw_Andradite_Ore,
+                CrushedOreList.Crushed_Andradite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Andradite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2821), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8528), 2);
-                        // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 3);
+                        put(DustList.Andradite_Dust, 6);
+                        put(DustList.Iron_Dust, 5);
+                        put(GemList.Yellow_Garnet, 2);
+                        put(DustList.Yellow_Garnet_Dust, 3);
                     }
                 }));
 
         // "Bauxite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5822),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6822) },
-                // "Raw Bauxite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5822),
-                // "Crushed Bauxite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5822),
+                new ItemStack[] {
+                    OreList.Bauxite_Ore_Stone,
+                    OreList.Bauxite_Ore_Netherrack,
+                    OreList.Bauxite_Ore_EndStone },
+                RawOreList.Raw_Bauxite_Ore,
+                CrushedOreList.Crushed_Bauxite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bauxite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2822), 5);
-                        // "Gallium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2037), 1);
-                        // "Grossular Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2831), 5);
-                        // "Rutile Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2375), 4);
+                        put(DustList.Bauxite_Dust, 5);
+                        put(DustList.Gallium_Dust, 1);
+                        put(DustList.Grossular_Dust, 5);
+                        put(DustList.Rutile_Dust, 4);
                     }
                 }));
 
         // "Calcite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5823),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6823) },
-                // "Raw Calcite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5823),
-                // "Crushed Calcite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5823),
+                new ItemStack[] {
+                    OreList.Calcite_Ore_Stone,
+                    OreList.Calcite_Ore_Netherrack,
+                    OreList.Calcite_Ore_EndStone },
+                RawOreList.Raw_Calcite_Ore,
+                CrushedOreList.Crushed_Calcite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Andradite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2821), 5);
-                        // "Calcite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2823), 5);
-                        // "Malachite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2871), 4);
+                        put(DustList.Andradite_Dust, 5);
+                        put(DustList.Calcite_Dust, 5);
+                        put(DustList.Malachite_Dust, 4);
                     }
                 }));
 
         // "Cassiterite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5824),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6824) },
-                // "Raw Cassiterite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5824),
-                // "Crushed Cassiterite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5824),
+                new ItemStack[] {
+                    OreList.Cassiterite_Ore_Stone,
+                    OreList.Cassiterite_Ore_Netherrack,
+                    OreList.Cassiterite_Ore_EndStone },
+                RawOreList.Raw_Cassiterite_Ore,
+                CrushedOreList.Crushed_Cassiterite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 8);
-                        // "Cassiterite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2824), 12);
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 20);
+                        put(DustList.Zirconium_Dust, 8);
+                        put(DustList.Cassiterite_Dust, 12);
+                        put(DustList.Tin_Dust, 20);
                     }
                 }));
 
         // "Chromite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5825),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6825) },
-                // "Raw Chromite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5825),
-                // "Crushed Chromite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5825),
+                new ItemStack[] {
+                    OreList.Chromite_Ore_Stone,
+                    OreList.Chromite_Ore_Netherrack,
+                    OreList.Chromite_Ore_EndStone },
+                RawOreList.Raw_Chromite_Ore,
+                CrushedOreList.Crushed_Chromite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chromite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2825), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 6);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 4);
+                        put(DustList.Chromite_Dust, 6);
+                        put(DustList.Iron_Dust, 6);
+                        put(DustList.Magnesium_Dust, 4);
                     }
                 }));
 
         // "Cinnabar Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5826),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6826) },
-                // "Raw Cinnabar Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5826),
-                // "Crushed Cinnabar Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5826),
+                new ItemStack[] {
+                    OreList.Cinnabar_Ore_Stone,
+                    OreList.Cinnabar_Ore_Netherrack,
+                    OreList.Cinnabar_Ore_EndStone },
+                RawOreList.Raw_Cinnabar_Ore,
+                CrushedOreList.Crushed_Cinnabar_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Glowstone Dust"
-                        put(getModItem(Minecraft.ID, "glowstone_dust", 1L), 1);
-                        // "Redstone Dust"
-                        put(getModItem(Minecraft.ID, "redstone", 1L), 5);
-                        // "Cinnabar Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2826), 6);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 3);
-                        // Amber
-                        put(getModItem(Thaumcraft.ID, "ItemResource", 1L, 3), 8);
+                        put(DustList.Glowstone_Dust, 1);
+                        put(DustList.Redstone_Dust, 5);
+                        put(DustList.Cinnabar_Dust, 6);
+                        put(DustList.Sulfur_Dust, 3);
+                        put(GemList.Amber, 8);
                     }
                 }));
 
         // "Cobaltite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5827),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6827) },
-                // "Raw Cobaltite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5827),
-                // "Crushed Cobaltite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5827),
+                new ItemStack[] {
+                    OreList.Cobaltite_Ore_Stone,
+                    OreList.Cobaltite_Ore_Netherrack,
+                    OreList.Cobaltite_Ore_EndStone },
+                RawOreList.Raw_Cobaltite_Ore,
+                CrushedOreList.Crushed_Cobaltite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 9);
-                        // "Cobaltite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2827), 6);
+                        put(DustList.Cobalt_Dust, 9);
+                        put(DustList.Cobaltite_Dust, 6);
                     }
                 }));
 
         // "Sheldonite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5828),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6828) },
-                // "Raw Sheldonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5828),
-                // "Crushed Sheldonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5828),
+                new ItemStack[] {
+                    OreList.Sheldonite_Ore_Stone,
+                    OreList.Sheldonite_Ore_Netherrack,
+                    OreList.Sheldonite_Ore_EndStone },
+                RawOreList.Raw_Sheldonite_Ore,
+                CrushedOreList.Crushed_Sheldonite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 1);
-                        // "Palladium Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 53), 20);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 4);
-                        // "Sheldonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2828), 6);
+                        put(DustList.Iridium_Metal_Residue_Dust, 1);
+                        put(DustList.Palladium_Metallic_Powder_Dust, 20);
+                        put(DustList.Nickel_Dust, 4);
+                        put(DustList.Sheldonite_Dust, 6);
                     }
                 }));
 
         // "Deep Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5829),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6829) },
-                // "Raw Deep Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5829),
-                // "Crushed Deep Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5829),
+                new ItemStack[] {
+                    OreList.Deep_Iron_Ore_Stone,
+                    OreList.Deep_Iron_Ore_Netherrack,
+                    OreList.Deep_Iron_Ore_EndStone },
+                RawOreList.Raw_Deep_Iron_Ore,
+                CrushedOreList.Crushed_Deep_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Deep Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2829), 5);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 4);
-                        // "Trinium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2868), 5);
+                        put(DustList.Deep_Iron_Dust, 5);
+                        put(DustList.Iron_Dust, 4);
+                        put(DustList.Trinium_Dust, 5);
                     }
                 }));
 
         // "Galena Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5830),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6830) },
-                // "Raw Galena Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5830),
-                // "Crushed Galena Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5830),
+                new ItemStack[] {
+                    OreList.Galena_Ore_Stone,
+                    OreList.Galena_Ore_Netherrack,
+                    OreList.Galena_Ore_EndStone },
+                RawOreList.Raw_Galena_Ore,
+                CrushedOreList.Crushed_Galena_Ore,
                 new HashMap<>() {
 
                     {
-                        // "Galena Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2830), 5);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 1);
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 4);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 5);
+                        put(DustList.Galena_Dust, 5);
+                        put(DustList.Lead_Dust, 1);
+                        put(DustList.Silver_Dust, 4);
+                        put(DustList.Sulfur_Dust, 5);
                     }
                 }));
 
         // "Grossular Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5831),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6831) },
-                // "Raw Grossular Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5831),
-                // "Crushed Grossular Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5831),
+                new ItemStack[] {
+                    OreList.Grossular_Ore_Stone,
+                    OreList.Grossular_Ore_Netherrack,
+                    OreList.Grossular_Ore_EndStone },
+                RawOreList.Raw_Grossular_Ore,
+                CrushedOreList.Crushed_Grossular_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Grossular Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2831), 5);
-                        // "Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8528), 2);
-                        // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 3);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Grossular_Dust, 5);
+                        put(GemList.Yellow_Garnet, 2);
+                        put(DustList.Yellow_Garnet_Dust, 3);
                     }
                 }));
 
         // "Phosphate Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5833),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6833) },
-                // "Raw Phosphate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5833),
-                // "Crushed Phosphate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5833),
+                new ItemStack[] {
+                    OreList.Phosphate_Ore_Stone,
+                    OreList.Phosphate_Ore_Netherrack,
+                    OreList.Phosphate_Ore_EndStone },
+                RawOreList.Raw_Phosphate_Ore,
+                CrushedOreList.Crushed_Phosphate_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2833), 5);
-                        // "Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2021), 9);
+                        put(DustList.Phosphate_Dust, 5);
+                        put(DustList.Phosphorus_Dust, 9);
                     }
                 }));
 
         // "Pyrite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5834),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6834) },
-                // "Raw Pyrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5834),
-                // "Crushed Pyrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5834),
+                new ItemStack[] {
+                    OreList.Pyrite_Ore_Stone,
+                    OreList.Pyrite_Ore_Netherrack,
+                    OreList.Pyrite_Ore_EndStone },
+                RawOreList.Raw_Pyrite_Ore,
+                CrushedOreList.Crushed_Pyrite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 2);
-                        // "Pyrite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2834), 6);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 5);
-                        // "Tricalcium Phosphate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2534), 3);
+                        put(DustList.Iron_Dust, 2);
+                        put(DustList.Pyrite_Dust, 6);
+                        put(DustList.Sulfur_Dust, 5);
+                        put(DustList.Tricalcium_Phosphate_Dust, 3);
                     }
                 }));
 
         // "Pyrope Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5835),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6835) },
-                // "Raw Pyrope Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5835),
-                // "Crushed Pyrope Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5835),
+                new ItemStack[] {
+                    OreList.Pyrope_Ore_Stone,
+                    OreList.Pyrope_Ore_Netherrack,
+                    OreList.Pyrope_Ore_EndStone },
+                RawOreList.Raw_Pyrope_Ore,
+                CrushedOreList.Crushed_Pyrope_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 4);
-                        // "Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8527), 2);
-                        // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 3);
-                        // "Pyrope Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2835), 5);
+                        put(DustList.Magnesium_Dust, 4);
+                        put(GemList.Red_Garnet, 2);
+                        put(DustList.Red_Garnet_Dust, 3);
+                        put(DustList.Pyrope_Dust, 5);
                     }
                 }));
 
         // "Saltpeter Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5836),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6836) },
-                // "Raw Saltpeter Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5836),
-                // "Crushed Saltpeter Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5836),
+                new ItemStack[] {
+                    OreList.Saltpeter_Ore_Stone,
+                    OreList.Saltpeter_Ore_Netherrack,
+                    OreList.Saltpeter_Ore_EndStone },
+                RawOreList.Raw_Saltpeter_Ore,
+                CrushedOreList.Crushed_Saltpeter_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Saltpeter Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2836), 56);
+                        put(DustList.Saltpeter_Dust, 56);
                     }
                 }));
 
         // "Spessartine Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5838),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6838) },
-                // "Raw Spessartine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5838),
-                // "Crushed Spessartine Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5838),
+                new ItemStack[] {
+                    OreList.Spessartine_Ore_Stone,
+                    OreList.Spessartine_Ore_Netherrack,
+                    OreList.Spessartine_Ore_EndStone },
+                RawOreList.Raw_Spessartine_Ore,
+                CrushedOreList.Crushed_Spessartine_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 4);
-                        // "Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8527), 2);
-                        // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 3);
-                        // "Spessartine Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2838), 5);
+                        put(DustList.Manganese_Dust, 4);
+                        put(GemList.Red_Garnet, 2);
+                        put(DustList.Red_Garnet_Dust, 3);
+                        put(DustList.Spessartine_Dust, 5);
                     }
                 }));
 
         // "Sphalerite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5839),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6839) },
-                // "Raw Sphalerite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5839),
-                // "Crushed Sphalerite Ore"
+                new ItemStack[] {
+                    OreList.Sphalerite_Ore_Stone,
+                    OreList.Sphalerite_Ore_Netherrack,
+                    OreList.Sphalerite_Ore_EndStone },
+                RawOreList.Raw_Sphalerite_Ore,
                 getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5839),
                 new HashMap<>() {
-
                     {
-                        // "Cadmium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2055), 3);
-                        // "Gallium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2037), 1);
-                        // "Sphalerite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2839), 5);
-                        // "Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8528), 2);
-                        // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 3);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 1);
+                        put(DustList.Cadmium_Dust, 3);
+                        put(DustList.Gallium_Dust, 1);
+                        put(DustList.Sphalerite_Dust, 5);
+                        put(GemList.Yellow_Garnet, 2);
+                        put(DustList.Yellow_Garnet_Dust, 3);
+                        put(DustList.Zinc_Dust, 1);
                     }
                 }));
 
         // "Tetrahedrite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5840),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6840) },
-                // "Raw Tetrahedrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5840),
-                // "Crushed Tetrahedrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5840),
+                new ItemStack[] {
+                    OreList.Tetrahedrite_Ore_Stone,
+                    OreList.Tetrahedrite_Ore_Netherrack,
+                    OreList.Tetrahedrite_Ore_EndStone },
+                RawOreList.Raw_Tetrahedrite_Ore,
+                CrushedOreList.Crushed_Tetrahedrite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Antimony Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2058), 5);
-                        // "Tetrahedrite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2840), 6);
-                        // "Zinc Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2036), 4);
+                        put(DustList.Antimony_Dust, 5);
+                        put(DustList.Tetrahedrite_Dust, 6);
+                        put(DustList.Zinc_Dust, 4);
                     }
                 }));
 
         // "Tungstate Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5841),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6841) },
-                // "Raw Tungstate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5841),
-                // "Crushed Tungstate Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5841),
+                new ItemStack[] {
+                    OreList.Tungstate_Ore_Stone,
+                    OreList.Tungstate_Ore_Netherrack,
+                    OreList.Tungstate_Ore_EndStone },
+                RawOreList.Raw_Tungstate_Ore,
+                CrushedOreList.Crushed_Tungstate_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lithium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2006), 2);
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 10);
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 8);
-                        // "Tungstate Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2841), 10);
+                        put(DustList.Lithium_Dust, 2);
+                        put(DustList.Manganese_Dust, 10);
+                        put(DustList.Silver_Dust, 8);
+                        put(DustList.Tungstate_Dust, 10);
                     }
                 }));
 
         // "Uvarovite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5842),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6842) },
-                // "Raw Uvarovite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5842),
-                // "Crushed Uvarovite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5842),
+                new ItemStack[] {
+                    OreList.Uvarovite_Ore_Stone,
+                    OreList.Uvarovite_Ore_Netherrack,
+                    OreList.Uvarovite_Ore_EndStone },
+                RawOreList.Raw_Uvarovite_Ore,
+                CrushedOreList.Crushed_Uvarovite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 4);
-                        // "Uvarovite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2842), 5);
-                        // "Yellow Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8528), 2);
-                        // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 3);
+                        put(DustList.Chrome_Dust, 4);
+                        put(DustList.Uvarovite_Dust, 5);
+                        put(GemList.Yellow_Garnet, 2);
+                        put(DustList.Yellow_Garnet_Dust, 3);
                     }
                 }));
 
         // "Chalcopyrite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5855),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6855) },
-                // "Raw Chalcopyrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5855),
-                // "Crushed Chalcopyrite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5855),
+                new ItemStack[] {
+                    OreList.Chalcopyrite_Ore_Stone,
+                    OreList.Chalcopyrite_Ore_Netherrack,
+                    OreList.Chalcopyrite_Ore_EndStone },
+                RawOreList.Raw_Chalcopyrite_Ore,
+                CrushedOreList.Crushed_Chalcopyrite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cadmium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2055), 11);
-                        // "Chalcopyrite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2855), 5);
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 4);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 1);
-                        // "Pyrite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2834), 5);
+                        put(DustList.Cadmium_Dust, 11);
+                        put(DustList.Chalcopyrite_Dust, 5);
+                        put(DustList.Cobalt_Dust, 4);
+                        put(DustList.Gold_Dust, 1);
+                        put(DustList.Pyrite_Dust, 5);
                     }
                 }));
 
         // "Silicon Solar Grade (Poly SI) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5856),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6856) },
-                // "Raw Silicon Solar Grade (Poly SI) Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5856),
-                // "Crushed Silicon Solar Grade (Poly SI) Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5856),
+                new ItemStack[] {
+                    OreList.Silicon_Solar_Grade_Poly_SI_Ore_Stone,
+                    OreList.Silicon_Solar_Grade_Poly_SI_Ore_Netherrack,
+                    OreList.Silicon_Solar_Grade_Poly_SI_Ore_EndStone },
+                RawOreList.Raw_Silicon_Solar_Grade_Poly_SI_Ore,
+                CrushedOreList.Crushed_Silicon_Solar_Grade_Poly_SI_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Silicon Solar Grade (Poly SI) Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2856), 14);
+                        put(DustList.Silicon_Solar_Grade_Poly_SI_Dust, 14);
                     }
                 }));
 
         // "Emery Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5861),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6861) },
-                // "Raw Emery Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5861),
-                // "Crushed Emery Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5861),
+                new ItemStack[] {
+                    OreList.Emery_Ore_Stone,
+                    OreList.Emery_Ore_Netherrack,
+                    OreList.Emery_Ore_EndStone },
+                RawOreList.Raw_Emery_Ore,
+                CrushedOreList.Crushed_Emery_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Emery Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2861), 14);
+                        put(DustList.Emery_Dust, 14);
                     }
                 }));
 
         // "Graphite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5865),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6865) },
-                // "Raw Graphite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5865),
-                // "Crushed Graphite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5865),
+                new ItemStack[] {
+                    OreList.Graphite_Ore_Stone,
+                    OreList.Graphite_Ore_Netherrack,
+                    OreList.Graphite_Ore_EndStone },
+                RawOreList.Raw_Graphite_Ore,
+                CrushedOreList.Crushed_Graphite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Carbon Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2865), 9);
-                        // "Graphite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2865), 5);
+                        put(DustList.Carbon_Dust, 9);
+                        put(DustList.Graphite_Dust, 5);
                     }
                 }));
 
         // "Trinium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5868),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6868) },
-                // "Raw Trinium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5868),
-                // "Crushed Trinium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5868),
+                new ItemStack[] {
+                    OreList.Trinium_Ore_Stone,
+                    OreList.Trinium_Ore_Netherrack,
+                    OreList.Trinium_Ore_EndStone },
+                RawOreList.Raw_Trinium_Ore,
+                CrushedOreList.Crushed_Trinium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Trinium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2868), 14);
+                        put(DustList.Trinium_Dust, 14);
                     }
                 }));
 
         // "Magnetite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5870),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6870) },
-                // "Raw Magnetite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5870),
-                // "Crushed Magnetite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5870),
+                new ItemStack[] {
+                    OreList.Magnetite_Ore_Stone,
+                    OreList.Magnetite_Ore_Netherrack,
+                    OreList.Magnetite_Ore_EndStone },
+                RawOreList.Raw_Magnetite_Ore,
+                CrushedOreList.Crushed_Magnetite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 5);
-                        // "Magnetite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2870), 6);
+                        put(DustList.Gold_Dust, 6);
+                        put(DustList.Iron_Dust, 5);
+                        put(DustList.Magnetite_Dust, 6);
                     }
                 }));
 
         // "Malachite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5871),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6871) },
-                // "Raw Malachite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5871),
-                // "Crushed Malachite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5871),
+                new ItemStack[] {
+                    OreList.Malachite_Ore_Stone,
+                    OreList.Malachite_Ore_Netherrack,
+                    OreList.Malachite_Ore_EndStone },
+                RawOreList.Raw_Malachite_Ore,
+                CrushedOreList.Crushed_Malachite_Ore,
                 new HashMap<>() {
-
                     {
-                        // Malachite
-                        put(getModItem(BiomesOPlenty.ID, "gems", 1L, 5), 5);
-                        // "Brown Limonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2930), 3);
-                        // "Calcite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2823), 1);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 6);
-                        // "Malachite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2871), 6);
+                        put(GemList.Malachite, 5);
+                        put(DustList.Brown_Limonite_Dust, 3);
+                        put(DustList.Calcite_Dust, 1);
+                        put(DustList.Copper_Dust, 6);
+                        put(DustList.Malachite_Dust, 6);
                     }
                 }));
 
         // "Pitchblende"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 16873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 17873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 18873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 19873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 20873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 21873),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 22873) },
-                // "Raw Pitchblende Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5873),
-                // "Ground Pitchblende"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5873),
+                new ItemStack[] {
+                    OreList.Pitchblende_Stone,
+                    OreList.Pitchblende_Netherrack,
+                    OreList.Pitchblende_EndStone },
+                RawOreList.Raw_Pitchblende_Ore,
+                CrushedOreList.Ground_Pitchblende,
                 new HashMap<>() {
-
                     {
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 2);
-                        // "Pitchblende"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2873), 6);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 5);
-                        // "Uranium 238 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2098), 3);
-                        // "Radium 226 Dust"
-                        put(getModItem(GTPlusPlus.ID, "dustRadium226", 1L), 4);
+                        put(DustList.Lead_Dust, 2);
+                        put(DustList.Pitchblende, 6);
+                        put(DustList.Thorium_Dust, 5);
+                        put(DustList.Uranium_238_Dust, 3);
+                        put(DustList.Radium_226_Dust, 4);
                     }
                 }));
 
         // "Soapstone Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5877),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6877) },
-                // "Raw Soapstone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5877),
-                // "Crushed Soapstone Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5877),
+                new ItemStack[] {
+                    OreList.Soapstone_Ore_Stone,
+                    OreList.Soapstone_Ore_Netherrack,
+                    OreList.Soapstone_Ore_EndStone },
+                RawOreList.Raw_Soapstone_Ore,
+                CrushedOreList.Crushed_Soapstone_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Soapstone Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2877), 14);
+                        put(DustList.Soapstone_Dust, 14);
                     }
                 }));
 
         // "Wulfenite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5882),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6882) },
-                // "Raw Wulfenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5882),
-                // "Crushed Wulfenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5882),
+                new ItemStack[] {
+                    OreList.Wulfenite_Ore_Stone,
+                    OreList.Wulfenite_Ore_Netherrack,
+                    OreList.Wulfenite_Ore_EndStone },
+                RawOreList.Raw_Wulfenite_Ore,
+                CrushedOreList.Crushed_Wulfenite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Wulfenite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2882), 14);
+                        put(DustList.Wulfenite_Dust, 14);
                     }
                 }));
 
         // "Powellite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5883),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6883) },
-                // "Raw Powellite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5883),
-                // "Crushed Powellite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5883),
+                new ItemStack[] {
+                    OreList.Powellite_Ore_Stone,
+                    OreList.Powellite_Ore_Netherrack,
+                    OreList.Powellite_Ore_EndStone },
+                RawOreList.Raw_Powellite_Ore,
+                CrushedOreList.Crushed_Powellite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Powellite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2883), 14);
+                        put(DustList.Powellite_Dust, 14);
                     }
                 }));
 
         // "Desh Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5884),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6884) },
-                // "Raw Desh Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5884),
-                // "Crushed Desh Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5884),
+                new ItemStack[] {
+                    OreList.Desh_Ore_Stone,
+                    OreList.Desh_Ore_Netherrack,
+                    OreList.Desh_Ore_EndStone },
+                RawOreList.Raw_Desh_Ore,
+                CrushedOreList.Crushed_Desh_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Desh Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2884), 14);
+                        put(DustList.Desh_Dust, 14);
                     }
                 }));
 
         // "Cheese Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5894),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6894) },
-                // "Raw Cheese Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5894),
-                // "Crushed Cheese Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5894),
+                new ItemStack[] {
+                    OreList.Cheese_Ore_Stone,
+                    OreList.Cheese_Ore_Netherrack,
+                    OreList.Cheese_Ore_EndStone },
+                RawOreList.Raw_Cheese_Ore,
+                CrushedOreList.Crushed_Cheese_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cheese Powder"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2894), 14);
+                        put(DustList.Cheese_Powder, 14);
                     }
                 }));
 
         // "Mirabilite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5900),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6900) },
-                // "Raw Mirabilite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5900),
-                // "Crushed Mirabilite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5900),
+                new ItemStack[] {
+                    OreList.Mirabilite_Ore_Stone,
+                    OreList.Mirabilite_Ore_Netherrack,
+                    OreList.Mirabilite_Ore_EndStone },
+                RawOreList.Raw_Mirabilite_Ore,
+                CrushedOreList.Crushed_Mirabilite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Mirabilite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2900), 14);
+                        put(DustList.Mirabilite_Dust, 14);
                     }
                 }));
 
         // "Mica Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5901),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6901) },
-                // "Raw Mica Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5901),
-                // "Crushed Mica Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5901),
+                new ItemStack[] {
+                    OreList.Mica_Ore_Stone,
+                    OreList.Mica_Ore_Netherrack,
+                    OreList.Mica_Ore_EndStone },
+                RawOreList.Raw_Mica_Ore,
+                CrushedOreList.Crushed_Mica_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Mica Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2901), 14);
+                        put(DustList.Mica_Dust, 14);
                     }
                 }));
 
         // "Talc"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5902),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6902) },
-                // "Raw Talc Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5902),
-                // "Ground Talc"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5902),
+                new ItemStack[] {
+                    OreList.Talc_Stone,
+                    OreList.Talc_Netherrack,
+                    OreList.Talc_EndStone },
+                RawOreList.Raw_Talc_Ore,
+                CrushedOreList.Ground_Talc,
                 new HashMap<>() {
-
                     {
-                        // "Talc"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2902), 14);
+                        put(DustList.Talc, 14);
                     }
                 }));
 
         // "Trona Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5903),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6903) },
-                // "Raw Trona Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5903),
-                // "Crushed Trona Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5903),
+                new ItemStack[] {
+                    OreList.Trona_Ore_Stone,
+                    OreList.Trona_Ore_Netherrack,
+                    OreList.Trona_Ore_EndStone },
+                RawOreList.Raw_Trona_Ore,
+                CrushedOreList.Crushed_Trona_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Trona Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2903), 14);
+                        put(DustList.Trona_Dust, 14);
                     }
                 }));
 
         // "Barite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5904),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6904) },
-                // "Raw Barite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5904),
-                // "Crushed Barite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5904),
+                new ItemStack[] {
+                    OreList.Barite_Ore_Stone,
+                    OreList.Barite_Ore_Netherrack,
+                    OreList.Barite_Ore_EndStone },
+                RawOreList.Raw_Barite_Ore,
+                CrushedOreList.Crushed_Barite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Barite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2904), 14);
+                        put(DustList.Barite_Dust, 14);
                     }
                 }));
 
         // "Bastnasite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5905),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6905) },
-                // "Raw Bastnasite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5905),
-                // "Crushed Bastnasite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5905),
+                new ItemStack[] {
+                    OreList.Bastnasite_Ore_Stone,
+                    OreList.Bastnasite_Ore_Netherrack,
+                    OreList.Bastnasite_Ore_EndStone },
+                RawOreList.Raw_Bastnasite_Ore,
+                CrushedOreList.Crushed_Bastnasite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bastnasite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2905), 6);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 6);
-                        // "Rare Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2891), 4);
+                        put(DustList.Bastnasite_Dust, 6);
+                        put(DustList.Neodymium_Dust, 6);
+                        put(DustList.Rare_Earth, 4);
                     }
                 }));
 
         // "Garnierite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5906),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6906) },
-                // "Raw Garnierite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5906),
-                // "Crushed Garnierite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5906),
+                new ItemStack[] {
+                    OreList.Garnierite_Ore_Stone,
+                    OreList.Garnierite_Ore_Netherrack,
+                    OreList.Garnierite_Ore_EndStone },
+                RawOreList.Raw_Garnierite_Ore,
+                CrushedOreList.Crushed_Garnierite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Garnierite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2906), 5);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 10);
+                        put(DustList.Garnierite_Dust, 5);
+                        put(DustList.Nickel_Dust, 10);
                     }
                 }));
 
         // "Lepidolite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5907),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6907) },
-                // "Raw Lepidolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5907),
-                // "Crushed Lepidolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5907),
+                new ItemStack[] {
+                    OreList.Lepidolite_Ore_Stone,
+                    OreList.Lepidolite_Ore_Netherrack,
+                    OreList.Lepidolite_Ore_EndStone },
+                RawOreList.Raw_Lepidolite_Ore,
+                CrushedOreList.Crushed_Lepidolite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Caesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2062), 4);
-                        // "Lepidolite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2907), 5);
-                        // "Lithium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2006), 5);
+                        put(DustList.Caesium_Dust, 4);
+                        put(DustList.Lepidolite_Dust, 5);
+                        put(DustList.Lithium_Dust, 5);
                     }
                 }));
 
         // "Magnesite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5908),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6908) },
-                // "Raw Magnesite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5908),
-                // "Crushed Magnesite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5908),
+                new ItemStack[] {
+                    OreList.Magnesite_Ore_Stone,
+                    OreList.Magnesite_Ore_Netherrack,
+                    OreList.Magnesite_Ore_EndStone },
+                RawOreList.Raw_Magnesite_Ore,
+                CrushedOreList.Crushed_Magnesite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Magnesite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2908), 5);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 9);
+                        put(DustList.Magnesite_Dust, 5);
+                        put(DustList.Magnesium_Dust, 9);
                     }
                 }));
 
         // "Pentlandite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5909),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6909) },
-                // "Raw Pentlandite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5909),
-                // "Crushed Pentlandite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5909),
+                new ItemStack[] {
+                    OreList.Pentlandite_Ore_Stone,
+                    OreList.Pentlandite_Ore_Netherrack,
+                    OreList.Pentlandite_Ore_EndStone },
+                RawOreList.Raw_Pentlandite_Ore,
+                CrushedOreList.Crushed_Pentlandite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 2);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 6);
-                        // "Pentlandite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2909), 6);
-                        // "Sulfur Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2022), 3);
+                        put(DustList.Cobalt_Dust, 2);
+                        put(DustList.Iron_Dust, 6);
+                        put(DustList.Pentlandite_Dust, 6);
+                        put(DustList.Sulfur_Dust, 3);
                     }
                 }));
 
         // "Scheelite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5910),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6910) },
-                // "Raw Scheelite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5910),
-                // "Crushed Scheelite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5910),
+                new ItemStack[] {
+                    OreList.Scheelite_Ore_Stone,
+                    OreList.Scheelite_Ore_Netherrack,
+                    OreList.Scheelite_Ore_EndStone },
+                RawOreList.Raw_Scheelite_Ore,
+                CrushedOreList.Crushed_Scheelite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 5);
-                        // "Molybdenum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2048), 3);
-                        // "Scheelite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2910), 5);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Manganese_Dust, 5);
+                        put(DustList.Molybdenum_Dust, 3);
+                        put(DustList.Scheelite_Dust, 5);
                     }
                 }));
 
         // "Alunite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5911),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6911) },
-                // "Raw Alunite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5911),
-                // "Crushed Alunite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5911),
+                new ItemStack[] {
+                    OreList.Alunite_Ore_Stone,
+                    OreList.Alunite_Ore_Netherrack,
+                    OreList.Alunite_Ore_EndStone },
+                RawOreList.Raw_Alunite_Ore,
+                CrushedOreList.Crushed_Alunite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alunite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2911), 14);
+                        put(DustList.Alunite_Dust, 14);
                     }
                 }));
 
         // "Chrysotile Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5912),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6912) },
-                // "Raw Chrysotile Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5912),
-                // "Crushed Chrysotile Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5912),
+                new ItemStack[] {
+                    OreList.Chrysotile_Ore_Stone,
+                    OreList.Chrysotile_Ore_Netherrack,
+                    OreList.Chrysotile_Ore_EndStone },
+                RawOreList.Raw_Chrysotile_Ore,
+                CrushedOreList.Crushed_Chrysotile_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Asbestos Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2946), 5);
-                        // "Chrysotile Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2912), 5);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 3);
+                        put(DustList.Asbestos_Dust, 5);
+                        put(DustList.Chrysotile_Dust, 5);
+                        put(DustList.Magnesium_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 3);
                     }
                 }));
 
         // "Realgar Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5913),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6913) },
-                // "Raw Realgar Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5913),
-                // "Crushed Realgar Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5913),
+                new ItemStack[] {
+                    OreList.Realgar_Ore_Stone,
+                    OreList.Realgar_Ore_Netherrack,
+                    OreList.Realgar_Ore_EndStone },
+                RawOreList.Raw_Realgar_Ore,
+                CrushedOreList.Crushed_Realgar_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Realgar Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2913), 14);
+                        put(DustList.Realgar_Dust, 14);
                     }
                 }));
 
         // "Dolomite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5914),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6914) },
-                // "Raw Dolomite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5914),
-                // "Crushed Dolomite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5914),
+                new ItemStack[] {
+                    OreList.Dolomite_Ore_Stone,
+                    OreList.Dolomite_Ore_Netherrack,
+                    OreList.Dolomite_Ore_EndStone },
+                RawOreList.Raw_Dolomite_Ore,
+                CrushedOreList.Crushed_Dolomite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Dolomite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2914), 14);
+                        put(DustList.Dolomite_Dust, 14);
                     }
                 }));
 
         // "Wollastonite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5915),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6915) },
-                // "Raw Wollastonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5915),
-                // "Crushed Wollastonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5915),
+                new ItemStack[] {
+                    OreList.Wollastonite_Ore_Stone,
+                    OreList.Wollastonite_Ore_Netherrack,
+                    OreList.Wollastonite_Ore_EndStone },
+                RawOreList.Raw_Wollastonite_Ore,
+                CrushedOreList.Crushed_Wollastonite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Wollastonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2915), 14);
+                        put(DustList.Wollastonite_Dust, 14);
                     }
                 }));
 
         // "Zeolite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5916),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6916) },
-                // "Raw Zeolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5916),
-                // "Crushed Zeolite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5916),
+                new ItemStack[] {
+                    OreList.Zeolite_Ore_Stone,
+                    OreList.Zeolite_Ore_Netherrack,
+                    OreList.Zeolite_Ore_EndStone },
+                RawOreList.Raw_Zeolite_Ore,
+                CrushedOreList.Crushed_Zeolite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Zeolite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2916), 14);
+                        put(DustList.Zeolite_Dust, 14);
                     }
                 }));
 
         // "Banded Iron Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5917),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6917) },
-                // "Raw Banded Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5917),
-                // "Crushed Banded Iron Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5917),
+                new ItemStack[] {
+                    OreList.Banded_Iron_Ore_Stone,
+                    OreList.Banded_Iron_Ore_Netherrack,
+                    OreList.Banded_Iron_Ore_EndStone },
+                RawOreList.Raw_Banded_Iron_Ore,
+                CrushedOreList.Crushed_Banded_Iron_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Banded Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2917), 15);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
+                        put(DustList.Banded_Iron_Dust, 15);
+                        put(DustList.Iron_Dust, 1);
                     }
                 }));
 
         // "Ilmenite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5918),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6918) },
-                // "Raw Ilmenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5918),
-                // "Crushed Ilmenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5918),
+                new ItemStack[] {
+                    OreList.Ilmenite_Ore_Stone,
+                    OreList.Ilmenite_Ore_Netherrack,
+                    OreList.Ilmenite_Ore_EndStone },
+                RawOreList.Raw_Ilmenite_Ore,
+                CrushedOreList.Crushed_Ilmenite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Hafnium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11000), 2);
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 2);
-                        // "Ilmenite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2918), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 7);
-                        // "Rutile Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2375), 4);
-                        // "Wrought Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2304), 1);
+                        put(DustList.Hafnium_Dust, 2);
+                        put(DustList.Zirconium_Dust, 2);
+                        put(DustList.Ilmenite_Dust, 6);
+                        put(DustList.Iron_Dust, 7);
+                        put(DustList.Rutile_Dust, 4);
                     }
                 }));
 
         // "Pollucite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5919),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6919) },
-                // "Raw Pollucite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5919),
-                // "Crushed Pollucite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5919),
+                new ItemStack[] {
+                    OreList.Pollucite_Ore_Stone,
+                    OreList.Pollucite_Ore_Netherrack,
+                    OreList.Pollucite_Ore_EndStone },
+                RawOreList.Raw_Pollucite_Ore,
+                CrushedOreList.Crushed_Pollucite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Caesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2062), 5);
-                        // "Pollucite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2919), 5);
-                        // "Rubidium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2043), 1);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Caesium_Dust, 5);
+                        put(DustList.Pollucite_Dust, 5);
+                        put(DustList.Rubidium_Dust, 1);
                     }
                 }));
 
         // "Spodumene Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5920),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6920) },
-                // "Raw Spodumene Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5920),
-                // "Crushed Spodumene Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5920),
+                new ItemStack[] {
+                    OreList.Spodumene_Ore_Stone,
+                    OreList.Spodumene_Ore_Netherrack,
+                    OreList.Spodumene_Ore_EndStone },
+                RawOreList.Raw_Spodumene_Ore,
+                CrushedOreList.Crushed_Spodumene_Ore,
                 new HashMap<>() {
-
                     {
-                        // Spodumene
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 21), 3);
-                        // "Exquisite Spodumene"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 21), 1);
-                        // "Flawless Spodumene"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 21), 1);
-                        // "Flawed Spodumene"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 21), 1);
-                        // "Chipped Spodumene"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 21), 1);
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 5);
-                        // "Lithium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2006), 4);
-                        // "Spodumene Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2920), 6);
+                        put(GemList.Spodumene, 3);
+                        put(GemList.Exquisite_Spodumene, 1);
+                        put(GemList.Flawless_Spodumene, 1);
+                        put(GemList.Flawed_Spodumene, 1);
+                        put(GemList.Chipped_Spodumene, 1);
+                        put(DustList.Alumina_Dust, 5);
+                        put(DustList.Lithium_Dust, 4);
+                        put(DustList.Spodumene_Dust, 6);
                     }
                 }));
 
         // "Tantalite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5921),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6921) },
-                // "Raw Tantalite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5921),
-                // "Crushed Tantalite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5921),
+                new ItemStack[] {
+                    OreList.Tantalite_Ore_Stone,
+                    OreList.Tantalite_Ore_Netherrack,
+                    OreList.Tantalite_Ore_EndStone },
+                RawOreList.Raw_Tantalite_Ore,
+                CrushedOreList.Crushed_Tantalite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 5);
-                        // "Niobium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2047), 3);
-                        // "Tantalite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2921), 5);
-                        // "Tantalum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2080), 2);
+                        put(DustList.Manganese_Dust, 5);
+                        put(DustList.Niobium_Dust, 3);
+                        put(DustList.Tantalite_Dust, 5);
+                        put(DustList.Tantalum_Dust, 2);
                     }
                 }));
 
         // "Uraninite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5922),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6922) },
-                // "Raw Uraninite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5922),
-                // "Crushed Uraninite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5922),
+                new ItemStack[] {
+                    OreList.Uraninite_Ore_Stone,
+                    OreList.Uraninite_Ore_Netherrack,
+                    OreList.Uraninite_Ore_EndStone },
+                RawOreList.Raw_Uraninite_Ore,
+                CrushedOreList.Crushed_Uraninite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 3);
-                        // "Uraninite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2922), 6);
-                        // "Uranium 235 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2097), 1);
-                        // "Uranium 238 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2098), 6);
-                        // "Radium 226 Dust"
-                        put(getModItem(GTPlusPlus.ID, "dustRadium226", 1L), 4);
+                        put(DustList.Thorium_Dust, 3);
+                        put(DustList.Uraninite_Dust, 6);
+                        put(DustList.Uranium_235_Dust, 1);
+                        put(DustList.Uranium_238_Dust, 6);
+                        put(DustList.Radium_226_Dust, 4);
                     }
                 }));
 
         // "Vanadium Magnetite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5923),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6923) },
-                // "Raw Vanadium Magnetite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5923),
-                // "Crushed Vanadium Magnetite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5923),
+                new ItemStack[] {
+                    OreList.Vanadium_Magnetite_Ore_Stone,
+                    OreList.Vanadium_Magnetite_Ore_Netherrack,
+                    OreList.Vanadium_Magnetite_Ore_EndStone },
+                RawOreList.Raw_Vanadium_Magnetite_Ore,
+                CrushedOreList.Crushed_Vanadium_Magnetite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 1);
-                        // "Magnetite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2870), 5);
-                        // "Vanadium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2029), 4);
-                        // "Vanadium Magnetite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2923), 6);
+                        put(DustList.Gold_Dust, 1);
+                        put(DustList.Magnesite_Dust, 5);
+                        put(DustList.Vanadium_Dust, 4);
+                        put(DustList.Vanadium_Magnetite_Dust, 6);
                     }
                 }));
 
         // "Kyanite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5924),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6924) },
-                // "Raw Kyanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5924),
-                // "Crushed Kyanite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5924),
+                new ItemStack[] {
+                    OreList.Kyanite_Ore_Stone,
+                    OreList.Kyanite_Ore_Netherrack,
+                    OreList.Kyanite_Ore_EndStone },
+                RawOreList.Raw_Kyanite_Ore,
+                CrushedOreList.Crushed_Kyanite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Kyanite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2924), 14);
+                        put(DustList.Kyanite_Dust, 14);
                     }
                 }));
 
         // "Perlite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5925),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6925) },
-                // "Raw Perlite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5925),
-                // "Crushed Perlite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5925),
+                new ItemStack[] {
+                    OreList.Perlite_Ore_Stone,
+                    OreList.Perlite_Ore_Netherrack,
+                    OreList.Perlite_Ore_EndStone },
+                RawOreList.Raw_Perlite_Ore,
+                CrushedOreList.Crushed_Perlite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Perlite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2925), 14);
+                        put(DustList.Perlite_Dust, 14);
                     }
                 }));
 
         // "Pumice Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5926),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6926) },
-                // "Raw Pumice Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5926),
-                // "Crushed Pumice Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5926),
+                new ItemStack[] {
+                    OreList.Pumice_Ore_Stone,
+                    OreList.Pumice_Ore_Netherrack,
+                    OreList.Pumice_Ore_EndStone },
+                RawOreList.Raw_Pumice_Ore,
+                CrushedOreList.Crushed_Pumice_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Pumice Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2926), 14);
+                        put(DustList.Pumice_Dust, 14);
                     }
                 }));
 
         // "Bentonite"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5927),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6927) },
-                // "Raw Bentonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5927),
-                // "Ground Bentonite"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5927),
+                new ItemStack[] {
+                    OreList.Bentonite_Stone,
+                    OreList.Bentonite_Netherrack,
+                    OreList.Bentonite_EndStone },
+                RawOreList.Raw_Bentonite_Ore,
+                CrushedOreList.Ground_Bentonite,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 5);
-                        // "Bentonite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2927), 5);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 3);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 1);
+                        put(DustList.Alumina_Dust, 5);
+                        put(DustList.Bentonite, 5);
+                        put(DustList.Calcium_Dust, 3);
+                        put(DustList.Magnesium_Dust, 1);
                     }
                 }));
 
         // "Fullers Earth"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5928),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6928) },
-                // "Raw Fullers Earth Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5928),
-                // "Ground Fullers Earth"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5928),
+                new ItemStack[] {
+                    OreList.Fullers_Earth_Stone,
+                    OreList.Fullers_Earth_Netherrack,
+                    OreList.Fullers_Earth_EndStone },
+                RawOreList.Raw_Fullers_Earth_Ore,
+                CrushedOreList.Ground_Fullers_Earth,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 5);
-                        // "Fullers Earth"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2928), 5);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 3);
+                        put(DustList.Alumina_Dust, 5);
+                        put(DustList.Fullers_Earth, 5);
+                        put(DustList.Magnesium_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 3);
                     }
                 }));
 
         // "Kaolinite"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5929),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6929) },
-                // "Raw Kaolinite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5929),
-                // "Ground Kaolinite"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5929),
+                new ItemStack[] {
+                    OreList.Kaolinite_Stone,
+                    OreList.Kaolinite_Netherrack,
+                    OreList.Kaolinite_EndStone },
+                RawOreList.Raw_Kaolinite_Ore,
+                CrushedOreList.Ground_Kaolinite,
                 new HashMap<>() {
-
                     {
-                        // "Kaolinite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2929), 14);
+                        put(DustList.Kaolinite, 14);
                     }
                 }));
 
         // "Brown Limonite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5930),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6930) },
-                // "Raw Brown Limonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5930),
-                // "Crushed Brown Limonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5930),
+                new ItemStack[] {
+                    OreList.Brown_Limonite_Ore_Stone,
+                    OreList.Brown_Limonite_Ore_Netherrack,
+                    OreList.Brown_Limonite_Ore_EndStone },
+                RawOreList.Raw_Brown_Limonite_Ore,
+                CrushedOreList.Crushed_Brown_Limonite_Ore,
                 new HashMap<>() {
-
                     {
-                        // Malachite
-                        put(getModItem(BiomesOPlenty.ID, "gems", 1L, 5), 2);
-                        // "Brown Limonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2930), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Malachite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2871), 3);
-                        // "Yellow Limonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2931), 4);
+                        put(GemList.Malachite, 2);
+                        put(DustList.Brown_Limonite_Dust, 6);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Malachite_Dust, 3);
+                        put(DustList.Yellow_Limonite_Dust, 4);
                     }
                 }));
 
         // "Yellow Limonite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5931),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6931) },
-                // "Raw Yellow Limonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5931),
-                // "Crushed Yellow Limonite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5931),
+                new ItemStack[] {
+                    OreList.Yellow_Limonite_Ore_Stone,
+                    OreList.Yellow_Limonite_Ore_Netherrack,
+                    OreList.Yellow_Limonite_Ore_EndStone },
+                RawOreList.Raw_Yellow_Limonite_Ore,
+                CrushedOreList.Crushed_Yellow_Limonite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Brown Limonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2930), 3);
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 1);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 6);
-                        // "Yellow Limonite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2931), 6);
+                        put(DustList.Brown_Limonite_Dust, 3);
+                        put(DustList.Cobalt_Dust, 1);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Nickel_Dust, 6);
+                        put(DustList.Yellow_Limonite_Dust, 6);
                     }
                 }));
 
         // "Vermiculite"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5932),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6932) },
-                // "Raw Vermiculite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5932),
-                // "Ground Vermiculite"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5932),
+                new ItemStack[] {
+                    OreList.Vermiculite_Stone,
+                    OreList.Vermiculite_Netherrack,
+                    OreList.Vermiculite_EndStone },
+                RawOreList.Raw_Vermiculite_Ore,
+                CrushedOreList.Ground_Vermiculite,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 6);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 1);
-                        // "Vermiculite"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2932), 6);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Iron_Dust, 6);
+                        put(DustList.Magnesium_Dust, 1);
+                        put(DustList.Vermiculite, 6);
                     }
                 }));
 
         // "Glauconite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5933),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6933) },
-                // "Raw Glauconite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5933),
-                // "Crushed Glauconite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5933),
+                new ItemStack[] {
+                    OreList.Glauconite_Ore_Stone,
+                    OreList.Glauconite_Ore_Netherrack,
+                    OreList.Glauconite_Ore_EndStone },
+                RawOreList.Raw_Glauconite_Ore,
+                CrushedOreList.Crushed_Glauconite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Glauconite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2933), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 2);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 5);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Glauconite_Dust, 6);
+                        put(DustList.Iron_Dust, 2);
+                        put(DustList.Sodium_Dust, 5);
                     }
                 }));
 
         // "Gypsum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5934),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6934) },
-                // "Raw Gypsum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5934),
-                // "Crushed Gypsum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5934),
+                new ItemStack[] {
+                    OreList.Gypsum_Ore_Stone,
+                    OreList.Gypsum_Ore_Netherrack,
+                    OreList.Gypsum_Ore_EndStone },
+                RawOreList.Raw_Gypsum_Ore,
+                CrushedOreList.Crushed_Gypsum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gypsum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2934), 14);
+                        put(DustList.Gypsum_Dust, 14);
                     }
                 }));
 
         // "Basaltic Mineral Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5935),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6935) },
-                // "Raw Basaltic Mineral Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5935),
-                // "Ground Basaltic Mineral Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5935),
+                new ItemStack[] {
+                    OreList.Basaltic_Mineral_Sand_Stone,
+                    OreList.Basaltic_Mineral_Sand_Netherrack,
+                    OreList.Basaltic_Mineral_Sand_EndStone },
+                RawOreList.Raw_Basaltic_Mineral_Sand_Ore,
+                CrushedOreList.Ground_Basaltic_Mineral_Sand,
                 new HashMap<>() {
-
                     {
-                        // "Basalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2844), 5);
-                        // "Basaltic Mineral Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2935), 6);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 1);
-                        // "Magnetite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2870), 4);
+                        put(DustList.Basalt_Dust, 5);
+                        put(DustList.Basaltic_Mineral_Sand, 6);
+                        put(DustList.Gold_Dust, 1);
+                        put(DustList.Magnetite_Dust, 4);
                     }
                 }));
 
         // "Granitic Mineral Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5936),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6936) },
-                // "Raw Granitic Mineral Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5936),
-                // "Ground Granitic Mineral Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5936),
+                new ItemStack[] {
+                    OreList.Granitic_Mineral_Sand_Stone,
+                    OreList.Granitic_Mineral_Sand_Netherrack,
+                    OreList.Granitic_Mineral_Sand_EndStone },
+                RawOreList.Raw_Granitic_Mineral_Sand_Ore,
+                CrushedOreList.Ground_Granitic_Mineral_Sand,
                 new HashMap<>() {
-
                     {
-                        // "Black Granite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2849), 5);
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 1);
-                        // "Granitic Mineral Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2936), 6);
-                        // "Magnetite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2870), 4);
+                        put(DustList.Black_Granite_Dust, 5);
+                        put(DustList.Gold_Dust, 1);
+                        put(DustList.Granitic_Mineral_Sand, 6);
+                        put(DustList.Magnetite_Dust, 4);
                     }
                 }));
 
         // "Cassiterite Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5937),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6937) },
-                // "Raw Cassiterite Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5937),
-                // "Ground Cassiterite Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5937),
+                new ItemStack[] {
+                    OreList.Cassiterite_Sand_Stone,
+                    OreList.Cassiterite_Sand_Netherrack,
+                    OreList.Cassiterite_Sand_EndStone },
+                RawOreList.Raw_Cassiterite_Sand_Ore,
+                CrushedOreList.Ground_Cassiterite_Sand,
                 new HashMap<>() {
-
                     {
-                        // "Cassiterite Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2937), 10);
-                        // "Tin Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2057), 18);
+                        put(DustList.Cassiterite_Sand, 10);
+                        put(DustList.Tin_Dust, 18);
                     }
                 }));
 
         // "Garnet Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5938),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6938) },
+                new ItemStack[] {
+                    OreList.Garnet_Sand_Stone,
+                    OreList.Garnet_Sand_Netherrack,
+                    OreList.Garnet_Sand_EndStone },
                 // "Raw Garnet Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5938),
+                RawOreList.Raw_Garnet_Sand_Ore,
                 // "Ground Garnet Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5938),
+                CrushedOreList.Ground_Garnet_Sand,
                 new HashMap<>() {
 
                     {
                         // "Garnet Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2938), 5);
+                        put(DustList.Garnet_Sand, 5);
                         // "Red Garnet"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8527), 2);
+                        put(GemList.Red_Garnet, 2);
                         // "Red Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2527), 3);
+                        put(DustList.Red_Garnet_Dust, 3);
                         // "Yellow Garnet Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2528), 4);
+                        put(DustList.Yellow_Garnet_Dust, 4);
                     }
                 }));
 
         // "Quartz Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5939),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6939) },
-                // "Raw Quartz Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5939),
-                // "Ground Quartz Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5939),
+                new ItemStack[] {
+                    OreList.Quartz_Sand_Stone,
+                    OreList.Quartz_Sand_Netherrack,
+                    OreList.Quartz_Sand_EndStone },
+                RawOreList.Raw_Quartz_Sand_Ore,
+                CrushedOreList.Ground_Quartz_Sand,
                 new HashMap<>() {
-
                     {
-                        // "Barite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2904), 1);
-                        // "Certus Quartz"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 8516), 2);
-                        // "Certus Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2516), 3);
-                        // "Quartz Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2939), 5);
-                        // "Quartzite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2523), 3);
+                        put(DustList.Barite_Dust, 1);
+                        put(GemList.Certus_Quartz, 2);
+                        put(DustList.Certus_Quartz_Dust, 3);
+                        put(DustList.Quartz_Sand, 5);
+                        put(DustList.Quartzite_Dust, 3);
                     }
                 }));
 
         // "Borax Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5941),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6941) },
-                // "Raw Borax Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5941),
-                // "Crushed Borax Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5941),
+                new ItemStack[] {
+                    OreList.Borax_Ore_Stone,
+                    OreList.Borax_Ore_Netherrack,
+                    OreList.Borax_Ore_EndStone },
+                RawOreList.Raw_Borax_Ore,
+                CrushedOreList.Crushed_Borax_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Borax Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2941), 14);
+                        put(DustList.Borax_Dust, 14);
                     }
                 }));
 
         // "Molybdenite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5942),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6942) },
-                // "Raw Molybdenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5942),
-                // "Crushed Molybdenite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5942),
+                new ItemStack[] {
+                    OreList.Molybdenite_Ore_Stone,
+                    OreList.Molybdenite_Ore_Netherrack,
+                    OreList.Molybdenite_Ore_EndStone },
+                RawOreList.Raw_Molybdenite_Ore,
+                CrushedOreList.Crushed_Molybdenite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Molybdenite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2942), 5);
-                        // "Molybdenum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2048), 9);
+                        put(DustList.Molybdenite_Dust, 5);
+                        put(DustList.Molybdenum_Dust, 9);
                     }
                 }));
 
         // "Pyrolusite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5943),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6943) },
-                // "Raw Pyrolusite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5943),
-                // "Crushed Pyrolusite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5943),
+                new ItemStack[] {
+                    OreList.Pyrolusite_Ore_Stone,
+                    OreList.Pyrolusite_Ore_Netherrack,
+                    OreList.Pyrolusite_Ore_EndStone },
+                RawOreList.Raw_Pyrolusite_Ore,
+                CrushedOreList.Crushed_Pyrolusite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 6);
-                        // "Niobium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2047), 1);
-                        // "Pyrolusite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2943), 5);
-                        // "Tantalite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2921), 3);
+                        put(DustList.Manganese_Dust, 6);
+                        put(DustList.Niobium_Dust, 1);
+                        put(DustList.Pyrolusite_Dust, 5);
+                        put(DustList.Tantalite_Dust, 3);
                     }
                 }));
 
         // "Rock Salt Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5944),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6944) },
-                // "Raw Rock Salt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5944),
-                // "Crushed Rock Salt Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5944),
+                new ItemStack[] {
+                    OreList.Rock_Salt_Ore_Stone,
+                    OreList.Rock_Salt_Ore_Netherrack,
+                    OreList.Rock_Salt_Ore_EndStone },
+                RawOreList.Raw_Rock_Salt_Ore,
+                CrushedOreList.Crushed_Rock_Salt_Ore,
                 new HashMap<>() {
 
                     {
-                        // Salt
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 20), 4);
-                        // "Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgem", 1L, 22), 2);
-                        // "Exquisite Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemExquisite", 1L, 22), 2);
-                        // "Flawless Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawless", 1L, 22), 2);
-                        // "Flawed Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemFlawed", 1L, 22), 2);
-                        // "Chipped Rock Salt"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGeneratedgemChipped", 1L, 22), 2);
-                        // "Borax Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2941), 8);
-                        // "Rock Salt"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2944), 12);
-                        // Salt
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2817), 6);
+                        put(GemList.Salt, 4);
+                        put(GemList.Rock_Salt, 2);
+                        put(GemList.Exquisite_Rock_Salt, 2);
+                        put(GemList.Flawless_Rock_Salt, 2);
+                        put(GemList.Flawed_Rock_Salt, 2);
+                        put(GemList.Chipped_Rock_Salt, 2);
+                        put(DustList.Borax_Dust, 8);
+                        put(DustList.Rock_Salt, 12);
+                        put(DustList.Salt, 6);
                     }
                 }));
 
         // "Stibnite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5945),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6945) },
-                // "Raw Stibnite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5945),
-                // "Crushed Stibnite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5945),
+                new ItemStack[] {
+                    OreList.Stibnite_Ore_Stone,
+                    OreList.Stibnite_Ore_Netherrack,
+                    OreList.Stibnite_Ore_EndStone },
+                RawOreList.Raw_Stibnite_Ore,
+                CrushedOreList.Crushed_Stibnite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Antimony Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2058), 9);
-                        // "Stibnite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2945), 5);
+                        put(DustList.Antimony_Dust, 9);
+                        put(DustList.Stibnite_Dust, 5);
                     }
                 }));
 
         // "Asbestos Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5946),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6946) },
-                // "Raw Asbestos Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5946),
-                // "Crushed Asbestos Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5946),
+                new ItemStack[] {
+                    OreList.Asbestos_Ore_Stone,
+                    OreList.Asbestos_Ore_Netherrack,
+                    OreList.Asbestos_Ore_EndStone },
+                RawOreList.Raw_Asbestos_Ore,
+                CrushedOreList.Crushed_Asbestos_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Asbestos Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2946), 10);
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 1);
-                        // "Silicon Dioxide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2837), 3);
+                        put(DustList.Asbestos_Dust, 10);
+                        put(DustList.Magnesium_Dust, 1);
+                        put(DustList.Silicon_Dioxide_Dust, 3);
                     }
                 }));
 
         // "Diatomite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5948),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6948) },
-                // "Raw Diatomite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5948),
-                // "Crushed Diatomite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5948),
+                new ItemStack[] {
+                    OreList.Diatomite_Ore_Stone,
+                    OreList.Diatomite_Ore_Netherrack,
+                    OreList.Diatomite_Ore_EndStone },
+                RawOreList.Raw_Diatomite_Ore,
+                CrushedOreList.Crushed_Diatomite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Banded Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2917), 5);
-                        // "Diatomite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2948), 5);
-                        // "Sapphire Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2503), 4);
+                        put(DustList.Banded_Iron_Dust, 5);
+                        put(DustList.Diatomite_Dust, 5);
+                        put(DustList.Sapphire_Dust, 4);
                     }
                 }));
 
         // "Glauconite Sand"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5949),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6949) },
-                // "Raw Glauconite Sand Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5949),
-                // "Ground Glauconite Sand"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5949),
+                new ItemStack[] {
+                    OreList.Glauconite_Sand_Stone,
+                    OreList.Glauconite_Sand_Netherrack,
+                    OreList.Glauconite_Sand_EndStone },
+                RawOreList.Raw_Glauconite_Sand_Ore,
+                CrushedOreList.Ground_Glauconite_Sand,
                 new HashMap<>() {
-
                     {
-                        // "Alumina Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2697), 3);
-                        // "Glauconite Sand"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2949), 6);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 2);
-                        // "Sodium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2017), 5);
+                        put(DustList.Alumina_Dust, 3);
+                        put(DustList.Glauconite_Sand, 6);
+                        put(DustList.Iron_Dust, 2);
+                        put(DustList.Sodium_Dust, 5);
                     }
                 }));
 
         // "Vyroxeres Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5951),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6951) },
-                // "Raw Vyroxeres Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5951),
-                // "Crushed Vyroxeres Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5951),
+                new ItemStack[] {
+                    OreList.Vyroxeres_Ore_Stone,
+                    OreList.Vyroxeres_Ore_Netherrack,
+                    OreList.Vyroxeres_Ore_EndStone },
+                RawOreList.Raw_Vyroxeres_Ore,
+                CrushedOreList.Crushed_Vyroxeres_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Vyroxeres Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2951), 14);
+                        put(DustList.Vyroxeres_Dust, 14);
                     }
                 }));
 
         // "Ceruclase Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5952),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6952) },
-                // "Raw Ceruclase Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5952),
-                // "Crushed Ceruclase Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5952),
+                new ItemStack[] {
+                    OreList.Ceruclase_Ore_Stone,
+                    OreList.Ceruclase_Ore_Netherrack,
+                    OreList.Ceruclase_Ore_EndStone },
+                RawOreList.Raw_Ceruclase_Ore,
+                CrushedOreList.Crushed_Ceruclase_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ceruclase Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2952), 14);
+                        put(DustList.Ceruclase_Dust, 14);
                     }
                 }));
 
         // "Tartarite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5956),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6956) },
-                // "Raw Tartarite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5956),
-                // "Raw Tartarite Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5956),
+                new ItemStack[] {
+                    OreList.Tartarite_Ore_Stone,
+                    OreList.Tartarite_Ore_Netherrack,
+                    OreList.Tartarite_Ore_EndStone },
+                RawOreList.Raw_Tartarite_Ore,
+                CrushedOreList.Crushed_Tartarite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Tartarite Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2956), 14);
+                        put(DustList.Tartarite_Dust, 14);
                     }
                 }));
 
         // "Orichalcum Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5966),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6966) },
-                // "Raw Orichalcum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5966),
-                // "Crushed Orichalcum Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5966),
+                new ItemStack[] {
+                    OreList.Orichalcum_Ore_Stone,
+                    OreList.Orichalcum_Ore_Netherrack,
+                    OreList.Orichalcum_Ore_EndStone },
+                RawOreList.Raw_Orichalcum_Ore,
+                CrushedOreList.Crushed_Orichalcum_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Orichalcum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2966), 14);
+                        put(DustList.Orichalcum_Dust, 14);
                     }
                 }));
 
         // "Aluminium Fluoride Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5969),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6969) },
-                // "Raw Aluminium Fluoride Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5969),
-                // "Crushed Aluminium Fluoride Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5969),
+                new ItemStack[] {
+                    OreList.Aluminium_Fluoride_Ore_Stone,
+                    OreList.Aluminium_Fluoride_Ore_Netherrack,
+                    OreList.Aluminium_Fluoride_Ore_EndStone },
+                RawOreList.Raw_Aluminium_Fluoride_Ore,
+                CrushedOreList.Crushed_Aluminium_Fluoride_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Aluminium Fluoride Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2969), 14);
+                        put(DustList.Aluminium_Fluoride_Dust, 14);
                     }
                 }));
 
         // "Calcium Disilicide Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5971),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6971) },
-                // "Raw Calcium Disilicide Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5971),
-                // "Crushed Calcium Disilicide Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5971),
+                new ItemStack[] {
+                    OreList.Calcium_Disilicide_Ore_Stone,
+                    OreList.Calcium_Disilicide_Ore_Netherrack,
+                    OreList.Calcium_Disilicide_Ore_EndStone },
+                RawOreList.Raw_Calcium_Disilicide_Ore,
+                CrushedOreList.Crushed_Calcium_Disilicide_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Disilicide Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2971), 14);
+                        put(DustList.Calcium_Disilicide_Dust, 14);
                     }
                 }));
 
         // "Draconium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5975),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6975) },
-                // "Raw Draconium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5975),
-                // "Crushed Draconium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5975),
+                new ItemStack[] {
+                    OreList.Draconium_Ore_Stone,
+                    OreList.Draconium_Ore_Netherrack,
+                    OreList.Draconium_Ore_EndStone },
+                RawOreList.Raw_Draconium_Ore,
+                CrushedOreList.Crushed_Draconium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Draconium Dust"
-                        put(getModItem(DraconicEvolution.ID, "draconiumDust", 1L), 14);
+                        put(DustList.Draconium_Dust, 14);
                     }
                 }));
 
         // "Awakened Draconium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5976),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6976) },
-                // "Raw Awakened Draconium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5976),
-                // "Crushed Awakened Draconium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5976),
+                new ItemStack[] {
+                    OreList.Awakened_Draconium_Ore_Stone,
+                    OreList.Awakened_Draconium_Ore_Netherrack,
+                    OreList.Awakened_Draconium_Ore_EndStone },
+                RawOreList.Raw_Awakened_Draconium_Ore,
+                CrushedOreList.Crushed_Awakened_Draconium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Awakened Draconium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2976), 14);
+                        put(DustList.Awakened_Draconium_Dust, 14);
                     }
                 }));
 
         // "Ichorium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5978),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6978) },
-                // "Raw Ichorium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5978),
-                // "Crushed Ichorium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5978),
+                new ItemStack[] {
+                    OreList.Ichorium_Ore_Stone,
+                    OreList.Ichorium_Ore_Netherrack,
+                    OreList.Ichorium_Ore_EndStone },
+                RawOreList.Raw_Ichorium_Ore,
+                CrushedOreList.Crushed_Ichorium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ichorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2978), 14);
+                        put(DustList.Ichorium_Dust, 14);
                     }
                 }));
 
         // "Cosmic Neutronium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5982),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6982) },
-                // "Raw Cosmic Neutronium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5982),
-                // "Crushed Cosmic Neutronium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5982),
+                new ItemStack[] {
+                    OreList.Cosmic_Neutronium_Ore_Stone,
+                    OreList.Cosmic_Neutronium_Ore_Netherrack,
+                    OreList.Cosmic_Neutronium_Ore_EndStone },
+                RawOreList.Raw_Cosmic_Neutronium_Ore,
+                CrushedOreList.Crushed_Cosmic_Neutronium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cosmic Neutronium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2982), 14);
+                        put(DustList.Cosmic_Neutronium_Dust, 14);
                     }
                 }));
 
         // "Flerovium Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockores", 1L, 984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 1984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 2984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 3984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 4984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 5984),
-                    getModItem(GregTech.ID, "gt.blockores", 1L, 6984) },
-                // "Raw Flerovium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.03", 1L, 5984),
-                // "Crushed Flerovium Ore"
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 5984),
+                new ItemStack[] {
+                    OreList.Flerovium_Ore_Stone,
+                    OreList.Flerovium_Ore_Netherrack,
+                    OreList.Flerovium_Ore_EndStone },
+                RawOreList.Raw_Flerovium_Ore,
+                CrushedOreList.Crushed_Flerovium_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Flerovium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2984), 14);
+                        put(DustList.Flerovium_Dust, 14);
                     }
                 }));
 
         // "Fluorite (F) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFluoriteF", 1L) },
-                // "Raw Fluorite (F) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawFluoriteF", 1L),
-                // "Crushed Fluorite (F) Ore"
-                getModItem(GTPlusPlus.ID, "crushedFluoriteF", 1L),
+                new ItemStack[] { OreList.Fluorite_F_Ore },
+                RawOreList.Raw_Fluorite_F_Ore,
+                CrushedOreList.Crushed_Fluorite_F_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Fluorite (F) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustFluoriteF", 1L), 14);
+                        put(DustList.Fluorite_F_Dust, 14);
                     }
                 }));
 
         // "Koboldite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreKoboldite", 1L) },
-                // "Raw Koboldite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawKoboldite", 1L),
-                // "Crushed Koboldite Ore"
-                getModItem(GTPlusPlus.ID, "crushedKoboldite", 1L),
+                new ItemStack[] { OreList.Koboldite_Ore },
+                RawOreList.Raw_Koboldite_Ore,
+                CrushedOreList.Crushed_Koboldite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 4);
-                        // "Thaumium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2330), 1);
-                        // "Koboldite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustKoboldite", 1L), 4);
+                        put(DustList.Nickel_Dust, 4);
+                        put(DustList.Thaumium_Dust, 1);
+                        put(DustList.Koboldite_Dust, 4);
                     }
                 }));
 
         // "Crocoite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCrocoite", 1L) },
-                // "Raw Crocoite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawCrocoite", 1L),
-                // "Crushed Crocoite Ore"
-                getModItem(GTPlusPlus.ID, "crushedCrocoite", 1L),
+                new ItemStack[] { OreList.Crocoite_Ore },
+                RawOreList.Raw_Crocoite_Ore,
+                CrushedOreList.Crushed_Crocoite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Chrome Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2030), 1);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 4);
-                        // "Crocoite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustCrocoite", 1L), 4);
+                        put(DustList.Chrome_Dust, 1);
+                        put(DustList.Lead_Dust, 4);
+                        put(DustList.Crocoite_Dust, 4);
                     }
                 }));
 
         // "Geikielite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGeikielite", 1L) },
-                // "Raw Geikielite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawGeikielite", 1L),
-                // "Crushed Geikielite Ore"
-                getModItem(GTPlusPlus.ID, "crushedGeikielite", 1L),
+                new ItemStack[] { OreList.Geikielite_Ore },
+                RawOreList.Raw_Geikielite_Ore,
+                CrushedOreList.Crushed_Geikielite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Magnesium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2018), 4);
-                        // "Titanium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2028), 1);
-                        // "Geikielite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustGeikielite", 1L), 4);
+                        put(DustList.Magnesium_Dust, 4);
+                        put(DustList.Titanium_Dust, 1);
+                        put(DustList.Geikielite_Dust, 4);
                     }
                 }));
 
         // "Nichromite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreNichromite", 1L) },
-                // "Raw Nichromite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawNichromite", 1L),
-                // "Crushed Nichromite Ore"
-                getModItem(GTPlusPlus.ID, "crushedNichromite", 1L),
+                new ItemStack[] { OreList.Nichromite_Ore },
+                RawOreList.Raw_Nichromite_Ore,
+                CrushedOreList.Crushed_Nichromite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cobalt Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2033), 1);
-                        // "Nickel Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2034), 4);
-                        // "Nichromite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustNichromite", 1L), 4);
+                        put(DustList.Cobalt_Dust, 1);
+                        put(DustList.Nickel_Dust, 4);
+                        put(DustList.Nichromite_Dust, 4);
                     }
                 }));
 
         // "Titanite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreTitanite", 1L) },
-                // "Raw Titanite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawTitanite", 1L),
-                // "Crushed Titanite Ore"
-                getModItem(GTPlusPlus.ID, "crushedTitanite", 1L),
+                new ItemStack[] { OreList.Titanite_Ore },
+                RawOreList.Raw_Titanite_Ore,
+                CrushedOreList.Crushed_Titanite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Titanium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2028), 1);
-                        // "Titanite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustTitanite", 1L), 4);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Titanium_Dust, 1);
+                        put(DustList.Titanite_Dust, 4);
                     }
                 }));
 
         // "Zimbabweite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZimbabweite", 1L) },
-                // "Raw Zimbabweite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawZimbabweite", 1L),
-                // "Crushed Zimbabweite Ore"
-                getModItem(GTPlusPlus.ID, "crushedZimbabweite", 1L),
+                new ItemStack[] { OreList.Zimbabweite_Ore },
+                RawOreList.Raw_Zimbabweite_Ore,
+                CrushedOreList.Crushed_Zimbabweite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Lead Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2089), 1);
-                        // "Zimbabweite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustZimbabweite", 1L), 4);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Lead_Dust, 1);
+                        put(DustList.Zimbabweite_Dust, 4);
                     }
                 }));
 
         // "Zirconolite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZirconolite", 1L) },
-                // "Raw Zirconolite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawZirconolite", 1L),
-                // "Crushed Zirconolite Ore"
-                getModItem(GTPlusPlus.ID, "crushedZirconolite", 1L),
+                new ItemStack[] { OreList.Zirconolite_Ore },
+                RawOreList.Raw_Zirconolite_Ore,
+                CrushedOreList.Crushed_Zirconolite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 1);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Zirconolite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustZirconolite", 1L), 4);
+                        put(DustList.Zirconium_Dust, 1);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Zirconolite_Dust, 4);
                     }
                 }));
 
         // "Gadolinite (Ce) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGadoliniteCe", 1L) },
-                // "Raw Gadolinite (Ce) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawGadoliniteCe", 1L),
-                // "Crushed Gadolinite (Ce) Ore"
-                getModItem(GTPlusPlus.ID, "crushedGadoliniteCe", 1L),
+                new ItemStack[] { OreList.Gadolinite_Ce_Ore },
+                RawOreList.Raw_Gadolinite_Ce_Ore,
+                CrushedOreList.Crushed_Gadolinite_Ce_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Erbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2075), 1);
-                        // "Gadolinite (Ce) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustGadoliniteCe", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Erbium_Dust, 1);
+                        put(DustList.Gadolinite_Ce_Dust, 4);
                     }
                 }));
 
         // "Gadolinite (Y) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGadoliniteY", 1L) },
-                // "Raw Gadolinite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawGadoliniteY", 1L),
-                // "Crushed Gadolinite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "crushedGadoliniteY", 1L),
+                new ItemStack[] { OreList.Gadolinite_Y_Ore },
+                RawOreList.Raw_Gadolinite_Y_Ore,
+                CrushedOreList.Crushed_Gadolinite_Y_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Erbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2075), 1);
-                        // "Gadolinite (Y) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustGadoliniteY", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Erbium_Dust, 1);
+                        put(DustList.Gadolinite_Y_Dust, 4);
                     }
                 }));
 
         // "Lepersonnite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLepersonnite", 1L) },
-                // "Raw Lepersonnite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLepersonnite", 1L),
-                // "Crushed Lepersonnite Ore"
-                getModItem(GTPlusPlus.ID, "crushedLepersonnite", 1L),
+                new ItemStack[] { OreList.Lepersonnite_Ore },
+                RawOreList.Raw_Lepersonnite_Ore,
+                CrushedOreList.Crushed_Lepersonnite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Ytterbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2077), 1);
-                        // "Lepersonnite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLepersonnite", 1L), 4);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Ytterbium_Dust, 1);
+                        put(DustList.Lepersonnite_Dust, 4);
                     }
                 }));
 
         // "Samarskite (Y) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreSamarskiteY", 1L) },
-                // "Raw Samarskite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawSamarskiteY", 1L),
-                // "Crushed Samarskite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "crushedSamarskiteY", 1L),
+                new ItemStack[] { OreList.Samarskite_Y_Ore },
+                RawOreList.Raw_Samarskite_Y_Ore,
+                CrushedOreList.Crushed_Samarskite_Y_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Samarskite (Y) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustSamarskiteY", 1L), 4);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Samarskite_Y_Dust, 4);
                     }
                 }));
 
         // "Samarskite (Yb) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreSamarskiteYb", 1L) },
-                // "Raw Samarskite (Yb) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawSamarskiteYb", 1L),
-                // "Crushed Samarskite (Yb) Ore"
-                getModItem(GTPlusPlus.ID, "crushedSamarskiteYb", 1L),
+                new ItemStack[] { OreList.Samarskite_Yb_Ore },
+                RawOreList.Raw_Samarskite_Yb_Ore,
+                CrushedOreList.Crushed_Samarskite_Yb_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Ytterbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2077), 4);
-                        // "Samarskite (Yb) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustSamarskiteYb", 1L), 4);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Ytterbium_Dust, 4);
+                        put(DustList.Samarskite_Yb_Dust, 4);
                     }
                 }));
 
         // "Xenotime Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreXenotime", 1L) },
-                // "Raw Xenotime Ore"
-                getModItem(GTPlusPlus.ID, "oreRawXenotime", 1L),
-                // "Crushed Xenotime Ore"
-                getModItem(GTPlusPlus.ID, "crushedXenotime", 1L),
+                new ItemStack[] { OreList.Xenotime_Ore },
+                RawOreList.Raw_Xenotime_Ore,
+                CrushedOreList.Crushed_Xenotime_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Ytterbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2077), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Xenotime Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustXenotime", 1L), 4);
+                        put(DustList.Ytterbium_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Xenotime_Dust, 4);
                     }
                 }));
 
         // "Yttriaite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttriaite", 1L) },
-                // "Raw Yttriaite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawYttriaite", 1L),
-                // "Crushed Yttriaite Ore"
-                getModItem(GTPlusPlus.ID, "crushedYttriaite", 1L),
+                new ItemStack[] { OreList.Yttriaite_Ore },
+                RawOreList.Raw_Yttriaite_Ore,
+                CrushedOreList.Crushed_Yttriaite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Yttriaite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustYttriaite", 1L), 4);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Yttriaite_Dust, 4);
                     }
                 }));
 
         // "Yttrialite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttrialite", 1L) },
-                // "Raw Yttrialite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawYttrialite", 1L),
-                // "Crushed Yttrialite Ore"
-                getModItem(GTPlusPlus.ID, "crushedYttrialite", 1L),
+                new ItemStack[] { OreList.Yttrialite_Ore },
+                RawOreList.Raw_Yttrialite_Ore,
+                CrushedOreList.Crushed_Yttrialite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Yttrialite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustYttrialite", 1L), 4);
+                        put(DustList.Thorium_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Yttrialite_Dust, 4);
                     }
                 }));
 
         // "Yttrocerite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreYttrocerite", 1L) },
-                // "Raw Yttrocerite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawYttrocerite", 1L),
-                // "Crushed Yttrocerite Ore"
-                getModItem(GTPlusPlus.ID, "crushedYttrocerite", 1L),
+                new ItemStack[] { OreList.Yttrocerite_Ore },
+                RawOreList.Raw_Yttrocerite_Ore,
+                CrushedOreList.Crushed_Yttrocerite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Yttrocerite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustYttrocerite", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Yttrocerite_Dust, 4);
                     }
                 }));
 
         // "Zircon Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZircon", 1L) },
-                // "Raw Zircon Ore"
-                getModItem(GTPlusPlus.ID, "oreRawZircon", 1L),
-                // "Crushed Zircon Ore"
-                getModItem(GTPlusPlus.ID, "crushedZircon", 1L),
+                new ItemStack[] { OreList.Zircon_Ore },
+                RawOreList.Raw_Zircon_Ore,
+                CrushedOreList.Crushed_Zircon_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Zirconium Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 3), 4);
-                        // "Raw Silicon Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2020), 1);
-                        // "Zircon Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustZircon", 1L), 4);
+                        put(DustList.Zirconium_Dust, 4);
+                        put(DustList.Raw_Silicon_Dust, 1);
+                        put(DustList.Zircon_Dust, 4);
                     }
                 }));
 
         // "Polycrase Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "orePolycrase", 1L) },
-                // "Raw Polycrase Ore"
-                getModItem(GTPlusPlus.ID, "oreRawPolycrase", 1L),
-                // "Crushed Polycrase Ore"
-                getModItem(GTPlusPlus.ID, "crushedPolycrase", 1L),
+                new ItemStack[] { OreList.Polycrase_Ore },
+                RawOreList.Raw_Polycrase_Ore,
+                CrushedOreList.Crushed_Polycrase_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Polycrase Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustPolycrase", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Polycrase_Dust, 4);
                     }
                 }));
 
         // "Zircophyllite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZircophyllite", 1L) },
-                // "Raw Zircophyllite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawZircophyllite", 1L),
-                // "Crushed Zircophyllite Ore"
-                getModItem(GTPlusPlus.ID, "crushedZircophyllite", 1L),
+                new ItemStack[] { OreList.Zircophyllite_Ore },
+                RawOreList.Raw_Zircophyllite_Ore,
+                CrushedOreList.Crushed_Zircophyllite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 1);
-                        // "Manganese Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2031), 4);
-                        // "Zircophyllite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustZircophyllite", 1L), 4);
+                        put(DustList.Iron_Dust, 1);
+                        put(DustList.Manganese_Dust, 4);
+                        put(DustList.Zircophyllite_Dust, 4);
                     }
                 }));
 
         // "Zirkelite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreZirkelite", 1L) },
-                // "Raw Zirkelite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawZirkelite", 1L),
-                // "Crushed Zirkelite Ore"
-                getModItem(GTPlusPlus.ID, "crushedZirkelite", 1L),
+                new ItemStack[] { OreList.Zirkelite_Ore },
+                RawOreList.Raw_Zirkelite_Ore,
+                CrushedOreList.Crushed_Zirkelite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Thorium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2096), 1);
-                        // "Zirkelite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustZirkelite", 1L), 4);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Thorium_Dust, 1);
+                        put(DustList.Zirkelite_Dust, 4);
                     }
                 }));
 
         // "Lanthanite (La) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteLa", 1L) },
-                // "Raw Lanthanite (La) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLanthaniteLa", 1L),
-                // "Crushed Lanthanite (La) Ore"
-                getModItem(GTPlusPlus.ID, "crushedLanthaniteLa", 1L),
+                new ItemStack[] { OreList.Lanthanite_La_Ore },
+                RawOreList.Raw_Lanthanite_La_Ore,
+                CrushedOreList.Crushed_Lanthanite_La_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Lanthanum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2064), 4);
-                        // "Lanthanite (La) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLanthaniteLa", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Lanthanum_Dust, 4);
+                        put(DustList.Lanthanite_La_Dust, 4);
                     }
                 }));
 
         // "Lanthanite (Ce) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteCe", 1L) },
-                // "Raw Lanthanite (Ce) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLanthaniteCe", 1L),
-                // "Crushed Lanthanite (Ce) Ore"
-                getModItem(GTPlusPlus.ID, "crushedLanthaniteCe", 1L),
+                new ItemStack[] { OreList.Lanthanite_Ce_Ore },
+                RawOreList.Raw_Lanthanite_Ce_Ore,
+                CrushedOreList.Crushed_Lanthanite_Ce_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Lanthanite (Ce) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLanthaniteCe", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Lanthanite_Ce_Dust, 4);
                     }
                 }));
 
         // "Lanthanite (Nd) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLanthaniteNd", 1L) },
-                // "Raw Lanthanite (Nd) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLanthaniteNd", 1L),
-                // "Crushed Lanthanite (Nd) Ore"
-                getModItem(GTPlusPlus.ID, "crushedLanthaniteNd", 1L),
+                new ItemStack[] { OreList.Lanthanite_Nd_Ore },
+                RawOreList.Raw_Lanthanite_Nd_Ore,
+                CrushedOreList.Crushed_Lanthanite_Nd_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 4);
-                        // "Lanthanite (Nd) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLanthaniteNd", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Neodymium_Dust, 4);
+                        put(DustList.Lanthanite_Nd_Dust, 4);
                     }
                 }));
 
         // "Agardite (Y) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeY", 1L) },
-                // "Raw Agardite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAgarditeY", 1L),
-                // "Crushed Agardite (Y) Ore"
-                getModItem(GTPlusPlus.ID, "crushedAgarditeY", 1L),
+                new ItemStack[] { OreList.Agardite_Y_Ore },
+                RawOreList.Raw_Agardite_Y_Ore,
+                CrushedOreList.Crushed_Agardite_Y_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 4);
-                        // "Agardite (Y) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAgarditeY", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Yttrium_Dust, 4);
+                        put(DustList.Agardite_Y_Dust, 4);
                     }
                 }));
 
         // "Agardite (Cd) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeCd", 1L) },
-                // "Raw Agardite (Cd) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAgarditeCd", 1L),
-                // "Crushed Agardite (Cd) Ore"
-                getModItem(GTPlusPlus.ID, "crushedAgarditeCd", 1L),
+                new ItemStack[] { OreList.Agardite_Cd_Ore },
+                RawOreList.Raw_Agardite_Cd_Ore,
+                CrushedOreList.Crushed_Agardite_Cd_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Copper Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2035), 1);
-                        // "Agardite (Cd) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAgarditeCd", 1L), 4);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Copper_Dust, 1);
+                        put(DustList.Agardite_Cd_Dust, 4);
                     }
                 }));
 
         // "Agardite (La) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeLa", 1L) },
-                // "Raw Agardite (La) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAgarditeLa", 1L),
-                // "Agardite (La) Ore"
-                getModItem(GTPlusPlus.ID, "crushedAgarditeLa", 1L),
+                new ItemStack[] { OreList.Agardite_La_Ore },
+                RawOreList.Raw_Agardite_La_Ore,
+                CrushedOreList.Crushed_Agardite_La_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Lanthanum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2064), 4);
-                        // "Agardite (La) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAgarditeLa", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Lanthanum_Dust, 4);
+                        put(DustList.Agardite_La_Dust, 4);
                     }
                 }));
 
         // "Agardite (Nd) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAgarditeNd", 1L) },
-                // "Raw Agardite (Nd) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAgarditeNd", 1L),
-                // "Crushed Agardite (Nd) Ore"
-                getModItem(GTPlusPlus.ID, "crushedAgarditeNd", 1L),
+                new ItemStack[] { OreList.Agardite_Nd_Ore },
+                RawOreList.Raw_Agardite_Nd_Ore,
+                CrushedOreList.Crushed_Agardite_Nd_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 4);
-                        // "Agardite (Nd) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAgarditeNd", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Neodymium_Dust, 4);
+                        put(DustList.Agardite_Nd_Dust, 4);
                     }
                 }));
 
         // "Hibonite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreHibonite", 1L) },
-                // "Raw Hibonite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawHibonite", 1L),
-                // "Crushed Hibonite Ore"
-                getModItem(GTPlusPlus.ID, "crushedHibonite", 1L),
+                new ItemStack[] { OreList.Hibonite_Ore },
+                RawOreList.Raw_Hibonite_Ore,
+                CrushedOreList.Crushed_Hibonite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 2);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Hibonite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustHibonite", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 2);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Hibonite_Dust, 4);
                     }
                 }));
 
         // "Cerite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCerite", 1L) },
-                // "Raw Cerite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawCerite", 1L),
-                // "Crushed Cerite Ore"
-                getModItem(GTPlusPlus.ID, "crushedCerite", 1L),
+                new ItemStack[] { OreList.Cerite_Ore },
+                RawOreList.Raw_Cerite_Ore,
+                CrushedOreList.Crushed_Cerite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Lanthanum Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2064), 1);
-                        // "Cerite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustCerite", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Lanthanum_Dust, 1);
+                        put(DustList.Cerite_Dust, 4);
                     }
                 }));
 
         // "Fluorcaphite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFluorcaphite", 1L) },
-                // "Raw Fluorcaphite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawFluorcaphite", 1L),
-                // "Crushed Fluorcaphite Ore"
-                getModItem(GTPlusPlus.ID, "crushedFluorcaphite", 1L),
+                new ItemStack[] { OreList.Fluorcaphite_Ore },
+                RawOreList.Raw_Fluorcaphite_Ore,
+                CrushedOreList.Crushed_Fluorcaphite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 2);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Fluorcaphite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustFluorcaphite", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 2);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Fluorcaphite_Dust, 4);
                     }
                 }));
 
         // "Florencite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreFlorencite", 1L) },
-                // "Raw Florencite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawFlorencite", 1L),
-                // "Crushed Florencite Ore"
-                getModItem(GTPlusPlus.ID, "crushedFlorencite", 1L),
+                new ItemStack[] { OreList.Florencite_Ore },
+                RawOreList.Raw_Florencite_Ore,
+                CrushedOreList.Crushed_Florencite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Samarium Ore Concentrate Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11128), 8);
-                        // "Aluminium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2019), 1);
-                        // "Florencite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustFlorencite", 1L), 4);
+                        put(DustList.Samarium_Ore_Concentrate_Dust, 8);
+                        put(DustList.Aluminium_Dust, 1);
+                        put(DustList.Florencite_Dust, 4);
                     }
                 }));
 
         // "Cryolite (F) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreCryoliteF", 1L) },
-                // "Raw Cryolite (F) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawCryoliteF", 1L),
-                // "Crushed Cryolite (F) Ore"
-                getModItem(GTPlusPlus.ID, "crushedCryoliteF", 1L),
+                new ItemStack[] { OreList.Cryolite_F_Ore },
+                RawOreList.Raw_Cryolite_F_Ore,
+                CrushedOreList.Crushed_Cryolite_F_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Aluminium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2019), 1);
-                        // "Cryolite (F) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustCryoliteF", 1L), 4);
+                        put(DustList.Aluminium_Dust, 1);
+                        put(DustList.Cryolite_F_Dust, 4);
                     }
                 }));
 
         // "Lautarite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLautarite", 1L) },
-                // "Raw Lautarite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLautarite", 1L),
-                // "Crushed Lautarite Ore"
-                getModItem(GTPlusPlus.ID, "crushedLautarite", 1L),
+                new ItemStack[] { OreList.Lautarite_Ore },
+                RawOreList.Raw_Lautarite_Ore,
+                CrushedOreList.Crushed_Lautarite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iodine Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11012), 1);
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 4);
-                        // "Lautarite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLautarite", 1L), 4);
+                        put(DustList.Iodine_Dust_BartWorks, 1);
+                        put(DustList.Calcium_Dust, 4);
+                        put(DustList.Lautarite_Dust, 4);
                     }
                 }));
 
         // "Lafossaite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreLafossaite", 1L) },
-                // "Raw Lafossaite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawLafossaite", 1L),
-                // "Crushed Lafossaite Ore"
-                getModItem(GTPlusPlus.ID, "crushedLafossaite", 1L),
+                new ItemStack[] { OreList.Lafossaite_Ore },
+                RawOreList.Raw_Lafossaite_Ore,
+                CrushedOreList.Crushed_Lafossaite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Lafossaite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustLafossaite", 1L), 4);
-                        // "Thallium Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustThallium", 1L), 1);
+                        put(DustList.Lafossaite_Dust, 4);
+                        put(DustList.Thallium_Dust, 1);
                     }
                 }));
 
         // "Demicheleite (Br) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreDemicheleiteBr", 1L) },
-                // "Raw Demicheleite (Br) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawDemicheleiteBr", 1L),
-                // "Crushed Demicheleite (Br) Ore"
-                getModItem(GTPlusPlus.ID, "crushedDemicheleiteBr", 1L),
+                new ItemStack[] { OreList.Demicheleite_Br_Ore },
+                RawOreList.Raw_Demicheleite_Br_Ore,
+                CrushedOreList.Crushed_Demicheleite_Br_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Bismuth Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2090), 4);
-                        // "Demicheleite (Br) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustDemicheleiteBr", 1L), 4);
+                        put(DustList.Bismuth_Dust, 4);
+                        put(DustList.Demicheleite_Br_Dust, 4);
                     }
                 }));
 
         // "Comancheite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreComancheite", 1L) },
-                // "Raw Comancheite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawComancheite", 1L),
-                // "Crushed Comancheite Ore"
-                getModItem(GTPlusPlus.ID, "crushedComancheite", 1L),
+                new ItemStack[] { OreList.Comancheite_Ore },
+                RawOreList.Raw_Comancheite_Ore,
+                CrushedOreList.Crushed_Comancheite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Comancheite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustComancheite", 1L), 4);
+                        put(DustList.Comancheite_Dust, 4);
                     }
                 }));
 
         // "Perroudite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "orePerroudite", 1L) },
-                // "Raw Perroudite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawPerroudite", 1L),
-                // "Crushed Perroudite Ore"
-                getModItem(GTPlusPlus.ID, "crushedPerroudite", 1L),
+                new ItemStack[] { OreList.Perroudite_Ore },
+                RawOreList.Raw_Perroudite_Ore,
+                CrushedOreList.Crushed_Perroudite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iodine Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11012), 1);
-                        // "Silver Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2054), 4);
-                        // "Perroudite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustPerroudite", 1L), 4);
+                        put(DustList.Iodine_Dust_BartWorks, 1);
+                        put(DustList.Silver_Dust, 4);
+                        put(DustList.Perroudite_Dust, 4);
                     }
                 }));
 
         // "Honeaite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreHoneaite", 1L) },
-                // "Raw Honeaite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawHoneaite", 1L),
-                // "Crushed Honeaite Ore"
-                getModItem(GTPlusPlus.ID, "crushedHoneaite", 1L),
+                new ItemStack[] { OreList.Honeaite_Ore },
+                RawOreList.Raw_Honeaite_Ore,
+                CrushedOreList.Crushed_Honeaite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 4);
-                        // "Honeaite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustHoneaite", 1L), 4);
-                        // "Thallium Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustThallium", 1L), 1);
+                        put(DustList.Gold_Dust, 4);
+                        put(DustList.Honeaite_Dust, 4);
+                        put(DustList.Thallium_Dust, 1);
                     }
                 }));
 
         // "Alburnite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAlburnite", 1L) },
-                // "Raw Alburnite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAlburnite", 1L),
-                // "Crushed Alburnite Ore"
-                getModItem(GTPlusPlus.ID, "crushedAlburnite", 1L),
+                new ItemStack[] { OreList.Alburnite_Ore },
+                RawOreList.Raw_Alburnite_Ore,
+                CrushedOreList.Crushed_Alburnite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Gold Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086), 4);
-                        // "Alburnite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAlburnite", 1L), 4);
-                        // "Germanium Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustGermanium", 1L), 1);
+                        put(DustList.Gold_Dust, 4);
+                        put(DustList.Alburnite_Dust, 4);
+                        put(DustList.Germanium_Dust, 1);
                     }
                 }));
 
         // "Miessiite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreMiessiite", 1L) },
-                // "Raw Miessiite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawMiessiite", 1L),
-                // "Crushed Miessiite Ore"
-                getModItem(GTPlusPlus.ID, "crushedMiessiite", 1L),
+                new ItemStack[] { OreList.Miessiite_Ore },
+                RawOreList.Raw_Miessiite_Ore,
+                CrushedOreList.Crushed_Miessiite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Palladium Metallic Powder Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 53), 16);
-                        // "Tellurium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2059), 1);
-                        // "Miessiite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustMiessiite", 1L), 4);
+                        put(DustList.Palladium_Metallic_Powder_Dust, 16);
+                        put(DustList.Tellurium_Dust, 1);
+                        put(DustList.Miessiite_Dust, 4);
                     }
                 }));
 
         // "Kashinite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreKashinite", 1L) },
-                // "Raw Kashinite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawKashinite", 1L),
-                // "Crushed Kashinite Ore"
-                getModItem(GTPlusPlus.ID, "crushedKashinite", 1L),
+                new ItemStack[] { OreList.Kashinite_Ore },
+                RawOreList.Raw_Kashinite_Ore,
+                CrushedOreList.Crushed_Kashinite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Crude Rhodium Metal Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 79), 2);
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 4);
-                        // "Kashinite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustKashinite", 1L), 4);
+                        put(DustList.Crude_Rhodium_Metal_Dust, 2);
+                        put(DustList.Iridium_Metal_Residue_Dust, 4);
+                        put(DustList.Kashinite_Dust, 4);
                     }
                 }));
 
         // "Irarsite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreIrarsite", 1L) },
-                // "Raw Irarsite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawIrarsite", 1L),
-                // "Crushed Irarsite Ore"
-                getModItem(GTPlusPlus.ID, "crushedIrarsite", 1L),
+                new ItemStack[] { OreList.Irarsite_Ore },
+                RawOreList.Raw_Irarsite_Ore,
+                CrushedOreList.Crushed_Irarsite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Iridium Metal Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 70), 4);
-                        // "Leach Residue Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 60), 2);
-                        // "Irarsite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustIrarsite", 1L), 4);
+                        put(DustList.Iridium_Metal_Residue_Dust, 4);
+                        put(DustList.Leach_Residue_Dust, 2);
+                        put(DustList.Irarsite_Dust, 4);
                     }
                 }));
 
         // "Greenockite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreGreenockite", 1L) },
-                // "Raw Greenockite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawGreenockite", 1L),
-                // "Crushed Greenockite Ore"
-                getModItem(GTPlusPlus.ID, "crushedGreenockite", 1L),
+                new ItemStack[] { OreList.Greenockite_Ore },
+                RawOreList.Raw_Greenockite_Ore,
+                CrushedOreList.Crushed_Greenockite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Greenockite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustGreenockite", 1L), 4);
+                        put(DustList.Greenockite_Dust, 4);
                     }
                 }));
 
         // "Strange Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRadioactiveMineralMix", 1L) },
-                // "Raw Strange Ore"
-                getModItem(GTPlusPlus.ID, "oreRawRadioactiveMineralMix", 1L),
-                // "Crushed Strange Ore"
-                getModItem(GTPlusPlus.ID, "crushedRadioactiveMineralMix", 1L),
+                new ItemStack[] { OreList.Strange_Ore },
+                RawOreList.Raw_Strange_Ore,
+                CrushedOreList.Crushed_Strange_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Uranium 235 Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2097), 1);
-                        // "Radioactive Mineral Mix Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRadioactiveMineralMix", 1L), 4);
-                        // "Radium Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRadium", 1L), 4);
+                        put(DustList.Uranium_235_Dust, 1);
+                        put(DustList.Radioactive_Mineral_Mix_Dust, 4);
+                        put(DustList.Radium_Dust, 4);
                     }
                 }));
 
         // "Ancient Granite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreAncientGranite", 1L) },
-                // "Raw Ancient Granite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawAncientGranite", 1L),
-                // "Crushed Ancient Granite Ore"
-                getModItem(GTPlusPlus.ID, "crushedAncientGranite", 1L),
+                new ItemStack[] { OreList.Ancient_Granite_Ore },
+                RawOreList.Raw_Ancient_Granite_Ore,
+                CrushedOreList.Crushed_Ancient_Granite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Calcium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2026), 1);
-                        // "Iron Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2032), 4);
-                        // "Ancient Granite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustAncientGranite", 1L), 4);
+                        put(DustList.Calcium_Dust, 1);
+                        put(DustList.Iron_Dust, 4);
+                        put(DustList.Ancient_Granite_Dust, 4);
                     }
                 }));
 
         // "Runite Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRunite", 1L) },
-                // "Raw Runite Ore"
-                getModItem(GTPlusPlus.ID, "oreRawRunite", 1L),
-                // "Crushed Runite Ore"
-                getModItem(GTPlusPlus.ID, "crushedRunite", 1L),
+                new ItemStack[] { OreList.Runite_Ore },
+                RawOreList.Raw_Runite_Ore,
+                CrushedOreList.Crushed_Runite_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Runite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRunite", 1L), 9);
+                        put(DustList.Runite_Dust, 9);
                     }
                 }));
 
         // "Rare Earth (I) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthI", 1L) },
-                // "Raw Rare Earth (I) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawRareEarthI", 1L),
-                // "Crushed Rare Earth (I) Ore"
-                getModItem(GTPlusPlus.ID, "crushedRareEarthI", 1L),
+                new ItemStack[] { OreList.Rare_Earth_I_Ore },
+                RawOreList.Raw_Rare_Earth_I_Ore,
+                CrushedOreList.Crushed_Rare_Earth_I_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Nether Quartz Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2522), 4);
-                        // "Yttrium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2045), 1);
-                        // "Rare Earth (I) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRareEarthI", 1L), 4);
+                        put(DustList.Nether_Quartz_Dust, 4);
+                        put(DustList.Yttrium_Dust, 1);
+                        put(DustList.Rare_Earth_I_Dust, 4);
                     }
                 }));
 
         // "Rare Earth (II) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthII", 1L) },
-                // "Raw Rare Earth (II) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawRareEarthII", 1L),
-                // "Crushed Rare Earth (II) Ore"
-                getModItem(GTPlusPlus.ID, "crushedRareEarthII", 1L),
+                new ItemStack[] { OreList.Rare_Earth_II_Ore },
+                RawOreList.Raw_Rare_Earth_II_Ore,
+                CrushedOreList.Crushed_Rare_Earth_II_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Neodymium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2067), 1);
-                        // "Rare Earth (II) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRareEarthII", 1L), 4);
-                        // "Runite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRunite", 1L), 4);
+                        put(DustList.Neodymium_Dust, 1);
+                        put(DustList.Rare_Earth_II_Dust, 4);
+                        put(DustList.Runite_Dust, 4);
                     }
                 }));
 
         // "Rare Earth (III) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreRareEarthIII", 1L) },
-                // "Raw Rare Earth (III) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawRareEarthIII", 1L),
-                // "Crushed Rare Earth (III) Ore"
-                getModItem(GTPlusPlus.ID, "crushedRareEarthIII", 1L),
+                new ItemStack[] { OreList.Rare_Earth_III_Ore },
+                RawOreList.Raw_Rare_Earth_III_Ore,
+                CrushedOreList.Crushed_Rare_Earth_III_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Cerium-Rich Mixture Dust"
-                        put(getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 11029), 8);
-                        // "Erbium Dust"
-                        put(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2075), 1);
-                        // "Rare Earth (III) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRareEarthIII", 1L), 4);
+                        put(DustList.Cerium_Rich_Mixture_Dust, 8);
+                        put(DustList.Erbium_Dust, 1);
+                        put(DustList.Rare_Earth_III_Dust, 4);
                     }
                 }));
 
         // "Barite (Ra) Ore"
         ore_List.add(
             new Ore_List(
-                new ItemStack[] { getModItem(GTPlusPlus.ID, "oreBariteRa", 1L) },
-                // "Raw Barite (Ra) Ore"
-                getModItem(GTPlusPlus.ID, "oreRawBariteRa", 1L),
-                // "Crushed Barite (Ra) Ore"
-                getModItem(GTPlusPlus.ID, "crushedBariteRa", 1L),
+                new ItemStack[] { OreList.Barite_Ra_Ore },
+                RawOreList.Raw_Barite_Ra_Ore,
+                CrushedOreList.Crushed_Barite_Ra_Ore,
                 new HashMap<>() {
-
                     {
-                        // "Barite (Ra) Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustBariteRa", 1L), 4);
-                        // "Runite Dust"
-                        put(getModItem(GTPlusPlus.ID, "itemDustRunite", 1L), 1);
+                        put(DustList.Barite_Ra_Dust, 4);
+                        put(DustList.Runite_Dust, 1);
                     }
                 }));
 

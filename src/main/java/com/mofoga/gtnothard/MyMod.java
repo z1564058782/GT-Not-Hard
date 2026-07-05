@@ -270,13 +270,13 @@ public class MyMod {
         ChaosZhuHaiRecipes.addChaosZhuHaiFisheryRecipes();
         ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes();
 
-        ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes();
-        ChaosBloodMagicRecipes.addBloodMagicRecipes();
-        ChaosBotaniaRecipes.addBotaniaRecipes();
-        ChaosCrucibleRecipes.addCrucibleRecipes();
-        ChaosEssenceFarmRecipes.addEssenceFarmRecipes();
-        ChaosRunicMatrixRecipes.addRunicMatrixRecipes_1();
-        ChaosRunicMatrixRecipes.addRunicMatrixRecipes_2();
+        //ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes();
+        //ChaosBloodMagicRecipes.addBloodMagicRecipes();
+        //ChaosBotaniaRecipes.addBotaniaRecipes();
+        //ChaosCrucibleRecipes.addCrucibleRecipes();
+        //ChaosEssenceFarmRecipes.addEssenceFarmRecipes();
+        //ChaosRunicMatrixRecipes.addRunicMatrixRecipes_1();
+        //ChaosRunicMatrixRecipes.addRunicMatrixRecipes_2();
 
         // Debug
         // ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes_test();

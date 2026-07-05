@@ -833,7 +833,7 @@ public class OreList {
     public static final ItemStack Irarsite_Ore = getModItem(GTPlusPlus.ID, "oreIrarsite", 1L);
     public static final ItemStack Greenockite_Ore = getModItem(GTPlusPlus.ID, "oreGreenockite", 1L);
     public static final ItemStack Barite_Ra_Ore = getModItem(GTPlusPlus.ID, "oreBariteRa", 1L);
-    public static final ItemStack Radioactive_Mineral_Mix_Ore = getModItem(GTPlusPlus.ID, "oreRadioactiveMineralMix", 1L);
+    public static final ItemStack Strange_Ore = getModItem(GTPlusPlus.ID, "oreRadioactiveMineralMix", 1L);
     public static final ItemStack Rare_Earth_I_Ore = getModItem(GTPlusPlus.ID, "oreRareEarthI", 1L);
     public static final ItemStack Rare_Earth_II_Ore = getModItem(GTPlusPlus.ID, "oreRareEarthII", 1L);
     public static final ItemStack Rare_Earth_III_Ore = getModItem(GTPlusPlus.ID, "oreRareEarthIII", 1L);
