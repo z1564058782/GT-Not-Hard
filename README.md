@@ -47,3 +47,8 @@
 # mod版本与GTNH版本对应关系
 1.0.x~1.1.x对应GTNH 2.7.0  
 1.2.x对应GTNH 2.8.0 
+
+## 临时适配版本
+2.9.0.Beta1下载链接：https://pan.ustc.edu.cn/seafile/seafhttp/files/19e39dcd-22fe-4998-b007-1e221dd37bfb/GT-Not-Hard-1.2.4-290-beta1.jar  
+提供者：Torch1230
+
