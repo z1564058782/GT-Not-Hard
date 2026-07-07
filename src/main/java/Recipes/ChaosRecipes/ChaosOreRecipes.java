@@ -745,8 +745,7 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Raw_Silicon_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Raw_Silicon_Dust, 5);
-                        put(DustList.Silicon_Dioxide_Dust, 9);
+                        put(DustList.Raw_Silicon_Dust, 14);
                     }
                 }));
 
@@ -1048,7 +1047,7 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Palladium_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Palladium_Dust, 10);
+                        put(DustList.Palladium_Metallic_Powder_Dust, 20);
                     }
                 }));
 
@@ -1451,9 +1450,8 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Osmium_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Osmium_Dust, 2);
-                        put(DustList.Iridium_Metal_Residue_Dust, 5);
-                        put(DustList.Rarest_Metal_Residue_Dust, 4);
+                        put(DustList.Iridium_Metal_Residue_Dust, 12);
+                        put(DustList.Rarest_Metal_Residue_Dust, 8);
                     }
                 }));
 
@@ -1468,10 +1466,9 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Iridium_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Iridium_Metal_Residue_Dust, 4);
+                        put(DustList.Iridium_Metal_Residue_Dust, 13);
                         put(DustList.Platinum_Metallic_Powder_Dust, 10);
-                        put(DustList.Rarest_Metal_Residue_Dust, 3);
-                        put(DustList.Osmium_Dust, 5);
+                        put(DustList.Rarest_Metal_Residue_Dust, 6);
                     }
                 }));
 
@@ -1486,7 +1483,7 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Platinum_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Iridium_Metal_Residue_Dust, 3);
+                        put(DustList.Iridium_Metal_Residue_Dust, 6);
                         put(DustList.Platinum_Metallic_Powder_Dust, 8);
                         put(DustList.Nickel_Dust, 5);
                     }
@@ -1701,7 +1698,7 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Pig_Iron_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Iron_Dust, 9);
+                        put(DustList.Iron_Dust, 11);
                         put(DustList.Nickel_Dust, 1);
                         put(DustList.Tin_Dust, 1);
                     }
@@ -2525,11 +2522,12 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Charged_Certus_Quartz_Ore,
                 new HashMap<>() {
                     {
-                        put(GemList.Charged_Certus_Quartz_Crystal, 10);
                         put(DustList.Barite_Dust, 2);
-                        put(GemList.Certus_Quartz, 4);
                         put(DustList.Certus_Quartz_Dust, 6);
-                        put(GemList.Quartzite, 6);
+                        put(DustList.Charged_Certus_Quartz_Dust, 12);
+                        put(DustList.Quartzite_Dust, 6);
+                        put(GemList.Certus_Quartz, 4);
+                        put(GemList.Charged_Certus_Quartz_Crystal, 10);
                     }
                 }));
 
@@ -2959,16 +2957,11 @@ public class ChaosOreRecipes {
                     OreList.Ordo_Infused_Stone_Stone,
                     OreList.Ordo_Infused_Stone_Netherrack,
                     OreList.Ordo_Infused_Stone_EndStone },
-                // "Raw Ordo Ore"
                 RawOreList.Raw_Ordo_Ore,
-                // "Crushed Ordo Crystals"
                 CrushedOreList.Crushed_Ordo_Crystals,
                 new HashMap<>() {
-
                     {
-                        // "Ordo Crystal Powder"
                         put(DustList.Ordo_Crystal_Powder, 26);
-                        // "Order Shard"
                         put(GemList.Order_Shard, 14);
                     }
                 }));
@@ -3101,7 +3094,7 @@ public class ChaosOreRecipes {
                     {
                         put(DustList.Redstone_Dust, 25);
                         put(DustList.Diamond_Dust, 5);
-                        put(DustList.Electrotine_Dust, 15);
+                        put(DustList.Electrum_Dust, 15);
                         put(DustList.Electrotine, 25);
                     }
                 }));
@@ -5215,9 +5208,9 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Perroudite_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Iodine_Dust_BartWorks, 1);
-                        put(DustList.Silver_Dust, 4);
-                        put(DustList.Perroudite_Dust, 4);
+                        put(DustList.Silver_Dust, 2);
+                        put(DustList.Sulfur_Dust, 6);
+                        put(DustList.Perroudite_Dust, 5);
                     }
                 }));
 
@@ -5393,8 +5386,9 @@ public class ChaosOreRecipes {
                 CrushedOreList.Crushed_Barite_Ra_Ore,
                 new HashMap<>() {
                     {
-                        put(DustList.Barite_Ra_Dust, 4);
-                        put(DustList.Runite_Dust, 1);
+                        put(DustList.Barite_Ra_Dust, 5);
+                        put(DustList.Radium_Dust, 6);
+                        put(DustList.Sulfur_Dust, 2);
                     }
                 }));
 

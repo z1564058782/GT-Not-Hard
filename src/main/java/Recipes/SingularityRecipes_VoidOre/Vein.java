@@ -1,1266 +1,959 @@
 package Recipes.SingularityRecipes_VoidOre;
 
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.ProjectRedExploration;
+import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import EnumList.EnumItemList.EnumMaterialList.OreList;
 import net.minecraft.item.ItemStack;
 
 public class Vein {
 
     // Apatite Vein
     public static final ItemStack[] Apatite_Vein = new ItemStack[] {
-        // Apatite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 530),
-        // Pyrochlore Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 607),
-        // Tricalcium Phosphate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 534) };
+        OreList.Apatite_Ore_Stone,
+        OreList.Pyrochlore_Ore_Stone,
+        OreList.Tricalcium_Phosphate_Ore_Stone };
 
     // Aqua, Ignis & Amber Vein
     public static final ItemStack[] Aqua_Ignis_Amber_Vein = new ItemStack[] {
-        // Amber Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 514),
-        // Aqua Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 543),
-        // Cinnabar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 826),
-        // Ignis Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 541) };
+        OreList.Amber_Ore_Stone,
+        OreList.Aqua_Infused_Stone_Stone,
+        OreList.Cinnabar_Ore_Stone,
+        OreList.Ignis_Infused_Stone_Stone };
 
     // Arsenic Vein
     public static final ItemStack[] Arsenic_Vein = new ItemStack[] {
-        // Antimony Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 58),
-        // Arsenic Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 39),
-        // Bismuth Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 90) };
+        OreList.Antimony_Ore_Stone,
+        OreList.Arsenic_Ore_Stone,
+        OreList.Bismuth_Ore_Stone };
 
     // Arsenopyrite & Ferberite & Loellingite & Roquesite Vein
     public static final ItemStack[] Arsenopyrite_Ferberite_Loellingite_Roquesite_Vein = new ItemStack[] {
-        // Arsenopyrite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10),
-        // Ferberite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 11),
-        // Loellingite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 12),
-        // Roquesite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 13) };
+        OreList.Arsenopyrite_Ore,
+        OreList.Ferberite_Ore,
+        OreList.Loellingite_Ore,
+        OreList.Roquesite_Ore };
 
     // Awakened Draconium Vein
     public static final ItemStack[] Awakened_Draconium_Vein = new ItemStack[] {
-        // Awakened Draconium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 976),
-        // Draconium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 975),
-        // Nether Star Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 506) };
+        OreList.Awakened_Draconium_Ore_Stone,
+        OreList.Draconium_Ore_Stone,
+        OreList.Nether_Star_Ore_Stone };
 
     // BArTiMaEuSNeK Vein
     public static final ItemStack[] BArTiMaEuSNeK_Vein = new ItemStack[] {
-        // BArTiMaEuSNeK Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 43) };
+        OreList.BArTiMaEuSNeK_Ore };
 
     // Basaltic Mineral Sand Vein
     public static final ItemStack[] Basaltic_Mineral_Sand_Vein = new ItemStack[] {
-        // Basaltic Mineral Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 935),
-        // Fullers Earth
-        getModItem(GregTech.ID, "gt.blockores", 1L, 928),
-        // Granitic Mineral Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 936),
-        // Gypsum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 934) };
+        OreList.Basaltic_Mineral_Sand_Stone,
+        OreList.Fullers_Earth_Stone,
+        OreList.Granitic_Mineral_Sand_Stone,
+        OreList.Gypsum_Ore_Stone };
 
     // Bauxite Vein
     public static final ItemStack[] Bauxite_Vein = new ItemStack[] {
-        // Aluminium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 19),
-        // Bauxite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 822),
-        // Ilmenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 918) };
+        OreList.Aluminium_Ore_Stone,
+        OreList.Bauxite_Ore_Stone,
+        OreList.Ilmenite_Ore_Stone };
 
     // Beryllium Vein
     public static final ItemStack[] Beryllium_Vein = new ItemStack[] {
-        // Beryllium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 8),
-        // Emerald Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 501),
-        // Thorium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 96) };
+        OreList.Beryllium_Ore_Stone,
+        OreList.Emerald_Ore_Stone,
+        OreList.Thorium_Ore_Stone };
 
     // Bismutite & Bismuthinite Vein
     public static final ItemStack[] Bismutite_Bismuthinite_Vein = new ItemStack[] {
-        // Bismuthinite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 2),
-        // Bismutite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 1),
-        // Bismuth Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 90),
-        // Stibnite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 945) };
+        OreList.Bismuthinite_Ore,
+        OreList.Bismutite_Ore,
+        OreList.Bismuth_Ore_Stone,
+        OreList.Stibnite_Ore_Stone };
 
     // Black Plutonium Vein
     public static final ItemStack[] Black_Plutonium_Vein = new ItemStack[] {
-        // Black Plutonium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 388),
-        // Borax Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 941),
-        // Red Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 527),
-        // Yellow Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 528) };
+        OreList.Black_Plutonium_Ore_Stone,
+        OreList.Borax_Ore_Stone,
+        OreList.Red_Garnet_Ore_Stone,
+        OreList.Yellow_Garnet_Ore_Stone };
 
     // Callisto Ice Vein
     public static final ItemStack[] Callisto_Ice_Vein = new ItemStack[] {
-        // Alduorite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 485),
-        // Blue Topaz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 513),
-        // Callisto Ice Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 389),
-        // Topaz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 507) };
+        OreList.Alduorite_Ore_Stone,
+        OreList.Blue_Topaz_Ore_Stone,
+        OreList.Callisto_Ice_Ore_Stone,
+        OreList.Topaz_Ore_Stone };
 
     // Cassiterite Vein
     public static final ItemStack[] Cassiterite_Vein = new ItemStack[] {
-        // Cassiterite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 824),
-        // Tin Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 57) };
+        OreList.Cassiterite_Ore_Stone,
+        OreList.Tin_Ore_Stone };
 
     // Certus Quartz Vein
     public static final ItemStack[] Certus_Quartz_Vein = new ItemStack[] {
-        // Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 516),
-        // Charged Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 517),
-        // Quartz Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 939) };
+        OreList.Certus_Quartz_Ore_Stone,
+        OreList.Charged_Certus_Quartz_Ore_Stone,
+        OreList.Quartz_Sand_Stone };
 
     // Chrome Vein
     public static final ItemStack[] Chrome_Vein = new ItemStack[] {
-        // Chrome Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 30),
-        // Manganese Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 31),
-        // Molybdenum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 48),
-        // Tungstate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 841) };
+        OreList.Chrome_Ore_Stone,
+        OreList.Manganese_Ore_Stone,
+        OreList.Molybdenum_Ore_Stone,
+        OreList.Tungstate_Ore_Stone };
 
     // Coal Vein
     public static final ItemStack[] Coal_Vein = new ItemStack[] {
-        // Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 535),
-        // Lignite Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 538) };
+        OreList.Coal_Ore_Stone,
+        OreList.Lignite_Coal_Ore_Stone };
 
     // Copper Vein
     public static final ItemStack[] Copper_Vein = new ItemStack[] {
-        // Chalcopyrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 855),
-        // Copper Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 35),
-        // Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 32),
-        // Pyrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 834) };
+        OreList.Chalcopyrite_Ore_Stone,
+        OreList.Copper_Ore_Stone,
+        OreList.Iron_Ore_Stone,
+        OreList.Pyrite_Ore_Stone };
 
     // Cosmic Neutronium Vein
     public static final ItemStack[] Cosmic_Neutronium_Vein = new ItemStack[] {
-        // Bedrockium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 395),
-        // Black Plutonium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 388),
-        // Cosmic Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 982),
-        // Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 129) };
+        OreList.Bedrockium_Ore_Stone,
+        OreList.Black_Plutonium_Ore_Stone,
+        OreList.Cosmic_Neutronium_Ore_Stone,
+        OreList.Neutronium_Ore_Stone };
 
     // Cryolite Vein
     public static final ItemStack[] Cryolite_Vein = new ItemStack[] {
-        // Cryolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 699),
-        // Galena Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 830),
-        // Lead Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 89),
-        // Silver Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 54) };
+        OreList.Cryolite_Ore_Stone,
+        OreList.Galena_Ore_Stone,
+        OreList.Lead_Ore_Stone,
+        OreList.Silver_Ore_Stone };
 
     // Desh Vein
     public static final ItemStack[] Desh_Vein = new ItemStack[] {
-        // Desh Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 884),
-        // Scheelite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 910),
-        // Tungstate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 841) };
+        OreList.Desh_Ore_Stone,
+        OreList.Scheelite_Ore_Stone,
+        OreList.Tungstate_Ore_Stone };
 
     // Diamond Vein
     public static final ItemStack[] Diamond_Vein = new ItemStack[] {
-        // Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 535),
-        // Diamond Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 500),
-        // Graphite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 865) };
+        OreList.Coal_Ore_Stone,
+        OreList.Diamond_Ore_Stone,
+        OreList.Graphite_Ore_Stone };
 
     // Dilithium Vein
     public static final ItemStack[] Dilithium_Vein = new ItemStack[] {
-        // Dilithium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 515),
-        // Mysterious Crystal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 398),
-        // Vinteum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 529) };
+        OreList.Dilithium_Ore_Stone,
+        OreList.Mysterious_Crystal_Ore_Stone,
+        OreList.Vinteum_Ore_Stone };
 
     // Djurleite & Bornite & Wittichenite Vein
     public static final ItemStack[] Djurleite_Bornite_Wittichenite_Vein = new ItemStack[] {
-        // Bornite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 14),
-        // Djurleite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 16),
-        // Wittichenite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 15),
-        // Tetrahedrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 840) };
+        OreList.Bornite_Ore,
+        OreList.Djurleite_Ore,
+        OreList.Wittichenite_Ore,
+        OreList.Tetrahedrite_Ore_Stone };
 
     // Dolomite Vein
     public static final ItemStack[] Dolomite_Vein = new ItemStack[] {
-        // Andradite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 821),
-        // Dolomite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 914),
-        // Trona Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 903),
-        // Wollastonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 915), };
+        OreList.Andradite_Ore_Stone,
+        OreList.Dolomite_Ore_Stone,
+        OreList.Trona_Ore_Stone,
+        OreList.Wollastonite_Ore_Stone };
 
     // Draconium Vein
     public static final ItemStack[] Draconium_Vein = new ItemStack[] {
-        // Draconium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 975),
-        // Electrotine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 812),
-        // Jade Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 537),
-        // Vinteum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 529), };
+        OreList.Draconium_Ore_Stone,
+        OreList.Electrotine_Ore_Stone,
+        OreList.Jade_Ore_Stone,
+        OreList.Vinteum_Ore_Stone };
 
     // Electrotine Vein
     public static final ItemStack[] Electrotine_Vein = new ItemStack[] {
-        // Alunite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 911),
-        // Diatomite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 948),
-        // Electrotine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 812),
-        // Saltpeter Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 836), };
+        OreList.Alunite_Ore_Stone,
+        OreList.Diatomite_Ore_Stone,
+        OreList.Electrotine_Ore_Stone,
+        OreList.Saltpeter_Ore_Stone };
 
     // Fayalite & Green Fuchsite & Red Zircon & Red Fuchsite Vein
     public static final ItemStack[] Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein = new ItemStack[] {
-        // Fayalite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23),
-        // Green Fuchsite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 28),
-        // Red Fuchsite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 29),
-        // Red Zircon Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 19), };
+        OreList.Fayalite_Ore,
+        OreList.Green_Fuchsite_Ore,
+        OreList.Red_Fuchsite_Ore,
+        OreList.Red_Zircon_Ore };
 
     // Ferberite & Huebnerite & Loellingite Vein
     public static final ItemStack[] Ferberite_Huebnerite_Loellingite_Vein = new ItemStack[] {
-        // Ferberite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 11),
-        // Huebnerite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 17),
-        // Loellingite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 12),
-        // Scheelite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 910), };
+        OreList.Ferberite_Ore,
+        OreList.Huebnerite_Ore,
+        OreList.Loellingite_Ore,
+        OreList.Scheelite_Ore_Stone };
 
     // Fluorspar Vein
     public static final ItemStack[] Fluorspar_Vein = new ItemStack[] {
-        // Fluorspar Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 91),
-        // Barite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 904),
-        // Galena Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 830),
-        // Sphalerite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 839) };
+        OreList.Fluorspar_Ore,
+        OreList.Barite_Ore_Stone,
+        OreList.Galena_Ore_Stone,
+        OreList.Sphalerite_Ore_Stone };
 
     // Forsterite & Fayalite & Orange Descloizite & Red Descloizite Vein
     public static final ItemStack[] Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        // Fayalite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23),
-        // Forsterite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 24),
-        // Red Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 26),
-        // Orange Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 27) };
+        OreList.Fayalite_Ore,
+        OreList.Forsterite_Ore,
+        OreList.Red_Descloizite_Ore,
+        OreList.Orange_Descloizite_Ore };
 
     // Galena Vein
     public static final ItemStack[] Galena_Vein = new ItemStack[] {
-        // Galena Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 830),
-        // Lead Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 89),
-        // Silver Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 54) };
+        OreList.Galena_Ore_Stone,
+        OreList.Lead_Ore_Stone,
+        OreList.Silver_Ore_Stone };
 
     // Gold Vein
     public static final ItemStack[] Gold_Vein = new ItemStack[] {
-        // Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 86),
-        // Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 870),
-        // Vanadium Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 923) };
+        OreList.Gold_Ore_Stone,
+        OreList.Magnetite_Ore_Stone,
+        OreList.Vanadium_Magnetite_Ore_Stone };
 
     // Hedenbergite & Fayalite & Orange Descloizite & Red Descloizite Vein
     public static final ItemStack[] Hedenbergite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        // Fayalite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23),
-        // Hedenbergite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 25),
-        // Orange Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 27),
-        // Red Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 26) };
+        OreList.Fayalite_Ore,
+        OreList.Hedenbergite_Ore,
+        OreList.Orange_Descloizite_Ore,
+        OreList.Red_Descloizite_Ore };
 
     // Ilmenite Vein
     public static final ItemStack[] Ilmenite_Vein = new ItemStack[] {
-        // Chromite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 825),
-        // Ilmenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 918),
-        // Perlite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 925),
-        // Uvarovite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 842), };
+        OreList.Chromite_Ore_Stone,
+        OreList.Ilmenite_Ore_Stone,
+        OreList.Perlite_Ore_Stone,
+        OreList.Uvarovite_Ore_Stone };
 
     // Infinity Catalyst Vein
     public static final ItemStack[] Infinity_Catalyst_Vein = new ItemStack[] {
-        // Adamantium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 319),
-        // Bedrockium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 395),
-        // Infinity Catalyst Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 394),
-        // Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 129) };
+        OreList.Adamantium_Ore_Stone,
+        OreList.Bedrockium_Ore_Stone,
+        OreList.Infinity_Catalyst_Ore_Stone,
+        OreList.Neutronium_Ore_Stone };
 
     // Infused Gold Vein
     public static final ItemStack[] Infused_Gold_Vein = new ItemStack[] {
-        // Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 86),
-        // Infused Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 323),
-        // Platinum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 85) };
+        OreList.Gold_Ore_Stone,
+        OreList.Infused_Gold_Ore_Stone,
+        OreList.Platinum_Ore_Stone };
 
     // Iridium Vein
     public static final ItemStack[] Iridium_Vein = new ItemStack[] {
-        // Iridium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 84),
-        // Mithril Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 331),
-        // Nickel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 34),
-        // Palladium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 52) };
+        OreList.Iridium_Ore_Stone,
+        OreList.Mithril_Ore_Stone,
+        OreList.Nickel_Ore_Stone,
+        OreList.Palladium_Ore_Stone };
 
     // Iron Vein
     public static final ItemStack[] Iron_Vein = new ItemStack[] {
-        // Banded Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 917),
-        // Brown Limonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 930),
-        // Malachite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 871),
-        // Yellow Limonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 931) };
+        OreList.Banded_Iron_Ore_Stone,
+        OreList.Brown_Limonite_Ore_Stone,
+        OreList.Malachite_Ore_Stone,
+        OreList.Yellow_Limonite_Ore_Stone };
 
     // Kaolinite Vein
     public static final ItemStack[] Kaolinite_Vein = new ItemStack[] {
-        // Fullers Earth
-        getModItem(GregTech.ID, "gt.blockores", 1L, 928),
-        // Glauconite Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 949),
-        // Kaolinite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 929),
-        // Zeolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 916) };
+        OreList.Fullers_Earth_Stone,
+        OreList.Glauconite_Sand_Stone,
+        OreList.Kaolinite_Stone,
+        OreList.Zeolite_Ore_Stone };
 
     // Lapis Vein
     public static final ItemStack[] Lapis_Vein = new ItemStack[] {
-        // Calcite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 823),
-        // Lapis Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 526),
-        // Lazurite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 524),
-        // Sodalite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 525) };
+        OreList.Calcite_Ore_Stone,
+        OreList.Lapis_Ore_Stone,
+        OreList.Lazurite_Ore_Stone,
+        OreList.Sodalite_Ore_Stone };
 
     // Ledox Vein
     public static final ItemStack[] Ledox_Vein = new ItemStack[] {
-        // Ledox Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 390),
-        // Opal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 510),
-        // Orichalcum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 966),
-        // Rubracium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 488) };
+        OreList.Ledox_Ore_Stone,
+        OreList.Opal_Ore_Stone,
+        OreList.Orichalcum_Ore_Stone,
+        OreList.Rubracium_Ore_Stone };
 
     // Lignite Coal Vein
     public static final ItemStack[] Lignite_Coal_Vein = new ItemStack[] {
-        // Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 535),
-        // Lignite Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 538) };
+        OreList.Coal_Ore_Stone,
+        OreList.Lignite_Coal_Ore_Stone };
 
     // Magnesite Vein
     public static final ItemStack[] Magnesite_Vein = new ItemStack[] {
-        // Banded Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 917),
-        // Magnesite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 908),
-        // Opal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 510),
-        // Sulfur Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 22) };
+        OreList.Banded_Iron_Ore_Stone,
+        OreList.Magnesite_Ore_Stone,
+        OreList.Opal_Ore_Stone,
+        OreList.Sulfur_Ore_Stone };
 
     // Magnetite Vein
     public static final ItemStack[] Magnetite_Vein = new ItemStack[] {
-        // Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 32),
-        // Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 870),
-        // Vanadium Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 923) };
+        OreList.Iron_Ore_Stone,
+        OreList.Magnetite_Ore_Stone,
+        OreList.Vanadium_Magnetite_Ore_Stone };
 
     // Manganese Vein
     public static final ItemStack[] Manganese_Vein = new ItemStack[] {
-        // Grossular Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 831),
-        // Pyrolusite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 943),
-        // Spessartine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 838),
-        // Tantalite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 921) };
+        OreList.Grossular_Ore_Stone,
+        OreList.Pyrolusite_Ore_Stone,
+        OreList.Spessartine_Ore_Stone,
+        OreList.Tantalite_Ore_Stone };
 
     // Mica Vein
     public static final ItemStack[] Mica_Vein = new ItemStack[] {
-        // Cassiterite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 824),
-        // Kyanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 924),
-        // Mica Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 901),
-        // Pollucite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 919) };
+        OreList.Cassiterite_Ore_Stone,
+        OreList.Kyanite_Ore_Stone,
+        OreList.Mica_Ore_Stone,
+        OreList.Pollucite_Ore_Stone };
 
     // Molybdenum Vein
     public static final ItemStack[] Molybdenum_Vein = new ItemStack[] {
-        // Molybdenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 942),
-        // Molybdenum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 48),
-        // Powellite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 883),
-        // Wulfenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 882) };
+        OreList.Molybdenite_Ore_Stone,
+        OreList.Molybdenum_Ore_Stone,
+        OreList.Powellite_Ore_Stone,
+        OreList.Wulfenite_Ore_Stone };
 
     // Monazite Vein
     public static final ItemStack[] Monazite_Vein = new ItemStack[] {
-        // Bastnasite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 905),
-        // Monazite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 520),
-        // Neodymium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 67), };
+        OreList.Bastnasite_Ore_Stone,
+        OreList.Monazite_Ore_Stone,
+        OreList.Neodymium_Ore_Stone };
 
     // Mytryl Vein
     public static final ItemStack[] Mytryl_Vein = new ItemStack[] {
-        // Ceruclase Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 952),
-        // Jasper Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 511),
-        // Mytryl Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 387),
-        // Vulcanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 489)
-
-    };
+        OreList.Ceruclase_Ore_Stone,
+        OreList.Jasper_Ore_Stone,
+        OreList.Mytryl_Ore_Stone,
+        OreList.Vulcanite_Ore_Stone };
 
     // Naquadah Vein
     public static final ItemStack[] Naquadah_Vein = new ItemStack[] {
-        // Enriched Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 326),
-        // Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 324) };
+        OreList.Enriched_Naquadah_Ore_Stone,
+        OreList.Naquadah_Ore_Stone };
 
     // Naquadria Vein
     public static final ItemStack[] Naquadria_Vein = new ItemStack[] {
-        // Enriched Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 326),
-        // Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 324),
-        // Naquadria Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 327),
-        // Trinium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 868) };
+        OreList.Enriched_Naquadah_Ore_Stone,
+        OreList.Naquadah_Ore_Stone,
+        OreList.Naquadria_Ore_Stone,
+        OreList.Trinium_Ore_Stone };
 
     // Nether Quartz Vein
     public static final ItemStack[] Nether_Quartz_Vein = new ItemStack[] {
-        // Nether Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 522),
-        // Quartzite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 523) };
+        OreList.Nether_Quartz_Ore_Stone,
+        OreList.Quartzite_Ore_Stone };
 
     // Nether Star Vein
     public static final ItemStack[] Nether_Star_Vein = new ItemStack[] {
-        // Garnet Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 938),
-        // Nether Star Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 506),
-        // Red Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 527),
-        // Yellow Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 528) };
+        OreList.Garnet_Sand_Stone,
+        OreList.Nether_Star_Ore_Stone,
+        OreList.Red_Garnet_Ore_Stone,
+        OreList.Yellow_Garnet_Ore_Stone };
 
     // Neutronium Vein
     public static final ItemStack[] Neutronium_Vein = new ItemStack[] {
-        // Adamantium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 319),
-        // Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 324),
-        // Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 129),
-        // Titanium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 28) };
+        OreList.Adamantium_Ore_Stone,
+        OreList.Naquadah_Ore_Stone,
+        OreList.Neutronium_Ore_Stone,
+        OreList.Titanium_Ore_Stone };
 
     // Nickel Vein
     public static final ItemStack[] Nickel_Vein = new ItemStack[] {
-        // Cobaltite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 827),
-        // Garnierite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 906),
-        // Nickel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 34),
-        // Pentlandite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 909) };
+        OreList.Cobaltite_Ore_Stone,
+        OreList.Garnierite_Ore_Stone,
+        OreList.Nickel_Ore_Stone,
+        OreList.Pentlandite_Ore_Stone };
 
     // Niobium Vein
     public static final ItemStack[] Niobium_Vein = new ItemStack[] {
-        // Gallium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 37),
-        // Niobium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 47),
-        // Yttrium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 45) };
+        OreList.Gallium_Ore_Stone,
+        OreList.Niobium_Ore_Stone,
+        OreList.Yttrium_Ore_Stone };
 
     // Olenite & Fluor-Buergerite & Chromo-Alumino-Povondraite & Vanadio-Oxy-Dravit Vein
     public static final ItemStack[] Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein = new ItemStack[] {
-        // Chromo-Alumino-Povondraite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 7),
-        // Fluor-Buergerite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 5),
-        // Olenite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 9),
-        // Vanadio-Oxy-Dravite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 8) };
+        OreList.Chromo_Alumino_Povondraite_Ore,
+        OreList.Fluor_Buergerite_Ore,
+        OreList.Olenite_Ore,
+        OreList.Vanadio_Oxy_Dravite_Ore };
 
     // Oilsands Vein
     public static final ItemStack[] Oilsands_Vein = new ItemStack[] {
-        // "Oilsands Ore"
-        getModItem(GregTech.ID, "gt.blockores", 1L, 878) };
+        OreList.Oilsands_Ore_Stone };
 
     // Olivine Vein
     public static final ItemStack[] Olivine_Vein = new ItemStack[] {
-        // Bentonite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 927),
-        // Glauconite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 933),
-        // Magnesite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 908),
-        // Olivine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 505) };
+        OreList.Bentonite_Stone,
+        OreList.Glauconite_Ore_Stone,
+        OreList.Magnesite_Ore_Stone,
+        OreList.Olivine_Ore_Stone };
 
     // Oriharukon Vein
     public static final ItemStack[] Oriharukon_Vein = new ItemStack[] {
-        // Mirabilite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 900),
-        // Oriharukon Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 393),
-        // Tanzanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 508),
-        // Vyroxeres Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 951) };
+        OreList.Mirabilite_Ore_Stone,
+        OreList.Oriharukon_Ore_Stone,
+        OreList.Tanzanite_Ore_Stone,
+        OreList.Vyroxeres_Ore_Stone };
 
     // Osmium Vein
     public static final ItemStack[] Osmium_Vein = new ItemStack[] {
-        // Iridium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 84),
-        // Nickel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 34),
-        // Osmium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 83) };
+        OreList.Iridium_Ore_Stone,
+        OreList.Nickel_Ore_Stone,
+        OreList.Osmium_Ore_Stone };
 
     // Palladium Vein
     public static final ItemStack[] Palladium_Vein = new ItemStack[] {
-        // Chrome Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 30),
-        // Palladium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 52),
-        // Platinum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 85),
-        // Sheldonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 828) };
+        OreList.Chrome_Ore_Stone,
+        OreList.Palladium_Ore_Stone,
+        OreList.Platinum_Ore_Stone,
+        OreList.Sheldonite_Ore_Stone };
 
     // Perditio & Ordo Vein
     public static final ItemStack[] Perditio_Ordo_Vein = new ItemStack[] {
-        // Amber Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 514),
-        // Cinnabar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 826),
-        // Ordo Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 545),
-        // Perditio Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 544) };
+        OreList.Amber_Ore_Stone,
+        OreList.Cinnabar_Ore_Stone,
+        OreList.Ordo_Infused_Stone_Stone,
+        OreList.Perditio_Infused_Stone_Stone };
 
     // Pitchblende Vein
     public static final ItemStack[] Pitchblende_Vein = new ItemStack[] {
-        // Pitchblende
-        getModItem(GregTech.ID, "gt.blockores", 1L, 873),
-        // Uraninite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 922) };
+        OreList.Pitchblende_Stone,
+        OreList.Uraninite_Ore_Stone };
 
     // Platinum Vein
     public static final ItemStack[] Platinum_Vein = new ItemStack[] {
-        // Iridium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 84),
-        // Palladium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 52),
-        // Platinum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 85),
-        // Sheldonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 828) };
+        OreList.Iridium_Ore_Stone,
+        OreList.Palladium_Ore_Stone,
+        OreList.Platinum_Ore_Stone,
+        OreList.Sheldonite_Ore_Stone };
 
     // Plutonium 239 Vein
     public static final ItemStack[] Plutonium239_Vein = new ItemStack[] {
-        // Plutonium 239 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 100),
-        // Thorium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 96),
-        // Uranium 238 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 98) };
+        OreList.Plutonium_239_Ore_Stone,
+        OreList.Thorium_Ore_Stone,
+        OreList.Uranium_238_Ore_Stone };
 
     // Prasiolite & Hedenbergite Vein
     public static final ItemStack[] Prasiolite_Hedenbergite_Vein = new ItemStack[] {
-        // Hedenbergite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 25),
-        // Prasiolite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 35),
-        // Amethyst Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 509),
-        // Olivine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 505) };
+        OreList.Hedenbergite_Ore,
+        OreList.Prasiolite_Ore,
+        OreList.Amethyst_Ore_Stone,
+        OreList.Olivine_Ore_Stone };
 
     // Pyrolusite Vein
     public static final ItemStack[] Pyrolusite_Vein = new ItemStack[] {
-        // Apatite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 530),
-        // Pyrochlore Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 607),
-        // Pyrolusite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 943),
-        // Tantalite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 921) };
+        OreList.Apatite_Ore_Stone,
+        OreList.Pyrochlore_Ore_Stone,
+        OreList.Pyrolusite_Ore_Stone,
+        OreList.Tantalite_Ore_Stone };
 
     // Quantium Vein
     public static final ItemStack[] Quantium_Vein = new ItemStack[] {
-        // Amethyst Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 509),
-        // Ardite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 382),
-        // Quantium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 391),
-        // Rutile Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 375) };
+        OreList.Amethyst_Ore_Stone,
+        OreList.Ardite_Ore_Stone,
+        OreList.Quantium_Ore_Stone,
+        OreList.Rutile_Ore_Stone };
 
     // Quartz Vein
     public static final ItemStack[] Quartz_Vein = new ItemStack[] {
-        // Barite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 904),
-        // Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 516),
-        // Quartzite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 523) };
+        OreList.Barite_Ore_Stone,
+        OreList.Certus_Quartz_Ore_Stone,
+        OreList.Quartzite_Ore_Stone };
 
     // Quartzite Vein
     public static final ItemStack[] Quartzite_Vein = new ItemStack[] {
-        // Barite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 904),
-        // Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 516),
-        // Quartzite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 523) };
+        OreList.Barite_Ore_Stone,
+        OreList.Certus_Quartz_Ore_Stone,
+        OreList.Quartzite_Ore_Stone };
 
     // Rare Earth Vein
     public static final ItemStack[] Rare_Earth_Vein = new ItemStack[] {
-        // Cadmium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 55),
-        // Caesium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 62),
-        // Cerium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 65),
-        // Lanthanum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 64) };
+        OreList.Cadmium_Ore_Stone,
+        OreList.Caesium_Ore_Stone,
+        OreList.Cerium_Ore_Stone,
+        OreList.Lanthanum_Ore_Stone };
 
     // Raw Tengam Vein
     public static final ItemStack[] Raw_Tengam_Vein = new ItemStack[] {
-        // Electrotine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 812),
-        // Raw Tengam Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 110),
-        // Samarium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 69) };
+        OreList.Electrotine_Ore_Stone,
+        OreList.Raw_Tengam_Ore_Stone,
+        OreList.Samarium_Ore_Stone };
 
     // Red Garnet Vein
     public static final ItemStack[] Red_Garnet_Vein = new ItemStack[] {
-        // Chrysotile Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 912),
-        // Realgar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 913),
-        // Red Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 527),
-        // Yellow Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 528) };
+        OreList.Chrysotile_Ore_Stone,
+        OreList.Realgar_Ore_Stone,
+        OreList.Red_Garnet_Ore_Stone,
+        OreList.Yellow_Garnet_Ore_Stone };
 
     // Redstone Vein
     public static final ItemStack[] Redstone_Vein = new ItemStack[] {
-        // Cinnabar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 826),
-        // Redstone Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 810),
-        // Ruby Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 502) };
+        OreList.Cinnabar_Ore_Stone,
+        OreList.Redstone_Ore_Stone,
+        OreList.Ruby_Ore_Stone };
 
     // Rutile Vein
     public static final ItemStack[] Rutile_Vein = new ItemStack[] {
-        // Bauxite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 822),
-        // Meteoric Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 340),
-        // Rutile Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 375),
-        // Titanium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 28) };
+        OreList.Bauxite_Ore_Stone,
+        OreList.Meteoric_Iron_Ore_Stone,
+        OreList.Rutile_Ore_Stone,
+        OreList.Titanium_Ore_Stone };
 
     // Salt Vein
     public static final ItemStack[] Salt_Vein = new ItemStack[] {
-        // Lepidolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 907),
-        // Rock Salt Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 944),
-        // Salt Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 817),
-        // Spodumene Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 920) };
+        OreList.Lepidolite_Ore_Stone,
+        OreList.Rock_Salt_Ore_Stone,
+        OreList.Salt_Ore_Stone,
+        OreList.Spodumene_Ore_Stone };
 
     // Samarium Vein
     public static final ItemStack[] Samarium_Vein = new ItemStack[] {
-        // Neodymium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 67),
-        // Samarium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 69),
-        // Tartarite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 956) };
+        OreList.Neodymium_Ore_Stone,
+        OreList.Samarium_Ore_Stone,
+        OreList.Tartarite_Ore_Stone };
 
     // Sapphire Vein
     public static final ItemStack[] Sapphire_Vein = new ItemStack[] {
-        // Almandine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 820),
-        // Pyrope Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 835),
-        // Sapphire Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 503),
-        // Green Sapphire Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 504) };
+        OreList.Almandine_Ore_Stone,
+        OreList.Pyrope_Ore_Stone,
+        OreList.Sapphire_Ore_Stone,
+        OreList.Green_Sapphire_Ore_Stone };
 
     // Soapstone Vein
     public static final ItemStack[] Soapstone_Vein = new ItemStack[] {
-        // Glauconite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 933),
-        // Pentlandite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 909),
-        // Soapstone Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 877),
-        // Talc
-        getModItem(GregTech.ID, "gt.blockores", 1L, 902) };
+        OreList.Glauconite_Ore_Stone,
+        OreList.Pentlandite_Ore_Stone,
+        OreList.Soapstone_Ore_Stone,
+        OreList.Talc_Stone };
 
     // Sulfur Vein
     public static final ItemStack[] Sulfur_Vein = new ItemStack[] {
-        // Pyrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 834),
-        // Sphalerite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 839),
-        // Sulfur Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 22) };
+        OreList.Pyrite_Ore_Stone,
+        OreList.Sphalerite_Ore_Stone,
+        OreList.Sulfur_Ore_Stone };
 
     // Terra & Aer Vein
     public static final ItemStack[] Terra_Aer_Vein = new ItemStack[] {
-        // Aer Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 540),
-        // Amber Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 514),
-        // Cinnabar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 826),
-        // Terra Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 542) };
+        OreList.Aer_Infused_Stone_Stone,
+        OreList.Amber_Ore_Stone,
+        OreList.Cinnabar_Ore_Stone,
+        OreList.Terra_Infused_Stone_Stone };
 
     // Tetrahedrite Vein
     public static final ItemStack[] Tetrahedrite_Vein = new ItemStack[] {
-        // Copper Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 35),
-        // Stibnite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 945),
-        // Tetrahedrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 840) };
+        OreList.Copper_Ore_Stone,
+        OreList.Stibnite_Ore_Stone,
+        OreList.Tetrahedrite_Ore_Stone };
 
     // Thorianite Vein
     public static final ItemStack[] Thorianite_Vein = new ItemStack[] {
-        // Lepidolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 907),
-        // Spodumene Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 920),
-        // Thorianite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 18),
-        // Uraninite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 922) };
+        OreList.Lepidolite_Ore_Stone,
+        OreList.Spodumene_Ore_Stone,
+        OreList.Thorianite_Ore,
+        OreList.Uraninite_Ore_Stone };
 
     // Thorium Vein
     public static final ItemStack[] Thorium_Vein = new ItemStack[] {
-        // Plutonium 241 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 101),
-        // Thorium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 96),
-        // Uranium 235 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 97),
-        // Uranium 238 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 98) };
+        OreList.Plutonium_241_Ore_Stone,
+        OreList.Thorium_Ore_Stone,
+        OreList.Uranium_235_Ore_Stone,
+        OreList.Uranium_238_Ore_Stone };
 
     // Tiberium Vein
     public static final ItemStack[] Tiberium_Vein = new ItemStack[] {
-        // Tiberium Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 89),
-        // Enriched Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 326) };
+        OreList.Tiberium_Ore,
+        OreList.Enriched_Naquadah_Ore_Stone };
 
     // Tin Vein
     public static final ItemStack[] Tin_Vein = new ItemStack[] {
-        // Asbestos Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 946),
-        // Cassiterite Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 937),
-        // Diatomite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 948),
-        // Garnet Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 938) };
+        OreList.Asbestos_Ore_Stone,
+        OreList.Cassiterite_Sand_Stone,
+        OreList.Diatomite_Ore_Stone,
+        OreList.Garnet_Sand_Stone };
 
     // Tungstate Vein
     public static final ItemStack[] Tungstate_Vein = new ItemStack[] {
-        // Lithium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 6),
-        // Scheelite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 910),
-        // Tungstate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 841), };
+        OreList.Lithium_Ore_Stone,
+        OreList.Scheelite_Ore_Stone,
+        OreList.Tungstate_Ore_Stone };
 
     // Tungsten Vein
     public static final ItemStack[] Tungsten_Vein = new ItemStack[] {
-        // Deep Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 829),
-        // Raw Silicon Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 20),
-        // Shadow Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 336),
-        // Tungsten Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 81) };
+        OreList.Deep_Iron_Ore_Stone,
+        OreList.Raw_Silicon_Ore_Stone,
+        OreList.Shadow_Iron_Ore_Stone,
+        OreList.Tungsten_Ore_Stone };
 
     // Uranium 238 Vein
     public static final ItemStack[] Uranium238_Vein = new ItemStack[] {
-        // Uraninite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 922),
-        // Uranium 238 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 98), };
+        OreList.Uraninite_Ore_Stone,
+        OreList.Uranium_238_Ore_Stone };
 
     // Vanadium Vein
     public static final ItemStack[] Vanadium_Vein = new ItemStack[] {
-        // Chrome Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 30),
-        // Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 86),
-        // Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 870),
-        // Vanadium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 29) };
+        OreList.Chrome_Ore_Stone,
+        OreList.Gold_Ore_Stone,
+        OreList.Magnetite_Ore_Stone,
+        OreList.Vanadium_Ore_Stone };
 
     // Vermiculite Vein
     public static final ItemStack[] Vermiculite_Vein = new ItemStack[] {
-        // "Alunite Ore"
-        getModItem(GregTech.ID, "gt.blockores", 1L, 911),
-        // "Cassiterite Ore"
-        getModItem(GregTech.ID, "gt.blockores", 1L, 824),
-        // "Chalcopyrite Ore"
-        getModItem(GregTech.ID, "gt.blockores", 1L, 855),
-        // Vermiculite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 932) };
+        OreList.Alunite_Ore_Stone,
+        OreList.Cassiterite_Ore_Stone,
+        OreList.Chalcopyrite_Ore_Stone,
+        OreList.Vermiculite_Stone };
 
     public static final ItemStack[] T10_Ore = new ItemStack[] {
-        // GregTech
-        getModItem(GregTech.ID, "gt.blockores", 1L, 6), // Lithium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 8), // Beryllium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 18), // Magnesium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 19), // Aluminium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 20), // Raw Silicon Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 22), // Sulfur Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 27), // Scandium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 28), // Titanium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 29), // Vanadium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 30), // Chrome Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 31), // Manganese Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 32), // Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 33), // Cobalt Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 34), // Nickel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 35), // Copper Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 36), // Zinc Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 37), // Gallium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 39), // Arsenic Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 43), // Rubidium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 44), // Strontium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 45), // Yttrium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 47), // Niobium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 48), // Molybdenum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 52), // Palladium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 54), // Silver Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 55), // Cadmium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 56), // Indium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 57), // Tin Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 58), // Antimony Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 59), // Tellurium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 62), // Caesium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 63), // Barium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 64), // Lanthanum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 65), // Cerium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 66), // Praseodymium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 67), // Neodymium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 68), // Promethium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 69), // Samarium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 70), // Europium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 71), // Gadolinium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 72), // Terbium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 73), // Dysprosium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 74), // Holmium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 75), // Erbium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 76), // Thulium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 77), // Ytterbium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 78), // Lutetium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 80), // Tantalum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 81), // Tungsten Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 83), // Osmium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 84), // Iridium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 85), // Platinum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 86), // Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 89), // Lead Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 90), // Bismuth Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 96), // Thorium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 97), // Uranium 235 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 98), // Uranium 238 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 100), // Plutonium 239 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 101), // Plutonium 241 Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 103), // Americium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 110), // Raw Tengam Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 129), // Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 303), // Electrum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 307), // Pig Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 319), // Adamantium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 320), // Fluxed Electrum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 323), // Infused Gold Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 324), // Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 326), // Enriched Naquadah Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 327), // Naquadria Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 329), // Tritanium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 331), // Mithril Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 336), // Shadow Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 340), // Meteoric Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 342), // Deep Dark Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 347), // Firestone Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 368), // Shadow Metal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 375), // Rutile Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 382), // Ardite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 386), // Manyullyn Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 387), // Mytryl Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 388), // Black Plutonium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 389), // Callisto Ice Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 390), // Ledox Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 391), // Quantium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 392), // Duralumin Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 393), // Oriharukon Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 394), // Infinity Catalyst Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 395), // Bedrockium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 398), // Mysterious Crystal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 485), // Alduorite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 488), // Rubracium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 489), // Vulcanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 500), // Diamond Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 501), // Emerald Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 502), // Ruby Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 503), // Sapphire Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 504), // Green Sapphire Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 505), // Olivine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 506), // Nether Star Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 507), // Topaz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 508), // Tanzanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 509), // Amethyst Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 510), // Opal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 511), // Jasper Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 512), // Spinel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 513), // Blue Topaz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 514), // Amber Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 515), // Dilithium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 516), // Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 517), // Charged Certus Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 518), // Forcicium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 519), // Forcillium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 520), // Monazite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 521), // Force Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 522), // Nether Quartz Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 523), // Quartzite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 524), // Lazurite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 525), // Sodalite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 526), // Lapis Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 527), // Red Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 528), // Yellow Garnet Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 529), // Vinteum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 530), // Apatite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 531), // Niter Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 534), // Tricalcium Phosphate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 535), // Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 537), // Jade Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 538), // Lignite Coal Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 540), // Aer Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 541), // Ignis Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 542), // Terra Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 543), // Aqua Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 544), // Perditio Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 545), // Ordo Infused Stone
-        getModItem(GregTech.ID, "gt.blockores", 1L, 548), // Roasted Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 549), // Roasted Nickel Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 607), // Pyrochlore Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 699), // Cryolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 770), // Endium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 797), // Calcium Hydride Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 810), // Redstone Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 812), // Electrotine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 817), // Salt Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 820), // Almandine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 821), // Andradite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 822), // Bauxite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 823), // Calcite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 824), // Cassiterite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 825), // Chromite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 826), // Cinnabar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 827), // Cobaltite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 828), // Sheldonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 829), // Deep Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 830), // Galena Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 831), // Grossular Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 833), // Phosphate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 834), // Pyrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 835), // Pyrope Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 836), // Saltpeter Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 838), // Spessartine Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 839), // Sphalerite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 840), // Tetrahedrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 841), // Tungstate Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 842), // Uvarovite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 855), // Chalcopyrite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 856), // Silicon Solar Grade (Poly SI) Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 861), // Emery Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 865), // Graphite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 868), // Trinium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 870), // Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 871), // Malachite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 873), // Pitchblende
-        getModItem(GregTech.ID, "gt.blockores", 1L, 877), // Soapstone Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 878), // Oilsands Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 882), // Wulfenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 883), // Powellite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 884), // Desh Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 894), // Cheese Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 900), // Mirabilite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 901), // Mica Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 902), // Talc
-        getModItem(GregTech.ID, "gt.blockores", 1L, 903), // Trona Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 904), // Barite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 905), // Bastnasite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 906), // Garnierite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 907), // Lepidolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 908), // Magnesite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 909), // Pentlandite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 910), // Scheelite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 911), // Alunite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 912), // Chrysotile Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 913), // Realgar Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 914), // Dolomite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 915), // Wollastonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 916), // Zeolite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 917), // Banded Iron Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 918), // Ilmenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 919), // Pollucite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 920), // Spodumene Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 921), // Tantalite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 922), // Uraninite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 923), // Vanadium Magnetite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 924), // Kyanite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 925), // Perlite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 926), // Pumice Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 927), // Bentonite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 928), // Fullers Earth
-        getModItem(GregTech.ID, "gt.blockores", 1L, 929), // Kaolinite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 930), // Brown Limonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 931), // Yellow Limonite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 932), // Vermiculite
-        getModItem(GregTech.ID, "gt.blockores", 1L, 933), // Glauconite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 934), // Gypsum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 935), // Basaltic Mineral Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 936), // Granitic Mineral Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 937), // Cassiterite Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 938), // Garnet Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 939), // Quartz Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 941), // Borax Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 942), // Molybdenite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 943), // Pyrolusite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 944), // Rock Salt Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 945), // Stibnite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 946), // Asbestos Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 948), // Diatomite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 949), // Glauconite Sand
-        getModItem(GregTech.ID, "gt.blockores", 1L, 951), // Vyroxeres Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 952), // Ceruclase Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 956), // Tartarite Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 966), // Orichalcum Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 969), // Aluminium Fluoride Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 971), // Calcium Disilicide Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 975), // Draconium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 976), // Awakened Draconium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 978), // Ichorium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 982), // Cosmic Neutronium Ore
-        getModItem(GregTech.ID, "gt.blockores", 1L, 984), // Flerovium Ore
-
-        // BartWorks
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 1), // Bismutite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 2), // Bismuthinite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 5), // Fluor-Buergerite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 7), // Chromo-Alumino-Povondraite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 8), // Vanadio-Oxy-Dravite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 9), // Olenite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10), // Arsenopyrite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 11), // Ferberite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 12), // Loellingite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 13), // Roquesite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 14), // Bornite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 15), // Wittichenite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 16), // Djurleite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 17), // Huebnerite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 18), // Thorianite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 19), // Red Zircon Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 23), // Fayalite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 24), // Forsterite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 25), // Hedenbergite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 26), // Red Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 27), // Orange Descloizite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 28), // Green Fuchsite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 29), // Red Fuchsite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 35), // Prasiolite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 43), // BArTiMaEuSNeK Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 47), // Platinum Metallic Powder Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 53), // Palladium Metallic Powder Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 60), // Leach Residue Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 69), // Rarest Metal Residue Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 70), // Iridium Metal Residue Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 79), // Crude Rhodium Metal Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 89), // Tiberium Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 91), // Fluorspar Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 93), // Atheneite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 94), // Temagamite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 95), // Terlinguaite Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10023), // Orundum Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10054), // Naquadah Oxide Mixture Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10067), // Enriched-Naquadah Oxide Mixture Ore
-        getModItem(BartWorks.ID, "bw.blockores.01", 1L, 10072), // Naquadria Oxide Mixture Ore
-
-        // GTPlusPlus
-        getModItem(GTPlusPlus.ID, "oreFluoriteF", 1L), // Fluorite (F) Ore
-        getModItem(GTPlusPlus.ID, "oreKoboldite", 1L), // Koboldite Ore
-        getModItem(GTPlusPlus.ID, "oreCrocoite", 1L), // Crocoite Ore
-        getModItem(GTPlusPlus.ID, "oreGeikielite", 1L), // Geikielite Ore
-        getModItem(GTPlusPlus.ID, "oreNichromite", 1L), // Nichromite Ore
-        getModItem(GTPlusPlus.ID, "oreTitanite", 1L), // Titanite Ore
-        getModItem(GTPlusPlus.ID, "oreZimbabweite", 1L), // Zimbabweite Ore
-        getModItem(GTPlusPlus.ID, "oreZirconolite", 1L), // Zirconolite Ore
-        getModItem(GTPlusPlus.ID, "oreGadoliniteCe", 1L), // Gadolinite (Ce) Ore
-        getModItem(GTPlusPlus.ID, "oreGadoliniteY", 1L), // Gadolinite (Y) Ore
-        getModItem(GTPlusPlus.ID, "oreLepersonnite", 1L), // Lepersonnite Ore
-        getModItem(GTPlusPlus.ID, "oreSamarskiteY", 1L), // Samarskite (Y) Ore
-        getModItem(GTPlusPlus.ID, "oreSamarskiteYb", 1L), // Samarskite (Yb) Ore
-        getModItem(GTPlusPlus.ID, "oreXenotime", 1L), // Xenotime Ore
-        getModItem(GTPlusPlus.ID, "oreYttriaite", 1L), // Yttriaite Ore
-        getModItem(GTPlusPlus.ID, "oreYttrialite", 1L), // Yttrialite Ore
-        getModItem(GTPlusPlus.ID, "oreYttrocerite", 1L), // Yttrocerite Ore
-        getModItem(GTPlusPlus.ID, "oreZircon", 1L), // Zircon Ore
-        getModItem(GTPlusPlus.ID, "orePolycrase", 1L), // Polycrase Ore
-        getModItem(GTPlusPlus.ID, "oreZircophyllite", 1L), // Zircophyllite Ore
-        getModItem(GTPlusPlus.ID, "oreZirkelite", 1L), // Zirkelite Ore
-        getModItem(GTPlusPlus.ID, "oreLanthaniteLa", 1L), // Lanthanite (La) Ore
-        getModItem(GTPlusPlus.ID, "oreLanthaniteCe", 1L), // Lanthanite (Ce) Ore
-        getModItem(GTPlusPlus.ID, "oreLanthaniteNd", 1L), // Lanthanite (Nd) Ore
-        getModItem(GTPlusPlus.ID, "oreAgarditeY", 1L), // Agardite (Y) Ore
-        getModItem(GTPlusPlus.ID, "oreAgarditeCd", 1L), // Agardite (Cd) Ore
-        getModItem(GTPlusPlus.ID, "oreAgarditeLa", 1L), // Agardite (La) Ore
-        getModItem(GTPlusPlus.ID, "oreAgarditeNd", 1L), // Agardite (Nd) Ore
-        getModItem(GTPlusPlus.ID, "oreHibonite", 1L), // Hibonite Ore
-        getModItem(GTPlusPlus.ID, "oreCerite", 1L), // Cerite Ore
-        getModItem(GTPlusPlus.ID, "oreFluorcaphite", 1L), // Fluorcaphite Ore
-        getModItem(GTPlusPlus.ID, "oreFlorencite", 1L), // Florencite Ore
-        getModItem(GTPlusPlus.ID, "oreCryoliteF", 1L), // Cryolite (F) Ore
-        getModItem(GTPlusPlus.ID, "oreLautarite", 1L), // Lautarite Ore
-        getModItem(GTPlusPlus.ID, "oreLafossaite", 1L), // Lafossaite Ore
-        getModItem(GTPlusPlus.ID, "oreDemicheleiteBr", 1L), // Demicheleite (Br) Ore
-        getModItem(GTPlusPlus.ID, "oreComancheite", 1L), // Comancheite Ore
-        getModItem(GTPlusPlus.ID, "orePerroudite", 1L), // Perroudite Ore
-        getModItem(GTPlusPlus.ID, "oreHoneaite", 1L), // Honeaite Ore
-        getModItem(GTPlusPlus.ID, "oreAlburnite", 1L), // Alburnite Ore
-        getModItem(GTPlusPlus.ID, "oreMiessiite", 1L), // Miessiite Ore
-        getModItem(GTPlusPlus.ID, "oreKashinite", 1L), // Kashinite Ore
-        getModItem(GTPlusPlus.ID, "oreIrarsite", 1L), // Irarsite Ore
-        getModItem(GTPlusPlus.ID, "oreGreenockite", 1L), // Greenockite Ore
-        getModItem(GTPlusPlus.ID, "oreRadioactiveMineralMix", 1L), // Strange Ore
-        getModItem(GTPlusPlus.ID, "oreAncientGranite", 1L), // Ancient Granite Ore
-        getModItem(GTPlusPlus.ID, "oreRunite", 1L), // Runite Ore
-        getModItem(GTPlusPlus.ID, "oreBariteRa", 1L) // Barite (Ra) Ore
+    OreList.End_Powder_Ore,
+    OreList.Stardust_Ore,
+    OreList.Igneous_Rock_Ore,
+    OreList.Instability_Orb_Ore,
+    OreList.Peridot_Ore,
+    OreList.Shadow_Ore,
+    OreList.Bismutite_Ore,
+    OreList.Bismuthinite_Ore,
+    OreList.Fluor_Buergerite_Ore,
+    OreList.Chromo_Alumino_Povondraite_Ore,
+    OreList.Vanadio_Oxy_Dravite_Ore,
+    OreList.Olenite_Ore,
+    OreList.Arsenopyrite_Ore,
+    OreList.Ferberite_Ore,
+    OreList.Loellingite_Ore,
+    OreList.Roquesite_Ore,
+    OreList.Bornite_Ore,
+    OreList.Wittichenite_Ore,
+    OreList.Djurleite_Ore,
+    OreList.Huebnerite_Ore,
+    OreList.Thorianite_Ore,
+    OreList.Red_Zircon_Ore,
+    OreList.Fayalite_Ore,
+    OreList.Forsterite_Ore,
+    OreList.Hedenbergite_Ore,
+    OreList.Red_Descloizite_Ore,
+    OreList.Orange_Descloizite_Ore,
+    OreList.Green_Fuchsite_Ore,
+    OreList.Red_Fuchsite_Ore,
+    OreList.Prasiolite_Ore,
+    OreList.BArTiMaEuSNeK_Ore,
+    OreList.Platinum_Metallic_Powder_Ore,
+    OreList.Palladium_Metallic_Powder_Ore,
+    OreList.Leach_Residue_Ore,
+    OreList.Rarest_Metal_Residue_Ore,
+    OreList.Iridium_Metal_Residue_Ore,
+    OreList.Crude_Rhodium_Metal_Ore,
+    OreList.Tiberium_Ore,
+    OreList.Fluorspar_Ore,
+    OreList.Atheneite_Ore,
+    OreList.Temagamite_Ore,
+    OreList.Terlinguaite_Ore,
+    OreList.Orundum_Ore,
+    OreList.Naquadah_Oxide_Mixture_Ore,
+    OreList.Enriched_Naquadah_Oxide_Mixture_Ore,
+    OreList.Naquadria_Oxide_Mixture_Ore,
+    OreList.Ancient_Debris,
+    OreList.Lithium_Ore_Stone,
+    OreList.Beryllium_Ore_Stone,
+    OreList.Carbon_Ore_Stone,
+    OreList.Magnesium_Ore_Stone,
+    OreList.Aluminium_Ore_Stone,
+    OreList.Raw_Silicon_Ore_Stone,
+    OreList.Sulfur_Ore_Stone,
+    OreList.Scandium_Ore_Stone,
+    OreList.Titanium_Ore_Stone,
+    OreList.Vanadium_Ore_Stone,
+    OreList.Chrome_Ore_Stone,
+    OreList.Manganese_Ore_Stone,
+    OreList.Iron_Ore_Stone,
+    OreList.Cobalt_Ore_Stone,
+    OreList.Nickel_Ore_Stone,
+    OreList.Copper_Ore_Stone,
+    OreList.Zinc_Ore_Stone,
+    OreList.Gallium_Ore_Stone,
+    OreList.Arsenic_Ore_Stone,
+    OreList.Rubidium_Ore_Stone,
+    OreList.Strontium_Ore_Stone,
+    OreList.Yttrium_Ore_Stone,
+    OreList.Niobium_Ore_Stone,
+    OreList.Molybdenum_Ore_Stone,
+    OreList.Palladium_Ore_Stone,
+    OreList.Silver_Ore_Stone,
+    OreList.Cadmium_Ore_Stone,
+    OreList.Indium_Ore_Stone,
+    OreList.Tin_Ore_Stone,
+    OreList.Antimony_Ore_Stone,
+    OreList.Tellurium_Ore_Stone,
+    OreList.Caesium_Ore_Stone,
+    OreList.Barium_Ore_Stone,
+    OreList.Lanthanum_Ore_Stone,
+    OreList.Cerium_Ore_Stone,
+    OreList.Praseodymium_Ore_Stone,
+    OreList.Neodymium_Ore_Stone,
+    OreList.Promethium_Ore_Stone,
+    OreList.Samarium_Ore_Stone,
+    OreList.Europium_Ore_Stone,
+    OreList.Gadolinium_Ore_Stone,
+    OreList.Terbium_Ore_Stone,
+    OreList.Dysprosium_Ore_Stone,
+    OreList.Holmium_Ore_Stone,
+    OreList.Erbium_Ore_Stone,
+    OreList.Thulium_Ore_Stone,
+    OreList.Ytterbium_Ore_Stone,
+    OreList.Lutetium_Ore_Stone,
+    OreList.Tantalum_Ore_Stone,
+    OreList.Tungsten_Ore_Stone,
+    OreList.Osmium_Ore_Stone,
+    OreList.Iridium_Ore_Stone,
+    OreList.Platinum_Ore_Stone,
+    OreList.Gold_Ore_Stone,
+    OreList.Lead_Ore_Stone,
+    OreList.Bismuth_Ore_Stone,
+    OreList.Thorium_Ore_Stone,
+    OreList.Uranium_235_Ore_Stone,
+    OreList.Uranium_238_Ore_Stone,
+    OreList.Plutonium_239_Ore_Stone,
+    OreList.Plutonium_241_Ore_Stone,
+    OreList.Americium_Ore_Stone,
+    OreList.Raw_Tengam_Ore_Stone,
+    OreList.Neutronium_Ore_Stone,
+    OreList.Electrum_Ore_Stone,
+    OreList.Pig_Iron_Ore_Stone,
+    OreList.Adamantium_Ore_Stone,
+    OreList.Fluxed_Electrum_Ore_Stone,
+    OreList.Infused_Gold_Ore_Stone,
+    OreList.Naquadah_Ore_Stone,
+    OreList.Enriched_Naquadah_Ore_Stone,
+    OreList.Naquadria_Ore_Stone,
+    OreList.Tritanium_Ore_Stone,
+    OreList.Mithril_Ore_Stone,
+    OreList.Shadow_Iron_Ore_Stone,
+    OreList.Meteoric_Iron_Ore_Stone,
+    OreList.Deep_Dark_Iron_Ore_Stone,
+    OreList.Firestone_Ore_Stone,
+    OreList.Shadow_Metal_Ore_Stone,
+    OreList.Rutile_Ore_Stone,
+    OreList.Ardite_Ore_Stone,
+    OreList.Manyullyn_Ore_Stone,
+    OreList.Mytryl_Ore_Stone,
+    OreList.Black_Plutonium_Ore_Stone,
+    OreList.Callisto_Ice_Ore_Stone,
+    OreList.Ledox_Ore_Stone,
+    OreList.Quantium_Ore_Stone,
+    OreList.Duralumin_Ore_Stone,
+    OreList.Oriharukon_Ore_Stone,
+    OreList.Infinity_Catalyst_Ore_Stone,
+    OreList.Bedrockium_Ore_Stone,
+    OreList.Mysterious_Crystal_Ore_Stone,
+    OreList.Alduorite_Ore_Stone,
+    OreList.Rubracium_Ore_Stone,
+    OreList.Vulcanite_Ore_Stone,
+    OreList.Diamond_Ore_Stone,
+    OreList.Emerald_Ore_Stone,
+    OreList.Ruby_Ore_Stone,
+    OreList.Sapphire_Ore_Stone,
+    OreList.Green_Sapphire_Ore_Stone,
+    OreList.Olivine_Ore_Stone,
+    OreList.Nether_Star_Ore_Stone,
+    OreList.Topaz_Ore_Stone,
+    OreList.Tanzanite_Ore_Stone,
+    OreList.Amethyst_Ore_Stone,
+    OreList.Opal_Ore_Stone,
+    OreList.Jasper_Ore_Stone,
+    OreList.Spinel_Ore_Stone,
+    OreList.Blue_Topaz_Ore_Stone,
+    OreList.Amber_Ore_Stone,
+    OreList.Dilithium_Ore_Stone,
+    OreList.Certus_Quartz_Ore_Stone,
+    OreList.Charged_Certus_Quartz_Ore_Stone,
+    OreList.Forcicium_Ore_Stone,
+    OreList.Forcillium_Ore_Stone,
+    OreList.Monazite_Ore_Stone,
+    OreList.Force_Ore_Stone,
+    OreList.Nether_Quartz_Ore_Stone,
+    OreList.Quartzite_Ore_Stone,
+    OreList.Lazurite_Ore_Stone,
+    OreList.Sodalite_Ore_Stone,
+    OreList.Lapis_Ore_Stone,
+    OreList.Red_Garnet_Ore_Stone,
+    OreList.Yellow_Garnet_Ore_Stone,
+    OreList.Vinteum_Ore_Stone,
+    OreList.Apatite_Ore_Stone,
+    OreList.Niter_Ore_Stone,
+    OreList.Tricalcium_Phosphate_Ore_Stone,
+    OreList.Coal_Ore_Stone,
+    OreList.Jade_Ore_Stone,
+    OreList.Lignite_Coal_Ore_Stone,
+    OreList.Aer_Infused_Stone_Stone,
+    OreList.Ignis_Infused_Stone_Stone,
+    OreList.Terra_Infused_Stone_Stone,
+    OreList.Aqua_Infused_Stone_Stone,
+    OreList.Perditio_Infused_Stone_Stone,
+    OreList.Ordo_Infused_Stone_Stone,
+    OreList.Roasted_Iron_Ore_Stone,
+    OreList.Roasted_Nickel_Ore_Stone,
+    OreList.Pyrochlore_Ore_Stone,
+    OreList.Cryolite_Ore_Stone,
+    OreList.Endium_Ore_Stone,
+    OreList.Calcium_Hydride_Ore_Stone,
+    OreList.Redstone_Ore_Stone,
+    OreList.Electrotine_Ore_Stone,
+    OreList.Salt_Ore_Stone,
+    OreList.Almandine_Ore_Stone,
+    OreList.Andradite_Ore_Stone,
+    OreList.Bauxite_Ore_Stone,
+    OreList.Calcite_Ore_Stone,
+    OreList.Cassiterite_Ore_Stone,
+    OreList.Chromite_Ore_Stone,
+    OreList.Cinnabar_Ore_Stone,
+    OreList.Cobaltite_Ore_Stone,
+    OreList.Sheldonite_Ore_Stone,
+    OreList.Deep_Iron_Ore_Stone,
+    OreList.Galena_Ore_Stone,
+    OreList.Grossular_Ore_Stone,
+    OreList.Phosphate_Ore_Stone,
+    OreList.Pyrite_Ore_Stone,
+    OreList.Pyrope_Ore_Stone,
+    OreList.Saltpeter_Ore_Stone,
+    OreList.Spessartine_Ore_Stone,
+    OreList.Sphalerite_Ore_Stone,
+    OreList.Tetrahedrite_Ore_Stone,
+    OreList.Tungstate_Ore_Stone,
+    OreList.Uvarovite_Ore_Stone,
+    OreList.Chalcopyrite_Ore_Stone,
+    OreList.Silicon_Solar_Grade_Poly_SI_Ore_Stone,
+    OreList.Emery_Ore_Stone,
+    OreList.Graphite_Ore_Stone,
+    OreList.Trinium_Ore_Stone,
+    OreList.Magnetite_Ore_Stone,
+    OreList.Malachite_Ore_Stone,
+    OreList.Pitchblende_Stone,
+    OreList.Soapstone_Ore_Stone,
+    OreList.Oilsands_Ore_Stone,
+    OreList.Wulfenite_Ore_Stone,
+    OreList.Powellite_Ore_Stone,
+    OreList.Desh_Ore_Stone,
+    OreList.Cheese_Ore_Stone,
+    OreList.Mirabilite_Ore_Stone,
+    OreList.Mica_Ore_Stone,
+    OreList.Talc_Stone,
+    OreList.Trona_Ore_Stone,
+    OreList.Barite_Ore_Stone,
+    OreList.Bastnasite_Ore_Stone,
+    OreList.Garnierite_Ore_Stone,
+    OreList.Lepidolite_Ore_Stone,
+    OreList.Magnesite_Ore_Stone,
+    OreList.Pentlandite_Ore_Stone,
+    OreList.Scheelite_Ore_Stone,
+    OreList.Alunite_Ore_Stone,
+    OreList.Chrysotile_Ore_Stone,
+    OreList.Realgar_Ore_Stone,
+    OreList.Dolomite_Ore_Stone,
+    OreList.Wollastonite_Ore_Stone,
+    OreList.Zeolite_Ore_Stone,
+    OreList.Banded_Iron_Ore_Stone,
+    OreList.Ilmenite_Ore_Stone,
+    OreList.Pollucite_Ore_Stone,
+    OreList.Spodumene_Ore_Stone,
+    OreList.Tantalite_Ore_Stone,
+    OreList.Uraninite_Ore_Stone,
+    OreList.Vanadium_Magnetite_Ore_Stone,
+    OreList.Kyanite_Ore_Stone,
+    OreList.Perlite_Ore_Stone,
+    OreList.Pumice_Ore_Stone,
+    OreList.Bentonite_Stone,
+    OreList.Fullers_Earth_Stone,
+    OreList.Kaolinite_Stone,
+    OreList.Brown_Limonite_Ore_Stone,
+    OreList.Yellow_Limonite_Ore_Stone,
+    OreList.Vermiculite_Stone,
+    OreList.Glauconite_Ore_Stone,
+    OreList.Gypsum_Ore_Stone,
+    OreList.Basaltic_Mineral_Sand_Stone,
+    OreList.Granitic_Mineral_Sand_Stone,
+    OreList.Cassiterite_Sand_Stone,
+    OreList.Garnet_Sand_Stone,
+    OreList.Quartz_Sand_Stone,
+    OreList.Borax_Ore_Stone,
+    OreList.Molybdenite_Ore_Stone,
+    OreList.Pyrolusite_Ore_Stone,
+    OreList.Rock_Salt_Ore_Stone,
+    OreList.Stibnite_Ore_Stone,
+    OreList.Asbestos_Ore_Stone,
+    OreList.Diatomite_Ore_Stone,
+    OreList.Glauconite_Sand_Stone,
+    OreList.Vyroxeres_Ore_Stone,
+    OreList.Ceruclase_Ore_Stone,
+    OreList.Tartarite_Ore_Stone,
+    OreList.Orichalcum_Ore_Stone,
+    OreList.Aluminium_Fluoride_Ore_Stone,
+    OreList.Calcium_Disilicide_Ore_Stone,
+    OreList.Draconium_Ore_Stone,
+    OreList.Awakened_Draconium_Ore_Stone,
+    OreList.Ichorium_Ore_Stone,
+    OreList.Cosmic_Neutronium_Ore_Stone,
+    OreList.Flerovium_Ore_Stone,
+    OreList.Hydrogen_Ice,
+    OreList.Nitrogen_Ice,
+    OreList.Oxygen_Ice,
+    OreList.Carbon_Dioxide_Ice,
+    OreList.Sulfur_Dioxide_Ice,
+    OreList.Ammonia_Ice,
+    OreList.Methane_Ice,
+    OreList.Ancient_Granite_Ore,
+    OreList.Runite_Ore,
+    OreList.Fluorite_F_Ore,
+    OreList.Koboldite_Ore,
+    OreList.Crocoite_Ore,
+    OreList.Geikielite_Ore,
+    OreList.Nichromite_Ore,
+    OreList.Titanite_Ore,
+    OreList.Zimbabweite_Ore,
+    OreList.Zirconolite_Ore,
+    OreList.Gadolinite_Ce_Ore,
+    OreList.Gadolinite_Y_Ore,
+    OreList.Lepersonnite_Ore,
+    OreList.Samarskite_Y_Ore,
+    OreList.Samarskite_Yb_Ore,
+    OreList.Xenotime_Ore,
+    OreList.Yttriaite_Ore,
+    OreList.Yttrialite_Ore,
+    OreList.Yttrocerite_Ore,
+    OreList.Zircon_Ore,
+    OreList.Polycrase_Ore,
+    OreList.Zircophyllite_Ore,
+    OreList.Zirkelite_Ore,
+    OreList.Lanthanite_La_Ore,
+    OreList.Lanthanite_Ce_Ore,
+    OreList.Lanthanite_Nd_Ore,
+    OreList.Agardite_Y_Ore,
+    OreList.Agardite_Cd_Ore,
+    OreList.Agardite_La_Ore,
+    OreList.Agardite_Nd_Ore,
+    OreList.Hibonite_Ore,
+    OreList.Cerite_Ore,
+    OreList.Fluorcaphite_Ore,
+    OreList.Florencite_Ore,
+    OreList.Cryolite_F_Ore,
+    OreList.Lautarite_Ore,
+    OreList.Lafossaite_Ore,
+    OreList.Demicheleite_Br_Ore,
+    OreList.Comancheite_Ore,
+    OreList.Perroudite_Ore,
+    OreList.Honeaite_Ore,
+    OreList.Alburnite_Ore,
+    OreList.Miessiite_Ore,
+    OreList.Kashinite_Ore,
+    OreList.Irarsite_Ore,
+    OreList.Greenockite_Ore,
+    OreList.Barite_Ra_Ore,
+    OreList.Strange_Ore,
+    OreList.Rare_Earth_I_Ore,
+    OreList.Rare_Earth_II_Ore,
+    OreList.Rare_Earth_III_Ore,
     };
 }
