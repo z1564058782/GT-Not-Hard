@@ -1,4 +1,4 @@
-package EnumList.EnumItemList.EnumMaterialList;
+package EnumList.EnumItemList.EnumOreProductList;
 
 import net.minecraft.item.ItemStack;
 

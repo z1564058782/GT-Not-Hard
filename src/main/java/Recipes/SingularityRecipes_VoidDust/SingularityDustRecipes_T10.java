@@ -9,7 +9,7 @@ import static util.AggregateItemStackArray.checkItemStack;
 import java.util.HashMap;
 import java.util.Map;
 
-import EnumList.EnumItemList.EnumMaterialList.DustList;
+import EnumList.EnumItemList.EnumOreProductList.DustList;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;

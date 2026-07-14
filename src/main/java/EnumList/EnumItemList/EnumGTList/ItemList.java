@@ -7,86 +7,22 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 public class ItemList {
-    // Circuit
-    // Circuit - ULV
-    public static final ItemStack Vacuum_Tube = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32700);
-    public static final ItemStack NAND_Chip = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32075);
-    // Circuit - LV
-    public static final ItemStack Integrated_Logic_Circuit = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32701);
-    public static final ItemStack Basic_Electronic_Circuit = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32305);
-    public static final ItemStack Microprocessor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32078);
-    // Circuit - MV
-    public static final ItemStack Good_Electronic_Circuit = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32702);
-    public static final ItemStack Good_Integrated_Circuit = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32079);
-    public static final ItemStack Integrated_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32080);
-    // Circuit - HV
-    public static final ItemStack Processor_Assembly = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32703);
-    public static final ItemStack Advanced_Integrated_Circuit = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32306);
-    public static final ItemStack Nano_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32082);
-    // Circuit - EV
-    public static final ItemStack Workstation = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32704);
-    public static final ItemStack Nano_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32083);
-    public static final ItemStack Quantum_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32085);
-    // Circuit - IV
-    public static final ItemStack Mainframe = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32705);
-    public static final ItemStack Nano_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32084);
-    public static final ItemStack Quantum_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32086);
-    public static final ItemStack Crystal_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32089);
-    // Circuit - LuV
-    public static final ItemStack Nano_Mainframe = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32706);
-    public static final ItemStack Quantum_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32087);
-    public static final ItemStack Crystal_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32096);
-    public static final ItemStack Wetware_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32092);
-    // Circuit - ZPM
-    public static final ItemStack Quantum_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32088);
-    public static final ItemStack Crystal_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32090);
-    public static final ItemStack Wetware_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32093);
-    public static final ItemStack Bioware_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32097);
-    // Circuit - UV
-    public static final ItemStack Crystal_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32091);
-    public static final ItemStack Wetware_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32094);
-    public static final ItemStack Bioware_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32098);
-    public static final ItemStack Optical_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32154);
-    // Circuit - UHV
-    public static final ItemStack Wetware_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32095);
-    public static final ItemStack Bioware_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32099);
-    public static final ItemStack Optical_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32155);
-    public static final ItemStack Exotic_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32166);
-    // Circuit - UEV
-    public static final ItemStack Bioware_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32120);
-    public static final ItemStack Optical_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32156);
-    public static final ItemStack Exotic_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32167);
-    public static final ItemStack Cosmic_Processor = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32170);
-    // Circuit - UIV
-    public static final ItemStack Optical_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32157);
-    public static final ItemStack Exotic_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32168);
-    public static final ItemStack Cosmic_Assembly = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32171);
-    public static final ItemStack Temporally_Transcendent_Processor = getModItem(
-        GregTech.ID,
-        "gt.metaitem.03",
-        1L,
-        32174);
-    // Circuit - UMV
-    public static final ItemStack Exotic_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32169);
-    public static final ItemStack Cosmic_Supercomputer = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32172);
-    public static final ItemStack Temporally_Transcendent_Assembly = getModItem(
-        GregTech.ID,
-        "gt.metaitem.03",
-        1L,
-        32175);
-    // Circuit - UXV
-    public static final ItemStack Cosmic_Mainframe = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32173);
-    public static final ItemStack Temporally_Transcendent_Supercomputer = getModItem(
-        GregTech.ID,
-        "gt.metaitem.03",
-        1L,
-        32176);
-    // Circuit - MAX
-    public static final ItemStack Temporally_Transcendent_Mainframe = getModItem(
-        GregTech.ID,
-        "gt.metaitem.03",
-        1L,
-        32177);
+    // Coil
+    public static final ItemStack Ultra_Low_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32140);
+    public static final ItemStack Low_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32141);
+    public static final ItemStack Medium_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32142);
+    public static final ItemStack High_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32143);
+    public static final ItemStack Extreme_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32144);
+    public static final ItemStack Insane_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32145);
+    public static final ItemStack Ludicrous_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32146);
+    public static final ItemStack ZPM_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32147);
+    public static final ItemStack Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32148);
+    public static final ItemStack Highly_Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32149);
+    public static final ItemStack Extremely_Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32259);
+    public static final ItemStack Insanely_Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32260);
+    public static final ItemStack Mega_Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32261);
+    public static final ItemStack Extended_Mega_Ultimate_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32262);
+    public static final ItemStack Maximum_Voltage_Coil = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32263);
 
     // Conveyor Module
     public static final ItemStack Conveyor_Module_LV = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32630);

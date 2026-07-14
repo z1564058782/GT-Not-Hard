@@ -6,11 +6,11 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.*;
 
-import EnumList.EnumItemList.EnumMaterialList.CrushedOreList;
-import EnumList.EnumItemList.EnumMaterialList.DustList;
-import EnumList.EnumItemList.EnumMaterialList.GemList;
-import EnumList.EnumItemList.EnumMaterialList.OreList;
-import EnumList.EnumItemList.EnumMaterialList.RawOreList;
+import EnumList.EnumItemList.EnumOreProductList.CrushedOreList;
+import EnumList.EnumItemList.EnumOreProductList.DustList;
+import EnumList.EnumItemList.EnumOreProductList.GemList;
+import EnumList.EnumItemList.EnumOreProductList.OreList;
+import EnumList.EnumItemList.EnumOreProductList.RawOreList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 

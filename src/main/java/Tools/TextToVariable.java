@@ -24,13 +24,13 @@ public class TextToVariable {
      * 输入文件路径配置
      * 可手动修改此变量以指定输入文件的路径
      */
-    private static final String INPUT_FILE_PATH = "src/main/resources/Tools_OutputFile/itempanel_290_Gem_converted.txt";
+    private static final String INPUT_FILE_PATH = "src/main/resources/Tools_OutputFile/itempanel_290_Misc_converted.txt";
 
     /**
      * 输出文件路径配置
      * 可手动修改此变量以指定输出文件的路径
      */
-    private static final String OUTPUT_FILE_PATH = "src/main/resources/VariableResult/itempanel_290_Gem_Variable.txt";
+    private static final String OUTPUT_FILE_PATH = "src/main/resources/VariableResult/itempanel_290_Misc_Variable.txt";
 
     /**
      * 执行文本转换任务
@@ -123,7 +123,7 @@ public class TextToVariable {
                         String processedCodeLine = processCodeLine(nextLine);
 
                         // 组合成变量声明行
-                        String convertedLine = variableName + " = " + processedCodeLine;
+                        String convertedLine = "public static final ItemStack " + variableName + " = " + processedCodeLine;
                         convertedLines.add(convertedLine);
 
                         // 跳过已处理的代码行

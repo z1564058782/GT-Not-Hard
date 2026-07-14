@@ -1,13 +1,8 @@
 package Recipes.SingularityRecipes_VoidOre;
 
-import static gregtech.api.enums.Mods.*;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.ProjectRedExploration;
-import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.util.GTModHandler.getModItem;
 
-import EnumList.EnumItemList.EnumMaterialList.OreList;
+import EnumList.EnumItemList.EnumOreProductList.OreList;
 import net.minecraft.item.ItemStack;
 
 public class Vein {

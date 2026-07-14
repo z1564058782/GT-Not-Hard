@@ -52,7 +52,7 @@ public class ItemUtils {
     }
 
     public static ItemStack getItemStack(String aModID, String aItem, long aAmount, int aMeta, String aNBTString,
-        ItemStack aReplacement) {
+                                         ItemStack aReplacement) {
         ItemStack itemStack = GTModHandler.getModItem(aModID, aItem, aAmount, aMeta);
         if (itemStack == null) return aReplacement;
         try {

@@ -1,7 +1,5 @@
 package EnumList.EnumItemList.EnumOreProductList;
 
-import EnumList.EnumItemList.EnumMaterialList.DustList;
-import EnumList.EnumItemList.EnumMaterialList.GemList;
 import net.minecraft.item.ItemStack;
 
 public class OreProductDustList {
