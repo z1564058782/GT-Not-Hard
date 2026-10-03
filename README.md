@@ -46,9 +46,23 @@
 
 # mod版本与GTNH版本对应关系
 1.0.x~1.1.x对应GTNH 2.7.0  
-1.2.x对应GTNH 2.8.0 
+1.2.0~1.2.4对应GTNH 2.8.0  
+1.2.5对应GTNH 2.9.0（含 2.9.0-RC-1）
+
+## 2.9.0 适配说明
+GT5-Unofficial 5.09.54.x 起 GT++（gtPlusPlus）与 KekzTech 已并入本体，本次适配涉及：
+
+| 原 API | 2.9.0 替代 |
+| --- | --- |
+| `gtPlusPlus.api.recipe.GTPPRecipeMaps.*` | `gregtech.api.recipe.RecipeMaps.*`（字段名不变） |
+| `kekztech.client.gui.KTUITextures.OVERLAY_BUTTON_WIRELESS_ON/OFF` | `util.ModGuiTextures`（用 ModularUI 1 重新指向 `kekztech` 原贴图资源） |
+| `gregtech.GTMod.GT_FML_LOGGER` | `gregtech.GTLoggers.GT_FML_LOGGER` |
+
+依赖版本（见 `dependencies.gradle`）已对齐 2.9.0-RC-1 实例：
+GT5-Unofficial 5.09.54.183 / GTNHLib 0.11.51 / Galacticraft 3.4.34-GTNH / NewHorizonsCoreMod 2.9.76 / Avaritia 1.99。
 
 ## 临时适配版本
 2.9.0.Beta1下载链接：https://pan.ustc.edu.cn/seafile/seafhttp/files/19e39dcd-22fe-4998-b007-1e221dd37bfb/GT-Not-Hard-1.2.4-290-beta1.jar  
-提供者：Torch1230
+提供者：Torch1230  
+（2.9.0-RC-1 正式适配已合并进 1.3.x 源码，此临时包不再需要）
 

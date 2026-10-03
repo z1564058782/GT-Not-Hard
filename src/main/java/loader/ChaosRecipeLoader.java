@@ -22,7 +22,6 @@ import gregtech.api.recipe.maps.AssemblyLineFrontend;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTRecipeBuilder;
-import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import util.ChaosManager;
 import util.Utils;
 
@@ -55,7 +54,7 @@ public class ChaosRecipeLoader {
         ChaosManager.addRecipeMapToChaos("basicmachine.canner", RecipeMaps.cannerRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.canner", SoundResource.IC2_MACHINES_EXTRACTOR_OP);
         // Centrifuge
-        ChaosManager.addRecipeMapToChaos("basicmachine.centrifuge", GTPPRecipeMaps.centrifugeNonCellRecipes);
+        ChaosManager.addRecipeMapToChaos("basicmachine.centrifuge", RecipeMaps.centrifugeNonCellRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.centrifuge", SoundResource.NONE);
         // Chemical Bath
         ChaosManager.addRecipeMapToChaos("basicmachine.chemicalbath", RecipeMaps.chemicalBathRecipes);
@@ -76,7 +75,7 @@ public class ChaosRecipeLoader {
         ChaosManager.addRecipeMapToChaos("basicmachine.distillery", RecipeMaps.distilleryRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.distillery", SoundResource.GT_MACHINES_DISTILLERY_LOOP);
         // Electrolyzer
-        ChaosManager.addRecipeMapToChaos("basicmachine.electrolyzer", GTPPRecipeMaps.electrolyzerNonCellRecipes);
+        ChaosManager.addRecipeMapToChaos("basicmachine.electrolyzer", RecipeMaps.electrolyzerNonCellRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.electrolyzer", SoundResource.IC2_MACHINES_MAGNETIZER_LOOP);
         // Extractor
         ChaosManager.addRecipeMapToChaos("basicmachine.extractor", RecipeMaps.extractorRecipes);
@@ -124,7 +123,7 @@ public class ChaosRecipeLoader {
         ChaosManager.addRecipeMapToChaos("basicmachine.microwave", RecipeMaps.microwaveRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.microwave", SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP);
         // Mixer
-        ChaosManager.addRecipeMapToChaos("basicmachine.mixer", GTPPRecipeMaps.mixerNonCellRecipes);
+        ChaosManager.addRecipeMapToChaos("basicmachine.mixer", RecipeMaps.mixerNonCellRecipes);
         ChaosManager.addSoundResourceToChaos("basicmachine.mixer", SoundResource.NONE);
         // Ore Washer
         ChaosManager.addRecipeMapToChaos("basicmachine.orewasher", RecipeMaps.oreWasherRecipes);
