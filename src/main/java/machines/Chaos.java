@@ -6,9 +6,9 @@ import static gregtech.api.enums.HatchElement.*;
 import static gregtech.api.enums.Textures.BlockIcons.*;
 import static gregtech.api.metatileentity.BaseTileEntity.TOOLTIP_DELAY;
 import static gregtech.api.metatileentity.implementations.MTEBasicMachine.isValidForLowGravity;
+import static gregtech.api.recipe.RecipeMaps.simpleWasherRecipes;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
-import static gtPlusPlus.api.recipe.GTPPRecipeMaps.simpleWasherRecipes;
 import static java.lang.Math.pow;
 import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
 
@@ -64,6 +64,7 @@ import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
 import Recipes.ChaosRecipes.ChaosXtremeCraftingRecipes;
 import Recipes.ChaosRecipes.ChaosZhuHaiRecipes;
 import goodgenerator.api.recipe.GoodGeneratorRecipeMaps;
+import gregtech.GTLoggers;
 import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
@@ -91,11 +92,10 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.ItemMachines;
-import gtPlusPlus.api.recipe.GTPPRecipeMaps;
-import kekztech.client.gui.KTUITextures;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
+import util.ModGuiTextures;
 
 /**
  * 异常处理模式枚举
@@ -137,8 +137,8 @@ class ExceptionHandler {
         switch (tryCatchMode) {
             case CONSOLE:
                 // 模式1：直接输出至终端
-                GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
-                GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+                GTLoggers.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+                GTLoggers.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
                 break;
 
             case FILE:
@@ -153,8 +153,8 @@ class ExceptionHandler {
 
             default:
                 // 默认情况使用控制台输出
-                GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
-                GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+                GTLoggers.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+                GTLoggers.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
                 break;
         }
     }
@@ -202,11 +202,11 @@ class ExceptionHandler {
 
         } catch (IOException ioException) {
             // 如果文件写入失败，回退到控制台输出
-            GTMod.GT_FML_LOGGER.error("[Chaos] Failed to write exception to file: " + LOG_FILE_PATH);
-            GTMod.GT_FML_LOGGER.error("[Chaos] Fallback to console output");
-            GTMod.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
-            GTMod.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
-            GTMod.GT_FML_LOGGER.error("[Chaos] File write error: ", ioException);
+            GTLoggers.GT_FML_LOGGER.error("[Chaos] Failed to write exception to file: " + LOG_FILE_PATH);
+            GTLoggers.GT_FML_LOGGER.error("[Chaos] Fallback to console output");
+            GTLoggers.GT_FML_LOGGER.error("[Chaos] " + tag + " - " + message);
+            GTLoggers.GT_FML_LOGGER.error("[Chaos] Stack trace: ", e);
+            GTLoggers.GT_FML_LOGGER.error("[Chaos] File write error: ", ioException);
         } finally {
             // 确保关闭writer资源
             if (writer != null) {
@@ -643,11 +643,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         RecipeMaps.unpackagerRecipes };
     // 工业切割机-992
     private static final String[] Industrial_Cutting_Factory_mod = { "Cutting", "Slicing" };
-    private static final RecipeMap<?>[] Industrial_Cutting_Factory = { RecipeMaps.cutterRecipes};
+    private static final RecipeMap<?>[] Industrial_Cutting_Factory = { RecipeMaps.cutterRecipes };
     // 真空干燥炉-995
     private static final String[] Utupu_Tanuri_mod = { "Dehydrator", "Vacuum Furnace" };
-    private static final RecipeMap<?>[] Utupu_Tanuri = { GTPPRecipeMaps.chemicalDehydratorNonCellRecipes,
-        GTPPRecipeMaps.vacuumFurnaceRecipes };
+    private static final RecipeMap<?>[] Utupu_Tanuri = { RecipeMaps.chemicalDehydratorNonCellRecipes,
+        RecipeMaps.vacuumFurnaceRecipes };
     // "Hot Isostatic Pressurization Unit"-3006
     private static final String[] Hot_Isostatic_Pressurization_Unit_mod = { "Compressor", "HIP Compressor" };
     private static final RecipeMap<?>[] Hot_Isostatic_Pressurization_Unit = { RecipeMaps.compressorRecipes,
@@ -1121,9 +1121,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .setBackground(() -> {
                 if (wirelessMode) {
                     return new IDrawable[] { GTUITextures.BUTTON_STANDARD_PRESSED,
-                        KTUITextures.OVERLAY_BUTTON_WIRELESS_ON };
+                        ModGuiTextures.OVERLAY_BUTTON_WIRELESS_ON };
                 } else {
-                    return new IDrawable[] { GTUITextures.BUTTON_STANDARD, KTUITextures.OVERLAY_BUTTON_WIRELESS_OFF };
+                    return new IDrawable[] { GTUITextures.BUTTON_STANDARD, ModGuiTextures.OVERLAY_BUTTON_WIRELESS_OFF };
                 }
             })
             .setPos(98, 91)

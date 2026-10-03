@@ -89,9 +89,9 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
-import kekztech.client.gui.KTUITextures;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
+import util.ModGuiTextures;
 
 public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConstructable, ISecondaryDescribable {
 
@@ -1296,10 +1296,10 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
                 .setBackground(() -> {
                     if (wireless_mode) {
                         return new IDrawable[] { GTUITextures.BUTTON_STANDARD_PRESSED,
-                            KTUITextures.OVERLAY_BUTTON_WIRELESS_ON };
+                            ModGuiTextures.OVERLAY_BUTTON_WIRELESS_ON };
                     } else {
                         return new IDrawable[] { GTUITextures.BUTTON_STANDARD,
-                            KTUITextures.OVERLAY_BUTTON_WIRELESS_OFF };
+                            ModGuiTextures.OVERLAY_BUTTON_WIRELESS_OFF };
                     }
                 })
                 .setPos(80, 91)
