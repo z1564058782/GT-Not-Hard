@@ -67,6 +67,7 @@ import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
 import Recipes.ChaosRecipes.ChaosCrucibleRecipes;
 import Recipes.ChaosRecipes.ChaosEssenceFarmRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
+import Recipes.ChaosRecipes.ChaosRecipeMap;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosRunicMatrixRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
@@ -646,7 +647,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     // === 多类型机器配方列表 ===
-    private static final Integer[] specialMachine = { 358, 995, 3006, 3008, 12735, 15513, 15548, 15550, 31021, 32018 };
+    private static final Integer[] specialMachine = { 358, 995, 3006, 3008, 12735, 13532, 15513, 15548, 15550, 31021,
+        32018 };
 
     private boolean getSpecialMachine() {
         try {
@@ -698,6 +700,12 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final RecipeMap<?>[] Circuit_Assembly_Line_Mode_Recipes = {
         ChaosCircuitAssemblerRecipes.addChaosCircuitAssemblerRecipes, RecipeMaps.circuitAssemblerRecipes };
     private static final UITexture[] Circuit_Assembly_Line_Mode_Icons = { GTGuiTextures.OVERLAY_BUTTON_ASSEMBLER_MODE,
+        GTGuiTextures.OVERLAY_BUTTON_PRECISE_MODE };
+    // "Advanced Assembly Line"-13532
+    private static final String[] Advanced_Assembly_Line_Mode = { "Item Assembly Line", "Fluid Assembly Line" };
+    private static final RecipeMap<?>[] Advanced_Assembly_Line_Mode_Recipes = { ChaosRecipeMap.AssemblyLineItemRecipe,
+        RecipeMaps.circuitAssemblerRecipes };
+    private static final UITexture[] Advanced_Assembly_Line_Mode_Icons = { GTGuiTextures.OVERLAY_BUTTON_ASSEMBLER_MODE,
         GTGuiTextures.OVERLAY_BUTTON_PRECISE_MODE };
     // "Amazon Warehousing Depot"-15513
     private static final String[] Amazon_Warehousing_Depot_Mode = { "Packager", "Unpackeager" };
@@ -770,6 +778,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
             case 12735 -> {
                 return Circuit_Assembly_Line_Mode_Recipes[Math.min(mode, 1)];
+            }
+            case 13532 -> {
+                return Advanced_Assembly_Line_Mode_Recipes[Math.min(mode, 1)];
             }
             case 15513 -> {
                 return Amazon_Warehousing_Depot_Mode_Recipes[Math.min(mode, 1)];
@@ -1040,6 +1051,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             case 12735 -> {
                 return Circuit_Assembly_Line_Mode_Icons;
             }
+            case 13532 -> {
+                return Advanced_Assembly_Line_Mode_Icons;
+            }
             case 15513 -> {
                 return Amazon_Warehousing_Depot_Mode_Icons;
             }
@@ -1161,6 +1175,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
             case 12735 -> {
                 return Circuit_Assembly_Line_Mode[Math.min(mode, 1)];
+            }
+            case 13532 -> {
+                return Advanced_Assembly_Line_Mode[Math.min(mode, 1)];
             }
             case 15513 -> {
                 return Amazon_Warehousing_Depot_Mode[Math.min(mode, 1)];

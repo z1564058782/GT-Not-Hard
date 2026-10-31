@@ -412,11 +412,7 @@ public class MultiMachineControllerList {
         "gt.blockmachines",
         1L,
         32021);
-    public static final ItemStack Compact_Fusion_Computer_MkIV = getModItem(
-        GregTech.ID,
-        "gt.blockmachines",
-        1L,
-        32022);
+    public static final ItemStack Compact_Fusion_Computer_MkIV = getModItem(GregTech.ID, "gt.blockmachines", 1L, 32022);
     public static final ItemStack Compact_Fusion_Computer_MKV = getModItem(GregTech.ID, "gt.blockmachines", 1L, 32023);
     public static final ItemStack Large_Essentia_Smeltery = getModItem(GregTech.ID, "gt.blockmachines", 1L, 32024);
     public static final ItemStack Coolant_Tower = getModItem(GregTech.ID, "gt.blockmachines", 1L, 32025);

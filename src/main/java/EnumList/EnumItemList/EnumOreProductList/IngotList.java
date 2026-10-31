@@ -1,6 +1,5 @@
 package EnumList.EnumItemList.EnumOreProductList;
 
-import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Botania;
@@ -28,6 +27,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import net.minecraft.item.ItemStack;
 
 public class IngotList {
+
     public static final ItemStack Iron_Ingot = getModItem(Minecraft.ID, "iron_ingot", 1L);
     public static final ItemStack Gold_Ingot = getModItem(Minecraft.ID, "gold_ingot", 1L);
     public static final ItemStack Brick = getModItem(Minecraft.ID, "brick", 1L);

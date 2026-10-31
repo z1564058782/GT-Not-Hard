@@ -12,10 +12,11 @@ import EnumList.EnumListCheck.EnumFluidListCheck;
 import EnumList.EnumListCheck.EnumItemListCheck;
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
-import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_NormalCasingRecipe;
-import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_NormalHatchRecipe;
-import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_NormalItemRecipe;
-import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_NormalMachineRecipe;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_CasingRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Item;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_MachineRecipe_Normal;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
@@ -37,7 +38,9 @@ import Recipes.SingularityRecipes_VoidIngot.SingularityIngotRecipes;
 import Recipes.SingularityRecipes_VoidOre.FakeSingularityOreRecipes;
 import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes;
 import Tools.FluidExporter;
+import Tools.RecipeExport;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -74,6 +77,13 @@ public class MyMod {
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        Tools.CheckEnumItemList.registerCommand();
+        Tools.CheckEnumFluidList.registerCommand();
+        if (Loader.isModLoaded("NotEnoughItems")) {
+            RecipeExport.registerCommand();
+        } else {
+            MyMod.LOG.warn("NEI is not loaded; /ExportRecipe is unavailable.");
+        }
         MinecraftForge.EVENT_BUS.register(this);
         FMLCommonHandler.instance()
             .bus()
@@ -89,10 +99,11 @@ public class MyMod {
         proxy.postInit(event);
 
         // Chaos Recipes
-        ChaosAssemblyLine_NormalCasingRecipe.addChaosAssemblyLine_NormalCasingRecipe();
-        ChaosAssemblyLine_NormalHatchRecipe.addChaosAssemblyLine_NormalHatchRecipe();
-        ChaosAssemblyLine_NormalItemRecipe.addChaosAssemblyLine_NormalItemRecipe();
-        ChaosAssemblyLine_NormalMachineRecipe.addChaosAssemblyLine_NormalMachineRecipe();
+        ChaosAssemblyLine_ItemRecipe_Item.addChaosAssemblyLine_ItemRecipe_Item();
+        ChaosAssemblyLine_CasingRecipe_Normal.addChaosAssemblyLine_NormalCasingRecipe();
+        ChaosAssemblyLine_HatchRecipe_Normal.addChaosAssemblyLine_NormalHatchRecipe();
+        ChaosAssemblyLine_ItemRecipe_Normal.addChaosAssemblyLine_NormalItemRecipe();
+        ChaosAssemblyLine_MachineRecipe_Normal.addChaosAssemblyLine_NormalMachineRecipe();
 
         ChaosReplicatorRecipes.addReplicatorRecipes_Item();
         ChaosReplicatorRecipes.addReplicatorRecipes_Fluid();

@@ -659,6 +659,11 @@ public class HatchList {
         1L,
         15447);
     public static final ItemStack YOTHatch = getModItem(GregTech.ID, "gt.blockmachines", 1L, 32015);
+    public static final ItemStack Line_Of_Sight_Connector_Hatch = getModItem(
+        GregTech.ID,
+        "gt.blockmachines",
+        1L,
+        15481);
 
     // Debug Hatch
     public static final ItemStack Debug_Data_Hatch = getModItem(GregTech.ID, "gt.blockmachines", 1L, 15496);
@@ -808,7 +813,7 @@ public class HatchList {
         Quantum_Uplink_ME_Connector_Hatch, Radio_Hatch, Reservoir_Hatch, Splitter_Redstone_Input, TFFT_Multi_IO_Hatch,
         Teleportation_Node_Controller_Hatch, Toxic_Residue_Sensor_Hatch, Uncertainty_Resolution, Uncertainty_Resolver_X,
         Vis_Regulated_Maintenance_Hatch, Void_Hatch, Wireless_Assembly_line_Reception_Connector,
-        Wireless_Data_Bank_Transmission_Connector, YOTHatch,
+        Wireless_Data_Bank_Transmission_Connector, YOTHatch, Line_Of_Sight_Connector_Hatch,
         // Debug Hatch
         Debug_Data_Hatch, Debug_Fluid_Tank, Debug_Input_Bus, Debug_Input_Hatch, Debug_Steam_Hatch };
 }

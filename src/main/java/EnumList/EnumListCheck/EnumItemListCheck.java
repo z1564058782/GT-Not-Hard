@@ -6,7 +6,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
 import static util.AggregateItemStackArray.checkItemStack;
 
-import EnumList.EnumItemList.EnumModList.KubaTechList;
 import net.minecraft.item.ItemStack;
 
 import EnumList.EnumItemList.EnumGTList.BatteryList;
@@ -77,6 +76,7 @@ import EnumList.EnumItemList.EnumModList.GalaxySpaceList;
 import EnumList.EnumItemList.EnumModList.GoodGeneratorList;
 import EnumList.EnumItemList.EnumModList.IronChestTankList;
 import EnumList.EnumItemList.EnumModList.KekzTechList;
+import EnumList.EnumItemList.EnumModList.KubaTechList;
 import EnumList.EnumItemList.EnumModList.MagicBeesList;
 import EnumList.EnumItemList.EnumModList.MinecraftList;
 import EnumList.EnumItemList.EnumModList.NewHorizonsCoreModList;

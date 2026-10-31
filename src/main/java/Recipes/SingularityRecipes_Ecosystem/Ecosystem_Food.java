@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
@@ -2065,17 +2064,6 @@ public class Ecosystem_Food {
         getModItem(PamsHarvestCraft.ID, "bananajuiceItem", 1L),
         // "Gooseberry Juice"
         getModItem(PamsHarvestCraft.ID, "gooseberryjuiceItem", 1L) };
-
-    // PamsHarvestTheNether
-    public static final ItemStack[] PamsHarvestTheNether_Food = new ItemStack[] {
-        // "Ignis Fruit"
-        getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 1L),
-        // "Blood Leaf"
-        getModItem(PamsHarvestTheNether.ID, "bloodleafItem", 1L),
-        // "Flesh Root"
-        getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 1L),
-        // "Marrow Berry"
-        getModItem(PamsHarvestTheNether.ID, "marrowberryItem", 1L) };
 
     // GTPlusPlus
     public static final ItemStack[] GTPlusPlus_Food = new ItemStack[] {

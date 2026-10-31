@@ -66,10 +66,18 @@ public class GTItemList {
     public static final ItemStack Computer_Monitor_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32740);
     public static final ItemStack Crafting_Table_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32744);
     public static final ItemStack Drain_Module_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32745);
-    public static final ItemStack Wireless_Machine_Controller_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32747);
+    public static final ItemStack Wireless_Machine_Controller_Cover = getModItem(
+        GregTech.ID,
+        "gt.metaitem.01",
+        1L,
+        32747);
     public static final ItemStack Needs_Maintenance_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32748);
     public static final ItemStack Shutter_Module_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32749);
-    public static final ItemStack Advanced_Wireless_Machine_Controller_Cover = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32760);
+    public static final ItemStack Advanced_Wireless_Machine_Controller_Cover = getModItem(
+        GregTech.ID,
+        "gt.metaitem.01",
+        1L,
+        32760);
     public static final ItemStack Oak_Plank_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32470);
     public static final ItemStack Spruce_Plank_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32471);
     public static final ItemStack Birch_Plank_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32472);
@@ -78,8 +86,16 @@ public class GTItemList {
     public static final ItemStack Dark_Oak_Plank_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32475);
     public static final ItemStack Wireless_Fluid_Detector_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32581);
     public static final ItemStack Wireless_Item_Detector_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32582);
-    public static final ItemStack Wireless_Needs_Maintenance_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32583);
-    public static final ItemStack Wireless_Activity_Detector_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32584);
+    public static final ItemStack Wireless_Needs_Maintenance_Cover = getModItem(
+        GregTech.ID,
+        "gt.metaitem.02",
+        1L,
+        32583);
+    public static final ItemStack Wireless_Activity_Detector_Cover = getModItem(
+        GregTech.ID,
+        "gt.metaitem.02",
+        1L,
+        32584);
     public static final ItemStack Cherry_Plank_Cover = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32587);
     public static final ItemStack Metrics_Transmitter_Cover = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32232);
 
@@ -189,9 +205,17 @@ public class GTItemList {
     public static final ItemStack Large_Steel_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32405);
     public static final ItemStack Large_Tungstensteel_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32406);
     public static final ItemStack Large_Aluminium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32407);
-    public static final ItemStack Large_Stainless_Steel_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32408);
+    public static final ItemStack Large_Stainless_Steel_Fluid_Cell = getModItem(
+        GregTech.ID,
+        "gt.metaitem.01",
+        1L,
+        32408);
     public static final ItemStack Large_Titanium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32409);
-    public static final ItemStack Large_Rhodium_Plated_Palladium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32410);
+    public static final ItemStack Large_Rhodium_Plated_Palladium_Fluid_Cell = getModItem(
+        GregTech.ID,
+        "gt.metaitem.01",
+        1L,
+        32410);
     public static final ItemStack Large_Iridium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32411);
     public static final ItemStack Large_Osmium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32412);
     public static final ItemStack Large_Neutronium_Fluid_Cell = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32413);
@@ -362,9 +386,19 @@ public class GTItemList {
     public static final ItemStack Wrap_of_Circuits_MAX = getModItem(GoodGenerator.ID, "circuitWrap", 1L, 14);
 
     // Misc
-    public static final ItemStack Neutronium_Heat_Capacitor_1G = getModItem(GregTech.ID, "gt.neutroniumHeatCapacitor", 1L);
-    public static final ItemStack BrainTech_Aerospace_Advanced_Reinforced_Duct_Tape_FAL_84 = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32764);
-    public static final ItemStack Drone_Remote_Interface = getModItem(GregTech.ID, "gt.Item_Drone_Remote_Interface", 1L);
+    public static final ItemStack Neutronium_Heat_Capacitor_1G = getModItem(
+        GregTech.ID,
+        "gt.neutroniumHeatCapacitor",
+        1L);
+    public static final ItemStack BrainTech_Aerospace_Advanced_Reinforced_Duct_Tape_FAL_84 = getModItem(
+        GregTech.ID,
+        "gt.metaitem.01",
+        1L,
+        32764);
+    public static final ItemStack Drone_Remote_Interface = getModItem(
+        GregTech.ID,
+        "gt.Item_Drone_Remote_Interface",
+        1L);
     public static final ItemStack Primitive_Shielding = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32307);
     public static final ItemStack Pristine_Shielding = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32308);
     public static final ItemStack Perfected_Shielding = getModItem(GregTech.ID, "gt.metaitem.03", 1L, 32309);
@@ -607,49 +641,17 @@ public class GTItemList {
         Highly_Ultimate_Voltage_Coil, Extremely_Ultimate_Voltage_Coil, Insanely_Ultimate_Voltage_Coil,
         Mega_Ultimate_Voltage_Coil, Extended_Mega_Ultimate_Voltage_Coil, Maximum_Voltage_Coil,
         // Cover
-        Fluid_Limiter_Cover,
-        LV_Wireless_Energy_Cover,
-        MV_Wireless_Energy_Cover,
-        HV_Wireless_Energy_Cover,
-        EV_Wireless_Energy_Cover,
-        IV_Wireless_Energy_Cover,
-        LuV_Wireless_Energy_Cover,
-        ZPM_Wireless_Energy_Cover,
-        UV_Wireless_Energy_Cover,
-        UHV_Wireless_Energy_Cover,
-        UEV_Wireless_Energy_Cover,
-        UIV_Wireless_Energy_Cover,
-        UMV_Wireless_Energy_Cover,
-        UXV_Wireless_Energy_Cover,
-        MAX_Wireless_Energy_Cover,
-        Debug_Wireless_Energy_Cover,
-        Fluid_Storage_Monitor_Cover,
-        Fluid_Filter_Cover,
-        Machine_Controller_Cover,
-        Activity_Detector_Cover,
-        Fluid_Detector_Cover,
-        Item_Detector_Cover,
-        Energy_Detector_Cover,
-        Player_Detector_Cover,
-        Computer_Monitor_Cover,
-        Crafting_Table_Cover,
-        Drain_Module_Cover,
-        Wireless_Machine_Controller_Cover,
-        Needs_Maintenance_Cover,
-        Shutter_Module_Cover,
-        Advanced_Wireless_Machine_Controller_Cover,
-        Oak_Plank_Cover,
-        Spruce_Plank_Cover,
-        Birch_Plank_Cover,
-        Jungle_Plank_Cover,
-        Acacia_Plank_Cover,
-        Dark_Oak_Plank_Cover,
-        Wireless_Fluid_Detector_Cover,
-        Wireless_Item_Detector_Cover,
-        Wireless_Needs_Maintenance_Cover,
-        Wireless_Activity_Detector_Cover,
-        Cherry_Plank_Cover,
-        Metrics_Transmitter_Cover,
+        Fluid_Limiter_Cover, LV_Wireless_Energy_Cover, MV_Wireless_Energy_Cover, HV_Wireless_Energy_Cover,
+        EV_Wireless_Energy_Cover, IV_Wireless_Energy_Cover, LuV_Wireless_Energy_Cover, ZPM_Wireless_Energy_Cover,
+        UV_Wireless_Energy_Cover, UHV_Wireless_Energy_Cover, UEV_Wireless_Energy_Cover, UIV_Wireless_Energy_Cover,
+        UMV_Wireless_Energy_Cover, UXV_Wireless_Energy_Cover, MAX_Wireless_Energy_Cover, Debug_Wireless_Energy_Cover,
+        Fluid_Storage_Monitor_Cover, Fluid_Filter_Cover, Machine_Controller_Cover, Activity_Detector_Cover,
+        Fluid_Detector_Cover, Item_Detector_Cover, Energy_Detector_Cover, Player_Detector_Cover, Computer_Monitor_Cover,
+        Crafting_Table_Cover, Drain_Module_Cover, Wireless_Machine_Controller_Cover, Needs_Maintenance_Cover,
+        Shutter_Module_Cover, Advanced_Wireless_Machine_Controller_Cover, Oak_Plank_Cover, Spruce_Plank_Cover,
+        Birch_Plank_Cover, Jungle_Plank_Cover, Acacia_Plank_Cover, Dark_Oak_Plank_Cover, Wireless_Fluid_Detector_Cover,
+        Wireless_Item_Detector_Cover, Wireless_Needs_Maintenance_Cover, Wireless_Activity_Detector_Cover,
+        Cherry_Plank_Cover, Metrics_Transmitter_Cover,
         // Conveyor Module
         Conveyor_Module_LV, Conveyor_Module_MV, Conveyor_Module_HV, Conveyor_Module_EV, Conveyor_Module_IV,
         Conveyor_Module_LuV, Conveyor_Module_ZPM, Conveyor_Module_UV, Conveyor_Module_UHV, Conveyor_Module_UEV,
@@ -676,15 +678,9 @@ public class GTItemList {
         Field_Generator_LuV, Field_Generator_ZPM, Field_Generator_UV, Field_Generator_UHV, Field_Generator_UEV,
         Field_Generator_UIV, Field_Generator_UMV, Field_Generator_UXV, Field_Generator_MAX,
         // Fluid Cell
-        Large_Steel_Fluid_Cell,
-        Large_Tungstensteel_Fluid_Cell,
-        Large_Aluminium_Fluid_Cell,
-        Large_Stainless_Steel_Fluid_Cell,
-        Large_Titanium_Fluid_Cell,
-        Large_Rhodium_Plated_Palladium_Fluid_Cell,
-        Large_Iridium_Fluid_Cell,
-        Large_Osmium_Fluid_Cell,
-        Large_Neutronium_Fluid_Cell,
+        Large_Steel_Fluid_Cell, Large_Tungstensteel_Fluid_Cell, Large_Aluminium_Fluid_Cell,
+        Large_Stainless_Steel_Fluid_Cell, Large_Titanium_Fluid_Cell, Large_Rhodium_Plated_Palladium_Fluid_Cell,
+        Large_Iridium_Fluid_Cell, Large_Osmium_Fluid_Cell, Large_Neutronium_Fluid_Cell,
         // Fluid Regulator
         Fluid_Regulator_LV, Fluid_Regulator_MV, Fluid_Regulator_HV, Fluid_Regulator_EV, Fluid_Regulator_IV,
         Fluid_Regulator_LuV, Fluid_Regulator_ZPM, Fluid_Regulator_UV, Fluid_Regulator_UHV, Fluid_Regulator_UEV,
@@ -719,17 +715,17 @@ public class GTItemList {
         Wrap_of_Circuits_IV, Wrap_of_Circuits_LuV, Wrap_of_Circuits_ZPM, Wrap_of_Circuits_UV, Wrap_of_Circuits_UHV,
         Wrap_of_Circuits_UEV, Wrap_of_Circuits_UIV, Wrap_of_Circuits_UMV, Wrap_of_Circuits_UXV, Wrap_of_Circuits_MAX,
         // Misc
-        BrainTech_Aerospace_Advanced_Reinforced_Duct_Tape_FAL_84, Drone_Remote_Interface,
-        Primitive_Shielding, Pristine_Shielding, Perfected_Shielding, Primitive_Waveguide, Pristine_Waveguide,
-        Perfected_Waveguide, Primitive_Energy_Conduit, Pristine_Energy_Conduit, Perfected_Energy_Conduit,
-        Primitive_Electrogravitic_Valve, Pristine_Electrogravitic_Valve, Perfected_Electrogravitic_Valve,
-        Rough_Wave_Focus, Reinforced_Wave_Focus, Refined_Wave_Focus, Resplendent_Wave_Focus, Rough_Resonance_Chamber,
-        Reinforced_Resonance_Chamber, Refined_Resonance_Chamber, Resplendent_Resonance_Chamber, Rough_Sensor_Array,
-        Reinforced_Sensor_Array, Refined_Sensor_Array, Resplendent_Sensor_Array, Rough_Field_Manipulator,
-        Reinforced_Field_Manipulator, Refined_Field_Manipulator, Resplendent_Field_Manipulator, Timepiece,
-        Transdimensional_Alignment_Matrix, Thermal_Superconductor, Relativistic_Heat_Capacitor, Phononic_Seed_Crystal,
-        Gravitation_Engine, Hyper_Stable_Self_Healing_Adhesive, Superconductor_Rare_Earth_Composite,
-        Black_Body_Naquadria_Supersolid, Black_Hole_Seed, Black_Hole_Collapser, Graviton_Shard,
+        BrainTech_Aerospace_Advanced_Reinforced_Duct_Tape_FAL_84, Drone_Remote_Interface, Primitive_Shielding,
+        Pristine_Shielding, Perfected_Shielding, Primitive_Waveguide, Pristine_Waveguide, Perfected_Waveguide,
+        Primitive_Energy_Conduit, Pristine_Energy_Conduit, Perfected_Energy_Conduit, Primitive_Electrogravitic_Valve,
+        Pristine_Electrogravitic_Valve, Perfected_Electrogravitic_Valve, Rough_Wave_Focus, Reinforced_Wave_Focus,
+        Refined_Wave_Focus, Resplendent_Wave_Focus, Rough_Resonance_Chamber, Reinforced_Resonance_Chamber,
+        Refined_Resonance_Chamber, Resplendent_Resonance_Chamber, Rough_Sensor_Array, Reinforced_Sensor_Array,
+        Refined_Sensor_Array, Resplendent_Sensor_Array, Rough_Field_Manipulator, Reinforced_Field_Manipulator,
+        Refined_Field_Manipulator, Resplendent_Field_Manipulator, Timepiece, Transdimensional_Alignment_Matrix,
+        Thermal_Superconductor, Relativistic_Heat_Capacitor, Phononic_Seed_Crystal, Gravitation_Engine,
+        Hyper_Stable_Self_Healing_Adhesive, Superconductor_Rare_Earth_Composite, Black_Body_Naquadria_Supersolid,
+        Black_Hole_Seed, Black_Hole_Collapser, Graviton_Shard,
         // Nanites
         Carbon_Nanites, Iron_Nanites, Copper_Nanites, Silver_Nanites, Gold_Nanites, Neutronium_Nanites,
         Universium_Nanites, Eternity_Nanites, Magmatter_Nanites, Six_Phased_Copper_Nanites, Transcendent_Metal_Nanites,
@@ -757,7 +753,7 @@ public class GTItemList {
         Ocean_Emulation_Upgrade, Open_Sky_Upgrade, Heater_Upgrade, Sieve_Upgrade, Night_Upgrade,
         // Misc Item
         Reinforced_Glass_Tube, Pseudo_Star, Nuclear_Star, Gravi_Star, Quantum_Star, Raw_Tesseract, Energised_Tesseract,
-        Iridium_Neutron_Reflector, Activated_Carbon_Filter_Mesh, Data_Stick, Data_Orb,
-        Tungsten_Grinding_Head, Iron_Electromagnet, Steel_Electromagnet, Neodymium_Electromagnet,
-        Samarium_Electromagnet, Tengam_Electromagnet };
+        Iridium_Neutron_Reflector, Activated_Carbon_Filter_Mesh, Data_Stick, Data_Orb, Tungsten_Grinding_Head,
+        Iron_Electromagnet, Steel_Electromagnet, Neodymium_Electromagnet, Samarium_Electromagnet,
+        Tengam_Electromagnet };
 }
