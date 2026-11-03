@@ -13,6 +13,10 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
+
 public final class Utils {
 
     // endregion
@@ -35,11 +39,9 @@ public final class Utils {
 
     public static ItemStack setStackSize(ItemStack itemStack, int amount) {
         if (itemStack == null) return null;
-        if (amount < 0) {
-            return itemStack;
-        }
-        itemStack.stackSize = amount;
-        return itemStack;
+        ItemStack copy = itemStack.copy();
+        if (amount >= 0) copy.stackSize = amount;
+        return copy;
     }
     // endregion
 
@@ -47,11 +49,19 @@ public final class Utils {
 
     public static FluidStack setStackSize(FluidStack fluidStack, int amount) {
         if (fluidStack == null) return null;
-        if (amount < 0) {
-            return fluidStack;
+        FluidStack copy = fluidStack.copy();
+        if (amount >= 0) copy.amount = amount;
+        return copy;
+    }
+
+    /** Resolve an ore-unified template without truncating the requested quantity to 64. */
+    public static ItemStack getMaterialInput(OrePrefixes prefix, Materials material, int amount) {
+        if (amount < 0) throw new IllegalArgumentException("Negative material input amount: " + amount);
+        ItemStack template = GTOreDictUnificator.get(prefix, material, 1L);
+        if (template == null) {
+            throw new IllegalStateException("Missing recipe material: " + prefix + "/" + material);
         }
-        fluidStack.amount = amount;
-        return fluidStack;
+        return setStackSize(template, amount);
     }
 
     // endregion

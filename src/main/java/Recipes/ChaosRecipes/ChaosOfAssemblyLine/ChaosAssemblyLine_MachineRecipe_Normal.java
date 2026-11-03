@@ -10,12 +10,10 @@ import static gregtech.api.enums.TierEU.RECIPE_UV;
 import static gregtech.api.enums.TierEU.RECIPE_UXV;
 import static gregtech.api.enums.TierEU.RECIPE_ZPM;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static util.ChaosAssemblyRecipeBuilder.requiredFluid;
+import static util.Utils.getMaterialInput;
 import static util.Utils.setStackSize;
 
-import EnumList.EnumFluidList.FluidList;
-import EnumList.EnumFluidList.GasList;
-import EnumList.EnumFluidList.MoltenList;
-import EnumList.EnumFluidList.PlasmaList;
 import EnumList.EnumItemList.EnumGTList.BatteryList;
 import EnumList.EnumItemList.EnumGTList.CableList;
 import EnumList.EnumItemList.EnumGTList.CircuitList;
@@ -58,52 +56,49 @@ import EnumList.EnumItemList.EnumModList.OpenBlocksList;
 import EnumList.EnumItemList.EnumModList.OpenComputersList;
 import EnumList.EnumItemList.EnumModList.TecTechList;
 import EnumList.EnumItemList.EnumModList.ThaumcraftList;
-import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
+import util.ChaosAssemblyRecipeBuilder;
 
 public class ChaosAssemblyLine_MachineRecipe_Normal {
 
     public static void addChaosAssemblyLine_NormalMachineRecipe() {
         // "Advanced Assembly Line"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#1")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Assembly_Line.copy(), 1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.IV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.EV, 8),
 
                 setStackSize(GTBlockList.Chest_Buffer_LuV.copy(), 1))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 9),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 2))
-            .itemOutputs(MultiMachineControllerList.Advanced_Assembly_Line)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 9), requiredFluid("lubricant", 1000 * 2))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Advanced_Assembly_Line, 1))
             .eut(RECIPE_LuV)
             .duration(180 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Beam Crafter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#2")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Target_Chamber.copy(), 1),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 4),
                 setStackSize(GTNHLanthanidesList.Shielded_Accelerator_Casing.copy(), 32),
                 setStackSize(MultiMachineControllerList.Large_Molecular_Assembler.copy(), 2))
-            .fluidInputs(setStackSize(FluidList.UU_Matter.copy(), 1000 * 8))
-            .itemOutputs(MultiMachineControllerList.Beam_Crafter)
+            .fluidInputs(requiredFluid("ic2uumatter", 1000 * 8))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Beam_Crafter, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Beam Splitter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#3")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Weighted_Network_Switch_With_QoS.copy(), 1),
                 setStackSize(GTItemList.Samarium_Electromagnet.copy(), 1),
                 setStackSize(GTNHLanthanidesList.Shielded_Accelerator_Casing.copy(), 4))
-            .fluidInputs(setStackSize(FluidList.Super_Coolant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Beam_Splitter)
+            .fluidInputs(requiredFluid("supercoolant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Beam_Splitter, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
@@ -111,14 +106,14 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
         // BEC
         {
             // "Bose-Einstein Condensate Containment Field"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#4")
+                .itemInputsUnsafe(
                     setStackSize(GTBlockList.Machine_Hull_UIV.copy(), 1),
                     setStackSize(MultiMachineCasingList.Fine_Structure_Constant_Manipulator.copy(), 4),
                     setStackSize(KekzTechList.TFFT_Storage_Field_Block_TierIX.copy(), 8),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 32),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 32),
                     setStackSize(DensePlateList.Dense_Tairitsu_Plate.copy(), 16),
                     setStackSize(DensePlateList.Dense_Churitsu_Plate.copy(), 16),
                     setStackSize(DensePlateList.Dense_Shijima_Plate.copy(), 16),
@@ -128,24 +123,24 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Stable_Meson_Containment_Unit.copy(), 8),
                     setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 8))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64 * 32),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 2000),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 64))
-                .itemOutputs(MultiMachineControllerList.Bose_Einstein_Condensate_Containment_Field)
+                    requiredFluid("molten.chromaticglass", 144 * 64 * 32),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 16),
+                    requiredFluid("exciteddtec", 1000 * 2000),
+                    requiredFluid("molten.spacetime", 144 * 64))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Bose_Einstein_Condensate_Containment_Field, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Bose-Einstein Condensate Entanglement Apparatus"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#5")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Thermic_Heating_Device.copy(), 1),
                     setStackSize(MultiMachineCasingList.Electromagnetically_Isolated_Casing.copy(), 4),
                     setStackSize(MultiMachineCasingList.Hypogen_Coil_Block.copy(), 16),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
                     setStackSize(DensePlateList.Dense_Tairitsu_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Churitsu_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Shijima_Plate.copy(), 8),
@@ -154,46 +149,47 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Electric_Pump_UIV.copy(), 16),
                     setStackSize(GTPPList.Quantum_Anomaly.copy(), 16))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 8),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 1000),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 32))
-                .itemOutputs(MultiMachineControllerList.Bose_Einstein_Condensate_Entanglement_Apparatus)
+                    requiredFluid("molten.chromaticglass", 144 * 64 * 16),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8),
+                    requiredFluid("exciteddtec", 1000 * 1000),
+                    requiredFluid("molten.spacetime", 144 * 32))
+                .itemOutputs(
+                    setStackSize(MultiMachineControllerList.Bose_Einstein_Condensate_Entanglement_Apparatus, 1))
                 .eut(RECIPE_UMV)
                 .duration(150 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Bose-Einstein Condensate Maxwell Gate"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#6")
+                .itemInputsUnsafe(
                     setStackSize(Appliedenergistics2List.ME_Storage_Bus.copy(), 1),
                     setStackSize(MultiMachineCasingList.Electromagnetically_Isolated_Casing.copy(), 4),
                     setStackSize(GTItemList.Fluid_Regulator_UIV.copy(), 4),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 8),
                     setStackSize(DensePlateList.Dense_Tairitsu_Plate.copy(), 4),
                     setStackSize(DensePlateList.Dense_Churitsu_Plate.copy(), 4),
                     setStackSize(DensePlateList.Dense_Shijima_Plate.copy(), 4))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64 * 8),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 4),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 500),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 16))
-                .itemOutputs(MultiMachineControllerList.Bose_Einstein_Condensate_Maxwell_Gate)
+                    requiredFluid("molten.chromaticglass", 144 * 64 * 8),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 4),
+                    requiredFluid("exciteddtec", 1000 * 500),
+                    requiredFluid("molten.spacetime", 144 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Bose_Einstein_Condensate_Maxwell_Gate, 1))
                 .eut(RECIPE_UMV)
                 .duration(75 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Bose-Einstein Condensate Observation Array"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#7")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Advanced_Assembly_Line.copy(), 1),
                     setStackSize(MultiMachineCasingList.Coherence_Preserving_Plasma_Conduit.copy(), 4),
                     setStackSize(MultiMachineCasingList.Dimensional_Bridge.copy(), 16),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
                     setStackSize(DensePlateList.Dense_Tairitsu_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Churitsu_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Shijima_Plate.copy(), 8),
@@ -203,22 +199,22 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Chromatic_Lens.copy(), 64),
                     setStackSize(Appliedenergistics2List.Singularity.copy(), 8))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 8),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 1000),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 32))
-                .itemOutputs(MultiMachineControllerList.Bose_Einstein_Condensate_Observation_Array)
+                    requiredFluid("molten.chromaticglass", 144 * 64 * 16),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8),
+                    requiredFluid("exciteddtec", 1000 * 1000),
+                    requiredFluid("molten.spacetime", 144 * 32))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Bose_Einstein_Condensate_Observation_Array, 1))
                 .eut(RECIPE_UMV)
                 .duration(150 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Observation Array Teleportation Node"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#8")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Coherence_Preserving_Plasma_Conduit.copy(), 4),
                     setStackSize(MultiMachineCasingList.Dimensional_Bridge.copy(), 16),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
 
                     setStackSize(DensePlateList.Dense_Tairitsu_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Churitsu_Plate.copy(), 8),
@@ -229,21 +225,21 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(SingularityList.Eternal_Singularity.copy(), 4),
                     setStackSize(Appliedenergistics2List.Singularity.copy(), 8))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 8),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 1000),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 32))
-                .itemOutputs(MultiMachineControllerList.Bose_Einstein_Condensate_Observation_Array)
+                    requiredFluid("molten.chromaticglass", 144 * 64 * 16),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8),
+                    requiredFluid("exciteddtec", 1000 * 1000),
+                    requiredFluid("molten.spacetime", 144 * 32))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Bose_Einstein_Condensate_Observation_Array, 1))
                 .eut(RECIPE_UMV)
                 .duration(150 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
         }
 
         // "Bio Chamber"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#9")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.Clean_Stainless_Steel_Machine_Casing.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
                 setStackSize(CircuitList.Stemcells.copy(), 64),
                 setStackSize(GTItemList.Fluid_Regulator_ZPM.copy(), 1),
 
@@ -251,16 +247,16 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Sensor_ZPM.copy(), 4),
                 setStackSize(FineWireList.Fine_Holmium_Wire.copy(), 32))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                setStackSize(FluidList.Growth_Catalyst_Medium.copy(), 144 * 64 * 3))
-            .itemOutputs(MultiMachineControllerList.Bio_Chamber)
+                requiredFluid("molten.indalloy140", 144 * 32),
+                requiredFluid("growthmediumsterilized", 144 * 64 * 3))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Bio_Chamber, 1))
             .eut(RECIPE_UV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Circuit Assembly Line"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#10")
+            .itemInputsUnsafe(
                 setStackSize(MachineList.Circuit_Assembler_LuV.copy(), 1),
                 setStackSize(GTItemList.Robot_Arm_LuV.copy(), 4),
                 setStackSize(GTItemList.Electric_Motor_LuV.copy(), 4),
@@ -269,15 +265,15 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Emitter_LuV.copy(), 1),
                 setStackSize(GTItemList.Sensor_LuV.copy(), 1),
                 setStackSize(PlateList.Rhodium_Plated_Palladium_Plate.copy(), 8))
-            .fluidInputs(setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Circuit_Assembly_Line)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Circuit_Assembly_Line, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Component Assembly Line"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#11")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Assembly_Line.copy(), 16),
                 setStackSize(MultiMachineCasingList.Assembler_Machine_Casing.copy(), 16),
                 setStackSize(MultiMachineCasingList.Assembly_Line_Casing.copy(), 32),
@@ -289,61 +285,57 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(SuperdensePlateList.Superdense_Iridium_Plate.copy(), 4),
 
                 setStackSize(MachineList.Fluid_Solidifier_ZPM.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 20),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 24))
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 20),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 24))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 12),
-                setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 16),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 5))
-            .itemOutputs(MultiMachineControllerList.Component_Assembly_Line)
+                requiredFluid("molten.indalloy140", 144 * 12),
+                requiredFluid("molten.naquadria", 144 * 16),
+                requiredFluid("lubricant", 1000 * 5))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Component_Assembly_Line, 1))
             .eut(RECIPE_UHV)
             .duration(30 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Cooling Tower"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#12")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.Reinforced_Photolithographic_Framework_Casing.copy(), 4),
                 setStackSize(MultiMachineCasingList.Superconducting_Coil_Block.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 2),
                 setStackSize(FoilList.Damascus_Steel_Foil.copy(), 16),
 
                 setStackSize(GTItemList.Electric_Pump_UV.copy(), 1),
                 setStackSize(GTItemList.Sensor_UV.copy(), 4),
                 setStackSize(FineWireList.Fine_Infinity_Wire.copy(), 32))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                setStackSize(FluidList.Super_Coolant.copy(), 1000 * 8))
-            .itemOutputs(MultiMachineControllerList.Cooling_Tower)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 32), requiredFluid("supercoolant", 1000 * 8))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Cooling_Tower, 1))
             .eut(RECIPE_UV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Data Bank"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#13")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Static_Network_Switch_With_QoS.copy(), 1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 2),
                 setStackSize(GTItemList.Data_Orb.copy(), 1),
                 setStackSize(GTItemList.Computer_Monitor_Cover.copy(), 1))
-            .fluidInputs(
-                setStackSize(FluidList.IC2_Coolant.copy(), 1000 * 2).copy(),
-                setStackSize(GasList.Hydrogen.copy(), 1000))
-            .itemOutputs(MultiMachineControllerList.Data_Bank)
+            .fluidInputs(requiredFluid("ic2coolant", 1000 * 2), requiredFluid("hydrogen", 1000))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Data_Bank, 1))
             .eut(RECIPE_LuV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Dimensionally Transcendent Plasma Forge"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#14")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.Dimensional_Bridge.copy(), 4),
                 setStackSize(MultiMachineControllerList.Exothermic_Hearth.copy(), 16),
                 setStackSize(HatchList.Energy_Hatch_UEV.copy(), 4),
                 setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 96),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 20),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 20),
                 setStackSize(GTItemList.Field_Generator_UEV.copy(), 4),
                 setStackSize(SingularityList.Eternal_Singularity.copy(), 4),
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 1),
@@ -352,18 +344,18 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Electric_Pump_UEV.copy(), 4),
                 setStackSize(BatteryList.Really_Ultimate_Battery_Empty.copy(), 1))
             .fluidInputs(
-                setStackSize(GasList.Oganesson.copy(), 1000 * 64 * 2),
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 8),
-                setStackSize(MoltenList.Molten_Californium.copy(), 144 * 64 * 4),
-                setStackSize(MoltenList.Molten_Enriched_Naquadah.copy(), 144 * 64 * 4))
-            .itemOutputs(MultiMachineControllerList.Dimensionally_Transcendent_Plasma_Forge)
+                requiredFluid("oganesson", 1000 * 64 * 2),
+                requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8),
+                requiredFluid("molten.californium", 144 * 64 * 4),
+                requiredFluid("molten.naquadahenriched", 144 * 64 * 4))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Dimensionally_Transcendent_Plasma_Forge, 1))
             .eut(RECIPE_UIV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Draconic Evolution Fusion Crafter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#15")
+            .itemInputsUnsafe(
                 setStackSize(MachineList.Assembler_UHV.copy(), 1),
                 setStackSize(MultiMachineCasingList.Bloody_Ichorium_Fusion_Casing.copy(), 1),
                 setStackSize(DensePlateList.Dense_Gaia_Spirit_Plate.copy(), 1),
@@ -371,7 +363,7 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                 setStackSize(GTItemList.Electric_Motor_UHV.copy(), 8),
                 setStackSize(GTItemList.Robot_Arm_UHV.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
                 setStackSize(GTItemList.Gravi_Star.copy(), 4),
 
                 setStackSize(ThaumcraftList.Primordial_Pearl.copy(), 1),
@@ -379,17 +371,17 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(BloodMagicList.Life_Shard.copy(), 8),
                 setStackSize(SuperdensePlateList.Superdense_Void_Metal_Plate.copy(), 1))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                setStackSize(MoltenList.Molten_Void_Metal.copy(), 144 * 20),
-                setStackSize(MoltenList.Molten_Awakened_Draconium.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Draconic_Evolution_Fusion_Crafter)
+                requiredFluid("molten.indalloy140", 144 * 20),
+                requiredFluid("molten.void", 144 * 20),
+                requiredFluid("molten.draconiumawakened", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Draconic_Evolution_Fusion_Crafter, 1))
             .eut(RECIPE_UEV)
             .duration(75 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Electric Implosion Compressor"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#16")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Implosion_Compressor.copy(), 1),
                 setStackSize(SuperdensePlateList.Superdense_Neutronium_Plate.copy(), 1),
                 setStackSize(LongRodList.Long_Osmium_Rod.copy(), 64),
@@ -398,17 +390,17 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64),
                 setStackSize(GTItemList.Electric_Piston_UV.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Osmium.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Electric_Implosion_Compressor)
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("molten.osmium", 144 * 10),
+                requiredFluid("molten.neutronium", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Electric_Implosion_Compressor, 1))
             .eut(RECIPE_UV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Elemental Duplicator"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#17")
+            .itemInputsUnsafe(
                 setStackSize(GTBlockList.Machine_Hull_ZPM.copy(), 4),
                 setStackSize(GTItemList.Field_Generator_IV.copy(), 16),
                 setStackSize(GTItemList.Electric_Motor_ZPM.copy(), 16),
@@ -420,25 +412,25 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(BoltList.Trinium_Naquadah_Carbonite_Bolt.copy(), 32),
 
                 setStackSize(RodList.Zeron_100_Rod.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 20),
+                getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 20),
                 setStackSize(GTItemList.Data_Orb.copy(), 32),
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 1))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Pikyonium_64B.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Lafium_Compound.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Trinium_Naquadah_Carbonite.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Babbit_Alloy.copy(), 144 * 64 * 2))
-            .itemOutputs(MultiMachineControllerList.Elemental_Duplicator)
+                requiredFluid("molten.pikyonium64b", 144 * 32),
+                requiredFluid("molten.lafiumcompound", 144 * 16),
+                requiredFluid("molten.triniumnaquadahcarbonite", 144 * 16),
+                requiredFluid("molten.babbitalloy", 144 * 64 * 2))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Elemental_Duplicator, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Endothermic Fridge"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#18")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Vacuum_Freezer.copy(), 64),
                 setStackSize(MultiMachineControllerList.Cryogenic_Freezer.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 8),
                 setStackSize(MultiMachineCasingList.Coolant_Duct.copy(), 4),
 
                 setStackSize(RodList.Callisto_Ice_Rod.copy(), 32),
@@ -450,33 +442,33 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(SuperdensePlateList.Superdense_Ledox_Plate.copy(), 8),
                 setStackSize(SuperdensePlateList.Superdense_Aluminium_Plate.copy(), 8))
             .fluidInputs(
-                setStackSize(FluidList.Gelid_Cryotheum.copy(), 1000 * 256),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Endothermic_Fridge)
+                requiredFluid("cryotheum", 1000 * 256),
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("lubricant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Endothermic_Fridge, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Energy Infuser"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#19")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Active_Transformer.copy(), 1),
                 setStackSize(MultiMachineCasingList.Molecular_Coil.copy(), 8),
                 setStackSize(MultiMachineCasingList.High_Power_Casing.copy(), 8),
                 setStackSize(ScrewList.Magnetic_Neodymium_Screw.copy(), 16))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Electrum_GregTech.copy(), 144 * 18),
-                setStackSize(MoltenList.Molten_Europium.copy(), 144 * 13),
-                setStackSize(FluidList.IC2_Coolant.copy(), 1000 * 2))
-            .itemOutputs(MultiMachineControllerList.Energy_Infuser)
+                requiredFluid("molten.electrum", 144 * 18),
+                requiredFluid("molten.europium", 144 * 13),
+                requiredFluid("ic2coolant", 1000 * 2))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Energy_Infuser, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Eye of Harmony"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#20")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Space_Elevator.copy(), 16),
                 setStackSize(MultiMachineControllerList.Forge_of_the_Gods.copy(), 4),
                 setStackSize(MultiMachineControllerList.Dimensionally_Transcendent_Plasma_Forge.copy(), 4),
@@ -497,18 +489,18 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(BatteryList.Insanely_Ultimate_Battery_Empty.copy(), 4),
                 setStackSize(WireList.Superconductor_UMV_Wire_1x.copy(), 64 * 16))
             .fluidInputs(
-                setStackSize(FluidList.Tachyon_Rich_Temporal_Fluid.copy(), 144 * 1000),
-                setStackSize(FluidList.Spatially_Enlarged_Fluid.copy(), 144 * 1000),
-                setStackSize(MoltenList.Molten_Metastable_Oganesson.copy(), 144 * 64 * 16),
-                setStackSize(MoltenList.Molten_Shirabon.copy(), 144 * 64 * 16))
-            .itemOutputs(MultiMachineControllerList.Eye_of_Harmony)
+                requiredFluid("temporalfluid", 144 * 1000),
+                requiredFluid("spatialfluid", 144 * 1000),
+                requiredFluid("molten.metastable oganesson", 144 * 64 * 16),
+                requiredFluid("molten.shirabon", 144 * 64 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Eye_of_Harmony, 1))
             .eut(RECIPE_UMV)
             .duration(24_000 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // Exo-Foundry
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#21")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Mass_Solidifier.copy(), 64),
                 setStackSize(MultiMachineCasingList.Primary_Exo_Foundry_Casing.copy(), 16),
                 setStackSize(PipeList.Large_Infinity_Fluid_Pipe.copy(), 8),
@@ -517,28 +509,28 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Field_Generator_UEV.copy(), 4),
                 setStackSize(GTItemList.Electric_Pump_UEV.copy(), 8),
                 setStackSize(GTItemList.Fluid_Regulator_UEV.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 2),
 
                 setStackSize(SuperdensePlateList.Superdense_Netherite_Plate.copy(), 4),
                 setStackSize(RotorList.Cosmic_Neutronium_Rotor.copy(), 8),
                 setStackSize(SingularityList.Eternal_Singularity.copy(), 1),
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 1))
             .fluidInputs(
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Precious_Metals_Alloy.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Metastable_Oganesson.copy(), 144 * 20),
-                setStackSize(MoltenList.Molten_Dragonblood.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Exo_Foundry)
+                requiredFluid("molten.mutatedlivingsolder", 144 * 64),
+                requiredFluid("molten.precious metals alloy", 144 * 32),
+                requiredFluid("molten.metastable oganesson", 144 * 20),
+                requiredFluid("molten.dragonblood", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Exo_Foundry, 1))
             .eut(RECIPE_UIV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Exothermic Hearth"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#22")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Electric_Blast_Furnace.copy(), 64),
                 setStackSize(MultiMachineControllerList.Volcanus.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 8),
                 setStackSize(MultiMachineCasingList.Heating_Duct.copy(), 4),
 
                 setStackSize(RodList.Firestone_Rod.copy(), 32),
@@ -550,17 +542,17 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(SuperdensePlateList.Superdense_Invar_Plate.copy(), 8),
                 setStackSize(SuperdensePlateList.Superdense_Cupronickel_Plate.copy(), 8))
             .fluidInputs(
-                setStackSize(FluidList.Blazing_Pyrotheum.copy(), 1000 * 256),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Exothermic_Hearth)
+                requiredFluid("pyrotheum", 1000 * 256),
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("lubricant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Exothermic_Hearth, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Flotation Cell Regulator"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#23")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Dangote_Distillus.copy(), 2),
                 setStackSize(MultiMachineCasingList.Inconel_Reinforced_Casing.copy(), 4),
                 setStackSize(MultiMachineCasingList.Flotation_Cell_Casings.copy(), 4),
@@ -571,10 +563,10 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(DoublePlateList.Double_Hastelloy_N_Plate.copy(), 16),
                 setStackSize(ScrewList.Hastelloy_N_Screw.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Inconel_625.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Inconel_792.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Hastelloy_N.copy(), 144 * 32))
-            .itemOutputs(MultiMachineControllerList.Flotation_Cell_Regulator)
+                requiredFluid("molten.inconel625", 144 * 16),
+                requiredFluid("molten.inconel792", 144 * 32),
+                requiredFluid("molten.hastelloyn", 144 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Flotation_Cell_Regulator, 1))
             .eut(RECIPE_LuV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
@@ -582,8 +574,8 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
         // Forge of the Gods
         {
             // "Forge of the Gods"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#24")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Stellar_Energy_Siphon_Casing.copy(), 4),
                     setStackSize(BatteryList.Extremely_Ultimate_Battery_Empty.copy(), 2),
                     setStackSize(MultiMachineCasingList.Dimensional_Bridge.copy(), 64),
@@ -597,23 +589,23 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 8),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
                     setStackSize(GTItemList.Sensor_UIV.copy(), 32),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 64),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 64),
 
                     setStackSize(HatchList.Laser_Target_Hatch1048576_UIV.copy(), 1),
                     setStackSize(GTBlockList.Energy_Distributor_UIV.copy(), 1))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 32),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 8192),
-                    setStackSize(PlasmaList.Thorium_Plasma.copy(), 144 * 64 * 4),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64 * 32))
-                .itemOutputs(MultiMachineControllerList.Forge_of_the_Gods)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 32),
+                    requiredFluid("exciteddtec", 1000 * 8192),
+                    requiredFluid("plasma.thorium", 144 * 64 * 4),
+                    requiredFluid("molten.transcendentmetal", 144 * 64 * 32))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Forge_of_the_Gods, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Helioflare Power Forge"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#25")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Singularity_Reinforced_Stellar_Shielding_Casing.copy(), 4),
                     setStackSize(MultiMachineControllerList.Exothermic_Hearth.copy(), 64),
                     setStackSize(MultiMachineControllerList.Multi_Smelter.copy(), 64),
@@ -626,20 +618,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(DensePlateList.Dense_Creon_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Mellion_Plate.copy(), 8),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 32))
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 32))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 2048),
-                    setStackSize(PlasmaList.Lead_Plasma.copy(), 144 * 64 * 4),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64 * 16))
-                .itemOutputs(MultiMachineControllerList.Helioflare_Power_Forge)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 16),
+                    requiredFluid("exciteddtec", 1000 * 2048),
+                    requiredFluid("plasma.lead", 144 * 64 * 4),
+                    requiredFluid("molten.transcendentmetal", 144 * 64 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Helioflare_Power_Forge, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Helioflux Melting Core"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#26")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Singularity_Reinforced_Stellar_Shielding_Casing.copy(), 4),
                     setStackSize(MultiMachineControllerList.Exothermic_Hearth.copy(), 64),
                     setStackSize(MultiMachineControllerList.Mega_Alloy_Blast_Smelter.copy(), 64),
@@ -655,20 +647,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(DensePlateList.Dense_Creon_Plate.copy(), 8),
                     setStackSize(DensePlateList.Dense_Mellion_Plate.copy(), 8),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 32))
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 32))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 2048),
-                    setStackSize(FluidList.Lossless_Phonon_Transfer_Medium.copy(), 1000 * 32),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64 * 16))
-                .itemOutputs(MultiMachineControllerList.Helioflux_Melting_Core)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 16),
+                    requiredFluid("exciteddtec", 1000 * 2048),
+                    requiredFluid("phononmedium", 1000 * 32),
+                    requiredFluid("molten.transcendentmetal", 144 * 64 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Helioflux_Melting_Core, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Heliofusion Exoticizer"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#27")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Singularity_Reinforced_Stellar_Shielding_Casing.copy(), 4),
                     setStackSize(MultiMachineControllerList.Transcendent_Plasma_Mixer.copy(), 4),
                     setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MKV.copy(), 1),
@@ -684,20 +676,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(SuperdensePlateList.Superdense_Creon_Plate.copy(), 2),
                     setStackSize(SuperdensePlateList.Superdense_Mellion_Plate.copy(), 2),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 64))
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 64))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 2048),
-                    setStackSize(FluidList.Lossless_Phonon_Transfer_Medium.copy(), 1000 * 32),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64 * 16))
-                .itemOutputs(MultiMachineControllerList.Heliofusion_Exoticizer)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 16),
+                    requiredFluid("exciteddtec", 1000 * 2048),
+                    requiredFluid("phononmedium", 1000 * 32),
+                    requiredFluid("molten.transcendentmetal", 144 * 64 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Heliofusion_Exoticizer, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Heliothermal Plasma Fabricator"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#28")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Singularity_Reinforced_Stellar_Shielding_Casing.copy(), 4),
                     setStackSize(MachineList.Fluid_Heater_UIV.copy(), 64),
                     setStackSize(MultiMachineControllerList.FusionTech_MK_V.copy(), 8),
@@ -713,13 +705,13 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(SuperdensePlateList.Superdense_Creon_Plate.copy(), 1),
                     setStackSize(SuperdensePlateList.Superdense_Mellion_Plate.copy(), 1),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 32))
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 32))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 16),
-                    setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 2048),
-                    setStackSize(FluidList.Lossless_Phonon_Transfer_Medium.copy(), 1000 * 32),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64 * 16))
-                .itemOutputs(MultiMachineControllerList.Heliothermal_Plasma_Fabricator)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 16),
+                    requiredFluid("exciteddtec", 1000 * 2048),
+                    requiredFluid("phononmedium", 1000 * 32),
+                    requiredFluid("molten.transcendentmetal", 144 * 64 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Heliothermal_Plasma_Fabricator, 1))
                 .eut(RECIPE_UMV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
@@ -728,10 +720,10 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
         // Fusion Control Computer
         {
             // "Fusion Control Computer Mark I"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#29")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Fusion_Coil_Block.copy(), 1),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 4),
                     setStackSize(DensePlateList.Dense_Naquadah_Alloy_Plate.copy(), 4),
                     setStackSize(DensePlateList.Dense_Netherite_Plate.copy(), 1),
 
@@ -739,94 +731,94 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(CircuitList.UHPIC_Wafer.copy(), 32),
                     setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Vanadium_Gallium.copy(), 144 * 8))
-                .itemOutputs(MultiMachineControllerList.Fusion_Control_Computer_Mark_I)
+                    requiredFluid("molten.indalloy140", 144 * 20),
+                    requiredFluid("molten.vanadiumgallium", 144 * 8))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Fusion_Control_Computer_Mark_I, 1))
                 .eut(RECIPE_LuV)
                 .duration(50 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Fusion Control Computer Mark II"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#30")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Fusion_Coil_Block.copy(), 1),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
                     setStackSize(SuperdensePlateList.Superdense_Europium_Plate.copy(), 1),
                     setStackSize(GTItemList.Field_Generator_ZPM.copy(), 2),
 
                     setStackSize(CircuitList.PPIC_Wafer.copy(), 48),
                     setStackSize(WireList.Superconductor_ZPM_Wire_1x.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Niobium_Titanium.copy(), 144 * 8))
-                .itemOutputs(MultiMachineControllerList.Fusion_Control_Computer_Mark_II)
+                    requiredFluid("molten.indalloy140", 144 * 20),
+                    requiredFluid("molten.niobiumtitanium", 144 * 8))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Fusion_Control_Computer_Mark_II, 1))
                 .eut(RECIPE_LuV)
                 .duration(50 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Fusion Control Computer Mark III"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#31")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Fusion_Coil_Block.copy(), 1),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
                     setStackSize(SuperdensePlateList.Superdense_Americium_Plate.copy(), 1),
                     setStackSize(GTItemList.Field_Generator_UV.copy(), 2),
 
                     setStackSize(CircuitList.QPIC_Wafer.copy(), 64),
                     setStackSize(WireList.Superconductor_UV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Fluxed_Electrum.copy(), 144 * 8))
-                .itemOutputs(MultiMachineControllerList.Fusion_Control_Computer_Mark_III)
+                    requiredFluid("molten.indalloy140", 144 * 20),
+                    requiredFluid("molten.electrumflux", 144 * 8))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Fusion_Control_Computer_Mark_III, 1))
                 .eut(RECIPE_ZPM)
                 .duration(50 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "FusionTech MK IV"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#32")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Advanced_Fusion_Coil.copy(), 1),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
                     setStackSize(SuperdensePlateList.Superdense_Neutronium_Plate.copy(), 1),
                     setStackSize(GTItemList.Field_Generator_UHV.copy(), 2),
 
                     setStackSize(CircuitList.FPIC_Wafer.copy(), 64),
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    setStackSize(FluidList.UU_Matter.copy(), 1000 * 50),
-                    setStackSize(MoltenList.Molten_Cinobite_A243.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Octiron.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Astral_Titanium.copy(), 144 * 64))
-                .itemOutputs(MultiMachineControllerList.FusionTech_MK_IV)
+                    requiredFluid("ic2uumatter", 1000 * 50),
+                    requiredFluid("molten.cinobitea243", 144 * 64),
+                    requiredFluid("molten.octiron", 144 * 64),
+                    requiredFluid("molten.astraltitanium", 144 * 64))
+                .itemOutputs(setStackSize(MultiMachineControllerList.FusionTech_MK_IV, 1))
                 .eut(RECIPE_UHV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "FusionTech MK V"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#33")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineCasingList.Advanced_Fusion_Coil_II.copy(), 1),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 4),
                     setStackSize(DensePlateList.Dense_Metastable_Oganesson_Plate.copy(), 4),
                     setStackSize(GTItemList.Field_Generator_UEV.copy(), 2),
 
                     setStackSize(CircuitList.APIC_Wafer.copy(), 64),
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Curium.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Chromatic_Glass.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Abyssal_Alloy.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Dragonblood.copy(), 144 * 64))
-                .itemOutputs(MultiMachineControllerList.FusionTech_MK_V)
+                    requiredFluid("molten.curium", 144 * 64),
+                    requiredFluid("molten.chromaticglass", 144 * 64),
+                    requiredFluid("molten.abyssalalloy", 144 * 64),
+                    requiredFluid("molten.dragonblood", 144 * 64))
+                .itemOutputs(setStackSize(MultiMachineControllerList.FusionTech_MK_V, 1))
                 .eut(RECIPE_UEV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Compact Fusion Computer MK-II"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#34")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Fusion_Control_Computer_Mark_II.copy(), 48),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 4),
                     setStackSize(CircuitList.UHPIC_Wafer.copy(), 32),
                     setStackSize(GTItemList.ZPM_Voltage_Coil.copy(), 16),
 
@@ -835,19 +827,19 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Field_Generator_ZPM.copy(), 8),
                     setStackSize(SmallGearList.Small_Artherium_Sn_Gear.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_MAR_Ce_M200_Steel.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_High_Durability_Compound_Steel.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Artherium_Sn.copy(), 144 * 2))
-                .itemOutputs(MultiMachineControllerList.Compact_Fusion_Computer_MKII)
+                    requiredFluid("molten.mar-ce-m200 steel", 144 * 16),
+                    requiredFluid("molten.high durability compound steel", 144 * 8),
+                    requiredFluid("molten.artherium-sn", 144 * 2))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MKII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Compact Fusion Computer MK-III"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#35")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Fusion_Control_Computer_Mark_III.copy(), 48),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
                     setStackSize(CircuitList.NPIC_Wafer.copy(), 64),
                     setStackSize(GTItemList.Ultimate_Voltage_Coil.copy(), 16),
 
@@ -856,19 +848,19 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Field_Generator_UV.copy(), 8),
                     setStackSize(SmallGearList.Small_High_Durability_Compound_Steel_Gear.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Tanmolyium_Beta_C.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Dalisenite.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Americium.copy(), 144 * 2))
-                .itemOutputs(MultiMachineControllerList.Compact_Fusion_Computer_MKIII)
+                    requiredFluid("molten.tanmolyium beta-c", 144 * 16),
+                    requiredFluid("molten.dalisenite", 144 * 8),
+                    requiredFluid("molten.americium", 144 * 2))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MKIII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Compact Fusion Computer Mk-IV"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#36")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.FusionTech_MK_IV.copy(), 48),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
                     setStackSize(CircuitList.PPIC_Wafer.copy(), 64),
                     setStackSize(GTItemList.Highly_Ultimate_Voltage_Coil.copy(), 16),
 
@@ -877,19 +869,19 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Field_Generator_UHV.copy(), 8),
                     setStackSize(SmallGearList.Small_Enriched_Naquadah_Alloy_Gear.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Radox_Polymer.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_Dalisenite.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Botmium.copy(), 144 * 2))
-                .itemOutputs(MultiMachineControllerList.Compact_Fusion_Computer_MkIV)
+                    requiredFluid("molten.radoxpoly", 144 * 9),
+                    requiredFluid("molten.dalisenite", 144 * 8),
+                    requiredFluid("molten.botmium", 144 * 2))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MkIV, 1))
                 .eut(RECIPE_UV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Compact Fusion Computer MK-V"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#37")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.FusionTech_MK_V.copy(), 48),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
                     setStackSize(CircuitList.QPIC_Wafer.copy(), 64),
                     setStackSize(GTItemList.Extremely_Ultimate_Voltage_Coil.copy(), 16),
 
@@ -898,18 +890,18 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Field_Generator_UEV.copy(), 8),
                     setStackSize(SmallGearList.Small_Metastable_Oganesson_Gear.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Tairitsu.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Octiron.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Rhugnor.copy(), 144 * 2))
-                .itemOutputs(MultiMachineControllerList.Compact_Fusion_Computer_MKV)
+                    requiredFluid("molten.tairitsu", 144 * 16),
+                    requiredFluid("molten.octiron", 144 * 8),
+                    requiredFluid("molten.rhugnor", 144 * 2))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MKV, 1))
                 .eut(RECIPE_UHV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
         }
 
         // "Hot Isostatic Pressurization Unit"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#38")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Large_Electric_Compressor.copy(), 4),
                 setStackSize(MultiMachineCasingList.Heating_Duct.copy(), 4),
                 setStackSize(MultiMachineCasingList.Coolant_Duct.copy(), 4),
@@ -918,41 +910,42 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Electric_Piston_ZPM.copy(), 16),
                 setStackSize(GTItemList.Robot_Arm_ZPM.copy(), 4),
                 setStackSize(GTItemList.Electric_Pump_ZPM.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4))
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 4))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Incoloy_903.copy(), 144 * 64 * 4),
-                setStackSize(MoltenList.Molten_Enriched_Naquadah.copy(), 144 * 64),
-                setStackSize(FluidList.Liquid_Air.copy(), 1000 * 16),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Hot_Isostatic_Pressurization_Unit)
+                requiredFluid("molten.incoloy-903", 144 * 64 * 4),
+                requiredFluid("molten.naquadahenriched", 144 * 64),
+                requiredFluid("liquidair", 1000 * 16),
+                requiredFluid("lubricant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Hot_Isostatic_Pressurization_Unit, 1))
             .eut(RECIPE_ZPM)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Industrial Apicultural Acclimatiser and Drone Domestication Station"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#39")
+            .itemInputsUnsafe(
                 setStackSize(MachineList.Industrial_Apiary.copy(), 64),
                 setStackSize(GTItemList.Upgraded_Acceleration_Upgrade_x256.copy(), 64),
                 setStackSize(GTItemList.Genetic_Stabilizer_Upgrade.copy(), 64),
                 setStackSize(GTItemList.Electric_Pump_UHV.copy(), 16),
 
                 setStackSize(GTItemList.Robot_Arm_UV.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 16))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 200),
-                setStackSize(FluidList.Honey_Forestry.copy(), 1000 * 20))
-            .itemOutputs(MultiMachineControllerList.Industrial_Apicultural_Acclimatiser_and_Drone_Domestication_Station)
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 16))
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 200), requiredFluid("for.honey", 1000 * 20))
+            .itemOutputs(
+                setStackSize(
+                    MultiMachineControllerList.Industrial_Apicultural_Acclimatiser_and_Drone_Domestication_Station,
+                    1))
             .eut(RECIPE_UHV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Infinite Fluid Drilling Rig"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#40")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Fluid_Drilling_Rig_IV.copy(), 1),
                 setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
                 setStackSize(GTItemList.Electric_Motor_UHV.copy(), 4),
 
                 setStackSize(GTItemList.Electric_Pump_UHV.copy(), 4),
@@ -962,16 +955,16 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                 setStackSize(ScrewList.Neutronium_Screw.copy(), 12))
             .fluidInputs(
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 9),
-                setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 4))
-            .itemOutputs(MultiMachineControllerList.Infinite_Fluid_Drilling_Rig)
+                requiredFluid("molten.mutatedlivingsolder", 144 * 9),
+                requiredFluid("molten.neutronium", 144 * 4))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Infinite_Fluid_Drilling_Rig, 1))
             .eut(RECIPE_UHV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Integrated Ore Factory"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#41")
+            .itemInputsUnsafe(
                 setStackSize(GTBlockList.Machine_Hull_UHV.copy(), 1),
                 setStackSize(GTItemList.Electric_Motor_UHV.copy(), 32),
                 setStackSize(GTItemList.Electric_Piston_UHV.copy(), 8),
@@ -979,88 +972,86 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                 setStackSize(GTItemList.Conveyor_Module_UHV.copy(), 8),
                 setStackSize(GTItemList.Robot_Arm_UHV.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
                 setStackSize(WireList.Naquadah_Alloy_Wire_1x.copy(), 64 * 2),
 
                 setStackSize(PipeList.PBI_Fluid_Pipe.copy(), 64),
                 setStackSize(GTItemList.Tungsten_Grinding_Head.copy(), 64),
                 setStackSize(DoublePlateList.Double_Stainless_Steel_Plate.copy(), 32),
                 setStackSize(RotorList.Chrome_Rotor.copy(), 16))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Integrated_Ore_Factory)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 20), requiredFluid("molten.naquadria", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Integrated_Ore_Factory, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "IsaMill Grinding Machine"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#42")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.IsaMill_Exterior_Casing.copy(), 4),
                 setStackSize(MultiMachineCasingList.IsaMill_Gearbox.copy(), 4),
                 setStackSize(GTItemList.Tungsten_Grinding_Head.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 16),
 
                 setStackSize(GearList.Inconel_625_Gear.copy(), 8),
                 setStackSize(PlateList.Inconel_625_Plate.copy(), 32),
                 setStackSize(DoublePlateList.Double_Zeron_100_Plate.copy(), 16),
                 setStackSize(ScrewList.Zeron_100_Screw.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Zeron_100.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Lafium_Compound.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Trinium_Naquadah_Carbonite.copy(), 144 * 32))
-            .itemOutputs(MultiMachineControllerList.IsaMill_Grinding_Machine)
+                requiredFluid("molten.zeron100", 144 * 16),
+                requiredFluid("molten.lafiumcompound", 144 * 32),
+                requiredFluid("molten.triniumnaquadahcarbonite", 144 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.IsaMill_Grinding_Machine, 1))
             .eut(RECIPE_LuV)
             .duration(600 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Large Hadron Collider"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#43")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Research_Station.copy(), 8),
                 setStackSize(HatchList.Neutron_Accelerator_UV.copy(), 8),
                 setStackSize(GoodGeneratorList.Compact_Fusion_Coil.copy(), 64),
                 setStackSize(GoodGeneratorList.Advanced_Compact_Fusion_Coil.copy(), 32),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 64),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 64),
                 setStackSize(GTItemList.Field_Generator_UV.copy(), 64),
                 setStackSize(GTItemList.Samarium_Electromagnet.copy(), 1),
                 setStackSize(MultiMachineCasingList.Charged_Matter_Sensor_Casing.copy(), 8))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 64 * 72),
-                setStackSize(MoltenList.Molten_Cosmic_Neutronium.copy(), 144 * 64 * 72))
-            .itemOutputs(MultiMachineControllerList.Large_Hadron_Collider)
+                requiredFluid("molten.neutronium", 144 * 64 * 72),
+                requiredFluid("molten.cosmicneutronium", 144 * 64 * 72))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Large_Hadron_Collider, 1))
             .eut(RECIPE_UHV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Large Naquadah Reactor"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#44")
+            .itemInputsUnsafe(
                 setStackSize(FrameBoxList.Adamantium_Frame_Box.copy(), 8),
                 setStackSize(GoodGeneratorList.Radiation_Proof_Plate.copy(), 16),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 2),
                 setStackSize(GTItemList.Electric_Pump_ZPM.copy(), 8),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
                 setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 64),
                 setStackSize(PipeList.Huge_Naquadah_Fluid_Pipe.copy(), 4),
                 setStackSize(PlateList.Prismatic_Naquadah_Plate.copy(), 8),
 
                 setStackSize(ScrewList.Osmium_Screw.copy(), 16))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Trinium.copy(), 144 * 4),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 8))
-            .itemOutputs(MultiMachineControllerList.Large_Naquadah_Reactor)
+                requiredFluid("molten.trinium", 144 * 4),
+                requiredFluid("molten.indalloy140", 144 * 32),
+                requiredFluid("lubricant", 1000 * 8))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Large_Naquadah_Reactor, 1))
             .eut(RECIPE_LuV)
             .duration(600 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Matter Manipulator Quantum Uplink"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#45")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Data_Bank.copy(), 1),
                 setStackSize(Appliedenergistics2List.ME_Controller.copy(), 4),
                 setStackSize(Appliedenergistics2List.ME_Quantum_Ring.copy(), 8),
@@ -1071,42 +1062,40 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(HatchList.Optical_Transmission_Connector.copy(), 1),
                 setStackSize(GTBlockList.Optical_Fiber_Cable.copy(), 32),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 32))
-            .itemOutputs(MultiMachineControllerList.Matter_Manipulator_Quantum_Uplink)
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 2))
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 64), requiredFluid("molten.naquadria", 144 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Matter_Manipulator_Quantum_Uplink, 1))
             .eut(RECIPE_UV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Mega Alloy Blast Smelter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#46")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Alloy_Blast_Smelter.copy(), 64 * 4),
                 setStackSize(GTItemList.Ultimate_Voltage_Coil.copy(), 16),
                 setStackSize(GTItemList.Conveyor_Module_UV.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 16),
                 setStackSize(CircuitList.Piko_Power_IC_Chip.copy(), 16),
 
                 setStackSize(PlateList.Pikyonium_64B_Plate.copy(), 16),
                 setStackSize(ScrewList.Cinobite_A243_Screw.copy(), 32))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Pikyonium_64B.copy(), 144 * 8),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 9),
-                setStackSize(MoltenList.Molten_Soldering_Alloy.copy(), 144 * 10))
-            .itemOutputs(MultiMachineControllerList.Mega_Alloy_Blast_Smelter)
+                requiredFluid("molten.pikyonium64b", 144 * 8),
+                requiredFluid("molten.indalloy140", 144 * 9),
+                requiredFluid("molten.solderingalloy", 144 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Mega_Alloy_Blast_Smelter, 1))
             .eut(RECIPE_UHV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Mega Chemical Reactor"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#47")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Large_Chemical_Reactor.copy(), 64),
                 setStackSize(MultiMachineControllerList.ExxonMobil_Chemical_Plant.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 4),
                 setStackSize(MultiMachineCasingList.Chemically_Inert_Machine_Casing.copy(), 8),
 
                 setStackSize(GTItemList.Electric_Pump_LuV.copy(), 4),
@@ -1114,20 +1103,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(MachineList.Chemical_Reactor_IV.copy(), 2),
                 setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 32))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Naquadah.copy(), 144 * 4),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Mega_Chemical_Reactor)
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("molten.naquadah", 144 * 4),
+                requiredFluid("lubricant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Mega_Chemical_Reactor, 1))
             .eut(RECIPE_LuV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Mega Distillation Tower"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#48")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Distillation_Tower.copy(), 64),
                 setStackSize(MultiMachineControllerList.Dangote_Distillus.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 4),
                 setStackSize(MultiMachineCasingList.Naquadah_Reinforced_Distillation_Casing.copy(), 8),
 
                 setStackSize(GTItemList.Electric_Pump_LuV.copy(), 4),
@@ -1135,20 +1124,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(MachineList.Distillery_IV.copy(), 2),
                 setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 32))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Naquadah.copy(), 144 * 4),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-            .itemOutputs(MultiMachineControllerList.Mega_Distillation_Tower)
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("molten.naquadah", 144 * 4),
+                requiredFluid("lubricant", 1000 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Mega_Distillation_Tower, 1))
             .eut(RECIPE_LuV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Mega Oil Cracker"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#49")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Oil_Cracking_Unit.copy(), 64),
                 setStackSize(MultiMachineControllerList.Large_Chemical_Reactor.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 4),
                 setStackSize(MultiMachineCasingList.Naquadah_Reinforced_Distillation_Casing.copy(), 8),
 
                 setStackSize(GTItemList.Steam_Valve_IV.copy(), 8),
@@ -1156,38 +1145,38 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(MultiMachineCasingList.Naquadah_Coil_Block.copy(), 8),
                 setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 32))
             .fluidInputs(
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 16),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Naquadah.copy(), 144 * 4))
-            .itemOutputs(MultiMachineControllerList.Mega_Oil_Cracker)
+                requiredFluid("lubricant", 1000 * 16),
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("molten.naquadah", 144 * 4))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Mega_Oil_Cracker, 1))
             .eut(RECIPE_LuV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Miniature Wormhole Generator"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#50")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Active_Transformer.copy(), 1),
                 setStackSize(Appliedenergistics2List.Singularity.copy(), 4),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 4),
                 setStackSize(GTItemList.Emitter_ZPM.copy(), 4),
 
                 setStackSize(MultiMachineCasingList.Fusion_Coil_Block.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
                 setStackSize(GTBlockList.Laser_Vacuum_Pipe.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 12),
-                setStackSize(MoltenList.Molten_Tritanium.copy(), 144 * 12),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 24),
-                setStackSize(FluidList.Super_Coolant.copy(), 1000 * 7))
-            .itemOutputs(MultiMachineControllerList.Miniature_Wormhole_Generator)
+                requiredFluid("molten.neutronium", 144 * 12),
+                requiredFluid("molten.tritanium", 144 * 12),
+                requiredFluid("molten.indalloy140", 144 * 24),
+                requiredFluid("supercoolant", 1000 * 7))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Miniature_Wormhole_Generator, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Molecular Transformer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#51")
+            .itemInputsUnsafe(
                 setStackSize(FineWireList.Fine_HG_1223_Wire.copy(), 64 * 2),
                 setStackSize(GTItemList.Electric_Motor_IV.copy(), 16),
                 setStackSize(BatteryList.Lapotronic_Energy_Orb_Empty.copy(), 16),
@@ -1199,64 +1188,64 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(PlateList.Babbit_Alloy_Plate.copy(), 64),
 
                 setStackSize(GearList.Grisium_Gear.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 64),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 32),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.EV, 64),
+                getMaterialInput(OrePrefixes.circuit, Materials.IV, 32),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 16),
 
                 setStackSize(GTItemList.Woods_Glass_Lens.copy(), 1))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Nitinol_60.copy(), 144 * 18),
-                setStackSize(MoltenList.Molten_Incoloy_MA956.copy(), 144 * 72),
-                setStackSize(MoltenList.Molten_Kanthal.copy(), 144 * 4))
-            .itemOutputs(MultiMachineControllerList.Molecular_Transformer)
+                requiredFluid("molten.nitinol60", 144 * 18),
+                requiredFluid("molten.incoloyma956", 144 * 72),
+                requiredFluid("molten.kanthal", 144 * 4))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Molecular_Transformer, 1))
             .eut(RECIPE_LuV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Mothership Navigation Console"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#52")
+            .itemInputsUnsafe(
                 setStackSize(GTBlockList.Machine_Hull_UHV.copy(), 1),
                 setStackSize(AmunRaList.Nanite_Control_Module.copy(), 32),
                 setStackSize(MiscPlateList.Irradiant_Reinforced_Neutronium_Plate.copy(), 64),
                 setStackSize(GalaxySpaceList.Rocket_Control_Computer_Tier_8.copy(), 4),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 16),
                 setStackSize(GTItemList.Sensor_UHV.copy(), 8),
                 setStackSize(GTItemList.Emitter_UHV.copy(), 8))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 100),
-                setStackSize(MoltenList.Molten_Enriched_Naquadah_Alloy.copy(), 144 * 64 * 4),
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64))
-            .itemOutputs(MultiMachineControllerList.Mothership_Navigation_Console)
+                requiredFluid("molten.infinity", 144 * 100),
+                requiredFluid("molten.enriched naquadah alloy", 144 * 64 * 4),
+                requiredFluid("molten.mutatedlivingsolder", 144 * 64))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Mothership_Navigation_Console, 1))
             .eut(RECIPE_UEV)
             .duration(240 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Nano Forge"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#53")
+            .itemInputsUnsafe(
                 setStackSize(GTBlockList.Machine_Hull_UV.copy(), 16),
                 setStackSize(GTItemList.Carbon_Nanites.copy(), 16),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 16),
                 setStackSize(GTItemList.Conveyor_Module_UV.copy(), 16),
 
                 setStackSize(GTItemList.Electric_Motor_UV.copy(), 32),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 16),
                 setStackSize(WireList.Naquadah_Wire_1x.copy(), 64 * 4),
                 setStackSize(SuperdensePlateList.Superdense_Naquadah_Alloy_Plate.copy(), 4))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_HSS_S.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Osmiridium.copy(), 144 * 16))
-            .itemOutputs(MultiMachineControllerList.Nano_Forge)
+                requiredFluid("molten.indalloy140", 144 * 32),
+                requiredFluid("molten.hsss", 144 * 32),
+                requiredFluid("molten.osmiridium", 144 * 16))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Nano_Forge, 1))
             .eut(RECIPE_ZPM)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Nanochip Assembly Complex"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#54")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Circuit_Assembly_Line.copy(), 64),
                 setStackSize(MultiMachineControllerList.Quantum_Computer.copy(), 8),
                 setStackSize(MultiMachineControllerList.Research_Station.copy(), 8),
@@ -1267,9 +1256,9 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(MultiMachineCasingList.Nanochip_Computational_Matrix_Casing.copy(), 8),
                 setStackSize(MultiMachineCasingList.Nanochip_Firewall_Projection_Casing.copy(), 4),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 32),
+                getMaterialInput(OrePrefixes.circuit, Materials.UEV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.UHV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 32),
                 setStackSize(BatteryList.Ultimate_Battery_Empty.copy(), 1),
 
                 setStackSize(GTItemList.Sensor_UEV.copy(), 4),
@@ -1277,24 +1266,24 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(OpenComputersList.Screen_Tier3.copy(), 1),
                 setStackSize(OpenComputersList.Keyboard.copy(), 1))
             .fluidInputs(
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64 * 4),
-                setStackSize(PlasmaList.Celestial_Tungsten_Plasma.copy(), 144 * 64),
-                setStackSize(PlasmaList.Americium_Plasma.copy(), 144 * 64),
-                setStackSize(PlasmaList.Astral_Titanium_Plasma.copy(), 144 * 64))
-            .itemOutputs(MultiMachineControllerList.Nanochip_Assembly_Complex)
+                requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 4),
+                requiredFluid("plasma.celestialtungsten", 144 * 64),
+                requiredFluid("plasma.americium", 144 * 64),
+                requiredFluid("plasma.astraltitanium", 144 * 64))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Nanochip_Assembly_Complex, 1))
             .eut(RECIPE_UIV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Naquadah Fuel Refinery"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#55")
+            .itemInputsUnsafe(
                 setStackSize(FrameBoxList.Osmiridium_Frame_Box.copy(), 8),
                 setStackSize(GoodGeneratorList.Advanced_Radiation_Proof_Plate.copy(), 64),
                 setStackSize(GTItemList.Field_Generator_UV.copy(), 8),
                 setStackSize(GTItemList.Electric_Pump_UHV.copy(), 2),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
                 setStackSize(PipeList.Huge_Mysterious_Crystal_Fluid_Pipe.copy(), 8),
                 setStackSize(CircuitList.NPIC_Wafer.copy(), 16),
                 setStackSize(GTItemList.Highly_Ultimate_Voltage_Coil.copy(), 64),
@@ -1302,33 +1291,31 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Aer_Lens.copy(), 16),
                 setStackSize(ScrewList.Thulium_Screw.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Quantium.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Awakened_Draconium.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Extremely_Unstable_Naquadah.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 100))
-            .itemOutputs(MultiMachineControllerList.Naquadah_Fuel_Refinery)
+                requiredFluid("molten.quantium", 144 * 64),
+                requiredFluid("molten.draconiumawakened", 144 * 32),
+                requiredFluid("molten.extremely unstable naquadah", 144 * 10),
+                requiredFluid("molten.indalloy140", 144 * 100))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Naquadah_Fuel_Refinery, 1))
             .eut(RECIPE_UHV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "PCB Factory"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#56")
+            .itemInputsUnsafe(
                 setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 32),
                 setStackSize(MachineList.Circuit_Assembler_ZPM.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.LuV, 16),
                 setStackSize(GTItemList.Robot_Arm_ZPM.copy(), 8))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 36),
-                setStackSize(MoltenList.Molten_Naquadah.copy(), 144 * 18))
-            .itemOutputs(MultiMachineControllerList.PCB_Factory)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 36), requiredFluid("molten.naquadah", 144 * 18))
+            .itemOutputs(setStackSize(MultiMachineControllerList.PCB_Factory, 1))
             .eut(RECIPE_UV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Pseudostable Black Hole Containment Field"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#57")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Hot_Isostatic_Pressurization_Unit.copy(), 1),
                 setStackSize(MultiMachineControllerList.Neutronium_Compressor.copy(), 1),
                 setStackSize(MultiMachineControllerList.Density2.copy(), 16),
@@ -1337,7 +1324,7 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(MultiMachineControllerList.Electric_Implosion_Compressor.copy(), 4),
                 setStackSize(GTItemList.Field_Generator_UEV.copy(), 4),
                 setStackSize(BatteryList.Really_Ultimate_Battery_Empty.copy(), 2),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 4),
 
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 64),
                 setStackSize(RingList.Proto_Halkonite_Steel_Ring.copy(), 32),
@@ -1349,20 +1336,20 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(SuperdensePlateList.Superdense_Cosmic_Neutronium_Plate.copy(), 8),
                 setStackSize(SuperdensePlateList.Superdense_Kevlar_Plate.copy(), 4))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 10),
-                setStackSize(GasList.Oganesson.copy(), 1000 * 64 * 4),
-                setStackSize(MoltenList.Molten_Superconductor_Base_UIV.copy(), 144 * 300),
-                setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 100))
-            .itemOutputs(MultiMachineControllerList.Pseudostable_Black_Hole_Containment_Field)
+                requiredFluid("molten.spacetime", 144 * 10),
+                requiredFluid("oganesson", 1000 * 64 * 4),
+                requiredFluid("molten.superconductoruivbase", 144 * 300),
+                requiredFluid("molten.infinity", 144 * 100))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Pseudostable_Black_Hole_Containment_Field, 1))
             .eut(RECIPE_UIV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Quantum Computer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#58")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Static_Network_Switch_With_QoS.copy(), 1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
                 setStackSize(GTItemList.Data_Orb.copy(), 1),
                 setStackSize(GTItemList.Computer_Monitor_Cover.copy(), 1),
 
@@ -1370,39 +1357,39 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTBlockList.Optical_Fiber_Cable.copy(), 8),
                 setStackSize(SuperdensePlateList.Superdense_Polybenzimidazole_PBI_Sheet.copy(), 2))
             .fluidInputs(
-                setStackSize(FluidList.UU_Matter.copy(), 1000),
-                setStackSize(MoltenList.Molten_Iridium.copy(), 144 * 9),
-                setStackSize(FluidList.IC2_Coolant.copy(), 1000 * 2),
-                setStackSize(GasList.Hydrogen.copy(), 1000))
-            .itemOutputs(MultiMachineControllerList.Quantum_Computer)
+                requiredFluid("ic2uumatter", 1000),
+                requiredFluid("molten.iridium", 144 * 9),
+                requiredFluid("ic2coolant", 1000 * 2),
+                requiredFluid("hydrogen", 1000))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Quantum_Computer, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Quantum Force Transformer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#59")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Molecular_Transformer.copy(), 1),
                 setStackSize(SingularityList.Eternal_Singularity.copy(), 1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.UEV, 8),
                 setStackSize(GTItemList.Electric_Pump_UEV.copy(), 4),
 
                 setStackSize(GTItemList.Field_Generator_UEV.copy(), 4),
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 1))
             .fluidInputs(
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 10),
-                setStackSize(MoltenList.Molten_Pikyonium_64B.copy(), 144 * 32))
-            .itemOutputs(MultiMachineControllerList.Quantum_Force_Transformer)
+                requiredFluid("molten.mutatedlivingsolder", 144 * 10),
+                requiredFluid("molten.pikyonium64b", 144 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Quantum_Force_Transformer, 1))
             .eut(RECIPE_UIV)
             .duration(180 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Research Station"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#60")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Static_Network_Switch_With_QoS.copy(), 1),
                 setStackSize(GTItemList.Sensor_ZPM.copy(), 8),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 1),
 
                 setStackSize(GTItemList.Electric_Motor_ZPM.copy(), 2),
@@ -1410,18 +1397,18 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(FineWireList.Fine_Naquadah_Wire.copy(), 32),
                 setStackSize(GTBlockList.Optical_Fiber_Cable.copy(), 16))
             .fluidInputs(
-                setStackSize(FluidList.UU_Matter.copy(), 1000),
-                setStackSize(MoltenList.Molten_Iridium.copy(), 144 * 9),
-                setStackSize(FluidList.IC2_Coolant.copy(), 1000 * 2),
-                setStackSize(MoltenList.Molten_Osmium.copy(), 144 * 9))
-            .itemOutputs(MultiMachineControllerList.Research_Station)
+                requiredFluid("ic2uumatter", 1000),
+                requiredFluid("molten.iridium", 144 * 9),
+                requiredFluid("ic2coolant", 1000 * 2),
+                requiredFluid("molten.osmium", 144 * 9))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Research_Station, 1))
             .eut(RECIPE_UV)
             .duration(180 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Semi-Stable Antimatter Stabilization Sequencer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#61")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Compact_Fusion_Computer_MKV.copy(), 1),
                 setStackSize(FrameBoxList.Proto_Halkonite_Steel_Frame_Box.copy(), 16),
                 setStackSize(MultiMachineCasingList.Cosmic_Fabric_Manipulator.copy(), 16),
@@ -1429,28 +1416,28 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                 setStackSize(FineWireList.Fine_Hypogen_Wire.copy(), 64),
                 setStackSize(FineWireList.Fine_Proto_Halkonite_Steel_Wire.copy(), 64),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
                 setStackSize(GTItemList.Electric_Pump_UIV.copy(), 16),
 
                 setStackSize(SuperdensePlateList.Superdense_Proto_Halkonite_Steel_Plate.copy(), 4),
                 setStackSize(DensePlateList.Dense_Transcendent_Metal_Plate.copy(), 64))
             .fluidInputs(
-                setStackSize(FluidList.Protomatter.copy(), 1000 * 10),
-                setStackSize(MoltenList.Molten_Six_Phased_Copper.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64),
-                setStackSize(FluidList.Dimensionally_Shifted_Superfluid.copy(), 1000 * 10))
-            .itemOutputs(MultiMachineControllerList.Semi_Stable_Antimatter_Stabilization_Sequencer)
+                requiredFluid("protomatter", 1000 * 10),
+                requiredFluid("molten.sixphasedcopper", 144 * 64),
+                requiredFluid("molten.transcendentmetal", 144 * 64),
+                requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 10))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Semi_Stable_Antimatter_Stabilization_Sequencer, 1))
             .eut(RECIPE_UMV)
             .duration(360 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Shielded Lagrangian Annihilation Matrix"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#62")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Miniature_Wormhole_Generator.copy(), 1),
                 setStackSize(HatchList.Laser_Source_Hatch1048576_UIV.copy(), 4),
                 setStackSize(GoodGeneratorList.Protomatter_Activation_Coil.copy(), 16),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
 
                 setStackSize(GTItemList.Emitter_UIV.copy(), 32),
                 setStackSize(SuperdensePlateList.Superdense_Proto_Halkonite_Steel_Plate.copy(), 4),
@@ -1459,11 +1446,11 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                 setStackSize(FineWireList.Fine_Hypogen_Wire.copy(), 64 * 3))
             .fluidInputs(
-                setStackSize(FluidList.Semi_Stable_Antimatter.copy(), 1000),
-                setStackSize(MoltenList.Molten_Six_Phased_Copper.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 64),
-                setStackSize(MoltenList.Molten_Superconductor_Base_UIV.copy(), 144 * 64))
-            .itemOutputs(MultiMachineControllerList.Shielded_Lagrangian_Annihilation_Matrix)
+                requiredFluid("antimatter", 1000),
+                requiredFluid("molten.sixphasedcopper", 144 * 64),
+                requiredFluid("molten.transcendentmetal", 144 * 64),
+                requiredFluid("molten.superconductoruivbase", 144 * 64))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Shielded_Lagrangian_Annihilation_Matrix, 1))
             .eut(RECIPE_UMV)
             .duration(360 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
@@ -1471,12 +1458,12 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
         // Space Elevator
         {
             // "Space Elevator"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#63")
+                .itemInputsUnsafe(
                     setStackSize(OpenBlocksList.Elevator.copy(), 1),
                     setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 64),
                     setStackSize(GTItemList.Field_Generator_UV.copy(), 16),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 16),
 
                     setStackSize(MiscPlateList.Heavy_Duty_Plate_Tier_7.copy(), 32),
                     setStackSize(CircuitList.Piko_Power_IC_Chip.copy(), 64),
@@ -1485,18 +1472,18 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTNHIntergalacticList.Space_Elevator_Base_Casing.copy(), 8))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 40),
-                    setStackSize(FluidList.UU_Matter.copy(), 1000 * 16),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 32),
-                    setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 10))
-                .itemOutputs(MultiMachineControllerList.Space_Elevator)
+                    requiredFluid("molten.indalloy140", 144 * 40),
+                    requiredFluid("ic2uumatter", 1000 * 16),
+                    requiredFluid("lubricant", 1000 * 32),
+                    requiredFluid("molten.neutronium", 144 * 10))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Elevator, 1))
                 .eut(RECIPE_UHV)
                 .duration(300 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Assembler Module MK-I"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#64")
+                .itemInputsUnsafe(
                     setStackSize(GTNHIntergalacticList.Space_Elevator_Base_Casing.copy(), 1),
                     setStackSize(MachineList.Assembler_UV.copy(), 4),
                     setStackSize(MachineList.Circuit_Assembler_UV.copy(), 4),
@@ -1507,21 +1494,21 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Conveyor_Module_UHV.copy(), 16),
                     setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIII.copy(), 32),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 16),
                     setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 8),
                     setStackSize(ScrewList.Neutronium_Screw.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 9),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Space_Assembler_Module_MKI)
+                    requiredFluid("molten.indalloy140", 144 * 9),
+                    requiredFluid("molten.naquadria", 144 * 9),
+                    requiredFluid("lubricant", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Assembler_Module_MKI, 1))
                 .eut(RECIPE_UEV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Assembler Module MK-II"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#65")
+                .itemInputsUnsafe(
                     setStackSize(GTNHIntergalacticList.Space_Elevator_Base_Casing.copy(), 1),
                     setStackSize(MachineList.Assembler_UEV.copy(), 4),
                     setStackSize(MachineList.Circuit_Assembler_UEV.copy(), 4),
@@ -1532,21 +1519,21 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                     setStackSize(GTItemList.Conveyor_Module_UIV.copy(), 16),
                     setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 32),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 16),
                     setStackSize(FrameBoxList.Hypogen_Frame_Box.copy(), 8),
                     setStackSize(ScrewList.Hypogen_Screw.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 9),
-                    setStackSize(FluidList.UU_Matter.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Space_Assembler_Module_MKII)
+                    requiredFluid("molten.indalloy140", 144 * 9),
+                    requiredFluid("molten.infinity", 144 * 9),
+                    requiredFluid("ic2uumatter", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Assembler_Module_MKII, 1))
                 .eut(RECIPE_UIV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Assembler Module MK-III"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#66")
+                .itemInputsUnsafe(
                     setStackSize(GTNHIntergalacticList.Space_Elevator_Base_Casing.copy(), 1),
                     setStackSize(MachineList.Assembler_UMV.copy(), 4),
                     setStackSize(MachineList.Circuit_Assembler_UMV.copy(), 4),
@@ -1559,148 +1546,148 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Conveyor_Module_UXV.copy(), 16),
                     setStackSize(GoodGeneratorList.Hi_Computation_Station_MKV_Finaltype.copy(), 32),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UXV, 16),
                     setStackSize(FrameBoxList.Universium_Frame_Box.copy(), 8),
 
                     setStackSize(ScrewList.Universium_Screw.copy(), 32))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 36),
-                    setStackSize(MoltenList.Molten_Black_Dwarf_Matter.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_White_Dwarf_Matter.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_SpaceTime.copy(), 144 * 9))
-                .itemOutputs(MultiMachineControllerList.Space_Assembler_Module_MKIII)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 36),
+                    requiredFluid("molten.blackdwarfmatter", 144 * 9),
+                    requiredFluid("molten.whitedwarfmatter", 144 * 9),
+                    requiredFluid("molten.spacetime", 144 * 9))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Assembler_Module_MKIII, 1))
                 .eut(RECIPE_UXV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Mining Module MK-I"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#67")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Ore_Drilling_Plant_IV.copy(), 1),
                     setStackSize(GTItemList.Robot_Arm_UV.copy(), 8),
                     setStackSize(GTItemList.Field_Generator_UV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 16),
 
                     setStackSize(GTItemList.Sensor_UV.copy(), 16),
                     setStackSize(WireList.Superconductor_UV_Wire_1x.copy(), 64 * 2),
                     setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 16))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 10),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 8))
-                .itemOutputs(MultiMachineControllerList.Space_Mining_Module_MKI)
+                    requiredFluid("molten.indalloy140", 144 * 20),
+                    requiredFluid("molten.naquadria", 144 * 10),
+                    requiredFluid("lubricant", 1000 * 8))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Mining_Module_MKI, 1))
                 .eut(RECIPE_UHV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Mining Module MK-II"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#68")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Space_Mining_Module_MKI.copy(), 1),
                     setStackSize(GTItemList.Robot_Arm_UHV.copy(), 8),
                     setStackSize(GTItemList.Field_Generator_UHV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 16),
 
                     setStackSize(GTItemList.Sensor_UHV.copy(), 16),
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2),
                     setStackSize(FrameBoxList.Cosmic_Neutronium_Frame_Box.copy(), 16))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 20),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Space_Mining_Module_MKII)
+                    requiredFluid("molten.indalloy140", 144 * 20),
+                    requiredFluid("molten.naquadria", 144 * 20),
+                    requiredFluid("lubricant", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Mining_Module_MKII, 1))
                 .eut(RECIPE_UEV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Mining Module MK-III"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#69")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Space_Mining_Module_MKII.copy(), 1),
                     setStackSize(GTItemList.Robot_Arm_UEV.copy(), 8),
                     setStackSize(GTItemList.Field_Generator_UEV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 16),
 
                     setStackSize(GTItemList.Sensor_UEV.copy(), 16),
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 64 * 2),
                     setStackSize(FrameBoxList.Infinity_Frame_Box.copy(), 16))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 20),
-                    setStackSize(MoltenList.Molten_Transcendent_Metal.copy(), 144 * 10),
-                    setStackSize(FluidList.UU_Matter.copy(), 1000 * 2))
-                .itemOutputs(MultiMachineControllerList.Space_Mining_Module_MKIII)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 20),
+                    requiredFluid("molten.transcendentmetal", 144 * 10),
+                    requiredFluid("ic2uumatter", 1000 * 2))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Mining_Module_MKIII, 1))
                 .eut(RECIPE_UIV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Pumping Module MK-I"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#70")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Infinite_Fluid_Drilling_Rig.copy(), 1),
                     setStackSize(MultiMachineControllerList.Planetary_Gas_Siphon.copy(), 1),
                     setStackSize(TecTechList.Ender_Fluid_Link_Cover.copy(), 2),
                     setStackSize(FrameBoxList.Infinity_Frame_Box.copy(), 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
                     setStackSize(GTItemList.Electric_Pump_UEV.copy(), 2),
                     setStackSize(GearList.Infinity_Gear.copy(), 4),
                     setStackSize(ScrewList.Cosmic_Neutronium_Screw.copy(), 32))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 9),
-                    setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 4))
-                .itemOutputs(MultiMachineControllerList.Space_Pumping_Module_MKI)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 9),
+                    requiredFluid("molten.infinity", 144 * 4))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Pumping_Module_MKI, 1))
                 .eut(RECIPE_UEV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Pumping Module MK-II"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#71")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Infinite_Fluid_Drilling_Rig.copy(), 4),
                     setStackSize(MultiMachineControllerList.Planetary_Gas_Siphon.copy(), 4),
                     setStackSize(TecTechList.Ender_Fluid_Link_Cover.copy(), 8),
                     setStackSize(FrameBoxList.SpaceTime_Frame_Box.copy(), 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 4),
                     setStackSize(GTItemList.Electric_Pump_UIV.copy(), 8),
                     setStackSize(GearList.SpaceTime_Gear.copy(), 4),
                     setStackSize(ScrewList.Metastable_Oganesson_Screw.copy(), 64))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 32),
-                    setStackSize(MoltenList.Molten_Proto_Halkonite_Steel_Base.copy(), 144 * 16))
-                .itemOutputs(MultiMachineControllerList.Space_Pumping_Module_MKII)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 32),
+                    requiredFluid("protohalkonitebase", 144 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Pumping_Module_MKII, 1))
                 .eut(RECIPE_UIV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Space Pumping Module MK-III"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#72")
+                .itemInputsUnsafe(
                     setStackSize(MultiMachineControllerList.Infinite_Fluid_Drilling_Rig.copy(), 16),
                     setStackSize(MultiMachineControllerList.Planetary_Gas_Siphon.copy(), 16),
                     setStackSize(TecTechList.Ender_Fluid_Link_Cover.copy(), 32),
                     setStackSize(FrameBoxList.Black_Dwarf_Matter_Frame_Box.copy(), 4),
 
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UMV, 16),
                     setStackSize(GTItemList.Electric_Pump_UMV.copy(), 8),
                     setStackSize(GearList.Black_Dwarf_Matter_Gear.copy(), 4),
                     setStackSize(ScrewList.White_Dwarf_Matter_Screw.copy(), 64))
                 .fluidInputs(
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Eternity.copy(), 144 * 16))
-                .itemOutputs(MultiMachineControllerList.Space_Pumping_Module_MKIII)
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64),
+                    requiredFluid("molten.eternity", 144 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Space_Pumping_Module_MKIII, 1))
                 .eut(RECIPE_UMV)
                 .duration(120 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
         }
 
         // "Sparge Tower Controller"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#73")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.Sparge_Tower_Exterior_Casing.copy(), 4),
                 setStackSize(MultiMachineCasingList.Integral_Encasement_V.copy(), 4),
                 setStackSize(MachineList.Distillery_IV.copy(), 1),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 8),
+                getMaterialInput(OrePrefixes.circuit, Materials.IV, 8),
 
                 setStackSize(GearList.HS188_A_Gear.copy(), 8),
                 setStackSize(PlateList.HS188_A_Plate.copy(), 32),
@@ -1710,21 +1697,21 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(FineWireList.Fine_Yttrium_Barium_Cuprate_Wire.copy(), 64 * 2),
                 setStackSize(FoilList.Platinum_Foil.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Incoloy_DS.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Tantalum_Carbide.copy(), 144 * 32),
-                setStackSize(MoltenList.Molten_Titanium.copy(), 144 * 32))
-            .itemOutputs(MultiMachineControllerList.Sparge_Tower_Controller)
+                requiredFluid("molten.incoloyds", 144 * 16),
+                requiredFluid("molten.tantalumcarbide", 144 * 32),
+                requiredFluid("molten.titanium", 144 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Sparge_Tower_Controller, 1))
             .eut(RECIPE_LuV)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // Spinmatron-2737
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#74")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Industrial_Centrifuge.copy(), 64),
                 setStackSize(MultiMachineControllerList.Large_Supercritical_Steam_Turbine.copy(), 4),
                 setStackSize(HatchList.Rotor_Assembly.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
 
                 setStackSize(RotorList.Pikyonium_64B_Rotor.copy(), 4),
                 setStackSize(RotorList.HeLiCoPtEr_Rotor.copy(), 4),
@@ -1736,19 +1723,19 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(ScrewList.Pikyonium_64B_Screw.copy(), 16),
                 setStackSize(WireList.Superconductor_ZPM_Wire_1x.copy(), 64))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_MAR_Ce_M200_Steel.copy(), 144 * 16),
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(FluidList.Lubricant.copy(), 1000 * 4))
-            .itemOutputs(MultiMachineControllerList.Spinmatron_2737)
+                requiredFluid("molten.mar-ce-m200 steel", 144 * 16),
+                requiredFluid("molten.indalloy140", 144 * 10),
+                requiredFluid("lubricant", 1000 * 4))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Spinmatron_2737, 1))
             .eut(RECIPE_ZPM)
             .duration(60 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Transcendent Plasma Mixer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#75")
+            .itemInputsUnsafe(
                 setStackSize(HatchList.Laser_Target_Hatch262144_UEV.copy(), 4),
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 32),
+                getMaterialInput(OrePrefixes.circuit, Materials.UIV, 32),
                 setStackSize(GTItemList.Electric_Pump_UEV.copy(), 16),
                 setStackSize(PlateList.Proto_Halkonite_Steel_Plate.copy(), 64),
 
@@ -1757,39 +1744,39 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(ScrewList.Proto_Halkonite_Steel_Screw.copy(), 64),
                 setStackSize(GTItemList.Energised_Tesseract.copy(), 32))
             .fluidInputs(
-                setStackSize(FluidList.Excited_Dimensionally_Transcendent_Crude_Catalyst.copy(), 1000 * 64 * 32),
-                setStackSize(FluidList.Excited_Dimensionally_Transcendent_Prosaic_Catalyst.copy(), 1000 * 64 * 32),
-                setStackSize(FluidList.Excited_Dimensionally_Transcendent_Resplendent_Catalyst.copy(), 1000 * 64 * 32),
-                setStackSize(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst.copy(), 1000 * 64 * 32))
-            .itemOutputs(MultiMachineControllerList.Transcendent_Plasma_Mixer)
+                requiredFluid("exciteddtcc", 1000 * 64 * 32),
+                requiredFluid("exciteddtpc", 1000 * 64 * 32),
+                requiredFluid("exciteddtrc", 1000 * 64 * 32),
+                requiredFluid("exciteddtec", 1000 * 64 * 32))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Transcendent_Plasma_Mixer, 1))
             .eut(RECIPE_UIV)
             .duration(300 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Uncertainty Resolution"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#76")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineCasingList.Advanced_Computer_Casing.copy(), 1),
                 setStackSize(HatchList.Auto_Taping_Maintenance_Hatch.copy(), 1),
                 setStackSize(GTItemList.Field_Generator_UIV.copy(), 1),
                 setStackSize(GTPPList.Quantum_Anomaly.copy(), 4),
 
-                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 2),
+                getMaterialInput(OrePrefixes.circuit, Materials.UMV, 2),
                 setStackSize(GTBlockList.Optical_Fiber_Cable.copy(), 64 * 2),
                 setStackSize(GTItemList.Computer_Monitor_Cover.copy(), 1))
             .fluidInputs(
-                setStackSize(MoltenList.Molten_Iridium.copy(), 144 * 100),
-                setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 18),
-                setStackSize(PlasmaList.Neptunium_Plasma.copy(), 1000 * 20),
-                setStackSize(PlasmaList.Fermium_Plasma.copy(), 1000 * 20))
-            .itemOutputs(HatchList.Uncertainty_Resolution)
+                requiredFluid("molten.iridium", 144 * 100),
+                requiredFluid("molten.mutatedlivingsolder", 144 * 18),
+                requiredFluid("plasma.neptunium", 1000 * 20),
+                requiredFluid("plasma.fermium", 1000 * 20))
+            .itemOutputs(setStackSize(HatchList.Uncertainty_Resolution, 1))
             .eut(RECIPE_UIV)
             .duration(200 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Void Miner I"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#77")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Ore_Drilling_Plant_IV.copy(), 1),
                 setStackSize(FrameBoxList.Netherite_Frame_Box.copy(), 4),
                 setStackSize(PlateList.Europium_Plate.copy(), 3),
@@ -1798,17 +1785,15 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Sensor_LuV.copy(), 9),
                 setStackSize(GTItemList.Field_Generator_LuV.copy(), 9),
                 setStackSize(ScrewList.Europium_Screw.copy(), 36))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10).copy(),
-                setStackSize(GasList.Neon.copy(), 1000 * 20))
-            .itemOutputs(MultiMachineControllerList.Void_Miner_I)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 10), requiredFluid("neon", 1000 * 20))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Void_Miner_I, 1))
             .eut(RECIPE_LuV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Void Miner II"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#78")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Void_Miner_I.copy(), 1),
                 setStackSize(FrameBoxList.Black_Plutonium_Frame_Box.copy(), 9),
                 setStackSize(PlateList.Black_Plutonium_Plate.copy(), 3),
@@ -1817,17 +1802,15 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Sensor_ZPM.copy(), 9),
                 setStackSize(GTItemList.Field_Generator_ZPM.copy(), 9),
                 setStackSize(ScrewList.Black_Plutonium_Screw.copy(), 36))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(GasList.Krypton.copy(), 1000 * 20))
-            .itemOutputs(MultiMachineControllerList.Void_Miner_II)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 10), requiredFluid("krypton", 1000 * 20))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Void_Miner_II, 1))
             .eut(RECIPE_ZPM)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
 
         // "Void Miner III"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
+        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#79")
+            .itemInputsUnsafe(
                 setStackSize(MultiMachineControllerList.Void_Miner_II.copy(), 1),
                 setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 9),
                 setStackSize(PlateList.Neutronium_Plate.copy(), 3),
@@ -1836,10 +1819,8 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
                 setStackSize(GTItemList.Sensor_UV.copy(), 9),
                 setStackSize(GTItemList.Field_Generator_UV.copy(), 9),
                 setStackSize(ScrewList.Neutronium_Screw.copy(), 36))
-            .fluidInputs(
-                setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 10),
-                setStackSize(GasList.Oganesson.copy(), 1000 * 20))
-            .itemOutputs(MultiMachineControllerList.Void_Miner_III)
+            .fluidInputs(requiredFluid("molten.indalloy140", 144 * 10), requiredFluid("oganesson", 1000 * 20))
+            .itemOutputs(setStackSize(MultiMachineControllerList.Void_Miner_III, 1))
             .eut(RECIPE_UV)
             .duration(120 * SECONDS)
             .addTo(AssemblyLineNormalRecipe);
@@ -1847,8 +1828,8 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
         // Water Machine
         {
             // "Water Purification Plant"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#80")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Tungsten_Frame_Box.copy(), 4),
                     setStackSize(MultiMachineCasingList.Sterile_Water_Plant_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Reinforced_Sterile_Water_Plant_Casing.copy(), 8),
@@ -1856,21 +1837,19 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Robot_Arm_LuV.copy(), 1),
                     setStackSize(GTItemList.Electric_Pump_LuV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
+                    getMaterialInput(OrePrefixes.circuit, Materials.LuV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 2),
 
                     setStackSize(CableList.Niobium_Titanium_Cable_8x.copy(), 8))
-                .fluidInputs(
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 8),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Water_Purification_Plant)
+                .fluidInputs(requiredFluid("molten.indalloy140", 144 * 8), requiredFluid("lubricant", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Water_Purification_Plant, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Clarifier Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#81")
+                .itemInputsUnsafe(
                     setStackSize(GTItemList.Activated_Carbon_Filter_Mesh.copy(), 16),
                     setStackSize(MultiMachineCasingList.Reinforced_Sterile_Water_Plant_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Filter_Machine_Casing.copy(), 8),
@@ -1878,22 +1857,22 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_LuV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_LuV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
+                    getMaterialInput(OrePrefixes.circuit, Materials.LuV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 2),
 
                     setStackSize(PipeList.Tungstensteel_Fluid_Pipe.copy(), 16))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Osmium.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 8),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Clarifier_Purification_Unit)
+                    requiredFluid("molten.osmium", 144 * 8),
+                    requiredFluid("molten.indalloy140", 144 * 8),
+                    requiredFluid("lubricant", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Clarifier_Purification_Unit, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Ozonation Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#82")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Tungstensteel_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Inert_Filtration_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Filter_Machine_Casing.copy(), 8),
@@ -1906,23 +1885,23 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_LuV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_LuV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.LuV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 4),
 
                     setStackSize(PipeList.Tungstensteel_Fluid_Pipe.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Hastelloy_C276.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Hastelloy_X.copy(), 144 * 8),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 8),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 16))
-                .itemOutputs(MultiMachineControllerList.Clarifier_Purification_Unit)
+                    requiredFluid("molten.hastelloyc276", 144 * 8),
+                    requiredFluid("molten.hastelloyx", 144 * 8),
+                    requiredFluid("molten.indalloy140", 144 * 8),
+                    requiredFluid("lubricant", 1000 * 16))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Clarifier_Purification_Unit, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Flocculation Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#83")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Adamantium_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Slick_Sterile_Flocculation_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Filter_Machine_Casing.copy(), 8),
@@ -1935,23 +1914,23 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_ZPM.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_ZPM.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
 
                     setStackSize(PipeList.Large_Naquadah_Fluid_Pipe.copy(), 16))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Iridium.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Naquadah_Alloy.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 16),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 32))
-                .itemOutputs(MultiMachineControllerList.Flocculation_Purification_Unit)
+                    requiredFluid("molten.iridium", 144 * 16),
+                    requiredFluid("molten.naquadahalloy", 144 * 16),
+                    requiredFluid("molten.indalloy140", 144 * 16),
+                    requiredFluid("lubricant", 1000 * 32))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Flocculation_Purification_Unit, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "pH Neutralization Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#84")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Naquadah_Alloy_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Stabilized_Naquadah_Water_Plant_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Inert_Neutralization_Water_Plant_Casing.copy(), 8),
@@ -1964,23 +1943,23 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_ZPM.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_ZPM.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 8),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 4),
 
                     setStackSize(PipeList.Large_Naquadah_Fluid_Pipe.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Naquadah_Alloy.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Hastelloy_C276.copy(), 144 * 16),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 16),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 32))
-                .itemOutputs(MultiMachineControllerList.pH_Neutralization_Purification_Unit)
+                    requiredFluid("molten.naquadahalloy", 144 * 16),
+                    requiredFluid("molten.hastelloyc276", 144 * 16),
+                    requiredFluid("molten.indalloy140", 144 * 16),
+                    requiredFluid("lubricant", 1000 * 32))
+                .itemOutputs(setStackSize(MultiMachineControllerList.pH_Neutralization_Purification_Unit, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Extreme Temperature Fluctuation Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#85")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Neutronium_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Heat_Resistant_Trinium_Plated_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Superconducting_Coil_Block.copy(), 8),
@@ -1993,23 +1972,24 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_UV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_UV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 16),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 8),
 
                     setStackSize(PipeList.Large_Neutronium_Fluid_Pipe.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 32),
-                    setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 32),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 64))
-                .itemOutputs(MultiMachineControllerList.Extreme_Temperature_Fluctuation_Purification_Unit)
+                    requiredFluid("molten.neutronium", 144 * 32),
+                    requiredFluid("molten.naquadria", 144 * 32),
+                    requiredFluid("molten.indalloy140", 144 * 32),
+                    requiredFluid("lubricant", 1000 * 64))
+                .itemOutputs(
+                    setStackSize(MultiMachineControllerList.Extreme_Temperature_Fluctuation_Purification_Unit, 1))
                 .eut(RECIPE_UV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "High Energy Laser Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#86")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Naquadria_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Naquadria_Reinforced_Water_Plant_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.High_Energy_Ultraviolet_Emitter_Casing.copy(), 8),
@@ -2022,23 +2002,23 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_UV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_UV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 8),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
 
                     setStackSize(PipeList.Large_Neutronium_Fluid_Pipe.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Neutronium.copy(), 144 * 32),
-                    setStackSize(MoltenList.Molten_Naquadria.copy(), 144 * 32),
-                    setStackSize(MoltenList.Molten_Indalloy_140.copy(), 144 * 32),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 64))
-                .itemOutputs(MultiMachineControllerList.High_Energy_Laser_Purification_Unit)
+                    requiredFluid("molten.neutronium", 144 * 32),
+                    requiredFluid("molten.naquadria", 144 * 32),
+                    requiredFluid("molten.indalloy140", 144 * 32),
+                    requiredFluid("lubricant", 1000 * 64))
+                .itemOutputs(setStackSize(MultiMachineControllerList.High_Energy_Laser_Purification_Unit, 1))
                 .eut(RECIPE_UV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Residual Decontaminant Degasser Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#87")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Infinity_Frame_Box.copy(), 8),
                     setStackSize(MultiMachineCasingList.Heat_Resistant_Trinium_Plated_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Computer_Casing.copy(), 8),
@@ -2051,23 +2031,24 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_UEV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_UEV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 8),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 4),
 
                     setStackSize(PipeList.Infinity_Fluid_Pipe.copy(), 32))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Quantium.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 64),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 128))
-                .itemOutputs(MultiMachineControllerList.Residual_Decontaminant_Degasser_Purification_Unit)
+                    requiredFluid("molten.quantium", 144 * 64),
+                    requiredFluid("molten.infinity", 144 * 64),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64),
+                    requiredFluid("lubricant", 1000 * 128))
+                .itemOutputs(
+                    setStackSize(MultiMachineControllerList.Residual_Decontaminant_Degasser_Purification_Unit, 1))
                 .eut(RECIPE_UEV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);
 
             // "Absolute Baryonic Perfection Purification Unit"
-            GTValues.RA.stdBuilder()
-                .itemInputs(
+            ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_MachineRecipe_Normal#88")
+                .itemInputsUnsafe(
                     setStackSize(FrameBoxList.Infinity_Frame_Box.copy(), 16),
                     setStackSize(MultiMachineCasingList.Quark_Exclusion_Casing.copy(), 8),
                     setStackSize(MultiMachineCasingList.Femtometer_Calibrated_Particle_Beam_Casing.copy(), 8),
@@ -2080,16 +2061,16 @@ public class ChaosAssemblyLine_MachineRecipe_Normal {
 
                     setStackSize(GTItemList.Electric_Motor_UEV.copy(), 4),
                     setStackSize(GTItemList.Electric_Pump_UEV.copy(), 4),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
-                    GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UHV, 16),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 8),
 
                     setStackSize(PipeList.Infinity_Fluid_Pipe.copy(), 64))
                 .fluidInputs(
-                    setStackSize(MoltenList.Molten_Superconductor_Base_UHV.copy(), 144 * 64),
-                    setStackSize(MoltenList.Molten_Infinity.copy(), 144 * 64),
-                    setStackSize(FluidList.Mutated_Living_Solder.copy(), 144 * 64),
-                    setStackSize(FluidList.Lubricant.copy(), 1000 * 128))
-                .itemOutputs(MultiMachineControllerList.Absolute_Baryonic_Perfection_Purification_Unit)
+                    requiredFluid("molten.longasssuperconductornameforuhvwire", 144 * 64),
+                    requiredFluid("molten.infinity", 144 * 64),
+                    requiredFluid("molten.mutatedlivingsolder", 144 * 64),
+                    requiredFluid("lubricant", 1000 * 128))
+                .itemOutputs(setStackSize(MultiMachineControllerList.Absolute_Baryonic_Perfection_Purification_Unit, 1))
                 .eut(RECIPE_UIV)
                 .duration(60 * SECONDS)
                 .addTo(AssemblyLineNormalRecipe);

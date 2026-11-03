@@ -2,11 +2,14 @@ package com.mofoga.gtnothard;
 
 import static loader.MachinesLoader.loaderMachines;
 
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Item;
 import net.minecraft.command.CommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.mofoga.gtnothard.config.LargeAssemblyRecipeConfig;
 
 import EnumList.EnumListCheck.EnumFluidListCheck;
 import EnumList.EnumListCheck.EnumItemListCheck;
@@ -49,6 +52,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import loader.CraftingLoader;
+import util.ChaosAssemblyRecipeBuilder;
 
 @Mod(modid = MyMod.MODID, version = Tags.VERSION, name = "GT Not Hard", acceptedMinecraftVersions = "[1.7.10]")
 public class MyMod {
@@ -69,6 +73,7 @@ public class MyMod {
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
 
+        LargeAssemblyRecipeConfig.load(event.getModConfigurationDirectory());
         proxy.preInit(event);
         // new MachinesLoader();
     }
@@ -99,11 +104,30 @@ public class MyMod {
         proxy.postInit(event);
 
         // Chaos Recipes
-        ChaosAssemblyLine_ItemRecipe_Item.addChaosAssemblyLine_ItemRecipe_Item();
-        ChaosAssemblyLine_CasingRecipe_Normal.addChaosAssemblyLine_NormalCasingRecipe();
-        ChaosAssemblyLine_HatchRecipe_Normal.addChaosAssemblyLine_NormalHatchRecipe();
-        ChaosAssemblyLine_ItemRecipe_Normal.addChaosAssemblyLine_NormalItemRecipe();
-        ChaosAssemblyLine_MachineRecipe_Normal.addChaosAssemblyLine_NormalMachineRecipe();
+        registerAssemblyRecipeGroup(
+            "ItemHatch",
+            LargeAssemblyRecipeConfig.enabledItemRecipes,
+            ChaosAssemblyLine_HatchRecipe_Item::addChaosAssemblyLine_HatchRecipe_Item);
+        registerAssemblyRecipeGroup(
+            "ItemItem",
+            LargeAssemblyRecipeConfig.enabledItemRecipes,
+            ChaosAssemblyLine_ItemRecipe_Item::addChaosAssemblyLine_ItemRecipe_Item);
+        registerAssemblyRecipeGroup(
+            "NormalCasing",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_CasingRecipe_Normal::addChaosAssemblyLine_NormalCasingRecipe);
+        registerAssemblyRecipeGroup(
+            "NormalHatch",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_HatchRecipe_Normal::addChaosAssemblyLine_HatchRecipe_Normal);
+        registerAssemblyRecipeGroup(
+            "NormalItem",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_ItemRecipe_Normal::addChaosAssemblyLine_ItemRecipe_Normal);
+        registerAssemblyRecipeGroup(
+            "NormalMachine",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_MachineRecipe_Normal::addChaosAssemblyLine_NormalMachineRecipe);
 
         ChaosReplicatorRecipes.addReplicatorRecipes_Item();
         ChaosReplicatorRecipes.addReplicatorRecipes_Fluid();
@@ -301,6 +325,22 @@ public class MyMod {
         FMLCommonHandler.instance()
             .bus()
             .register(new CommandHandler());
+    }
+
+    private static void registerAssemblyRecipeGroup(String name, boolean enabled, Runnable registration) {
+        if (!enabled) {
+            LOG.warn("[assembly-recipes] group {} disabled by configuration", name);
+            return;
+        }
+        int skippedBefore = ChaosAssemblyRecipeBuilder.getSkippedRecipeCount();
+        long started = System.nanoTime();
+        LOG.info("[assembly-recipes] group {} begin", name);
+        registration.run();
+        LOG.info(
+            "[assembly-recipes] group {} done in {} ms; skipped for missing fluids={}",
+            name,
+            (System.nanoTime() - started) / 1_000_000L,
+            ChaosAssemblyRecipeBuilder.getSkippedRecipeCount() - skippedBefore);
     }
 
     @Mod.EventHandler
