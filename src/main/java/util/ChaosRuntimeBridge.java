@@ -178,9 +178,7 @@ public final class ChaosRuntimeBridge {
             delegate.mMaxProgresstime = Math.max(1, processingTime);
             return;
         }
-        delegate.mMaxProgresstime = (int) Math.max(
-            1L,
-            ((long) processingTime + machineCount - 1L) / machineCount);
+        delegate.mMaxProgresstime = (int) Math.max(1L, ((long) processingTime + machineCount - 1L) / machineCount);
     }
 
     public static boolean isCustomCheckProcessing(MTEMultiBlockBase delegate) {
