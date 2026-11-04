@@ -48,19 +48,19 @@
 1.0.x~1.1.x对应GTNH 2.7.0  
 1.2.x对应GTNH 2.8.0
 
-`290-beta3`分支对应GTNH 2.9.0-beta-3，`rc2`分支对应GTNH 2.9.0-RC-2。
+`290-beta3`分支对应GTNH 2.9.0-beta-3，当前代码对应GTNH 2.9.0 stable。
 
-## GTNH 2.9.0 RC-2
-本分支按 `dependencies.gradle` 固定 RC-2 直接依赖：
+## GTNH 2.9.0 Stable
+本分支按 `dependencies.gradle` 固定 stable 直接依赖：
 
 | 模组 | 版本 |
 | --- | --- |
-| GT5-Unofficial | 5.09.54.205 |
-| GTNHLib | 0.11.52 |
-| Galacticraft | 3.4.34-GTNH |
-| NewHorizonsCoreMod | 2.9.84 |
-| Avaritia | 1.99 |
-| NotEnoughItems | 2.8.155-GTNH |
+| GT5-Unofficial | 5.09.54.265 |
+| GTNHLib | 0.11.54 |
+| Galacticraft | 3.4.37-GTNH |
+| NewHorizonsCoreMod | 2.9.99 |
+| Avaritia | 1.100 |
+| NotEnoughItems | 2.8.171-GTNH |
 
 保留以下适配修复：
 
@@ -72,8 +72,8 @@
 - 移除 Beta 3 中不存在的三种农业废料燃料，以及 AE2Stuff、HarvestTheNether 的 NEI 展示入口。
 - 生态资源按模组是否安装加载 HarvestTheNether，T10 流体目录忽略已移除的流体，不再用石头或水填充这些缺失项。
 
-机器 ID 和已有 NBT 字段保持不变。本分支面向完整的 GTNH 2.9.0-RC-2 整合包。
-Forge 最低版本声明仍保留 GregTech `5.09.54.133` 和 GTNHLib `0.11.46`，编译与验证使用上表 RC-2 版本。
+机器 ID 和已有 NBT 字段保持不变。本分支面向完整的 GTNH 2.9.0 stable 整合包。
+Forge 最低版本声明为 GregTech `5.09.54.265` 和 GTNHLib `0.11.54`，编译与验证使用上表 stable 版本。
 Chaos 和 Origin 继续使用包含无线开关的 MUI1 界面，避免新版默认 MUI2 界面遗漏这些按钮。
 
 ### 机器注册与资源目录
@@ -107,7 +107,7 @@ GTNH 共用 CI 工作流也会读取该版本并安装对应 JDK。本地请先�
 .\gradlew.bat build
 ```
 
-Linux/macOS 使用 `./gradlew build`。构建产物位于 `build/libs/`，安装时使用普通模组 JAR，不使用 `-dev` 或 `-sources` JAR。此构建面向完整的 GTNH 2.9.0-RC-2 整合包。
+Linux/macOS 使用 `./gradlew build`。构建产物位于 `build/libs/`，安装时使用普通模组 JAR，不使用 `-dev` 或 `-sources` JAR。此构建面向完整的 GTNH 2.9.0 stable 整合包。
 
 `build` 会执行编译、打包、Spotless 和 Checkstyle。历史格式问题已修复，格式检查保持启用。
 JDK 25 仅用于运行构建工具，模组仍输出 Java 8 字节码。
@@ -115,6 +115,5 @@ JDK 25 仅用于运行构建工具，模组仍输出 Java 8 字节码。
 如需网络代理，请在个人的 `~/.gradle/gradle.properties` 中配置，不要将本机代理地址提交到项目中。
 
 ### 验证范围
-本次修改完成编译和 21 项核心检查，覆盖 NEI 配方目录与界面模板、Origin 产能计算、资源过滤与去重。
-按项目要求，验证后已移除全部测试源码及测试专用依赖，仅保留功能代码。
-未启动整合包进行游戏内验证，编译及核心检查通过不代表已完成实机测试。
+本次 stable 适配已通过 `compileJava`、`reobfJar`，并核对实例 JAR 中的机器、模式、资源目录及 NEI 关键接口。
+未启动整合包进行游戏内验证。

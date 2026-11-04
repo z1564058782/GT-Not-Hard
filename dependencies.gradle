@@ -1,22 +1,24 @@
 dependencies {
-    // GTNH 2.9.0-RC-2:
-    // https://github.com/GTNewHorizons/DreamAssemblerXXL/blob/master/releases/manifests/2.9.0-rc.2.json
-    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.54.205:dev') {
-        version { strictly '5.09.54.205' }
+    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.54.265:dev') {
+        version { strictly '5.09.54.265' }
     }
-    implementation('com.github.GTNewHorizons:GTNHLib:0.11.52:dev') {
-        version { strictly '0.11.52' }
+    implementation('com.github.GTNewHorizons:GTNHLib:0.11.54:dev') {
+        version { strictly '0.11.54' }
     }
-    implementation('com.github.GTNewHorizons:Galacticraft:3.4.34-GTNH:dev')
-    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.9.84:dev')
-    implementation('com.github.GTNewHorizons:Avaritia:1.99:dev')
-    implementation('com.github.GTNewHorizons:NotEnoughItems:2.8.155-GTNH:dev') {
-        version { strictly '2.8.155-GTNH' }
+    implementation('com.github.GTNewHorizons:Galacticraft:3.4.37-GTNH:dev') {
+        version { strictly '3.4.37-GTNH' }
+    }
+    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.9.99:dev') {
+        version { strictly '2.9.99' }
+    }
+    implementation('com.github.GTNewHorizons:Avaritia:1.100:dev') {
+        version { strictly '1.100' }
+    }
+    implementation('com.github.GTNewHorizons:NotEnoughItems:2.8.171-GTNH:dev') {
+        version { strictly '2.8.171-GTNH' }
     }
 }
 
-// GTNHGradle 2.0.34 adds a newer GTNHLib floor for its development runs.
-// Compile against the library actually shipped in RC-2.
 configurations.configureEach {
-    resolutionStrategy.force 'com.github.GTNewHorizons:GTNHLib:0.11.52'
+    resolutionStrategy.force 'com.github.GTNewHorizons:GTNHLib:0.11.54'
 }
