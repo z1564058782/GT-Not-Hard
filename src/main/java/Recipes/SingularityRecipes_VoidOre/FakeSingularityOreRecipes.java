@@ -14,13 +14,14 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
 import util.RecipesFrontend.OneToManyItemsFrontend_Large;
+import util.RegisteredResourceCatalog;
 
 public class FakeSingularityOreRecipes {
 
-    public static int NEI_ItemOutput_Size = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
+    public static int NEI_ItemOutput_Size = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_SCROLL_PAGE;
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T0 = RecipeMapBuilder
-        .of("Singularity of T0 Ore")
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes = RecipeMapBuilder
+        .of("Singularity of Void Ore")
         .maxIO(1, NEI_ItemOutput_Size, 0, 0)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
@@ -28,95 +29,17 @@ public class FakeSingularityOreRecipes {
         .neiTransferRect(81, 27, 14, 16)
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T1 = RecipeMapBuilder
-        .of("Singularity of T1 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T2 = RecipeMapBuilder
-        .of("Singularity of T2 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T3 = RecipeMapBuilder
-        .of("Singularity of T3 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T4 = RecipeMapBuilder
-        .of("Singularity of T4 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T5 = RecipeMapBuilder
-        .of("Singularity of T5 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T6 = RecipeMapBuilder
-        .of("Singularity of T6 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T7 = RecipeMapBuilder
-        .of("Singularity of T7 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T8 = RecipeMapBuilder
-        .of("Singularity of T8 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T9 = RecipeMapBuilder
-        .of("Singularity of T9 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T10 = RecipeMapBuilder
-        .of("Singularity of T10 Ore")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T0 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T1 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T2 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T3 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T4 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T5 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T6 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T7 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T8 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T9 = addFakeVoidOreRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidOreRecipes_T10 = addFakeVoidOreRecipes;
 
     public static void addFakeVoidOreRecipes_T0() {
         // T0 - Overworld - Ow
@@ -276,6 +199,8 @@ public class FakeSingularityOreRecipes {
                 .eut(0)
                 .addTo(addFakeVoidOreRecipes_T0);
         }
+
+        addDimensionRecipes("Eg", SingularityOreRecipes.VoidOreRecipes_T0.get("Eg"), addFakeVoidOreRecipes_T0);
     }
 
     public static void addFakeVoidOreRecipes_T1() {
@@ -872,6 +797,8 @@ public class FakeSingularityOreRecipes {
                 .addTo(addFakeVoidOreRecipes_T7);
         }
 
+        addDimensionRecipes("KB", SingularityOreRecipes.VoidOreRecipes_T7.get("KB"), addFakeVoidOreRecipes_T7);
+
         // T7 - Makemake - MM
         ItemStack[] Fake_T7_Makemake_Ore = addCompressAggregateArray(
             Vein.Uranium238_Vein,
@@ -1299,7 +1226,11 @@ public class FakeSingularityOreRecipes {
 
     public static void addFakeVoidOreRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[] Fake_T10_Ore_Checked = checkItemStack(Vein.T10_Ore);
+        ItemStack[] resources = SingularityOreRecipes.VoidOreRecipes_T10.get("DD");
+        if (resources == null) {
+            throw new IllegalStateException("Build the T10 ore catalog before registering its NEI recipes");
+        }
+        ItemStack[] Fake_T10_Ore_Checked = RegisteredResourceCatalog.copyItems(resources);
         ItemStack[][] Fake_T10_DeepDark_Ore_Split = addSplitAggregateArray(Fake_T10_Ore_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T10_DeepDark_Ore_Split) {
             GTValues.RA.stdBuilder()
@@ -1310,6 +1241,20 @@ public class FakeSingularityOreRecipes {
                 .setNEIDesc("Singularity with Void Ore Mode")
                 .eut(0)
                 .addTo(addFakeVoidOreRecipes_T10);
+        }
+    }
+
+    private static void addDimensionRecipes(String abbreviation, ItemStack[] resources,
+        RecipeMap<RecipeMapBackend> recipeMap) {
+        for (ItemStack[] outputs : addSplitAggregateArray(checkItemStack(resources), NEI_ItemOutput_Size)) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_" + abbreviation, 1L))
+                .itemOutputs(outputs)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Ore Mode")
+                .eut(0)
+                .addTo(recipeMap);
         }
     }
 }

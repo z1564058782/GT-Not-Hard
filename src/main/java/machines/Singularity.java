@@ -1,7 +1,6 @@
 package machines;
 
-import static Recipes.SingularityRecipes_ModItem.SingularityModItemRecipes_Generate.convertListToArray;
-import static Recipes.SingularityRecipes_ModItem.SingularityModItemRecipes_Generate.getCreativeItemsByMod;
+import static Recipes.SingularityRecipes_ModItem.SingularityModItemRecipes_Generate.getCreativeItemsForSelector;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.onElementPass;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
@@ -19,6 +18,8 @@ import static net.minecraft.util.StatCollector.translateToLocalFormatted;
 import static util.MachineLocalization.sendMode;
 import static util.MachineLocalization.translateMode;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -56,15 +57,18 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.MTEExtendedPowerMultiBlockBase;
+import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
+import gregtech.common.blocks.ItemMachines;
 import gtneioreplugin.plugin.item.ItemDimensionDisplay;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
+import util.MachineRecipeCatalog;
 
 public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> implements ISurvivalConstructable {
 
@@ -76,29 +80,39 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         super(aName);
     }
 
+    @Nonnull
+    @Override
+    public Collection<RecipeMap<?>> getAvailableRecipeMaps() {
+        return MachineRecipeCatalog.getSingularityRecipeMaps();
+    }
+
+    private static final String[] MODE_NAMES = { "Pachinko", "Void Ore", "Void Gem", "Void Dust", "Void Fluid",
+        "Void Ingot", "Ecosystem", "Mod Item" };
+    private final Random random = new Random();
     private String mLastDimensionOverride = "None";
-    private String machineType = null;
+    private String machineType = MODE_NAMES[0];
 
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
         aNBT.setString("mLastDimensionOverride", this.mLastDimensionOverride);
         aNBT.setInteger("mode", mode);
-        aNBT.setString("MachineType", machineType);
+        aNBT.setString(
+            "MachineType",
+            machineType == null ? MODE_NAMES[Math.floorMod(mode, MODE_NAMES.length)] : machineType);
     }
 
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
         this.mLastDimensionOverride = aNBT.getString("mLastDimensionOverride");
-        this.mode = aNBT.getInteger("mode");
-        this.machineType = aNBT.getString("MachineType");
+        this.mode = Math.floorMod(aNBT.getInteger("mode"), MODE_NAMES.length);
+        this.machineType = MODE_NAMES[mode];
     }
 
     private static final int mcasingIndex = Textures.BlockIcons.getTextureIndex(
         Textures.BlockIcons.getCasingTextureForId(GTUtility.getCasingTextureIndex(GregTechAPI.sBlockCasings4, 2)));
 
-    // 定义机器结构
     private static final String STRUCTURE_PIECE_MAIN = "main";
     private static final IStructureDefinition<Singularity> STRUCTURE_DEFINITION = StructureDefinition
         .<Singularity>builder()
@@ -152,7 +166,6 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         return new ITexture[] { casingTexturePages[0][mcasingIndex] };
     }
 
-    // 主机ToolTips
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
@@ -178,13 +191,11 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         return tt;
     }
 
-    // 创造自动搭建
     @Override
     public void construct(ItemStack aStack, boolean aHintsOnly) {
         buildPiece(STRUCTURE_PIECE_MAIN, aStack, aHintsOnly, 1, 1, 0);
     }
 
-    // 生存自动搭建
     @Override
     public int survivalConstruct(ItemStack stackSize, int elementBudget, ISurvivalBuildEnvironment env) {
         if (mMachine) {
@@ -193,7 +204,6 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         return survivialBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
     }
 
-    // 检查机器结构
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
         this.mMaintenanceHatches.clear();
@@ -203,12 +213,10 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         return checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0) && mCasingAmount >= 4 && checkHatches();
     }
 
-    // 检查仓室
     private boolean checkHatches() {
         return mMaintenanceHatches.size() == 1;
     }
 
-    // 获取最大并行数
     private int getMaxParallel() {
         if (getControllerSlot() == null) {
             return 1;
@@ -245,59 +253,40 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         return new Singularity(this.mName);
     }
 
-    @Override
-    public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
-        super.onPostTick(aBaseMetaTileEntity, aTick);
-    }
-
     private int mode = 0;
 
-    // 潜行左键切换虚空的类型
     @Override
     public void onLeftclick(IGregTechTileEntity aBaseMetaTileEntity, EntityPlayer aPlayer) {
-        if (aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
-            mode = (mode + 1) % 8;
-            if (mode == 1) {
-                machineType = "Void Ore";
-            } else if (mode == 2) {
-                machineType = "Void Gem";
-            } else if (mode == 3) {
-                machineType = "Void Dust";
-            } else if (mode == 4) {
-                machineType = "Void Fluid";
-            } else if (mode == 5) {
-                machineType = "Void Ingot";
-            } else if (mode == 6) {
-                machineType = "Ecosystem";
-            } else if (mode == 7) {
-                machineType = "Mod Item";
-            } else {
-                machineType = "Pachinko";
-            }
+        if (getBaseMetaTileEntity() != null && aPlayer.isSneaking() && getBaseMetaTileEntity().isServerSide()) {
+            mode = (mode + 1) % MODE_NAMES.length;
+            machineType = MODE_NAMES[mode];
             sendMode(aPlayer, machineType);
         }
         super.onLeftclick(aBaseMetaTileEntity, aPlayer);
     }
 
-    // 机器运行逻辑
     @Nonnull
     @Override
     public CheckRecipeResult checkProcessing() {
+        ItemStack slot = getControllerSlot();
+        if (slot == null || slot.getItem() == null
+            || ((mode == 0 || mode == 6) && ItemMachines.getMetaTileEntity(slot) == null)) {
+            stopMachine(ShutDownReasonRegistry.NONE);
+            return CheckRecipeResultRegistry.NO_RECIPE;
+        }
         mMaxProgresstime = 60;
         String dim = Optional.ofNullable(this.mInventory[1])
             .filter(s -> s.getItem() instanceof ItemDimensionDisplay)
             .map(ItemDimensionDisplay::getDimension)
             .orElse("None");
-        ItemStack slot = getControllerSlot();
-
         // Singularity of Void Ore
-        if (slot != null && mode == 1) {
+        if (mode == 1) {
             if (!Objects.equals(dim, mLastDimensionOverride)) {
                 mLastDimensionOverride = dim;
             }
 
             ItemStack[] OreRecipes = switch (dim) {
-                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityOreRecipes.VoidOreRecipes_T0.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA", "Eg" -> SingularityOreRecipes.VoidOreRecipes_T0.get(dim);
                 case "Mo" -> SingularityOreRecipes.VoidOreRecipes_T1.get(dim);
                 case "De", "Ma", "Ph" -> SingularityOreRecipes.VoidOreRecipes_T2.get(dim);
                 case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityOreRecipes.VoidOreRecipes_T3.get(dim);
@@ -311,35 +300,13 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (OreRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(OreRecipes.length);
-                    ItemStack recipeOre = OreRecipes[index];
-                    recipeOre.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeOre);
-                        addOutputAtomic(recipeOre);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack oreRecipe : OreRecipes) {
-                // // System.out.println(oreRecipe.getDisplayName());
-                // oreRecipe.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(oreRecipe);
-                // }
-                // }
-
+            if (outputRandomItems(OreRecipes, 64)) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
         }
 
         // Singularity of Void Gem
-        else if (slot != null && mode == 2) {
+        else if (mode == 2) {
             if (!Objects.equals(dim, mLastDimensionOverride)) {
                 mLastDimensionOverride = dim;
             }
@@ -359,34 +326,13 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (GemRecipes != null) {
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(GemRecipes.length);
-                    ItemStack recipeGem = GemRecipes[index];
-                    recipeGem.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeGem);
-                        addOutputAtomic(recipeGem);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack gemRecipe : GemRecipes) {
-                // // System.out.println(gemRecipe.getItem());
-                // gemRecipe.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(gemRecipe);
-                // }
-                // }
-
+            if (outputRandomItems(GemRecipes, 64)) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
         }
 
         // Singularity of Void Dust
-        else if (slot != null && mode == 3) {
+        else if (mode == 3) {
             if (!Objects.equals(dim, mLastDimensionOverride)) {
                 mLastDimensionOverride = dim;
             }
@@ -406,34 +352,13 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (DustRecipes != null) {
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(DustRecipes.length);
-                    ItemStack recipeDust = DustRecipes[index];
-                    recipeDust.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeDust);
-                        addOutputAtomic(recipeDust);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack dustRecipe : DustRecipes) {
-                // // System.out.println(dustRecipe.getItem());
-                // dustRecipe.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(dustRecipe);
-                // }
-                // }
-
+            if (outputRandomItems(DustRecipes, 64)) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
         }
 
         // Singularity of Void Fluid
-        else if (slot != null && mode == 4) {
+        else if (mode == 4) {
             if (!Objects.equals(dim, mLastDimensionOverride)) {
                 mLastDimensionOverride = dim;
             }
@@ -453,31 +378,10 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (FluidRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int Index = random.nextInt(FluidRecipes.length);
-                    FluidStack recipeFluid = FluidRecipes[Index];
-                    recipeFluid.amount = getMaxParallel();
-                    for (int mStack = 0; mStack < 1000; mStack++) {
-                        addOutput(recipeFluid);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (FluidStack fluidRecipes : FluidRecipes) {
-                // // System.out.println(fluidRecipes.getLocalizedName());
-                // fluidRecipes.amount = getMaxParallel();
-                // for (int mStack = 0; mStack < 1000; mStack++) {
-                // addOutput(fluidRecipes);
-                // }
-                // }
-
+            if (outputRandomFluids(FluidRecipes)) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-        } else if (slot != null && mode == 5) {
+        } else if (mode == 5) {
             if (!Objects.equals(dim, mLastDimensionOverride)) {
                 mLastDimensionOverride = dim;
             }
@@ -498,34 +402,13 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (IngotRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(IngotRecipes.length);
-                    ItemStack recipeIngot = IngotRecipes[index];
-                    recipeIngot.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeIngot);
-                        addOutputAtomic(recipeIngot);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack ingotRecipes : IngotRecipes) {
-                // // System.out.println(ecosystemRecipes.getDisplayName());
-                // ingotRecipes.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(ingotRecipes);
-                // }
-                // }
+            if (outputRandomItems(IngotRecipes, 64)) {
+                return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
 
         // Singularity of Ecosystem
-        else if (slot != null && mode == 6) {
+        else if (mode == 6) {
             int machineID = getControllerSlot().getItemDamage();
 
             ItemStack[] EcosystemRecipes = switch (machineID) {
@@ -544,269 +427,19 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (EcosystemRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(EcosystemRecipes.length);
-                    ItemStack recipeEcosystem = EcosystemRecipes[index];
-                    recipeEcosystem.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeEcosystem);
-                        addOutputAtomic(recipeEcosystem);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack ecosystemRecipes : EcosystemRecipes) {
-                // // System.out.println(ecosystemRecipes.getDisplayName());
-                // ecosystemRecipes.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(ecosystemRecipes);
-                // }
-                // }
+            if (outputRandomItems(EcosystemRecipes, 64)) {
+                return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
 
-        else if (slot != null && mode == 7) {
-            String key = slot.getUnlocalizedName();
-            // System.out.println("DisplayName = " + slot.getDisplayName());
-            // System.out.println("Key = " + key);
-            ItemStack[] ModItemRecipes = switch (key) {
-                // AdvancedSolarPanel - Advanced Solar Panel
-                case "blockAdvancedSolarPanel" -> convertListToArray(getCreativeItemsByMod("AdvancedSolarPanel"));
-                // AE2FluidCraft - Certus Quartz Tank
-                case "tile.certus_quartz_tank" -> convertListToArray(getCreativeItemsByMod("AE2FluidCraft"));
-                // AE2Stuff - Advanced Wireless Setup Kit
-                case "item.ae2stuff.AdvWirelessKit" -> convertListToArray(getCreativeItemsByMod("AE2Stuff"));
-                // AppliedEnergistics2 - Quartz Glass
-                case "tile.appliedenergistics2.BlockQuartzGlass" -> convertListToArray(
-                    getCreativeItemsByMod("AppliedEnergistics2"));
-                // Automagy - Redcrystal
-                case "tile.blockRedcrystal" -> convertListToArray(getCreativeItemsByMod("Automagy"));
-                // Avaritia - Compressed Crafting Table
-                case "tile.compressed_workbench" -> convertListToArray(getCreativeItemsByMod("Avaritia"));
-
-                // BartWorks - Nickel-Zinc Ferrite Block
-                case "BW_Machinery_Casings.0" -> convertListToArray(getCreativeItemsByMod("BartWorks"));
-                // BiblioCraft - Desk Bell
-                case "tile.BiblioBell" -> convertListToArray(getCreativeItemsByMod("BiblioCraft"));
-                // BiblioWoodsBoPEdition - Sacred Oak Fancy Sign
-                case "SacredOakFancySign" -> convertListToArray(getCreativeItemsByMod("BiblioWoodsBoPEdition"));
-                // BiblioWoodsForestryEdition - Balsa Fancy Sign
-                case "BalsaFancySign" -> convertListToArray(getCreativeItemsByMod("BiblioWoodsForestryEdition"));
-                // BiblioWoodsNaturaEdition - Eucalyptus Fancy Sign
-                case "EucalyptusFancySign" -> convertListToArray(getCreativeItemsByMod("BiblioWoodsNaturaEdition"));
-                // BloodArsenal - Blood Infused Wooden Plank
-                case "tile.blood_infused_planks" -> convertListToArray(getCreativeItemsByMod("BloodArsenal"));
-                // BloodMagic - Wooden Brace
-                case "item.bloodMagicBaseItem.WoodBrace" -> convertListToArray(getCreativeItemsByMod("BloodMagic"));
-                // Botania - Livingrock
-                case "tile.livingrock0" -> convertListToArray(getCreativeItemsByMod("Botania"));
-                // Botany - Soil Meter
-                case "item.soilMeter" -> convertListToArray(getCreativeItemsByMod("Botany"));
-
-                // CarpentersBlocks - Carpenter's Block
-                case "tile.blockCarpentersBlock" -> convertListToArray(getCreativeItemsByMod("CarpentersBlocks"));
-                // CatWalks - Steel Grate
-                case "item.steel_grate" -> convertListToArray(getCreativeItemsByMod("CatWalks"));
-                // Chisel - Auto Chisel
-                case "tile.chisel.autoChisel" -> convertListToArray(getCreativeItemsByMod("Chisel"));
-                // CompactKineticGenerators - Kinetic Gearbox Rotor (Iridium)
-                case "item.compactkineticgenerators:IridiumRotor" -> convertListToArray(
-                    getCreativeItemsByMod("CompactKineticGenerators"));
-                // Computronics - Iron Note Block
-                case "tile.computronics.ironNoteBlock" -> convertListToArray(getCreativeItemsByMod("Computronics"));
-                // CookingForBlockheads - Cooking Table
-                case "tile.cookingforblockheads:cookingtable" -> convertListToArray(
-                    getCreativeItemsByMod("CookingForBlockheads"));
-                // CropsPlusPlus - Goldfish
-                case "item.foodGoldfish" -> convertListToArray(getCreativeItemsByMod("CropsPlusPlus"));
-
-                // DraconicEvolution - Draconium Infused Obsidian
-                case "tile.draconicevolution:infusedObsidian" -> convertListToArray(
-                    getCreativeItemsByMod("DraconicEvolution"));
-
-                // EnderIO - Basic Capacitor
-                case "enderio.basicCapacitor" -> convertListToArray(getCreativeItemsByMod("EnderIO"));
-                // EnhancedLootBags - LootBag (Basic Stone Age)
-                case "tile.dungeonLight_0" -> convertListToArray(getCreativeItemsByMod("EnhancedLootBags"));
-                // EternalSingularity - Eternal Singularity
-                case "item.eternal.singularity" -> convertListToArray(getCreativeItemsByMod("EternalSingularity"));
-                // EtFuturumRequiem - Ancient Debris
-                case "tile.etfuturum.ancient_debris" -> convertListToArray(getCreativeItemsByMod("EtFuturumRequiem"));
-                // ExtraBees - Mutator
-                case "tile.alveary" -> convertListToArray(getCreativeItemsByMod("ExtraBees"));
-                // ExtraTrees - Carpentry Hammer
-                case "item.hammer" -> convertListToArray(getCreativeItemsByMod("ExtraTrees"));
-                // ExtraUtilities - Slightly Larger Chest
-                case "tile.extrautils:chestFull" -> convertListToArray(getCreativeItemsByMod("ExtraUtilities"));
-
-                // ForbiddenMagic - Gluttony Shard
-                case "item.GluttonyShard" -> convertListToArray(getCreativeItemsByMod("ForbiddenMagic"));
-                // Forestry - Sturdy Casing
-                case "item.for.sturdyMachine" -> convertListToArray(getCreativeItemsByMod("Forestry"));
-
-                // Gadomancy - Mirrored Jar
-                case "tile.BlockRemoteJar" -> convertListToArray(getCreativeItemsByMod("Gadomancy"));
-                // GalacticraftAmunRa - Rocket Engine Jet
-                case "tile.mothershipEngineRocketJet" -> convertListToArray(
-                    getCreativeItemsByMod("GalacticraftAmunRa"));
-                // GalacticraftCore - Rocket Launch Pad
-                case "tile.landingPad.landingPad" -> convertListToArray(getCreativeItemsByMod("GalacticraftCore"));
-                // GalacticraftMars - Hydrogen Pipe
-                case "tile.hydrogenPipe" -> convertListToArray(getCreativeItemsByMod("GalacticraftMars"));
-                // GalaxySpace - Solar Wind Panel
-                case "tile.SolarWindPanel" -> convertListToArray(getCreativeItemsByMod("GalaxySpace"));
-                // Gendustry - Item Eject Cover
-                case "item.gendustry.EjectCover" -> convertListToArray(getCreativeItemsByMod("Gendustry"));
-                // Genetics - Reinforced Casing
-                case "item.misc" -> convertListToArray(getCreativeItemsByMod("Genetics"));
-                // GGFab - Single Use File
-                case "gt.ggfab.d1.0" -> convertListToArray(getCreativeItemsByMod("GGFab"));
-                // GoodGenerator - Wrap of ULV Circuits
-                case "item.circuitWrap.0" -> convertListToArray(getCreativeItemsByMod("GoodGenerator"));
-                // GraviSuite - Superconductor Cover
-                case "item.itemSuperConductorCover" -> convertListToArray(getCreativeItemsByMod("GraviSuite"));
-                // GregTech - ULV Machine Casing
-                case "gt.blockcasings.0" -> convertListToArray(getCreativeItemsByMod("GregTech"));
-                // GTNHIntergalactic - Nanotube Spool
-                case "item.nanotubeSpool" -> convertListToArray(getCreativeItemsByMod("GTNHIntergalactic"));
-                // GTNHLanthanides - Shielded Accelerator Casing
-                case "casing.shielded_accelerator" -> convertListToArray(getCreativeItemsByMod("GTNHLanthanides"));
-                // GTPlusPlus - Integral Encasement I
-                case "gtplusplus.blocktieredcasings.1.0" -> convertListToArray(getCreativeItemsByMod("GTPlusPlus"));
-
-                // HardcoreEnderExpansion - Altar Nexus
-                case "item.altarNexus" -> convertListToArray(getCreativeItemsByMod("HardcoreEnderExpansion"));
-
-                // IC2NuclearControl - Thermal Monitor
-                case "tile.blockThermalMonitor" -> convertListToArray(getCreativeItemsByMod("IC2NuclearControl"));
-                // IndustrialCraft2 - Basic Machine Casing
-                case "ic2.blockMachine" -> convertListToArray(getCreativeItemsByMod("IndustrialCraft2"));
-
-                // KekzTech - YSZ Ceramic Electrolyte Unit
-                case "tile.kekztech_yszceramicelectrolyteunit_block" -> convertListToArray(
-                    getCreativeItemsByMod("KekzTech"));
-                // KubaTech - Tea Acceptor
-                case "kubablock.tea_acceptor" -> convertListToArray(getCreativeItemsByMod("KubaTech"));
-
-                // LogisticsPipes - Basic Logistics Pipe
-                case "item.PipeItemsBasicLogistics" -> convertListToArray(getCreativeItemsByMod("LogisticsPipes"));
-
-                // MagicBees - Manasteel Grafter
-                case "item.manasteelGrafter" -> convertListToArray(getCreativeItemsByMod("MagicBees"));
-                // Minecraft - Stone
-                case "tile.stone" -> convertListToArray(getCreativeItemsByMod("Minecraft"));
-
-                // Natura - Green Glowshroom
-                case "block.glowshroom.green" -> convertListToArray(getCreativeItemsByMod("Natura"));
-
-                // OpenBlocks - Elevator
-                case "tile.openblocks.elevator" -> convertListToArray(getCreativeItemsByMod("OpenBlocks"));
-                // OpenComputers - Computer Case (Tier 1)
-                case "tile.oc.case1" -> convertListToArray(getCreativeItemsByMod("OpenComputers"));
-                // OpenModularTurrets - Sensor (Tier 1)
-                case "item.sensorOne" -> convertListToArray(getCreativeItemsByMod("OpenModularTurrets"));
-                // OpenSecurity - Magnetic Card Reader
-                case "tile.magreader" -> convertListToArray(getCreativeItemsByMod("OpenSecurity"));
-
-                // PamsHarvestCraft - Fish Trap
-                case "tile.fishtrap" -> convertListToArray(getCreativeItemsByMod("PamsHarvestCraft"));
-                // PamsHarvestTheNether - Ignis Fruit Sapling
-                case "tile.netherSapling" -> convertListToArray(getCreativeItemsByMod("PamsHarvestTheNether"));
-                // Railcraft - Block of Coal Coke
-                case "tile.railcraft.cube.coke" -> convertListToArray(getCreativeItemsByMod("Railcraft"));
-                // RandomThings - Void Stone
-                case "item.voidStone" -> convertListToArray(getCreativeItemsByMod("RandomThings"));
-                // RemoteIO - Water Reservoir
-                case "tile.machine.reservoir" -> convertListToArray(getCreativeItemsByMod("RemoteIO"));
-
-                // SGCraft - Stargate Base
-                case "tile.gcewing_sg:stargateBase" -> convertListToArray(getCreativeItemsByMod("SGCraft"));
-                // StevesCarts2 - Cargo Manager
-                case "tile.SC2:BlockCargoManager" -> convertListToArray(getCreativeItemsByMod("StevesCarts2"));
-                // StevesFactoryManager - Machine Inventory Manager
-                case "tile.sfm.BlockMachineManager" -> convertListToArray(
-                    getCreativeItemsByMod("StevesFactoryManager"));
-                // StorageDrawers - Framing Table
-                case "tile.framingTable" -> convertListToArray(getCreativeItemsByMod("StorageDrawers"));
-                // SuperSolarPanels - Solar Light Splitter
-                case "item.SpectralLightSplitter" -> convertListToArray(getCreativeItemsByMod("SuperSolarPanels"));
-
-                // TaintedMagic - Warpwood Sapling
-                case "tile.BlockWarpwoodSapling" -> convertListToArray(getCreativeItemsByMod("TaintedMagic"));
-                // TecTech - High Power Casing
-                case "gt.blockcasingsTT.0" -> convertListToArray(getCreativeItemsByMod("TecTech"));
-                // Thaumcraft - Greatwood Sapling
-                case "tile.blockCustomPlant.0" -> convertListToArray(getCreativeItemsByMod("Thaumcraft"));
-                // ThaumicBases - Quicksilver Block
-                case "tile.quicksilverBlock" -> convertListToArray(getCreativeItemsByMod("ThaumicBases"));
-                // ThaumicEnergistics - Iron Gear Box
-                case "thaumicenergistics.block.gear.box" -> convertListToArray(
-                    getCreativeItemsByMod("ThaumicEnergistics"));
-                // ThaumicExploration - White Floating Candle
-                case "tile.thaumicexploration:floatCandle.0" -> convertListToArray(
-                    getCreativeItemsByMod("ThaumicExploration"));
-                // ThaumicHorizons - Chocolate Bar
-                case "item.chocolate" -> convertListToArray(getCreativeItemsByMod("ThaumicHorizons"));
-                // ThaumicTinkerer - Ichor
-                case "item.kamiResource" -> convertListToArray(getCreativeItemsByMod("ThaumicTinkerer"));
-                // TinkerConstruct - Slimy Sapling
-                case "block.slime.sapling.bluegreen" -> convertListToArray(getCreativeItemsByMod("TinkerConstruct"));
-                // TinkersDefence - Dogbearium Ingot
-                case "item.DogbeariumIngot" -> convertListToArray(getCreativeItemsByMod("TinkersDefence"));
-                // TinkersGregworks - Aluminium Tool Rod
-                case "Aluminium" -> convertListToArray(getCreativeItemsByMod("TinkersGregworks"));
-                // Translocator - Diamond Nugget
-                case "item.translocator:diamondNugget" -> convertListToArray(getCreativeItemsByMod("Translocator"));
-                // TwilightForest - Raven's Feather
-                case "item.tfFeather" -> convertListToArray(getCreativeItemsByMod("TwilightForest"));
-
-                // UniversalSingularities - Coal Singularity
-                case "item.universalSingularities.vanilla.coal" -> convertListToArray(
-                    getCreativeItemsByMod("UniversalSingularities"));
-
-                // Witchery - Leaping Lily
-                case "tile.witchery:leapinglily" -> convertListToArray(getCreativeItemsByMod("Witchery"));
-                // WitchingGadgets - Spinning Wheel
-                case "tile.WG_WoodenDevice.spinningWheel" -> convertListToArray(
-                    getCreativeItemsByMod("WitchingGadgets"));
-
-                // ZTones - Ztone Tile
-                case "tile.ztones:stoneTile" -> convertListToArray(getCreativeItemsByMod("ZTones"));
-
-                default -> null;
-            };
-            if (ModItemRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 64; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(ModItemRecipes.length);
-                    ItemStack recipeModItem = ModItemRecipes[index];
-                    recipeModItem.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipeModItem);
-                        addOutputAtomic(recipeModItem);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack modItemRecipes : ModItemRecipes) {
-                // // System.out.println(modItemRecipes.getDisplayName());
-                // modItemRecipes.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(modItemRecipes);
-                // }
-                // }
+        else if (mode == 7) {
+            ItemStack[] ModItemRecipes = getCreativeItemsForSelector(slot);
+            if (outputRandomItems(ModItemRecipes, 64)) {
+                return CheckRecipeResultRegistry.SUCCESSFUL;
             }
-            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
         // Singularity of Pachinko
-        else {
+        else if (mode == 0) {
             ItemStack[] PachinkoRecipes = switch (getControllerSlot().getItemDamage()) {
 
                 // Steam Tier: "Bronze Hull" - 1
@@ -1098,34 +731,51 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 default -> null;
             };
 
-            if (PachinkoRecipes != null) {
-
-                // 随机输出
-                for (int mLoop = 0; mLoop < 4; mLoop++) {
-                    Random random = new Random();
-                    int index = random.nextInt(PachinkoRecipes.length);
-                    ItemStack recipePachinko = PachinkoRecipes[index];
-                    recipePachinko.stackSize = getMaxParallel();
-                    for (int mStack = 0; mStack < 64; mStack++) {
-                        // addOutput(recipePachinko);
-                        addOutputAtomic(recipePachinko);
-                    }
-                }
-
-                // // Debug全部输出
-                // for (ItemStack pachinkoRecipes : PachinkoRecipes) {
-                // // System.out.println(pachinkoRecipes.getDisplayName());
-                // pachinkoRecipes.stackSize = getMaxParallel();
-                // for (int mStack = 0; mStack < 128; mStack++) {
-                // addOutput(pachinkoRecipes);
-                // }
-                // }
-
+            if (outputRandomItems(PachinkoRecipes, 4)) {
                 return CheckRecipeResultRegistry.SUCCESSFUL;
             }
         }
         this.stopMachine(ShutDownReasonRegistry.NONE);
         return CheckRecipeResultRegistry.NO_RECIPE;
+    }
+
+    private boolean outputRandomItems(ItemStack[] resources, int draws) {
+        if (resources == null) return false;
+        ArrayList<ItemStack> available = new ArrayList<>();
+        for (ItemStack resource : resources) {
+            if (resource != null && resource.getItem() != null) available.add(resource);
+        }
+        if (available.isEmpty()) return false;
+        int parallel = getMaxParallel();
+        for (int draw = 0; draw < draws; draw++) {
+            ItemStack resource = available.get(random.nextInt(available.size()));
+            for (int repeat = 0; repeat < 64; repeat++) {
+                // Atomic ejection consumes its argument, so each repeat needs its own copy.
+                ItemStack output = resource.copy();
+                output.stackSize = parallel;
+                addOutputAtomic(output);
+            }
+        }
+        return true;
+    }
+
+    private boolean outputRandomFluids(FluidStack[] resources) {
+        if (resources == null) return false;
+        ArrayList<FluidStack> available = new ArrayList<>();
+        for (FluidStack resource : resources) {
+            if (resource != null && resource.getFluid() != null) available.add(resource);
+        }
+        if (available.isEmpty()) return false;
+        int parallel = getMaxParallel();
+        for (int draw = 0; draw < 64; draw++) {
+            FluidStack output = available.get(random.nextInt(available.size()))
+                .copy();
+            output.amount = parallel;
+            for (int repeat = 0; repeat < 1000; repeat++) {
+                addOutput(output);
+            }
+        }
+        return true;
     }
 
     @Override

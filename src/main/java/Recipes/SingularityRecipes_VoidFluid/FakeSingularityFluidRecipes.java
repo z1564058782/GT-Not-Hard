@@ -18,8 +18,8 @@ public class FakeSingularityFluidRecipes {
 
     public static int NEI_ItemOutput_Size = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T0 = RecipeMapBuilder
-        .of("Singularity of T0 Fluid")
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes = RecipeMapBuilder
+        .of("Singularity of Void Fluid")
         .maxIO(1, 0, 0, NEI_ItemOutput_Size)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
@@ -27,86 +27,16 @@ public class FakeSingularityFluidRecipes {
         .neiTransferRect(81, 27, 14, 16)
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T1 = RecipeMapBuilder
-        .of("Singularity of T1 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T2 = RecipeMapBuilder
-        .of("Singularity of T2 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T3 = RecipeMapBuilder
-        .of("Singularity of T3 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T4 = RecipeMapBuilder
-        .of("Singularity of T4 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T5 = RecipeMapBuilder
-        .of("Singularity of T5 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T6 = RecipeMapBuilder
-        .of("Singularity of T6 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T7 = RecipeMapBuilder
-        .of("Singularity of T7 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T8 = RecipeMapBuilder
-        .of("Singularity of T8 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T9 = RecipeMapBuilder
-        .of("Singularity of T9 Fluid")
-        .maxIO(1, 0, 0, NEI_ItemOutput_Size)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyFluidsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T0 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T1 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T2 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T3 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T4 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T5 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T6 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T7 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T8 = addFakeVoidFluidRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidFluidRecipes_T9 = addFakeVoidFluidRecipes;
 
     public static void addFakeVoidFluidRecipes_T0() {
         // T0 - Overworld - Ow

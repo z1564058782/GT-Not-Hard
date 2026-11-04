@@ -19,6 +19,7 @@ import gregtech.nei.RecipeDisplayInfo;
 public class ResourceCatalogFrontend extends LocalizedRecipeFrontend {
 
     public static final int OUTPUTS_PER_PAGE = 27;
+    public static final int OUTPUTS_PER_SCROLL_PAGE = 135;
     public static final int HANDLER_HEIGHT = 140;
 
     public static List<Pos2d> outputPositions(int count) {

@@ -8,6 +8,9 @@ import java.util.Map;
 
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.OrePrefixes;
+import util.RegisteredResourceCatalog;
+
 public class SingularityOreRecipes {
 
     public static final Map<String, ItemStack[]> VoidOreRecipes_T0 = new HashMap<>();
@@ -120,6 +123,8 @@ public class SingularityOreRecipes {
             SmallOre.EndAsteroid_SmallOre);
         ItemStack[] T0_EndAsteroid_Ore_Checked = checkItemStack(T0_EndAsteroid_Ore);
         VoidOreRecipes_T0.put("EA", T0_EndAsteroid_Ore_Checked);
+
+        VoidOreRecipes_T0.put("Eg", DimensionOreCatalog.collect("Eg", SmallOre.Overworld_SmallOre));
     }
 
     public static void addVoidOreRecipes_T1() {
@@ -476,6 +481,8 @@ public class SingularityOreRecipes {
         ItemStack[] T7_Haumea_Ore_Checked = checkItemStack(T7_Haumea_Ore);
         VoidOreRecipes_T7.put("Ha", T7_Haumea_Ore_Checked);
 
+        VoidOreRecipes_T7.put("KB", DimensionOreCatalog.collect("KB", SmallOre.Kuiperbelt_SmallOre));
+
         // T7 - Makemake - MM
         ItemStack[] T7_Makemake_Ore = addAggregateArray(
             Vein.Uranium238_Vein,
@@ -745,7 +752,6 @@ public class SingularityOreRecipes {
 
     public static void addVoidOreRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[] T10_Ore_Checked = checkItemStack(Vein.T10_Ore);
-        VoidOreRecipes_T10.put("DD", T10_Ore_Checked);
+        VoidOreRecipes_T10.put("DD", RegisteredResourceCatalog.collectOreItems(OrePrefixes.ore, Vein.T10_Ore));
     }
 }

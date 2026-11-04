@@ -19,8 +19,8 @@ public class FakeSingularityDustRecipes {
 
     public static int NEI_ItemOutput_Size = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T0 = RecipeMapBuilder
-        .of("Singularity of T0 Dust")
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes = RecipeMapBuilder
+        .of("Singularity of Void Dust")
         .maxIO(1, NEI_ItemOutput_Size, 0, 0)
         .minInputs(1, 0)
         .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
@@ -28,86 +28,16 @@ public class FakeSingularityDustRecipes {
         .neiTransferRect(81, 27, 14, 16)
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T1 = RecipeMapBuilder
-        .of("Singularity of T1 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T2 = RecipeMapBuilder
-        .of("Singularity of T2 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T3 = RecipeMapBuilder
-        .of("Singularity of T3 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T4 = RecipeMapBuilder
-        .of("Singularity of T4 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T5 = RecipeMapBuilder
-        .of("Singularity of T5 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T6 = RecipeMapBuilder
-        .of("Singularity of T6 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T7 = RecipeMapBuilder
-        .of("Singularity of T7 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T8 = RecipeMapBuilder
-        .of("Singularity of T8 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T9 = RecipeMapBuilder
-        .of("Singularity of T9 Dust")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T0 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T1 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T2 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T3 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T4 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T5 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T6 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T7 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T8 = addFakeVoidDustRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidDustRecipes_T9 = addFakeVoidDustRecipes;
 
     public static void addFakeVoidDustRecipes_T0() {
         // T0 - Overworld - Ow

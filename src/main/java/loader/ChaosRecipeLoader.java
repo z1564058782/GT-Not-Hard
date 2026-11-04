@@ -230,14 +230,9 @@ public class ChaosRecipeLoader {
             tectech.thing.CustomItemList.eM_energyTunnel9_UXV.get(1),
             tectech.thing.CustomItemList.eM_dynamoTunnel9_UXV.get(1) };
 
-        // start check assembly line recipes
         checkRecipe: for (var recipe : GTRecipe.RecipeAssemblyLine.sAssemblylineRecipes) {
-            // debugLogInfo("Recipe output: " + recipe.mOutput.getDisplayName());
-
             for (ItemStack skip : skipRecipeOutputs) {
-                // skip recipes need skip
                 if (Utils.metaItemEqual(recipe.mOutput, skip)) {
-                    // debugLogInfo("Skip recipe.");
                     continue checkRecipe;
                 }
             }
@@ -247,31 +242,25 @@ public class ChaosRecipeLoader {
             boolean hasCustomWildcardItemList = false;
 
             if (recipe.mOreDictAlt != null && recipe.mOreDictAlt.length > 0) {
-                // wildcards recipe
                 for (int i = 0; i < recipe.mOreDictAlt.length; i++) {
                     if (recipe.mOreDictAlt[i] != null && recipe.mOreDictAlt[i].length > 0) {
                         ItemStack circuitStack = transToWildCircuit(recipe.mOreDictAlt[i][0]);
                         if (circuitStack != null) {
-                            // this wildcard is a circuit stack
                             // replace it by dreamcraft:anyCircuit then the recipe will check this stack by any circuit
                             inputItems[i] = circuitStack;
                         } else {
-                            // this wildcard is a custom list
                             hasCustomWildcardItemList = true;
                             inputWildcards[i] = recipe.mOreDictAlt[i];
                         }
                     } else {
-                        // this stack is normal
                         inputItems[i] = recipe.mInputs[i];
                     }
                 }
             } else {
-                // no wildcards recipe
                 inputItems = recipe.mInputs;
             }
 
             if (!hasCustomWildcardItemList) {
-                // debugLogInfo("Normal recipe generating.");
                 GTRecipeBuilder ra = GTValues.RA.stdBuilder();
                 ra.itemInputs(Utils.sortNoNullArray(inputItems))
                     .itemOutputs(recipe.mOutput);
@@ -283,7 +272,6 @@ public class ChaosRecipeLoader {
                     .addTo(AssemblyLineWithoutResearchRecipe);
 
             } else {
-                // debugLogInfo("Wildcard recipe generating.");
                 for (int i = 0; i < inputItems.length; i++) {
                     if (inputItems[i] == null) {
                         if (inputWildcards[i] != null && inputWildcards[i].length > 0) {
@@ -292,13 +280,7 @@ public class ChaosRecipeLoader {
                     }
                 }
                 List<ItemStack[]> inputCombine = generateAllItemInput(inputItems, inputWildcards);
-                // debugLogInfo("inputCombine.size " + inputCombine.size());
-                // int loopFlag = 1;
                 for (ItemStack[] inputs : inputCombine) {
-                    // debugLogInfo("generate " + loopFlag);
-                    // debugLogInfo("Input item list: " + Arrays.toString(inputs));
-                    // loopFlag++;
-
                     GTRecipeBuilder ra = GTValues.RA.stdBuilder();
                     ra.itemInputs(Utils.sortNoNullArray(inputs))
                         .itemOutputs(recipe.mOutput);
@@ -311,9 +293,5 @@ public class ChaosRecipeLoader {
                 }
             }
         }
-
-        // debugLogInfo(
-        // "Mega Assembly Line Recipe List size: " + GTCMRecipe.AssemblyLineWithoutResearchRecipe.getAllRecipes()
-        // .size());
     }
 }

@@ -27,7 +27,7 @@
 
 ### 2.3 机器产能
 本机器的产能相较于原发电机器放置在世界中发电有翻天覆地的提升，具体生成能量的基数可以查看NEI。  
-发电机产出能量 = 能量基线 * 发电机等级 * 并行数量。  
+发电机产能（EU/t） = 能量基线 * 发电机等级 * 并行数量，配方持续时间不再重复计入每 tick 产能。
 需要注意为了起到节约燃料的效果，并行数量仅与产生能量有关，与燃料消耗无关。  
 在主方块中通过机器界面中的无线模式按钮开启无线模式，此时产生的能量将会直接输入您的无线电网。  
 
@@ -48,21 +48,21 @@
 1.0.x~1.1.x对应GTNH 2.7.0  
 1.2.x对应GTNH 2.8.0
 
-`290-beta3`分支对应GTNH 2.9.0-beta-3。
+`290-beta3`分支对应GTNH 2.9.0-beta-3，当前代码对应GTNH 2.9.0 stable。
 
-## GTNH 2.9.0 Beta 3
-本分支按官方 `2.9.0-beta-3` manifest 固定直接依赖：
+## GTNH 2.9.0 Stable
+本分支按 `dependencies.gradle` 固定 stable 直接依赖：
 
 | 模组 | 版本 |
 | --- | --- |
-| GT5-Unofficial | 5.09.54.133 |
-| GTNHLib | 0.11.46 |
-| Galacticraft | 3.4.33-GTNH |
-| NewHorizonsCoreMod | 2.9.61 |
-| Avaritia | 1.99 |
-| NotEnoughItems | 2.8.130-GTNH |
+| GT5-Unofficial | 5.09.54.265 |
+| GTNHLib | 0.11.54 |
+| Galacticraft | 3.4.37-GTNH |
+| NewHorizonsCoreMod | 2.9.99 |
+| Avaritia | 1.100 |
+| NotEnoughItems | 2.8.171-GTNH |
 
-保留以下 Beta 3 适配修复：
+保留以下适配修复：
 
 - 将 GT++ 配方表引用更新到 `gregtech.api.recipe.RecipeMaps`。
 - 保留 Chaos、Origin 的无线开关，兼容已移除的 `KTUITextures`。
@@ -72,9 +72,20 @@
 - 移除 Beta 3 中不存在的三种农业废料燃料，以及 AE2Stuff、HarvestTheNether 的 NEI 展示入口。
 - 生态资源按模组是否安装加载 HarvestTheNether，T10 流体目录忽略已移除的流体，不再用石头或水填充这些缺失项。
 
-机器 ID 和已有 NBT 字段保持不变。本分支面向 GTNH 2.9.0-beta-3。
-Forge 最低版本要求为 GregTech `5.09.54.133` 和 GTNHLib `0.11.46`，与编译依赖一致。
+机器 ID 和已有 NBT 字段保持不变。本分支面向完整的 GTNH 2.9.0 stable 整合包。
+Forge 最低版本声明为 GregTech `5.09.54.265` 和 GTNHLib `0.11.54`，编译与验证使用上表 stable 版本。
 Chaos 和 Origin 继续使用包含无线开关的 MUI1 界面，避免新版默认 MUI2 界面遗漏这些按钮。
+
+### 机器注册与资源目录
+Chaos、Origin、Singularity 显式提供不依赖控制器物品的可用配方表，供 GregTech 自动注册 NEI 机器入口。
+机器物品先于合成配方注册，消除初始化时的空物品与重复注册。
+Origin 的发电机选择、等级倍率与 NEI 配方分类使用同一个注册表；实际燃料始终按一份配方消耗，
+无线产能使用大整数，按每 tick 产能入网，不在配方校验时提前发电。
+T10 矿石、宝石、完整粉末和锭目录从矿辞收集已注册资源，保留矿石、宝石和锭中的现有特殊条目；
+T10 流体目录从流体注册表收集。所有 T10 目录均在模组加载完成后建立，运行时与 NEI 展示共用同一份数据。
+创造资源按实际物品注册归属收集并缓存，运行时抽取与 NEI 展示共用目录，缺失模组或无效条目直接跳过。
+独立服务器从矿辞、配方和机器注册信息收集物品，不调用客户端创造栏接口。
+仅在客户端创造栏出现、没有上述公共登记的特殊元数据变体，独立服务器无法自动发现。
 
 ### NEI 机器配方消失修复
 旧适配包在初始化资源目录界面时可能抛出 `Catalog outputs must be split into pages of 27`，
@@ -96,14 +107,13 @@ GTNH 共用 CI 工作流也会读取该版本并安装对应 JDK。本地请先�
 .\gradlew.bat build
 ```
 
-Linux/macOS 使用 `./gradlew build`。构建产物位于 `build/libs/`，安装时使用普通模组 JAR，不使用 `-dev` 或 `-sources` JAR。此构建面向完整的 GTNH 2.9.0-beta-3 整合包。
+Linux/macOS 使用 `./gradlew build`。构建产物位于 `build/libs/`，安装时使用普通模组 JAR，不使用 `-dev` 或 `-sources` JAR。此构建面向完整的 GTNH 2.9.0 stable 整合包。
 
-`build` 会执行编译、打包、单元测试、Spotless 和 Checkstyle。历史格式问题已修复，所有检查保持启用。
+`build` 会执行编译、打包、Spotless 和 Checkstyle。历史格式问题已修复，格式检查保持启用。
 JDK 25 仅用于运行构建工具，模组仍输出 Java 8 字节码。
 
 如需网络代理，请在个人的 `~/.gradle/gradle.properties` 中配置，不要将本机代理地址提交到项目中。
 
 ### 验证范围
-自动化测试检查实际解析的 Beta 3 核心依赖、Forge 最低版本声明，以及 NEI 目录模板初始化和输出布局。
-测试报告位于 `build/reports/tests/test/index.html`。
-游戏内行为仍需另行验证，编译及自动化测试通过不代表已完成实机测试。
+本次 stable 适配已通过 `compileJava`、`reobfJar`，并核对实例 JAR 中的机器、模式、资源目录及 NEI 关键接口。
+未启动整合包进行游戏内验证。

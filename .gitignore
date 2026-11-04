@@ -37,3 +37,9 @@ addon.local.gradle.kts
 addon.late.local.gradle
 addon.late.local.gradle.kts
 layout.json
+.tmp-tst/
+/.gradle-user/
+/.tmp-gradle/
+/META-INF/
+/fernflower.jar
+/.crash-inspect/
