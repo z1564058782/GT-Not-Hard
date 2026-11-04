@@ -71,6 +71,12 @@ public final class ChaosRuntimeBridge {
             setField(delegate, "lEUt", 0L);
             setField(delegate, "mEUt", 0);
         }
+        String delegateClass = delegate.getClass()
+            .getName();
+        if ("com.MessTech.common.machine.MTChemicalTwister".equals(delegateClass)) {
+            setField(delegate, "mStructureLevel", 2);
+            setField(delegate, "mHeatingCapacity", 12601);
+        }
     }
 
     public static void syncFromDelegate(MTEMultiBlockBase delegate, MTEMultiBlockBase source)
