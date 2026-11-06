@@ -1,0 +1,221 @@
+# Machine names. Keep the registry keys unchanged for existing worlds.
+gt.blockmachines.chaos.name=Chaos
+gt.blockmachines.origin.name=Origin
+gt.blockmachines.singularity.name=Singularity
+
+# Shared machine tooltips
+gtnothard.tooltip.runs_machines=Runs supplied machines as if placed in the world
+gtnothard.tooltip.parallel=Parallel quantity = 2^x
+gtnothard.tooltip.machine_count=x = Number of machines in the controller
+gtnothard.tooltip.item_count=x = Number of items in the controller
+gtnothard.tooltip.added_by=Added by: GT Not Hard
+gtnothard.structure.front_center=Front center
+gtnothard.structure.any_casing=Any casing
+gtnothard.structure.tungstensteel=Robust Tungstensteel Machine Casing
+gtnothard.structure.stainless_steel=Clean Stainless Steel Machine Casing
+gtnothard.structure.titanium=Stable Titanium Machine Casing
+
+# Chaos
+gtnothard.tooltip.chaos.wireless_duration=Wireless mode fixes recipe duration at 128 ticks
+gtnothard.tooltip.chaos.wireless_energy=Energy is drawn from the wireless network instead of energy hatches
+gtnothard.tooltip.chaos.multiple_modes=For a supplied machine with multiple modes,
+gtnothard.tooltip.chaos.switch_mode=sneak left-click the controller to switch modes
+gtnothard.tooltip.chaos.xtreme=Use an Auto Workbench (LV) for Xtreme Crafting recipes
+gtnothard.tooltip.chaos.falling_tower=Use an Auto Workbench (MV) for Falling Tower recipes
+gtnothard.tooltip.chaos.thaumcraft=Use a Large Essentia Smeltery for Thaumcraft recipes
+gtnothard.tooltip.chaos.magic=Use a Research Completer for Blood Magic, Botania and Essence Farm recipes
+
+# Origin
+gtnothard.tooltip.origin.wireless_button=Use the wireless mode button in the machine GUI to toggle wireless output
+gtnothard.tooltip.origin.wireless_energy=Generated energy is sent to the wireless network instead of dynamo hatches
+
+# Singularity
+gtnothard.tooltip.singularity.resources=Generates resources without consuming energy, fluids or items
+gtnothard.tooltip.singularity.selector=Place a selector item in the controller to choose resources
+gtnothard.tooltip.singularity.types=Eight resource types are available:
+gtnothard.tooltip.singularity.types_materials=Void Ore / Void Gem / Void Dust / Void Fluid / Void Ingot
+gtnothard.tooltip.singularity.types_other=Ecosystem / Mod Item / Pachinko
+gtnothard.tooltip.singularity.switch_mode=Sneak left-click the controller to switch resource types
+
+# Buttons, chat and Waila
+gtnothard.gui.wireless_mode=Wireless Mode
+gtnothard.chat.mode=Mode: %s
+gtnothard.waila.machine=Machine: %s
+gtnothard.waila.machine_type=Machine type: %s
+gtnothard.waila.item=Item: %s
+gtnothard.waila.type=Type: %s
+gtnothard.waila.parallel=Parallel: %s
+gtnothard.waila.wireless=Wireless mode: %s
+gtnothard.waila.energy_consumed=Energy consumed: %s EU
+gtnothard.waila.energy_generated=Energy generated: %s EU
+gtnothard.state.enabled=Enabled
+gtnothard.state.disabled=Disabled
+gtnothard.state.none=None
+gtnothard.state.error=Error
+gtnothard.nei.not_consumed=NC
+gtnothard.nei.fuel_baseline=Generation baseline: %s EU
+gtnothard.nei.description.Debug Item NBT Check=Item NBT Check
+gtnothard.nei.description.Singularity with Ecosystem Mode=Singularity mode: Ecosystem
+gtnothard.nei.description.Singularity with Mod Mode=Singularity mode: Mod Items
+gtnothard.nei.description.Singularity with Pachinko Mode=Singularity mode: Pachinko
+gtnothard.nei.description.Singularity with Void Dust Mode=Singularity mode: Void Dust
+gtnothard.nei.description.Singularity with Void Fluid Mode=Singularity mode: Void Fluids
+gtnothard.nei.description.Singularity with Void Gem Mode=Singularity mode: Void Gems
+gtnothard.nei.description.Singularity with Void Ingot Mode=Singularity mode: Void Ingots
+gtnothard.nei.description.Singularity with Void Ore Mode=Singularity mode: Void Ore
+
+# Mode suffixes deliberately match legacy NBT values, including historical spelling.
+gtnothard.mode.Polarizer=Polarizer
+gtnothard.mode.Electromagnetic Separator=Electromagnetic Separator
+gtnothard.mode.Canner=Canner
+gtnothard.mode.Forming Press=Forming Press
+gtnothard.mode.Bending Machine=Bending Machine
+gtnothard.mode.Ore Washer=Ore Washer
+gtnothard.mode.Simple Washer=Simple Washer
+gtnothard.mode.Chemical Bath=Chemical Bath
+gtnothard.mode.Arc Furnace=Arc Furnace
+gtnothard.mode.Packager=Packager
+gtnothard.mode.Unpackeager=Unpackager
+gtnothard.mode.Cutting=Cutting
+gtnothard.mode.Dehydrator=Dehydrator
+gtnothard.mode.Vacuum Furnace=Vacuum Furnace
+gtnothard.mode.Compressor=Compressor
+gtnothard.mode.HIP Compressor=Hot Isostatic Pressurization
+gtnothard.mode.BHC Compressor=Black Hole Compression
+gtnothard.mode.Advanced Neutronium Compressor=Advanced Neutronium Compressor
+gtnothard.mode.Circuit Assembly Line=Circuit Assembly Line
+gtnothard.mode.Circuit Assembly=Circuit Assembly
+gtnothard.mode.Blood Magic=Blood Magic
+gtnothard.mode.Botania=Botania
+gtnothard.mode.Essence Farm=Essence Farm
+gtnothard.mode.Degenerate Quark Gluon=Degenerate Quark-Gluon Plasma
+gtnothard.mode.Magmatter=Magmatter
+gtnothard.mode.Distillery=Distillery
+gtnothard.mode.distillation tower=Distillation Tower
+gtnothard.mode.Replicator Item=Item Replication
+gtnothard.mode.Replicator Fluid=Fluid Replication
+gtnothard.mode.Precise Assembler=Precise Assembler
+gtnothard.mode.Assembler=Assembler
+gtnothard.mode.Arcane Worktable=Arcane Worktable
+gtnothard.mode.Crucible=Crucible
+gtnothard.mode.Runic Matrix=Runic Matrix
+gtnothard.mode.Void Ore=Void Ore
+gtnothard.mode.Void Gem=Void Gem
+gtnothard.mode.Void Dust=Void Dust
+gtnothard.mode.Void Fluid=Void Fluid
+gtnothard.mode.Void Ingot=Void Ingot
+gtnothard.mode.Ecosystem=Ecosystem
+gtnothard.mode.Mod Item=Mod Item
+gtnothard.mode.Pachinko=Pachinko
+
+# Recipe-map identifiers must not be renamed: recipe locks reference them.
+Chaos of Antimatter=Chaos: Antimatter
+Chaos of Arcane Worktable=Chaos: Arcane Worktable
+Chaos of AssemblyLine=Chaos: Assembly Line
+Chaos of BloodMagic=Chaos: Blood Magic
+Chaos of Botania=Chaos: Botania
+Chaos of CircuitAssemblyLine=Chaos: Circuit Assembly Line
+Chaos of Compress with BHC=Chaos: Black Hole Compression
+Chaos of Compress with HIP=Chaos: Hot Isostatic Pressurization
+Chaos of Crucible=Chaos: Crucible
+Chaos of Essence Farm=Chaos: Essence Farm
+Chaos of Exotic with DegenerateQuarkGluon=Chaos: Degenerate Quark-Gluon Plasma
+Chaos of Exotic with Magmatter=Chaos: Magmatter
+Chaos of Falling Tower=Chaos: Falling Tower
+Chaos of Ore=Chaos: Ore Processing
+Chaos of Replicator with Fluid=Chaos: Fluid Replication
+Chaos of Replicator with Item=Chaos: Item Replication
+Chaos of Runic Matrix=Chaos: Runic Matrix
+Chaos of Xtreme Crafting=Chaos: Xtreme Crafting
+Chaos of ZhuHai Fishery=Chaos: Zhuhai Fishery
+Item NBT Check=Item NBT Check
+
+Origin of Generator with Acid=Origin: Acid Generator
+Origin of Generator with Combustion=Origin: Combustion Generator
+Origin of Generator with Gas=Origin: Gas Turbine
+Origin of Generator with Magic=Origin: Magic Generator
+Origin of Generator with Naquadah=Origin: Naquadah Reactor
+Origin of Generator with Nuclear=Origin: Nuclear Reactor
+Origin of Generator with Plasma=Origin: Plasma Generator
+Origin of Generator with Rocket=Origin: Rocket Engine
+Origin of Generator with Semifluid=Origin: Semifluid Generator
+Origin of Generator with Solar=Origin: Solar Generator
+Origin of Generator with Steam=Origin: Steam Turbine
+Origin of Generator with UCFE=Origin: Universal Chemical Fuel Engine
+Origin of Generator with Water=Origin: Hydro Turbine
+
+Singularity of Ecosystem AlgaeFarm=Singularity: Algae Farm
+Singularity of Ecosystem Comb=Singularity: Combs
+Singularity of Ecosystem Food=Singularity: Food
+Singularity of Ecosystem TreeGrowth=Singularity: Tree Growth
+Singularity of Mod Item=Singularity: Mod Items
+Singularity of Pachinko_GT_Item=Singularity: GT Item Lottery
+Singularity of Pachinko_GT_Machine=Singularity: GT Machine Lottery
+Singularity of Pachinko_GT_Machine_Special=Singularity: Special GT Machine Lottery
+Singularity of Pachinko_Storage=Singularity: Storage Lottery
+
+Singularity of Void Ore=Singularity: Void Ore
+Singularity of Void Gem=Singularity: Void Gems
+Singularity of Void Dust=Singularity: Void Dust
+Singularity of Void Fluid=Singularity: Void Fluids
+Singularity of Void Ingot=Singularity: Void Ingots
+
+Singularity of T0 Ore=Singularity: T0 Void Ore
+Singularity of T1 Ore=Singularity: T1 Void Ore
+Singularity of T2 Ore=Singularity: T2 Void Ore
+Singularity of T3 Ore=Singularity: T3 Void Ore
+Singularity of T4 Ore=Singularity: T4 Void Ore
+Singularity of T5 Ore=Singularity: T5 Void Ore
+Singularity of T6 Ore=Singularity: T6 Void Ore
+Singularity of T7 Ore=Singularity: T7 Void Ore
+Singularity of T8 Ore=Singularity: T8 Void Ore
+Singularity of T9 Ore=Singularity: T9 Void Ore
+Singularity of T10 Ore=Singularity: T10 Void Ore
+
+Singularity of T0 Gem=Singularity: T0 Void Gems
+Singularity of T1 Gem=Singularity: T1 Void Gems
+Singularity of T2 Gem=Singularity: T2 Void Gems
+Singularity of T3 Gem=Singularity: T3 Void Gems
+Singularity of T4 Gem=Singularity: T4 Void Gems
+Singularity of T5 Gem=Singularity: T5 Void Gems
+Singularity of T6 Gem=Singularity: T6 Void Gems
+Singularity of T7 Gem=Singularity: T7 Void Gems
+Singularity of T8 Gem=Singularity: T8 Void Gems
+Singularity of T9 Gem=Singularity: T9 Void Gems
+Singularity of T10 Gem=Singularity: T10 Void Gems
+
+Singularity of T0 Dust=Singularity: T0 Void Dust
+Singularity of T1 Dust=Singularity: T1 Void Dust
+Singularity of T2 Dust=Singularity: T2 Void Dust
+Singularity of T3 Dust=Singularity: T3 Void Dust
+Singularity of T4 Dust=Singularity: T4 Void Dust
+Singularity of T5 Dust=Singularity: T5 Void Dust
+Singularity of T6 Dust=Singularity: T6 Void Dust
+Singularity of T7 Dust=Singularity: T7 Void Dust
+Singularity of T8 Dust=Singularity: T8 Void Dust
+Singularity of T9 Dust=Singularity: T9 Void Dust
+Singularity of T10 Dust=Singularity: T10 Void Dust
+
+Singularity of T0 Fluid=Singularity: T0 Void Fluids
+Singularity of T1 Fluid=Singularity: T1 Void Fluids
+Singularity of T2 Fluid=Singularity: T2 Void Fluids
+Singularity of T3 Fluid=Singularity: T3 Void Fluids
+Singularity of T4 Fluid=Singularity: T4 Void Fluids
+Singularity of T5 Fluid=Singularity: T5 Void Fluids
+Singularity of T6 Fluid=Singularity: T6 Void Fluids
+Singularity of T7 Fluid=Singularity: T7 Void Fluids
+Singularity of T8 Fluid=Singularity: T8 Void Fluids
+Singularity of T9 Fluid=Singularity: T9 Void Fluids
+Singularity of T10 Fluid=Singularity: T10 Void Fluids
+
+Singularity of T0 Ingot=Singularity: T0 Void Ingots
+Singularity of T1 Ingot=Singularity: T1 Void Ingots
+Singularity of T2 Ingot=Singularity: T2 Void Ingots
+Singularity of T3 Ingot=Singularity: T3 Void Ingots
+Singularity of T4 Ingot=Singularity: T4 Void Ingots
+Singularity of T5 Ingot=Singularity: T5 Void Ingots
+Singularity of T6 Ingot=Singularity: T6 Void Ingots
+Singularity of T7 Ingot=Singularity: T7 Void Ingots
+Singularity of T8 Ingot=Singularity: T8 Void Ingots
+Singularity of T9 Ingot=Singularity: T9 Void Ingots
+Singularity of T10 Ingot=Singularity: T10 Void Ingots

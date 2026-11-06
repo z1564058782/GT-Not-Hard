@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.KubaTech;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -1256,33 +1257,33 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Heavy Duty Plate Tier 4"
-         * getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier4", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 7_500_000))
-         * .itemOutputs(
-         * // "Venus Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "venusblocks", 1L, 1), 11428),
-         * // "Io Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 2), 10827),
-         * // "Mercury Core"
-         * setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 2), 10225),
-         * // "Mercury Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 1), 1203),
-         * // "Io Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 0), 602),
-         * // "Io Ash"
-         * setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 1), 602),
-         * // "Mercury Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 0), 602),
-         * // "Venus Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "venusblocks", 1L, 0), 602))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Heavy Duty Plate Tier 4"
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier4", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 7_500_000))
+            .itemOutputs(
+                // "Venus Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "venusblocks", 1L, 1), 11428),
+                // "Io Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 2), 10827),
+                // "Mercury Core"
+                setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 2), 10225),
+                // "Mercury Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 1), 1203),
+                // "Io Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 0), 602),
+                // "Io Ash"
+                setStackSize(getModItem(GalaxySpace.ID, "ioblocks", 1L, 1), 602),
+                // "Mercury Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "mercuryblocks", 1L, 0), 602),
+                // "Venus Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "venusblocks", 1L, 0), 602))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Netherite Scrap"
@@ -1358,43 +1359,43 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Heavy Duty Plate Tier 5"
-         * getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier5", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000_000))
-         * .itemOutputs(
-         * // "Enceladus Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 1), 7669),
-         * // "Oberon Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 2), 7669),
-         * // "Miranda Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 2), 7669),
-         * // "Titan Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 2), 6767),
-         * // "Titan Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 1), 903),
-         * // "Packed Ice"
-         * setStackSize(getModItem(Minecraft.ID, "packed_ice", 1L), 903),
-         * // "Enceladus Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 3), 903),
-         * // "Oberon Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 1), 903),
-         * // "Miranda Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 1), 903),
-         * // "Titan Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 0), 452),
-         * // "Enceladus Snow"
-         * setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 0), 452),
-         * // "Oberon Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 0), 452),
-         * // "Miranda Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 0), 452))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Heavy Duty Plate Tier 5"
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier5", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000_000))
+            .itemOutputs(
+                // "Enceladus Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 1), 7669),
+                // "Oberon Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 2), 7669),
+                // "Miranda Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 2), 7669),
+                // "Titan Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 2), 6767),
+                // "Titan Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 1), 903),
+                // "Packed Ice"
+                setStackSize(getModItem(Minecraft.ID, "packed_ice", 1L), 903),
+                // "Enceladus Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 3), 903),
+                // "Oberon Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 1), 903),
+                // "Miranda Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 1), 903),
+                // "Titan Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "titanblocks", 1L, 0), 452),
+                // "Enceladus Snow"
+                setStackSize(getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 0), 452),
+                // "Oberon Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "oberonblocks", 1L, 0), 452),
+                // "Miranda Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "mirandablocks", 1L, 0), 452))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Advanced Scanner IV"
@@ -1418,29 +1419,29 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Heavy Duty Plate Tier 6"
-         * getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier6", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 15_000_000))
-         * .itemOutputs(
-         * // "Triton Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 2), 15337),
-         * // "Proteus Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 2), 15337),
-         * // "Triton Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 1), 1805),
-         * // "Proteus Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 1), 1805),
-         * // "Triton Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 0), 903),
-         * // "Proteus Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 0), 903))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Heavy Duty Plate Tier 6"
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier6", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 15_000_000))
+            .itemOutputs(
+                // "Triton Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 2), 15337),
+                // "Proteus Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 2), 15337),
+                // "Triton Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 1), 1805),
+                // "Proteus Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 1), 1805),
+                // "Triton Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "tritonblocks", 1L, 0), 903),
+                // "Proteus Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "proteusblocks", 1L, 0), 903))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Crystal Mainframe"
@@ -1458,35 +1459,35 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Heavy Duty Plate Tier 7"
-         * getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier7", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 30_000_000))
-         * .itemOutputs(
-         * // "Haumea Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "haumeablocks", 1L), 12029),
-         * // "Makemake Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "makemakegrunt", 1L, 1), 11428),
-         * // "Pluto Stone"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 5), 10105),
-         * // "Pluto Subsurface Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 4), 1203),
-         * // "Makemake Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "makemakegrunt", 1L, 0), 602),
-         * // "Pluto Surface Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 0), 181),
-         * // "Pluto Surface Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 1), 181),
-         * // "Pluto Surface Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 2), 181),
-         * // "Pluto Surface Ice"
-         * setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 3), 181))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Heavy Duty Plate Tier 7"
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier7", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 30_000_000))
+            .itemOutputs(
+                // "Haumea Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "haumeablocks", 1L), 12029),
+                // "Makemake Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "makemakegrunt", 1L, 1), 11428),
+                // "Pluto Stone"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 5), 10105),
+                // "Pluto Subsurface Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 4), 1203),
+                // "Makemake Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "makemakegrunt", 1L, 0), 602),
+                // "Pluto Surface Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 0), 181),
+                // "Pluto Surface Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 1), 181),
+                // "Pluto Surface Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 2), 181),
+                // "Pluto Surface Ice"
+                setStackSize(getModItem(GalaxySpace.ID, "plutoblocks", 1L, 3), 181))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Elite Recycler"
@@ -1552,43 +1553,43 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Heavy Duty Plate Tier 8"
-         * getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier8", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000_000))
-         * .itemOutputs(
-         * // "Barnarda E Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1L), 6696),
-         * // "Barnarda F Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1L), 6696),
-         * // "Vega B Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "vegabsubgrunt", 1L), 6696),
-         * // "α Centauri Bb Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L), 6696),
-         * // "T Ceti E Stone Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 2), 5991),
-         * // "Barnarda C Dirt"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaCdirt", 1L), 705),
-         * // "T Ceti E Subsurface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 1), 705),
-         * // "Barnarda E Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaEgrunt", 1L), 353),
-         * // "Barnarda F Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaFgrunt", 1L), 353),
-         * // "Vega B Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "vegabgrunt", 1L), 353),
-         * // "T Ceti E Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 0), 353),
-         * // "α Centauri Bb Surface Block"
-         * setStackSize(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L), 353),
-         * // "Barnarda C Grass"
-         * setStackSize(getModItem(GalaxySpace.ID, "barnardaCgrass", 1L), 141))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Heavy Duty Plate Tier 8"
+                getModItem(NewHorizonsCoreMod.ID, "HeavyDutyPlateTier8", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000_000))
+            .itemOutputs(
+                // "Barnarda E Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1L), 6696),
+                // "Barnarda F Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1L), 6696),
+                // "Vega B Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "vegabsubgrunt", 1L), 6696),
+                // "α Centauri Bb Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L), 6696),
+                // "T Ceti E Stone Block"
+                setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 2), 5991),
+                // "Barnarda C Dirt"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaCdirt", 1L), 705),
+                // "T Ceti E Subsurface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 1), 705),
+                // "Barnarda E Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaEgrunt", 1L), 353),
+                // "Barnarda F Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaFgrunt", 1L), 353),
+                // "Vega B Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "vegabgrunt", 1L), 353),
+                // "T Ceti E Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "tcetieblocks", 1L, 0), 353),
+                // "α Centauri Bb Surface Block"
+                setStackSize(getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L), 353),
+                // "Barnarda C Grass"
+                setStackSize(getModItem(GalaxySpace.ID, "barnardaCgrass", 1L), 141))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Advanced Circuit Assembler VI"
@@ -1808,41 +1809,41 @@ public class ChaosFallingTowerRecipes {
             .duration(3 * SECONDS)
             .eut(RECIPE_MV)
             .addTo(addChaosFallingTowerRecipes);
-        /*
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * // "Shard of Laputa"
-         * getModItem(Botania.ID, "laputaShard", 1L, 19))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1_000_000_001))
-         * .itemOutputs(
-         * // Azulejo
-         * setStackSize(getModItem(Botania.ID, "customBrick", 1L, 4), 147),
-         * // "Sea Lantern"
-         * setStackSize(getModItem(Botania.ID, "seaLamp", 1L), 131),
-         * // "Prismarine Bricks"
-         * setStackSize(getModItem(Botania.ID, "prismarine", 1L, 1), 131),
-         * // "Dark Prismarine"
-         * setStackSize(getModItem(Botania.ID, "prismarine", 1L, 2), 131),
-         * // "Glimmering Livingwood"
-         * setStackSize(getModItem(Botania.ID, "livingwood", 1L, 5), 98),
-         * // "Block of Manasteel"
-         * setStackSize(getModItem(Botania.ID, "storage", 1L, 0), 82),
-         * // "Mana Pearl Block"
-         * setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.ManaPearl", 1L), 66),
-         * // "Mana Powder Block"
-         * setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.ManaPowder", 1L), 66),
-         * // "Block of Elementium"
-         * setStackSize(getModItem(Botania.ID, "storage", 1L, 2), 17),
-         * // "Pixie Dust Block"
-         * setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.PixieDust", 1L), 17),
-         * // "Gaia Spirit Block"
-         * setStackSize(getModItem(NewHorizonsCoreMod.ID, "tile.Gaia", 1L), 4),
-         * // Prismarine
-         * setStackSize(getModItem(Botania.ID, "prismarine", 1L, 0), 884))
-         * .duration(3 * SECONDS)
-         * .eut(RECIPE_MV)
-         * .addTo(addChaosFallingTowerRecipes);
-         */
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                // "Shard of Laputa"
+                getModItem(Botania.ID, "laputaShard", 1L, 19))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1_000_000_001))
+            .itemOutputs(
+                // Azulejo
+                setStackSize(getModItem(Botania.ID, "customBrick", 1L, 4), 147),
+                // "Sea Lantern"
+                setStackSize(getModItem(Botania.ID, "seaLamp", 1L), 131),
+                // "Prismarine Bricks"
+                setStackSize(getModItem(Botania.ID, "prismarine", 1L, 1), 131),
+                // "Dark Prismarine"
+                setStackSize(getModItem(Botania.ID, "prismarine", 1L, 2), 131),
+                // "Glimmering Livingwood"
+                setStackSize(getModItem(Botania.ID, "livingwood", 1L, 5), 98),
+                // "Block of Manasteel"
+                setStackSize(getModItem(Botania.ID, "storage", 1L, 0), 82),
+                // "Mana Pearl Block"
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "ManaPearl", 1L), 66),
+                // "Mana Powder Block"
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "ManaPowder", 1L), 66),
+                // "Block of Elementium"
+                setStackSize(getModItem(Botania.ID, "storage", 1L, 2), 17),
+                // "Pixie Dust Block"
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "PixieDust", 1L), 17),
+                // "Gaia Spirit Block"
+                setStackSize(getModItem(NewHorizonsCoreMod.ID, "Gaia", 1L), 4),
+                // Prismarine
+                setStackSize(getModItem(Botania.ID, "prismarine", 1L, 0), 884))
+            .duration(3 * SECONDS)
+            .eut(RECIPE_MV)
+            .addTo(addChaosFallingTowerRecipes);
+
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // "Ion Thruster Jet"

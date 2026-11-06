@@ -19,9 +19,6 @@ import gregtech.api.util.GTOreDictUnificator;
 
 public final class Utils {
 
-    // endregion
-
-    // region about ItemStack
     public static boolean metaItemEqual(ItemStack a, ItemStack b) {
         if (a == null || b == null) return false;
         if (a == b) return true;
@@ -43,9 +40,6 @@ public final class Utils {
         if (amount >= 0) copy.stackSize = amount;
         return copy;
     }
-    // endregion
-
-    // region About FluidStack
 
     public static FluidStack setStackSize(FluidStack fluidStack, int amount) {
         if (fluidStack == null) return null;
@@ -63,10 +57,6 @@ public final class Utils {
         }
         return setStackSize(template, amount);
     }
-
-    // endregion
-
-    // region Generals
 
     public static ItemStack[] sortNoNullArray(ItemStack... itemStacks) {
         if (itemStacks == null) return null;

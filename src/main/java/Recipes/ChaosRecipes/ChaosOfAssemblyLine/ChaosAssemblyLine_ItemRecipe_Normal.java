@@ -3270,11 +3270,11 @@ public class ChaosAssemblyLine_ItemRecipe_Normal {
             ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_ItemRecipe_Normal#143")
                 .itemInputsUnsafe(
                     setStackSize(FrameBoxList.HSSS_Frame_Box.copy(), 1),
-                        getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
-                        setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 18),
-                        setStackSize(CasingList.HSSS_Casing.copy(), 8),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UV, 2),
+                    setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 18),
+                    setStackSize(CasingList.HSSS_Casing.copy(), 8),
 
-                        setStackSize(ScrewList.HSSS_Screw.copy(), 16))
+                    setStackSize(ScrewList.HSSS_Screw.copy(), 16))
                 .fluidInputs(requiredFluid("molten.indalloy140", 144 * 16), requiredFluid("ic2coolant", 1000 * 32))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Computer_Core_MKII, 1))
                 .eut(RECIPE_LuV)

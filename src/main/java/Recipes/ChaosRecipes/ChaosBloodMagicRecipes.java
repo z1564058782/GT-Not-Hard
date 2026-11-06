@@ -11,8 +11,10 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.TierEU.RECIPE_IV;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -216,19 +218,20 @@ public class ChaosBloodMagicRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
-        /*
-         * // "Blank Slate"
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(BloodMagic.ID, "Altar", 0L),
-         * // Synthetic Materials
-         * getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1_000))
-         * .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 1L))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addBloodMagicRecipes);
-         */
+
+        // "Blank Slate"
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(BloodMagic.ID, "Altar", 0L),
+
+                // Synthetic Materials
+                getModItem(NewHorizonsCoreMod.ID, "ArcaneSlate", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1_000))
+            .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 1L))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addBloodMagicRecipes);
+
         // "Reinforced Slate"
         GTValues.RA.stdBuilder()
             .itemInputs(
@@ -397,41 +400,45 @@ public class ChaosBloodMagicRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
-        /*
-         * // "Blood-Soaked Ichorium Block"
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(BloodMagic.ID, "Altar", 0L),
-         * // Synthetic Materials
-         * getModItem(GregTech.ID, "gt.blockmetal8", 1L, 13))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000))
-         * .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyIchorium", 1L))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addBloodMagicRecipes);
-         * // "Blood-Soaked Void Block"
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(BloodMagic.ID, "Altar", 0L),
-         * // Synthetic Materials
-         * getModItem(ThaumicBases.ID, "voidBlock", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000))
-         * .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyVoid", 1L))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addBloodMagicRecipes);
-         * // "Blood-Soaked Thaumium Block"
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(BloodMagic.ID, "Altar", 0L),
-         * // Synthetic Materials
-         * getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 5_000))
-         * .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BloodyThaumium", 1L))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addBloodMagicRecipes);
-         */
+
+        // "Blood-Soaked Ichorium Block"
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(BloodMagic.ID, "Altar", 0L),
+
+                // Synthetic Materials
+                getModItem(GregTech.ID, "gt.blockmetal8", 1L, 13))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 50_000))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyIchorium", 1L))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addBloodMagicRecipes);
+
+        // "Blood-Soaked Void Block"
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(BloodMagic.ID, "Altar", 0L),
+
+                // Synthetic Materials
+                getModItem(ThaumicBases.ID, "voidBlock", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 10_000))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyVoid", 1L))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addBloodMagicRecipes);
+
+        // "Blood-Soaked Thaumium Block"
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(BloodMagic.ID, "Altar", 0L),
+
+                // Synthetic Materials
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 5_000))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "BloodyThaumium", 1L))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addBloodMagicRecipes);
 
         // "Bound Diamond"
         GTValues.RA.stdBuilder()
@@ -549,21 +556,22 @@ public class ChaosBloodMagicRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addBloodMagicRecipes);
-        /*
-         * // Virtus
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(BloodMagic.ID, "blockWritingTable", 0L),
-         * // Synthetic Materials
-         * getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 3),
-         * getModItem(GregTech.ID, "gt.metaitem.01", 2L, 2346),
-         * getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 2L))
-         * .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 4_000))
-         * .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 6))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addBloodMagicRecipes);
-         */
+
+        // Virtus
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(BloodMagic.ID, "blockWritingTable", 0L),
+
+                // Synthetic Materials
+                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 3),
+                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 2346),
+                getModItem(NewHorizonsCoreMod.ID, "ChargedCertusQuartzDust", 2L))
+            .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 4_000))
+            .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 6))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addBloodMagicRecipes);
+
         // Reductus
         GTValues.RA.stdBuilder()
             .itemInputs(

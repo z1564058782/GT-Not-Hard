@@ -8,6 +8,8 @@ import java.util.Map;
 
 import net.minecraft.item.ItemStack;
 
+import util.RegisteredResourceCatalog;
+
 public class SingularityDustRecipes {
 
     public static final Map<String, ItemStack[]> VoidDustRecipes_T0 = new HashMap<>();
@@ -794,8 +796,6 @@ public class SingularityDustRecipes {
     }
 
     public static void addVoidDustRecipes_T10() {
-        // T10 - DeepDark - DD
-        ItemStack[] T10_Dust_Checked = checkItemStack(Vein_Dust.T10_Dust);
-        VoidDustRecipes_T10.put("DD", T10_Dust_Checked);
+        VoidDustRecipes_T10.put("DD", RegisteredResourceCatalog.collectDusts());
     }
 }

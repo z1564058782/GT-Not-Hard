@@ -22,13 +22,13 @@ import util.RecipesFrontend.OneToManyItemsFrontend_Small;
 public class FakeSingularityPachinkoRecipes {
 
     public static int NEI_ItemOutput_Size_Small = 27;
-    public static int NEI_ItemOutput_Size_Large = 90;
+    public static int NEI_ItemOutput_Size_Large = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
 
     public static final RecipeMap<RecipeMapBackend> addFakePachinkoRecipes_GT_Item = RecipeMapBuilder
         .of("Singularity of Pachinko_GT_Item")
         .maxIO(1, NEI_ItemOutput_Size_Large, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Large::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();
@@ -37,7 +37,7 @@ public class FakeSingularityPachinkoRecipes {
         .of("Singularity of Pachinko_GT_Machine")
         .maxIO(1, NEI_ItemOutput_Size_Small, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Small::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();
@@ -46,7 +46,7 @@ public class FakeSingularityPachinkoRecipes {
         .of("Singularity of Pachinko_GT_Machine_Special")
         .maxIO(1, NEI_ItemOutput_Size_Large, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Large::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();
@@ -55,7 +55,7 @@ public class FakeSingularityPachinkoRecipes {
         .of("Singularity of Pachinko_Storage")
         .maxIO(1, NEI_ItemOutput_Size_Large, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Large::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();

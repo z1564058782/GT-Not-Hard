@@ -14,109 +14,32 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
 import util.RecipesFrontend.OneToManyItemsFrontend_Large;
+import util.RegisteredResourceCatalog;
 
 public class FakeSingularityIngotRecipes {
 
-    public static int NEI_ItemOutput_Size = 90;
+    public static int NEI_ItemOutput_Size = util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T0 = RecipeMapBuilder
-        .of("Singularity of T0 Ingot")
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes = RecipeMapBuilder
+        .of("Singularity of Void Ingot")
         .maxIO(1, NEI_ItemOutput_Size, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Large::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T1 = RecipeMapBuilder
-        .of("Singularity of T1 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T2 = RecipeMapBuilder
-        .of("Singularity of T2 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T3 = RecipeMapBuilder
-        .of("Singularity of T3 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T4 = RecipeMapBuilder
-        .of("Singularity of T4 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T5 = RecipeMapBuilder
-        .of("Singularity of T5 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T6 = RecipeMapBuilder
-        .of("Singularity of T6 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T7 = RecipeMapBuilder
-        .of("Singularity of T7 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T8 = RecipeMapBuilder
-        .of("Singularity of T8 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T9 = RecipeMapBuilder
-        .of("Singularity of T9 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T10 = RecipeMapBuilder
-        .of("Singularity of T10 Ingot")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(255))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T0 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T1 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T2 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T3 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T4 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T5 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T6 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T7 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T8 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T9 = addFakeVoidIngotRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidIngotRecipes_T10 = addFakeVoidIngotRecipes;
 
     public static void addFakeVoidIngotRecipes_T0() {
         // T0 - Overworld - Ow
@@ -1389,7 +1312,11 @@ public class FakeSingularityIngotRecipes {
 
     public static void addFakeVoidIngotRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[] Fake_T10_Ingot_Checked = checkItemStack(Vein_Ingot.T10_Ingot);
+        ItemStack[] resources = SingularityIngotRecipes.VoidIngotRecipes_T10.get("DD");
+        if (resources == null) {
+            throw new IllegalStateException("Build the T10 ingot catalog before registering its NEI recipes");
+        }
+        ItemStack[] Fake_T10_Ingot_Checked = RegisteredResourceCatalog.copyItems(resources);
         ItemStack[][] Fake_T10_DeepDark_Ingot_Split = addSplitAggregateArray(
             Fake_T10_Ingot_Checked,
             NEI_ItemOutput_Size);

@@ -1,0 +1,221 @@
+# 机器名称：保留注册键，兼容已有存档。
+gt.blockmachines.chaos.name=混沌 (Chaos)
+gt.blockmachines.origin.name=起源 (Origin)
+gt.blockmachines.singularity.name=奇点 (Singularity)
+
+# 机器通用说明
+gtnothard.tooltip.runs_machines=让放入控制器的机器如同放置在世界中一样运行
+gtnothard.tooltip.parallel=并行数量 = 2^x
+gtnothard.tooltip.machine_count=x = 控制器内的机器数量
+gtnothard.tooltip.item_count=x = 控制器内的物品数量
+gtnothard.tooltip.added_by=由 GT Not Hard 添加
+gtnothard.structure.front_center=正面中央
+gtnothard.structure.any_casing=任意外壳位置
+gtnothard.structure.tungstensteel=坚固钨钢机械方块
+gtnothard.structure.stainless_steel=洁净不锈钢机械方块
+gtnothard.structure.titanium=稳定钛机械方块
+
+# 混沌
+gtnothard.tooltip.chaos.wireless_duration=无线模式下，配方耗时固定为 128 刻
+gtnothard.tooltip.chaos.wireless_energy=直接从无线电网提取能量，不再通过能源仓供电
+gtnothard.tooltip.chaos.multiple_modes=如果控制器内的机器支持多种模式，
+gtnothard.tooltip.chaos.switch_mode=潜行左键点击控制器即可切换机器模式
+gtnothard.tooltip.chaos.xtreme=放入自动工作台 (LV) 可处理终极工作台配方
+gtnothard.tooltip.chaos.falling_tower=放入自动工作台 (MV) 可处理坠星标位配方
+gtnothard.tooltip.chaos.thaumcraft=放入大型源质冶炼厂可处理神秘时代配方
+gtnothard.tooltip.chaos.magic=放入奥法研究阐释者可处理血魔法、植物魔法和要素农场配方
+
+# 起源
+gtnothard.tooltip.origin.wireless_button=通过机器界面中的无线模式按钮切换无线输出
+gtnothard.tooltip.origin.wireless_energy=生成的能量直接存入无线电网，不再通过动力仓输出
+
+# 奇点
+gtnothard.tooltip.singularity.resources=凭空生成资源，不消耗能量、流体或物品
+gtnothard.tooltip.singularity.selector=在控制器内放入指定物品，以选择要获取的资源
+gtnothard.tooltip.singularity.types=支持八种资源类型：
+gtnothard.tooltip.singularity.types_materials=虚空矿石 / 虚空宝石 / 虚空粉末 / 虚空流体 / 虚空锭
+gtnothard.tooltip.singularity.types_other=生态资源 / 创造资源 / 抽奖
+gtnothard.tooltip.singularity.switch_mode=潜行左键点击控制器即可切换资源类型
+
+# 按钮、聊天与 Waila
+gtnothard.gui.wireless_mode=无线模式
+gtnothard.chat.mode=模式：%s
+gtnothard.waila.machine=机器：%s
+gtnothard.waila.machine_type=机器模式：%s
+gtnothard.waila.item=物品：%s
+gtnothard.waila.type=资源类型：%s
+gtnothard.waila.parallel=并行数：%s
+gtnothard.waila.wireless=无线模式：%s
+gtnothard.waila.energy_consumed=能量消耗：%s EU
+gtnothard.waila.energy_generated=能量产出：%s EU
+gtnothard.state.enabled=已开启
+gtnothard.state.disabled=已关闭
+gtnothard.state.none=无
+gtnothard.state.error=错误
+gtnothard.nei.not_consumed=不耗
+gtnothard.nei.fuel_baseline=发电基数：%s EU
+gtnothard.nei.description.Debug Item NBT Check=物品 NBT 检查
+gtnothard.nei.description.Singularity with Ecosystem Mode=奇点模式：生态资源
+gtnothard.nei.description.Singularity with Mod Mode=奇点模式：创造资源
+gtnothard.nei.description.Singularity with Pachinko Mode=奇点模式：抽奖
+gtnothard.nei.description.Singularity with Void Dust Mode=奇点模式：虚空粉末
+gtnothard.nei.description.Singularity with Void Fluid Mode=奇点模式：虚空流体
+gtnothard.nei.description.Singularity with Void Gem Mode=奇点模式：虚空宝石
+gtnothard.nei.description.Singularity with Void Ingot Mode=奇点模式：虚空锭
+gtnothard.nei.description.Singularity with Void Ore Mode=奇点模式：虚空矿石
+
+# 模式键后缀与旧版 NBT 值一致，包含历史拼写，不要修改。
+gtnothard.mode.Polarizer=磁化
+gtnothard.mode.Electromagnetic Separator=电磁分离
+gtnothard.mode.Canner=装罐
+gtnothard.mode.Forming Press=冲压
+gtnothard.mode.Bending Machine=卷板
+gtnothard.mode.Ore Washer=洗矿
+gtnothard.mode.Simple Washer=简易洗矿
+gtnothard.mode.Chemical Bath=化学浸洗
+gtnothard.mode.Arc Furnace=电弧炉
+gtnothard.mode.Packager=打包
+gtnothard.mode.Unpackeager=解包
+gtnothard.mode.Cutting=切割
+gtnothard.mode.Dehydrator=脱水
+gtnothard.mode.Vacuum Furnace=真空炉
+gtnothard.mode.Compressor=压缩
+gtnothard.mode.HIP Compressor=热等静压
+gtnothard.mode.BHC Compressor=黑洞压缩
+gtnothard.mode.Advanced Neutronium Compressor=高级中子态素压缩
+gtnothard.mode.Circuit Assembly Line=电路装配线
+gtnothard.mode.Circuit Assembly=电路组装
+gtnothard.mode.Blood Magic=血魔法
+gtnothard.mode.Botania=植物魔法
+gtnothard.mode.Essence Farm=要素农场
+gtnothard.mode.Degenerate Quark Gluon=简并夸克胶子等离子体
+gtnothard.mode.Magmatter=磁单极物质
+gtnothard.mode.Distillery=蒸馏
+gtnothard.mode.distillation tower=蒸馏塔
+gtnothard.mode.Replicator Item=物品复制
+gtnothard.mode.Replicator Fluid=流体复制
+gtnothard.mode.Precise Assembler=精密组装
+gtnothard.mode.Assembler=组装
+gtnothard.mode.Arcane Worktable=奥术工作台
+gtnothard.mode.Crucible=坩埚
+gtnothard.mode.Runic Matrix=符文矩阵
+gtnothard.mode.Void Ore=虚空矿石
+gtnothard.mode.Void Gem=虚空宝石
+gtnothard.mode.Void Dust=虚空粉末
+gtnothard.mode.Void Fluid=虚空流体
+gtnothard.mode.Void Ingot=虚空锭
+gtnothard.mode.Ecosystem=生态资源
+gtnothard.mode.Mod Item=创造资源
+gtnothard.mode.Pachinko=抽奖
+
+# 配方表标识被配方锁定功能引用，只翻译等号右侧。
+Chaos of Antimatter=混沌：反物质
+Chaos of Arcane Worktable=混沌：奥术工作台
+Chaos of AssemblyLine=混沌：装配线
+Chaos of BloodMagic=混沌：血魔法
+Chaos of Botania=混沌：植物魔法
+Chaos of CircuitAssemblyLine=混沌：电路装配线
+Chaos of Compress with BHC=混沌：黑洞压缩
+Chaos of Compress with HIP=混沌：热等静压
+Chaos of Crucible=混沌：坩埚
+Chaos of Essence Farm=混沌：要素农场
+Chaos of Exotic with DegenerateQuarkGluon=混沌：简并夸克胶子等离子体
+Chaos of Exotic with Magmatter=混沌：磁单极物质
+Chaos of Falling Tower=混沌：坠星标位
+Chaos of Ore=混沌：矿石处理
+Chaos of Replicator with Fluid=混沌：流体复制
+Chaos of Replicator with Item=混沌：物品复制
+Chaos of Runic Matrix=混沌：符文矩阵
+Chaos of Xtreme Crafting=混沌：终极合成
+Chaos of ZhuHai Fishery=混沌：珠海渔场
+Item NBT Check=物品 NBT 检查
+
+Origin of Generator with Acid=起源：酸性发电
+Origin of Generator with Combustion=起源：内燃发电
+Origin of Generator with Gas=起源：燃气轮机
+Origin of Generator with Magic=起源：魔法发电
+Origin of Generator with Naquadah=起源：硅岩反应堆
+Origin of Generator with Nuclear=起源：核反应堆
+Origin of Generator with Plasma=起源：等离子发电
+Origin of Generator with Rocket=起源：火箭引擎
+Origin of Generator with Semifluid=起源：半流质发电
+Origin of Generator with Solar=起源：太阳能发电
+Origin of Generator with Steam=起源：蒸汽轮机
+Origin of Generator with UCFE=起源：通用化学燃料引擎
+Origin of Generator with Water=起源：水力涡轮机
+
+Singularity of Ecosystem AlgaeFarm=奇点：藻类农场
+Singularity of Ecosystem Comb=奇点：蜂巢
+Singularity of Ecosystem Food=奇点：食物
+Singularity of Ecosystem TreeGrowth=奇点：树木生长
+Singularity of Mod Item=奇点：创造资源
+Singularity of Pachinko_GT_Item=奇点：格雷物品抽奖
+Singularity of Pachinko_GT_Machine=奇点：格雷机器抽奖
+Singularity of Pachinko_GT_Machine_Special=奇点：格雷特殊机器抽奖
+Singularity of Pachinko_Storage=奇点：存储物品抽奖
+
+Singularity of Void Ore=奇点：虚空矿石
+Singularity of Void Gem=奇点：虚空宝石
+Singularity of Void Dust=奇点：虚空粉末
+Singularity of Void Fluid=奇点：虚空流体
+Singularity of Void Ingot=奇点：虚空锭
+
+Singularity of T0 Ore=奇点：T0 虚空矿石
+Singularity of T1 Ore=奇点：T1 虚空矿石
+Singularity of T2 Ore=奇点：T2 虚空矿石
+Singularity of T3 Ore=奇点：T3 虚空矿石
+Singularity of T4 Ore=奇点：T4 虚空矿石
+Singularity of T5 Ore=奇点：T5 虚空矿石
+Singularity of T6 Ore=奇点：T6 虚空矿石
+Singularity of T7 Ore=奇点：T7 虚空矿石
+Singularity of T8 Ore=奇点：T8 虚空矿石
+Singularity of T9 Ore=奇点：T9 虚空矿石
+Singularity of T10 Ore=奇点：T10 虚空矿石
+
+Singularity of T0 Gem=奇点：T0 虚空宝石
+Singularity of T1 Gem=奇点：T1 虚空宝石
+Singularity of T2 Gem=奇点：T2 虚空宝石
+Singularity of T3 Gem=奇点：T3 虚空宝石
+Singularity of T4 Gem=奇点：T4 虚空宝石
+Singularity of T5 Gem=奇点：T5 虚空宝石
+Singularity of T6 Gem=奇点：T6 虚空宝石
+Singularity of T7 Gem=奇点：T7 虚空宝石
+Singularity of T8 Gem=奇点：T8 虚空宝石
+Singularity of T9 Gem=奇点：T9 虚空宝石
+Singularity of T10 Gem=奇点：T10 虚空宝石
+
+Singularity of T0 Dust=奇点：T0 虚空粉末
+Singularity of T1 Dust=奇点：T1 虚空粉末
+Singularity of T2 Dust=奇点：T2 虚空粉末
+Singularity of T3 Dust=奇点：T3 虚空粉末
+Singularity of T4 Dust=奇点：T4 虚空粉末
+Singularity of T5 Dust=奇点：T5 虚空粉末
+Singularity of T6 Dust=奇点：T6 虚空粉末
+Singularity of T7 Dust=奇点：T7 虚空粉末
+Singularity of T8 Dust=奇点：T8 虚空粉末
+Singularity of T9 Dust=奇点：T9 虚空粉末
+Singularity of T10 Dust=奇点：T10 虚空粉末
+
+Singularity of T0 Fluid=奇点：T0 虚空流体
+Singularity of T1 Fluid=奇点：T1 虚空流体
+Singularity of T2 Fluid=奇点：T2 虚空流体
+Singularity of T3 Fluid=奇点：T3 虚空流体
+Singularity of T4 Fluid=奇点：T4 虚空流体
+Singularity of T5 Fluid=奇点：T5 虚空流体
+Singularity of T6 Fluid=奇点：T6 虚空流体
+Singularity of T7 Fluid=奇点：T7 虚空流体
+Singularity of T8 Fluid=奇点：T8 虚空流体
+Singularity of T9 Fluid=奇点：T9 虚空流体
+Singularity of T10 Fluid=奇点：T10 虚空流体
+
+Singularity of T0 Ingot=奇点：T0 虚空锭
+Singularity of T1 Ingot=奇点：T1 虚空锭
+Singularity of T2 Ingot=奇点：T2 虚空锭
+Singularity of T3 Ingot=奇点：T3 虚空锭
+Singularity of T4 Ingot=奇点：T4 虚空锭
+Singularity of T5 Ingot=奇点：T5 虚空锭
+Singularity of T6 Ingot=奇点：T6 虚空锭
+Singularity of T7 Ingot=奇点：T7 虚空锭
+Singularity of T8 Ingot=奇点：T8 虚空锭
+Singularity of T9 Ingot=奇点：T9 虚空锭
+Singularity of T10 Ingot=奇点：T10 虚空锭

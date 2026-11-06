@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -607,6 +608,17 @@ public class Ecosystem_TreeGrowth {
         getModItem(PamsHarvestCraft.ID, "pamgooseberrySapling", 1L), // "Gooseberry Sapling"
         getModItem(PamsHarvestCraft.ID, "gooseberryItem", 1L) // Gooseberry
     };
+
+    // PamsHarvestTheNether
+    public static final ItemStack[] PamsHarvestTheNether_TreeGrowth = PamsHarvestTheNether.isModLoaded()
+        ? new ItemStack[] {
+            // "Ignis Fruit Sapling"
+            getModItem(PamsHarvestTheNether.ID, "netherLog", 1L), // "Nether Log"
+            getModItem(PamsHarvestTheNether.ID, "netherSapling", 1L), // "Ignis Fruit Sapling"
+            getModItem(PamsHarvestTheNether.ID, "netherLeaves", 1L), // "Nether Leaves"
+            getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 1L) // "Ignis Fruit"
+        }
+        : new ItemStack[0];
 
     // EtFuturumRequiem
     public static final ItemStack[] EtFuturumRequiem_TreeGrowth = new ItemStack[] {

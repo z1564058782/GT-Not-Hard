@@ -12,14 +12,13 @@ import com.gtnewhorizons.modularui.common.widget.ProgressBar;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.recipe.BasicUIPropertiesBuilder;
 import gregtech.api.recipe.NEIRecipePropertiesBuilder;
-import gregtech.api.recipe.RecipeMapFrontend;
 import gregtech.api.util.MethodsReturnNonnullByDefault;
 import gregtech.common.gui.modularui.UIHelper;
-import gregtech.nei.GTNEIDefaultHandler;
+import gregtech.nei.GTNEIDefaultHandler.NEITemplateContext;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class FallingTowerOfChaosFrontend extends RecipeMapFrontend {
+public class FallingTowerOfChaosFrontend extends LocalizedRecipeFrontend {
 
     public FallingTowerOfChaosFrontend(BasicUIPropertiesBuilder uiPropertiesBuilder,
         NEIRecipePropertiesBuilder neiRecipePropertiesBuilder) {
@@ -45,13 +44,14 @@ public class FallingTowerOfChaosFrontend extends RecipeMapFrontend {
         return UIHelper.getGridPositions(fluidOutputCount, 0, 0, 0, 0);
     }
 
-    public void addProgressBar(ModularWindow.Builder builder, GTNEIDefaultHandler.NEITemplateContext ctx) {
+    @Override
+    public void addProgressBar(ModularWindow.Builder builder, NEITemplateContext context) {
         builder.widget(
             (new ProgressBar()).setTexture(GTUITextures.PROGRESSBAR_HAMMER, 16)
                 .setDirection(ProgressBar.Direction.DOWN)
-                .setProgress(ctx.progressSupplier)
+                .setProgress(context.progressSupplier)
                 .setSynced(false, false)
-                .setPos((new Pos2d(81, 27)).add(ctx.windowOffset))
+                .setPos((new Pos2d(81, 27)).add(context.windowOffset))
                 .setSize(14, 16));
     }
 }

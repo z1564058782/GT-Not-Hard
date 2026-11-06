@@ -1,49 +1,5 @@
 package Recipes.ChaosRecipes.ChaosOfAssemblyLine;
 
-import EnumList.EnumItemList.EnumGTList.BatteryList;
-import EnumList.EnumItemList.EnumGTList.CableList;
-import EnumList.EnumItemList.EnumGTList.CircuitList;
-import EnumList.EnumItemList.EnumGTList.GTBlockList;
-import EnumList.EnumItemList.EnumGTList.GTItemList;
-import EnumList.EnumItemList.EnumGTList.GTPPList;
-import EnumList.EnumItemList.EnumGTList.HatchList;
-import EnumList.EnumItemList.EnumGTList.MachineList;
-import EnumList.EnumItemList.EnumGTList.MultiMachineCasingList;
-import EnumList.EnumItemList.EnumGTList.MultiMachineControllerList;
-import EnumList.EnumItemList.EnumGTList.WireList;
-import EnumList.EnumItemList.EnumMaterialList.BoltList;
-import EnumList.EnumItemList.EnumMaterialList.DensePlateList;
-import EnumList.EnumItemList.EnumMaterialList.DoublePlateList;
-import EnumList.EnumItemList.EnumMaterialList.FineWireList;
-import EnumList.EnumItemList.EnumMaterialList.FoilList;
-import EnumList.EnumItemList.EnumMaterialList.FrameBoxList;
-import EnumList.EnumItemList.EnumMaterialList.GearList;
-import EnumList.EnumItemList.EnumMaterialList.LongRodList;
-import EnumList.EnumItemList.EnumMaterialList.PlateList;
-import EnumList.EnumItemList.EnumMaterialList.RodList;
-import EnumList.EnumItemList.EnumMaterialList.RotorList;
-import EnumList.EnumItemList.EnumMaterialList.ScrewList;
-import EnumList.EnumItemList.EnumMaterialList.SmallGearList;
-import EnumList.EnumItemList.EnumMaterialList.SpringList;
-import EnumList.EnumItemList.EnumMaterialList.SuperdensePlateList;
-import EnumList.EnumItemList.EnumMaterialList.TriplePlateList;
-import EnumList.EnumItemList.EnumModList.AE2FluidCraftingList;
-import EnumList.EnumItemList.EnumModList.AmunRaList;
-import EnumList.EnumItemList.EnumModList.Appliedenergistics2List;
-import EnumList.EnumItemList.EnumModList.GTNHIntergalacticList;
-import EnumList.EnumItemList.EnumModList.GTNHLanthanidesList;
-import EnumList.EnumItemList.EnumModList.GoodGeneratorList;
-import EnumList.EnumItemList.EnumModList.MinecraftList;
-import EnumList.EnumItemList.EnumModList.OpenComputersList;
-import EnumList.EnumItemList.EnumModList.TecTechList;
-import EnumList.EnumItemList.EnumOreProductList.GemList;
-import EnumList.EnumItemList.EnumOreProductList.IngotList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTUtility;
-import net.minecraft.item.ItemStack;
-import util.ChaosAssemblyRecipeBuilder;
-
 import static Recipes.ChaosRecipes.ChaosRecipeMap.AssemblyLineNormalRecipe;
 import static gregtech.api.enums.TierEU.RECIPE_LuV;
 import static gregtech.api.enums.TierEU.RECIPE_UEV;
@@ -57,6 +13,33 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.ChaosAssemblyRecipeBuilder.requiredFluid;
 import static util.Utils.getMaterialInput;
 import static util.Utils.setStackSize;
+
+import net.minecraft.item.ItemStack;
+
+import EnumList.EnumItemList.EnumGTList.BatteryList;
+import EnumList.EnumItemList.EnumGTList.CircuitList;
+import EnumList.EnumItemList.EnumGTList.GTBlockList;
+import EnumList.EnumItemList.EnumGTList.GTItemList;
+import EnumList.EnumItemList.EnumGTList.GTPPList;
+import EnumList.EnumItemList.EnumGTList.HatchList;
+import EnumList.EnumItemList.EnumGTList.MachineList;
+import EnumList.EnumItemList.EnumGTList.MultiMachineCasingList;
+import EnumList.EnumItemList.EnumGTList.MultiMachineControllerList;
+import EnumList.EnumItemList.EnumGTList.WireList;
+import EnumList.EnumItemList.EnumModList.AE2FluidCraftingList;
+import EnumList.EnumItemList.EnumModList.AmunRaList;
+import EnumList.EnumItemList.EnumModList.Appliedenergistics2List;
+import EnumList.EnumItemList.EnumModList.GTNHIntergalacticList;
+import EnumList.EnumItemList.EnumModList.GTNHLanthanidesList;
+import EnumList.EnumItemList.EnumModList.GoodGeneratorList;
+import EnumList.EnumItemList.EnumModList.OpenComputersList;
+import EnumList.EnumItemList.EnumModList.TecTechList;
+import EnumList.EnumItemList.EnumOreProductList.GemList;
+import EnumList.EnumItemList.EnumOreProductList.IngotList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTUtility;
+import util.ChaosAssemblyRecipeBuilder;
 
 public class ChaosAssemblyLine_HatchRecipe_Item {
 
@@ -106,8 +89,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
                 requiredFluid("lubricant", 1000 * (64 + 32)),
                 requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 12 + 24)),
                 requiredFluid("protomatter", 250),
-                requiredFluid("radon", 1000 * (64 * 8 + 20))
-            )
+                requiredFluid("radon", 1000 * (64 * 8 + 20)))
             .itemOutputs(setStackSize(HatchList.Antimatter_Hatch.copy(), 1))
             .eut(RECIPE_UIV)
             .duration(300 * SECONDS)
@@ -151,8 +133,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
 
                 setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 44),
                 setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 16))
-            .fluidInputs(
-                requiredFluid("lubricant", 1000 * (64 * 4 + 22) + 500))
+            .fluidInputs(requiredFluid("lubricant", 1000 * (64 * 4 + 22) + 500))
             .itemOutputs(setStackSize(HatchList.Auto_Taping_Maintenance_Hatch.copy(), 1))
             .eut(RECIPE_UV)
             .duration(300 * SECONDS)
@@ -275,8 +256,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
                     requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 16),
                     requiredFluid("helium", 1000 * 8),
                     requiredFluid("lubricant", 1000 * 2 + 500),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 9 + 8))
-                )
+                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 9 + 8)))
                 .itemOutputs(setStackSize(HatchList.Bose_Einstein_Condensate_Hatch.copy(), 1))
                 .eut(RECIPE_UIV)
                 .duration(30 * SECONDS)
@@ -376,8 +356,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
                     requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 20),
                     requiredFluid("helium", 1000 * 8),
                     requiredFluid("lubricant", 1000 * 2 + 500),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 25 + 44))
-                )
+                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 25 + 44)))
                 .itemOutputs(setStackSize(HatchList.Bose_Einstein_Condensate_Detector_Hatch.copy(), 1))
                 .eut(RECIPE_UIV)
                 .duration(30 * SECONDS)
@@ -429,8 +408,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
                     setStackSize(IngotList.Infinity_Ingot.copy(), 16),
 
                     setStackSize(MachineList.Teleporter.copy(), 1))
-                .fluidInputs(
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8))
+                .fluidInputs(requiredFluid("molten.mutatedlivingsolder", 144 * 64 * 8))
                 .itemOutputs(setStackSize(HatchList.Teleportation_Node_Controller_Hatch.copy(), 1))
                 .eut(RECIPE_UIV)
                 .duration(30 * SECONDS)
@@ -476,8 +454,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
             .fluidInputs(
                 requiredFluid("lubricant", 1000 * (64 + 4)),
                 requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 4 + 24)),
-                requiredFluid("radon", 1000 * (64 * 2 + 2) + 500)
-            )
+                requiredFluid("radon", 1000 * (64 * 2 + 2) + 500))
             .itemOutputs(setStackSize(HatchList.Bulk_Catalyst_Housing.copy(), 1))
             .eut(RECIPE_UEV)
             .duration(30 * SECONDS)
@@ -503,9 +480,7 @@ public class ChaosAssemblyLine_HatchRecipe_Item {
                 setStackSize(MultiMachineControllerList.Static_Network_Switch_With_QoS.copy(), 1),
 
                 setStackSize(OpenComputersList.Internet_Card.copy(), 1))
-            .fluidInputs(
-                requiredFluid("molten.mutatedlivingsolder", 144 * 9),
-                requiredFluid("exciteddtec", 500))
+            .fluidInputs(requiredFluid("molten.mutatedlivingsolder", 144 * 9), requiredFluid("exciteddtec", 500))
             .itemOutputs(setStackSize(HatchList.Cloud_Computation_Client_Hatch.copy(), 1))
             .eut(RECIPE_UMV)
             .duration(30 * SECONDS)

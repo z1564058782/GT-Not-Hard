@@ -16,20 +16,20 @@ import codechicken.nei.PositionedStack;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.recipe.BasicUIPropertiesBuilder;
 import gregtech.api.recipe.NEIRecipePropertiesBuilder;
-import gregtech.api.recipe.RecipeMapFrontend;
 import gregtech.api.util.MethodsReturnNonnullByDefault;
 import gregtech.common.gui.modularui.UIHelper;
 import gregtech.nei.GTNEIDefaultHandler;
+import gregtech.nei.GTNEIDefaultHandler.NEITemplateContext;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class OneToManyItemsFrontend_Large extends RecipeMapFrontend {
+public class OneToManyItemsFrontend_Large extends ResourceCatalogFrontend {
 
     public OneToManyItemsFrontend_Large(BasicUIPropertiesBuilder uiPropertiesBuilder,
         NEIRecipePropertiesBuilder neiRecipePropertiesBuilder) {
         super(
             uiPropertiesBuilder.logoPos(new Pos2d(8, 8)),
-            neiRecipePropertiesBuilder.recipeBackgroundSize(new Size(170, 225)));
+            neiRecipePropertiesBuilder.recipeBackgroundSize(new Size(170, 100)));
     }
 
     @Override
@@ -38,7 +38,7 @@ public class OneToManyItemsFrontend_Large extends RecipeMapFrontend {
     }
 
     public List<Pos2d> getItemOutputPositions(int itemOutputCount) {
-        return UIHelper.getGridPositions(Math.min(itemOutputCount, 90), 7, 44, 9, 10);
+        return outputPositions(itemOutputCount);
     }
 
     public List<Pos2d> getFluidInputPositions(int fluidInputCount) {
@@ -51,17 +51,18 @@ public class OneToManyItemsFrontend_Large extends RecipeMapFrontend {
 
     public void drawNEIOverlays(GTNEIDefaultHandler.CachedDefaultRecipe neiCachedRecipe) {
         for (PositionedStack stack : neiCachedRecipe.mInputs) {
-            this.drawNEIOverlayText(StatCollector.translateToLocal("NC"), stack);
+            this.drawNEIOverlayText(StatCollector.translateToLocal("gtnothard.nei.not_consumed"), stack);
         }
     }
 
-    public void addProgressBar(ModularWindow.Builder builder, GTNEIDefaultHandler.NEITemplateContext ctx) {
+    @Override
+    public void addProgressBar(ModularWindow.Builder builder, NEITemplateContext context) {
         builder.widget(
             (new ProgressBar()).setTexture(GTUITextures.PROGRESSBAR_HAMMER, 16)
                 .setDirection(Direction.DOWN)
-                .setProgress(ctx.progressSupplier)
+                .setProgress(context.progressSupplier)
                 .setSynced(false, false)
-                .setPos((new Pos2d(81, 27)).add(ctx.windowOffset))
+                .setPos((new Pos2d(81, 27)).add(context.windowOffset))
                 .setSize(14, 16));
     }
 }

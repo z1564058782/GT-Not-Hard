@@ -6,6 +6,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static util.AggregateItemStackArray.addCompressAggregateArray;
 import static util.AggregateItemStackArray.addSplitAggregateArray;
 import static util.AggregateItemStackArray.checkItemStack;
+import static util.RecipesFrontend.ResourceCatalogFrontend.OUTPUTS_PER_PAGE;
 
 import net.minecraft.item.ItemStack;
 
@@ -13,111 +14,33 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
-import util.RecipesFrontend.OneToManyItemsFrontend_Large;
 import util.RecipesFrontend.OneToManyItemsFrontend_Small;
+import util.RegisteredResourceCatalog;
 
 public class FakeSingularityGemRecipes {
 
     public static int NEI_ItemOutput_Size = 27;
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T0 = RecipeMapBuilder
-        .of("Singularity of T0 Gem")
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes = RecipeMapBuilder
+        .of("Singularity of Void Gem")
         .maxIO(1, NEI_ItemOutput_Size, 0, 0)
         .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
+        .neiHandlerInfo(builder -> builder.setHeight(util.RecipesFrontend.ResourceCatalogFrontend.HANDLER_HEIGHT))
         .frontend(OneToManyItemsFrontend_Small::new)
         .neiTransferRect(81, 27, 14, 16)
         .build();
 
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T1 = RecipeMapBuilder
-        .of("Singularity of T1 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T2 = RecipeMapBuilder
-        .of("Singularity of T2 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T3 = RecipeMapBuilder
-        .of("Singularity of T3 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T4 = RecipeMapBuilder
-        .of("Singularity of T4 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T5 = RecipeMapBuilder
-        .of("Singularity of T5 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T6 = RecipeMapBuilder
-        .of("Singularity of T6 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T7 = RecipeMapBuilder
-        .of("Singularity of T7 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T8 = RecipeMapBuilder
-        .of("Singularity of T8 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T9 = RecipeMapBuilder
-        .of("Singularity of T9 Gem")
-        .maxIO(1, NEI_ItemOutput_Size, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(165))
-        .frontend(OneToManyItemsFrontend_Small::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
-
-    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T10 = RecipeMapBuilder
-        .of("Singularity of T10 Gem")
-        .maxIO(1, 90, 0, 0)
-        .minInputs(1, 0)
-        .neiHandlerInfo(builder -> builder.setHeight(335))
-        .frontend(OneToManyItemsFrontend_Large::new)
-        .neiTransferRect(81, 27, 14, 16)
-        .build();
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T0 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T1 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T2 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T3 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T4 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T5 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T6 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T7 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T8 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T9 = addFakeVoidGemRecipes;
+    public static final RecipeMap<RecipeMapBackend> addFakeVoidGemRecipes_T10 = addFakeVoidGemRecipes;
 
     public static void addFakeVoidGemRecipes_T0() {
         // T0 - Overworld - Ow
@@ -1093,8 +1016,12 @@ public class FakeSingularityGemRecipes {
 
     public static void addFakeVoidGemRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[] Fake_T10_Gem_Checked = checkItemStack(Vein_Gem.T10_Gem);
-        ItemStack[][] Fake_T10_DeepDark_Gem_Split = addSplitAggregateArray(Fake_T10_Gem_Checked, 90);
+        ItemStack[] resources = SingularityGemRecipes.VoidGemRecipes_T10.get("DD");
+        if (resources == null) {
+            throw new IllegalStateException("Build the T10 gem catalog before registering its NEI recipes");
+        }
+        ItemStack[] Fake_T10_Gem_Checked = RegisteredResourceCatalog.copyItems(resources);
+        ItemStack[][] Fake_T10_DeepDark_Gem_Split = addSplitAggregateArray(Fake_T10_Gem_Checked, OUTPUTS_PER_PAGE);
         for (ItemStack[] tempItemStacks : Fake_T10_DeepDark_Gem_Split) {
             GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L))

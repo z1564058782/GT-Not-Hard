@@ -8,6 +8,9 @@ import java.util.Map;
 
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.OrePrefixes;
+import util.RegisteredResourceCatalog;
+
 public class SingularityOreRecipes {
 
     public static final Map<String, ItemStack[]> VoidOreRecipes_T0 = new HashMap<>();
@@ -123,28 +126,7 @@ public class SingularityOreRecipes {
         ItemStack[] T0_EndAsteroid_Ore_Checked = checkItemStack(T0_EndAsteroid_Ore);
         VoidOreRecipes_T0.put("EA", T0_EndAsteroid_Ore_Checked);
 
-        // T0 - TheToxicEverglades - Eg
-        ItemStack[] T0_TheToxicEverglades_Ore = addAggregateArray(
-            Vein.Agardite_Nd_Vein,
-            Vein.Agardite_Cd_Vein,
-            Vein.Iron_Vein,
-            Vein.Xenotime_Vein,
-            Vein.Hibonite_Vein,
-            Vein.Geikielite_Vein,
-            Vein.Cerite_Vein,
-            Vein.Lanthanite_Ce_Vein,
-            Vein.Titanite_Vein,
-            Vein.Honeaite_Vein,
-            Vein.Demicheleite_Br_Vein,
-            Vein.Fluorcaphite_Vein,
-            Vein.Cryolite_F_Vein,
-            Vein.Fluorite_F_Vein,
-            Vein.Gadolinite_Ce_Vein,
-            Vein.Runite_Vein,
-            Vein.Yttrocerite_Vein,
-            Vein.Florencite_Vein);
-        ItemStack[] T0_TheToxicEverglades_Ore_Checked = checkItemStack(T0_TheToxicEverglades_Ore);
-        VoidOreRecipes_T0.put("Eg", T0_TheToxicEverglades_Ore_Checked);
+        VoidOreRecipes_T0.put("Eg", DimensionOreCatalog.collect("Eg", SmallOre.Overworld_SmallOre));
     }
 
     public static void addVoidOreRecipes_T1() {
@@ -510,28 +492,7 @@ public class SingularityOreRecipes {
         ItemStack[] T7_Haumea_Ore_Checked = checkItemStack(T7_Haumea_Ore);
         VoidOreRecipes_T7.put("Ha", T7_Haumea_Ore_Checked);
 
-        // T7 - Kuiper Belt - KB
-        ItemStack[] T7_Kuiperbelt_Ore = addAggregateArray(
-            Vein.Carbon_Dioxide_Vein,
-            Vein.Pitchblende_Vein,
-            Vein.Garnierite_Nickel_Vein,
-            Vein.Oxygen_Vein,
-            Vein.Sulfur_Dioxide_Vein,
-            Vein.Bauxite_Vein,
-            Vein.Tetrahedrite_Vein,
-            Vein.Naquadah_Vein,
-            Vein.Methane_Vein,
-            Vein.Uraninite_Uranium238_Vein,
-            Vein.Scheelite_Tungstate_Vein,
-            Vein.Graphite_Diamond_Vein,
-            Vein.Nickel_Osmium_Vein,
-            Vein.Platinum_Palladium_Vein,
-            Vein.Neutronium_Vein,
-            Vein.Nitrogen_Vein,
-            Vein.Nickel_Iridium_Vein,
-            SmallOre.Kuiperbelt_SmallOre);
-        ItemStack[] T7_Kuiperbelt_Ore_Checked = checkItemStack(T7_Kuiperbelt_Ore);
-        VoidOreRecipes_T7.put("KB", T7_Kuiperbelt_Ore_Checked);
+        VoidOreRecipes_T7.put("KB", DimensionOreCatalog.collect("KB", SmallOre.Kuiperbelt_SmallOre));
 
         // T7 - Makemake - MM
         ItemStack[] T7_Makemake_Ore = addAggregateArray(
@@ -802,7 +763,6 @@ public class SingularityOreRecipes {
 
     public static void addVoidOreRecipes_T10() {
         // T10 - DeepDark - DD
-        ItemStack[] T10_Ore_Checked = checkItemStack(Vein.T10_Ore);
-        VoidOreRecipes_T10.put("DD", T10_Ore_Checked);
+        VoidOreRecipes_T10.put("DD", RegisteredResourceCatalog.collectOreItems(OrePrefixes.ore, Vein.T10_Ore));
     }
 }

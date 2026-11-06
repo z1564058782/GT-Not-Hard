@@ -157,7 +157,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 36L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 12L))
+                    getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorItemAdvEmeraldCore", 12L))
                 .fluidInputs(
                     FluidRegistry.getFluidStack("molten.cosmicneutronium", 144 * 9),
                     FluidRegistry.getFluidStack("molten.infinity", 144 * 32))
@@ -170,7 +170,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 4L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.PikoCircuit", 8L),
+                    getModItem(NewHorizonsCoreMod.ID, "PikoCircuit", 8L),
                     getModItem(GregTech.ID, "gt.metaitem.01", 12L, 32045),
                     getModItem(DraconicEvolution.ID, "reactorStabilizer", 8L),
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 4581),
@@ -359,7 +359,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(GregTech.ID, "gt.blockmachines", 8L, 2022),
-                    getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 4L),
+                    getModItem(NewHorizonsCoreMod.ID, "EnrichedNaquadriaSunnariumAlloy", 4L),
                     getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 3L, 1),
                     getModItem(DraconicEvolution.ID, "awakenedCore", 1L),
                     getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1L, 0))
@@ -372,7 +372,7 @@ public class ChaosXtremeCraftingRecipes {
             // 反应堆稳定器转子
             GTValues.RA.stdBuilder()
                 .itemInputs(
-                    getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 15L),
+                    getModItem(NewHorizonsCoreMod.ID, "EngravedEnergyChip", 15L),
                     getModItem(DraconicEvolution.ID, "wyvernCore", 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.draconiumawakened", 144 * 4))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "reactorCraftingPart", 1L, 1))
@@ -384,7 +384,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17975),
-                    getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 15L),
+                    getModItem(NewHorizonsCoreMod.ID, "EngravedDiamondCrystalChip", 15L),
                     getModItem(DraconicEvolution.ID, "draconicCore", 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.draconium", 144 * 4))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "reactorCraftingPart", 1L, 2))
@@ -517,7 +517,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32751),
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 32034),
                     new Object[] { OrePrefixes.circuit.get(Materials.HV), 2L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedAluminiumPlate", 2L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedAluminiumPlate", 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144 * 2))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32752))
                 .duration(SECONDS)
@@ -532,7 +532,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 32034),
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32063),
                     new Object[] { OrePrefixes.circuit.get(Materials.EV), 2L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 2L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTitaniumPlate", 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144 * 2))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32753))
                 .duration(SECONDS)
@@ -547,7 +547,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 32034),
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32065),
                     new Object[] { OrePrefixes.circuit.get(Materials.IV), 4L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenPlate", 2L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTungstenPlate", 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.indiumgalliumphosphide", 144 * 2))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32754))
                 .duration(SECONDS)
@@ -562,7 +562,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 32035),
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32051),
                     new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenPlate", 2L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTungstenPlate", 2L))
                 .fluidInputs(
                     FluidRegistry.getFluidStack("molten.siliconsolargrade", 144 * 3 * 4),
                     FluidRegistry.getFluidStack("molten.polybenzimidazole", 144 * 2))
@@ -580,7 +580,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 32035),
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32053),
                     new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 4L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 2L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedChromePlate", 2L))
                 .fluidInputs(
                     FluidRegistry.getFluidStack("molten.siliconsolargrade", 144 * 4 * 4),
                     FluidRegistry.getFluidStack("molten.polybenzimidazole", 144 * 2 * 2))
@@ -622,7 +622,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32164),
                     new Object[] { OrePrefixes.circuit.get(Materials.UV), 2L },
                     new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 4L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNaquadriaPlate", 4L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144 * 4 * 2))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32758))
                 .duration(SECONDS)
@@ -640,9 +640,9 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 2L, 32068),
                     new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L },
                     new Object[] { OrePrefixes.circuit.get(Materials.UEV), 2L },
-                    getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 4L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.RawPicoWafer", 2L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 4L))
+                    getModItem(NewHorizonsCoreMod.ID, "PicoWafer", 4L),
+                    getModItem(NewHorizonsCoreMod.ID, "RawPicoWafer", 2L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNeutroniumPlate", 4L))
                 .fluidInputs(
                     FluidRegistry.getFluidStack("molten.siliconsolargrade", 144 * 9 * 12),
                     FluidRegistry.getFluidStack("molten.polybenzimidazole", 144 * 9 * 2))
@@ -690,8 +690,8 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.01", 2L, 32043),
                     getModItem(GregTech.ID, "gt.metaitem.01", 4L, 32047),
                     getModItem(GregTech.ID, "gt.metaitem.01", 2L, 32039),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 13L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateChevron", 4L))
+                    getModItem(NewHorizonsCoreMod.ID, "StargateFramePart", 13L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateChevron", 4L))
                 .itemOutputs(getModItem(SGCraft.ID, "sgChevronUpgrade", 1L))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -729,7 +729,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.01", 3L, 32146),
                     getModItem(GregTech.ID, "gt.metaitem.01", 4L, 32047),
                     getModItem(GregTech.ID, "gt.metaitem.01", 2L, 32039),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 12L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateShieldingFoil", 12L),
                     getModItem(TecTech.ID, "gt.godforgecasing", 4L, 4),
                     getModItem(EnderIO.ID, "blockCapBank", 8L, 0))
                 .itemOutputs(getModItem(SGCraft.ID, "ic2Capacitor", 1L))
@@ -742,9 +742,9 @@ public class ChaosXtremeCraftingRecipes {
                 .itemInputs(
                     getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 9L, 14),
                     getModItem(GregTech.ID, "gt.metaitem.01", 9L, 32047),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 11L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 21L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateChevron", 3L))
+                    getModItem(NewHorizonsCoreMod.ID, "StargateShieldingFoil", 11L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateFramePart", 21L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateChevron", 3L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.magmatter", 144 * 9 * 18))
                 .itemOutputs(getModItem(SGCraft.ID, "stargateRing", 1L, 0))
                 .duration(SECONDS)
@@ -777,7 +777,7 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.03", 4L, 4143),
                     getModItem(TecTech.ID, "gt.godforgecasing", 8L, 7),
                     getModItem(TecTech.ID, "item.tm.itemAstralArrayFabricator", 6L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 8L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateShieldingFoil", 8L),
                     getModItem(SGCraft.ID, "sgCoreCrystal", 1L),
                     getModItem(SGCraft.ID, "stargateRing", 8L, 1),
                     getModItem(GTNHIntergalactic.ID, "item.MiningDrone", 2L, 12),
@@ -828,8 +828,8 @@ public class ChaosXtremeCraftingRecipes {
                     getModItem(GregTech.ID, "gt.metaitem.01", 2L, 32039),
                     getModItem(GregTech.ID, "gt.metaitem.01", 2L, 32043),
                     getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32146),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 6L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 8L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateShieldingFoil", 6L),
+                    getModItem(NewHorizonsCoreMod.ID, "StargateFramePart", 8L),
                     getModItem(SGCraft.ID, "ocInterface", 1L),
                     getModItem(SGCraft.ID, "sgControllerCrystal", 1L),
                     getModItem(OpenComputers.ID, "keyboard", 8L, 0),
@@ -1010,7 +1010,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(IndustrialCraft2.ID, "blockGenerator", 8L, 3),
-                    getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedAluminiumIronPlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "ReinforcedAluminiumIronPlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars", 1L, 0))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1020,7 +1020,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(ElectroMagicTools.ID, "EMTSolars", 8L, 0),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTitaniumPlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars", 1L, 1))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1030,7 +1030,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(ElectroMagicTools.ID, "EMTSolars", 8L, 1),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenSteelPlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTungstenSteelPlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars", 1L, 2))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1040,7 +1040,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(ElectroMagicTools.ID, "EMTSolars", 8L, 2),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedChromePlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1L, 0))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1060,7 +1060,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(ElectroMagicTools.ID, "EMTSolars3", 8L, 7),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNaquadriaPlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars3", 1L, 14))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1070,7 +1070,7 @@ public class ChaosXtremeCraftingRecipes {
             GTValues.RA.stdBuilder()
                 .itemInputs(
                     getModItem(ElectroMagicTools.ID, "EMTSolars3", 8L, 14),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1L))
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNeutroniumPlate", 1L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTSolars4", 1L, 5))
                 .duration(SECONDS)
                 .eut(RECIPE_LV)
@@ -1089,13 +1089,13 @@ public class ChaosXtremeCraftingRecipes {
             // 压缩太阳能-单步
             {
                 final ItemStack[] Plate_Tier = new ItemStack[] {
-                    getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedAluminiumIronPlate", 1L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenSteelPlate", 1L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "ReinforcedAluminiumIronPlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTitaniumPlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedTungstenSteelPlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedChromePlate", 1L),
                     getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 8),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1L),
-                    getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNaquadriaPlate", 1L),
+                    getModItem(NewHorizonsCoreMod.ID, "IrradiantReinforcedNeutroniumPlate", 1L),
                     getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 13) };
 
                 final ItemStack[] Solar_Result_Tier = new ItemStack[] {

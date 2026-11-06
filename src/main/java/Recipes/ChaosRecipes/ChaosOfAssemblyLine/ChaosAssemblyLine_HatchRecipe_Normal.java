@@ -14,7 +14,6 @@ import static util.ChaosAssemblyRecipeBuilder.requiredFluid;
 import static util.Utils.getMaterialInput;
 import static util.Utils.setStackSize;
 
-import EnumList.EnumItemList.EnumGTList.MachineList;
 import net.minecraft.item.ItemStack;
 
 import EnumList.EnumItemList.EnumGTList.BatteryList;
@@ -24,6 +23,7 @@ import EnumList.EnumItemList.EnumGTList.GTBlockList;
 import EnumList.EnumItemList.EnumGTList.GTItemList;
 import EnumList.EnumItemList.EnumGTList.GTPPList;
 import EnumList.EnumItemList.EnumGTList.HatchList;
+import EnumList.EnumItemList.EnumGTList.MachineList;
 import EnumList.EnumItemList.EnumGTList.MultiMachineCasingList;
 import EnumList.EnumItemList.EnumGTList.MultiMachineControllerList;
 import EnumList.EnumItemList.EnumGTList.WireList;

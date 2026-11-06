@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -305,21 +306,22 @@ public class ChaosCrucibleRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addCrucibleRecipes);
-        /*
-         * // NewHorizonsCoreMod
-         * // "Void Essence"
-         * GTValues.RA.stdBuilder()
-         * .itemInputs(
-         * getModItem(Thaumcraft.ID, "ItemResource", 1L, 16),
-         * // Crystallized Essence
-         * setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
-         * setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
-         * setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16))
-         * .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2L))
-         * .duration(SECONDS)
-         * .eut(RECIPE_IV)
-         * .addTo(addCrucibleRecipes);
-         */
+
+        // NewHorizonsCoreMod
+        // "Void Essence"
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                getModItem(Thaumcraft.ID, "ItemResource", 1L, 16),
+
+                // Crystallized Essence
+                setStackSize(EssenceList.Crystallized_Essence_Alienis, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Vacuos, 16),
+                setStackSize(EssenceList.Crystallized_Essence_Tenebrae, 16))
+            .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "VoidEssence", 2L))
+            .duration(SECONDS)
+            .eut(RECIPE_IV)
+            .addTo(addCrucibleRecipes);
+
         // "Warped Shard"
         GTValues.RA.stdBuilder()
             .itemInputs(

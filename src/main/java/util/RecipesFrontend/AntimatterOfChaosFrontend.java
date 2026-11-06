@@ -12,14 +12,13 @@ import com.gtnewhorizons.modularui.common.widget.ProgressBar;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.recipe.BasicUIPropertiesBuilder;
 import gregtech.api.recipe.NEIRecipePropertiesBuilder;
-import gregtech.api.recipe.RecipeMapFrontend;
 import gregtech.api.util.MethodsReturnNonnullByDefault;
 import gregtech.common.gui.modularui.UIHelper;
-import gregtech.nei.GTNEIDefaultHandler;
+import gregtech.nei.GTNEIDefaultHandler.NEITemplateContext;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class AntimatterOfChaosFrontend extends RecipeMapFrontend {
+public class AntimatterOfChaosFrontend extends LocalizedRecipeFrontend {
 
     public AntimatterOfChaosFrontend(BasicUIPropertiesBuilder uiPropertiesBuilder,
         NEIRecipePropertiesBuilder neiRecipePropertiesBuilder) {
@@ -45,13 +44,14 @@ public class AntimatterOfChaosFrontend extends RecipeMapFrontend {
         return UIHelper.getGridPositions(fluidOutputCount, 145, 8, 1, 1);
     }
 
-    public void addProgressBar(ModularWindow.Builder builder, GTNEIDefaultHandler.NEITemplateContext ctx) {
+    @Override
+    public void addProgressBar(ModularWindow.Builder builder, NEITemplateContext context) {
         builder.widget(
             (new ProgressBar()).setTexture(GTUITextures.PROGRESSBAR_ARROW, 16)
                 .setDirection(ProgressBar.Direction.RIGHT)
-                .setProgress(ctx.progressSupplier)
+                .setProgress(context.progressSupplier)
                 .setSynced(false, false)
-                .setPos((new Pos2d(123, 10)).add(ctx.windowOffset))
+                .setPos((new Pos2d(123, 10)).add(context.windowOffset))
                 .setSize(20, 16));
     }
 }
