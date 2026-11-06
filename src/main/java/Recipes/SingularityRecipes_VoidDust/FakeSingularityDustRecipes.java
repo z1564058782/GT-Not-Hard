@@ -14,6 +14,7 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.RecipeMapBackend;
 import gregtech.api.recipe.RecipeMapBuilder;
 import util.RecipesFrontend.OneToManyItemsFrontend_Large;
+import util.RegisteredResourceCatalog;
 
 public class FakeSingularityDustRecipes {
 
