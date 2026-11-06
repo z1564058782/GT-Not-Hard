@@ -315,7 +315,6 @@ public class ChaosRunicMatrixRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addRunicMatrixRecipes);
-
         // Botania
         // "Shard of Laputa XX"
         GTValues.RA.stdBuilder()
@@ -348,7 +347,6 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 6208),
                 setStackSize(EssenceList.Crystallized_Essence_Iter, 4608),
@@ -358,7 +356,6 @@ public class ChaosRunicMatrixRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addRunicMatrixRecipes);
-
         // "Botanical Brewery"
         GTValues.RA.stdBuilder()
             .itemInputs(
@@ -390,7 +387,6 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Machina, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Humanus, 16),
@@ -399,7 +395,6 @@ public class ChaosRunicMatrixRecipes {
             .duration(SECONDS)
             .eut(RECIPE_IV)
             .addTo(addRunicMatrixRecipes);
-
         // "Gaia Pylon"
         GTValues.RA.stdBuilder()
             .itemInputs(
@@ -431,7 +426,6 @@ public class ChaosRunicMatrixRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Alienis, 64),
                 setStackSize(EssenceList.Crystallized_Essence_Vinculum, 64),

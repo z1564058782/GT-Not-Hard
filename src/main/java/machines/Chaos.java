@@ -1,16 +1,29 @@
 package machines;
 
-import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.onElementPass;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
 import static gregtech.api.GregTechAPI.METATILEENTITIES;
-import static gregtech.api.enums.HatchElement.*;
-import static gregtech.api.enums.Textures.BlockIcons.*;
+import static gregtech.api.enums.HatchElement.Energy;
+import static gregtech.api.enums.HatchElement.ExoticEnergy;
+import static gregtech.api.enums.HatchElement.InputBus;
+import static gregtech.api.enums.HatchElement.InputHatch;
+import static gregtech.api.enums.HatchElement.Maintenance;
+import static gregtech.api.enums.HatchElement.OutputBus;
+import static gregtech.api.enums.HatchElement.OutputHatch;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_ACTIVE;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_ACTIVE_GLOW;
+import static gregtech.api.enums.Textures.BlockIcons.OVERLAY_FRONT_ORE_FACTORY_GLOW;
+import static gregtech.api.enums.Textures.BlockIcons.casingTexturePages;
+import static gregtech.api.enums.Textures.BlockIcons.getCasingTextureForId;
+import static gregtech.api.enums.Textures.BlockIcons.getTextureIndex;
 import static gregtech.api.metatileentity.BaseTileEntity.TOOLTIP_DELAY;
 import static gregtech.api.metatileentity.implementations.MTEBasicMachine.isValidForLowGravity;
 import static gregtech.api.recipe.RecipeMaps.simpleWasherRecipes;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
 import static java.lang.Math.pow;
-import static loader.ChaosRecipeLoader.AssemblyLineWithoutResearchRecipe;
 import static net.minecraft.util.StatCollector.translateToLocal;
 import static net.minecraft.util.StatCollector.translateToLocalFormatted;
 import static util.MachineLocalization.sendMode;
@@ -62,6 +75,7 @@ import Recipes.ChaosRecipes.ChaosEssenceFarmRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
+import Recipes.ChaosRecipes.ChaosRecipeMap;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosRunicMatrixRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
@@ -88,6 +102,8 @@ import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.recipe.check.SimpleCheckRecipeResult;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.render.TextureFactory;
+import gregtech.api.structure.error.StructureError;
+import gregtech.api.structure.error.StructureErrorRegistry;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
@@ -274,19 +290,38 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         if (mMachine) {
             return -1;
         }
-        return survivialBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
+        return survivalBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
     }
 
     @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        mEnergyHatches.clear();
-        mExoticEnergyHatches.clear();
-        mCasingAmount = 0;
-        return checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0) && mCasingAmount >= 4 && checkHatches();
-    }
+    public void checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack, List<StructureError> errors) {
+        if (errors == null) {
+            return;
+        }
 
-    private boolean checkHatches() {
-        return mMaintenanceHatches.size() == 1;
+        this.mMaintenanceHatches.clear();
+        this.mInputBusses.clear();
+        this.mInputHatches.clear();
+        this.mOutputBusses.clear();
+        this.mOutputHatches.clear();
+        this.mEnergyHatches.clear();
+        this.mExoticEnergyHatches.clear();
+        mCasingAmount = 0;
+
+        boolean isMainStructureValid = checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0, errors);
+
+        if (!isMainStructureValid) {
+            return;
+        }
+
+        if (mCasingAmount < 4) {
+            errors.add(StructureErrorRegistry.UNKNOWN_STRUCTURE_ERROR);
+            return;
+        }
+
+        if (mMaintenanceHatches.size() != 1) {
+            errors.add(StructureErrorRegistry.UNKNOWN_STRUCTURE_ERROR);
+        }
     }
 
     @Override
@@ -310,11 +345,12 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     private int getMaxParallel() {
-        if (getControllerSlot() == null) {
+        ItemStack controllerSlot = getControllerSlot();
+        if (controllerSlot == null) {
             return 1;
         }
-        if (getControllerSlot().stackSize < 31) {
-            return (int) pow(2, getControllerSlot().stackSize);
+        if (controllerSlot.stackSize < 31 && !wirelessMode) {
+            return (int) pow(2, controllerSlot.stackSize);
         } else {
             return Integer.MAX_VALUE;
         }
@@ -405,7 +441,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     private static final Integer[] specialMachine = { 358, 360, 792, 850, 862, 942, 992, 995, 3006, 3008, 12735, 13001,
-        15415, 31021, 31050, 32018, 32024 };
+        13532, 15415, 15513, 15548, 15550, 31021, 31050, 32018, 32024 };
 
     private boolean getSpecialMachine() {
         ItemStack controllerSlot = getControllerSlot();
@@ -413,9 +449,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             .contains(controllerSlot.getItemDamage());
     }
 
-    // 磁通量效应监视器-358
-    private static final String[] Magnetic_Flux_Exhibitor_mod = { "Polarizer", "Electromagnetic Separator" };
-    private static final RecipeMap<?>[] Magnetic_Flux_Exhibitor = { RecipeMaps.polarizerRecipes,
+    // Original Machine Recipes
+    // "Magnetic Flux Exhibitor"-358
+    private static final String[] Magnetic_Flux_Exhibitor_Mode = { "Polarizer", "Electromagnetic Separator" };
+    private static final RecipeMap<?>[] Magnetic_Flux_Exhibitor_Mode_Recipes = { RecipeMaps.polarizerRecipes,
         RecipeMaps.electroMagneticSeparatorRecipes };
     // 涡轮装罐机Pro-360
     private static final String[] TurboCan_Pro_mod = { "Canner" };
@@ -443,18 +480,45 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final RecipeMap<?>[] Utupu_Tanuri = { RecipeMaps.chemicalDehydratorNonCellRecipes,
         RecipeMaps.vacuumFurnaceRecipes };
     // "Hot Isostatic Pressurization Unit"-3006
-    private static final String[] Hot_Isostatic_Pressurization_Unit_mod = { "Compressor", "HIP Compressor" };
-    private static final RecipeMap<?>[] Hot_Isostatic_Pressurization_Unit = { RecipeMaps.compressorRecipes,
+    private static final String[] Hot_Isostatic_Pressurization_Unit_Mode = { "Compressor", "HIP Compressor" };
+    private static final RecipeMap<?>[] Hot_Isostatic_Pressurization_Unit_Mode_Recipes = { RecipeMaps.compressorRecipes,
         ChaosSpecialCompressRecipes.SpecialCompressRecipes_HIP };
-    // 黑洞压缩机-3008
-    private static final String[] Pseudostable_Black_Hole_Containment_Field_mod = { "Compressor", "BHC Compressor",
+    // "Pseudostable Black Hole Containment Field"-3008
+    private static final String[] Pseudostable_Black_Hole_Containment_Field_Mode = { "Compressor", "BHC Compressor",
         "Advanced Neutronium Compressor" };
-    private static final RecipeMap<?>[] Pseudostable_Black_Hole_Containment_Field = { RecipeMaps.compressorRecipes,
-        ChaosSpecialCompressRecipes.SpecialCompressRecipes_BHC, RecipeMaps.neutroniumCompressorRecipes };
-    // 电路装配线-12735
-    private static final String[] Circuit_Assembly_Line_mod = { "Circuit Assembly Line", "Circuit Assembly" };
-    private static final RecipeMap<?>[] Circuit_Assembly_Line = {
+    private static final RecipeMap<?>[] Pseudostable_Black_Hole_Containment_Field_Mode_Recipes = {
+        RecipeMaps.compressorRecipes, ChaosSpecialCompressRecipes.SpecialCompressRecipes_BHC,
+        RecipeMaps.neutroniumCompressorRecipes };
+    // "Circuit Assembly Line"-12735
+    private static final String[] Circuit_Assembly_Line_Mode = { "Circuit Assembly Line", "Circuit Assembly" };
+    private static final RecipeMap<?>[] Circuit_Assembly_Line_Mode_Recipes = {
         ChaosCircuitAssemblerRecipes.addChaosCircuitAssemblerRecipes, RecipeMaps.circuitAssemblerRecipes };
+    // "Advanced Assembly Line"-13532
+    private static final String[] Advanced_Assembly_Line_Mode = { "Item Assembly Line", "Assembly Line" };
+    private static final RecipeMap<?>[] Advanced_Assembly_Line_Mode_Recipes = { ChaosRecipeMap.AssemblyLineItemRecipe,
+        ChaosRecipeMap.AssemblyLineNormalRecipe };
+    // "Amazon Warehousing Depot"-15513
+    private static final String[] Amazon_Warehousing_Depot_Mode = { "Packager", "Unpackeager" };
+    private static final RecipeMap<?>[] Amazon_Warehousing_Depot_Mode_Recipes = { RecipeMaps.packagerRecipes,
+        RecipeMaps.unpackagerRecipes };
+    // "Industrial Arc Furnace"-15548
+    private static final String[] Industrial_Arc_Furnace_Mode = { "Normal", "Ore" };
+    private static final RecipeMap<?>[] Industrial_Arc_Furnace_Mode_Recipes = { RecipeMaps.arcFurnaceRecipes,
+        RecipeMaps.furnaceRecipes };
+    // "Ore Washing Plant"-15550
+    private static final String[] Ore_Washing_Plant_Mode = { "Ore Washer", "Simple Washer" };
+    private static final RecipeMap<?>[] Ore_Washing_Plant_Mode_Recipes = { RecipeMaps.oreWasherRecipes,
+        RecipeMaps.simpleWasherRecipes };
+    // "Dangote Distillus"-31021
+    private static final String[] Dangote_Distillus_Mode = { "Distillery", "Distillation Tower" };
+    private static final RecipeMap<?>[] Dangote_Distillus_Mode_Recipes = { RecipeMaps.distilleryRecipes,
+        RecipeMaps.distillationTowerRecipes };
+    // "Precise Auto-Assembler MT-3662"-32018
+    private static final String[] Precise_Auto_Assembler_MT_3662_Mode = { "Precise Assembler", "Assembler" };
+    private static final RecipeMap<?>[] Precise_Auto_Assembler_MT_3662_Mode_Recipes = {
+        GoodGeneratorRecipeMaps.preciseAssemblerRecipes, RecipeMaps.assemblerRecipes };
+
+    // Non-original Machine Recipes
     // "Research Completer"-13001
     private static final String[] Research_Completer_mod = { "Blood Magic", "Botania", "Essence Farm" };
     private static final RecipeMap<?>[] Research_Completer = { ChaosBloodMagicRecipes.addBloodMagicRecipes,
@@ -463,18 +527,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private static final String[] Heliofusion_Exoticizer_mod = { "Degenerate Quark Gluon", "Magmatter" };
     private static final RecipeMap<?>[] Heliofusion_Exoticizer = {
         ChaosExoticRecipes.ExoticRecipes_DegenerateQuarkGluon, ChaosExoticRecipes.ExoticRecipes_Magmatter };
-    // 丹格特蒸馏厂-31021
-    private static final String[] Dangote_Distillus_mod = { "Distillery", "distillation tower" };
-    private static final RecipeMap<?>[] Dangote_Distillus = { RecipeMaps.distilleryRecipes,
-        RecipeMaps.distillationTowerRecipes };
     // "Elemental Duplicator"-31050
     private static final String[] Elemental_Duplicator_mod = { "Replicator Item", "Replicator Fluid" };
     private static final RecipeMap<?>[] Elemental_Duplicator = { ChaosReplicatorRecipes.ReplicatorRecipes_Item,
         ChaosReplicatorRecipes.ReplicatorRecipes_Fluid };
-    // 精密自动组装机MT-3662-32018
-    private static final String[] Precise_Auto_Assembler_MT_3662_mod = { "Precise Assembler", "Assembler" };
-    private static final RecipeMap<?>[] Precise_Auto_Assembler_MT_3662 = {
-        GoodGeneratorRecipeMaps.preciseAssemblerRecipes, RecipeMaps.assemblerRecipes };
     // "Large Essentia Smeltery"-32024
     private static final String[] Large_Essentia_Smeltery_mod = { "Arcane Worktable", "Crucible", "Runic Matrix" };
     private static final RecipeMap<?>[] Large_Essentia_Smeltery = {
@@ -496,8 +552,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         updateMode = true;
         switch (getControllerSlot().getItemDamage()) {
             case 358 -> {
-                sendMode(aPlayer, selectMode(Magnetic_Flux_Exhibitor_mod, mode));
-                specialMachineType = selectMode(Magnetic_Flux_Exhibitor_mod, mode);
+                sendMode(aPlayer, selectMode(Magnetic_Flux_Exhibitor_Mode, mode));
+                specialMachineType = selectMode(Magnetic_Flux_Exhibitor_Mode, mode);
             }
             case 360 -> {
                 sendMode(aPlayer, selectMode(TurboCan_Pro_mod, mode));
@@ -528,36 +584,52 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 specialMachineType = selectMode(Utupu_Tanuri_mod, mode);
             }
             case 3006 -> {
-                sendMode(aPlayer, selectMode(Hot_Isostatic_Pressurization_Unit_mod, mode));
-                specialMachineType = selectMode(Hot_Isostatic_Pressurization_Unit_mod, mode);
+                sendMode(aPlayer, selectMode(Hot_Isostatic_Pressurization_Unit_Mode, mode));
+                specialMachineType = selectMode(Hot_Isostatic_Pressurization_Unit_Mode, mode);
             }
             case 3008 -> {
-                sendMode(aPlayer, selectMode(Pseudostable_Black_Hole_Containment_Field_mod, mode));
-                specialMachineType = selectMode(Pseudostable_Black_Hole_Containment_Field_mod, mode);
+                sendMode(aPlayer, selectMode(Pseudostable_Black_Hole_Containment_Field_Mode, mode));
+                specialMachineType = selectMode(Pseudostable_Black_Hole_Containment_Field_Mode, mode);
             }
             case 12735 -> {
-                sendMode(aPlayer, selectMode(Circuit_Assembly_Line_mod, mode));
-                specialMachineType = selectMode(Circuit_Assembly_Line_mod, mode);
+                sendMode(aPlayer, selectMode(Circuit_Assembly_Line_Mode, mode));
+                specialMachineType = selectMode(Circuit_Assembly_Line_Mode, mode);
             }
             case 13001 -> {
                 sendMode(aPlayer, selectMode(Research_Completer_mod, mode));
                 specialMachineType = selectMode(Research_Completer_mod, mode);
             }
+            case 13532 -> {
+                sendMode(aPlayer, selectMode(Advanced_Assembly_Line_Mode, mode));
+                specialMachineType = selectMode(Advanced_Assembly_Line_Mode, mode);
+            }
             case 15415 -> {
                 sendMode(aPlayer, selectMode(Heliofusion_Exoticizer_mod, mode));
                 specialMachineType = selectMode(Heliofusion_Exoticizer_mod, mode);
             }
+            case 15513 -> {
+                sendMode(aPlayer, selectMode(Amazon_Warehousing_Depot_Mode, mode));
+                specialMachineType = selectMode(Amazon_Warehousing_Depot_Mode, mode);
+            }
+            case 15548 -> {
+                sendMode(aPlayer, selectMode(Industrial_Arc_Furnace_Mode, mode));
+                specialMachineType = selectMode(Industrial_Arc_Furnace_Mode, mode);
+            }
+            case 15550 -> {
+                sendMode(aPlayer, selectMode(Ore_Washing_Plant_Mode, mode));
+                specialMachineType = selectMode(Ore_Washing_Plant_Mode, mode);
+            }
             case 31021 -> {
-                sendMode(aPlayer, selectMode(Dangote_Distillus_mod, mode));
-                specialMachineType = selectMode(Dangote_Distillus_mod, mode);
+                sendMode(aPlayer, selectMode(Dangote_Distillus_Mode, mode));
+                specialMachineType = selectMode(Dangote_Distillus_Mode, mode);
             }
             case 31050 -> {
                 sendMode(aPlayer, selectMode(Elemental_Duplicator_mod, mode));
                 specialMachineType = selectMode(Elemental_Duplicator_mod, mode);
             }
             case 32018 -> {
-                sendMode(aPlayer, selectMode(Precise_Auto_Assembler_MT_3662_mod, mode));
-                specialMachineType = selectMode(Precise_Auto_Assembler_MT_3662_mod, mode);
+                sendMode(aPlayer, selectMode(Precise_Auto_Assembler_MT_3662_Mode, mode));
+                specialMachineType = selectMode(Precise_Auto_Assembler_MT_3662_Mode, mode);
             }
             case 32024 -> {
                 sendMode(aPlayer, selectMode(Large_Essentia_Smeltery_mod, mode));
@@ -569,7 +641,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     private RecipeMap<?> getMultifunctionalRecipeMap(int meta) {
         switch (meta) {
             case 358 -> {
-                return selectMode(Magnetic_Flux_Exhibitor, mode);
+                return selectMode(Magnetic_Flux_Exhibitor_Mode_Recipes, mode);
             }
             case 360 -> {
                 return selectMode(TurboCan_Pro, mode);
@@ -599,22 +671,34 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 return ChaosOreRecipes.addFakeChaosOreRecipes;
             }
             case 3006 -> {
-                return selectMode(Hot_Isostatic_Pressurization_Unit, mode);
+                return selectMode(Hot_Isostatic_Pressurization_Unit_Mode_Recipes, mode);
             }
             case 3008 -> {
-                return selectMode(Pseudostable_Black_Hole_Containment_Field, mode);
+                return selectMode(Pseudostable_Black_Hole_Containment_Field_Mode_Recipes, mode);
             }
             case 12735 -> {
-                return selectMode(Circuit_Assembly_Line, mode);
+                return selectMode(Circuit_Assembly_Line_Mode_Recipes, mode);
             }
             case 13001 -> {
                 return selectMode(Research_Completer, mode);
             }
+            case 13532 -> {
+                return selectMode(Advanced_Assembly_Line_Mode_Recipes, mode);
+            }
             case 15415 -> {
                 return selectMode(Heliofusion_Exoticizer, mode);
             }
+            case 15513 -> {
+                return selectMode(Amazon_Warehousing_Depot_Mode_Recipes, mode);
+            }
+            case 15548 -> {
+                return selectMode(Industrial_Arc_Furnace_Mode_Recipes, mode);
+            }
+            case 15550 -> {
+                return selectMode(Ore_Washing_Plant_Mode_Recipes, mode);
+            }
             case 31021 -> {
-                return selectMode(Dangote_Distillus, mode);
+                return selectMode(Dangote_Distillus_Mode_Recipes, mode);
             }
             case 31050 -> {
                 return selectMode(Elemental_Duplicator, mode);
@@ -629,7 +713,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
                 return ChaosArcaneWorktableRecipes.addArcaneWorktableRecipes;
             }
             case 32018 -> {
-                return selectMode(Precise_Auto_Assembler_MT_3662, mode);
+                return selectMode(Precise_Auto_Assembler_MT_3662_Mode_Recipes, mode);
             }
             case 32024 -> {
                 return selectMode(Large_Essentia_Smeltery, mode);
@@ -651,6 +735,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     public @NotNull Collection<RecipeMap<?>> getAvailableRecipeMaps() {
         LinkedHashSet<RecipeMap<?>> maps = new LinkedHashSet<>(MachineRecipeCatalog.getChaosRecipeMaps());
+        maps.add(ChaosRecipeMap.AssemblyLineNormalRecipe);
+        maps.add(ChaosRecipeMap.AssemblyLineItemRecipe);
         maps.addAll(ChaosManager.getAvailableRecipeMaps());
         for (IMetaTileEntity machine : METATILEENTITIES) {
             if (!(machine instanceof MTEMultiBlockBase multiblock) || !isSupportedMachine(machine)) continue;
@@ -666,7 +752,7 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     private static RecipeMap<?> replacementRecipeMap(RecipeMap<?> recipeMap) {
-        return recipeMap == RecipeMaps.assemblylineVisualRecipes ? AssemblyLineWithoutResearchRecipe : recipeMap;
+        return recipeMap == RecipeMaps.assemblylineVisualRecipes ? ChaosRecipeMap.AssemblyLineNormalRecipe : recipeMap;
     }
 
     private static boolean isSupportedMachine(IMetaTileEntity machine) {

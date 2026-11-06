@@ -45,7 +45,6 @@ import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import Recipes.SingularityRecipes_Ecosystem.SingularityEcosystemRecipes;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T10;
 import Recipes.SingularityRecipes_VoidGem.SingularityGemRecipes;
@@ -61,6 +60,8 @@ import gregtech.api.recipe.RecipeMap;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.render.TextureFactory;
+import gregtech.api.structure.error.StructureError;
+import gregtech.api.structure.error.StructureErrorRegistry;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
@@ -201,16 +202,24 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         if (mMachine) {
             return -1;
         }
-        return survivialBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
+        return survivalBuildPiece(STRUCTURE_PIECE_MAIN, stackSize, 1, 1, 0, elementBudget, env, false, true);
     }
 
     @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+    public void checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack, List<StructureError> errors) {
+        if (errors == null) {
+            return;
+        }
         this.mMaintenanceHatches.clear();
         this.mOutputBusses.clear();
         this.mOutputHatches.clear();
         mCasingAmount = 0;
-        return checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0) && mCasingAmount >= 4 && checkHatches();
+        if (!checkPiece(STRUCTURE_PIECE_MAIN, 1, 1, 0, errors)) {
+            return;
+        }
+        if (mCasingAmount < 4 || !checkHatches()) {
+            errors.add(StructureErrorRegistry.UNKNOWN_STRUCTURE_ERROR);
+        }
     }
 
     private boolean checkHatches() {
@@ -338,7 +347,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
             }
 
             ItemStack[] DustRecipes = switch (dim) {
-                case "Ow", "Ne", "TF", "ED", "EA" -> SingularityDustRecipes.VoidDustRecipes_T0.get(dim);
+                case "Ow", "Ne", "TF", "ED", "EA", "Eg" -> SingularityDustRecipes.VoidDustRecipes_T0.get(dim);
                 case "Mo" -> SingularityDustRecipes.VoidDustRecipes_T1.get(dim);
                 case "De", "Ma", "Ph" -> SingularityDustRecipes.VoidDustRecipes_T2.get(dim);
                 case "As", "Ca", "Ce", "Eu", "Ga", "Rb" -> SingularityDustRecipes.VoidDustRecipes_T3.get(dim);
@@ -348,7 +357,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
                 case "Ha", "KB", "MM", "Pl" -> SingularityDustRecipes.VoidDustRecipes_T7.get(dim);
                 case "BC", "BE", "BF", "CB", "TE", "VB" -> SingularityDustRecipes.VoidDustRecipes_T8.get(dim);
                 case "An", "Ho", "Mh", "MB", "Np", "Se" -> SingularityDustRecipes.VoidDustRecipes_T9.get(dim);
-                case "DD" -> SingularityDustRecipes_T10.VoidDustRecipes_T10.get(dim);
+                case "DD" -> SingularityDustRecipes.VoidDustRecipes_T10.get(dim);
                 default -> null;
             };
 
@@ -783,7 +792,7 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         int z) {
         super.getWailaNBTData(player, tile, tag, world, x, y, z);
         if (getControllerSlot() != null) {
-            tag.setString("Item", getControllerSlot().getDisplayName());
+            tag.setString("EnumList/EnumListCheck", getControllerSlot().getDisplayName());
             tag.setString("Type", machineType);
         }
     }
@@ -793,9 +802,11 @@ public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> imp
         IWailaConfigHandler config) {
         super.getWailaBody(itemStack, currentTip, accessor, config);
         final NBTTagCompound tag = accessor.getNBTData();
-        if (tag.hasKey("Item")) {
+        if (tag.hasKey("EnumList/EnumListCheck")) {
             currentTip.add(
-                translateToLocalFormatted("gtnothard.waila.item", EnumChatFormatting.YELLOW + tag.getString("Item")));
+                translateToLocalFormatted(
+                    "gtnothard.waila.item",
+                    EnumChatFormatting.YELLOW + tag.getString("EnumList/EnumListCheck")));
             currentTip.add(
                 translateToLocalFormatted(
                     "gtnothard.waila.type",

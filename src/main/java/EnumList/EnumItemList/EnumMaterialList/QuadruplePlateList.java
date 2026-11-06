@@ -111,4 +111,22 @@ public class QuadruplePlateList {
         1L,
         20982);
 
+    public static final ItemStack[] QuadruplePlate_List = new ItemStack[] { Quadruple_Shirabon_Plate,
+        Quadruple_Magnesium_Plate, Quadruple_Aluminium_Plate, Quadruple_Titanium_Plate, Quadruple_Iron_Plate,
+        Quadruple_Cobalt_Plate, Quadruple_Nickel_Plate, Quadruple_Copper_Plate, Quadruple_Silver_Plate,
+        Quadruple_Tin_Plate, Quadruple_Europium_Plate, Quadruple_Tungsten_Plate, Quadruple_Osmium_Plate,
+        Quadruple_Iridium_Plate, Quadruple_Platinum_Plate, Quadruple_Gold_Plate, Quadruple_Lead_Plate,
+        Quadruple_Plutonium_239_Plate, Quadruple_Americium_Plate, Quadruple_Neutronium_Plate, Quadruple_Shijima_Plate,
+        Quadruple_Churitsu_Plate, Quadruple_Bronze_Plate, Quadruple_Steel_Plate, Quadruple_Stainless_Steel_Plate,
+        Quadruple_Tungstensteel_Plate, Quadruple_Osmiridium_Plate, Quadruple_Sunnarium_Plate,
+        Quadruple_Adamantium_Plate, Quadruple_Naquadah_Plate, Quadruple_Naquadria_Plate, Quadruple_Thaumium_Plate,
+        Quadruple_Mithril_Plate, Quadruple_Black_Steel_Plate, Quadruple_Meteoric_Iron_Plate,
+        Quadruple_Shadow_Metal_Plate, Quadruple_HSSG_Plate, Quadruple_HSSS_Plate, Quadruple_Mytryl_Plate,
+        Quadruple_Black_Plutonium_Plate, Quadruple_Callisto_Ice_Plate, Quadruple_Ledox_Plate, Quadruple_Quantium_Plate,
+        Quadruple_Duralumin_Plate, Quadruple_Oriharukon_Plate, Quadruple_Infinity_Catalyst_Plate,
+        Quadruple_Infinity_Plate, Quadruple_Mysterious_Crystal_Plate, Quadruple_Melodic_Alloy_Plate,
+        Quadruple_Crystalline_Pink_Slime_Plate, Quadruple_Polycaprolactam_PCL_Sheet,
+        Quadruple_Polytetrafluoroethylene_PTFE_Sheet, Quadruple_Polybenzimidazole_PBI_Sheet, Quadruple_Kevlar_Plate,
+        Quadruple_Silicon_Solar_Grade_Poly_SI_Plate, Quadruple_Trinium_Plate, Quadruple_Desh_Plate,
+        Quadruple_Cosmic_Neutronium_Plate };
 }

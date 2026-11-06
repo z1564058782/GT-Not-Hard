@@ -18,19 +18,19 @@ import java.util.List;
  * @author GTNH Tools
  * @version 1.0
  */
-public class TextToVariable {
+public class ItemTextToVariable {
 
     /**
      * 输入文件路径配置
      * 可手动修改此变量以指定输入文件的路径
      */
-    private static final String INPUT_FILE_PATH = "src/main/resources/Tools_OutputFile/itempanel_290_Misc_converted.txt";
+    private static final String INPUT_FILE_PATH = "src/main/resources/Tools_OutputFile/itempanel_290_Upgrade_converted.txt";
 
     /**
      * 输出文件路径配置
      * 可手动修改此变量以指定输出文件的路径
      */
-    private static final String OUTPUT_FILE_PATH = "src/main/resources/VariableResult/itempanel_290_Misc_Variable.txt";
+    private static final String OUTPUT_FILE_PATH = "src/main/resources/VariableResult/itempanel_290_Upgrade_Variable.txt";
 
     /**
      * 执行文本转换任务
@@ -231,7 +231,7 @@ public class TextToVariable {
     public static void main(String[] args) {
         try {
             // 创建转换器实例并执行转换
-            TextToVariable converter = new TextToVariable();
+            ItemTextToVariable converter = new ItemTextToVariable();
             converter.convert();
 
         } catch (IOException e) {

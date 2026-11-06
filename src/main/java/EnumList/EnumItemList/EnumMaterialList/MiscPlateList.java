@@ -279,4 +279,38 @@ public class MiscPlateList {
     public static final ItemStack YSZ_Ceramic_Plate = getModItem(KekzTech.ID, "kekztech_crafting_item", 1L, 14);
     public static final ItemStack GDC_Ceramic_Plate = getModItem(KekzTech.ID, "kekztech_crafting_item", 1L, 15);
 
+    public static final ItemStack Radiation_Proof_Prismatic_Naquadah_Composite_Sheet = getModItem(
+        GregTech.ID,
+        "gt.metaitem.03",
+        1L,
+        32250);
+
+    public static final ItemStack[] MiscPlate_List = new ItemStack[] { Iridium_Iron_Plate,
+        Reinforced_Iridium_Iron_Plate, Irradiant_Reinforced_Iridium_Plate, Lightweight_Plate, Heavy_Duty_Plate_Tier_1,
+        Compressed_Copper_Plate, Compressed_Tin_Plate, Compressed_Aluminium_Plate, Compressed_Steel_Plate,
+        Compressed_Bronze_Plate, Compressed_Iron_Plate, Compressed_Meteoric_Iron_Plate, Heavy_Duty_Plate_Tier_3,
+        Compressed_Titanium_Plate, Heavy_Duty_Plate_Tier_2, Compressed_Desh_Plate, Compressed_Adamantite,
+        Compressed_Cobalt, Compressed_Duralumin, Compressed_Lead, Compressed_Magnesium, Compressed_Mithril,
+        Compressed_Nickel, Compressed_Oriharukon, Compressed_Platinum, Compressed_Tungsten, Radiation_Proof_Plate,
+        Advanced_Radiation_Proof_Plate, Special_Ceramics_Plate, Advanced_Alloy, Carbon_Plate, Iridium_Reinforced_Plate,
+        Aluminium_Iron_Plate, Bio_Carbon_Plate, Bedrockium_Iron_Plate, Compressed_Black_Plutonium_Plate,
+        Compressed_Callisto_Ice_Plate, Charged_Certus_Quartz_Plate, Compressed_Dual_Copper_Plates, Chrome_Iron_Plate,
+        Compressed_Dual_Desh_Plates, Heavy_Duty_Plate_Tier_4, Heavy_Duty_Plate_Tier_5, Heavy_Duty_Plate_Tier_6,
+        Heavy_Duty_Plate_Tier_7, Heavy_Duty_Plate_Tier_8, Compressed_Ice_Plate, Compressed_Dual_Ice_Plates,
+        Irradiant_Reinforced_Aluminium_Plate, Irradiant_Reinforced_Bedrockium_Plate, Irradiant_Reinforced_Chrome_Plate,
+        Irradiant_Reinforced_Naquadria_Plate, Irradiant_Reinforced_Neutronium_Plate,
+        Irradiant_Reinforced_Titanium_Plate, Irradiant_Reinforced_Tungsten_Plate,
+        Irradiant_Reinforced_Tungsten_Steel_Plate, Compressed_Dual_Iron_Plates, Compressed_Lead_Nickel_Plate,
+        Compressed_Lead_Oriharukon_Plate, Compressed_Ledox_Plate, Compressed_Dual_Meteoric_Iron_Plates,
+        Compressed_Mysterious_Crystal_Plate, Compressed_Dual_Mysterious_Crystal_Plates, Compressed_Mytryl_Plate,
+        Compressed_Dual_Mytryl_Plates, Nano_Plated_Leggings, Naquadria_Iron_Plate, Neutronium_Iron_Plate,
+        Compressed_Quantium_Plate, Compressed_Dual_Quantium_Plates, Reinforced_Glass_Plate,
+        Reinforced_Aluminium_Iron_Plate, Reinforced_Bedrockium_Iron_Plate, Reinforced_Chrome_Iron_Plate,
+        Reinforced_Naquadria_Iron_Plate, Reinforced_Neutronium_Iron_Plate, Reinforced_Titanium_Iron_Plate,
+        Reinforced_Tungsten_Iron_Plate, Reinforced_Tungsten_Steel_Iron_Plate, Compressed_Dual_Steel_Plates, Stone_Plate,
+        Stargate_Radiation_Containment_Plate, Compressed_Dual_Tin_Plates, Compressed_Dual_Titanium_Plates,
+        Titanium_Iron_Plate, Tungsten_Iron_Plate, Tungsten_Steel_Iron_Plate, Stargate_Plate_of_Split_Origin,
+        Stargate_Plate_of_Polychrome_Contest, Stargate_Plate_of_Dimensional_Duplicity,
+        Stargate_Plate_of_Harmonic_Breakthrough, Beryllium_Shielding_Plate, Iron_Quartz_Plate, YSZ_Ceramic_Plate,
+        GDC_Ceramic_Plate, Radiation_Proof_Prismatic_Naquadah_Composite_Sheet };
 }

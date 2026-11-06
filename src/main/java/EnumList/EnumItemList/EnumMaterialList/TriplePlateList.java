@@ -95,4 +95,20 @@ public class TriplePlateList {
     public static final ItemStack Triple_Desh_Plate = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 19884);
     public static final ItemStack Triple_Cosmic_Neutronium_Plate = getModItem(GregTech.ID, "gt.metaitem.01", 1L, 19982);
 
+    public static final ItemStack[] TriplePlate_List = new ItemStack[] { Triple_Shirabon_Plate, Triple_Magnesium_Plate,
+        Triple_Aluminium_Plate, Triple_Titanium_Plate, Triple_Iron_Plate, Triple_Cobalt_Plate, Triple_Nickel_Plate,
+        Triple_Copper_Plate, Triple_Silver_Plate, Triple_Tin_Plate, Triple_Europium_Plate, Triple_Tungsten_Plate,
+        Triple_Osmium_Plate, Triple_Iridium_Plate, Triple_Platinum_Plate, Triple_Gold_Plate, Triple_Lead_Plate,
+        Triple_Plutonium_239_Plate, Triple_Americium_Plate, Triple_Neutronium_Plate, Triple_Shijima_Plate,
+        Triple_Churitsu_Plate, Triple_Bronze_Plate, Triple_Steel_Plate, Triple_Stainless_Steel_Plate,
+        Triple_Tungstensteel_Plate, Triple_Osmiridium_Plate, Triple_Sunnarium_Plate, Triple_Adamantium_Plate,
+        Triple_Naquadah_Plate, Triple_Naquadria_Plate, Triple_Thaumium_Plate, Triple_Mithril_Plate,
+        Triple_Black_Steel_Plate, Triple_Meteoric_Iron_Plate, Triple_Shadow_Metal_Plate, Triple_HSSG_Plate,
+        Triple_HSSS_Plate, Triple_Mytryl_Plate, Triple_Black_Plutonium_Plate, Triple_Callisto_Ice_Plate,
+        Triple_Ledox_Plate, Triple_Quantium_Plate, Triple_Duralumin_Plate, Triple_Oriharukon_Plate,
+        Triple_Infinity_Catalyst_Plate, Triple_Infinity_Plate, Triple_Mysterious_Crystal_Plate,
+        Triple_Melodic_Alloy_Plate, Triple_Crystalline_Pink_Slime_Plate, Triple_Polycaprolactam_PCL_Sheet,
+        Triple_Polytetrafluoroethylene_PTFE_Sheet, Triple_Polybenzimidazole_PBI_Sheet, Triple_Kevlar_Plate,
+        Triple_Silicon_Solar_Grade_Poly_SI_Plate, Triple_Trinium_Plate, Triple_Desh_Plate,
+        Triple_Cosmic_Neutronium_Plate };
 }

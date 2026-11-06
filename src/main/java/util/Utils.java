@@ -1,10 +1,21 @@
 package util;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
 
 public final class Utils {
 
@@ -25,20 +36,26 @@ public final class Utils {
 
     public static ItemStack setStackSize(ItemStack itemStack, int amount) {
         if (itemStack == null) return null;
-        if (amount < 0) {
-            return itemStack;
-        }
-        itemStack.stackSize = amount;
-        return itemStack;
+        ItemStack copy = itemStack.copy();
+        if (amount >= 0) copy.stackSize = amount;
+        return copy;
     }
 
     public static FluidStack setStackSize(FluidStack fluidStack, int amount) {
         if (fluidStack == null) return null;
-        if (amount < 0) {
-            return fluidStack;
+        FluidStack copy = fluidStack.copy();
+        if (amount >= 0) copy.amount = amount;
+        return copy;
+    }
+
+    /** Resolve an ore-unified template without truncating the requested quantity to 64. */
+    public static ItemStack getMaterialInput(OrePrefixes prefix, Materials material, int amount) {
+        if (amount < 0) throw new IllegalArgumentException("Negative material input amount: " + amount);
+        ItemStack template = GTOreDictUnificator.get(prefix, material, 1L);
+        if (template == null) {
+            throw new IllegalStateException("Missing recipe material: " + prefix + "/" + material);
         }
-        fluidStack.amount = amount;
-        return fluidStack;
+        return setStackSize(template, amount);
     }
 
     public static ItemStack[] sortNoNullArray(ItemStack... itemStacks) {
@@ -61,5 +78,42 @@ public final class Utils {
         }
         if (list.isEmpty()) return new FluidStack[0];
         return list.toArray(new FluidStack[0]);
+    }
+
+    /**
+     * Return a shallow copy of the array where the {@code null} elements are removed.
+     * <p>
+     *
+     * @param array the array
+     * @param <T>   the type of elements
+     * @return the array copy where the {@code null} elements are removed.
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T[] toNonNullArray(@Nullable T @NotNull [] array, Class<T> tClass) {
+        return Arrays.stream(array)
+            .filter(Objects::nonNull)
+            .toArray(size -> (T[]) Array.newInstance(tClass, size));
+    }
+
+    /**
+     * Return a shallow copy of the array where the {@code null} elements are removed.
+     *
+     * @param array the array
+     * @return the array copy where the {@code null} elements are removed.
+     */
+    @Contract("null -> null; !null -> !null")
+    public static ItemStack[] toNonNullItemStackArray(@Nullable ItemStack @Nullable [] array) {
+        return array != null ? toNonNullArray(array, ItemStack.class) : null;
+    }
+
+    /**
+     * Return a shallow copy of the array where the {@code null} elements are removed.
+     *
+     * @param array the array
+     * @return the array copy where the {@code null} elements are removed.
+     */
+    @Contract("null -> null; !null -> !null")
+    public static FluidStack[] toNonNullFluidStackArray(@Nullable FluidStack @Nullable [] array) {
+        return array != null ? toNonNullArray(array, FluidStack.class) : null;
     }
 }

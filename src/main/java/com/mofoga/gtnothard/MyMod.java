@@ -2,13 +2,26 @@ package com.mofoga.gtnothard;
 
 import static loader.MachinesLoader.loaderMachines;
 
+import net.minecraft.command.CommandHandler;
+import net.minecraftforge.common.MinecraftForge;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mofoga.gtnothard.config.LargeAssemblyRecipeConfig;
+
+import EnumList.EnumListCheck.EnumFluidListCheck;
+import EnumList.EnumListCheck.EnumItemListCheck;
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
 import Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
 import Recipes.ChaosRecipes.ChaosFallingTowerRecipes;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_CasingRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Item;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Item;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_MachineRecipe_Normal;
 import Recipes.ChaosRecipes.ChaosOreRecipes;
 import Recipes.ChaosRecipes.ChaosReplicatorRecipes;
 import Recipes.ChaosRecipes.ChaosSpecialCompressRecipes;
@@ -21,7 +34,6 @@ import Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes;
 import Recipes.SingularityRecipes_Pachinko.SingularityPachinkoRecipes;
 import Recipes.SingularityRecipes_VoidDust.FakeSingularityDustRecipes;
 import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes;
-import Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10;
 import Recipes.SingularityRecipes_VoidFluid.FakeSingularityFluidRecipes;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes;
 import Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T10;
@@ -32,6 +44,9 @@ import Recipes.SingularityRecipes_VoidIngot.SingularityIngotRecipes;
 import Recipes.SingularityRecipes_VoidOre.FakeSingularityOreRecipes;
 import Recipes.SingularityRecipes_VoidOre.SingularityOreRecipes;
 import Tools.FluidExporter;
+import Tools.RecipeExport;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -40,6 +55,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import loader.CraftingLoader;
+import util.ChaosAssemblyRecipeBuilder;
 import util.MachineRecipeCatalog;
 import util.OriginGeneratorRegistry;
 
@@ -59,12 +75,24 @@ public class MyMod {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        LargeAssemblyRecipeConfig.load(event.getModConfigurationDirectory());
         proxy.preInit(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        Tools.CheckEnumItemList.registerCommand();
+        Tools.CheckEnumFluidList.registerCommand();
+        if (Loader.isModLoaded("NotEnoughItems")) {
+            RecipeExport.registerCommand();
+        } else {
+            MyMod.LOG.warn("NEI is not loaded; /ExportRecipe is unavailable.");
+        }
+        MinecraftForge.EVENT_BUS.register(this);
+        FMLCommonHandler.instance()
+            .bus()
+            .register(this);
         loaderMachines();
         MachineRecipeCatalog.initialize();
         new CraftingLoader();
@@ -75,6 +103,31 @@ public class MyMod {
         proxy.postInit(event);
 
         // Chaos Recipes
+        registerAssemblyRecipeGroup(
+            "ItemHatch",
+            LargeAssemblyRecipeConfig.enabledItemRecipes,
+            ChaosAssemblyLine_HatchRecipe_Item::addChaosAssemblyLine_HatchRecipe_Item);
+        registerAssemblyRecipeGroup(
+            "ItemItem",
+            LargeAssemblyRecipeConfig.enabledItemRecipes,
+            ChaosAssemblyLine_ItemRecipe_Item::addChaosAssemblyLine_ItemRecipe_Item);
+        registerAssemblyRecipeGroup(
+            "NormalCasing",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_CasingRecipe_Normal::addChaosAssemblyLine_NormalCasingRecipe);
+        registerAssemblyRecipeGroup(
+            "NormalHatch",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_HatchRecipe_Normal::addChaosAssemblyLine_HatchRecipe_Normal);
+        registerAssemblyRecipeGroup(
+            "NormalItem",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_ItemRecipe_Normal::addChaosAssemblyLine_ItemRecipe_Normal);
+        registerAssemblyRecipeGroup(
+            "NormalMachine",
+            LargeAssemblyRecipeConfig.enableNormalRecipes,
+            ChaosAssemblyLine_MachineRecipe_Normal::addChaosAssemblyLine_NormalMachineRecipe);
+
         ChaosReplicatorRecipes.addReplicatorRecipes_Item();
         ChaosReplicatorRecipes.addReplicatorRecipes_Fluid();
         ChaosExoticRecipes.addExoticRecipes_DegenerateQuarkGluon();
@@ -216,6 +269,34 @@ public class MyMod {
 
         ChaosZhuHaiRecipes.addChaosZhuHaiFisheryRecipes();
         ChaosXtremeCraftingRecipes.addChaosXtremeCraftingRecipes();
+        EnumItemListCheck.addEnumGTListCheckRecipes();
+        EnumItemListCheck.addEnumMagicListCheckRecipes();
+        EnumItemListCheck.addEnumMaterialListCheckRecipes();
+        EnumItemListCheck.addEnumMiscListCheckRecipes();
+        EnumItemListCheck.addEnumModListCheckRecipes();
+        EnumItemListCheck.addEnumOreProductListCheckRecipes();
+        EnumItemListCheck.addEnumTinkerConstructListCheckRecipes();
+        EnumFluidListCheck.addEnumFluidListCheckRecipes();
+
+        FMLCommonHandler.instance()
+            .bus()
+            .register(new CommandHandler());
+    }
+
+    private static void registerAssemblyRecipeGroup(String name, boolean enabled, Runnable registration) {
+        if (!enabled) {
+            LOG.warn("[assembly-recipes] group {} disabled by configuration", name);
+            return;
+        }
+        int skippedBefore = ChaosAssemblyRecipeBuilder.getSkippedRecipeCount();
+        long started = System.nanoTime();
+        LOG.info("[assembly-recipes] group {} begin", name);
+        registration.run();
+        LOG.info(
+            "[assembly-recipes] group {} done in {} ms; skipped for missing fluids={}",
+            name,
+            (System.nanoTime() - started) / 1_000_000L,
+            ChaosAssemblyRecipeBuilder.getSkippedRecipeCount() - skippedBefore);
     }
 
     @Mod.EventHandler
@@ -225,8 +306,8 @@ public class MyMod {
         FakeSingularityOreRecipes.addFakeVoidOreRecipes_T10();
         SingularityGemRecipes.addVoidGemRecipes_T10();
         FakeSingularityGemRecipes.addFakeVoidGemRecipes_T10();
-        SingularityDustRecipes_T10.addVoidDustRecipes_T10();
-        SingularityDustRecipes_T10.addFakeVoidDustRecipes_T10();
+        SingularityDustRecipes.addVoidDustRecipes_T10();
+        FakeSingularityDustRecipes.addFakeVoidDustRecipes_T10();
         SingularityFluidRecipes_T10.addVoidFluidRecipes_T10();
         SingularityFluidRecipes_T10.addFakeVoidFluidRecipes_T10();
         SingularityIngotRecipes.addVoidIngotRecipes_T10();

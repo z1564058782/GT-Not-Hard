@@ -6,6 +6,22 @@ import EnumList.EnumItemList.EnumOreProductList.OreList;
 
 public class Vein {
 
+    // Agardite (Cd) Vein
+    public static final ItemStack[] Agardite_Cd_Vein = new ItemStack[] { OreList.Agardite_Cd_Ore,
+        OreList.Agardite_La_Ore, OreList.Demicheleite_Br_Ore, OreList.Irarsite_Ore };
+
+    // Agardite (Nd) Vein
+    public static final ItemStack[] Agardite_Nd_Vein = new ItemStack[] { OreList.Agardite_Nd_Ore,
+        OreList.Agardite_Y_Ore, OreList.Kashinite_Ore, OreList.Cerite_Ore };
+
+    // Almandine & Sapphire Vein
+    public static final ItemStack[] Almandine_Sapphire_Vein = new ItemStack[] { OreList.Almandine_Ore_Stone,
+        OreList.Pyrope_Ore_Stone, OreList.Sapphire_Ore_Stone, OreList.Green_Sapphire_Ore_Stone };
+
+    // Amethyst Vein
+    public static final ItemStack[] Amethyst_Vein = new ItemStack[] { OreList.Hedenbergite_Ore, OreList.Prasiolite_Ore,
+        OreList.Amethyst_Ore_Stone, OreList.Olivine_Ore_Stone };
+
     // Apatite Vein
     public static final ItemStack[] Apatite_Vein = new ItemStack[] { OreList.Apatite_Ore_Stone,
         OreList.Pyrochlore_Ore_Stone, OreList.Tricalcium_Phosphate_Ore_Stone };
@@ -18,13 +34,9 @@ public class Vein {
     public static final ItemStack[] Arsenic_Vein = new ItemStack[] { OreList.Antimony_Ore_Stone,
         OreList.Arsenic_Ore_Stone, OreList.Bismuth_Ore_Stone };
 
-    // Arsenopyrite & Ferberite & Loellingite & Roquesite Vein
-    public static final ItemStack[] Arsenopyrite_Ferberite_Loellingite_Roquesite_Vein = new ItemStack[] {
-        OreList.Arsenopyrite_Ore, OreList.Ferberite_Ore, OreList.Loellingite_Ore, OreList.Roquesite_Ore };
-
-    // Awakened Draconium Vein
-    public static final ItemStack[] Awakened_Draconium_Vein = new ItemStack[] { OreList.Awakened_Draconium_Ore_Stone,
-        OreList.Draconium_Ore_Stone, OreList.Nether_Star_Ore_Stone };
+    // Arsenopyrite Vein
+    public static final ItemStack[] Arsenopyrite_Vein = new ItemStack[] { OreList.Arsenopyrite_Ore,
+        OreList.Ferberite_Ore, OreList.Loellingite_Ore, OreList.Roquesite_Ore };
 
     // BArTiMaEuSNeK Vein
     public static final ItemStack[] BArTiMaEuSNeK_Vein = new ItemStack[] { OreList.BArTiMaEuSNeK_Ore };
@@ -33,33 +45,65 @@ public class Vein {
     public static final ItemStack[] Basaltic_Mineral_Sand_Vein = new ItemStack[] { OreList.Basaltic_Mineral_Sand_Stone,
         OreList.Fullers_Earth_Stone, OreList.Granitic_Mineral_Sand_Stone, OreList.Gypsum_Ore_Stone };
 
+    // Bastnasite & Monazite Vein
+    public static final ItemStack[] Bastnasite_Monazite_Vein = new ItemStack[] { OreList.Bastnasite_Ore_Stone,
+        OreList.Monazite_Ore_Stone, OreList.Neodymium_Ore_Stone };
+
     // Bauxite Vein
     public static final ItemStack[] Bauxite_Vein = new ItemStack[] { OreList.Aluminium_Ore_Stone,
         OreList.Bauxite_Ore_Stone, OreList.Ilmenite_Ore_Stone };
+
+    // Bentonite & Olivine Vein
+    public static final ItemStack[] Bentonite_Olivine_Vein = new ItemStack[] { OreList.Bentonite_Stone,
+        OreList.Glauconite_Ore_Stone, OreList.Magnesite_Ore_Stone, OreList.Olivine_Ore_Stone };
 
     // Beryllium Vein
     public static final ItemStack[] Beryllium_Vein = new ItemStack[] { OreList.Beryllium_Ore_Stone,
         OreList.Emerald_Ore_Stone, OreList.Thorium_Ore_Stone };
 
-    // Bismutite & Bismuthinite Vein
-    public static final ItemStack[] Bismutite_Bismuthinite_Vein = new ItemStack[] { OreList.Bismuthinite_Ore,
-        OreList.Bismutite_Ore, OreList.Bismuth_Ore_Stone, OreList.Stibnite_Ore_Stone };
+    // Bismutite Vein
+    public static final ItemStack[] Bismutite_Vein = new ItemStack[] { OreList.Bismuthinite_Ore, OreList.Bismutite_Ore,
+        OreList.Bismuth_Ore_Stone, OreList.Stibnite_Ore_Stone };
 
     // Black Plutonium Vein
     public static final ItemStack[] Black_Plutonium_Vein = new ItemStack[] { OreList.Black_Plutonium_Ore_Stone,
         OreList.Borax_Ore_Stone, OreList.Red_Garnet_Ore_Stone, OreList.Yellow_Garnet_Ore_Stone };
 
+    // Brown Limonite & Iron Vein
+    public static final ItemStack[] Brown_Limonite_Iron_Vein = new ItemStack[] { OreList.Banded_Iron_Ore_Stone,
+        OreList.Brown_Limonite_Ore_Stone, OreList.Malachite_Ore_Stone, OreList.Yellow_Limonite_Ore_Stone };
+
+    // Cadmium & Rare Earth Vein
+    public static final ItemStack[] Cadmium_Rare_Earth_Vein = new ItemStack[] { OreList.Cadmium_Ore_Stone,
+        OreList.Caesium_Ore_Stone, OreList.Cerium_Ore_Stone, OreList.Lanthanum_Ore_Stone };
+
     // Callisto Ice Vein
     public static final ItemStack[] Callisto_Ice_Vein = new ItemStack[] { OreList.Alduorite_Ore_Stone,
         OreList.Blue_Topaz_Ore_Stone, OreList.Callisto_Ice_Ore_Stone, OreList.Topaz_Ore_Stone };
 
-    // Cassiterite Vein
-    public static final ItemStack[] Cassiterite_Vein = new ItemStack[] { OreList.Cassiterite_Ore_Stone,
-        OreList.Tin_Ore_Stone };
+    // Carbon Dioxide Vein
+    public static final ItemStack[] Carbon_Dioxide_Vein = new ItemStack[] { OreList.Carbon_Dioxide_Ice,
+        OreList.Oxygen_Ice, OreList.Carbon_Ore_Stone };
+
+    // Cassiterite & Tin Vein
+    public static final ItemStack[] Cassiterite_Tin_Vein = new ItemStack[] { OreList.Asbestos_Ore_Stone,
+        OreList.Cassiterite_Sand_Stone, OreList.Diatomite_Ore_Stone, OreList.Garnet_Sand_Stone };
+
+    // Cerite Vein
+    public static final ItemStack[] Cerite_Vein = new ItemStack[] { OreList.Cerite_Ore, OreList.Nichromite_Ore,
+        OreList.Xenotime_Ore, OreList.Hibonite_Ore, OreList.Alburnite_Ore, OreList.Miessiite_Ore };
 
     // Certus Quartz Vein
     public static final ItemStack[] Certus_Quartz_Vein = new ItemStack[] { OreList.Certus_Quartz_Ore_Stone,
         OreList.Charged_Certus_Quartz_Ore_Stone, OreList.Quartz_Sand_Stone };
+
+    // Chalcopyrite & Copper Vein
+    public static final ItemStack[] Chalcopyrite_Copper_Vein = new ItemStack[] { OreList.Chalcopyrite_Ore_Stone,
+        OreList.Copper_Ore_Stone, OreList.Iron_Ore_Stone, OreList.Pyrite_Ore_Stone };
+
+    // Chalcopyrite & Vermiculite Vein
+    public static final ItemStack[] Chalcopyrite_Vermiculite_Vein = new ItemStack[] { OreList.Chalcopyrite_Ore_Stone,
+        OreList.Vermiculite_Stone, OreList.Cassiterite_Ore_Stone, OreList.Alunite_Ore_Stone };
 
     // Chrome Vein
     public static final ItemStack[] Chrome_Vein = new ItemStack[] { OreList.Chrome_Ore_Stone,
@@ -69,33 +113,25 @@ public class Vein {
     public static final ItemStack[] Coal_Vein = new ItemStack[] { OreList.Coal_Ore_Stone,
         OreList.Lignite_Coal_Ore_Stone };
 
-    // Copper Vein
-    public static final ItemStack[] Copper_Vein = new ItemStack[] { OreList.Chalcopyrite_Ore_Stone,
-        OreList.Copper_Ore_Stone, OreList.Iron_Ore_Stone, OreList.Pyrite_Ore_Stone };
+    // Cryolite (F) Vein
+    public static final ItemStack[] Cryolite_F_Vein = new ItemStack[] { OreList.Cryolite_F_Ore, OreList.Barite_Ra_Ore,
+        OreList.Honeaite_Ore, OreList.Florencite_Ore };
 
-    // Cosmic Neutronium Vein
-    public static final ItemStack[] Cosmic_Neutronium_Vein = new ItemStack[] { OreList.Bedrockium_Ore_Stone,
-        OreList.Black_Plutonium_Ore_Stone, OreList.Cosmic_Neutronium_Ore_Stone, OreList.Neutronium_Ore_Stone };
-
-    // Cryolite Vein
-    public static final ItemStack[] Cryolite_Vein = new ItemStack[] { OreList.Cryolite_Ore_Stone,
-        OreList.Galena_Ore_Stone, OreList.Lead_Ore_Stone, OreList.Silver_Ore_Stone };
+    // Demicheleite (Br) Vein
+    public static final ItemStack[] Demicheleite_Br_Vein = new ItemStack[] { OreList.Demicheleite_Br_Ore,
+        OreList.Perroudite_Ore, OreList.Irarsite_Ore, OreList.Barite_Ra_Ore };
 
     // Desh Vein
     public static final ItemStack[] Desh_Vein = new ItemStack[] { OreList.Desh_Ore_Stone, OreList.Scheelite_Ore_Stone,
         OreList.Tungstate_Ore_Stone };
 
-    // Diamond Vein
-    public static final ItemStack[] Diamond_Vein = new ItemStack[] { OreList.Coal_Ore_Stone, OreList.Diamond_Ore_Stone,
-        OreList.Graphite_Ore_Stone };
-
     // Dilithium Vein
     public static final ItemStack[] Dilithium_Vein = new ItemStack[] { OreList.Dilithium_Ore_Stone,
         OreList.Mysterious_Crystal_Ore_Stone, OreList.Vinteum_Ore_Stone };
 
-    // Djurleite & Bornite & Wittichenite Vein
-    public static final ItemStack[] Djurleite_Bornite_Wittichenite_Vein = new ItemStack[] { OreList.Bornite_Ore,
-        OreList.Djurleite_Ore, OreList.Wittichenite_Ore, OreList.Tetrahedrite_Ore_Stone };
+    // Djurleite Vein
+    public static final ItemStack[] Djurleite_Vein = new ItemStack[] { OreList.Bornite_Ore, OreList.Djurleite_Ore,
+        OreList.Wittichenite_Ore, OreList.Tetrahedrite_Ore_Stone };
 
     // Dolomite Vein
     public static final ItemStack[] Dolomite_Vein = new ItemStack[] { OreList.Andradite_Ore_Stone,
@@ -105,65 +141,113 @@ public class Vein {
     public static final ItemStack[] Draconium_Vein = new ItemStack[] { OreList.Draconium_Ore_Stone,
         OreList.Electrotine_Ore_Stone, OreList.Jade_Ore_Stone, OreList.Vinteum_Ore_Stone };
 
-    // Electrotine Vein
-    public static final ItemStack[] Electrotine_Vein = new ItemStack[] { OreList.Alunite_Ore_Stone,
-        OreList.Diatomite_Ore_Stone, OreList.Electrotine_Ore_Stone, OreList.Saltpeter_Ore_Stone };
+    // Draconium & Awakened Draconium Vein
+    public static final ItemStack[] Draconium_Awakened_Draconium_Vein = new ItemStack[] {
+        OreList.Awakened_Draconium_Ore_Stone, OreList.Draconium_Ore_Stone, OreList.Nether_Star_Ore_Stone };
 
-    // Fayalite & Green Fuchsite & Red Zircon & Red Fuchsite Vein
-    public static final ItemStack[] Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein = new ItemStack[] {
-        OreList.Fayalite_Ore, OreList.Green_Fuchsite_Ore, OreList.Red_Fuchsite_Ore, OreList.Red_Zircon_Ore };
+    // Fayalite Vein
+    public static final ItemStack[] Fayalite_Vein = new ItemStack[] { OreList.Fayalite_Ore, OreList.Green_Fuchsite_Ore,
+        OreList.Red_Fuchsite_Ore, OreList.Red_Zircon_Ore };
 
-    // Ferberite & Huebnerite & Loellingite Vein
-    public static final ItemStack[] Ferberite_Huebnerite_Loellingite_Vein = new ItemStack[] { OreList.Ferberite_Ore,
-        OreList.Huebnerite_Ore, OreList.Loellingite_Ore, OreList.Scheelite_Ore_Stone };
+    // Ferberite Vein
+    public static final ItemStack[] Ferberite_Vein = new ItemStack[] { OreList.Ferberite_Ore, OreList.Huebnerite_Ore,
+        OreList.Loellingite_Ore, OreList.Scheelite_Ore_Stone };
+
+    // Florencite Vein
+    public static final ItemStack[] Florencite_Vein = new ItemStack[] { OreList.Florencite_Ore, OreList.Lautarite_Ore,
+        OreList.Samarskite_Yb_Ore, OreList.Polycrase_Ore };
+
+    // Fluorcaphite Vein
+    public static final ItemStack[] Fluorcaphite_Vein = new ItemStack[] { OreList.Fluorcaphite_Ore,
+        OreList.Lafossaite_Ore, OreList.Gadolinite_Ce_Ore, OreList.Gadolinite_Y_Ore };
+
+    // Fluorite (F) Vein
+    public static final ItemStack[] Fluorite_F_Vein = new ItemStack[] { OreList.Fluorite_F_Ore, OreList.Kashinite_Ore,
+        OreList.Zircon_Ore, OreList.Cryolite_F_Ore };
 
     // Fluorspar Vein
     public static final ItemStack[] Fluorspar_Vein = new ItemStack[] { OreList.Fluorspar_Ore, OreList.Barite_Ore_Stone,
         OreList.Galena_Ore_Stone, OreList.Sphalerite_Ore_Stone };
 
-    // Forsterite & Fayalite & Orange Descloizite & Red Descloizite Vein
-    public static final ItemStack[] Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        OreList.Fayalite_Ore, OreList.Forsterite_Ore, OreList.Red_Descloizite_Ore, OreList.Orange_Descloizite_Ore };
+    // Forsterite Vein
+    public static final ItemStack[] Forsterite_Vein = new ItemStack[] { OreList.Fayalite_Ore, OreList.Forsterite_Ore,
+        OreList.Red_Descloizite_Ore, OreList.Orange_Descloizite_Ore };
+
+    // Gadolinite (Ce) Vein
+    public static final ItemStack[] Gadolinite_Ce_Vein = new ItemStack[] { OreList.Gadolinite_Ce_Ore,
+        OreList.Gadolinite_Y_Ore, OreList.Agardite_La_Ore, OreList.Agardite_Cd_Ore };
 
     // Galena Vein
     public static final ItemStack[] Galena_Vein = new ItemStack[] { OreList.Galena_Ore_Stone, OreList.Lead_Ore_Stone,
         OreList.Silver_Ore_Stone };
 
-    // Gold Vein
-    public static final ItemStack[] Gold_Vein = new ItemStack[] { OreList.Gold_Ore_Stone, OreList.Magnetite_Ore_Stone,
-        OreList.Vanadium_Magnetite_Ore_Stone };
+    // Galena & Cryolite Vein
+    public static final ItemStack[] Galena_Cryolite_Vein = new ItemStack[] { OreList.Cryolite_Ore_Stone,
+        OreList.Galena_Ore_Stone, OreList.Lead_Ore_Stone, OreList.Silver_Ore_Stone };
 
-    // Hedenbergite & Fayalite & Orange Descloizite & Red Descloizite Vein
-    public static final ItemStack[] Hedenbergite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        OreList.Fayalite_Ore, OreList.Hedenbergite_Ore, OreList.Orange_Descloizite_Ore, OreList.Red_Descloizite_Ore };
+    // Garnet Sand & Nether Star Vein
+    public static final ItemStack[] Garnet_Sand_Nether_Star_Vein = new ItemStack[] { OreList.Garnet_Sand_Stone,
+        OreList.Nether_Star_Ore_Stone, OreList.Red_Garnet_Ore_Stone, OreList.Yellow_Garnet_Ore_Stone };
+
+    // Garnierite & Nickel Vein
+    public static final ItemStack[] Garnierite_Nickel_Vein = new ItemStack[] { OreList.Cobaltite_Ore_Stone,
+        OreList.Garnierite_Ore_Stone, OreList.Nickel_Ore_Stone, OreList.Pentlandite_Ore_Stone };
+
+    // Geikielite Vein
+    public static final ItemStack[] Geikielite_Vein = new ItemStack[] { OreList.Geikielite_Ore, OreList.Cryolite_F_Ore,
+        OreList.Gadolinite_Ce_Ore, OreList.Agardite_Nd_Ore, OreList.Yttrocerite_Ore, OreList.Lanthanite_La_Ore,
+        OreList.Barite_Ra_Ore };
+
+    // Gold & Infused Gold Vein
+    public static final ItemStack[] Gold_Infused_Gold_Vein = new ItemStack[] { OreList.Gold_Ore_Stone,
+        OreList.Infused_Gold_Ore_Stone, OreList.Platinum_Ore_Stone };
+
+    // Graphite Vein
+    public static final ItemStack[] Graphite_Vein = new ItemStack[] { OreList.Graphite_Ore_Stone,
+        OreList.Diamond_Ore_Stone, OreList.Coal_Ore_Stone };
+
+    // Graphite & Diamond Vein
+    public static final ItemStack[] Graphite_Diamond_Vein = new ItemStack[] { OreList.Coal_Ore_Stone,
+        OreList.Diamond_Ore_Stone, OreList.Graphite_Ore_Stone };
+
+    // Grossular & Manganese Vein
+    public static final ItemStack[] Grossular_Manganese_Vein = new ItemStack[] { OreList.Grossular_Ore_Stone,
+        OreList.Spessartine_Ore_Stone, OreList.Pyrolusite_Ore_Stone, OreList.Tantalite_Ore_Stone };
+
+    // Hedenbergite Vein
+    public static final ItemStack[] Hedenbergite_Vein = new ItemStack[] { OreList.Fayalite_Ore,
+        OreList.Hedenbergite_Ore, OreList.Orange_Descloizite_Ore, OreList.Red_Descloizite_Ore };
+
+    // Hibonite Vein
+    public static final ItemStack[] Hibonite_Vein = new ItemStack[] { OreList.Hibonite_Ore, OreList.Yttrialite_Ore,
+        OreList.Zirconolite_Ore, OreList.Cerite_Ore };
+
+    // Honeaite Vein
+    public static final ItemStack[] Honeaite_Vein = new ItemStack[] { OreList.Honeaite_Ore, OreList.Miessiite_Ore,
+        OreList.Samarskite_Y_Ore, OreList.Samarskite_Yb_Ore };
 
     // Ilmenite Vein
     public static final ItemStack[] Ilmenite_Vein = new ItemStack[] { OreList.Chromite_Ore_Stone,
         OreList.Ilmenite_Ore_Stone, OreList.Perlite_Ore_Stone, OreList.Uvarovite_Ore_Stone };
 
-    // Infinity Catalyst Vein
-    public static final ItemStack[] Infinity_Catalyst_Vein = new ItemStack[] { OreList.Adamantium_Ore_Stone,
-        OreList.Bedrockium_Ore_Stone, OreList.Infinity_Catalyst_Ore_Stone, OreList.Neutronium_Ore_Stone };
-
-    // Infused Gold Vein
-    public static final ItemStack[] Infused_Gold_Vein = new ItemStack[] { OreList.Gold_Ore_Stone,
-        OreList.Infused_Gold_Ore_Stone, OreList.Platinum_Ore_Stone };
-
-    // Iridium Vein
-    public static final ItemStack[] Iridium_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone,
-        OreList.Mithril_Ore_Stone, OreList.Nickel_Ore_Stone, OreList.Palladium_Ore_Stone };
-
     // Iron Vein
-    public static final ItemStack[] Iron_Vein = new ItemStack[] { OreList.Banded_Iron_Ore_Stone,
-        OreList.Brown_Limonite_Ore_Stone, OreList.Malachite_Ore_Stone, OreList.Yellow_Limonite_Ore_Stone };
+    public static final ItemStack[] Iron_Vein = new ItemStack[] { OreList.Iron_Ore_Stone };
 
     // Kaolinite Vein
     public static final ItemStack[] Kaolinite_Vein = new ItemStack[] { OreList.Fullers_Earth_Stone,
         OreList.Glauconite_Sand_Stone, OreList.Kaolinite_Stone, OreList.Zeolite_Ore_Stone };
 
-    // Lapis Vein
-    public static final ItemStack[] Lapis_Vein = new ItemStack[] { OreList.Calcite_Ore_Stone, OreList.Lapis_Ore_Stone,
-        OreList.Lazurite_Ore_Stone, OreList.Sodalite_Ore_Stone };
+    // Kyanite & Mica Vein
+    public static final ItemStack[] Kyanite_Mica_Vein = new ItemStack[] { OreList.Cassiterite_Ore_Stone,
+        OreList.Kyanite_Ore_Stone, OreList.Mica_Ore_Stone, OreList.Pollucite_Ore_Stone };
+
+    // Lanthanite (Ce) Vein
+    public static final ItemStack[] Lanthanite_Ce_Vein = new ItemStack[] { OreList.Lanthanite_Ce_Ore,
+        OreList.Fluorite_F_Ore, OreList.Lafossaite_Ore, OreList.Florencite_Ore };
+
+    // Lazurite & Lapis Vein
+    public static final ItemStack[] Lazurite_Lapis_Vein = new ItemStack[] { OreList.Calcite_Ore_Stone,
+        OreList.Lapis_Ore_Stone, OreList.Lazurite_Ore_Stone, OreList.Sodalite_Ore_Stone };
 
     // Ledox Vein
     public static final ItemStack[] Ledox_Vein = new ItemStack[] { OreList.Ledox_Ore_Stone, OreList.Opal_Ore_Stone,
@@ -181,21 +265,13 @@ public class Vein {
     public static final ItemStack[] Magnetite_Vein = new ItemStack[] { OreList.Iron_Ore_Stone,
         OreList.Magnetite_Ore_Stone, OreList.Vanadium_Magnetite_Ore_Stone };
 
-    // Manganese Vein
-    public static final ItemStack[] Manganese_Vein = new ItemStack[] { OreList.Grossular_Ore_Stone,
-        OreList.Pyrolusite_Ore_Stone, OreList.Spessartine_Ore_Stone, OreList.Tantalite_Ore_Stone };
+    // Magnetite & Gold Vein
+    public static final ItemStack[] Magnetite_Gold_Vein = new ItemStack[] { OreList.Gold_Ore_Stone,
+        OreList.Magnetite_Ore_Stone, OreList.Vanadium_Magnetite_Ore_Stone };
 
-    // Mica Vein
-    public static final ItemStack[] Mica_Vein = new ItemStack[] { OreList.Cassiterite_Ore_Stone,
-        OreList.Kyanite_Ore_Stone, OreList.Mica_Ore_Stone, OreList.Pollucite_Ore_Stone };
-
-    // Molybdenum Vein
-    public static final ItemStack[] Molybdenum_Vein = new ItemStack[] { OreList.Molybdenite_Ore_Stone,
-        OreList.Molybdenum_Ore_Stone, OreList.Powellite_Ore_Stone, OreList.Wulfenite_Ore_Stone };
-
-    // Monazite Vein
-    public static final ItemStack[] Monazite_Vein = new ItemStack[] { OreList.Bastnasite_Ore_Stone,
-        OreList.Monazite_Ore_Stone, OreList.Neodymium_Ore_Stone };
+    // Methane Vein
+    public static final ItemStack[] Methane_Vein = new ItemStack[] { OreList.Methane_Ice, OreList.Hydrogen_Ice,
+        OreList.Carbon_Ore_Stone };
 
     // Mytryl Vein
     public static final ItemStack[] Mytryl_Vein = new ItemStack[] { OreList.Ceruclase_Ore_Stone,
@@ -205,53 +281,55 @@ public class Vein {
     public static final ItemStack[] Naquadah_Vein = new ItemStack[] { OreList.Enriched_Naquadah_Ore_Stone,
         OreList.Naquadah_Ore_Stone };
 
-    // Naquadria Vein
-    public static final ItemStack[] Naquadria_Vein = new ItemStack[] { OreList.Enriched_Naquadah_Ore_Stone,
+    // Naquadah & Naquadria Vein
+    public static final ItemStack[] Naquadah_Naquadria_Vein = new ItemStack[] { OreList.Enriched_Naquadah_Ore_Stone,
         OreList.Naquadah_Ore_Stone, OreList.Naquadria_Ore_Stone, OreList.Trinium_Ore_Stone };
 
     // Nether Quartz Vein
     public static final ItemStack[] Nether_Quartz_Vein = new ItemStack[] { OreList.Nether_Quartz_Ore_Stone,
         OreList.Quartzite_Ore_Stone };
 
-    // Nether Star Vein
-    public static final ItemStack[] Nether_Star_Vein = new ItemStack[] { OreList.Garnet_Sand_Stone,
-        OreList.Nether_Star_Ore_Stone, OreList.Red_Garnet_Ore_Stone, OreList.Yellow_Garnet_Ore_Stone };
-
     // Neutronium Vein
     public static final ItemStack[] Neutronium_Vein = new ItemStack[] { OreList.Adamantium_Ore_Stone,
         OreList.Naquadah_Ore_Stone, OreList.Neutronium_Ore_Stone, OreList.Titanium_Ore_Stone };
 
-    // Nickel Vein
-    public static final ItemStack[] Nickel_Vein = new ItemStack[] { OreList.Cobaltite_Ore_Stone,
-        OreList.Garnierite_Ore_Stone, OreList.Nickel_Ore_Stone, OreList.Pentlandite_Ore_Stone };
+    // Neutronium & Cosmic Neutronium Vein
+    public static final ItemStack[] Neutronium_Cosmic_Neutronium_Vein = new ItemStack[] { OreList.Bedrockium_Ore_Stone,
+        OreList.Black_Plutonium_Ore_Stone, OreList.Cosmic_Neutronium_Ore_Stone, OreList.Neutronium_Ore_Stone };
+
+    // Neutronium & Infinity Catalyst Vein
+    public static final ItemStack[] Neutronium_Infinity_Catalyst_Vein = new ItemStack[] { OreList.Adamantium_Ore_Stone,
+        OreList.Bedrockium_Ore_Stone, OreList.Infinity_Catalyst_Ore_Stone, OreList.Neutronium_Ore_Stone };
+
+    // Nickel & Iridium Vein
+    public static final ItemStack[] Nickel_Iridium_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone,
+        OreList.Mithril_Ore_Stone, OreList.Nickel_Ore_Stone, OreList.Palladium_Ore_Stone };
+
+    // Nickel & Osmium Vein
+    public static final ItemStack[] Nickel_Osmium_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone,
+        OreList.Nickel_Ore_Stone, OreList.Osmium_Ore_Stone };
 
     // Niobium Vein
     public static final ItemStack[] Niobium_Vein = new ItemStack[] { OreList.Gallium_Ore_Stone,
         OreList.Niobium_Ore_Stone, OreList.Yttrium_Ore_Stone };
 
-    // Olenite & Fluor-Buergerite & Chromo-Alumino-Povondraite & Vanadio-Oxy-Dravit Vein
-    public static final ItemStack[] Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein = new ItemStack[] {
-        OreList.Chromo_Alumino_Povondraite_Ore, OreList.Fluor_Buergerite_Ore, OreList.Olenite_Ore,
-        OreList.Vanadio_Oxy_Dravite_Ore };
+    // Nitrogen Vein
+    public static final ItemStack[] Nitrogen_Vein = new ItemStack[] { OreList.Nitrogen_Ice, OreList.Hydrogen_Ice,
+        OreList.Ammonia_Ice };
+
+    // Olenite Vein
+    public static final ItemStack[] Olenite_Vein = new ItemStack[] { OreList.Chromo_Alumino_Povondraite_Ore,
+        OreList.Fluor_Buergerite_Ore, OreList.Olenite_Ore, OreList.Vanadio_Oxy_Dravite_Ore };
 
     // Oilsands Vein
     public static final ItemStack[] Oilsands_Vein = new ItemStack[] { OreList.Oilsands_Ore_Stone };
-
-    // Olivine Vein
-    public static final ItemStack[] Olivine_Vein = new ItemStack[] { OreList.Bentonite_Stone,
-        OreList.Glauconite_Ore_Stone, OreList.Magnesite_Ore_Stone, OreList.Olivine_Ore_Stone };
 
     // Oriharukon Vein
     public static final ItemStack[] Oriharukon_Vein = new ItemStack[] { OreList.Mirabilite_Ore_Stone,
         OreList.Oriharukon_Ore_Stone, OreList.Tanzanite_Ore_Stone, OreList.Vyroxeres_Ore_Stone };
 
-    // Osmium Vein
-    public static final ItemStack[] Osmium_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone, OreList.Nickel_Ore_Stone,
-        OreList.Osmium_Ore_Stone };
-
-    // Palladium Vein
-    public static final ItemStack[] Palladium_Vein = new ItemStack[] { OreList.Chrome_Ore_Stone,
-        OreList.Palladium_Ore_Stone, OreList.Platinum_Ore_Stone, OreList.Sheldonite_Ore_Stone };
+    // Oxygen Vein
+    public static final ItemStack[] Oxygen_Vein = new ItemStack[] { OreList.Oxygen_Ice, OreList.Hydrogen_Ice };
 
     // Perditio & Ordo Vein
     public static final ItemStack[] Perditio_Ordo_Vein = new ItemStack[] { OreList.Amber_Ore_Stone,
@@ -261,17 +339,9 @@ public class Vein {
     public static final ItemStack[] Pitchblende_Vein = new ItemStack[] { OreList.Pitchblende_Stone,
         OreList.Uraninite_Ore_Stone };
 
-    // Platinum Vein
-    public static final ItemStack[] Platinum_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone,
+    // Platinum & Palladium Vein
+    public static final ItemStack[] Platinum_Palladium_Vein = new ItemStack[] { OreList.Chrome_Ore_Stone,
         OreList.Palladium_Ore_Stone, OreList.Platinum_Ore_Stone, OreList.Sheldonite_Ore_Stone };
-
-    // Plutonium 239 Vein
-    public static final ItemStack[] Plutonium239_Vein = new ItemStack[] { OreList.Plutonium_239_Ore_Stone,
-        OreList.Thorium_Ore_Stone, OreList.Uranium_238_Ore_Stone };
-
-    // Prasiolite & Hedenbergite Vein
-    public static final ItemStack[] Prasiolite_Hedenbergite_Vein = new ItemStack[] { OreList.Hedenbergite_Ore,
-        OreList.Prasiolite_Ore, OreList.Amethyst_Ore_Stone, OreList.Olivine_Ore_Stone };
 
     // Pyrolusite Vein
     public static final ItemStack[] Pyrolusite_Vein = new ItemStack[] { OreList.Apatite_Ore_Stone,
@@ -281,17 +351,13 @@ public class Vein {
     public static final ItemStack[] Quantium_Vein = new ItemStack[] { OreList.Amethyst_Ore_Stone,
         OreList.Ardite_Ore_Stone, OreList.Quantium_Ore_Stone, OreList.Rutile_Ore_Stone };
 
-    // Quartz Vein
-    public static final ItemStack[] Quartz_Vein = new ItemStack[] { OreList.Barite_Ore_Stone,
+    // Quartzite & Quartz Vein
+    public static final ItemStack[] Quartzite_Quartz_Vein = new ItemStack[] { OreList.Barite_Ore_Stone,
         OreList.Certus_Quartz_Ore_Stone, OreList.Quartzite_Ore_Stone };
 
     // Quartzite Vein
     public static final ItemStack[] Quartzite_Vein = new ItemStack[] { OreList.Barite_Ore_Stone,
         OreList.Certus_Quartz_Ore_Stone, OreList.Quartzite_Ore_Stone };
-
-    // Rare Earth Vein
-    public static final ItemStack[] Rare_Earth_Vein = new ItemStack[] { OreList.Cadmium_Ore_Stone,
-        OreList.Caesium_Ore_Stone, OreList.Cerium_Ore_Stone, OreList.Lanthanum_Ore_Stone };
 
     // Raw Tengam Vein
     public static final ItemStack[] Raw_Tengam_Vein = new ItemStack[] { OreList.Electrotine_Ore_Stone,
@@ -305,21 +371,32 @@ public class Vein {
     public static final ItemStack[] Redstone_Vein = new ItemStack[] { OreList.Cinnabar_Ore_Stone,
         OreList.Redstone_Ore_Stone, OreList.Ruby_Ore_Stone };
 
+    // Rock Salt & Salt Vein
+    public static final ItemStack[] Rock_Salt_Salt_Vein = new ItemStack[] { OreList.Lepidolite_Ore_Stone,
+        OreList.Rock_Salt_Ore_Stone, OreList.Salt_Ore_Stone, OreList.Spodumene_Ore_Stone };
+
+    // Runite Vein
+    public static final ItemStack[] Runite_Vein = new ItemStack[] { OreList.Runite_Ore };
+
     // Rutile Vein
     public static final ItemStack[] Rutile_Vein = new ItemStack[] { OreList.Bauxite_Ore_Stone,
         OreList.Meteoric_Iron_Ore_Stone, OreList.Rutile_Ore_Stone, OreList.Titanium_Ore_Stone };
 
-    // Salt Vein
-    public static final ItemStack[] Salt_Vein = new ItemStack[] { OreList.Lepidolite_Ore_Stone,
-        OreList.Rock_Salt_Ore_Stone, OreList.Salt_Ore_Stone, OreList.Spodumene_Ore_Stone };
+    // Saltpeter & Electrotine Vein
+    public static final ItemStack[] Saltpeter_Electrotine_Vein = new ItemStack[] { OreList.Alunite_Ore_Stone,
+        OreList.Diatomite_Ore_Stone, OreList.Electrotine_Ore_Stone, OreList.Saltpeter_Ore_Stone };
 
     // Samarium Vein
     public static final ItemStack[] Samarium_Vein = new ItemStack[] { OreList.Neodymium_Ore_Stone,
         OreList.Samarium_Ore_Stone, OreList.Tartarite_Ore_Stone };
 
-    // Sapphire Vein
-    public static final ItemStack[] Sapphire_Vein = new ItemStack[] { OreList.Almandine_Ore_Stone,
-        OreList.Pyrope_Ore_Stone, OreList.Sapphire_Ore_Stone, OreList.Green_Sapphire_Ore_Stone };
+    // Scheelite & Tungstate Vein
+    public static final ItemStack[] Scheelite_Tungstate_Vein = new ItemStack[] { OreList.Lithium_Ore_Stone,
+        OreList.Scheelite_Ore_Stone, OreList.Tungstate_Ore_Stone };
+
+    // Sheldonite & Platinum Vein
+    public static final ItemStack[] Sheldonite_Platinum_Vein = new ItemStack[] { OreList.Iridium_Ore_Stone,
+        OreList.Palladium_Ore_Stone, OreList.Platinum_Ore_Stone, OreList.Sheldonite_Ore_Stone };
 
     // Soapstone Vein
     public static final ItemStack[] Soapstone_Vein = new ItemStack[] { OreList.Glauconite_Ore_Stone,
@@ -328,6 +405,10 @@ public class Vein {
     // Sulfur Vein
     public static final ItemStack[] Sulfur_Vein = new ItemStack[] { OreList.Pyrite_Ore_Stone,
         OreList.Sphalerite_Ore_Stone, OreList.Sulfur_Ore_Stone };
+
+    // Sulfur Dioxide Vein
+    public static final ItemStack[] Sulfur_Dioxide_Vein = new ItemStack[] { OreList.Sulfur_Dioxide_Ice,
+        OreList.Oxygen_Ice, OreList.Sulfur_Ore_Stone };
 
     // Terra & Aer Vein
     public static final ItemStack[] Terra_Aer_Vein = new ItemStack[] { OreList.Aer_Infused_Stone_Stone,
@@ -349,29 +430,41 @@ public class Vein {
     public static final ItemStack[] Tiberium_Vein = new ItemStack[] { OreList.Tiberium_Ore,
         OreList.Enriched_Naquadah_Ore_Stone };
 
-    // Tin Vein
-    public static final ItemStack[] Tin_Vein = new ItemStack[] { OreList.Asbestos_Ore_Stone,
-        OreList.Cassiterite_Sand_Stone, OreList.Diatomite_Ore_Stone, OreList.Garnet_Sand_Stone };
+    // Tin & Cassiterite Vein
+    public static final ItemStack[] Tin_Cassiterite_Vein = new ItemStack[] { OreList.Cassiterite_Ore_Stone,
+        OreList.Tin_Ore_Stone };
 
-    // Tungstate Vein
-    public static final ItemStack[] Tungstate_Vein = new ItemStack[] { OreList.Lithium_Ore_Stone,
-        OreList.Scheelite_Ore_Stone, OreList.Tungstate_Ore_Stone };
+    // Titanite Vein
+    public static final ItemStack[] Titanite_Vein = new ItemStack[] { OreList.Titanite_Ore, OreList.Zimbabweite_Ore,
+        OreList.Zircon_Ore, OreList.Florencite_Ore };
 
     // Tungsten Vein
     public static final ItemStack[] Tungsten_Vein = new ItemStack[] { OreList.Deep_Iron_Ore_Stone,
         OreList.Raw_Silicon_Ore_Stone, OreList.Shadow_Iron_Ore_Stone, OreList.Tungsten_Ore_Stone };
 
-    // Uranium 238 Vein
-    public static final ItemStack[] Uranium238_Vein = new ItemStack[] { OreList.Uraninite_Ore_Stone,
+    // Uranium 238 & Plutonium 239 Vein
+    public static final ItemStack[] Uranium238_Plutonium239_Vein = new ItemStack[] { OreList.Plutonium_239_Ore_Stone,
+        OreList.Thorium_Ore_Stone, OreList.Uranium_238_Ore_Stone };
+
+    // Uraninite & Uranium 238 Vein
+    public static final ItemStack[] Uraninite_Uranium238_Vein = new ItemStack[] { OreList.Uraninite_Ore_Stone,
         OreList.Uranium_238_Ore_Stone };
 
     // Vanadium Vein
     public static final ItemStack[] Vanadium_Vein = new ItemStack[] { OreList.Chrome_Ore_Stone, OreList.Gold_Ore_Stone,
         OreList.Magnetite_Ore_Stone, OreList.Vanadium_Ore_Stone };
 
-    // Vermiculite Vein
-    public static final ItemStack[] Vermiculite_Vein = new ItemStack[] { OreList.Alunite_Ore_Stone,
-        OreList.Cassiterite_Ore_Stone, OreList.Chalcopyrite_Ore_Stone, OreList.Vermiculite_Stone };
+    // Wulfenite & Molybdenum Vein
+    public static final ItemStack[] Wulfenite_Molybdenum_Vein = new ItemStack[] { OreList.Molybdenite_Ore_Stone,
+        OreList.Molybdenum_Ore_Stone, OreList.Powellite_Ore_Stone, OreList.Wulfenite_Ore_Stone };
+
+    // Xenotime Vein
+    public static final ItemStack[] Xenotime_Vein = new ItemStack[] { OreList.Xenotime_Ore, OreList.Zirkelite_Ore,
+        OreList.Crocoite_Ore, OreList.Irarsite_Ore };
+
+    // Yttrocerite Vein
+    public static final ItemStack[] Yttrocerite_Vein = new ItemStack[] { OreList.Yttrocerite_Ore,
+        OreList.Lepersonnite_Ore, OreList.Lautarite_Ore, OreList.Fluorite_F_Ore };
 
     public static final ItemStack[] T10_Ore = new ItemStack[] { OreList.End_Powder_Ore, OreList.Stardust_Ore,
         OreList.Igneous_Rock_Ore, OreList.Instability_Orb_Ore, OreList.Peridot_Ore, OreList.Shadow_Ore,

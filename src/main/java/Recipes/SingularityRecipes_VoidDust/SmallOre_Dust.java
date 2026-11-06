@@ -1,474 +1,456 @@
 package Recipes.SingularityRecipes_VoidDust;
 
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static util.AggregateItemStackArray.addCompressAggregateArray;
 
 import net.minecraft.item.ItemStack;
 
-import bartworks.system.material.WerkstoffLoader;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
+import EnumList.EnumItemList.EnumOreProductList.OreProductDustList;
 
 public class SmallOre_Dust {
 
-    // Amber Ore
-    public static final ItemStack[] Amber_SmallOre = new ItemStack[] {
-        //
-        Materials.Amber.getDust(1) };
+    // Overworld SmallOre
+    public static final ItemStack[] Overworld_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Coal_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust);
 
-    // Amethyst Ore
-    public static final ItemStack[] Amethyst_SmallOre = new ItemStack[] {
-        //
-        Materials.Amethyst.getDust(1) };
+    // Nether SmallOre
+    public static final ItemStack[] Nether_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Bismutite_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Nether_Quartz_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Sulfur_Ore_Product_Dust,
+        OreProductDustList.Realgar_Ore_Product_Dust,
+        OreProductDustList.Certus_Quartz_Ore_Product_Dust);
 
-    // Awakened Draconium Ore
-    public static final ItemStack[] Awakened_Draconium_SmallOre = new ItemStack[] {
-        //
-        Materials.DraconiumAwakened.getDust(1) };
+    // Twilight SmallOre
+    public static final ItemStack[] Twilight_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Emerald_Ore_Product_Dust,
+        OreProductDustList.Ruby_Ore_Product_Dust,
+        OreProductDustList.Sapphire_Ore_Product_Dust,
+        OreProductDustList.Green_Sapphire_Ore_Product_Dust,
+        OreProductDustList.Olivine_Ore_Product_Dust,
+        OreProductDustList.Topaz_Ore_Product_Dust,
+        OreProductDustList.Tanzanite_Ore_Product_Dust,
+        OreProductDustList.Amethyst_Ore_Product_Dust,
+        OreProductDustList.Opal_Ore_Product_Dust,
+        OreProductDustList.Jasper_Ore_Product_Dust,
+        OreProductDustList.Blue_Topaz_Ore_Product_Dust,
+        OreProductDustList.Amber_Ore_Product_Dust,
+        OreProductDustList.Spinel_Ore_Product_Dust,
+        OreProductDustList.Red_Garnet_Ore_Product_Dust,
+        OreProductDustList.Yellow_Garnet_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Jade_Ore_Product_Dust);
 
-    // Bedrockium Ore
-    public static final ItemStack[] Bedrockium_SmallOre = new ItemStack[] {
-        //
-        Materials.Bedrockium.getDust(1) };
+    // TheEnd SmallOre
+    public static final ItemStack[] TheEnd_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust);
 
-    // Bismuth Ore
-    public static final ItemStack[] Bismuth_SmallOre = new ItemStack[] {
-        //
-        Materials.Bismuth.getDust(1) };
+    // EndAsteroid SmallOre
+    public static final ItemStack[] EndAsteroid_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust);
 
-    // Black Plutonium Ore
-    public static final ItemStack[] Black_Plutonium_SmallOre = new ItemStack[] {
-        //
-        Materials.BlackPlutonium.getDust(1) };
+    // Moon SmallOre
+    public static final ItemStack[] Moon_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust);
 
-    // Blue Topaz Ore
-    public static final ItemStack[] Blue_Topaz_SmallOre = new ItemStack[] {
-        //
-        Materials.BlueTopaz.getDust(1),
-        //
-        Materials.Topaz.getDust(1) };
+    // Deimos SmallOre
+    public static final ItemStack[] Deimos_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Chrome_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust);
 
-    // Certus Quartz Ore
-    public static final ItemStack[] Certus_Quartz_SmallOre = new ItemStack[] {
-        //
-        Materials.Barite.getDust(1),
-        //
-        Materials.CertusQuartz.getDust(1),
-        //
-        Materials.Quartzite.getDust(1) };
+    // Mars SmallOre
+    public static final ItemStack[] Mars_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Chrome_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust);
 
-    // Charged Certus Quartz Ore
-    public static final ItemStack[] Charged_Certus_Quartz_SmallOre = new ItemStack[] {
-        //
-        Materials.Barite.getDust(1),
-        //
-        Materials.CertusQuartz.getDust(1),
-        //
-        Materials.Quartzite.getDust(1),
-        // Charged Certus Quartz Dust
-        getModItem(NewHorizonsCoreMod.ID, "ChargedCertusQuartzDust", 1L) };
+    // Phobos SmallOre
+    public static final ItemStack[] Phobos_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust);
 
-    // Chromite Ore
-    public static final ItemStack[] Chromite_SmallOre = new ItemStack[] {
-        //
-        Materials.Chromite.getDust(1),
-        //
-        Materials.Iron.getDust(1),
-        //
-        Materials.Magnesium.getDust(1) };
+    // Asteroids SmallOre
+    public static final ItemStack[] Asteroids_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust);
 
-    // Coal Ore
-    public static final ItemStack[] Coal_SmallOre = new ItemStack[] {
-        //
-        Materials.Coal.getDust(1),
-        //
-        Materials.Lignite.getDust(1),
-        //
-        Materials.Thorium.getDust(1) };
+    // Callisto SmallOre
+    public static final ItemStack[] Callisto_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust);
 
-    // Copper Ore
-    public static final ItemStack[] Copper_SmallOre = new ItemStack[] {
-        //
-        Materials.Copper.getDust(1),
-        //
-        Materials.Cobalt.getDust(1),
-        //
-        Materials.Nickel.getDust(1),
-        //
-        Materials.Gold.getDust(1) };
+    // Ceres SmallOre
+    public static final ItemStack[] Ceres_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust);
 
-    // Deep Iron Ore
-    public static final ItemStack[] Deep_Iron_SmallOre = new ItemStack[] {
-        //
-        Materials.DeepIron.getDust(1),
-        //
-        Materials.Iron.getDust(1),
-        //
-        Materials.Trinium.getDust(1) };
+    // Ganymede SmallOre
+    public static final ItemStack[] Ganymede_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust);
 
-    // Desh Ore
-    public static final ItemStack[] Desh_SmallOre = new ItemStack[] {
-        //
-        Materials.Desh.getDust(1) };
+    // Io SmallOre
+    public static final ItemStack[] Io_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Tungsten_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Firestone_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust);
 
-    // Diamond Ore
-    public static final ItemStack[] Diamond_SmallOre = new ItemStack[] {
-        //
-        Materials.Diamond.getDust(1),
-        //
-        Materials.Graphite.getDust(1) };
+    // Mercury SmallOre
+    public static final ItemStack[] Mercury_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust,
+        OreProductDustList.Deep_Iron_Ore_Product_Dust);
 
-    // Draconium Ore
-    public static final ItemStack[] Draconium_SmallOre = new ItemStack[] {
-        //
-        Materials.Draconium.getDust(1) };
+    // Venus SmallOre
+    public static final ItemStack[] Venus_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Tungsten_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Firestone_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust);
 
-    // Emerald Ore
-    public static final ItemStack[] Emerald_SmallOre = new ItemStack[] {
-        //
-        Materials.Beryllium.getDust(1),
-        //
-        Materials.Emerald.getDust(1),
-        //
-        WerkstoffLoader.Alumina.get(OrePrefixes.dust, 1) };
+    // Enceladus SmallOre
+    public static final ItemStack[] Enceladus_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust);
 
-    // Firestone Ore
-    public static final ItemStack[] Firestone_SmallOre = new ItemStack[] {
-        //
-        Materials.Firestone.getDust(1) };
+    // Miranda SmallOre
+    public static final ItemStack[] Miranda_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust);
 
-    // Green Sapphire Ore
-    public static final ItemStack[] Green_Sapphire_SmallOre = new ItemStack[] {
-        //
-        Materials.GreenSapphire.getDust(1),
-        //
-        Materials.Sapphire.getDust(1),
-        //
-        WerkstoffLoader.Alumina.get(OrePrefixes.dust, 1) };
+    // Oberon SmallOre
+    public static final ItemStack[] Oberon_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust);
 
-    // Gold Ore
-    public static final ItemStack[] Gold_SmallOre = new ItemStack[] {
-        //
-        Materials.Copper.getDust(1),
-        //
-        Materials.Gold.getDust(1),
-        //
-        Materials.Nickel.getDust(1) };
+    // Titan SmallOre
+    public static final ItemStack[] Titan_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust);
 
-    // Infinity Catalyst Ore
-    public static final ItemStack[] Infinity_Catalyst_SmallOre = new ItemStack[] {
-        //
-        Materials.InfinityCatalyst.getDust(1) };
+    // Proteus SmallOre
+    public static final ItemStack[] Proteus_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Redstone_Ore_Product_Dust,
+        OreProductDustList.Saltpeter_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust);
 
-    // Iron Ore
-    public static final ItemStack[] Iron_SmallOre = new ItemStack[] {
-        //
-        Materials.Iron.getDust(1),
-        //
-        Materials.Nickel.getDust(1),
-        //
-        Materials.Tin.getDust(1) };
+    // Triton SmallOre
+    public static final ItemStack[] Triton_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Copper_Ore_Product_Dust,
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust);
 
-    // Jade Ore
-    public static final ItemStack[] Jade_SmallOre = new ItemStack[] {
-        //
-        Materials.Jade.getDust(1) };
+    // Haumea SmallOre
+    public static final ItemStack[] Haumea_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust);
 
-    // Jasper Ore
-    public static final ItemStack[] Jasper_SmallOre = new ItemStack[] {
-        //
-        Materials.Jasper.getDust(1) };
+    // Kuiperbelt SmallOre
+    public static final ItemStack[] Kuiperbelt_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust);
 
-    // Lapis Ore
-    public static final ItemStack[] Lapis_SmallOre = new ItemStack[] {
-        //
-        Materials.Lapis.getDust(1),
-        //
-        Materials.Lazurite.getDust(1),
-        //
-        Materials.Pyrite.getDust(1),
-        //
-        Materials.Sodalite.getDust(1) };
+    // Makemake SmallOre
+    public static final ItemStack[] Makemake_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Oriharukon_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Desh_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust);
 
-    // Lead Ore
-    public static final ItemStack[] Lead_SmallOre = new ItemStack[] {
-        //
-        Materials.Lead.getDust(1),
-        //
-        Materials.Silver.getDust(1),
-        //
-        Materials.Sulfur.getDust(1) };
+    // Pluto SmallOre
+    public static final ItemStack[] Pluto_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Meteoric_Iron_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Tungstate_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Quantium_Ore_Product_Dust,
+        OreProductDustList.Ledox_Ore_Product_Dust,
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust);
 
-    // Ledox Ore
-    public static final ItemStack[] Ledox_SmallOre = new ItemStack[] {
-        //
-        Materials.Ledox.getDust(1) };
+    // BarnardE SmallOre
+    public static final ItemStack[] BarnardE_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Zinc_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Awakened_Draconium_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust);
 
-    // Meteoric Iron Ore
-    public static final ItemStack[] Meteoric_Iron_SmallOre = new ItemStack[] {
-        //
-        Materials.Iron.getDust(1),
-        //
-        Materials.MeteoricIron.getDust(1),
-        //
-        Materials.Nickel.getDust(1) };
+    // BarnardF SmallOre
+    public static final ItemStack[] BarnardF_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Iron_Ore_Product_Dust,
+        OreProductDustList.Gold_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Naquadah_Ore_Product_Dust,
+        OreProductDustList.Awakened_Draconium_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust,
+        OreProductDustList.Bedrockium_Ore_Product_Dust,
+        OreProductDustList.Realgar_Ore_Product_Dust);
 
-    // Mytryl Ore
-    public static final ItemStack[] Mytryl_SmallOre = new ItemStack[] {
-        //
-        Materials.Mytryl.getDust(1),
-        //
-        Materials.Zinc.getDust(1),
-        //
-        WerkstoffMaterialPool.SamariumOreConcentrate.get(OrePrefixes.dust, 1) };
+    // TCetiE SmallOre
+    public static final ItemStack[] TCetiE_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Awakened_Draconium_Ore_Product_Dust);
 
-    // Naquadah Ore
-    public static final ItemStack[] Naquadah_SmallOre = new ItemStack[] {
-        // Naquadah Oxide Mixture Dust
-        getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10054),
-        // Enriched-Naquadah Oxide Mixture Dust
-        getModItem(BartWorks.ID, "gt.bwMetaGenerateddust", 1L, 10067) };
+    // VegaB SmallOre
+    public static final ItemStack[] VegaB_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Bismuth_Ore_Product_Dust,
+        OreProductDustList.Lead_Ore_Product_Dust,
+        OreProductDustList.Silver_Ore_Product_Dust,
+        OreProductDustList.Diamond_Ore_Product_Dust,
+        OreProductDustList.Neutronium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust,
+        OreProductDustList.Awakened_Draconium_Ore_Product_Dust,
+        OreProductDustList.Black_Plutonium_Ore_Product_Dust,
+        OreProductDustList.Infinity_Catalyst_Ore_Product_Dust);
 
-    // Nether Quartz Ore
-    public static final ItemStack[] Nether_Quartz_SmallOre = new ItemStack[] {
-        //
-        Materials.NetherQuartz.getDust(1) };
+    // Anubis SmallOre
+    public static final ItemStack[] Anubis_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Infinity_Catalyst_Ore_Product_Dust);
 
-    // Neutronium Ore
-    public static final ItemStack[] Neutronium_SmallOre = new ItemStack[] {
-        //
-        Materials.Neutronium.getDust(1) };
+    // Horus SmallOre
+    public static final ItemStack[] Horus_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Emerald_Ore_Product_Dust,
+        OreProductDustList.Ruby_Ore_Product_Dust,
+        OreProductDustList.Sapphire_Ore_Product_Dust,
+        OreProductDustList.Green_Sapphire_Ore_Product_Dust,
+        OreProductDustList.Olivine_Ore_Product_Dust,
+        OreProductDustList.Topaz_Ore_Product_Dust,
+        OreProductDustList.Tanzanite_Ore_Product_Dust,
+        OreProductDustList.Amethyst_Ore_Product_Dust,
+        OreProductDustList.Opal_Ore_Product_Dust,
+        OreProductDustList.Jasper_Ore_Product_Dust,
+        OreProductDustList.Blue_Topaz_Ore_Product_Dust,
+        OreProductDustList.Spinel_Ore_Product_Dust,
+        OreProductDustList.Red_Garnet_Ore_Product_Dust,
+        OreProductDustList.Yellow_Garnet_Ore_Product_Dust,
+        OreProductDustList.Mytryl_Ore_Product_Dust,
+        OreProductDustList.Certus_Quartz_Ore_Product_Dust,
+        OreProductDustList.Jade_Ore_Product_Dust,
+        OreProductDustList.Charged_Certus_Quartz_Ore_Product_Dust);
 
-    // Nickel Ore
-    public static final ItemStack[] Nickel_SmallOre = new ItemStack[] {
-        //
-        Materials.Cobalt.getDust(1),
-        //
-        Materials.Nickel.getDust(1),
-        //
-        Materials.Iron.getDust(1),
-        //
-        WerkstoffLoader.PTMetallicPowder.get(OrePrefixes.dust, 1) };
+    // MehenBelt SmallOre
+    public static final ItemStack[] MehenBelt_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Tin_Ore_Product_Dust,
+        OreProductDustList.Nickel_Ore_Product_Dust,
+        OreProductDustList.Lapis_Ore_Product_Dust,
+        OreProductDustList.Olivine_Ore_Product_Dust,
+        OreProductDustList.Titanium_Ore_Product_Dust,
+        OreProductDustList.Chromite_Ore_Product_Dust);
 
-    // Olivine Ore
-    public static final ItemStack[] Olivine_SmallOre = new ItemStack[] {
-        //
-        Materials.Magnesium.getDust(1),
-        //
-        Materials.Olivine.getDust(1),
-        //
-        Materials.Pyrope.getDust(1) };
-
-    // Opal Ore
-    public static final ItemStack[] Opal_SmallOre = new ItemStack[] {
-        //
-        Materials.Opal.getDust(1),
-        //
-        Materials.Tanzanite.getDust(1) };
-
-    // Oriharukon Ore
-    public static final ItemStack[] Oriharukon_SmallOre = new ItemStack[] {
-        //
-        Materials.Oriharukon.getDust(1) };
-
-    // Quantium Ore
-    public static final ItemStack[] Quantium_SmallOre = new ItemStack[] {
-        //
-        Materials.Quantium.getDust(1) };
-
-    // Realgar Ore
-    public static final ItemStack[] Realgar_SmallOre = new ItemStack[] {
-        //
-        Materials.Realgar.getDust(1) };
-
-    // Redstone Ore
-    public static final ItemStack[] Redstone_SmallOre = new ItemStack[] {
-        //
-        Materials.Cinnabar.getDust(1),
-        //
-        Materials.Glowstone.getDust(1),
-        //
-        Materials.RareEarth.getDust(1),
-        //
-        Materials.Redstone.getDust(1),
-        //
-        Materials.Chalcopyrite.getDust(1),
-        //
-        Materials.Galena.getDust(1),
-        //
-        Materials.NetherQuartz.getDust(1),
-        //
-        Materials.Yttrium.getDust(1),
-        // Agardite (Cd) Dust
-        getModItem(GTPlusPlus.ID, "itemDustAgarditeCd", 1),
-        // Agardite (La) Dust
-        getModItem(GTPlusPlus.ID, "itemDustAgarditeLa", 1),
-        // Agardite (Nd) Dust
-        getModItem(GTPlusPlus.ID, "itemDustAgarditeNd", 1),
-        // Alburnite Dust
-        getModItem(GTPlusPlus.ID, "itemDustAlburnite", 1),
-        // Ancient Granite Dust
-        getModItem(GTPlusPlus.ID, "itemDustAncientGranite", 1),
-        // Black Metal Dust
-        getModItem(GTPlusPlus.ID, "itemDustBlackMetal", 1),
-        // Crocoite Dust
-        getModItem(GTPlusPlus.ID, "itemDustCrocoite", 1),
-        // Cryolite (F) Dust
-        getModItem(GTPlusPlus.ID, "itemDustCryoliteF", 1),
-        // Demicheleite (Br) Dust
-        getModItem(GTPlusPlus.ID, "itemDustDemicheleiteBr", 1),
-        // Florencite Dust
-        getModItem(GTPlusPlus.ID, "itemDustFlorencite", 1),
-        // Fluorcaphite Dust
-        getModItem(GTPlusPlus.ID, "itemDustFluorcaphite", 1),
-        // Gadolinite (Y) Dust
-        getModItem(GTPlusPlus.ID, "itemDustGadoliniteY", 1),
-        // Greenockite Dust
-        getModItem(GTPlusPlus.ID, "itemDustGreenockite", 1),
-        // Lanthanite (Ce) Dust
-        getModItem(GTPlusPlus.ID, "itemDustLanthaniteCe", 1),
-        // Lanthanite (Nd) Dust
-        getModItem(GTPlusPlus.ID, "itemDustLanthaniteNd", 1),
-        // Lautarite Dust
-        getModItem(GTPlusPlus.ID, "itemDustLautarite", 1),
-        // Lepersonnite Dust
-        getModItem(GTPlusPlus.ID, "itemDustLepersonnite", 1),
-        // Nichromite Dust
-        getModItem(GTPlusPlus.ID, "itemDustNichromite", 1),
-        // Runite Dust
-        getModItem(GTPlusPlus.ID, "itemDustRunite", 1),
-        // Samarskite (Y) Dust
-        getModItem(GTPlusPlus.ID, "itemDustSamarskiteY", 1),
-        // Yttriaite Dust
-        getModItem(GTPlusPlus.ID, "itemDustYttriaite", 1),
-        // Yttrialite Dust
-        getModItem(GTPlusPlus.ID, "itemDustYttrialite", 1),
-        // Zircon Dust
-        getModItem(GTPlusPlus.ID, "itemDustZircon", 1) };
-
-    // Red Garnet Ore
-    public static final ItemStack[] Red_Garnet_SmallOre = new ItemStack[] {
-        //
-        Materials.Almandine.getDust(1),
-        //
-        Materials.GarnetRed.getDust(1),
-        //
-        Materials.Pyrope.getDust(1),
-        //
-        Materials.Spessartine.getDust(1) };
-
-    // Ruby Ore
-    public static final ItemStack[] Ruby_SmallOre = new ItemStack[] {
-        //
-        Materials.Chrome.getDust(1),
-        //
-        Materials.Ruby.getDust(1),
-        //
-        Materials.GarnetRed.getDust(1) };
-
-    // Saltpeter Ore
-    public static final ItemStack[] Saltpeter_SmallOre = new ItemStack[] {
-        //
-        Materials.Saltpeter.getDust(1) };
-
-    // Sapphire Ore
-    public static final ItemStack[] Sapphire_SmallOre = new ItemStack[] {
-        //
-        Materials.GreenSapphire.getDust(1),
-        //
-        Materials.Sapphire.getDust(1),
-        //
-        WerkstoffLoader.Alumina.get(OrePrefixes.dust, 1) };
-
-    // Silver Ore
-    public static final ItemStack[] Silver_SmallOre = new ItemStack[] {
-        //
-        Materials.Lead.getDust(1),
-        //
-        Materials.Silver.getDust(1),
-        //
-        Materials.Sulfur.getDust(1) };
-
-    // Spinel Ore
-    public static final ItemStack[] Spinel_SmallOre = new ItemStack[] {
-        //
-        Materials.Jasper.getDust(1) };
-
-    // Sulfur Ore
-    public static final ItemStack[] Sulfur_SmallOre = new ItemStack[] {
-        //
-        Materials.Sulfur.getDust(1) };
-
-    // Tanzanite Ore
-    public static final ItemStack[] Tanzanite_SmallOre = new ItemStack[] {
-        //
-        Materials.Opal.getDust(1),
-        //
-        Materials.Tanzanite.getDust(1) };
-
-    // Tin Ore
-    public static final ItemStack[] Tin_SmallOre = new ItemStack[] {
-        //
-        Materials.Iron.getDust(1),
-        //
-        Materials.Tin.getDust(1),
-        //
-        Materials.Zinc.getDust(1) };
-
-    // Titanium Ore
-    public static final ItemStack[] Titanium_SmallOre = new ItemStack[] {
-        //
-        Materials.Almandine.getDust(1),
-        //
-        Materials.Titanium.getDust(1) };
-
-    // Topaz Ore
-    public static final ItemStack[] Topaz_SmallOre = new ItemStack[] {
-        //
-        Materials.BlueTopaz.getDust(1),
-        //
-        Materials.Topaz.getDust(1) };
-
-    // Tungstate Ore
-    public static final ItemStack[] Tungstate_SmallOre = new ItemStack[] {
-        //
-        Materials.Lithium.getDust(1),
-        //
-        Materials.Manganese.getDust(1),
-        //
-        Materials.Silver.getDust(1),
-        //
-        Materials.Tungstate.getDust(1) };
-
-    // Tungsten Ore
-    public static final ItemStack[] Tungsten_SmallOre = new ItemStack[] {
-        //
-        Materials.Manganese.getDust(1),
-        //
-        Materials.Molybdenum.getDust(1),
-        //
-        Materials.Tungsten.getDust(1) };
-
-    // Yellow Garnet Ore
-    public static final ItemStack[] Yellow_Garnet_SmallOre = new ItemStack[] {
-        //
-        Materials.Andradite.getDust(1),
-        //
-        Materials.GarnetYellow.getDust(1),
-        //
-        Materials.Grossular.getDust(1),
-        //
-        Materials.Uvarovite.getDust(1) };
-
-    // Zinc Ore
-    public static final ItemStack[] Zinc_SmallOre = new ItemStack[] {
-        //
-        Materials.Gallium.getDust(1),
-        //
-        Materials.Tin.getDust(1),
-        //
-        Materials.Zinc.getDust(1) };
+    // Seth SmallOre
+    public static final ItemStack[] Seth_SmallOre = addCompressAggregateArray(
+        OreProductDustList.Draconium_Ore_Product_Dust,
+        OreProductDustList.Awakened_Draconium_Ore_Product_Dust);
 }

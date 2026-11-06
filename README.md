@@ -40,7 +40,7 @@
 
 ### 3.3 机器采集资源
 本机器采集时间为固定的60Tick，需要在主方块中放入特定物品以指定虚空资源采集内容，具体采集物品可以查看NEI，可以通过潜行左击主方块用于切换虚空资源采集模式。  
-虚空资源采集类型共有八种，分别为：矿石资源（Void Ore）、宝石资源（Void Gem）、粉末资源（Void Dust）、流体资源（Void Fluid）、锭资源（Void Ingot）、生态资源（Ecosystem）、创造资源（Mod Item）以及抽奖模式（Pachinko）。  
+虚空资源采集类型共有八种，分别为：矿石资源（Void Ore）、宝石资源（Void Gem）、粉末资源（Void Dust）、流体资源（Void Fluid）、锭资源（Void Ingot）、生态资源（Ecosystem）、创造资源（Mod EnumListCheck）以及抽奖模式（Pachinko）。  
 其中创造资源可以通过创造模式发电机在NEI中查看用途了解相关mod的抽奖物品。  
 本机器不提供黑白名单设定，请您在采集虚空资源时合理规划存储系统。  
 

@@ -1,1543 +1,721 @@
 package Recipes.SingularityRecipes_VoidIngot;
 
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static util.AggregateItemStackArray.addCompressAggregateArray;
 
 import net.minecraft.item.ItemStack;
 
 import EnumList.EnumItemList.EnumOreProductList.IngotList;
+import EnumList.EnumItemList.EnumOreProductList.OreProductIngotList;
 
 public class Vein_Ingot {
 
+    // Agardite (Cd) Vein
+    public static final ItemStack[] Agardite_Cd_Vein = addCompressAggregateArray(
+        OreProductIngotList.Agardite_Cd_Ore_Product_Ingot,
+        OreProductIngotList.Agardite_La_Ore_Product_Ingot,
+        OreProductIngotList.Demicheleite_Br_Ore_Product_Ingot,
+        OreProductIngotList.Irarsite_Ore_Product_Ingot);
+
+    // Agardite (Nd) Vein
+    public static final ItemStack[] Agardite_Nd_Vein = addCompressAggregateArray(
+        OreProductIngotList.Agardite_Nd_Ore_Product_Ingot,
+        OreProductIngotList.Agardite_Y_Ore_Product_Ingot,
+        OreProductIngotList.Kashinite_Ore_Product_Ingot,
+        OreProductIngotList.Cerite_Ore_Product_Ingot);
+
+    // Almandine & Sapphire Vein
+    public static final ItemStack[] Almandine_Sapphire_Vein = addCompressAggregateArray(
+        OreProductIngotList.Almandine_Ore_Product_Ingot,
+        OreProductIngotList.Pyrope_Ore_Product_Ingot,
+        OreProductIngotList.Sapphire_Ore_Product_Ingot,
+        OreProductIngotList.Green_Sapphire_Ore_Product_Ingot);
+
+    // Amethyst Vein
+    public static final ItemStack[] Amethyst_Vein = addCompressAggregateArray(
+        OreProductIngotList.Hedenbergite_Ore_Product_Ingot,
+        OreProductIngotList.Prasiolite_Ore_Product_Ingot,
+        OreProductIngotList.Amethyst_Ore_Product_Ingot,
+        OreProductIngotList.Olivine_Ore_Product_Ingot);
+
     // Apatite Vein
-    public static final ItemStack[] Apatite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047) };
+    public static final ItemStack[] Apatite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Apatite_Ore_Product_Ingot,
+        OreProductIngotList.Pyrochlore_Ore_Product_Ingot,
+        OreProductIngotList.Tricalcium_Phosphate_Ore_Product_Ingot);
+
+    // Aqua, Ignis & Amber Vein
+    public static final ItemStack[] Aqua_Ignis_Amber_Vein = addCompressAggregateArray(
+        OreProductIngotList.Amber_Ore_Product_Ingot,
+        OreProductIngotList.Cinnabar_Ore_Product_Ingot);
 
     // Arsenic Vein
-    public static final ItemStack[] Arsenic_Vein = new ItemStack[] {
-        // "Antimony Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11058),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Arsenic_Vein = addCompressAggregateArray(
+        OreProductIngotList.Antimony_Ore_Product_Ingot,
+        OreProductIngotList.Arsenic_Ore_Product_Ingot,
+        OreProductIngotList.Bismuth_Ore_Product_Ingot);
 
-    // Arsenopyrite & Ferberite & Loellingite & Roquesite Vein
-    public static final ItemStack[] Arsenopyrite_Ferberite_Loellingite_Roquesite_Vein = new ItemStack[] {
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Indium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11056),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
-
-    // Awakened Draconium Vein
-    public static final ItemStack[] Awakened_Draconium_Vein = new ItemStack[] {
-        // "Draconium Ingot"
-        getModItem(DraconicEvolution.ID, "draconiumIngot", 1L),
-        // "Awakened Draconium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11976) };
+    // Arsenopyrite Vein
+    public static final ItemStack[] Arsenopyrite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Arsenopyrite_Ore_Product_Ingot,
+        OreProductIngotList.Ferberite_Ore_Product_Ingot,
+        OreProductIngotList.Loellingite_Ore_Product_Ingot,
+        OreProductIngotList.Roquesite_Ore_Product_Ingot);
 
     // BArTiMaEuSNeK Vein
-    public static final ItemStack[] BArTiMaEuSNeK_Vein = new ItemStack[] {
-        // "BArTiMaEuSNeK Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 43),
-        // "Europium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11070),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028) };
+    public static final ItemStack[] BArTiMaEuSNeK_Vein = addCompressAggregateArray(
+        OreProductIngotList.BArTiMaEuSNeK_Ore_Product_Ingot);
 
     // Basaltic Mineral Sand Vein
-    public static final ItemStack[] Basaltic_Mineral_Sand_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Basaltic_Mineral_Sand_Vein = addCompressAggregateArray(
+        OreProductIngotList.Basaltic_Mineral_Sand_Product_Ingot,
+        OreProductIngotList.Fullers_Earth_Product_Ingot,
+        OreProductIngotList.Granitic_Mineral_Sand_Product_Ingot,
+        OreProductIngotList.Gypsum_Ore_Product_Ingot);
+
+    // Bastnasite & Monazite Vein
+    public static final ItemStack[] Bastnasite_Monazite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bastnasite_Ore_Product_Ingot,
+        OreProductIngotList.Monazite_Ore_Product_Ingot,
+        OreProductIngotList.Neodymium_Ore_Product_Ingot);
 
     // Bauxite Vein
-    public static final ItemStack[] Bauxite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Bauxite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Aluminium_Ore_Product_Ingot,
+        OreProductIngotList.Bauxite_Ore_Product_Ingot,
+        OreProductIngotList.Ilmenite_Ore_Product_Ingot);
+
+    // Bentonite & Olivine Vein
+    public static final ItemStack[] Bentonite_Olivine_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bentonite_Product_Ingot,
+        OreProductIngotList.Glauconite_Ore_Product_Ingot,
+        OreProductIngotList.Magnesite_Ore_Product_Ingot,
+        OreProductIngotList.Olivine_Ore_Product_Ingot);
 
     // Beryllium Vein
-    public static final ItemStack[] Beryllium_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Beryllium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11008),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
+    public static final ItemStack[] Beryllium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Beryllium_Ore_Product_Ingot,
+        OreProductIngotList.Emerald_Ore_Product_Ingot,
+        OreProductIngotList.Thorium_Ore_Product_Ingot);
 
-    // Bismutite & Bismuthinite Vein
-    public static final ItemStack[] Bismutite_Bismuthinite_Vein = new ItemStack[] {
-        // "Antimony Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11058),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090) };
+    // Bismutite Vein
+    public static final ItemStack[] Bismutite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bismuthinite_Ore_Product_Ingot,
+        OreProductIngotList.Bismutite_Ore_Product_Ingot,
+        OreProductIngotList.Bismuth_Ore_Product_Ingot,
+        OreProductIngotList.Stibnite_Ore_Product_Ingot);
 
     // Black Plutonium Vein
-    public static final ItemStack[] Black_Plutonium_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Black Plutonium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11388),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Black_Plutonium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Black_Plutonium_Ore_Product_Ingot,
+        OreProductIngotList.Red_Garnet_Ore_Product_Ingot,
+        OreProductIngotList.Yellow_Garnet_Ore_Product_Ingot);
+
+    // Brown Limonite & Iron Vein
+    public static final ItemStack[] Brown_Limonite_Iron_Vein = addCompressAggregateArray(
+        OreProductIngotList.Banded_Iron_Ore_Product_Ingot,
+        OreProductIngotList.Brown_Limonite_Ore_Product_Ingot,
+        OreProductIngotList.Malachite_Ore_Product_Ingot,
+        OreProductIngotList.Yellow_Limonite_Ore_Product_Ingot);
+
+    // Cadmium & Rare Earth Vein
+    public static final ItemStack[] Cadmium_Rare_Earth_Vein = addCompressAggregateArray(
+        OreProductIngotList.Caesium_Ore_Product_Ingot,
+        OreProductIngotList.Cerium_Ore_Product_Ingot,
+        OreProductIngotList.Lanthanum_Ore_Product_Ingot);
 
     // Callisto Ice Vein
-    public static final ItemStack[] Callisto_Ice_Vein = new ItemStack[] {
-        // "Alduorite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11485),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Callisto Ice Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11389),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020) };
+    public static final ItemStack[] Callisto_Ice_Vein = addCompressAggregateArray(
+        OreProductIngotList.Alduorite_Ore_Product_Ingot,
+        OreProductIngotList.Blue_Topaz_Ore_Product_Ingot,
+        OreProductIngotList.Callisto_Ice_Ore_Product_Ingot,
+        OreProductIngotList.Topaz_Ore_Product_Ingot);
 
-    // Cassiterite Vein
-    public static final ItemStack[] Cassiterite_Vein = new ItemStack[] {
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Carbon Dioxide Vein
+    public static final ItemStack[] Carbon_Dioxide_Vein = addCompressAggregateArray(
+        OreProductIngotList.Carbon_Ore_Product_Ingot);
+
+    // Cassiterite & Tin Vein
+    public static final ItemStack[] Cassiterite_Tin_Vein = addCompressAggregateArray(
+        OreProductIngotList.Asbestos_Ore_Product_Ingot,
+        OreProductIngotList.Cassiterite_Sand_Product_Ingot,
+        OreProductIngotList.Diatomite_Ore_Product_Ingot,
+        OreProductIngotList.Garnet_Sand_Product_Ingot);
+
+    // Cerite Vein
+    public static final ItemStack[] Cerite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cerite_Ore_Product_Ingot,
+        OreProductIngotList.Nichromite_Ore_Product_Ingot,
+        OreProductIngotList.Xenotime_Ore_Product_Ingot,
+        OreProductIngotList.Hibonite_Ore_Product_Ingot,
+        OreProductIngotList.Alburnite_Ore_Product_Ingot,
+        OreProductIngotList.Miessiite_Ore_Product_Ingot);
 
     // Certus Quartz Vein
-    public static final ItemStack[] Certus_Quartz_Vein = new ItemStack[] {
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020) };
+    public static final ItemStack[] Certus_Quartz_Vein = addCompressAggregateArray(
+        OreProductIngotList.Certus_Quartz_Ore_Product_Ingot,
+        OreProductIngotList.Charged_Certus_Quartz_Ore_Product_Ingot,
+        OreProductIngotList.Quartz_Sand_Product_Ingot);
+
+    // Chalcopyrite & Copper Vein
+    public static final ItemStack[] Chalcopyrite_Copper_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chalcopyrite_Ore_Product_Ingot,
+        OreProductIngotList.Copper_Ore_Product_Ingot,
+        OreProductIngotList.Iron_Ore_Product_Ingot,
+        OreProductIngotList.Pyrite_Ore_Product_Ingot);
+
+    // Chalcopyrite & Vermiculite Vein
+    public static final ItemStack[] Chalcopyrite_Vermiculite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chalcopyrite_Ore_Product_Ingot,
+        OreProductIngotList.Vermiculite_Product_Ingot,
+        OreProductIngotList.Cassiterite_Ore_Product_Ingot,
+        OreProductIngotList.Alunite_Ore_Product_Ingot);
 
     // Chrome Vein
-    public static final ItemStack[] Chrome_Vein = new ItemStack[] {
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Chrome_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chrome_Ore_Product_Ingot,
+        OreProductIngotList.Manganese_Ore_Product_Ingot,
+        OreProductIngotList.Molybdenum_Ore_Product_Ingot,
+        OreProductIngotList.Tungstate_Ore_Product_Ingot);
 
     // Coal Vein
-    public static final ItemStack[] Coal_Vein = new ItemStack[] {
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010) };
+    public static final ItemStack[] Coal_Vein = addCompressAggregateArray(OreProductIngotList.Coal_Ore_Product_Ingot);
 
-    // Copper Vein
-    public static final ItemStack[] Copper_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L) };
+    // Cryolite (F) Vein
+    public static final ItemStack[] Cryolite_F_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cryolite_F_Ore_Product_Ingot,
+        OreProductIngotList.Barite_Ra_Ore_Product_Ingot,
+        OreProductIngotList.Honeaite_Ore_Product_Ingot,
+        OreProductIngotList.Florencite_Ore_Product_Ingot);
 
-    // Cosmic Neutronium Vein
-    public static final ItemStack[] Cosmic_Neutronium_Vein = new ItemStack[] {
-        // "Cosmic Neutronium Ingot"
-        getModItem(Avaritia.ID, "Resource", 1L, 4),
-        // "Bedrockium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11395),
-        // "Black Plutonium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11388),
-        // "Neutronium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11129) };
-
-    // Cryolite Vein
-    public static final ItemStack[] Cryolite_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054) };
+    // Demicheleite (Br) Vein
+    public static final ItemStack[] Demicheleite_Br_Vein = addCompressAggregateArray(
+        OreProductIngotList.Demicheleite_Br_Ore_Product_Ingot,
+        OreProductIngotList.Perroudite_Ore_Product_Ingot,
+        OreProductIngotList.Irarsite_Ore_Product_Ingot,
+        OreProductIngotList.Barite_Ra_Ore_Product_Ingot);
 
     // Desh Vein
-    public static final ItemStack[] Desh_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Desh Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11884),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081) };
-
-    // Diamond Vein
-    public static final ItemStack[] Diamond_Vein = new ItemStack[] {
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096) };
+    public static final ItemStack[] Desh_Vein = addCompressAggregateArray(
+        OreProductIngotList.Desh_Ore_Product_Ingot,
+        OreProductIngotList.Scheelite_Ore_Product_Ingot,
+        OreProductIngotList.Tungstate_Ore_Product_Ingot);
 
     // Dilithium Vein
-    public static final ItemStack[] Dilithium_Vein = new ItemStack[] {
-        // "Mysterious Crystal Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11398),
-        // "Vinteum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11529) };
+    public static final ItemStack[] Dilithium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Mysterious_Crystal_Ore_Product_Ingot,
+        OreProductIngotList.Vinteum_Ore_Product_Ingot);
 
-    // Djurleite & Bornite & Wittichenite Vein
-    public static final ItemStack[] Djurleite_Bornite_Wittichenite_Vein = new ItemStack[] {
-        // "Antimony Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11058),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Djurleite Vein
+    public static final ItemStack[] Djurleite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bornite_Ore_Product_Ingot,
+        OreProductIngotList.Djurleite_Ore_Product_Ingot,
+        OreProductIngotList.Wittichenite_Ore_Product_Ingot,
+        OreProductIngotList.Tetrahedrite_Ore_Product_Ingot);
 
     // Dolomite Vein
-    public static final ItemStack[] Dolomite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Dolomite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Andradite_Ore_Product_Ingot,
+        OreProductIngotList.Wollastonite_Ore_Product_Ingot);
 
     // Draconium Vein
-    public static final ItemStack[] Draconium_Vein = new ItemStack[] {
-        // "Draconium Ingot"
-        getModItem(DraconicEvolution.ID, "draconiumIngot", 1L),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Electrum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11303),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Vinteum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11529) };
+    public static final ItemStack[] Draconium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Draconium_Ore_Product_Ingot,
+        OreProductIngotList.Electrotine_Ore_Product_Ingot,
+        OreProductIngotList.Jade_Ore_Product_Ingot,
+        OreProductIngotList.Vinteum_Ore_Product_Ingot);
 
-    // Electrotine Vein
-    public static final ItemStack[] Electrotine_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Electrum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11303),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Draconium & Awakened Draconium Vein
+    public static final ItemStack[] Draconium_Awakened_Draconium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Awakened_Draconium_Ore_Product_Ingot,
+        OreProductIngotList.Draconium_Ore_Product_Ingot);
 
-    // Fayalite & Green Fuchsite & Red Zircon & Red Fuchsite Vein
-    public static final ItemStack[] Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein = new ItemStack[] {
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Fayalite Vein
+    public static final ItemStack[] Fayalite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fayalite_Ore_Product_Ingot,
+        OreProductIngotList.Green_Fuchsite_Ore_Product_Ingot,
+        OreProductIngotList.Red_Fuchsite_Ore_Product_Ingot,
+        OreProductIngotList.Red_Zircon_Ore_Product_Ingot);
 
-    // Ferberite & Huebnerite & Loellingite Vein
-    public static final ItemStack[] Ferberite_Huebnerite_Loellingite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Ferberite Vein
+    public static final ItemStack[] Ferberite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Ferberite_Ore_Product_Ingot,
+        OreProductIngotList.Huebnerite_Ore_Product_Ingot,
+        OreProductIngotList.Loellingite_Ore_Product_Ingot,
+        OreProductIngotList.Scheelite_Ore_Product_Ingot);
+
+    // Florencite Vein
+    public static final ItemStack[] Florencite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Florencite_Ore_Product_Ingot,
+        OreProductIngotList.Lautarite_Ore_Product_Ingot,
+        OreProductIngotList.Samarskite_Yb_Ore_Product_Ingot,
+        OreProductIngotList.Polycrase_Ore_Product_Ingot);
+
+    // Fluorcaphite Vein
+    public static final ItemStack[] Fluorcaphite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fluorcaphite_Ore_Product_Ingot,
+        OreProductIngotList.Lafossaite_Ore_Product_Ingot,
+        OreProductIngotList.Gadolinite_Ce_Ore_Product_Ingot,
+        OreProductIngotList.Gadolinite_Y_Ore_Product_Ingot);
+
+    // Fluorite (F) Vein
+    public static final ItemStack[] Fluorite_F_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fluorite_F_Ore_Product_Ingot,
+        OreProductIngotList.Kashinite_Ore_Product_Ingot,
+        OreProductIngotList.Zircon_Ore_Product_Ingot,
+        OreProductIngotList.Cryolite_F_Ore_Product_Ingot);
 
     // Fluorspar Vein
-    public static final ItemStack[] Fluorspar_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Fluorspar_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fluorspar_Ore_Product_Ingot,
+        OreProductIngotList.Barite_Ore_Product_Ingot,
+        OreProductIngotList.Galena_Ore_Product_Ingot,
+        OreProductIngotList.Sphalerite_Ore_Product_Ingot);
 
-    // Forsterite & Fayalite & Orange Descloizite & Red Descloizite Vein
-    public static final ItemStack[] Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Forsterite Vein
+    public static final ItemStack[] Forsterite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fayalite_Ore_Product_Ingot,
+        OreProductIngotList.Forsterite_Ore_Product_Ingot,
+        OreProductIngotList.Red_Descloizite_Ore_Product_Ingot,
+        OreProductIngotList.Orange_Descloizite_Ore_Product_Ingot);
+
+    // Gadolinite (Ce) Vein
+    public static final ItemStack[] Gadolinite_Ce_Vein = addCompressAggregateArray(
+        OreProductIngotList.Gadolinite_Ce_Ore_Product_Ingot,
+        OreProductIngotList.Gadolinite_Y_Ore_Product_Ingot,
+        OreProductIngotList.Agardite_La_Ore_Product_Ingot,
+        OreProductIngotList.Agardite_Cd_Ore_Product_Ingot);
 
     // Galena Vein
-    public static final ItemStack[] Galena_Vein = new ItemStack[] {
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054) };
+    public static final ItemStack[] Galena_Vein = addCompressAggregateArray(
+        OreProductIngotList.Galena_Ore_Product_Ingot,
+        OreProductIngotList.Lead_Ore_Product_Ingot,
+        OreProductIngotList.Silver_Ore_Product_Ingot);
 
-    // Gold Vein
-    public static final ItemStack[] Gold_Vein = new ItemStack[] {
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L) };
+    // Galena & Cryolite Vein
+    public static final ItemStack[] Galena_Cryolite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cryolite_Ore_Product_Ingot,
+        OreProductIngotList.Galena_Ore_Product_Ingot,
+        OreProductIngotList.Lead_Ore_Product_Ingot,
+        OreProductIngotList.Silver_Ore_Product_Ingot);
 
-    // Hedenbergite & Fayalite & Orange Descloizite & Red Descloizite Vein
-    public static final ItemStack[] Hedenbergite_Fayalite_OrangeDescloizite_RedDescloizite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Garnet Sand & Nether Star Vein
+    public static final ItemStack[] Garnet_Sand_Nether_Star_Vein = addCompressAggregateArray(
+        OreProductIngotList.Garnet_Sand_Product_Ingot,
+        OreProductIngotList.Red_Garnet_Ore_Product_Ingot,
+        OreProductIngotList.Yellow_Garnet_Ore_Product_Ingot);
+
+    // Garnierite & Nickel Vein
+    public static final ItemStack[] Garnierite_Nickel_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cobaltite_Ore_Product_Ingot,
+        OreProductIngotList.Garnierite_Ore_Product_Ingot,
+        OreProductIngotList.Nickel_Ore_Product_Ingot,
+        OreProductIngotList.Pentlandite_Ore_Product_Ingot);
+
+    // Geikielite Vein
+    public static final ItemStack[] Geikielite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Geikielite_Ore_Product_Ingot,
+        OreProductIngotList.Cryolite_F_Ore_Product_Ingot,
+        OreProductIngotList.Gadolinite_Ce_Ore_Product_Ingot,
+        OreProductIngotList.Agardite_Nd_Ore_Product_Ingot,
+        OreProductIngotList.Yttrocerite_Ore_Product_Ingot,
+        OreProductIngotList.Lanthanite_La_Ore_Product_Ingot,
+        OreProductIngotList.Barite_Ra_Ore_Product_Ingot);
+
+    // Gold & Infused Gold Vein
+    public static final ItemStack[] Gold_Infused_Gold_Vein = addCompressAggregateArray(
+        OreProductIngotList.Gold_Ore_Product_Ingot,
+        OreProductIngotList.Infused_Gold_Ore_Product_Ingot,
+        OreProductIngotList.Platinum_Ore_Product_Ingot);
+
+    // Graphite Vein
+    public static final ItemStack[] Graphite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Graphite_Ore_Product_Ingot,
+        OreProductIngotList.Diamond_Ore_Product_Ingot,
+        OreProductIngotList.Coal_Ore_Product_Ingot);
+
+    // Graphite & Diamond Vein
+    public static final ItemStack[] Graphite_Diamond_Vein = addCompressAggregateArray(
+        OreProductIngotList.Coal_Ore_Product_Ingot,
+        OreProductIngotList.Diamond_Ore_Product_Ingot,
+        OreProductIngotList.Graphite_Ore_Product_Ingot);
+
+    // Grossular & Manganese Vein
+    public static final ItemStack[] Grossular_Manganese_Vein = addCompressAggregateArray(
+        OreProductIngotList.Grossular_Ore_Product_Ingot,
+        OreProductIngotList.Spessartine_Ore_Product_Ingot,
+        OreProductIngotList.Pyrolusite_Ore_Product_Ingot,
+        OreProductIngotList.Tantalite_Ore_Product_Ingot);
+
+    // Hedenbergite Vein
+    public static final ItemStack[] Hedenbergite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fayalite_Ore_Product_Ingot,
+        OreProductIngotList.Hedenbergite_Ore_Product_Ingot,
+        OreProductIngotList.Orange_Descloizite_Ore_Product_Ingot,
+        OreProductIngotList.Red_Descloizite_Ore_Product_Ingot);
+
+    // Hibonite Vein
+    public static final ItemStack[] Hibonite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Hibonite_Ore_Product_Ingot,
+        OreProductIngotList.Yttrialite_Ore_Product_Ingot,
+        OreProductIngotList.Zirconolite_Ore_Product_Ingot,
+        OreProductIngotList.Cerite_Ore_Product_Ingot);
+
+    // Honeaite Vein
+    public static final ItemStack[] Honeaite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Honeaite_Ore_Product_Ingot,
+        OreProductIngotList.Miessiite_Ore_Product_Ingot,
+        OreProductIngotList.Samarskite_Y_Ore_Product_Ingot,
+        OreProductIngotList.Samarskite_Yb_Ore_Product_Ingot);
 
     // Ilmenite Vein
-    public static final ItemStack[] Ilmenite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Wrought Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11304),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
-
-    // Infinity Catalyst Vein
-    public static final ItemStack[] Infinity_Catalyst_Vein = new ItemStack[] {
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Bedrockium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11395),
-        // "Infinity Catalyst Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11394),
-        // "Neutronium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11129) };
-
-    // Infused Gold Vein
-    public static final ItemStack[] Infused_Gold_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Infused Gold Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11323),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L) };
-
-    // Iridium Vein
-    public static final ItemStack[] Iridium_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Ilmenite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chromite_Ore_Product_Ingot,
+        OreProductIngotList.Ilmenite_Ore_Product_Ingot,
+        OreProductIngotList.Perlite_Ore_Product_Ingot,
+        OreProductIngotList.Uvarovite_Ore_Product_Ingot);
 
     // Iron Vein
-    public static final ItemStack[] Iron_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Iron_Vein = addCompressAggregateArray(OreProductIngotList.Iron_Ore_Product_Ingot);
 
     // Kaolinite Vein
-    public static final ItemStack[] Kaolinite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Kaolinite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Fullers_Earth_Product_Ingot,
+        OreProductIngotList.Glauconite_Sand_Product_Ingot,
+        OreProductIngotList.Kaolinite_Product_Ingot,
+        OreProductIngotList.Zeolite_Ore_Product_Ingot);
 
-    // Lapis Vein
-    public static final ItemStack[] Lapis_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Kyanite & Mica Vein
+    public static final ItemStack[] Kyanite_Mica_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cassiterite_Ore_Product_Ingot,
+        OreProductIngotList.Kyanite_Ore_Product_Ingot,
+        OreProductIngotList.Mica_Ore_Product_Ingot,
+        OreProductIngotList.Pollucite_Ore_Product_Ingot);
+
+    // Lanthanite (Ce) Vein
+    public static final ItemStack[] Lanthanite_Ce_Vein = addCompressAggregateArray(
+        OreProductIngotList.Lanthanite_Ce_Ore_Product_Ingot,
+        OreProductIngotList.Fluorite_F_Ore_Product_Ingot,
+        OreProductIngotList.Lafossaite_Ore_Product_Ingot,
+        OreProductIngotList.Florencite_Ore_Product_Ingot);
+
+    // Lazurite & Lapis Vein
+    public static final ItemStack[] Lazurite_Lapis_Vein = addCompressAggregateArray(
+        OreProductIngotList.Calcite_Ore_Product_Ingot,
+        OreProductIngotList.Lapis_Ore_Product_Ingot,
+        OreProductIngotList.Lazurite_Ore_Product_Ingot,
+        OreProductIngotList.Sodalite_Ore_Product_Ingot);
 
     // Ledox Vein
-    public static final ItemStack[] Ledox_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Ledox Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11390),
-        // "Orichalcum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11966),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Rubracium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11488),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096) };
+    public static final ItemStack[] Ledox_Vein = addCompressAggregateArray(
+        OreProductIngotList.Ledox_Ore_Product_Ingot,
+        OreProductIngotList.Opal_Ore_Product_Ingot,
+        OreProductIngotList.Orichalcum_Ore_Product_Ingot,
+        OreProductIngotList.Rubracium_Ore_Product_Ingot);
 
     // Lignite Coal Vein
-    public static final ItemStack[] Lignite_Coal_Vein = new ItemStack[] {
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096) };
+    public static final ItemStack[] Lignite_Coal_Vein = addCompressAggregateArray(
+        OreProductIngotList.Coal_Ore_Product_Ingot);
 
     // Magnesite Vein
-    public static final ItemStack[] Magnesite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Magnesite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Banded_Iron_Ore_Product_Ingot,
+        OreProductIngotList.Magnesite_Ore_Product_Ingot,
+        OreProductIngotList.Opal_Ore_Product_Ingot);
 
     // Magnetite Vein
-    public static final ItemStack[] Magnetite_Vein = new ItemStack[] {
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Magnetite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Iron_Ore_Product_Ingot,
+        OreProductIngotList.Magnetite_Ore_Product_Ingot,
+        OreProductIngotList.Vanadium_Magnetite_Ore_Product_Ingot);
 
-    // Manganese Vein
-    public static final ItemStack[] Manganese_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Magnetite & Gold Vein
+    public static final ItemStack[] Magnetite_Gold_Vein = addCompressAggregateArray(
+        OreProductIngotList.Gold_Ore_Product_Ingot,
+        OreProductIngotList.Magnetite_Ore_Product_Ingot,
+        OreProductIngotList.Vanadium_Magnetite_Ore_Product_Ingot);
 
-    // Mica Vein
-    public static final ItemStack[] Mica_Vein = new ItemStack[] {
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Rubidium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11043),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057) };
-
-    // Molybdenum Vein
-    public static final ItemStack[] Molybdenum_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048) };
-
-    // Monazite Vein
-    public static final ItemStack[] Monazite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Beryllium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11008),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Dysprosium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11073),
-        // "Erbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11075),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11067),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080),
-        // "Tellurium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11059),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Ytterbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11077),
-        // "Yttrium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11045),
-        // "Germanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotGermanium", 1L),
-        // "Iodine Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIodine", 1L),
-        // "Runite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRunite", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Methane Vein
+    public static final ItemStack[] Methane_Vein = addCompressAggregateArray(
+        OreProductIngotList.Carbon_Ore_Product_Ingot);
 
     // Mytryl Vein
-    public static final ItemStack[] Mytryl_Vein = new ItemStack[] {
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Ceruclase Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11952),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Mytryl Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11387),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Vulcanite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11489),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036) };
+    public static final ItemStack[] Mytryl_Vein = addCompressAggregateArray(
+        OreProductIngotList.Ceruclase_Ore_Product_Ingot,
+        OreProductIngotList.Jasper_Ore_Product_Ingot,
+        OreProductIngotList.Mytryl_Ore_Product_Ingot,
+        OreProductIngotList.Vulcanite_Ore_Product_Ingot);
 
     // Naquadah Vein
-    public static final ItemStack[] Naquadah_Vein = new ItemStack[] {
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Americium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11103),
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Enriched Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11326),
-        // "Indium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11056),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11324),
-        // "Naquadria Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11327),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868) };
+    public static final ItemStack[] Naquadah_Vein = addCompressAggregateArray(
+        OreProductIngotList.Enriched_Naquadah_Ore_Product_Ingot,
+        OreProductIngotList.Naquadah_Ore_Product_Ingot);
 
-    // Naquadria Vein
-    public static final ItemStack[] Naquadria_Vein = new ItemStack[] {
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Americium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11103),
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Enriched Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11326),
-        // "Indium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11056),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11324),
-        // "Naquadria Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11327),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868) };
+    // Naquadah & Naquadria Vein
+    public static final ItemStack[] Naquadah_Naquadria_Vein = addCompressAggregateArray(
+        OreProductIngotList.Enriched_Naquadah_Ore_Product_Ingot,
+        OreProductIngotList.Naquadah_Ore_Product_Ingot,
+        OreProductIngotList.Naquadria_Ore_Product_Ingot,
+        OreProductIngotList.Trinium_Ore_Product_Ingot);
 
     // Nether Quartz Vein
-    public static final ItemStack[] Nether_Quartz_Vein = new ItemStack[] {
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L) };
-
-    // Nether Star Vein
-    public static final ItemStack[] Nether_Star_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Nether_Quartz_Vein = addCompressAggregateArray(
+        OreProductIngotList.Nether_Quartz_Ore_Product_Ingot,
+        OreProductIngotList.Quartzite_Ore_Product_Ingot);
 
     // Neutronium Vein
-    public static final ItemStack[] Neutronium_Vein = new ItemStack[] {
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Enriched Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11326),
-        // "Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11324),
-        // "Neutronium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11129),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Neutronium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Adamantium_Ore_Product_Ingot,
+        OreProductIngotList.Naquadah_Ore_Product_Ingot,
+        OreProductIngotList.Neutronium_Ore_Product_Ingot,
+        OreProductIngotList.Titanium_Ore_Product_Ingot);
 
-    // Nickel Vein
-    public static final ItemStack[] Nickel_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Neutronium & Cosmic Neutronium Vein
+    public static final ItemStack[] Neutronium_Cosmic_Neutronium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bedrockium_Ore_Product_Ingot,
+        OreProductIngotList.Black_Plutonium_Ore_Product_Ingot,
+        OreProductIngotList.Cosmic_Neutronium_Ore_Product_Ingot,
+        OreProductIngotList.Neutronium_Ore_Product_Ingot);
+
+    // Neutronium & Infinity Catalyst Vein
+    public static final ItemStack[] Neutronium_Infinity_Catalyst_Vein = addCompressAggregateArray(
+        OreProductIngotList.Adamantium_Ore_Product_Ingot,
+        OreProductIngotList.Bedrockium_Ore_Product_Ingot,
+        OreProductIngotList.Infinity_Catalyst_Ore_Product_Ingot,
+        OreProductIngotList.Neutronium_Ore_Product_Ingot);
+
+    // Nickel & Iridium Vein
+    public static final ItemStack[] Nickel_Iridium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Iridium_Ore_Product_Ingot,
+        OreProductIngotList.Mithril_Ore_Product_Ingot,
+        OreProductIngotList.Nickel_Ore_Product_Ingot,
+        OreProductIngotList.Palladium_Ore_Product_Ingot);
+
+    // Nickel & Osmium Vein
+    public static final ItemStack[] Nickel_Osmium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Iridium_Ore_Product_Ingot,
+        OreProductIngotList.Nickel_Ore_Product_Ingot,
+        OreProductIngotList.Osmium_Ore_Product_Ingot);
 
     // Niobium Vein
-    public static final ItemStack[] Niobium_Vein = new ItemStack[] {
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Yttrium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11045) };
+    public static final ItemStack[] Niobium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Gallium_Ore_Product_Ingot,
+        OreProductIngotList.Niobium_Ore_Product_Ingot,
+        OreProductIngotList.Yttrium_Ore_Product_Ingot);
 
-    // Olenite & Fluor-Buergerite & Chromo-Alumino-Povondraite & Vanadio-Oxy-Dravit Vein
-    public static final ItemStack[] Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnalium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11313),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
-
-    // Olivine Vein
-    public static final ItemStack[] Olivine_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Olenite Vein
+    public static final ItemStack[] Olenite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chromo_Alumino_Povondraite_Ore_Product_Ingot,
+        OreProductIngotList.Fluor_Buergerite_Ore_Product_Ingot,
+        OreProductIngotList.Olenite_Ore_Product_Ingot);
 
     // Oriharukon Vein
-    public static final ItemStack[] Oriharukon_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Oriharukon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11393),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Vyroxeres Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11951) };
+    public static final ItemStack[] Oriharukon_Vein = addCompressAggregateArray(
+        OreProductIngotList.Oriharukon_Ore_Product_Ingot,
+        OreProductIngotList.Tanzanite_Ore_Product_Ingot,
+        OreProductIngotList.Vyroxeres_Ore_Product_Ingot);
 
-    // Osmium Vein
-    public static final ItemStack[] Osmium_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
-
-    // Palladium Vein
-    public static final ItemStack[] Palladium_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Perditio & Ordo Vein
+    public static final ItemStack[] Perditio_Ordo_Vein = addCompressAggregateArray(
+        OreProductIngotList.Amber_Ore_Product_Ingot,
+        OreProductIngotList.Cinnabar_Ore_Product_Ingot);
 
     // Pitchblende Vein
-    public static final ItemStack[] Pitchblende_Vein = new ItemStack[] {
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
+    public static final ItemStack[] Pitchblende_Vein = addCompressAggregateArray(
+        OreProductIngotList.Pitchblende_Product_Ingot,
+        OreProductIngotList.Uraninite_Ore_Product_Ingot);
 
-    // Platinum Vein
-    public static final ItemStack[] Platinum_Vein = new ItemStack[] {
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085) };
-
-    // Plutonium 239 Vein
-    public static final ItemStack[] Plutonium239_Vein = new ItemStack[] {
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Plutonium 239 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11100),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
-
-    // Prasiolite & Hedenbergite Vein
-    public static final ItemStack[] Prasiolite_Hedenbergite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Platinum & Palladium Vein
+    public static final ItemStack[] Platinum_Palladium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chrome_Ore_Product_Ingot,
+        OreProductIngotList.Palladium_Ore_Product_Ingot,
+        OreProductIngotList.Platinum_Ore_Product_Ingot,
+        OreProductIngotList.Sheldonite_Ore_Product_Ingot);
 
     // Pyrolusite Vein
-    public static final ItemStack[] Pyrolusite_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080) };
+    public static final ItemStack[] Pyrolusite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Apatite_Ore_Product_Ingot,
+        OreProductIngotList.Pyrochlore_Ore_Product_Ingot,
+        OreProductIngotList.Pyrolusite_Ore_Product_Ingot,
+        OreProductIngotList.Tantalite_Ore_Product_Ingot);
 
     // Quantium Vein
-    public static final ItemStack[] Quantium_Vein = new ItemStack[] {
-        // "Quantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11391),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L),
-        // "Ardite Ingot"
-        getModItem(TinkerConstruct.ID, "materials", 1L, 4) };
+    public static final ItemStack[] Quantium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Amethyst_Ore_Product_Ingot,
+        OreProductIngotList.Ardite_Ore_Product_Ingot,
+        OreProductIngotList.Quantium_Ore_Product_Ingot,
+        OreProductIngotList.Rutile_Ore_Product_Ingot);
 
-    // Quartz Vein
-    public static final ItemStack[] Quartz_Vein = new ItemStack[] {
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020) };
+    // Quartzite & Quartz Vein
+    public static final ItemStack[] Quartzite_Quartz_Vein = addCompressAggregateArray(
+        OreProductIngotList.Barite_Ore_Product_Ingot,
+        OreProductIngotList.Certus_Quartz_Ore_Product_Ingot,
+        OreProductIngotList.Quartzite_Ore_Product_Ingot);
 
     // Quartzite Vein
-    public static final ItemStack[] Quartzite_Vein = new ItemStack[] {
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020) };
-
-    // Rare Earth Vein
-    public static final ItemStack[] Rare_Earth_Vein = new ItemStack[] {
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069), };
+    public static final ItemStack[] Quartzite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Barite_Ore_Product_Ingot,
+        OreProductIngotList.Certus_Quartz_Ore_Product_Ingot,
+        OreProductIngotList.Quartzite_Ore_Product_Ingot);
 
     // Raw Tengam Vein
-    public static final ItemStack[] Raw_Tengam_Vein = new ItemStack[] {
-        // "Electrum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11303),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Magnetic Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11356),
-        // "Magnetic Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11399),
-        // "Purified Tengam Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11111),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069) };
+    public static final ItemStack[] Raw_Tengam_Vein = addCompressAggregateArray(
+        OreProductIngotList.Electrotine_Ore_Product_Ingot,
+        OreProductIngotList.Raw_Tengam_Ore_Product_Ingot);
 
     // Red Garnet Vein
-    public static final ItemStack[] Red_Garnet_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Realgar Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11913),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Red_Garnet_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chrysotile_Ore_Product_Ingot,
+        OreProductIngotList.Realgar_Ore_Product_Ingot,
+        OreProductIngotList.Red_Garnet_Ore_Product_Ingot,
+        OreProductIngotList.Yellow_Garnet_Ore_Product_Ingot);
 
     // Redstone Vein
-    public static final ItemStack[] Redstone_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Beryllium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11008),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Dysprosium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11073),
-        // "Erbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11075),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11067),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080),
-        // "Tellurium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11059),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Ytterbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11077),
-        // "Yttrium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11045),
-        // "Germanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotGermanium", 1L),
-        // "Iodine Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIodine", 1L),
-        // "Runite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRunite", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Redstone_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cinnabar_Ore_Product_Ingot,
+        OreProductIngotList.Redstone_Ore_Product_Ingot,
+        OreProductIngotList.Ruby_Ore_Product_Ingot);
+
+    // Rock Salt & Salt Vein
+    public static final ItemStack[] Rock_Salt_Salt_Vein = addCompressAggregateArray(
+        OreProductIngotList.Lepidolite_Ore_Product_Ingot,
+        OreProductIngotList.Rock_Salt_Ore_Product_Ingot,
+        OreProductIngotList.Salt_Ore_Product_Ingot,
+        OreProductIngotList.Spodumene_Ore_Product_Ingot);
+
+    // Runite Vein
+    public static final ItemStack[] Runite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Runite_Ore_Product_Ingot);
 
     // Rutile Vein
-    public static final ItemStack[] Rutile_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Rhodium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 78),
-        // "Ruthenium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 64),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iridium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11084),
-        // "Meteoric Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11340),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Osmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11083),
-        // "Palladium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11052),
-        // "Platinum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11085),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Rutile_Vein = addCompressAggregateArray(
+        OreProductIngotList.Bauxite_Ore_Product_Ingot,
+        OreProductIngotList.Meteoric_Iron_Ore_Product_Ingot,
+        OreProductIngotList.Rutile_Ore_Product_Ingot,
+        OreProductIngotList.Titanium_Ore_Product_Ingot);
 
-    // Salt Vein
-    public static final ItemStack[] Salt_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025) };
+    // Saltpeter & Electrotine Vein
+    public static final ItemStack[] Saltpeter_Electrotine_Vein = addCompressAggregateArray(
+        OreProductIngotList.Alunite_Ore_Product_Ingot,
+        OreProductIngotList.Diatomite_Ore_Product_Ingot,
+        OreProductIngotList.Electrotine_Ore_Product_Ingot,
+        OreProductIngotList.Saltpeter_Ore_Product_Ingot);
 
     // Samarium Vein
-    public static final ItemStack[] Samarium_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Arsenic Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11039),
-        // "Beryllium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11008),
-        // "Bismuth Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11090),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Carbon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11010),
-        // "Cerium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11065),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Dysprosium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11073),
-        // "Erbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11075),
-        // "Gadolinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11071),
-        // "Holmium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11074),
-        // "Lanthanum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11064),
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Neodymium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11067),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Niobium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11047),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Samarium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11069),
-        // "Tartarite Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11956),
-        // "Tantalum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11080),
-        // "Tellurium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11059),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Ytterbium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11077),
-        // "Yttrium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11045),
-        // "Germanium Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotGermanium", 1L),
-        // "Iodine Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotIodine", 1L),
-        // "Runite Ingot"
-        getModItem(GTPlusPlus.ID, "itemIngotRunite", 1L),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Samarium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Neodymium_Ore_Product_Ingot,
+        OreProductIngotList.Tartarite_Ore_Product_Ingot);
 
-    // Sapphire Vein
-    public static final ItemStack[] Sapphire_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Scheelite & Tungstate Vein
+    public static final ItemStack[] Scheelite_Tungstate_Vein = addCompressAggregateArray(
+        OreProductIngotList.Lithium_Ore_Product_Ingot,
+        OreProductIngotList.Scheelite_Ore_Product_Ingot,
+        OreProductIngotList.Tungstate_Ore_Product_Ingot);
+
+    // Sheldonite & Platinum Vein
+    public static final ItemStack[] Sheldonite_Platinum_Vein = addCompressAggregateArray(
+        OreProductIngotList.Iridium_Ore_Product_Ingot,
+        OreProductIngotList.Palladium_Ore_Product_Ingot,
+        OreProductIngotList.Platinum_Ore_Product_Ingot,
+        OreProductIngotList.Sheldonite_Ore_Product_Ingot);
 
     // Soapstone Vein
-    public static final ItemStack[] Soapstone_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Soapstone_Vein = addCompressAggregateArray(
+        OreProductIngotList.Glauconite_Ore_Product_Ingot,
+        OreProductIngotList.Pentlandite_Ore_Product_Ingot,
+        OreProductIngotList.Soapstone_Ore_Product_Ingot,
+        OreProductIngotList.Talc_Product_Ingot);
 
     // Sulfur Vein
-    public static final ItemStack[] Sulfur_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Sulfur_Vein = addCompressAggregateArray(
+        OreProductIngotList.Pyrite_Ore_Product_Ingot,
+        OreProductIngotList.Sphalerite_Ore_Product_Ingot);
+
+    // Terra & Aer Vein
+    public static final ItemStack[] Terra_Aer_Vein = addCompressAggregateArray(
+        OreProductIngotList.Amber_Ore_Product_Ingot,
+        OreProductIngotList.Cinnabar_Ore_Product_Ingot);
 
     // Tetrahedrite Vein
-    public static final ItemStack[] Tetrahedrite_Vein = new ItemStack[] {
-        // "Antimony Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11058),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Zinc Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11036),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Tetrahedrite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Copper_Ore_Product_Ingot,
+        OreProductIngotList.Stibnite_Ore_Product_Ingot,
+        OreProductIngotList.Tetrahedrite_Ore_Product_Ingot);
 
     // Thorianite Vein
-    public static final ItemStack[] Thorianite_Vein = new ItemStack[] {
-        // "Thorium 232 Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 30),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Caesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11062),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
+    public static final ItemStack[] Thorianite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Lepidolite_Ore_Product_Ingot,
+        OreProductIngotList.Spodumene_Ore_Product_Ingot,
+        OreProductIngotList.Thorianite_Ore_Product_Ingot,
+        OreProductIngotList.Uraninite_Ore_Product_Ingot);
 
     // Thorium Vein
-    public static final ItemStack[] Thorium_Vein = new ItemStack[] {
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Plutonium 241 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11101),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
+    public static final ItemStack[] Thorium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Plutonium_241_Ore_Product_Ingot,
+        OreProductIngotList.Thorium_Ore_Product_Ingot,
+        OreProductIngotList.Uranium_235_Ore_Product_Ingot,
+        OreProductIngotList.Uranium_238_Ore_Product_Ingot);
 
     // Tiberium Vein
-    public static final ItemStack[] Tiberium_Vein = new ItemStack[] {
-        // "Adamantium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11319),
-        // "Americium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11103),
-        // "Barium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11063),
-        // "Enriched Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11326),
-        // "Indium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11056),
-        // "Gallium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11037),
-        // "Naquadah Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11324),
-        // "Naquadria Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11327),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Titanium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11028),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868) };
+    public static final ItemStack[] Tiberium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Enriched_Naquadah_Ore_Product_Ingot);
 
-    // Tin Vein
-    public static final ItemStack[] Tin_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Tin & Cassiterite Vein
+    public static final ItemStack[] Tin_Cassiterite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Cassiterite_Ore_Product_Ingot,
+        OreProductIngotList.Tin_Ore_Product_Ingot);
 
-    // Tungstate Vein
-    public static final ItemStack[] Tungstate_Vein = new ItemStack[] {
-        // "Calcium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 40),
-        // "Lithium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11006),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Silver Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11054),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081) };
+    // Titanite Vein
+    public static final ItemStack[] Titanite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Titanite_Ore_Product_Ingot,
+        OreProductIngotList.Zimbabweite_Ore_Product_Ingot,
+        OreProductIngotList.Zircon_Ore_Product_Ingot,
+        OreProductIngotList.Florencite_Ore_Product_Ingot);
 
     // Tungsten Vein
-    public static final ItemStack[] Tungsten_Vein = new ItemStack[] {
-        // "Deep Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11829),
-        // "Manganese Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11031),
-        // "Molybdenum Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11048),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Shadow Iron Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11336),
-        // "Trinium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11868),
-        // "Tungsten Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11081),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Tungsten_Vein = addCompressAggregateArray(
+        OreProductIngotList.Deep_Iron_Ore_Product_Ingot,
+        OreProductIngotList.Raw_Silicon_Ore_Product_Ingot,
+        OreProductIngotList.Shadow_Iron_Ore_Product_Ingot,
+        OreProductIngotList.Tungsten_Ore_Product_Ingot);
 
-    // Uranium 238 Vein
-    public static final ItemStack[] Uranium238_Vein = new ItemStack[] {
-        // "Lead Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11089),
-        // "Thorium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11096),
-        // "Uranium 235 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11097),
-        // "Uranium 238 Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11098) };
+    // Uranium 238 & Plutonium 239 Vein
+    public static final ItemStack[] Uranium238_Plutonium239_Vein = addCompressAggregateArray(
+        OreProductIngotList.Plutonium_239_Ore_Product_Ingot,
+        OreProductIngotList.Thorium_Ore_Product_Ingot,
+        OreProductIngotList.Uranium_238_Ore_Product_Ingot);
+
+    // Uraninite & Uranium 238 Vein
+    public static final ItemStack[] Uraninite_Uranium238_Vein = addCompressAggregateArray(
+        OreProductIngotList.Uraninite_Ore_Product_Ingot,
+        OreProductIngotList.Uranium_238_Ore_Product_Ingot);
 
     // Vanadium Vein
-    public static final ItemStack[] Vanadium_Vein = new ItemStack[] {
-        // "Chrome Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11030),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Nickel Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11034),
-        // "Vanadium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11029),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    public static final ItemStack[] Vanadium_Vein = addCompressAggregateArray(
+        OreProductIngotList.Chrome_Ore_Product_Ingot,
+        OreProductIngotList.Gold_Ore_Product_Ingot,
+        OreProductIngotList.Magnetite_Ore_Product_Ingot,
+        OreProductIngotList.Vanadium_Ore_Product_Ingot);
 
-    // Vermiculite Vein
-    public static final ItemStack[] Vermiculite_Vein = new ItemStack[] {
-        // "Aluminium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11019),
-        // "Cobalt Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11033),
-        // "Copper Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11035),
-        // "Magnesium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11018),
-        // "Potassium Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11025),
-        // "Raw Silicon Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11020),
-        // "Tin Ingot"
-        getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11057),
-        // "Zirconium Ingot"
-        getModItem(BartWorks.ID, "gt.bwMetaGeneratedingot", 1L, 11007),
-        // "Gold Ingot"
-        getModItem(Minecraft.ID, "gold_ingot", 1L),
-        // "Iron Ingot"
-        getModItem(Minecraft.ID, "iron_ingot", 1L) };
+    // Wulfenite & Molybdenum Vein
+    public static final ItemStack[] Wulfenite_Molybdenum_Vein = addCompressAggregateArray(
+        OreProductIngotList.Molybdenite_Ore_Product_Ingot,
+        OreProductIngotList.Molybdenum_Ore_Product_Ingot,
+        OreProductIngotList.Powellite_Ore_Product_Ingot,
+        OreProductIngotList.Wulfenite_Ore_Product_Ingot);
+
+    // Xenotime Vein
+    public static final ItemStack[] Xenotime_Vein = addCompressAggregateArray(
+        OreProductIngotList.Xenotime_Ore_Product_Ingot,
+        OreProductIngotList.Zirkelite_Ore_Product_Ingot,
+        OreProductIngotList.Crocoite_Ore_Product_Ingot,
+        OreProductIngotList.Irarsite_Ore_Product_Ingot);
+
+    // Yttrocerite Vein
+    public static final ItemStack[] Yttrocerite_Vein = addCompressAggregateArray(
+        OreProductIngotList.Yttrocerite_Ore_Product_Ingot,
+        OreProductIngotList.Lepersonnite_Ore_Product_Ingot,
+        OreProductIngotList.Lautarite_Ore_Product_Ingot,
+        OreProductIngotList.Fluorite_F_Ore_Product_Ingot);
 
     public static final ItemStack[] T10_Ingot = new ItemStack[] { IngotList.Iron_Ingot, IngotList.Gold_Ingot,
         IngotList.Brick, IngotList.Nether_Brick, IngotList.Crystal_Matrix_Ingot, IngotList.Cosmic_Neutronium_Ingot,
@@ -1546,7 +724,7 @@ public class Vein_Ingot {
         IngotList.Redstone_Alloy, IngotList.Conductive_Iron, IngotList.Pulsating_Iron, IngotList.Dark_Steel,
         IngotList.Soularium, IngotList.End_Steel, IngotList.Clay_Compound, IngotList.Crystalline_Alloy,
         IngotList.Melodic_Alloy, IngotList.Stellar_Alloy, IngotList.Crystalline_Pink_Slime, IngotList.Energetic_Silver,
-        IngotList.Vivid_Alloy, IngotList.Unstable_Ingot, IngotList.Mobius_, IngotList.Endium_Ingot,
+        IngotList.Vivid_Alloy, IngotList.Unstable_Ingot, IngotList.Mobius_Unstable_Stable_Ingot, IngotList.Endium_Ingot,
         IngotList.Electrotine_Alloy_Ingot, IngotList.Seared_Brick, IngotList.Aluminum_Brass_Ingot,
         IngotList.Pig_Iron_Ingot_TC, IngotList.Shadowmetal_Ingot, IngotList.Thaumium_Ingot, IngotList.Void_Metal_Ingot,
         IngotList.Ichorium, IngotList.Ironwood_Ingot, IngotList.Fiery_Ingot, IngotList.Knightmetal_Ingot,

@@ -15,4 +15,8 @@ public class ToolList {
     public static final ItemStack Single_Use_Mallet = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 5);
     public static final ItemStack Single_Use_Screwdriver = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 6);
     public static final ItemStack Single_Use_Saw = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 7);
+
+    public static final ItemStack[] Tool_List = new ItemStack[] { Single_Use_File, Single_Use_Wrench,
+        Single_Use_Crowbar, Single_Use_Cutter, Single_Use_Hammer, Single_Use_Mallet, Single_Use_Screwdriver,
+        Single_Use_Saw };
 }

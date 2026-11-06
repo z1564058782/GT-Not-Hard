@@ -2,10 +2,7 @@ package EnumList.EnumItemList.EnumGTList;
 
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.CropsNH;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
-import static gregtech.api.enums.Mods.GTNHLanthanides;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.KekzTech;
@@ -16,119 +13,8 @@ import static gregtech.api.util.GTModHandler.getModItem;
 
 import net.minecraft.item.ItemStack;
 
-public class MachineCasingList {
+public class MultiMachineCasingList {
 
-    public static final ItemStack Field_Restriction_Casing = getModItem(GoodGenerator.ID, "MAR_Casing", 1L);
-    public static final ItemStack Naquadah_Fuel_Refinery_Casing = getModItem(GoodGenerator.ID, "FRF_Casings", 1L);
-    public static final ItemStack Speeding_Pipe_Casing = getModItem(GoodGenerator.ID, "speedingPipe", 1L);
-    public static final ItemStack YOTTank_Casing = getModItem(GoodGenerator.ID, "yottaFluidTankCasing", 1L);
-    public static final ItemStack SC_Turbine_Casing = getModItem(
-        GoodGenerator.ID,
-        "supercriticalFluidTurbineCasing",
-        1L);
-    public static final ItemStack Component_Assembly_Line_Casing_LV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L);
-    public static final ItemStack Component_Assembly_Line_Casing_MV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        1);
-    public static final ItemStack Component_Assembly_Line_Casing_HV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        2);
-    public static final ItemStack Component_Assembly_Line_Casing_EV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        3);
-    public static final ItemStack Component_Assembly_Line_Casing_IV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        4);
-    public static final ItemStack Component_Assembly_Line_Casing_LuV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        5);
-    public static final ItemStack Component_Assembly_Line_Casing_ZPM = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        6);
-    public static final ItemStack Component_Assembly_Line_Casing_UV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        7);
-    public static final ItemStack Component_Assembly_Line_Casing_UHV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        8);
-    public static final ItemStack Component_Assembly_Line_Casing_UEV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        9);
-    public static final ItemStack Component_Assembly_Line_Casing_UIV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        10);
-    public static final ItemStack Component_Assembly_Line_Casing_UMV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        11);
-    public static final ItemStack Component_Assembly_Line_Casing_UXV = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        12);
-    public static final ItemStack Component_Assembly_Line_Casing_MAX = getModItem(
-        GoodGenerator.ID,
-        "componentAssemblylineCasing",
-        1L,
-        13);
-    public static final ItemStack Imprecise_Electronic_Unit_Casing = getModItem(
-        GoodGenerator.ID,
-        "impreciseUnitCasing",
-        1L);
-    public static final ItemStack Precise_Electronic_Unit_Casing_MKI = getModItem(
-        GoodGenerator.ID,
-        "preciseUnitCasing",
-        1L);
-    public static final ItemStack Precise_Electronic_Unit_Casing_MKII = getModItem(
-        GoodGenerator.ID,
-        "preciseUnitCasing",
-        1L,
-        1);
-    public static final ItemStack Precise_Electronic_Unit_Casing_MKIII = getModItem(
-        GoodGenerator.ID,
-        "preciseUnitCasing",
-        1L,
-        2);
-    public static final ItemStack Precise_Electronic_Unit_Casing_MKIV = getModItem(
-        GoodGenerator.ID,
-        "preciseUnitCasing",
-        1L,
-        3);
-    public static final ItemStack Antimatter_Containment_Casing = getModItem(
-        GoodGenerator.ID,
-        "antimatterContainmentCasing",
-        1L);
-    public static final ItemStack Magnetic_Flux_Casing = getModItem(GoodGenerator.ID, "magneticFluxCasing", 1L);
-    public static final ItemStack Gravity_Stabilization_Casing = getModItem(
-        GoodGenerator.ID,
-        "gravityStabilizationCasing",
-        1L);
-    public static final ItemStack Magic_Casing = getModItem(GoodGenerator.ID, "magicCasing", 1L);
-    public static final ItemStack Essentia_Filter_Casing = getModItem(GoodGenerator.ID, "essentiaFilterCasing", 1L);
     public static final ItemStack Basic_Machine_Casing = getModItem(IndustrialCraft2.ID, "blockMachine", 1L);
     public static final ItemStack Advanced_Machine_Casing = getModItem(IndustrialCraft2.ID, "blockMachine", 1L, 12);
     public static final ItemStack Bolted_Rhodium_Plated_Palladium_Casing = getModItem(
@@ -151,116 +37,21 @@ public class MachineCasingList {
         "bw.werkstoffblockscasing.01",
         1L,
         96);
-    public static final ItemStack Bolted_Aluminium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31785);
-    public static final ItemStack Bolted_Bismuth_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31856);
     public static final ItemStack Bolted_Carbon_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         31776);
-    public static final ItemStack Bolted_Chrome_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31796);
-    public static final ItemStack Bolted_Cobalt_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31799);
-    public static final ItemStack Bolted_Copper_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31801);
-    public static final ItemStack Bolted_Gold_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31852);
     public static final ItemStack Bolted_Iridium_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         31850);
-    public static final ItemStack Bolted_Iron_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31798);
-    public static final ItemStack Bolted_Lead_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31855);
-    public static final ItemStack Bolted_Neodymium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31833);
-    public static final ItemStack Bolted_Neutronium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31895);
-    public static final ItemStack Bolted_Nickel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31800);
-    public static final ItemStack Bolted_Osmium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31849);
-    public static final ItemStack Bolted_Palladium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31818);
-    public static final ItemStack Bolted_Platinum_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31851);
     public static final ItemStack Bolted_Silver_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         31820);
-    public static final ItemStack Bolted_Strontium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31810);
-    public static final ItemStack Bolted_Tin_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31823);
-    public static final ItemStack Bolted_Titanium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31794);
-    public static final ItemStack Bolted_Tungsten_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        31847);
-    public static final ItemStack Bolted_Ardite_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32148);
     public static final ItemStack Bolted_Naquadah_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
@@ -271,96 +62,21 @@ public class MachineCasingList {
         "bw.werkstoffblockscasing.01",
         1L,
         32091);
-    public static final ItemStack Bolted_Cast_Iron_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32070);
-    public static final ItemStack Bolted_Annealed_Copper_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32111);
     public static final ItemStack Bolted_Osmiridium_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         32083);
-    public static final ItemStack Bolted_Sterling_Silver_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32116);
-    public static final ItemStack Bolted_Rose_Gold_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32117);
-    public static final ItemStack Bolted_Black_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32118);
-    public static final ItemStack Bolted_Bismuth_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32119);
     public static final ItemStack Bolted_Black_Steel_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         32100);
-    public static final ItemStack Bolted_Red_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32114);
-    public static final ItemStack Bolted_Blue_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32115);
-    public static final ItemStack Bolted_Damascus_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32101);
-    public static final ItemStack Bolted_Ultimet_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32110);
-    public static final ItemStack Bolted_Stainless_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32072);
-    public static final ItemStack Bolted_Brass_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32067);
-    public static final ItemStack Bolted_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32066);
     public static final ItemStack Bolted_Wood_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
         1L,
         32575);
-    public static final ItemStack Bolted_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32071);
-    public static final ItemStack Bolted_Epoxid_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasing.01",
-        1L,
-        32236);
     public static final ItemStack Bolted_Atomic_Separation_Catalyst_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasing.01",
@@ -431,116 +147,21 @@ public class MachineCasingList {
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         96);
-    public static final ItemStack Rebolted_Aluminium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31785);
-    public static final ItemStack Rebolted_Bismuth_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31856);
     public static final ItemStack Rebolted_Carbon_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         31776);
-    public static final ItemStack Rebolted_Chrome_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31796);
-    public static final ItemStack Rebolted_Cobalt_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31799);
-    public static final ItemStack Rebolted_Copper_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31801);
-    public static final ItemStack Rebolted_Gold_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31852);
     public static final ItemStack Rebolted_Iridium_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         31850);
-    public static final ItemStack Rebolted_Iron_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31798);
-    public static final ItemStack Rebolted_Lead_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31855);
-    public static final ItemStack Rebolted_Neodymium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31833);
-    public static final ItemStack Rebolted_Neutronium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31895);
-    public static final ItemStack Rebolted_Nickel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31800);
-    public static final ItemStack Rebolted_Osmium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31849);
-    public static final ItemStack Rebolted_Palladium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31818);
-    public static final ItemStack Rebolted_Platinum_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31851);
     public static final ItemStack Rebolted_Silver_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         31820);
-    public static final ItemStack Rebolted_Strontium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31810);
-    public static final ItemStack Rebolted_Tin_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31823);
-    public static final ItemStack Rebolted_Titanium_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31794);
-    public static final ItemStack Rebolted_Tungsten_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        31847);
-    public static final ItemStack Rebolted_Ardite_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32148);
     public static final ItemStack Rebolted_Naquadah_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
@@ -551,96 +172,21 @@ public class MachineCasingList {
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         32091);
-    public static final ItemStack Rebolted_Cast_Iron_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32070);
-    public static final ItemStack Rebolted_Annealed_Copper_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32111);
     public static final ItemStack Rebolted_Osmiridium_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         32083);
-    public static final ItemStack Rebolted_Sterling_Silver_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32116);
-    public static final ItemStack Rebolted_Rose_Gold_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32117);
-    public static final ItemStack Rebolted_Black_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32118);
-    public static final ItemStack Rebolted_Bismuth_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32119);
     public static final ItemStack Rebolted_Black_Steel_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         32100);
-    public static final ItemStack Rebolted_Red_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32114);
-    public static final ItemStack Rebolted_Blue_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32115);
-    public static final ItemStack Rebolted_Damascus_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32101);
-    public static final ItemStack Rebolted_Ultimet_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32110);
-    public static final ItemStack Rebolted_Stainless_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32072);
-    public static final ItemStack Rebolted_Brass_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32067);
-    public static final ItemStack Rebolted_Bronze_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32066);
     public static final ItemStack Rebolted_Wood_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
         1L,
         32575);
-    public static final ItemStack Rebolted_Steel_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32071);
-    public static final ItemStack Rebolted_Epoxid_Casing = getModItem(
-        BartWorks.ID,
-        "bw.werkstoffblockscasingadvanced.01",
-        1L,
-        32236);
     public static final ItemStack Rebolted_Atomic_Separation_Catalyst_Casing = getModItem(
         BartWorks.ID,
         "bw.werkstoffblockscasingadvanced.01",
@@ -1128,87 +674,6 @@ public class MachineCasingList {
         "gt.blockcasings.cyclotron_coils",
         1L,
         10);
-    public static final ItemStack Space_Elevator_Base_Casing = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSE",
-        1L);
-    public static final ItemStack Space_Elevator_Support_Structure = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSE",
-        1L,
-        1);
-    public static final ItemStack Space_Elevator_Internal_Structure = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSE",
-        1L,
-        2);
-    public static final ItemStack Space_Elevator_Motor_MKI = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSEMotor",
-        1L);
-    public static final ItemStack Space_Elevator_Motor_MKII = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSEMotor",
-        1L,
-        1);
-    public static final ItemStack Space_Elevator_Motor_MKIII = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSEMotor",
-        1L,
-        2);
-    public static final ItemStack Space_Elevator_Motor_MKIV = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSEMotor",
-        1L,
-        3);
-    public static final ItemStack Space_Elevator_Motor_MKV = getModItem(
-        GTNHIntergalactic.ID,
-        "gt.blockcasingsSEMotor",
-        1L,
-        4);
-    public static final ItemStack Dyson_Swarm_Energy_Receiver_Base_Casing = getModItem(
-        GTNHIntergalactic.ID,
-        "dysonswarmparts",
-        1L);
-    public static final ItemStack Dyson_Swarm_Module_Deployment_Unit_Base_Casing = getModItem(
-        GTNHIntergalactic.ID,
-        "dysonswarmparts",
-        1L,
-        2);
-    public static final ItemStack Dyson_Swarm_Control_Center_Base_Casing = getModItem(
-        GTNHIntergalactic.ID,
-        "dysonswarmparts",
-        1L,
-        5);
-    public static final ItemStack Dyson_Swarm_Control_Center_Toroid_Casing = getModItem(
-        GTNHIntergalactic.ID,
-        "dysonswarmparts",
-        1L,
-        8);
-    public static final ItemStack Planetary_Siphon_Casing = getModItem(GTNHIntergalactic.ID, "gassiphoncasing", 1L);
-    public static final ItemStack Shielded_Accelerator_Casing = getModItem(
-        GTNHLanthanides.ID,
-        "casing.shielded_accelerator",
-        1L);
-    public static final ItemStack Electrode_Casing = getModItem(GTNHLanthanides.ID, "casing.electrode", 1L);
-    public static final ItemStack Coolant_Delivery_Casing = getModItem(
-        GTNHLanthanides.ID,
-        "casing.coolant_delivery",
-        1L);
-    public static final ItemStack Shielded_Accelerator_Glass = getModItem(
-        GTNHLanthanides.ID,
-        "tile.casing.shielded_accelerator_glass",
-        1L);
-    public static final ItemStack Antenna_Casing_T1 = getModItem(GTNHLanthanides.ID, "casing.antenna_t1", 1L);
-    public static final ItemStack Antenna_Casing_T2 = getModItem(GTNHLanthanides.ID, "casing.antenna_t2", 1L);
-    public static final ItemStack Niobium_Cavity_Machine_Casing = getModItem(
-        GTNHLanthanides.ID,
-        "casing.niobium_cavity",
-        1L);
-    public static final ItemStack Focus_Manipulator = getModItem(GTNHLanthanides.ID, "casing.focus_manipulator", 1L);
-    public static final ItemStack Focus_Holder = getModItem(GTNHLanthanides.ID, "casing.focus_holder", 1L);
-    public static final ItemStack Target_Receptacle = getModItem(GTNHLanthanides.ID, "casing.target_receptacle", 1L);
-    public static final ItemStack Target_Holder = getModItem(GTNHLanthanides.ID, "casing.target_holder", 1L);
     public static final ItemStack TFFT_Casing = getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 1L);
     public static final ItemStack Lapotronic_Super_Capacitor_Casing = getModItem(
         KekzTech.ID,
@@ -1617,85 +1082,6 @@ public class MachineCasingList {
         "gtplusplus.blockspecialcasings.2",
         1L,
         3);
-    public static final ItemStack Eglin_Steel_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L);
-    public static final ItemStack Inconel_792_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        1);
-    public static final ItemStack Incoloy_MA956_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        2);
-    public static final ItemStack Nitinol_60_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        3);
-    public static final ItemStack Zeron_100_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        4);
-    public static final ItemStack Pikyonium_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        5);
-    public static final ItemStack Titansteel_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        6);
-    public static final ItemStack Abyssal_Gear_Box_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        7);
-    public static final ItemStack Babbit_Alloy_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        8);
-    public static final ItemStack Inconel_690_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        9);
-    public static final ItemStack Stellite_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        10);
-    public static final ItemStack Nitinol_60_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        11);
-    public static final ItemStack Lafium_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        12);
-    public static final ItemStack Cinobite_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        13);
-    public static final ItemStack Titansteel_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        14);
-    public static final ItemStack Abyssal_Pipe_Casing = getModItem(
-        GTPlusPlus.ID,
-        "gtplusplus.blockcasings.pipesgears",
-        1L,
-        15);
     public static final ItemStack High_Power_Casing = getModItem(TecTech.ID, "gt.blockcasingsTT", 1L);
     public static final ItemStack Computer_Casing = getModItem(TecTech.ID, "gt.blockcasingsTT", 1L, 1);
     public static final ItemStack Computer_Heat_Vent = getModItem(TecTech.ID, "gt.blockcasingsTT", 1L, 2);
@@ -1797,4 +1183,129 @@ public class MachineCasingList {
         1L,
         8);
     public static final ItemStack Vending_Machine_Casing = getModItem(VendingMachine.ID, "casing", 1L);
+
+    public static final ItemStack Solar_Reflector = getModItem(GregTech.ID, "gt.blockmachines", 1L, 864);
+
+    public static final ItemStack[] MultiMachineCasing_List = new ItemStack[] { Basic_Machine_Casing,
+        Advanced_Machine_Casing, Bolted_Rhodium_Plated_Palladium_Casing, Bolted_Ruridit_Casing,
+        Bolted_High_Durability_Compound_Steel_Casing, Bolted_Ademic_Steel_Casing, Bolted_Carbon_Casing,
+        Bolted_Iridium_Casing, Bolted_Silver_Casing, Bolted_Naquadah_Casing, Bolted_Naquadah_Alloy_Casing,
+        Bolted_Osmiridium_Casing, Bolted_Black_Steel_Casing, Bolted_Wood_Casing,
+        Bolted_Atomic_Separation_Catalyst_Casing, Bolted_Extremely_Unstable_Naquadah_Casing,
+        Bolted_Adamantium_Alloy_Casing, Bolted_MAR_M200_Steel_Casing, Bolted_MAR_Ce_M200_Steel_Casing,
+        Bolted_Precious_Metals_Alloy_Casing, Bolted_Enriched_Naquadah_Alloy_Casing, Bolted_Metastable_Oganesson_Casing,
+        Bolted_Shirabon_Casing, Bolted_Mu_metal_Casing, Rebolted_Rhodium_Plated_Palladium_Casing,
+        Rebolted_Ruridit_Casing, Rebolted_High_Durability_Compound_Steel_Casing, Rebolted_Ademic_Steel_Casing,
+        Rebolted_Carbon_Casing, Rebolted_Iridium_Casing, Rebolted_Silver_Casing, Rebolted_Naquadah_Casing,
+        Rebolted_Naquadah_Alloy_Casing, Rebolted_Osmiridium_Casing, Rebolted_Black_Steel_Casing, Rebolted_Wood_Casing,
+        Rebolted_Atomic_Separation_Catalyst_Casing, Rebolted_Extremely_Unstable_Naquadah_Casing,
+        Rebolted_Adamantium_Alloy_Casing, Rebolted_MAR_M200_Steel_Casing, Rebolted_MAR_Ce_M200_Steel_Casing,
+        Rebolted_Precious_Metals_Alloy_Casing, Rebolted_Enriched_Naquadah_Alloy_Casing,
+        Rebolted_Metastable_Oganesson_Casing, Rebolted_Shirabon_Casing, Rebolted_Mu_metal_Casing,
+        Nickel_Zinc_Ferrite_Block, Transformer_Winding_Block, LESU_Casing, Bricked_Agricultural_Casing,
+        Laser_Vacuum_Pipe_Casing, Optical_Fiber_Cable_Casing, Bose_Einstein_Condensate_Conduit_Casing,
+        ULV_Machine_Casing, LV_Machine_Casing, MV_Machine_Casing, HV_Machine_Casing, EV_Machine_Casing,
+        IV_Machine_Casing, LuV_Machine_Casing, ZPM_Machine_Casing, UV_Machine_Casing, UHV_Machine_Casing,
+        Bronze_Plated_Bricks, Heat_Proof_Machine_Casing, Dimensionally_Transcendent_Casing,
+        Dimensional_Injection_Casing, Dimensional_Bridge, Superconducting_Coil_Block, Solid_Steel_Machine_Casing,
+        Frost_Proof_Machine_Casing, Bronze_Gear_Box_Casing, Steel_Gear_Box_Casing, Titanium_Gear_Box_Casing,
+        Assembly_Line_Casing, Processor_Machine_Casing, Data_Drive_Machine_Casing, Containment_Field_Machine_Casing,
+        Assembler_Machine_Casing, Pump_Machine_Casing, Motor_Machine_Casing, Bronze_Pipe_Casing, Steel_Pipe_Casing,
+        Titanium_Pipe_Casing, Tungstensteel_Pipe_Casing, Radioactive_Hazard_Sign_Block, Bio_Hazard_Sign_Block,
+        Explosion_Hazard_Sign_Block, Fire_Hazard_Sign_Block, Acid_Hazard_Sign_Block, Magic_Hazard_Sign_Block,
+        Frost_Hazard_Sign_Block, Noise_Hazard_Sign_Block, Grate_Machine_Casing, Filter_Machine_Casing,
+        Radiation_Proof_Machine_Casing, Bronze_Firebox_Casing, Steel_Firebox_Casing, Tungstensteel_Firebox_Casing,
+        Robust_Tungstensteel_Machine_Casing, Clean_Stainless_Steel_Machine_Casing, Stable_Titanium_Machine_Casing,
+        Titanium_Firebox_Casing, Fusion_Machine_Casing, Fusion_Coil_Block, Fusion_Machine_Casing_MK_II, Turbine_Casing,
+        Stainless_Steel_Turbine_Casing, Titanium_Turbine_Casing, Tungstensteel_Turbine_Casing, Engine_Intake_Casing,
+        Mining_Osmiridium_Casing, Firebricks, Cupronickel_Coil_Block, Kanthal_Coil_Block, Nichrome_Coil_Block,
+        TPV_Alloy_Coil_Block, HSSG_Coil_Block, Naquadah_Coil_Block, Naquadah_Alloy_Coil_Block, Electrum_Flux_Coil_Block,
+        Awakened_Draconium_Coil_Block, HSSS_Coil_Block, Trinium_Coil_Block, Infinity_Coil_Block, Hypogen_Coil_Block,
+        Eternal_Coil_Block, Hermetic_Casing, Hermetic_Casing_I, Hermetic_Casing_II, Hermetic_Casing_III,
+        Hermetic_Casing_IV, Hermetic_Casing_V, Hermetic_Casing_VI, Hermetic_Casing_VII, Hermetic_Casing_VIII,
+        Hermetic_Casing_IX, Hermetic_Casing_X, Hermetic_Casing_XI, Hermetic_Casing_XII, Hermetic_Casing_XIII,
+        Hermetic_Casing_XIV, Chemically_Inert_Machine_Casing, PTFE_Pipe_Casing, Mining_Neutronium_Casing,
+        Mining_Black_Plutonium_Casing, Extreme_Engine_Intake_Casing, Europium_Reinforced_Radiation_Proof_Machine_Casing,
+        Advanced_Rhodium_Plated_Palladium_Machine_Casing, Advanced_Iridium_Plated_Machine_Casing,
+        Magical_Machine_Casing, Radiant_Naquadah_Alloy_Casing, Basic_Photolithographic_Framework_Casing,
+        Reinforced_Photolithographic_Framework_Casing, Radiation_Proof_Photolithographic_Framework_Casing,
+        Infinity_Cooled_Casing, PBI_Pipe_Casing, Advanced_Filter_Casing, Primitive_Wooden_Casing,
+        Superplasticizer_Treated_High_Strength_Concrete, Sterile_Water_Plant_Casing,
+        Reinforced_Sterile_Water_Plant_Casing, Slick_Sterile_Flocculation_Casing,
+        Stabilized_Naquadah_Water_Plant_Casing, Inert_Neutralization_Water_Plant_Casing,
+        Reactive_Gas_Containment_Casing, Inert_Filtration_Casing, Heat_Resistant_Trinium_Plated_Casing,
+        Naquadria_Reinforced_Water_Plant_Casing, High_Energy_Ultraviolet_Emitter_Casing,
+        Particle_Beam_Guidance_Pipe_Casing, Femtometer_Calibrated_Particle_Beam_Casing, MagTech_Casing,
+        Laser_Containment_Casing, Quark_Exclusion_Casing, Pressure_Containment_Casing, Electric_Compressor_Casing,
+        Compression_Pipe_Casing, Neutronium_Casing, Active_Neutronium_Casing, Neutronium_Stabilization_Casing,
+        Coolant_Duct, Heating_Duct, Extreme_Density_Space_Bending_Casing, Background_Radiation_Absorbent_Casing,
+        Solidifier_Casing, Solidifier_Radiator, Reinforced_Wooden_Casing, Tin_Item_Pipe_Casing, Brass_Item_Pipe_Casing,
+        Electrum_Item_Pipe_Casing, Platinum_Item_Pipe_Casing, Osmium_Item_Pipe_Casing, Quantium_Item_Pipe_Casing,
+        Fluxed_Electrum_Item_Pipe_Casing, Black_Plutonium_Item_Pipe_Casing, Coke_Oven_Bricks,
+        Nanochip_Mesh_Interface_Casing, Nanochip_Reinforcement_Casing, Nanochip_Computational_Matrix_Casing,
+        Nanochip_Firewall_Projection_Casing, Strengthened_Inanimate_Machine_Casing, Precise_Stationary_Machine_Casing,
+        Ultimately_Static_Machine_Casing, Vibration_Safe_Casing, Alchemically_Resistant_Thaumium_Casing,
+        Alchemically_Inert_Void_Casing, Alchemically_Immune_Ichorium_Casing, Mixer_Casing, Forming_Core, Algae_Casing,
+        Cable_Casing, Graphite_Moderator_Casing, Insulated_Fluid_Pipe_Casing, Beryllium_Integrated_Reactor_Casing,
+        Refined_Graphite_Block, Precision_Field_Sync_Casing, Magnetic_Anchor_Casing, Field_Energy_Absorber_Casing,
+        Loadbearing_Distribution_Casing, Nanite_Replication_Framework, Collider_Casing, Charged_Matter_Sensor_Casing,
+        Advanced_Total_Lepton_Assimilation_Snare_Casing, Absolute_Lattice_Integrated_Chromodynamic_Encapsulator_Casing,
+        Localized_Horizon_Curvature_Binder_Casing, Naquadah_Reactor_Casing, Hearth_Casing, Fridge_Casing,
+        Naquadah_Reinforced_Distillation_Casing, Air_Filter_Turbine_Casing, Air_Filter_Vent_Casing,
+        Pyrolyse_Oven_Casing, Advanced_Air_Filter_Turbine_Casing, Advanced_Air_Filter_Vent_Casing,
+        Super_Air_Filter_Turbine_Casing, Super_Air_Filter_Vent_Casing, UEV_Machine_Casing, UIV_Machine_Casing,
+        UMV_Machine_Casing, UXV_Machine_Casing, MAX_Machine_Casing, Primary_Exo_Foundry_Casing,
+        Infinite_Magnetic_Chassis, Eternal_Magnetic_Chassis, Celestial_Magnetic_Chassis, Universal_Collapser_Casing,
+        Sentient_Overclocker_Casing, Proto_Volt_Stabilizer_Casing, Heliocast_Reinforcement_Casing,
+        Superdense_Casting_Basin_Casing, Hypercooler_Casing, Streamlined_Casting_Casing,
+        Inner_Exo_Foundry_Siphon_Casing, Central_Exo_Foundry_Regulation_Casing, Coherence_Preserving_Plasma_Conduit,
+        Electromagnetically_Isolated_Casing, Fine_Structure_Constant_Manipulator, Conflict_Inducement_Casing,
+        Peace_Enforcement_Casing, Condensate_Transformative_Coil, Condensate_Guidance_Coil,
+        MV_Solenoid_Superconductor_Coil, HV_Solenoid_Superconductor_Coil, EV_Solenoid_Superconductor_Coil,
+        IV_Solenoid_Superconductor_Coil, LuV_Solenoid_Superconductor_Coil, ZPM_Solenoid_Superconductor_Coil,
+        UV_Solenoid_Superconductor_Coil, UHV_Solenoid_Superconductor_Coil, UEV_Solenoid_Superconductor_Coil,
+        UIV_Solenoid_Superconductor_Coil, UMV_Solenoid_Superconductor_Coil, TFFT_Casing,
+        Lapotronic_Super_Capacitor_Casing, Naquadah_Alloy_Fusion_Casing, Bloody_Ichorium_Fusion_Casing,
+        Draconium_Fusion_Casing, Wyvern_Fusion_Casing, Awakened_Draconium_Fusion_Casing, Chaotic_Fusion_Casing,
+        Centrifuge_Casing, Structural_Coke_Oven_Casing, Heat_Resistant_Coke_Oven_Casing, Heat_Proof_Coke_Oven_Casing,
+        Metalworking_Machine_Casing, Electrolyzer_Casing, Wire_Factory_Casing, Maceration_Stack_Casing,
+        Matter_Generation_Coil, Matter_Fabricator_Casing, Iron_Plated_Bricks, Multitank_Exterior_Casing,
+        Hastelloy_N_Reactor_Casing, Reactor_Shield_Casing, Blast_Smelter_Heat_Containment_Coil,
+        Blast_Smelter_Casing_Block, Thermal_Processing_Casing, Hastelloy_N_Sealant_Block, Hastelloy_X_Structural_Block,
+        Incoloy_DS_Fluid_Containment_Block, Wash_Plant_Casing, Industrial_Sieve_Casing, Large_Sieve_Grate,
+        Vanadium_Redox_Power_Cell_EV, Sub_Station_External_Casing, Cyclotron_Coil, Cyclotron_Outer_Casing,
+        Thermal_Containment_Casing, Bulk_Production_Frame, Cutting_Factory_Frame, Sterile_Farm_Casing, Aquatic_Casing,
+        Inconel_Reinforced_Casing, Multi_Use_Casing, Trinium_Plated_Casing, Vanadium_Redox_Power_Cell_IV,
+        Vanadium_Redox_Power_Cell_LuV, Vanadium_Redox_Power_Cell_ZPM, Vanadium_Redox_Power_Cell_UV,
+        Vanadium_Redox_Power_Cell_UHV, Supply_Depot_Casing, Advanced_Cryogenic_Casing, Volcanus_Casing,
+        Fusion_Machine_Casing_MK_III, Advanced_Fusion_Coil, Containment_Casing, Tempered_Arc_Furnace_Casing,
+        Quantum_Force_Transformer_Coil_Casings, Vacuum_Casing, Turbodyne_Casing, IsaMill_Exterior_Casing,
+        IsaMill_Piping, IsaMill_Gearbox, Elemental_Confinement_Shell, Sparge_Tower_Exterior_Casing,
+        Sturdy_Printer_Casing, Forge_Casing, Neutron_Pulse_Manipulator, Cosmic_Fabric_Manipulator,
+        Infinity_Infused_Manipulator, SpaceTime_Continuum_Ripper, Neutron_Shielding_Core, Cosmic_Fabric_Shielding_Core,
+        Infinity_Infused_Shielding_Core, SpaceTime_Bending_Core, Force_Field_Glass, Fusion_Machine_Casing_MK_IV,
+        Advanced_Fusion_Coil_II, Integral_Encasement_I, Integral_Encasement_II, Integral_Encasement_III,
+        Integral_Encasement_IV, Integral_Encasement_V, Integral_Framework_I, Integral_Framework_II,
+        Integral_Framework_III, Integral_Framework_IV, Integral_Framework_V, Turbine_Shaft,
+        Reinforced_Steam_Turbine_Casing, Reinforced_HP_Steam_Turbine_Casing, Reinforced_Gas_Turbine_Casing,
+        Reinforced_Plasma_Turbine_Casing, Tesla_Containment_Casing, Structural_Solar_Casing, Salt_Containment_Casing,
+        Thermally_Insulated_Casing, Flotation_Cell_Casings, Reinforced_Engine_Casing, Molecular_Containment_Casing,
+        High_Voltage_Current_Capacitor, Particle_Containment_Casing, Reinforced_Heat_Exchanger_Casing,
+        Reinforced_SC_Turbine_Casing, Resonance_Casing_I, Resonance_Casing_II, Resonance_Casing_III,
+        Resonance_Casing_IV, Modulator_I, Modulator_II, Modulator_III, Modulator_IV, Strong_Bronze_Machine_Casing,
+        Sturdy_Aluminium_Machine_Casing, Vigorous_Laurenium_Machine_Casing, Rugged_Botmium_Machine_Casing,
+        High_Power_Casing, Computer_Casing, Computer_Heat_Vent, Advanced_Computer_Casing, Molecular_Casing,
+        Advanced_Molecular_Casing, Containment_Field_Generator, Molecular_Coil, Hollow_Casing,
+        Spacetime_Altering_Casing, Teleportation_Casing, Dimensional_Bridge_Generator, Ultimate_Molecular_Casing,
+        Ultimate_Advanced_Molecular_Casing, Ultimate_Containment_Field_Generator, Debug_Sides,
+        Redstone_Alloy_Primary_Tesla_Windings, MV_Superconductor_Primary_Tesla_Windings,
+        HV_Superconductor_Primary_Tesla_Windings, EV_Superconductor_Primary_Tesla_Windings,
+        IV_Superconductor_Primary_Tesla_Windings, LuV_Superconductor_Primary_Tesla_Windings, Tesla_Base_Casing,
+        Tesla_Toroid_Casing, Tesla_Secondary_Windings, ZPM_Superconductor_Primary_Tesla_Windings,
+        Reinforced_Temporal_Structure_Casing, Reinforced_Spatial_Structure_Casing,
+        Infinite_Spacetime_Energy_Boundary_Casing, Singularity_Reinforced_Stellar_Shielding_Casing,
+        Celestial_Matter_Guidance_Casing, Boundless_Gravitationally_Severed_Structure_Casing,
+        Transcendentally_Amplified_Magnetic_Confinement_Casing, Stellar_Energy_Siphon_Casing,
+        Remote_Graviton_Flow_Modulator, Medial_Graviton_Flow_Modulator, Central_Graviton_Flow_Modulator,
+        Harmonic_Phonon_Transmission_Conduit, Vending_Machine_Casing, Solar_Reflector };
 }

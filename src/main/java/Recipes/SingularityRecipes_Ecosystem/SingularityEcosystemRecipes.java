@@ -65,7 +65,6 @@ public class SingularityEcosystemRecipes {
             Ecosystem_Food.EtFuturumRequiem_Food,
             Ecosystem_Food.GregTech_Food,
             Ecosystem_Food.PamsHarvestCraft_Food,
-            Ecosystem_Food.PamsHarvestTheNether_Food,
             Ecosystem_Food.GTPlusPlus_Food,
             Ecosystem_Food.Witchery_Food);
         ItemStack[] Ecosystem_Food_List_Checked = checkItemStack(Ecosystem_Food_List);
@@ -89,7 +88,6 @@ public class SingularityEcosystemRecipes {
             Ecosystem_TreeGrowth.Natura_TreeGrowth,
             Ecosystem_TreeGrowth.BiomesOPlenty_TreeGrowth,
             Ecosystem_TreeGrowth.PamsHarvestCraft_TreeGrowth,
-            Ecosystem_TreeGrowth.PamsHarvestTheNether_TreeGrowth,
             Ecosystem_TreeGrowth.EtFuturumRequiem_TreeGrowth,
             Ecosystem_TreeGrowth.Forestry_TreeGrowth,
             Ecosystem_TreeGrowth.ExtraTrees_TreeGrowth);

@@ -739,6 +739,20 @@ public class ChaosOreRecipes {
                     }
                 }));
 
+        // "Carbon Ore"
+        ore_List.add(
+            new Ore_List(
+                new ItemStack[] { OreList.Carbon_Ore_Stone, OreList.Carbon_Ore_Netherrack,
+                    OreList.Carbon_Ore_EndStone },
+                RawOreList.Raw_Carbon_Ore,
+                CrushedOreList.Crushed_Carbon_Ore,
+                new HashMap<>() {
+
+                    {
+                        put(DustList.Carbon_Dust, 14);
+                    }
+                }));
+
         // "Magnesium Ore"
         ore_List.add(
             new Ore_List(

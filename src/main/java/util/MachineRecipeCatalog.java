@@ -12,6 +12,7 @@ import gregtech.api.recipe.RecipeMap;
 public final class MachineRecipeCatalog {
 
     private static final String[] RECIPE_MAP_CLASSES = { "loader.ChaosRecipeLoader",
+        "Recipes.ChaosRecipes.ChaosRecipeMap",
         "Recipes.ChaosRecipes.ChaosAntimatterRecipes", "Recipes.ChaosRecipes.ChaosArcaneWorktableRecipes",
         "Recipes.ChaosRecipes.ChaosBloodMagicRecipes", "Recipes.ChaosRecipes.ChaosBotaniaRecipes",
         "Recipes.ChaosRecipes.ChaosCircuitAssemblerRecipes", "Recipes.ChaosRecipes.ChaosCrucibleRecipes",
@@ -24,7 +25,6 @@ public final class MachineRecipeCatalog {
         "Recipes.SingularityRecipes_ModItem.FakeSingularityModItemRecipes_Show",
         "Recipes.SingularityRecipes_Pachinko.FakeSingularityPachinkoRecipes",
         "Recipes.SingularityRecipes_VoidDust.FakeSingularityDustRecipes",
-        "Recipes.SingularityRecipes_VoidDust.SingularityDustRecipes_T10",
         "Recipes.SingularityRecipes_VoidFluid.FakeSingularityFluidRecipes",
         "Recipes.SingularityRecipes_VoidFluid.SingularityFluidRecipes_T10",
         "Recipes.SingularityRecipes_VoidGem.FakeSingularityGemRecipes",

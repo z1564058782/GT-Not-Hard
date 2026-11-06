@@ -161,7 +161,7 @@ public class CombList {
     public static final ItemStack Plutonium_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 78);
     public static final ItemStack Naquadah_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 79);
     public static final ItemStack Naquadria_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 80);
-    public static final ItemStack Dob_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 81);
+    public static final ItemStack D_o_b_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 81);
     public static final ItemStack Thorium_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 82);
     public static final ItemStack Lutetium_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 83);
     public static final ItemStack Americium_Comb = getModItem(GregTech.ID, "gt.comb", 1L, 84);

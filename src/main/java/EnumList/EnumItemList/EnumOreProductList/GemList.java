@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -15,6 +16,8 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import net.minecraft.item.ItemStack;
 
 public class GemList {
+
+    public static final ItemStack Iridium = getModItem(IndustrialCraft2.ID, "itemOreIridium", 1L);
 
     public static final ItemStack Coal = getModItem(Minecraft.ID, "coal", 1L);
     public static final ItemStack Charcoal = getModItem(Minecraft.ID, "coal", 1L, 1);
@@ -411,4 +414,45 @@ public class GemList {
     // public static final ItemStack Flawless_ = ;
     // public static final ItemStack Flawed_ = ;
     // public static final ItemStack Chipped_ = ;
+
+    public static final ItemStack[] Gem_List = new ItemStack[] { Iridium, Coal, Charcoal, Diamond, Lapis_Lazuli,
+        Ender_Pearl, Eye_of_Ender, Emerald, Nether_Star, Nether_Quartz, Ender_Amethyst, Peridot_BOP, Malachite,
+        Mana_Diamond, Dragonstone, Peridot_PR, Raw_Firestone, Quicksilver, Amber, Air_Shard, Fire_Shard, Water_Shard,
+        Earth_Shard, Order_Shard, Entropy_Shard, Charged_Certus_Quartz_Crystal, Fluix_Crystal, Bismutite,
+        Cubic_Zirconia, Fluor_Buergerite, Chromo_Alumino_Povondraite, Vanadio_Oxy_Dravite, Olenite, Red_Zircon, Salt,
+        Spodumene, Rock_Salt, Fayalite, Forsterite, Hedenbergite, Prasiolite, Magneto_Resonatic, BArTiMaEuSNeK,
+        Tiberium, Fluorspar, Orundum, Cerium_doped_Lutetium_Aluminium_Garnet_CeLuAG, Lanthanum_Hexaboride,
+        Exquisite_Probable_Crystal, Exquisite_Chromatic_Crystal, Exquisite_Mana_Diamond, Exquisite_Dragonstone,
+        Exquisite_Diamond, Exquisite_Emerald, Exquisite_Ruby, Exquisite_Sapphire, Exquisite_Green_Sapphire,
+        Exquisite_Olivine, Exquisite_Topaz, Exquisite_Tanzanite, Exquisite_Amethyst, Exquisite_Opal, Exquisite_Jasper,
+        Exquisite_Spinel, Exquisite_Blue_Topaz, Exquisite_Amber, Exquisite_Red_Garnet, Exquisite_Yellow_Garnet,
+        Exquisite_Glass_Crystal, Flawless_Unknown_Crystal, Flawless_Chromatic_Crystal, Flawless_Mana_Diamond,
+        Flawless_Dragonstone, Flawless_Diamond, Flawless_Emerald, Flawless_Ruby, Flawless_Sapphire,
+        Flawless_Green_Sapphire, Flawless_Olivine, Flawless_Topaz, Flawless_Tanzanite, Flawless_Amethyst, Flawless_Opal,
+        Flawless_Jasper, Flawless_Spinel, Flawless_Blue_Topaz, Flawless_Amber, Flawless_Red_Garnet,
+        Flawless_Yellow_Garnet, Flawless_Glass_Crystal, Chromatic_Crystal, Graviton_Shard, Ruby, Sapphire,
+        Green_Sapphire, Olivine, Topaz, Tanzanite, Amethyst, Opal, Jasper, Spinel, Blue_Topaz, Dilithium, Certus_Quartz,
+        Forcicium, Forcillium, Monazite, Force, Quartzite, Lazurite, Sodalite, Red_Garnet, Yellow_Garnet, Vinteum,
+        Apatite, Niter, Tricalcium_Phosphate, Jade, Lignite_Coal, Glass_Crystal, Chipped_Mana_Diamond,
+        Chipped_Dragonstone, Chipped_Diamond, Chipped_Emerald, Chipped_Ruby, Chipped_Sapphire, Chipped_Green_Sapphire,
+        Chipped_Olivine, Chipped_Topaz, Chipped_Tanzanite, Chipped_Amethyst, Chipped_Opal, Chipped_Jasper,
+        Chipped_Spinel, Chipped_Blue_Topaz, Chipped_Amber, Chipped_Red_Garnet, Chipped_Yellow_Garnet,
+        Chipped_Glass_Crystal, Flawed_Mana_Diamond, Flawed_Dragonstone, Flawed_Diamond, Flawed_Emerald, Flawed_Ruby,
+        Flawed_Sapphire, Flawed_Green_Sapphire, Flawed_Olivine, Flawed_Topaz, Flawed_Tanzanite, Flawed_Amethyst,
+        Flawed_Opal, Flawed_Jasper, Flawed_Spinel, Flawed_Blue_Topaz, Flawed_Amber, Flawed_Red_Garnet,
+        Flawed_Yellow_Garnet, Flawed_Glass_Crystal, Exquisite_Bismutite, Flawless_Bismutite, Flawed_Bismutite,
+        Chipped_Bismutite, Exquisite_Fluor_Buergerite, Flawless_Fluor_Buergerite, Flawed_Fluor_Buergerite,
+        Chipped_Fluor_Buergerite, Exquisite_Chromo_Alumino_Povondraite, Flawless_Chromo_Alumino_Povondraite,
+        Flawed_Chromo_Alumino_Povondraite, Chipped_Chromo_Alumino_Povondraite, Exquisite_Vanadio_Oxy_Dravite,
+        Flawless_Vanadio_Oxy_Dravite, Flawed_Vanadio_Oxy_Dravite, Chipped_Vanadio_Oxy_Dravite, Exquisite_Olenite,
+        Flawless_Olenite, Flawed_Olenite, Chipped_Olenite, Exquisite_Red_Zircon, Flawless_Red_Zircon, Flawed_Red_Zircon,
+        Chipped_Red_Zircon, Exquisite_Fayalite, Flawless_Fayalite, Flawed_Fayalite, Chipped_Fayalite,
+        Exquisite_Forsterite, Flawless_Forsterite, Flawed_Forsterite, Chipped_Forsterite, Exquisite_Hedenbergite,
+        Flawless_Hedenbergite, Flawed_Hedenbergite, Chipped_Hedenbergite, Exquisite_Prasiolite, Flawless_Prasiolite,
+        Flawed_Prasiolite, Chipped_Prasiolite, Exquisite_BArTiMaEuSNeK, Flawless_BArTiMaEuSNeK, Flawed_BArTiMaEuSNeK,
+        Chipped_BArTiMaEuSNeK, Exquisite_Tiberium, Flawless_Tiberium, Flawed_Tiberium, Chipped_Tiberium,
+        Exquisite_Fluorspar, Flawless_Fluorspar, Flawed_Fluorspar, Chipped_Fluorspar, Exquisite_Orundum,
+        Flawless_Orundum, Flawed_Orundum, Chipped_Orundum, Exquisite_Salt, Flawless_Salt, Flawed_Salt, Chipped_Salt,
+        Exquisite_Spodumene, Flawless_Spodumene, Flawed_Spodumene, Chipped_Spodumene, Exquisite_Rock_Salt,
+        Flawless_Rock_Salt, Flawed_Rock_Salt, Chipped_Rock_Salt };
 }

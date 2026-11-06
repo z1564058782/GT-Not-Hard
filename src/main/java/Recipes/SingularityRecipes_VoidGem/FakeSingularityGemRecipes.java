@@ -45,19 +45,17 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T0() {
         // T0 - Overworld - Ow
         ItemStack[] Fake_T0_Overworld_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Coal_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Dolomite_Vein,
-            Vein_Gem.Iron_Vein,
-            Vein_Gem.Lignite_Coal_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
             Vein_Gem.Apatite_Vein,
-            Vein_Gem.Tin_Vein,
-            Vein_Gem.Salt_Vein,
-            SmallOre_Gem.Diamond_SmallOre,
-            SmallOre_Gem.Lapis_SmallOre,
-            SmallOre_Gem.Coal_SmallOre);
+            Vein_Gem.Rock_Salt_Salt_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Coal_Vein,
+            Vein_Gem.Dolomite_Vein,
+            Vein_Gem.Lignite_Coal_Vein,
+            SmallOre_Gem.Overworld_SmallOre);
         ItemStack[] Fake_T0_Overworld_Gem_Checked = checkItemStack(Fake_T0_Overworld_Gem);
         ItemStack[][] Fake_T0_Overworld_Gem_Split = addSplitAggregateArray(
             Fake_T0_Overworld_Gem_Checked,
@@ -75,13 +73,14 @@ public class FakeSingularityGemRecipes {
 
         // T0 - Nether - Ne
         ItemStack[] Fake_T0_Nether_Gem = addCompressAggregateArray(
-            Vein_Gem.Quartzite_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Iron_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Quartzite_Vein,
             Vein_Gem.Beryllium_Vein,
             Vein_Gem.Nether_Quartz_Vein,
-            SmallOre_Gem.Certus_Quartz_SmallOre,
-            SmallOre_Gem.Nether_Quartz_SmallOre);
+            SmallOre_Gem.Nether_SmallOre);
         ItemStack[] Fake_T0_Nether_Gem_Checked = checkItemStack(Fake_T0_Nether_Gem);
         ItemStack[][] Fake_T0_Nether_Gem_Split = addSplitAggregateArray(
             Fake_T0_Nether_Gem_Checked,
@@ -99,31 +98,18 @@ public class FakeSingularityGemRecipes {
 
         // T0 - Twilight - TF
         ItemStack[] Fake_T0_Twilight_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Apatite_Vein,
+            Vein_Gem.Rock_Salt_Salt_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
             Vein_Gem.Terra_Aer_Vein,
             Vein_Gem.Coal_Vein,
-            Vein_Gem.Sapphire_Vein,
+            Vein_Gem.Almandine_Sapphire_Vein,
             Vein_Gem.Perditio_Ordo_Vein,
-            Vein_Gem.Iron_Vein,
-            Vein_Gem.Apatite_Vein,
-            Vein_Gem.Salt_Vein,
             Vein_Gem.Aqua_Ignis_Amber_Vein,
-            SmallOre_Gem.Amethyst_SmallOre,
-            SmallOre_Gem.Yellow_Garnet_SmallOre,
-            SmallOre_Gem.Tanzanite_SmallOre,
-            SmallOre_Gem.Opal_SmallOre,
-            SmallOre_Gem.Ruby_SmallOre,
-            SmallOre_Gem.Emerald_SmallOre,
-            SmallOre_Gem.Amber_SmallOre,
-            SmallOre_Gem.Blue_Topaz_SmallOre,
-            SmallOre_Gem.Topaz_SmallOre,
-            SmallOre_Gem.Red_Garnet_SmallOre,
-            SmallOre_Gem.Green_Sapphire_SmallOre,
-            SmallOre_Gem.Sapphire_SmallOre,
-            SmallOre_Gem.Jasper_SmallOre,
-            SmallOre_Gem.Olivine_SmallOre);
+            SmallOre_Gem.Twilight_SmallOre);
         ItemStack[] Fake_T0_Twilight_Gem_Checked = checkItemStack(Fake_T0_Twilight_Gem);
         ItemStack[][] Fake_T0_Twilight_Gem_Split = addSplitAggregateArray(
             Fake_T0_Twilight_Gem_Checked,
@@ -158,10 +144,11 @@ public class FakeSingularityGemRecipes {
 
         // T0 - EndAsteroid - EA
         ItemStack[] Fake_T0_EndAsteroid_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
             Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Platinum_Vein);
+            Vein_Gem.Sheldonite_Platinum_Vein);
         ItemStack[] Fake_T0_EndAsteroid_Gem_Checked = checkItemStack(Fake_T0_EndAsteroid_Gem);
         ItemStack[][] Fake_T0_EndAsteroid_Gem_Split = addSplitAggregateArray(
             Fake_T0_EndAsteroid_Gem_Checked,
@@ -176,13 +163,35 @@ public class FakeSingularityGemRecipes {
                 .eut(0)
                 .addTo(addFakeVoidGemRecipes_T0);
         }
+
+        // T0 - TheToxicEverglades - Eg
+        ItemStack[] Fake_T0_TheToxicEverglades_Gem = addCompressAggregateArray(
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
+            Vein_Gem.Beryllium_Vein,
+            Vein_Gem.Sheldonite_Platinum_Vein);
+        ItemStack[] Fake_T0_TheToxicEverglades_Gem_Checked = checkItemStack(Fake_T0_TheToxicEverglades_Gem);
+        ItemStack[][] Fake_T0_TheToxicEverglades_Gem_Split = addSplitAggregateArray(
+            Fake_T0_TheToxicEverglades_Gem_Checked,
+            NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T0_TheToxicEverglades_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eg", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T0);
+        }
     }
 
     public static void addFakeVoidGemRecipes_T1() {
         // T1 - Moon - Mo
         ItemStack[] Fake_T1_Moon_Gem = addCompressAggregateArray(
-            Vein_Gem.Quartz_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
             Vein_Gem.Ilmenite_Vein);
         ItemStack[] Fake_T1_Moon_Gem_Checked = checkItemStack(Fake_T1_Moon_Gem);
         ItemStack[][] Fake_T1_Moon_Gem_Split = addSplitAggregateArray(Fake_T1_Moon_Gem_Checked, NEI_ItemOutput_Size);
@@ -201,11 +210,12 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T2() {
         // T2 - Deimos - De
         ItemStack[] Fake_T2_Deimos_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Draconium_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
             Vein_Gem.Oriharukon_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Draconium_Vein,
+            SmallOre_Gem.Deimos_SmallOre);
         ItemStack[] Fake_T2_Deimos_Gem_Checked = checkItemStack(Fake_T2_Deimos_Gem);
         ItemStack[][] Fake_T2_Deimos_Gem_Split = addSplitAggregateArray(
             Fake_T2_Deimos_Gem_Checked,
@@ -223,11 +233,11 @@ public class FakeSingularityGemRecipes {
 
         // T2 - Mars - Ma
         ItemStack[] Fake_T2_Mars_Gem = addCompressAggregateArray(
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Iron_Vein,
-            Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Salt_Vein);
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Rock_Salt_Salt_Vein,
+            Vein_Gem.Sulfur_Vein);
         ItemStack[] Fake_T2_Mars_Gem_Checked = checkItemStack(Fake_T2_Mars_Gem);
         ItemStack[][] Fake_T2_Mars_Gem_Split = addSplitAggregateArray(Fake_T2_Mars_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T2_Mars_Gem_Split) {
@@ -243,11 +253,12 @@ public class FakeSingularityGemRecipes {
 
         // T2 - Phobos - Ph
         ItemStack[] Fake_T2_Phobos_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Quartz_Vein,
-            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Oriharukon_Vein,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Draconium_Vein,
+            SmallOre_Gem.Phobos_SmallOre);
         ItemStack[] Fake_T2_Phobos_Gem_Checked = checkItemStack(Fake_T2_Phobos_Gem);
         ItemStack[][] Fake_T2_Phobos_Gem_Split = addSplitAggregateArray(
             Fake_T2_Phobos_Gem_Checked,
@@ -268,7 +279,9 @@ public class FakeSingularityGemRecipes {
         // T3 - Asteroids - As
         ItemStack[] Fake_T3_Asteroids_Gem = addCompressAggregateArray(
             Vein_Gem.Ilmenite_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            Vein_Gem.Platinum_Palladium_Vein,
+            Vein_Gem.Sheldonite_Platinum_Vein,
+            SmallOre_Gem.Asteroids_SmallOre);
         ItemStack[] Fake_T3_Asteroids_Gem_Checked = checkItemStack(Fake_T3_Asteroids_Gem);
         ItemStack[][] Fake_T3_Asteroids_Gem_Split = addSplitAggregateArray(
             Fake_T3_Asteroids_Gem_Checked,
@@ -286,11 +299,12 @@ public class FakeSingularityGemRecipes {
 
         // T3 - Callisto - Ca
         ItemStack[] Fake_T3_Callisto_Gem = addCompressAggregateArray(
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
             Vein_Gem.Ilmenite_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
             Vein_Gem.Callisto_Ice_Vein,
-            Vein_Gem.Iron_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            SmallOre_Gem.Callisto_SmallOre);
         ItemStack[] Fake_T3_Callisto_Gem_Checked = checkItemStack(Fake_T3_Callisto_Gem);
         ItemStack[][] Fake_T3_Callisto_Gem_Split = addSplitAggregateArray(
             Fake_T3_Callisto_Gem_Checked,
@@ -308,11 +322,13 @@ public class FakeSingularityGemRecipes {
 
         // T3 - Ceres - Ce
         ItemStack[] Fake_T3_Ceres_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Olivine_Vein,
-            Vein_Gem.Iron_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
             Vein_Gem.Beryllium_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            SmallOre_Gem.Ceres_SmallOre);
         ItemStack[] Fake_T3_Ceres_Gem_Checked = checkItemStack(Fake_T3_Ceres_Gem);
         ItemStack[][] Fake_T3_Ceres_Gem_Split = addSplitAggregateArray(Fake_T3_Ceres_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T3_Ceres_Gem_Split) {
@@ -327,10 +343,7 @@ public class FakeSingularityGemRecipes {
         }
 
         // T3 - Europa - Eu
-        ItemStack[] Fake_T3_Europa_Gem = addCompressAggregateArray(
-            Vein_Gem.Magnesite_Vein,
-            Vein_Gem.Ledox_Vein,
-            Vein_Gem.Tin_Vein);
+        ItemStack[] Fake_T3_Europa_Gem = addCompressAggregateArray(Vein_Gem.Magnesite_Vein, Vein_Gem.Ledox_Vein);
         ItemStack[] Fake_T3_Europa_Gem_Checked = checkItemStack(Fake_T3_Europa_Gem);
         ItemStack[][] Fake_T3_Europa_Gem_Split = addSplitAggregateArray(
             Fake_T3_Europa_Gem_Checked,
@@ -348,11 +361,12 @@ public class FakeSingularityGemRecipes {
 
         // T3 - Ganymede - Ga
         ItemStack[] Fake_T3_Ganymede_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
             Vein_Gem.Redstone_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
             Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Iron_Vein,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Platinum_Palladium_Vein,
+            SmallOre_Gem.Ganymede_SmallOre);
         ItemStack[] Fake_T3_Ganymede_Gem_Checked = checkItemStack(Fake_T3_Ganymede_Gem);
         ItemStack[][] Fake_T3_Ganymede_Gem_Split = addSplitAggregateArray(
             Fake_T3_Ganymede_Gem_Checked,
@@ -370,11 +384,13 @@ public class FakeSingularityGemRecipes {
 
         // T3 - Ross128b - Rb
         ItemStack[] Fake_T3_Ross128b_Gem = addCompressAggregateArray(
-            Vein_Gem.Bismutite_Bismuthinite_Vein,
-            Vein_Gem.Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein,
+            Vein_Gem.Hedenbergite_Vein,
+            Vein_Gem.Olenite_Vein,
+            Vein_Gem.Forsterite_Vein,
             Vein_Gem.Thorianite_Vein,
-            Vein_Gem.Fayalite_GreenFuchsite_RedZircon_RedFuchsite_Vein,
-            Vein_Gem.Forsterite_Fayalite_OrangeDescloizite_RedDescloizite_Vein);
+            Vein_Gem.Graphite_Vein,
+            Vein_Gem.Fayalite_Vein,
+            Vein_Gem.Bismutite_Vein);
         ItemStack[] Fake_T3_Ross128b_Gem_Checked = checkItemStack(Fake_T3_Ross128b_Gem);
         ItemStack[][] Fake_T3_Ross128b_Gem_Split = addSplitAggregateArray(
             Fake_T3_Ross128b_Gem_Checked,
@@ -394,13 +410,16 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T4() {
         // T4 - Io - Io
         ItemStack[] Fake_T4_Io_Gem = addCompressAggregateArray(
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Pyrolusite_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
             Vein_Gem.Mytryl_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Firestone_SmallOre,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Io_SmallOre);
         ItemStack[] Fake_T4_Io_Gem_Checked = checkItemStack(Fake_T4_Io_Gem);
         ItemStack[][] Fake_T4_Io_Gem_Split = addSplitAggregateArray(Fake_T4_Io_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T4_Io_Gem_Split) {
@@ -416,12 +435,13 @@ public class FakeSingularityGemRecipes {
 
         // T4 - Mercury - Me
         ItemStack[] Fake_T4_Mercury_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Draconium_Vein,
             Vein_Gem.Redstone_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Draconium_Vein,
             Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Iron_Vein,
-            Vein_Gem.Iridium_Vein);
+            Vein_Gem.Platinum_Palladium_Vein,
+            Vein_Gem.Nickel_Iridium_Vein);
         ItemStack[] Fake_T4_Mercury_Gem_Checked = checkItemStack(Fake_T4_Mercury_Gem);
         ItemStack[][] Fake_T4_Mercury_Gem_Split = addSplitAggregateArray(
             Fake_T4_Mercury_Gem_Checked,
@@ -439,14 +459,14 @@ public class FakeSingularityGemRecipes {
 
         // T4 - Venus - Ve
         ItemStack[] Fake_T4_Venus_Gem = addCompressAggregateArray(
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Sulfur_Vein,
             Vein_Gem.Beryllium_Vein,
             Vein_Gem.Quantium_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Diamond_SmallOre,
-            SmallOre_Gem.Firestone_SmallOre);
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Venus_SmallOre);
         ItemStack[] Fake_T4_Venus_Gem_Checked = checkItemStack(Fake_T4_Venus_Gem);
         ItemStack[][] Fake_T4_Venus_Gem_Split = addSplitAggregateArray(Fake_T4_Venus_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T4_Venus_Gem_Split) {
@@ -464,12 +484,12 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T5() {
         // T5 - Enceladus - En
         ItemStack[] Fake_T5_Enceladus_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
             Vein_Gem.Ledox_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Enceladus_SmallOre);
         ItemStack[] Fake_T5_Enceladus_Gem_Checked = checkItemStack(Fake_T5_Enceladus_Gem);
         ItemStack[][] Fake_T5_Enceladus_Gem_Split = addSplitAggregateArray(
             Fake_T5_Enceladus_Gem_Checked,
@@ -487,13 +507,13 @@ public class FakeSingularityGemRecipes {
 
         // T5 - Miranda - Mi
         ItemStack[] Fake_T5_Miranda_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Draconium_Vein,
             Vein_Gem.Redstone_Vein,
             Vein_Gem.Pyrolusite_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
+            Vein_Gem.Draconium_Vein,
             Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Iridium_Vein);
+            Vein_Gem.Nickel_Iridium_Vein);
         ItemStack[] Fake_T5_Miranda_Gem_Checked = checkItemStack(Fake_T5_Miranda_Gem);
         ItemStack[][] Fake_T5_Miranda_Gem_Split = addSplitAggregateArray(
             Fake_T5_Miranda_Gem_Checked,
@@ -511,10 +531,11 @@ public class FakeSingularityGemRecipes {
 
         // T5 - Oberon - Ob
         ItemStack[] Fake_T5_Oberon_Gem = addCompressAggregateArray(
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Iron_Vein,
-            SmallOre_Gem.Diamond_SmallOre,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
+            SmallOre_Gem.Oberon_SmallOre);
         ItemStack[] Fake_T5_Oberon_Gem_Checked = checkItemStack(Fake_T5_Oberon_Gem);
         ItemStack[][] Fake_T5_Oberon_Gem_Split = addSplitAggregateArray(
             Fake_T5_Oberon_Gem_Checked,
@@ -532,13 +553,15 @@ public class FakeSingularityGemRecipes {
 
         // T5 - Titan - Ti
         ItemStack[] Fake_T5_Titan_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
             Vein_Gem.Ilmenite_Vein,
             Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Titan_SmallOre);
         ItemStack[] Fake_T5_Titan_Gem_Checked = checkItemStack(Fake_T5_Titan_Gem);
         ItemStack[][] Fake_T5_Titan_Gem_Split = addSplitAggregateArray(Fake_T5_Titan_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T5_Titan_Gem_Split) {
@@ -554,12 +577,11 @@ public class FakeSingularityGemRecipes {
 
         // T5 - Ross128ba - Ra
         ItemStack[] Fake_T5_Ross128ba_Gem = addCompressAggregateArray(
-            Vein_Gem.Olenite_FluorBuergerite_ChromoAluminoPovondraite_VanadioOxyDravit_Vein,
-            Vein_Gem.Hedenbergite_Fayalite_OrangeDescloizite_RedDescloizite_Vein,
-            Vein_Gem.Prasiolite_Hedenbergite_Vein,
             Vein_Gem.BArTiMaEuSNeK_Vein,
+            Vein_Gem.Amethyst_Vein,
+            Vein_Gem.Fayalite_Vein,
             Vein_Gem.Tiberium_Vein,
-            Vein_Gem.Fluorspar_Vein);
+            Vein_Gem.Olenite_Vein);
         ItemStack[] Fake_T5_Ross128ba_Gem_Checked = checkItemStack(Fake_T5_Ross128ba_Gem);
         ItemStack[][] Fake_T5_Ross128ba_Gem_Split = addSplitAggregateArray(
             Fake_T5_Ross128ba_Gem_Checked,
@@ -579,9 +601,10 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T6() {
         // T6 - Proteus - Pr
         ItemStack[] Fake_T6_Proteus_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
             Vein_Gem.Ilmenite_Vein);
         ItemStack[] Fake_T6_Proteus_Gem_Checked = checkItemStack(Fake_T6_Proteus_Gem);
         ItemStack[][] Fake_T6_Proteus_Gem_Split = addSplitAggregateArray(
@@ -600,9 +623,10 @@ public class FakeSingularityGemRecipes {
 
         // T6 - Triton - Tr
         ItemStack[] Fake_T6_Triton_Gem = addCompressAggregateArray(
-            Vein_Gem.Monazite_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Triton_SmallOre);
         ItemStack[] Fake_T6_Triton_Gem_Checked = checkItemStack(Fake_T6_Triton_Gem);
         ItemStack[][] Fake_T6_Triton_Gem_Split = addSplitAggregateArray(
             Fake_T6_Triton_Gem_Checked,
@@ -622,9 +646,10 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T7() {
         // T7 - Haumea - Ha
         ItemStack[] Fake_T7_Haumea_Gem = addCompressAggregateArray(
-            Vein_Gem.Olivine_Vein,
-            Vein_Gem.Monazite_Vein,
-            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Garnet_Sand_Nether_Star_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
             Vein_Gem.Beryllium_Vein);
         ItemStack[] Fake_T7_Haumea_Gem_Checked = checkItemStack(Fake_T7_Haumea_Gem);
         ItemStack[][] Fake_T7_Haumea_Gem_Split = addSplitAggregateArray(
@@ -641,13 +666,35 @@ public class FakeSingularityGemRecipes {
                 .addTo(addFakeVoidGemRecipes_T7);
         }
 
+        // T7 - Kuiper Belt - KB
+        ItemStack[] Fake_T7_Kuiperbelt_Gem = addCompressAggregateArray(
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.Kuiperbelt_SmallOre);
+        ItemStack[] Fake_T7_Kuiperbelt_Gem_Checked = checkItemStack(Fake_T7_Kuiperbelt_Gem);
+        ItemStack[][] Fake_T7_Kuiperbelt_Gem_Split = addSplitAggregateArray(
+            Fake_T7_Kuiperbelt_Gem_Checked,
+            NEI_ItemOutput_Size);
+        for (ItemStack[] tempItemStacks : Fake_T7_Kuiperbelt_Gem_Split) {
+            GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_KB", 1L))
+                .itemOutputs(tempItemStacks)
+                .fake()
+                .duration(3 * SECONDS)
+                .setNEIDesc("Singularity with Void Gem Mode")
+                .eut(0)
+                .addTo(addFakeVoidGemRecipes_T7);
+        }
+
         // T7 - Makemake - MM
         ItemStack[] Fake_T7_Makemake_Gem = addCompressAggregateArray(
-            Vein_Gem.Olivine_Vein,
-            Vein_Gem.Monazite_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
             Vein_Gem.Black_Plutonium_Vein,
-            Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Red_Garnet_Vein);
+            Vein_Gem.Red_Garnet_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
+            Vein_Gem.Beryllium_Vein);
         ItemStack[] Fake_T7_Makemake_Gem_Checked = checkItemStack(Fake_T7_Makemake_Gem);
         ItemStack[][] Fake_T7_Makemake_Gem_Split = addSplitAggregateArray(
             Fake_T7_Makemake_Gem_Checked,
@@ -665,11 +712,12 @@ public class FakeSingularityGemRecipes {
 
         // T7 - Pluto - Pl
         ItemStack[] Fake_T7_Pluto_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
-            Vein_Gem.Osmium_Vein,
             Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Brown_Limonite_Iron_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
             Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Iron_Vein,
+            Vein_Gem.Platinum_Palladium_Vein,
             Vein_Gem.Beryllium_Vein);
         ItemStack[] Fake_T7_Pluto_Gem_Checked = checkItemStack(Fake_T7_Pluto_Gem);
         ItemStack[][] Fake_T7_Pluto_Gem_Split = addSplitAggregateArray(Fake_T7_Pluto_Gem_Checked, NEI_ItemOutput_Size);
@@ -688,11 +736,11 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T8() {
         // T8 - BarnardC - BC
         ItemStack[] Fake_T8_BarnardC_Gem = addCompressAggregateArray(
-            Vein_Gem.Osmium_Vein,
-            Vein_Gem.Samarium_Vein,
             Vein_Gem.Black_Plutonium_Vein,
-            Vein_Gem.Lignite_Coal_Vein,
-            Vein_Gem.Salt_Vein);
+            Vein_Gem.Rock_Salt_Salt_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
+            Vein_Gem.Samarium_Vein,
+            Vein_Gem.Lignite_Coal_Vein);
         ItemStack[] Fake_T8_BarnardC_Gem_Checked = checkItemStack(Fake_T8_BarnardC_Gem);
         ItemStack[][] Fake_T8_BarnardC_Gem_Split = addSplitAggregateArray(
             Fake_T8_BarnardC_Gem_Checked,
@@ -709,7 +757,11 @@ public class FakeSingularityGemRecipes {
         }
 
         // T8 - BarnardE - BE
-        ItemStack[] Fake_T8_BarnardE_Gem = addCompressAggregateArray(Vein_Gem.Olivine_Vein, Vein_Gem.Nether_Star_Vein);
+        ItemStack[] Fake_T8_BarnardE_Gem = addCompressAggregateArray(
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Garnet_Sand_Nether_Star_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein);
         ItemStack[] Fake_T8_BarnardE_Gem_Checked = checkItemStack(Fake_T8_BarnardE_Gem);
         ItemStack[][] Fake_T8_BarnardE_Gem_Split = addSplitAggregateArray(
             Fake_T8_BarnardE_Gem_Checked,
@@ -727,11 +779,12 @@ public class FakeSingularityGemRecipes {
 
         // T8 - BarnardF - BF
         ItemStack[] Fake_T8_BarnardF_Gem = addCompressAggregateArray(
-            Vein_Gem.Diamond_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Monazite_Vein,
-            Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Red_Garnet_Vein);
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Red_Garnet_Vein,
+            Vein_Gem.Graphite_Diamond_Vein,
+            Vein_Gem.Beryllium_Vein);
         ItemStack[] Fake_T8_BarnardF_Gem_Checked = checkItemStack(Fake_T8_BarnardF_Gem);
         ItemStack[][] Fake_T8_BarnardF_Gem_Split = addSplitAggregateArray(
             Fake_T8_BarnardF_Gem_Checked,
@@ -749,12 +802,13 @@ public class FakeSingularityGemRecipes {
 
         // T8 - α Centauri Bb - CB
         ItemStack[] Fake_T8_Centauri_Gem = addCompressAggregateArray(
-            Vein_Gem.Samarium_Vein,
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Grossular_Manganese_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Redstone_Vein,
             Vein_Gem.Black_Plutonium_Vein,
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Samarium_Vein,
             Vein_Gem.Beryllium_Vein,
-            Vein_Gem.Tin_Vein,
             Vein_Gem.Nether_Quartz_Vein);
         ItemStack[] Fake_T8_Centauri_Gem_Checked = checkItemStack(Fake_T8_Centauri_Gem);
         ItemStack[][] Fake_T8_Centauri_Gem_Split = addSplitAggregateArray(
@@ -774,13 +828,13 @@ public class FakeSingularityGemRecipes {
         // T8 - TCetiE - TE
         ItemStack[] Fake_T8_TCetiE_Gem = addCompressAggregateArray(
             Vein_Gem.Magnesite_Vein,
-            Vein_Gem.Quartz_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Black_Plutonium_Vein,
-            Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Garnet_Sand_Nether_Star_Vein,
             Vein_Gem.Apatite_Vein,
-            Vein_Gem.Salt_Vein,
-            SmallOre_Gem.Lapis_SmallOre);
+            Vein_Gem.Rock_Salt_Salt_Vein,
+            Vein_Gem.Ilmenite_Vein,
+            SmallOre_Gem.TCetiE_SmallOre);
         ItemStack[] Fake_T8_TCetiE_Gem_Checked = checkItemStack(Fake_T8_TCetiE_Gem);
         ItemStack[][] Fake_T8_TCetiE_Gem_Split = addSplitAggregateArray(
             Fake_T8_TCetiE_Gem_Checked,
@@ -798,11 +852,12 @@ public class FakeSingularityGemRecipes {
 
         // T8 - VegaB - VB
         ItemStack[] Fake_T8_VegaB_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
             Vein_Gem.Redstone_Vein,
-            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Gold_Infused_Gold_Vein,
+            Vein_Gem.Garnet_Sand_Nether_Star_Vein,
             Vein_Gem.Red_Garnet_Vein,
-            SmallOre_Gem.Diamond_SmallOre);
+            Vein_Gem.Lazurite_Lapis_Vein,
+            SmallOre_Gem.VegaB_SmallOre);
         ItemStack[] Fake_T8_VegaB_Gem_Checked = checkItemStack(Fake_T8_VegaB_Gem);
         ItemStack[][] Fake_T8_VegaB_Gem_Split = addSplitAggregateArray(Fake_T8_VegaB_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T8_VegaB_Gem_Split) {
@@ -820,7 +875,8 @@ public class FakeSingularityGemRecipes {
     public static void addFakeVoidGemRecipes_T9() {
         // T9 - Anubis - An
         ItemStack[] Fake_T9_Anubis_Gem = addCompressAggregateArray(
-            Vein_Gem.Olivine_Vein,
+            Vein_Gem.Sulfur_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
             Vein_Gem.Dolomite_Vein,
             Vein_Gem.Callisto_Ice_Vein,
             Vein_Gem.Mytryl_Vein);
@@ -842,32 +898,18 @@ public class FakeSingularityGemRecipes {
         // T9 - Horus - Ho
         ItemStack[] Fake_T9_Horus_Gem = addCompressAggregateArray(
             Vein_Gem.Magnesite_Vein,
-            Vein_Gem.Certus_Quartz_Vein,
-            Vein_Gem.Quartz_Vein,
-            Vein_Gem.Draconium_Vein,
-            Vein_Gem.Sapphire_Vein,
+            Vein_Gem.Quartzite_Quartz_Vein,
             Vein_Gem.Black_Plutonium_Vein,
-            Vein_Gem.Mytryl_Vein,
-            Vein_Gem.Nether_Star_Vein,
+            Vein_Gem.Garnet_Sand_Nether_Star_Vein,
             Vein_Gem.Red_Garnet_Vein,
             Vein_Gem.Oriharukon_Vein,
-            Vein_Gem.Quantium_Vein,
             Vein_Gem.Ledox_Vein,
-            SmallOre_Gem.Amethyst_SmallOre,
-            SmallOre_Gem.Red_Garnet_SmallOre,
-            SmallOre_Gem.Yellow_Garnet_SmallOre,
-            SmallOre_Gem.Tanzanite_SmallOre,
-            SmallOre_Gem.Opal_SmallOre,
-            SmallOre_Gem.Charged_Certus_Quartz_SmallOre,
-            SmallOre_Gem.Ruby_SmallOre,
-            SmallOre_Gem.Emerald_SmallOre,
-            SmallOre_Gem.Blue_Topaz_SmallOre,
-            SmallOre_Gem.Topaz_SmallOre,
-            SmallOre_Gem.Certus_Quartz_SmallOre,
-            SmallOre_Gem.Green_Sapphire_SmallOre,
-            SmallOre_Gem.Sapphire_SmallOre,
-            SmallOre_Gem.Jasper_SmallOre,
-            SmallOre_Gem.Olivine_SmallOre);
+            Vein_Gem.Certus_Quartz_Vein,
+            Vein_Gem.Draconium_Vein,
+            Vein_Gem.Almandine_Sapphire_Vein,
+            Vein_Gem.Mytryl_Vein,
+            Vein_Gem.Quantium_Vein,
+            SmallOre_Gem.Horus_SmallOre);
         ItemStack[] Fake_T9_Horus_Gem_Checked = checkItemStack(Fake_T9_Horus_Gem);
         ItemStack[][] Fake_T9_Horus_Gem_Split = addSplitAggregateArray(Fake_T9_Horus_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Horus_Gem_Split) {
@@ -884,7 +926,7 @@ public class FakeSingularityGemRecipes {
         // T9 - Maahes - Mh
         ItemStack[] Fake_T9_Maahes_Gem = addCompressAggregateArray(
             Vein_Gem.Callisto_Ice_Vein,
-            Vein_Gem.Platinum_Vein,
+            Vein_Gem.Sheldonite_Platinum_Vein,
             Vein_Gem.Quantium_Vein);
         ItemStack[] Fake_T9_Maahes_Gem_Checked = checkItemStack(Fake_T9_Maahes_Gem);
         ItemStack[][] Fake_T9_Maahes_Gem_Split = addSplitAggregateArray(
@@ -903,15 +945,15 @@ public class FakeSingularityGemRecipes {
 
         // T9 - MehenBelt - MB
         ItemStack[] Fake_T9_MehenBelt_Gem = addCompressAggregateArray(
-            Vein_Gem.Lapis_Vein,
-            Vein_Gem.Awakened_Draconium_Vein,
-            Vein_Gem.Olivine_Vein,
-            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Draconium_Awakened_Draconium_Vein,
+            Vein_Gem.Lazurite_Lapis_Vein,
+            Vein_Gem.Bentonite_Olivine_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
             Vein_Gem.Ilmenite_Vein,
-            Vein_Gem.Platinum_Vein,
-            Vein_Gem.Iridium_Vein,
-            SmallOre_Gem.Lapis_SmallOre,
-            SmallOre_Gem.Olivine_SmallOre);
+            Vein_Gem.Platinum_Palladium_Vein,
+            Vein_Gem.Sheldonite_Platinum_Vein,
+            Vein_Gem.Nickel_Iridium_Vein,
+            SmallOre_Gem.MehenBelt_SmallOre);
         ItemStack[] Fake_T9_MehenBelt_Gem_Checked = checkItemStack(Fake_T9_MehenBelt_Gem);
         ItemStack[][] Fake_T9_MehenBelt_Gem_Split = addSplitAggregateArray(
             Fake_T9_MehenBelt_Gem_Checked,
@@ -929,10 +971,10 @@ public class FakeSingularityGemRecipes {
 
         // T9 - Neper - Np
         ItemStack[] Fake_T9_Neper_Gem = addCompressAggregateArray(
+            Vein_Gem.Dilithium_Vein,
             Vein_Gem.Terra_Aer_Vein,
             Vein_Gem.Certus_Quartz_Vein,
             Vein_Gem.Quartzite_Vein,
-            Vein_Gem.Dilithium_Vein,
             Vein_Gem.Dolomite_Vein,
             Vein_Gem.Perditio_Ordo_Vein,
             Vein_Gem.Aqua_Ignis_Amber_Vein,
@@ -952,11 +994,12 @@ public class FakeSingularityGemRecipes {
 
         // T9 - Seth - Se
         ItemStack[] Fake_T9_Seth_Gem = addCompressAggregateArray(
-            Vein_Gem.Osmium_Vein,
+            Vein_Gem.Bastnasite_Monazite_Vein,
+            Vein_Gem.Nickel_Osmium_Vein,
             Vein_Gem.Samarium_Vein,
             Vein_Gem.Draconium_Vein,
-            Vein_Gem.Monazite_Vein,
-            Vein_Gem.Iridium_Vein);
+            Vein_Gem.Platinum_Palladium_Vein,
+            Vein_Gem.Nickel_Iridium_Vein);
         ItemStack[] Fake_T9_Seth_Gem_Checked = checkItemStack(Fake_T9_Seth_Gem);
         ItemStack[][] Fake_T9_Seth_Gem_Split = addSplitAggregateArray(Fake_T9_Seth_Gem_Checked, NEI_ItemOutput_Size);
         for (ItemStack[] tempItemStacks : Fake_T9_Seth_Gem_Split) {

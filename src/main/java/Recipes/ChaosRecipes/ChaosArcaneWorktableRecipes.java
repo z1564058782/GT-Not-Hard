@@ -1,45 +1,6 @@
 package Recipes.ChaosRecipes;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Automagy;
-import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GGFab;
-import static gregtech.api.enums.Mods.Gadomancy;
-import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.enums.Mods.OpenBlocks;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.ProjectRedIntegration;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.TaintedMagic;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicEnergistics;
-import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.enums.TierEU.RECIPE_LV;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -48,7 +9,64 @@ import static util.Utils.setStackSize;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import EnumList.EnumItemList.EcosystemList.PamsHarvestCraftList;
+import EnumList.EnumItemList.EnumGTList.GTBlockList;
+import EnumList.EnumItemList.EnumGTList.GTItemList;
+import EnumList.EnumItemList.EnumGTList.MultiMachineCasingList;
+import EnumList.EnumItemList.EnumGTList.MultiMachineControllerList;
+import EnumList.EnumItemList.EnumGTList.PipeList;
+import EnumList.EnumItemList.EnumGTList.ToolList;
+import EnumList.EnumItemList.EnumGTList.WireList;
 import EnumList.EnumItemList.EnumMagicList.EssenceList;
+import EnumList.EnumItemList.EnumMaterialList.BlockList;
+import EnumList.EnumItemList.EnumMaterialList.BoltList;
+import EnumList.EnumItemList.EnumMaterialList.CasingList;
+import EnumList.EnumItemList.EnumMaterialList.DensePlateList;
+import EnumList.EnumItemList.EnumMaterialList.FineWireList;
+import EnumList.EnumItemList.EnumMaterialList.FoilList;
+import EnumList.EnumItemList.EnumMaterialList.FrameBoxList;
+import EnumList.EnumItemList.EnumMaterialList.LongRodList;
+import EnumList.EnumItemList.EnumMaterialList.PlateList;
+import EnumList.EnumItemList.EnumMaterialList.RingList;
+import EnumList.EnumItemList.EnumMaterialList.RodList;
+import EnumList.EnumItemList.EnumMaterialList.RotorList;
+import EnumList.EnumItemList.EnumMaterialList.ScrewList;
+import EnumList.EnumItemList.EnumMaterialList.SmallGearList;
+import EnumList.EnumItemList.EnumMaterialList.SmallSpringList;
+import EnumList.EnumItemList.EnumMaterialList.SpringList;
+import EnumList.EnumItemList.EnumModList.Appliedenergistics2List;
+import EnumList.EnumItemList.EnumModList.AutomagyList;
+import EnumList.EnumItemList.EnumModList.BackpackList;
+import EnumList.EnumItemList.EnumModList.BloodMagicList;
+import EnumList.EnumItemList.EnumModList.BotaniaList;
+import EnumList.EnumItemList.EnumModList.BuildCraftList;
+import EnumList.EnumItemList.EnumModList.ElectroMagicToolsList;
+import EnumList.EnumItemList.EnumModList.EnderIOList;
+import EnumList.EnumItemList.EnumModList.EnderStorageList;
+import EnumList.EnumItemList.EnumModList.EtFuturumRequiemList;
+import EnumList.EnumItemList.EnumModList.ExtraBeesList;
+import EnumList.EnumItemList.EnumModList.ExtraUtilitieList;
+import EnumList.EnumItemList.EnumModList.ForestryList;
+import EnumList.EnumItemList.EnumModList.GadomancyList;
+import EnumList.EnumItemList.EnumModList.GoodGeneratorList;
+import EnumList.EnumItemList.EnumModList.IronChestTankList;
+import EnumList.EnumItemList.EnumModList.MagicBeesList;
+import EnumList.EnumItemList.EnumModList.MinecraftList;
+import EnumList.EnumItemList.EnumModList.NewHorizonsCoreModList;
+import EnumList.EnumItemList.EnumModList.ProjectList;
+import EnumList.EnumItemList.EnumModList.RailcraftList;
+import EnumList.EnumItemList.EnumModList.TaintedMagicList;
+import EnumList.EnumItemList.EnumModList.ThaumcraftList;
+import EnumList.EnumItemList.EnumModList.ThaumicBasesList;
+import EnumList.EnumItemList.EnumModList.ThaumicEnergisticsList;
+import EnumList.EnumItemList.EnumModList.ThaumicHorizonsList;
+import EnumList.EnumItemList.EnumModList.ThaumicTinkererList;
+import EnumList.EnumItemList.EnumModList.TwilightForestList;
+import EnumList.EnumItemList.EnumModList.WitcheryList;
+import EnumList.EnumItemList.EnumOreProductList.DustList;
+import EnumList.EnumItemList.EnumOreProductList.GemList;
+import EnumList.EnumItemList.EnumOreProductList.IngotList;
+import EnumList.EnumItemList.EnumTinkerConstructList.TinkerConstructList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -67,31 +85,6 @@ public class ChaosArcaneWorktableRecipes {
         .frontend(ArcaneWorktableOfChaosFrontend::new)
         .neiTransferRect(105, 40, 20, 16)
         .build();
-
-    public static final ItemStack Air_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 0);
-    public static final ItemStack Fire_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 1);
-    public static final ItemStack Water_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 2);
-    public static final ItemStack Earth_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 3);
-    public static final ItemStack Order_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 4);
-    public static final ItemStack Entropy_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 5);
-    public static final ItemStack Balanced_Shard = getModItem(Thaumcraft.ID, "ItemShard", 1L, 6);
-
-    public static final ItemStack Single_Use_File = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 0);
-    public static final ItemStack Single_Use_Wrench = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 1);
-    public static final ItemStack Single_Use_Crowbar = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 2);
-    public static final ItemStack Single_Use_Cutter = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 3);
-    public static final ItemStack Single_Use_Hammer = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 4);
-    public static final ItemStack Single_Use_Mallet = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 5);
-    public static final ItemStack Single_Use_Screwdriver = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 6);
-    public static final ItemStack Single_Use_Saw = getModItem(GGFab.ID, "gt.ggfab.d1", 1L, 7);
-
-    public static final ItemStack Air_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0);
-    public static final ItemStack Fire_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1);
-    public static final ItemStack Water_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2);
-    public static final ItemStack Earth_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 3);
-    public static final ItemStack Order_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4);
-    public static final ItemStack Entropy_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5);
-    public static final ItemStack Mixed_Crystal_Cluster = getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6);
 
     public static void addArcaneWorktableRecipes_test() {
         // test_1
@@ -153,10 +146,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "shardSliver", 2L, 2),
-                getModItem(Minecraft.ID, "clay_ball", 1L),
-                getModItem(Minecraft.ID, "dye", 1L, 0),
-                getModItem(Minecraft.ID, "slime_ball", 1L),
+                setStackSize(AutomagyList.Sliver_of_Water, 2),
+                setStackSize(MinecraftList.Clay_Ball, 1),
+                setStackSize(MinecraftList.Slimeball, 1),
+                setStackSize(MinecraftList.Ink_Sac, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -166,7 +159,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 1))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 2L, 0))
+            .itemOutputs(setStackSize(AutomagyList.Aqueous_Admixture, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -175,11 +168,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1L),
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(Railcraft.ID, "machine.beta", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 6),
+                setStackSize(BuildCraftList.Tank, 1),
+                setStackSize(EtFuturumRequiemList.Blast_Furnace, 1),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(RailcraftList.High_Pressure_Boiler_Tank, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -190,7 +183,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(Automagy.ID, "blockBoiler", 1L))
+            .itemOutputs(AutomagyList.Alchemical_Boiler)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -199,8 +192,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRedcrystal", 1L),
-                getModItem(Automagy.ID, "shardSliver", 8L, 1),
+                setStackSize(AutomagyList.Redcrystal, 1),
+                setStackSize(AutomagyList.Sliver_of_Fire, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -212,7 +205,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 10))
-            .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalAmp", 2L))
+            .itemOutputs(setStackSize(AutomagyList.Amplified_Redcrystal, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -221,9 +214,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRedcrystal", 4L),
-                getModItem(Automagy.ID, "shardSliver", 2L, 3),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 23542),
+                setStackSize(AutomagyList.Redcrystal, 4),
+                setStackSize(AutomagyList.Sliver_of_Earth, 2),
+                setStackSize(RodList.Terra_Rod, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -234,7 +227,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 10))
-            .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalDense", 2L))
+            .itemOutputs(setStackSize(AutomagyList.Dense_Redcrystal, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -243,8 +236,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRedcrystal", 1L),
-                getModItem(Automagy.ID, "shardSliver", 8L, 5),
+                setStackSize(AutomagyList.Redcrystal, 1),
+                setStackSize(AutomagyList.Sliver_of_Entropy, 8),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -256,7 +249,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalDim", 2L))
+            .itemOutputs(setStackSize(AutomagyList.Dim_Redcrystal, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -265,8 +258,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Air_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Air_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -279,7 +272,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 0))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Air, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -288,8 +281,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Fire_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Fire_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -302,7 +295,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 1))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Fire, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -311,8 +304,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Water_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Water_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -325,7 +318,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 2))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Water, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -334,8 +327,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Earth_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Earth_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -348,7 +341,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 3))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Earth, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -357,8 +350,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Order_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Order_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -371,7 +364,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 4))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Order, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -380,8 +373,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Entropy_Shard,
-                Single_Use_Hammer,
+                setStackSize(ThaumcraftList.Entropy_Shard, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -394,7 +387,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Automagy.ID, "shardSliver", 4L, 5))
+            .itemOutputs(setStackSize(AutomagyList.Sliver_of_Entropy, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -403,10 +396,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRedcrystal", 1L),
-                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1L, 26),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 6),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0),
+                setStackSize(AutomagyList.Redcrystal, 3),
+                setStackSize(ProjectList.Comparator, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 2),
+                setStackSize(ThaumcraftList.Air_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -418,7 +411,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(Automagy.ID, "blockRemoteComparator", 1L))
+            .itemOutputs(AutomagyList.Remote_Comparator)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -427,9 +420,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 11),
-                getModItem(Automagy.ID, "blockRedcrystal", 1L),
-                getModItem(Automagy.ID, "shardSliver", 4L, 0),
+                setStackSize(Appliedenergistics2List.Pure_Nether_Quartz_Crystal, 4),
+                setStackSize(AutomagyList.Redcrystal, 1),
+                setStackSize(AutomagyList.Sliver_of_Air, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -441,7 +434,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalRes", 2L))
+            .itemOutputs(setStackSize(AutomagyList.Resonating_Redcrystal, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -450,11 +443,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRedcrystal", 2L),
-                getModItem(Automagy.ID, "blockRedcrystalRes", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 6),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 3L, 10),
+                setStackSize(AutomagyList.Redcrystal, 2),
+                setStackSize(AutomagyList.Resonating_Redcrystal, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 2),
+                setStackSize(ThaumcraftList.Mirrored_Glass, 3),
+                setStackSize(ThaumcraftList.Quicksilver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -467,7 +460,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "blockRedcrystalMerc", 1L))
+            .itemOutputs(AutomagyList.Mercurial_Redcrystal)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -476,10 +469,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "avaricePearl", 1L, 0),
-                getModItem(Minecraft.ID, "glass", 3L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 6),
-                setStackSize(Water_Shard, 1),
+                setStackSize(AutomagyList.Avarice_Pearl, 1),
+                setStackSize(MinecraftList.Glass, 3),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 4),
+                setStackSize(ThaumcraftList.Water_Shard, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -491,7 +484,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
-            .itemOutputs(getModItem(Automagy.ID, "blockThirstyTank", 1L))
+            .itemOutputs(AutomagyList.Thirsty_Tank)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -500,10 +493,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 3L, 0),
-                getModItem(Minecraft.ID, "blaze_powder", 1L),
-                getModItem(Minecraft.ID, "obsidian", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
+                setStackSize(AutomagyList.Aqueous_Admixture, 3),
+                setStackSize(MinecraftList.Blaze_Powder, 1),
+                setStackSize(MinecraftList.Obsidian, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -514,7 +507,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 1))
+            .itemOutputs(AutomagyList.Glyph_of_the_Void)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -523,10 +516,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 4L, 0),
-                getModItem(Minecraft.ID, "blaze_powder", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
-                setStackSize(Entropy_Shard, 1),
+                setStackSize(AutomagyList.Aqueous_Admixture, 4),
+                setStackSize(MinecraftList.Blaze_Powder, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
+                setStackSize(ThaumcraftList.Entropy_Shard, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -537,7 +530,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 2))
+            .itemOutputs(AutomagyList.Glyph_of_Consumption)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -546,9 +539,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 4L, 0),
-                getModItem(Minecraft.ID, "hopper", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
+                setStackSize(AutomagyList.Aqueous_Admixture, 4),
+                setStackSize(MinecraftList.Hopper, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -561,7 +554,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 3))
+            .itemOutputs(AutomagyList.Glyph_of_Siphoning)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -570,10 +563,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "avaricePearl", 1L, 0),
-                getModItem(Automagy.ID, "glyph", 3L, 0),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
+                setStackSize(AutomagyList.Avarice_Pearl, 1),
+                setStackSize(AutomagyList.Aqueous_Admixture, 3),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
+                setStackSize(ThaumcraftList.Quicksilver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -584,7 +577,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 4))
+            .itemOutputs(AutomagyList.Glyph_of_Envy)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -593,9 +586,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 3L, 0),
-                getModItem(Minecraft.ID, "redstone", 4L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
+                setStackSize(AutomagyList.Aqueous_Admixture, 3),
+                setStackSize(MinecraftList.Redstone_Dust, 4),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -607,7 +600,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 5))
+            .itemOutputs(AutomagyList.Glyph_of_Temperance)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -616,10 +609,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 4L, 0),
-                getModItem(Minecraft.ID, "slime_ball", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
-                Order_Shard,
+                setStackSize(AutomagyList.Aqueous_Admixture, 4),
+                setStackSize(MinecraftList.Slimeball, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
+                setStackSize(ThaumcraftList.Order_Shard, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -630,7 +623,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 6))
+            .itemOutputs(AutomagyList.Glyph_of_Preservation)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -639,11 +632,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 4L, 0),
-                getModItem(Automagy.ID, "horizontal", 1L, 0),
+                setStackSize(AutomagyList.Aqueous_Admixture, 4),
+                setStackSize(AutomagyList.Shattered_Avarice_Pearl, 1),
                 getModItem(Minecraft.ID, "potion", 1L, 8226),
-                getModItem(Minecraft.ID, "speckled_melon", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
+                setStackSize(MinecraftList.Glistering_Melon, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -654,7 +647,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 7))
+            .itemOutputs(AutomagyList.Glyph_of_the_Guzzler)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -663,11 +656,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "glyph", 3L, 0),
-                getModItem(Minecraft.ID, "bucket", 2L),
-                getModItem(Minecraft.ID, "ender_pearl", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
-                Water_Shard,
+                setStackSize(AutomagyList.Aqueous_Admixture, 3),
+                setStackSize(MinecraftList.Bucket, 2),
+                setStackSize(MinecraftList.Ender_Pearl, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
+                setStackSize(ThaumcraftList.Water_Shard, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -678,7 +671,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 3))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 8))
+            .itemOutputs(AutomagyList.Glyph_of_the_Reservoir)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -687,11 +680,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "crystalEntityEye", 1L),
-                getModItem(Automagy.ID, "glyph", 3L, 0),
-                getModItem(Minecraft.ID, "leather", 2L),
-                getModItem(Minecraft.ID, "milk_bucket", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1L, 0),
+                setStackSize(AutomagyList.Aqueous_Admixture, 3),
+                setStackSize(AutomagyList.Oculo_Anima, 1),
+                setStackSize(MinecraftList.Leather, 2),
+                setStackSize(MinecraftList.Milk, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Slab, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -701,7 +694,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 3))
-            .itemOutputs(getModItem(Automagy.ID, "glyph", 1L, 9))
+            .itemOutputs(AutomagyList.Glyph_of_the_Bovine)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -711,9 +704,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "livingwood", 4L, 0),
-                getModItem(Minecraft.ID, "emerald", 1L),
-                getModItem(TwilightForest.ID, "item.steeleafIngot", 4L),
+                setStackSize(BotaniaList.Livingwood, 4),
+                setStackSize(MinecraftList.Emerald, 1),
+                setStackSize(TwilightForestList.Steeleaf, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -726,7 +719,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50))
-            .itemOutputs(getModItem(Botania.ID, "livingwood", 4L, 5))
+            .itemOutputs(setStackSize(BotaniaList.Glimmering_Livingwood, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -735,11 +728,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "livingrock", 4L, 0),
-                getModItem(Botania.ID, "manaResource", 1L, 0),
-                getModItem(Botania.ID, "manaResource", 1L, 1),
-                getModItem(Minecraft.ID, "brewing_stand", 2L),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 9),
+                setStackSize(BotaniaList.Livingrock, 4),
+                setStackSize(BotaniaList.Mana_Pearl, 1),
+                setStackSize(IngotList.Manasteel_Ingot, 1),
+                setStackSize(MinecraftList.Brewing_Stand, 2),
+                setStackSize(ThaumcraftList.Alchemical_Construct, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -750,7 +743,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 40))
-            .itemOutputs(getModItem(Botania.ID, "alchemyCatalyst", 1L))
+            .itemOutputs(BotaniaList.Alchemy_Catalyst)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -759,10 +752,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "alchemyCatalyst", 1L),
-                getModItem(Botania.ID, "livingrock", 4L, 0),
-                getModItem(Botania.ID, "manaResource", 2L, 8),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17202),
+                setStackSize(BotaniaList.Alchemy_Catalyst, 1),
+                setStackSize(BotaniaList.Livingrock, 4),
+                setStackSize(BotaniaList.Pixie_Dust, 2),
+                setStackSize(PlateList.Terrasteel_Plate, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -774,7 +767,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 150))
-            .itemOutputs(getModItem(Botania.ID, "conjurationCatalyst", 1L))
+            .itemOutputs(BotaniaList.Conjuration_Catalyst)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -783,10 +776,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "storage", 2L, 0),
-                getModItem(Botania.ID, "storage", 1L, 3),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17086),
-                setStackSize(Water_Shard, 4),
+                setStackSize(BotaniaList.Block_of_Mana_Diamond, 1),
+                setStackSize(BotaniaList.Block_of_Manasteel, 2),
+                setStackSize(PlateList.Gold_Plate, 2),
+                setStackSize(ThaumcraftList.Water_Shard, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -798,7 +791,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(Botania.ID, "pylon", 1L, 0))
+            .itemOutputs(BotaniaList.Mana_Pylon)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -807,10 +800,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "pylon", 1L, 0),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17202),
-                getModItem(TwilightForest.ID, "item.steeleafIngot", 2L),
-                setStackSize(Earth_Shard, 4),
+                setStackSize(BotaniaList.Mana_Pylon, 1),
+                setStackSize(PlateList.Terrasteel_Plate, 2),
+                setStackSize(TwilightForestList.Steeleaf, 2),
+                setStackSize(ThaumcraftList.Earth_Shard, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -822,170 +815,21 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 100))
-            .itemOutputs(getModItem(Botania.ID, "pylon", 1L, 1))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alfglass Flask"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "elfGlass", 7L),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 23471),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25))
-            .itemOutputs(getModItem(Botania.ID, "vial", 1L, 1))
+            .itemOutputs(BotaniaList.Natura_Pylon)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
 
         // BloodArsenal
-        // "Soul Compacter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 2L),
-                getModItem(BloodArsenal.ID, "blood_infused_iron_block", 2L),
-                getModItem(BloodArsenal.ID, "blood_infused_wood", 3L),
-                getModItem(BloodMagic.ID, "masterStone", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32644),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(BloodArsenal.ID, "compacter", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Life Imbued Helmet"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1L),
-                getModItem(TinkerConstruct.ID, "heavyPlate", 5L, 251),
-                Single_Use_Hammer,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_helmet", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Life Imbued Chestplate"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1L),
-                getModItem(TinkerConstruct.ID, "heavyPlate", 7L, 251),
-                Single_Use_Hammer,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 60))
-            .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_chestplate", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Life Imbued Leggings"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1L),
-                getModItem(TinkerConstruct.ID, "heavyPlate", 7L, 251),
-                Single_Use_Hammer,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
-            .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_leggings", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Life Imbued Boots"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "ItemBootsThaumium", 1L),
-                getModItem(TinkerConstruct.ID, "heavyPlate", 4L, 251),
-                Single_Use_Hammer,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodArsenal.ID, "life_imbued_boots", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
         // "Transparent Orb"
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_burned_string", 2L),
-                getModItem(BloodArsenal.ID, "blood_lamp", 1L),
-                getModItem(BloodArsenal.ID, "blood_stained_glass", 4L),
-                getModItem(BloodMagic.ID, "divinationSigil", 1L),
-                getModItem(BloodMagic.ID, "transcendentBloodOrb", 1L),
+                setStackSize(BloodMagicList.Blood_Burned_String, 2),
+                setStackSize(BloodMagicList.Blood_Lamp, 1),
+                setStackSize(BloodMagicList.Blood_Stained_Glass, 4),
+                setStackSize(BloodMagicList.Divination_Sigil, 1),
+                setStackSize(BloodMagicList.Transcendent_Blood_Orb, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -999,7 +843,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 175),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 175),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 175))
-            .itemOutputs(getModItem(BloodArsenal.ID, "transparent_orb", 1L))
+            .itemOutputs(BloodMagicList.Transparent_Orb)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1009,12 +853,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(EnderIO.ID, "itemMaterial", 2L, 5),
-                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 2L, 1),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 7),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 0),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 0),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
+                setStackSize(EnderIOList.Pulsating_Crystal, 2),
+                setStackSize(ExtraUtilitieList.Double_Compressed_Cobblestone, 2),
+                setStackSize(ThaumcraftList.Alchemical_Furnace, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 2),
+                setStackSize(ThaumcraftList.Crucible, 1),
+                setStackSize(WitcheryList.Attuned_Stone, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1027,7 +871,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(BloodMagic.ID, "Altar", 1L))
+            .itemOutputs(BloodMagicList.Altar_of_GregoriusTs_Blood)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1036,12 +880,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "enderDagger", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17019),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 23305),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27305),
-                getModItem(TinkerConstruct.ID, "strangeFood", 2L, 1),
-                Single_Use_Screwdriver,
+                setStackSize(BotaniaList.Soulscribe, 1),
+                setStackSize(PlateList.Aluminium_Plate, 2),
+                setStackSize(RodList.Steel_Rod, 1),
+                setStackSize(ScrewList.Steel_Screw, 2),
+                setStackSize(TinkerConstructList.Coagulated_Blood, 2),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1052,7 +896,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(BloodMagic.ID, "sacrificialKnife", 1L))
+            .itemOutputs(BloodMagicList.Sacrificial_Knife)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1061,9 +905,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_stone", 1L, 0),
-                getModItem(BloodMagic.ID, "blankSlate", 4L),
-                getModItem(Minecraft.ID, "obsidian", 4L),
+                setStackSize(BloodMagicList.Blank_Blood_Stone, 1),
+                setStackSize(BloodMagicList.Blank_Slate, 4),
+                setStackSize(MinecraftList.Obsidian, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1076,7 +920,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 1),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 6))
-            .itemOutputs(getModItem(BloodMagic.ID, "imperfectRitualStone", 1L))
+            .itemOutputs(BloodMagicList.Imperfect_Ritual_Stone)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1085,10 +929,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "demonicSlate", 3L),
-                getModItem(BloodMagic.ID, "imperfectRitualStone", 1L),
-                getModItem(BloodMagic.ID, "terrae", 1L),
-                getModItem(Minecraft.ID, "obsidian", 4L),
+                setStackSize(BloodMagicList.Demonic_Slate, 3),
+                setStackSize(BloodMagicList.Imperfect_Ritual_Stone, 1),
+                setStackSize(BloodMagicList.Terrae, 1),
+                setStackSize(MinecraftList.Obsidian, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1100,7 +944,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 24),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 18))
-            .itemOutputs(getModItem(BloodMagic.ID, "ritualStone", 1L))
+            .itemOutputs(BloodMagicList.Ritual_Stone)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1109,10 +953,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "simpleCatalyst", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17306),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17351),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 4L, 2),
+                setStackSize(BloodMagicList.Simple_Catalyst, 1),
+                setStackSize(PlateList.Rose_Gold_Plate, 2),
+                setStackSize(PlateList.Stainless_Steel_Plate, 2),
+                setStackSize(ThaumcraftList.Warded_Glass, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1127,34 +971,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 1))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Blood Letter's Pack"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1L),
-                getModItem(BloodMagic.ID, "reinforcedSlate", 6L),
-                getModItem(BloodMagic.ID, "sacrificialKnife", 1L),
-                getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodMagic.ID, "itemBloodPack", 1L))
+            .itemOutputs(BloodMagicList.Empty_Core)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1163,9 +980,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 4L, 25),
-                getModItem(BloodMagic.ID, "weakBloodShard", 4L),
-                getModItem(NewHorizonsCoreMod.ID, "DiamondFrameBox", 1L),
+                setStackSize(BloodMagicList.Obsidian_Brace, 4),
+                setStackSize(BloodMagicList.Weak_Blood_Shard, 4),
+                setStackSize(FrameBoxList.Diamond_Frame_Box, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1173,7 +990,6 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
@@ -1181,300 +997,18 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(BloodMagic.ID, "emptySocket", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Arcane Pedestal"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 2L, 0),
-                getModItem(BloodMagic.ID, "largeBloodStoneBrick", 2L),
-                getModItem(BloodMagic.ID, "weakBloodShard", 4L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 7),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 1),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockPedestal", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alchemic Calcinator"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2L, 15),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 7),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 3L, 2),
-                getModItem(Witchery.ID, "cauldron", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockAlchemicCalcinator", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alchemic Router"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 3L, 0),
-                getModItem(BloodMagic.ID, "reinforcedSlate", 2L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(BloodMagic.ID, "itemAttunedCrystal", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alchemic Cleanser"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 4L, 3),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 4L, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(BloodMagic.ID, "itemDestinationClearer", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alchemic Segmenter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 3L, 0),
-                getModItem(BloodMagic.ID, "mundanePowerCatalyst", 1L),
-                getModItem(Witchery.ID, "chalkheart", 2L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 15))
-            .itemOutputs(getModItem(BloodMagic.ID, "itemTankSegmenter", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Crystal Belljar"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 5L, 2),
-                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1L),
-                getModItem(Minecraft.ID, "wooden_pressure_plate", 2L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockCrystalBelljar", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Alchemy Relay"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1L, 4),
-                getModItem(BloodMagic.ID, "imbuedSlate", 4L),
-                getModItem(BloodArsenal.ID, "blood_burned_string", 4L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockReagentConduit", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Glyph of Rigid Stability"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_stone", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 2L, 1),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2L, 17),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 30),
-                getModItem(BloodMagic.ID, "crepitous", 2L),
-                getModItem(BloodMagic.ID, "magicales", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockStabilityGlyph", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Glyph of the Adept Enchanter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_stone", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 2L, 0),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2L, 17),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 28),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 30),
-                getModItem(BloodMagic.ID, "magicales", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Glyph of Arcane Potential"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(BloodArsenal.ID, "blood_stone", 1L, 4),
-                getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 2L, 6),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2L, 17),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 29),
-                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1L, 30),
-                getModItem(BloodMagic.ID, "magicales", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(BloodMagic.ID, "blockEnchantmentGlyph", 1L, 1))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // DraconicEvolution
-        // Disenchanter
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockgem1", 2L, 2),
-                getModItem(GregTech.ID, "gt.blockmetal7", 2L, 4),
-                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1L, 7),
-                getModItem(Minecraft.ID, "enchanted_book", 2L),
-                getModItem(Minecraft.ID, "enchanting_table", 1L),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(DraconicEvolution.ID, "dissEnchanter", 1L))
+            .itemOutputs(BloodMagicList.Empty_Socket)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
 
         // ElectroMagicTools
-        // "Duct Tape"
+        // "Feather Mesh"
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ElectroMagicTools.ID, "EMTItems", 1L, 9),
-                getModItem(Minecraft.ID, "feather", 8L),
+                setStackSize(ElectroMagicToolsList.Duct_Tape, 1),
+                setStackSize(MinecraftList.Feather, 8),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1488,7 +1022,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 2L, 7))
+            .itemOutputs(ElectroMagicToolsList.Feather_Mesh)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1498,11 +1032,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17506),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 22321),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32684),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32694),
-                getModItem(IronChests.ID, "BlockIronChest", 1L, 6),
+                setStackSize(DensePlateList.Dense_Enderium_Plate, 2),
+                setStackSize(GTItemList.Emitter_IV, 1),
+                setStackSize(GTItemList.Sensor_IV, 1),
+                setStackSize(IronChestTankList.Obsidian_Chest, 1),
+                setStackSize(PlateList.Nether_Star_Plate, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1514,7 +1048,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 100))
-            .itemOutputs(getModItem(EnderStorage.ID, "enderChest", 1L, 0))
+            .itemOutputs(EnderStorageList.Advanced_Ender_Chest)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1523,11 +1057,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 22321),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32684),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32694),
-                getModItem(GregTech.ID, "gt.metaitem.02", 4L, 22801),
-                getModItem(IronTanks.ID, "obsidianTank", 1L),
+                setStackSize(DensePlateList.Dense_Enderium_Plate, 2),
+                setStackSize(GTItemList.Emitter_IV, 1),
+                setStackSize(GTItemList.Sensor_IV, 1),
+                setStackSize(IronChestTankList.Obsidian_Tank, 1),
+                setStackSize(LongRodList.Long_Blaze_Rod, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1540,7 +1074,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 100))
-            .itemOutputs(getModItem(EnderStorage.ID, "enderChest", 1L, 4096))
+            .itemOutputs(EnderStorageList.Advanced_Ender_Tank)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1549,11 +1083,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Backpack.ID, "backpack", 1L, 200),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 22321),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32684),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32694),
-                getModItem(GregTech.ID, "gt.metaitem.02", 4L, 30500),
+                setStackSize(BackpackList.Big_Backpack, 1),
+                setStackSize(DensePlateList.Dense_Enderium_Plate, 2),
+                setStackSize(GTItemList.Emitter_IV, 1),
+                setStackSize(GTItemList.Sensor_IV, 1),
+                setStackSize(GemList.Exquisite_Diamond, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1567,7 +1101,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
-            .itemOutputs(getModItem(EnderStorage.ID, "enderPouch", 1L, 0))
+            .itemOutputs(EnderStorageList.Ender_Pouch)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1577,9 +1111,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "frameImpregnated", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 2805),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27032),
+                setStackSize(DustList.Clay_Dust, 4),
+                setStackSize(ForestryList.Impregnated_Frame, 1),
+                setStackSize(ScrewList.Iron_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1595,7 +1129,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
-            .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.clay", 1L))
+            .itemOutputs(ExtraBeesList.Healing_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1604,10 +1138,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "frameImpregnated", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27032),
-                getModItem(Minecraft.ID, "sugar", 2L),
-                getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 2L),
+                setStackSize(DustList.Cocoa_Powder, 2),
+                setStackSize(ForestryList.Impregnated_Frame, 1),
+                setStackSize(MinecraftList.Sugar, 2),
+                setStackSize(ScrewList.Iron_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1622,7 +1156,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 4))
-            .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.cocoa", 1L))
+            .itemOutputs(ExtraBeesList.Chocolate_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1631,9 +1165,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "frameImpregnated", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27305),
-                getModItem(Minecraft.ID, "iron_bars", 4L),
+                setStackSize(ForestryList.Impregnated_Frame, 1),
+                setStackSize(MinecraftList.Iron_Bars, 4),
+                setStackSize(ScrewList.Steel_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1649,7 +1183,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
-            .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.cage", 1L))
+            .itemOutputs(ExtraBeesList.Restraint_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1658,9 +1192,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ExtraBees.ID, "hiveFrame.cage", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(Minecraft.ID, "soul_sand", 4L),
+                setStackSize(ExtraBeesList.Restraint_Frame, 1),
+                setStackSize(MinecraftList.Soul_Sand, 4),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1676,7 +1210,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(ExtraBees.ID, "hiveFrame.soul", 1L))
+            .itemOutputs(ExtraBeesList.Soul_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1686,11 +1220,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17532),
-                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 18),
-                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 26),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 7),
+                setStackSize(PlateList.Enderpearl_Plate, 2),
+                setStackSize(PlateList.Thulium_Plate, 4),
+                setStackSize(ProjectList.Inverted_Magenta_Lamp, 1),
+                setStackSize(ProjectList.Inverted_Purple_Lamp, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1704,7 +1238,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2L, 14))
+            .itemOutputs(setStackSize(ExtraUtilitieList.Carved_Eminence_Stone, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1713,11 +1247,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(Minecraft.ID, "bookshelf", 1L),
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 2L, 1),
-                getModItem(TwilightForest.ID, "item.carminite", 2L),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(MinecraftList.Bookshelf, 1),
+                setStackSize(ThaumcraftList.Greatwood_Log, 2),
+                setStackSize(ThaumcraftList.Silverwood_Log, 2),
+                setStackSize(TwilightForestList.Carminite, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1731,7 +1265,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4L, 8))
+            .itemOutputs(setStackSize(ExtraUtilitieList.Magical_Wood, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1740,10 +1274,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Automagy.ID, "blockRunedObsidian", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17540),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 29351),
-                getModItem(IndustrialCraft2.ID, "itemDensePlates", 2L, 7),
+                setStackSize(AutomagyList.Runed_Obsidian, 1),
+                setStackSize(DensePlateList.Dense_Obsidian_Plate, 2),
+                setStackSize(FoilList.Rose_Gold_Foil, 2),
+                setStackSize(PlateList.Aer_Crystal_Plate, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1753,7 +1287,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 50))
-            .itemOutputs(getModItem(ExtraUtilities.ID, "angelBlock", 1L))
+            .itemOutputs(ExtraUtilitieList.Angel_Block)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1763,12 +1297,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "frameImpregnated", 1L),
-                getModItem(Forestry.ID, "honeydew", 1L),
-                getModItem(Forestry.ID, "propolis", 1L, 0),
-                getModItem(Forestry.ID, "propolis", 1L, 3),
-                getModItem(Forestry.ID, "royalJelly", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27305),
+                setStackSize(ForestryList.Honeydew, 1),
+                setStackSize(ForestryList.Impregnated_Frame, 1),
+                setStackSize(ForestryList.Propolis, 1),
+                setStackSize(ForestryList.Royal_Jelly, 1),
+                setStackSize(ForestryList.Silky_Propolis, 1),
+                setStackSize(ScrewList.Steel_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1781,7 +1315,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(Forestry.ID, "frameProven", 1L))
+            .itemOutputs(ForestryList.Proven_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1791,12 +1325,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockcasings3", 1L, 11),
-                getModItem(GregTech.ID, "gt.blockmachines", 2L, 5221),
-                getModItem(GregTech.ID, "gt.metaitem.02", 2L, 21970),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 14),
-                getModItem(Thaumcraft.ID, "blockTube", 2L, 3),
-                getModItem(ThaumicBases.ID, "thauminiteBlock", 1L),
+                setStackSize(BlockList.Thauminite_Block, 1),
+                setStackSize(MultiMachineCasingList.Filter_Machine_Casing, 1),
+                setStackSize(PipeList.Small_Nether_Star_Fluid_Pipe, 2),
+                setStackSize(RotorList.Void_Metal_Rotor, 2),
+                setStackSize(ThaumcraftList.Filtered_Essentia_Tube, 2),
+                setStackSize(ThaumcraftList.Flux_Scrubber, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1809,7 +1343,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 70),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 70),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 70))
-            .itemOutputs(getModItem(GoodGenerator.ID, "essentiaFilterCasing", 1L, 0))
+            .itemOutputs(GoodGeneratorList.Essentia_Filter_Casing)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1818,10 +1352,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.02", 2L, 18330),
-                getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 2L),
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1L, 12),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
+                setStackSize(CasingList.Thaumium_Casing, 2),
+                setStackSize(GTBlockList.Machine_Hull_HV, 1),
+                setStackSize(MinecraftList.Glass, 2),
+                setStackSize(ThaumcraftList.Salis_Mundus, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1833,46 +1367,21 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
-            .itemOutputs(getModItem(GoodGenerator.ID, "magicCasing", 1L, 0))
+            .itemOutputs(GoodGeneratorList.Magic_Casing)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
 
         // Gadomancy
-        // "Book of Knowledge"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Gadomancy.ID, "ItemAuraCore", 1L, 5),
-                getModItem(Minecraft.ID, "bookshelf", 2L),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 2L, 12),
-                getModItem(Thaumcraft.ID, "ItemGoggles", 1L),
-                getModItem(Thaumcraft.ID, "ItemInkwell", 2L),
-                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1L, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 35),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 35))
-            .itemOutputs(getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
         // "Essentia Condenser"
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Gadomancy.ID, "ItemAuraCore", 1L, 3),
-                getModItem(Gadomancy.ID, "ItemElement", 1L, 0),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 4L, 6),
+                setStackSize(GadomancyList.Aura_Core_Aqua, 1),
+                setStackSize(GadomancyList.Element_of_Darkness, 1),
+                setStackSize(ThaumcraftList.Directional_Essentia_Tube, 4),
+                setStackSize(ThaumcraftList.Greatwood_Log, 2),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1886,7 +1395,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 200),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 160),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 140))
-            .itemOutputs(getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1L))
+            .itemOutputs(GadomancyList.Essentia_Condenser)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1896,10 +1405,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11317),
-                getModItem(GregTech.ID, "gt.metaitem.02", 2L, 29500),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 16),
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 4L, 0),
+                setStackSize(GemList.Flawless_Diamond, 2),
+                setStackSize(IngotList.Osmiridium_Ingot, 1),
+                setStackSize(IngotList.Void_Metal_Ingot, 2),
+                setStackSize(ThaumicTinkererList.Ichor, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1914,7 +1423,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 128),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 128),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 128))
-            .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11978))
+            .itemOutputs(IngotList.Ichorium_Ingot)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1923,9 +1432,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockframes", 1L, 330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 6L, 17330),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 14),
+                setStackSize(FrameBoxList.Thaumium_Frame_Box, 1),
+                setStackSize(PlateList.Thaumium_Plate, 6),
+                setStackSize(ThaumcraftList.Salis_Mundus, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1938,7 +1447,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
-            .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings8", 1L, 8))
+            .itemOutputs(MultiMachineCasingList.Magical_Machine_Casing)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1947,9 +1456,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockcasings8", 1L, 8),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 3L, 2),
-                getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 5),
+                setStackSize(MultiMachineCasingList.Magical_Machine_Casing, 1),
+                setStackSize(ThaumcraftList.Wand_Recharge_Pedestal, 1),
+                setStackSize(ThaumcraftList.Warded_Glass, 3),
                 new Object[] { OrePrefixes.circuit.get(Materials.MV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1965,7 +1474,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1L, 13001))
+            .itemOutputs(MultiMachineControllerList.Research_Completer)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -1975,9 +1484,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(MagicBees.ID, "item.bloodSoakedFrame", 1L),
-                getModItem(BloodMagic.ID, "imbuedSlate", 4L),
-                getModItem(BloodMagic.ID, "bucketLife", 4L),
+                setStackSize(BloodMagicList.Bucket_of_Life, 4),
+                setStackSize(BloodMagicList.Imbued_Slate, 4),
+                setStackSize(MagicBeesList.Blood_Frame, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -1993,7 +1502,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(MagicBees.ID, "item.bloodFrame", 1L))
+            .itemOutputs(MagicBeesList.Sanguis_Artus)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2002,9 +1511,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(MagicBees.ID, "item.bloodSoakedFrame", 1L),
-                getModItem(BloodMagic.ID, "imbuedSlate", 4L),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 1),
+                setStackSize(BloodMagicList.Imbued_Slate, 4),
+                setStackSize(MagicBeesList.Blood_Frame, 1),
+                setStackSize(ThaumcraftList.Nitor, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2020,7 +1529,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(MagicBees.ID, "item.frenziedFrame", 1L))
+            .itemOutputs(MagicBeesList.Maddening_Frame_of_Frenzy)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2029,12 +1538,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "frameImpregnated", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27305),
-                getModItem(MagicBees.ID, "wax", 1L, 0),
-                getModItem(MagicBees.ID, "wax", 1L, 1),
-                getModItem(MagicBees.ID, "wax", 1L, 2),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
+                setStackSize(ForestryList.Impregnated_Frame, 1),
+                setStackSize(MagicBeesList.Amnesic_Wax, 1),
+                setStackSize(MagicBeesList.Magic_Wax, 1),
+                setStackSize(MagicBeesList.Soulful_Wax, 1),
+                setStackSize(ScrewList.Steel_Screw, 4),
+                setStackSize(ThaumcraftList.Enchanted_Fabric, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2047,7 +1556,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
-            .itemOutputs(getModItem(MagicBees.ID, "frameMagic", 1L))
+            .itemOutputs(MagicBeesList.Magic_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2056,10 +1565,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 7),
-                getModItem(MagicBees.ID, "miscResources", 3L, 18),
+                setStackSize(MagicBeesList.Air_Infused_Dust, 3),
+                setStackSize(MagicBeesList.Essence_of_False_Life, 1),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2074,7 +1583,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(MagicBees.ID, "frameGentle", 1L))
+            .itemOutputs(MagicBeesList.Gentle_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2083,10 +1592,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 10),
-                getModItem(MagicBees.ID, "miscResources", 3L, 22),
+                setStackSize(MagicBeesList.Essence_of_Everlasting_Durability, 1),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(MagicBeesList.Order_Infused_Dust, 3),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2101,7 +1610,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(MagicBees.ID, "frameResilient", 1L))
+            .itemOutputs(MagicBeesList.Resilient_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2110,10 +1619,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 8),
-                getModItem(MagicBees.ID, "miscResources", 3L, 23),
+                setStackSize(MagicBeesList.Chaos_Infused_Dust, 3),
+                setStackSize(MagicBeesList.Essence_of_a_Shallow_Grave, 1),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2128,7 +1637,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(MagicBees.ID, "frameNecrotic", 1L))
+            .itemOutputs(MagicBeesList.Necrotic_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2137,10 +1646,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 12),
-                getModItem(MagicBees.ID, "miscResources", 3L, 20),
+                setStackSize(MagicBeesList.Essence_of_Fickle_Permanence, 1),
+                setStackSize(MagicBeesList.Fire_Infused_Dust, 3),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2155,7 +1664,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(MagicBees.ID, "frameMetabolic", 1L))
+            .itemOutputs(MagicBeesList.Metabolic_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2164,10 +1673,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27019),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 9),
-                getModItem(MagicBees.ID, "miscResources", 3L, 21),
+                setStackSize(MagicBeesList.Earth_Infused_Dust, 3),
+                setStackSize(MagicBeesList.Essence_of_Lost_Time, 1),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(ScrewList.Aluminium_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2182,7 +1691,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(MagicBees.ID, "frameTemporal", 1L))
+            .itemOutputs(MagicBeesList.Temporal_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2191,10 +1700,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27306),
-                getModItem(MagicBees.ID, "frameMagic", 1L),
-                getModItem(MagicBees.ID, "miscResources", 1L, 11),
-                getModItem(MagicBees.ID, "miscResources", 3L, 19),
+                setStackSize(MagicBeesList.Essence_of_Scornful_Oblivion, 1),
+                setStackSize(MagicBeesList.Magic_Frame, 1),
+                setStackSize(MagicBeesList.Water_Infused_Dust, 3),
+                setStackSize(ScrewList.Stainless_Steel_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2209,7 +1718,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 32))
-            .itemOutputs(getModItem(MagicBees.ID, "frameOblivion", 1L))
+            .itemOutputs(MagicBeesList.Oblivion_Frame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2218,10 +1727,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 6L, 23330),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
-                Single_Use_Cutter,
-                Single_Use_Hammer,
+                setStackSize(RodList.Thaumium_Rod, 6),
+                setStackSize(ThaumcraftList.Enchanted_Fabric, 1),
+                setStackSize(ToolList.Single_Use_Cutter, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2233,7 +1742,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(MagicBees.ID, "item.thaumiumScoop", 1L))
+            .itemOutputs(MagicBeesList.Thaumium_Scoop)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2242,10 +1751,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 6L, 23970),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
-                Single_Use_Cutter,
-                Single_Use_Hammer,
+                setStackSize(RodList.Void_Metal_Rod, 6),
+                setStackSize(ThaumcraftList.Enchanted_Fabric, 1),
+                setStackSize(ToolList.Single_Use_Cutter, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2257,7 +1766,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(MagicBees.ID, "item.voidScoop", 1L))
+            .itemOutputs(MagicBeesList.Void_Scoop)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2266,11 +1775,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 23330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17330),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 2),
-                Single_Use_Hammer,
-                Single_Use_File,
+                setStackSize(IngotList.Thaumium_Ingot, 1),
+                setStackSize(PlateList.Thaumium_Plate, 1),
+                setStackSize(RodList.Thaumium_Rod, 2),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
+                setStackSize(ToolList.Single_Use_File, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2281,7 +1790,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(MagicBees.ID, "item.thaumiumGrafter", 1L))
+            .itemOutputs(MagicBeesList.Thaumium_Grafter)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2290,11 +1799,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 23970),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17970),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 16),
-                Single_Use_Hammer,
-                Single_Use_File,
+                setStackSize(IngotList.Void_Metal_Ingot, 1),
+                setStackSize(PlateList.Void_Metal_Plate, 1),
+                setStackSize(RodList.Void_Metal_Rod, 2),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
+                setStackSize(ToolList.Single_Use_File, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2305,72 +1814,21 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
-            .itemOutputs(getModItem(MagicBees.ID, "item.voidGrafter", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Enchanted Earth"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(MagicBees.ID, "miscResources", 1L, 7),
-                getModItem(Minecraft.ID, "dirt", 4L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1L))
+            .itemOutputs(MagicBeesList.Void_Grafter)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
 
         // Minecraft
-        // "Enchantment Table"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1L, 7),
-                getModItem(Minecraft.ID, "bookshelf", 1L),
-                getModItem(Minecraft.ID, "carpet", 1L, 14),
-                getModItem(Minecraft.ID, "diamond", 4L),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 0),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 1),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 45),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
-            .itemOutputs(getModItem(Minecraft.ID, "enchanting_table", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
         // "Brewing Stand"
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 23019),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27019),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 28019),
-                getModItem(GregTech.ID, "gt.metaitem.02", 2L, 22801),
-                getModItem(Minecraft.ID, "cauldron", 1L),
+                setStackSize(LongRodList.Long_Blaze_Rod, 2),
+                setStackSize(RingList.Aluminium_Ring, 2),
+                setStackSize(RodList.Aluminium_Rod, 2),
+                setStackSize(ScrewList.Aluminium_Screw, 2),
+                setStackSize(MinecraftList.Cauldron, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2384,33 +1842,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Minecraft.ID, "brewing_stand", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // OpenBlocks
-        // "Auto Enchantment Table"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17308),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17526),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27019),
-                getModItem(Minecraft.ID, "book", 1L),
-                getModItem(Minecraft.ID, "enchanting_table", 1),
-                getModItem(Minecraft.ID, "redstone_block", 1),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(OpenBlocks.ID, "autoenchantmenttable", 1L))
+            .itemOutputs(MinecraftList.Brewing_Stand)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2420,10 +1852,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17368),
-                getModItem(Minecraft.ID, "stick", 1L),
-                Single_Use_File,
-                Single_Use_Hammer,
+                setStackSize(PlateList.Shadow_Metal_Plate, 2),
+                setStackSize(MinecraftList.Stick, 1),
+                setStackSize(ToolList.Single_Use_File, 1),
+                setStackSize(ToolList.Single_Use_Hammer, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2434,7 +1866,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 45))
-            .itemOutputs(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1L))
+            .itemOutputs(TaintedMagicList.Shadowmetal_Sword)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2443,10 +1875,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17368),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17970),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
+                setStackSize(PlateList.Shadow_Metal_Plate, 2),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(PlateList.Void_Metal_Plate, 4),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2458,32 +1890,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(TaintedMagic.ID, "ItemMaterial", 1L, 6))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Crystal Dagger"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Forestry.ID, "oakStick", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 7),
-                Single_Use_Screwdriver,
-                Single_Use_Wrench,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 100),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 100),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
-            .itemOutputs(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1L))
+            .itemOutputs(TaintedMagicList.Thaumic_Alloy)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2493,10 +1900,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Air_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Air_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2507,7 +1914,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 0))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Air, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2516,10 +1923,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Earth_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Earth_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2530,7 +1937,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 1))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Earth, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2539,10 +1946,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Fire_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Fire_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2553,7 +1960,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 2))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Fire, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2562,10 +1969,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Water_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Water_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2576,7 +1983,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 3))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Water, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2585,10 +1992,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Order_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2598,7 +2005,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 4))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Order, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2607,10 +2014,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 6),
-                Entropy_Crystal_Cluster,
+                setStackSize(IngotList.Gold_Ingot, 4),
+                setStackSize(IngotList.Thaumium_Ingot, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
+                setStackSize(ThaumcraftList.Entropy_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2621,7 +2028,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1L, 5))
+            .itemOutputs(setStackSize(ThaumcraftList.Golem_Upgrade_Entropy, 9))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2630,9 +2037,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "mossy_cobblestone", 4L),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
+                setStackSize(MinecraftList.Mossy_Cobblestone, 4),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Salis_Mundus, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2645,7 +2052,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 14))
+            .itemOutputs(setStackSize(ThaumcraftList.Crusted_Stone, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2654,9 +2061,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "glowstone_dust", 4L),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 1),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 14),
+                setStackSize(MinecraftList.Glowstone_Dust, 4),
+                setStackSize(ThaumcraftList.Nitor, 4),
+                setStackSize(ThaumcraftList.Crusted_Stone, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2670,7 +2077,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 25))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockEldritch", 3L, 4))
+            .itemOutputs(setStackSize(ThaumcraftList.Glowing_Crusted_Stone, 3))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2679,9 +2086,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 6L, 6),
-                getModItem(Thaumcraft.ID, "blockEldritch", 2L, 4),
-                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 0),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 6),
+                setStackSize(ThaumcraftList.Glowing_Crusted_Stone, 2),
+                setStackSize(ThaumcraftList.Eldritch_Eye, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2694,7 +2101,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 6),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 6),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 12))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 6L, 11))
+            .itemOutputs(setStackSize(ThaumcraftList.Ancient_Stone, 6))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2703,12 +2110,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 23330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Minecraft.ID, "stick", 1L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 1L, 5),
-                Single_Use_File,
-                Single_Use_Screwdriver,
+                setStackSize(RodList.Thaumium_Rod, 2),
+                setStackSize(ScrewList.Thaumium_Screw, 2),
+                setStackSize(MinecraftList.Stick, 1),
+                setStackSize(ThaumcraftList.Quicksilver_Drop, 1),
+                setStackSize(ToolList.Single_Use_File, 1),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2717,7 +2124,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemResonator", 1L))
+            .itemOutputs(ThaumcraftList.Essentia_Resonator)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2726,12 +2133,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartzTypeLavender", 2L, 0),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32640),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 24086),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 2L, 7),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 1),
+                setStackSize(BotaniaList.Block_of_Lavender_Quartz, 2),
+                setStackSize(GTItemList.Electric_Piston_LV, 1),
+                setStackSize(SpringList.Gold_Spring, 1),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 2),
+                setStackSize(ThaumcraftList.Nitor, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2741,7 +2148,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 9))
+            .itemOutputs(ThaumcraftList.Node_Stabilizer)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2750,7 +2157,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Air_Shard, 7),
+                setStackSize(ThaumcraftList.Air_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2768,7 +2175,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0))
+            .itemOutputs(ThaumcraftList.Air_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2777,7 +2184,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Fire_Shard, 7),
+                setStackSize(ThaumcraftList.Fire_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2795,7 +2202,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1))
+            .itemOutputs(ThaumcraftList.Fire_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2804,7 +2211,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Water_Shard, 7),
+                setStackSize(ThaumcraftList.Water_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2822,7 +2229,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2))
+            .itemOutputs(ThaumcraftList.Water_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2831,7 +2238,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Earth_Shard, 7),
+                setStackSize(ThaumcraftList.Earth_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2849,7 +2256,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 3))
+            .itemOutputs(ThaumcraftList.Earth_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2858,7 +2265,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Order_Shard, 7),
+                setStackSize(ThaumcraftList.Order_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2876,7 +2283,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4))
+            .itemOutputs(ThaumcraftList.Order_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2885,7 +2292,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                setStackSize(Entropy_Shard, 7),
+                setStackSize(ThaumcraftList.Entropy_Shard, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2903,7 +2310,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5))
+            .itemOutputs(ThaumcraftList.Entropy_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2912,13 +2319,13 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                Air_Shard,
-                Fire_Shard,
-                Water_Shard,
-                Earth_Shard,
-                Order_Shard,
-                Entropy_Shard,
-                setStackSize(Balanced_Shard, 3),
+                setStackSize(ThaumcraftList.Air_Shard, 1),
+                setStackSize(ThaumcraftList.Fire_Shard, 1),
+                setStackSize(ThaumcraftList.Water_Shard, 1),
+                setStackSize(ThaumcraftList.Earth_Shard, 1),
+                setStackSize(ThaumcraftList.Order_Shard, 1),
+                setStackSize(ThaumcraftList.Entropy_Shard, 1),
+                setStackSize(ThaumcraftList.Balanced_Shard, 3),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2930,7 +2337,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6))
+            .itemOutputs(ThaumcraftList.Mixed_Crystal_Cluster)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2939,11 +2346,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(Railcraft.ID, "machine.beta", 1L, 3),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 7),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 0),
+                setStackSize(EtFuturumRequiemList.Blast_Furnace, 1),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(RailcraftList.Low_Pressure_Boiler_Tank, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 4),
+                setStackSize(ThaumcraftList.Crucible, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2954,7 +2361,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 0))
+            .itemOutputs(ThaumcraftList.Alchemical_Furnace)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2963,7 +2370,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 7L, 6),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 7),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -2976,7 +2383,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 1))
+            .itemOutputs(ThaumcraftList.Arcane_Pedestal)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -2985,9 +2392,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "ender_eye", 1L),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 7),
-                getModItem(Thaumcraft.ID, "blockCrystal", 4L, 6),
+                setStackSize(MinecraftList.Eye_of_Ender, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 4),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3003,7 +2410,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 40),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 40))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockStoneDevice", 1L, 2))
+            .itemOutputs(ThaumcraftList.Runic_Matrix)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3012,10 +2419,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 5L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27032),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 29514),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 14),
+                setStackSize(MinecraftList.Cauldron, 1),
+                setStackSize(ThaumcraftList.Salis_Mundus, 3),
+                new ItemStack(Blocks.air, 0),
+                new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3027,7 +2434,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 2),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 0))
+            .itemOutputs(ThaumcraftList.Crucible)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3036,10 +2443,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmachines", 2L, 5132),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17330),
-                getModItem(Railcraft.ID, "machine.beta", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 8),
+                setStackSize(PlateList.Thaumium_Plate, 4),
+                setStackSize(PipeList.Steel_Fluid_Pipe, 2),
+                setStackSize(RailcraftList.Low_Pressure_Boiler_Tank, 1),
+                setStackSize(ThaumcraftList.Vis_Filter, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3051,7 +2458,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 1))
+            .itemOutputs(ThaumcraftList.Arcane_Alembic)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3060,10 +2467,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmetal7", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockTube", 4L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 2L, 1),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 8),
+                setStackSize(BlockList.Block_of_Thaumium, 1),
+                setStackSize(ThaumcraftList.Essentia_Tube, 4),
+                setStackSize(ThaumcraftList.Essentia_Valve, 2),
+                setStackSize(ThaumcraftList.Vis_Filter, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3075,7 +2482,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 9))
+            .itemOutputs(ThaumcraftList.Alchemical_Construct)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3084,9 +2491,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17970),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 4L, 9),
-                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3),
+                setStackSize(PlateList.Void_Metal_Plate, 4),
+                setStackSize(ThaumcraftList.Alchemical_Construct, 4),
+                setStackSize(ThaumcraftList.Primordial_Pearl, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3100,31 +2507,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 32))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 4L, 3))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Mnemonic Matrix"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.02", 4L, 29514),
-                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 12))
+            .itemOutputs(setStackSize(ThaumcraftList.Advanced_Alchemical_Construct, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3133,10 +2516,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmachines", 1L, 5131),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27330),
-                getModItem(Minecraft.ID, "gold_nugget", 2L),
-                getModItem(Thaumcraft.ID, "ItemNugget", 2L, 5),
+                setStackSize(IngotList.Gold_Ingot, 2),
+                setStackSize(PipeList.Small_Steel_Fluid_Pipe, 9),
+                setStackSize(ScrewList.Thaumium_Screw, 36),
+                setStackSize(ThaumcraftList.Quicksilver, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3147,7 +2530,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 4L, 0))
+            .itemOutputs(setStackSize(ThaumcraftList.Essentia_Tube, 36))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3156,11 +2539,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17880),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 20330),
-                getModItem(Minecraft.ID, "lever", 1L),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
+                setStackSize(PlateList.Rubber_Sheet, 1),
+                setStackSize(ScrewList.Thaumium_Screw, 2),
+                setStackSize(SmallGearList.Small_Thaumium_Gear, 1),
+                setStackSize(MinecraftList.Lever, 1),
+                setStackSize(ThaumcraftList.Essentia_Tube, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3170,7 +2553,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 1))
+            .itemOutputs(ThaumcraftList.Essentia_Valve)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3179,11 +2562,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32641),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 1),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 9),
-                getModItem(Thaumcraft.ID, "blockTube", 2L, 0),
+                setStackSize(GTItemList.Electric_Piston_MV, 1),
+                setStackSize(ScrewList.Thaumium_Screw, 4),
+                setStackSize(ThaumcraftList.Alchemical_Construct, 1),
+                setStackSize(ThaumcraftList.Arcane_Alembic, 1),
+                setStackSize(ThaumcraftList.Essentia_Tube, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3194,7 +2577,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 16))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 2))
+            .itemOutputs(ThaumcraftList.Alchemical_Centrifuge)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3203,11 +2586,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 8),
-                Single_Use_File,
-                Single_Use_Screwdriver,
+                setStackSize(ScrewList.Thaumium_Screw, 2),
+                setStackSize(ThaumcraftList.Essentia_Tube, 1),
+                setStackSize(ThaumcraftList.Vis_Filter, 2),
+                setStackSize(ToolList.Single_Use_File, 1),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3217,7 +2600,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 3))
+            .itemOutputs(ThaumcraftList.Filtered_Essentia_Tube)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3226,11 +2609,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27330),
-                getModItem(Thaumcraft.ID, "blockTube", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 1),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 5),
-                getModItem(Thaumcraft.ID, "ItemEssence", 4L, 0),
+                setStackSize(ScrewList.Thaumium_Screw, 1),
+                setStackSize(ThaumcraftList.Essentia_Tube, 2),
+                setStackSize(ThaumcraftList.Essentia_Valve, 1),
+                setStackSize(ThaumcraftList.Glass_Phial, 4),
+                setStackSize(ThaumcraftList.Restricted_Essentia_Tube, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3240,7 +2623,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 4L, 4))
+            .itemOutputs(setStackSize(ThaumcraftList.Essentia_Buffer, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3249,8 +2632,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 28880),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
+                setStackSize(RingList.Rubber_Ring, 2),
+                setStackSize(ThaumcraftList.Essentia_Tube, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3263,7 +2646,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 16))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 5))
+            .itemOutputs(ThaumcraftList.Restricted_Essentia_Tube)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3271,9 +2654,9 @@ public class ChaosArcaneWorktableRecipes {
         // "Directional Essentia Tube"
         GTValues.RA.stdBuilder()
             .itemInputs(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27330),
-                getModItem(Minecraft.ID, "dye", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
+                setStackSize(ScrewList.Thaumium_Screw, 1),
+                setStackSize(GemList.Lapis_Lazuli, 1),
+                setStackSize(ThaumcraftList.Essentia_Tube, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3286,31 +2669,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 6))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Essentia Crystallizer"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Minecraft.ID, "dispenser", 1L),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 6),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 9),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockTube", 1L, 7))
+            .itemOutputs(ThaumcraftList.Directional_Essentia_Tube)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3319,8 +2678,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "string", 6L),
-                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 3L),
+                setStackSize(MinecraftList.String, 6),
+                setStackSize(PamsHarvestCraftList.Woven_Cotton, 3),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3337,7 +2696,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 7))
+            .itemOutputs(ThaumcraftList.Enchanted_Fabric)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3346,9 +2705,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17086),
-                getModItem(GregTech.ID, "gt.metaitem.02", 4L, 23086),
-                getModItem(Thaumcraft.ID, "blockWoodenDevice", 3L, 7),
+                setStackSize(PlateList.Gold_Plate, 2),
+                setStackSize(SmallSpringList.Small_Gold_Spring, 4),
+                setStackSize(ThaumcraftList.Silverwood_Planks, 3),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3360,7 +2719,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 3L, 8))
+            .itemOutputs(ThaumcraftList.Vis_Filter)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3369,9 +2728,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.98", 4L, 3),
-                getModItem(Minecraft.ID, "glass_pane", 1L),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 3),
+                setStackSize(MinecraftList.Ender_Pearl, 16),
+                setStackSize(MinecraftList.Glass_Pane, 1),
+                setStackSize(ThaumcraftList.Quicksilver, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3384,7 +2743,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 30))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 10))
+            .itemOutputs(ThaumcraftList.Mirrored_Glass)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3393,10 +2752,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Backpack.ID, "tannedLeather", 2L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32640),
-                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 4L, 0),
-                setStackSize(Air_Shard, 2),
+                setStackSize(BackpackList.Tanned_Leather, 2),
+                setStackSize(GTItemList.Electric_Piston_LV, 1),
+                setStackSize(ThaumcraftList.Greatwood_Slab, 4),
+                setStackSize(ThaumcraftList.Air_Shard, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3407,7 +2766,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1L, 0))
+            .itemOutputs(ThaumcraftList.Arcane_Bellows)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3416,10 +2775,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27086),
-                getModItem(GregTech.ID, "gt.metaitem.02", 5L, 19086),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
-                Single_Use_Screwdriver,
+                setStackSize(FineWireList.Fine_Gold_Wire, 5),
+                setStackSize(ScrewList.Gold_Screw, 2),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 1),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3431,7 +2790,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1L, 0))
+            .itemOutputs(ThaumcraftList.Mundane_Amulet)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3440,14 +2799,14 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 28351),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 0),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 1),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 2),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 3),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 4),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
+                setStackSize(RingList.Rose_Gold_Ring, 2),
+                setStackSize(ThaumcraftList.Air_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Earth_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Entropy_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Fire_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Water_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
 
@@ -3458,7 +2817,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1L, 15))
+            .itemOutputs(ThaumcraftList.Primal_Charm)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3467,7 +2826,7 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "obsidian", 4L),
+                setStackSize(MinecraftList.Obsidian, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3481,7 +2840,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 4),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 4))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 1))
+            .itemOutputs(setStackSize(ThaumcraftList.Obsidian_Tile, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3490,9 +2849,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17540),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17542),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 7),
+                setStackSize(PlateList.Aer_Crystal_Plate, 4),
+                setStackSize(PlateList.Terra_Crystal_Plate, 4),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3505,7 +2864,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 12),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 12),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 12))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 2))
+            .itemOutputs(setStackSize(ThaumcraftList.Paving_Stone_of_Travel, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3514,9 +2873,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17541),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17545),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 7),
+                setStackSize(PlateList.Ignis_Crystal_Plate, 4),
+                setStackSize(PlateList.Ordo_Crystal_Plate, 4),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3529,7 +2888,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 12),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 12),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 12))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 3))
+            .itemOutputs(setStackSize(ThaumcraftList.Paving_Stone_of_Warding, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3538,10 +2897,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 28086),
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 2L),
-                Single_Use_Screwdriver,
+                setStackSize(PamsHarvestCraftList.Hardened_Leather, 3),
+                setStackSize(RingList.Gold_Ring, 1),
+                setStackSize(ScrewList.Gold_Screw, 4),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3553,7 +2912,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1L))
+            .itemOutputs(ThaumcraftList.Mundane_Belt)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3562,10 +2921,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 26086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 28086),
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 5L),
-                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1L),
+                setStackSize(BoltList.Gold_Bolt, 2),
+                setStackSize(PamsHarvestCraftList.Hardened_Leather, 5),
+                setStackSize(RingList.Gold_Ring, 1),
+                setStackSize(ThaumcraftList.Mundane_Belt, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3577,7 +2936,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusPouch", 1L))
+            .itemOutputs(ThaumcraftList.Focus_Pouch)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3586,11 +2945,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmachines", 1L, 2000),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27305),
-                getModItem(NewHorizonsCoreMod.ID, "AluminiumBars", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 2L),
-                Single_Use_Screwdriver,
+                setStackSize(ScrewList.Steel_Screw, 4),
+                setStackSize(WireList.Red_Alloy_Wire_1x, 1),
+                setStackSize(NewHorizonsCoreModList.Steel_Bars, 2),
+                setStackSize(NewHorizonsCoreModList.Aluminium_Bars, 1),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3601,7 +2960,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 5))
+            .itemOutputs(ThaumcraftList.Item_Grate)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3610,10 +2969,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27330),
-                getModItem(Minecraft.ID, "chest", 1L),
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 5),
-                getModItem(Thaumcraft.ID, "ItemZombieBrain", 2L),
+                setStackSize(ScrewList.Thaumium_Screw, 4),
+                setStackSize(MinecraftList.Chest, 1),
+                setStackSize(ThaumcraftList.Item_Grate, 1),
+                setStackSize(ThaumcraftList.Zombie_Brain, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3626,7 +2985,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockChestHungry", 1L))
+            .itemOutputs(ThaumcraftList.Hungry_Chest)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3635,8 +2994,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "stone", 64L),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 6),
+                setStackSize(MinecraftList.Stone, 64),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3653,7 +3012,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 8),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 8))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 64L, 6))
+            .itemOutputs(setStackSize(ThaumcraftList.Arcane_Stone_Block, 64))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3662,10 +3021,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(Minecraft.ID, "glass", 4L),
-                getModItem(Thaumcraft.ID, "blockWoodenDevice", 2L, 6),
-                getModItem(Thaumcraft.ID, "FocusWarding"),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(MinecraftList.Glass, 4),
+                setStackSize(ThaumcraftList.Greatwood_Planks, 2),
+                setStackSize(ThaumcraftList.Wand_Focus_Warding, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3680,7 +3039,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 4L, 2))
+            .itemOutputs(setStackSize(ThaumcraftList.Warded_Glass, 4))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3689,8 +3048,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "string", 1L),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 4),
+                setStackSize(MinecraftList.String, 1),
+                setStackSize(ThaumcraftList.Magic_Tallow, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3705,7 +3064,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 3),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 1),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 1))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockCandle", 1L, 0))
+            .itemOutputs(ThaumcraftList.White_Tallow_Candle)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3714,12 +3073,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 23086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 28086),
-                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 2L),
-                getModItem(Thaumcraft.ID, "ItemThaumometer", 2L),
-                Single_Use_Screwdriver,
+                setStackSize(RingList.Gold_Ring, 2),
+                setStackSize(RodList.Gold_Rod, 1),
+                setStackSize(ScrewList.Gold_Screw, 1),
+                setStackSize(PamsHarvestCraftList.Hardened_Leather, 2),
+                setStackSize(ThaumcraftList.Thaumometer, 2),
+                setStackSize(ToolList.Single_Use_Screwdriver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3732,7 +3091,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGoggles", 1L))
+            .itemOutputs(ThaumcraftList.Goggles_of_Revealing)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3741,11 +3100,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17522),
-                getModItem(Minecraft.ID, "brick", 2L),
-                getModItem(Minecraft.ID, "netherbrick", 2L),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 1),
+                setStackSize(PlateList.Nether_Quartz_Plate, 2),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(MinecraftList.Brick, 2),
+                setStackSize(MinecraftList.Nether_Brick, 2),
+                setStackSize(ThaumcraftList.Nitor, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3756,31 +3115,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemGolemCore", 1L, 100))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Thaumonomicon
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_nugget", 4L),
-                getModItem(Minecraft.ID, "writable_book", 1L),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 7),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 9),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 2),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 2))
-            .itemOutputs(getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1L, 0))
+            .itemOutputs(ThaumcraftList.Golem_Animation_Core)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3790,8 +3125,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "gold_block", 8L),
-                getModItem(Thaumcraft.ID, "blockCrystal", 1L, 5),
+                setStackSize(BlockList.Block_of_Gold, 8),
+                setStackSize(ThaumcraftList.Entropy_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3803,7 +3138,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 5))
-            .itemOutputs(getModItem(ThaumicBases.ID, "oldGold", 8L))
+            .itemOutputs(setStackSize(BlockList.Ancient_Gold_Block, 8))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3812,9 +3147,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmetal7", 5L, 4),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
+                setStackSize(BlockList.Block_of_Thaumium, 5),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(ScrewList.Thaumium_Screw, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3830,7 +3165,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(ThaumicBases.ID, "thaumicAnvil", 1L, 0))
+            .itemOutputs(ThaumicBasesList.Thaumium_Anvil)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3840,10 +3175,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 44),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 5),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 6),
+                setStackSize(Appliedenergistics2List.Annihilation_Core, 1),
+                setStackSize(GemList.Amber, 2),
+                setStackSize(ThaumcraftList.Entropy_Crystal_Cluster, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3854,7 +3189,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "material", 1L, 0))
+            .itemOutputs(ThaumicEnergisticsList.Diffusion_Core)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3863,10 +3198,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 43),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 4),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 6),
+                setStackSize(Appliedenergistics2List.Formation_Core, 1),
+                setStackSize(GemList.Amber, 2),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3877,30 +3212,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "material", 1L, 1))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Essentia Level Emitter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 280),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 14),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 1))
+            .itemOutputs(ThaumicEnergisticsList.Coalescence_Core)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3909,12 +3221,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "tile.BlockVibrationChamber", 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17544),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17545),
-                getModItem(Thaumcraft.ID, "blockJar", 1L, 0),
-                getModItem(ThaumicEnergistics.ID, "material", 2L, 0),
-                getModItem(ThaumicEnergistics.ID, "part.base", 1L, 4),
+                setStackSize(Appliedenergistics2List.ME_Terminal, 1),
+                setStackSize(Appliedenergistics2List.Vibration_Chamber, 1),
+                setStackSize(PlateList.Ordo_Crystal_Plate, 2),
+                setStackSize(PlateList.Perditio_Crystal_Plate, 2),
+                setStackSize(ThaumcraftList.Warded_Jar, 1),
+                setStackSize(ThaumicEnergisticsList.Diffusion_Core, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3925,32 +3237,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 35))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.vibration.chamber", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Essentia Terminal"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 22),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 23),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 380),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17543),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 8),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 0),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 1),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 4))
+            .itemOutputs(ThaumicEnergisticsList.Essentia_Vibration_Chamber)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3959,12 +3246,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 240),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17545),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 2L, 2),
-                getModItem(Thaumcraft.ID, "blockJar", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 3),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 0),
+                setStackSize(Appliedenergistics2List.ME_Import_Bus, 1),
+                setStackSize(PlateList.Ordo_Crystal_Plate, 2),
+                setStackSize(ThaumcraftList.Filtered_Essentia_Tube, 1),
+                setStackSize(ThaumcraftList.Warded_Glass, 2),
+                setStackSize(ThaumcraftList.Warded_Jar, 2),
+                setStackSize(ThaumicEnergisticsList.Diffusion_Core, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -3975,7 +3262,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 0))
+            .itemOutputs(ThaumicEnergisticsList.Essentia_Import_Bus)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -3984,12 +3271,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 260),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17545),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 2L, 2),
-                getModItem(Thaumcraft.ID, "blockJar", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 3),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 0),
+                setStackSize(Appliedenergistics2List.ME_Export_Bus, 1),
+                setStackSize(PlateList.Ordo_Crystal_Plate, 2),
+                setStackSize(ThaumcraftList.Filtered_Essentia_Tube, 1),
+                setStackSize(ThaumcraftList.Warded_Glass, 2),
+                setStackSize(ThaumcraftList.Warded_Jar, 2),
+                setStackSize(ThaumicEnergisticsList.Coalescence_Core, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4000,7 +3287,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 3))
+            .itemOutputs(ThaumicEnergisticsList.Essentia_Export_Bus)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4009,12 +3296,12 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 220),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17543),
-                getModItem(Thaumcraft.ID, "blockJar", 2L, 0),
-                getModItem(Thaumcraft.ID, "blockTube", 1L, 3),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 0),
-                getModItem(ThaumicEnergistics.ID, "material", 1L, 1),
+                setStackSize(Appliedenergistics2List.ME_Storage_Bus, 1),
+                setStackSize(PlateList.Aqua_Crystal_Plate, 2),
+                setStackSize(ThaumcraftList.Filtered_Essentia_Tube, 2),
+                setStackSize(ThaumcraftList.Warded_Jar, 2),
+                setStackSize(ThaumicEnergisticsList.Coalescence_Core, 1),
+                setStackSize(ThaumicEnergisticsList.Diffusion_Core, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4025,7 +3312,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 2))
+            .itemOutputs(ThaumicEnergisticsList.Essentia_Storage_Bus)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4034,8 +3321,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumcraftList.Salis_Mundus, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.ULV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4044,12 +3331,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 0))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4058,8 +3344,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 0),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.LV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4068,12 +3354,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 1))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4082,8 +3367,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 1),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.MV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4092,12 +3377,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 2))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_16k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4106,8 +3390,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 2),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_16k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.HV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4116,12 +3400,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 40))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 3))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_64k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4130,8 +3413,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 3),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_64k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.EV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4140,12 +3423,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 5))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_256k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4154,8 +3436,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 5),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_256k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.IV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4164,12 +3446,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 60),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 60))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 6))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1024k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4178,8 +3459,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 6),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1024k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4188,12 +3469,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 70),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 70),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 70))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 7))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4096k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4202,8 +3482,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(NewHorizonsCoreMod.ID, "EngineeringProcessorEssentiaPulsatingCore"),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 4L, 7),
+                setStackSize(NewHorizonsCoreModList.Essentia_Processor_Tier_I, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4096k, 4),
                 new Object[] { OrePrefixes.circuit.get(Materials.UV), 4L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4212,12 +3492,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 80),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 80),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 80))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 8))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Component_16384k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4226,22 +3505,21 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 3L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17541),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17542),
-                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 2L, 2),
-                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0),
+                setStackSize(MinecraftList.Glass_Pane, 1),
+                setStackSize(PlateList.Ignis_Crystal_Plate, 1),
+                setStackSize(PlateList.Terra_Crystal_Plate, 2),
+                setStackSize(PlateList.Thaumium_Plate, 3),
+                setStackSize(ThaumcraftList.Warded_Glass, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.casing", 1L))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Housing)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4250,8 +3528,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 0),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4260,12 +3538,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 5),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 0))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_1k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4274,8 +3551,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4284,12 +3561,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 15))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 1))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_4k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4298,8 +3574,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 2),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_16k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4308,12 +3584,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 2))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_16k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4322,8 +3597,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 3),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_64k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4332,12 +3607,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 35))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 3))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_64k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4346,8 +3620,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 5),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_256k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4356,12 +3630,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 45),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 45),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 45))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 5))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_256k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4370,8 +3643,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 6),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_1024k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4380,12 +3653,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 55),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 55),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 55))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 6))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_1024k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4394,8 +3666,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 7),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_4096k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4404,12 +3676,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 65),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 65),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 65))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 7))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_4096k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4418,8 +3689,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(ThaumicEnergistics.ID, "storage.casing", 1L),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 8),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Housing, 1),
+                setStackSize(ThaumicEnergisticsList.ME_Essentia_Storage_Component_16384k, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4428,36 +3699,11 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 75))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1L, 8))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Essentia Cell Workbench"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1L),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 22),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17545),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27542),
-                getModItem(ThaumicEnergistics.ID, "storage.component", 1L, 0),
-                Single_Use_Screwdriver,
-                Single_Use_Wrench,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1L))
+            .itemOutputs(ThaumicEnergisticsList.ME_Essentia_Storage_Cell_16384k)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4466,17 +3712,16 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 460),
-                getModItem(GregTech.ID, "gt.metaitem.01", 3L, 17545),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27542),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 6),
+                setStackSize(Appliedenergistics2List.ME_Interface, 1),
+                setStackSize(Appliedenergistics2List.P2P_Tunnel_ME, 1),
+                setStackSize(PlateList.Ordo_Crystal_Plate, 3),
+                setStackSize(ScrewList.Terra_Screw, 2),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
@@ -4484,58 +3729,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "part.base", 1L, 6))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Knowledge Core"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 23),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17543),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17545),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 6),
-                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Knowledge Inscriber"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 400),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17544),
-                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1L, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1L))
+            .itemOutputs(ThaumicEnergisticsList.Vis_Relay_Interface)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4545,9 +3739,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17533),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 17970),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 15),
+                setStackSize(PlateList.Endereye_Plate, 4),
+                setStackSize(PlateList.Void_Metal_Plate, 4),
+                setStackSize(ThaumcraftList.Primal_Charm, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4563,7 +3757,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(ThaumicHorizons.ID, "planarConduit", 1L))
+            .itemOutputs(ThaumicHorizonsList.Planar_Conduit)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4573,10 +3767,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmachines", 2L, 5133),
-                getModItem(GregTech.ID, "gt.blockmachines", 2L, 5613),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32670),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 6),
+                setStackSize(GTItemList.Field_Generator_LV, 1),
+                setStackSize(PipeList.Large_Electrum_Item_Pipe, 2),
+                setStackSize(PipeList.Large_Steel_Fluid_Pipe, 2),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4588,7 +3782,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 32),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 32))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "interface", 1L))
+            .itemOutputs(ThaumicTinkererList.Transvector_Interface)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4597,11 +3791,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17303),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17351),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Thaumcraft.ID, "ItemGolemCore", 1L, 100),
+                setStackSize(PlateList.Electrum_Plate, 2),
+                setStackSize(PlateList.Rose_Gold_Plate, 2),
+                setStackSize(PlateList.Thaumium_Plate, 2),
+                setStackSize(ScrewList.Thaumium_Screw, 2),
+                setStackSize(ThaumcraftList.Golem_Animation_Core, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4612,7 +3806,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 35),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "animationTablet", 1L))
+            .itemOutputs(ThaumicTinkererList.Dynamism_Tablet)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4621,11 +3815,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 29317),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 29970),
-                getModItem(GregTech.ID, "gt.metaitem.02", 2L, 29500),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 7),
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 0),
+                setStackSize(FoilList.Osmiridium_Foil, 1),
+                setStackSize(FoilList.Void_Metal_Foil, 2),
+                setStackSize(GemList.Flawless_Diamond, 2),
+                setStackSize(ThaumcraftList.Enchanted_Fabric, 2),
+                setStackSize(ThaumicTinkererList.Ichor, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4639,7 +3833,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 125),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 125),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 125))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "kamiResource", 2L, 1))
+            .itemOutputs(setStackSize(ThaumicTinkererList.Ichorcloth, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4648,10 +3842,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17532),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 10),
-                getModItem(ThaumicTinkerer.ID, "interface", 1L),
+                setStackSize(PlateList.Enderpearl_Plate, 2),
+                setStackSize(ScrewList.Thaumium_Screw, 2),
+                setStackSize(ThaumcraftList.Mirrored_Glass, 2),
+                setStackSize(ThaumicTinkererList.Transvector_Interface, 1),
                 new Object[] { OrePrefixes.circuit.get(Materials.LV), 2L },
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4663,7 +3857,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 24),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 48),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 48))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "dislocator", 1L))
+            .itemOutputs(ThaumicTinkererList.Transvector_Dislocator)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4673,9 +3867,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 29086),
-                getModItem(Minecraft.ID, "string", 4L),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 7),
+                setStackSize(FoilList.Gold_Foil, 4),
+                setStackSize(MinecraftList.String, 4),
+                setStackSize(ThaumcraftList.Enchanted_Fabric, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4691,7 +3885,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 10))
-            .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1L, 25))
+            .itemOutputs(TinkerConstructList.Silky_Cloth)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4700,10 +3894,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "golden_apple", 1L, 0),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 0),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 1),
-                getModItem(TinkerConstruct.ID, "materials", 1L, 8),
+                setStackSize(MinecraftList.Golden_Apple, 1),
+                setStackSize(TinkerConstructList.Empty_Canister, 1),
+                setStackSize(TinkerConstructList.Miniature_Red_Heart, 1),
+                setStackSize(TinkerConstructList.Necrotic_Bone, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4718,7 +3912,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 2))
+            .itemOutputs(TinkerConstructList.Red_Heart_Canister)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4727,10 +3921,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "golden_apple", 2L, 1),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 0),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 3),
-                getModItem(TinkerConstruct.ID, "materials", 2L, 8),
+                setStackSize(MinecraftList.Golden_Apple_Enchanting, 2),
+                setStackSize(TinkerConstructList.Empty_Canister, 1),
+                setStackSize(TinkerConstructList.Miniature_Yellow_Heart, 1),
+                setStackSize(TinkerConstructList.Necrotic_Bone, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4745,7 +3939,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 100),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 100))
-            .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 4))
+            .itemOutputs(TinkerConstructList.Yellow_Heart_Canister)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4754,10 +3948,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(TinkerConstruct.ID, "diamondApple", 3L, 0),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 0),
-                getModItem(TinkerConstruct.ID, "heartCanister", 1L, 5),
-                getModItem(TinkerConstruct.ID, "materials", 4L, 8),
+                setStackSize(TinkerConstructList.Empty_Canister, 1),
+                setStackSize(TinkerConstructList.Jeweled_Apple, 3),
+                setStackSize(TinkerConstructList.Miniature_Green_Heart, 1),
+                setStackSize(TinkerConstructList.Necrotic_Bone, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4772,7 +3966,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 200),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 200),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 200))
-            .itemOutputs(getModItem(TinkerConstruct.ID, "heartCanister", 1L, 6))
+            .itemOutputs(TinkerConstructList.Green_Heart_Canister)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4782,9 +3976,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "manaResource", 1L, 2),
-                getModItem(Minecraft.ID, "lava_bucket", 1L),
-                getModItem(Witchery.ID, "ingredient", 1L, 34),
+                setStackSize(BotaniaList.Mana_Diamond, 1),
+                setStackSize(MinecraftList.Lava_Bucket, 1),
+                setStackSize(WitcheryList.Whiff_of_Magic, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4798,179 +3992,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 30))
-            .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 10))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Candelabra
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17032),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 23032),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 23330),
-                getModItem(Thaumcraft.ID, "blockCandle", 3L, 0),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 5),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 0))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Chalice
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 3L, 17086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 29086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 29330),
-                getModItem(Minecraft.ID, "gold_ingot", 1L),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 15),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 5))
-            .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 1))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Fume Filter"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(Minecraft.ID, "glass_pane", 6L),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 16),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 16),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 16))
-            .itemOutputs(getModItem(Witchery.ID, "ingredient", 1L, 73))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Kettle
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17305),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Minecraft.ID, "cauldron", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 1L),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                Single_Use_Hammer,
-                Single_Use_Screwdriver,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 40),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 40),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 40),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 40))
-            .itemOutputs(getModItem(Witchery.ID, "kettle", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Spinning Wheel"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 23306),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27306),
-                getModItem(Minecraft.ID, "item_frame", 3L),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                Single_Use_Screwdriver,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 60),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 60))
-            .itemOutputs(getModItem(Witchery.ID, "spinningwheel", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Distillery
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 2L, 5141),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 22330),
-                getModItem(Witchery.ID, "cauldron", 1L),
-                getModItem(Witchery.ID, "ingredient", 1L, 10),
-                getModItem(Witchery.ID, "ingredient", 2L, 27),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 80),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 80),
-                setStackSize(EssenceList.Crystallized_Essence_Aqua, 80),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 80),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 80))
-            .itemOutputs(getModItem(Witchery.ID, "distilleryidle", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Witch's Cauldron"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "blockMetalDevice", 1L, 0),
-                getModItem(Witchery.ID, "ingredient", 1L, 153),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 2),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 2),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 2))
-            .itemOutputs(getModItem(Witchery.ID, "cauldron", 1L))
+            .itemOutputs(WitcheryList.Attuned_Stone)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -4979,9 +4001,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Witchery.ID, "ingredient", 2L, 17),
-                getModItem(Witchery.ID, "ingredient", 6L, 18),
-                getModItem(Witchery.ID, "ingredient", 1L, 37),
+                setStackSize(WitcheryList.Gypsum, 2),
+                setStackSize(WitcheryList.Tear_of_the_Goddess, 1),
+                setStackSize(WitcheryList.Wood_Ash, 6),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -4995,7 +4017,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(Witchery.ID, "chalkritual", 2L))
+            .itemOutputs(setStackSize(WitcheryList.Ritual_Chalk, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5004,9 +4026,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 23086),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4L, 27086),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30500),
+                setStackSize(GemList.Exquisite_Diamond, 1),
+                setStackSize(RodList.Gold_Rod, 4),
+                setStackSize(ScrewList.Gold_Screw, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5019,7 +4041,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50))
-            .itemOutputs(getModItem(Witchery.ID, "circletalisman", 1L, 0))
+            .itemOutputs(WitcheryList.Circle_Talisman)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5028,11 +4050,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 6),
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4L, 7),
-                getModItem(Witchery.ID, "ingredient", 1L, 31),
-                getModItem(Witchery.ID, "ingredient", 1L, 32),
-                getModItem(Witchery.ID, "witchlog", 2L, 0),
+                setStackSize(ThaumcraftList.Arcane_Stone_Block, 1),
+                setStackSize(ThaumcraftList.Arcane_Stone_Bricks, 4),
+                setStackSize(WitcheryList.Breath_of_the_Goddess, 1),
+                setStackSize(WitcheryList.Exhale_of_the_Horned_One, 1),
+                setStackSize(WitcheryList.Rowan_Wood, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5043,79 +4065,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20))
-            .itemOutputs(getModItem(Witchery.ID, "altar", 2L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // Arthana
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 27330),
-                getModItem(Minecraft.ID, "emerald", 1L),
-                getModItem(TinkerConstruct.ID, "handGuard", 2L, 16),
-                getModItem(TinkerConstruct.ID, "knifeBlade", 1L, 202),
-                getModItem(TinkerConstruct.ID, "toolRod", 1L, 6),
-                Single_Use_Hammer,
-                Single_Use_Screwdriver,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Perditio, 15))
-            .itemOutputs(getModItem(Witchery.ID, "arthana", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // "Fume Funnel"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.blockmetal6", 2L, 13),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17330),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17811),
-                getModItem(Minecraft.ID, "lava_bucket", 1L),
-                getModItem(NewHorizonsCoreMod.ID, "SteelBars", 2L),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
-                setStackSize(EssenceList.Crystallized_Essence_Ignis, 30))
-            .itemOutputs(getModItem(Witchery.ID, "fumefunnel", 1L))
-            .duration(SECONDS)
-            .eut(RECIPE_LV)
-            .addTo(addArcaneWorktableRecipes);
-
-        // WitchingGadgets
-        // "Spinning Wheel"
-        GTValues.RA.stdBuilder()
-            .itemInputs(
-                // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 23889),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 27305),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 20330),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 22889),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 31889),
-                getModItem(Thaumcraft.ID, "blockTable", 3L, 0),
-                Single_Use_Screwdriver,
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-                new ItemStack(Blocks.air, 0),
-
-                // Crystallized Essence
-                setStackSize(EssenceList.Crystallized_Essence_Aer, 10),
-                setStackSize(EssenceList.Crystallized_Essence_Ordo, 10))
-            .itemOutputs(getModItem(WitchingGadgets.ID, "WG_WoodenDevice", 1L, 0))
+            .itemOutputs(setStackSize(WitcheryList.Altar, 2))
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5125,8 +4075,8 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17880),
-                getModItem(Minecraft.ID, "glass_pane", 7L),
+                setStackSize(MinecraftList.Glass_Pane, 7),
+                setStackSize(PlateList.Rubber_Sheet, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5138,7 +4088,7 @@ public class ChaosArcaneWorktableRecipes {
 
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 2))
-            .itemOutputs(getModItem(Thaumcraft.ID, "blockJar", 1L, 0))
+            .itemOutputs(ThaumcraftList.Warded_Jar)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5148,11 +4098,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 11),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 3),
-                getModItem(Thaumcraft.ID, "blockCrystal", 2L, 4),
-                getModItem(Thaumcraft.ID, "blockTable", 1L, 15),
-                setStackSize(Balanced_Shard, 2),
+                setStackSize(Appliedenergistics2List.Pure_Nether_Quartz_Crystal, 2),
+                setStackSize(ThaumcraftList.Arcane_Worktable, 1),
+                setStackSize(ThaumcraftList.Balanced_Shard, 2),
+                setStackSize(ThaumcraftList.Earth_Crystal_Cluster, 2),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 2),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5165,7 +4115,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 10),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(Automagy.ID, "focusCrafting", 1L))
+            .itemOutputs(AutomagyList.Wand_Focus_Crafting)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5174,10 +4124,10 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 2702),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 2728),
-                getModItem(Minecraft.ID, "pumpkin", 4L),
-                getModItem(Thaumcraft.ID, "FocusFrost", 1),
+                setStackSize(DustList.Crushed_Ice, 2),
+                setStackSize(DustList.Snow_Powder, 2),
+                setStackSize(MinecraftList.Pumpkin, 4),
+                setStackSize(ThaumcraftList.Wand_Focus_Frost, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5189,7 +4139,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 25),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 25))
-            .itemOutputs(getModItem(ElectroMagicTools.ID, "ChristmasFocus", 1L))
+            .itemOutputs(ElectroMagicToolsList.Wand_Focus_Kris_tmas)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5198,11 +4148,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(TaintedMagic.ID, "ItemMaterial", 2L, 3),
-                getModItem(TaintedMagic.ID, "ItemMaterial", 2L, 4),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 3),
                 setStackSize(EssenceList.Ethereal_Essence_Aer, 2),
-                setStackSize(Mixed_Crystal_Cluster, 2),
+                setStackSize(TaintedMagicList.Fluxed_Shard, 2),
+                setStackSize(TaintedMagicList.Warped_Shard, 2),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 2),
+                setStackSize(ThaumcraftList.Quicksilver, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5213,7 +4163,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1L))
+            .itemOutputs(TaintedMagicList.Wand_Focus_Vis_Shard)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5222,9 +4172,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartz", 4L, 2),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 24502),
-                setStackSize(Fire_Crystal_Cluster, 4),
+                setStackSize(BotaniaList.Blaze_Quartz, 4),
+                setStackSize(GTItemList.Ruby_Lens, 1),
+                setStackSize(ThaumcraftList.Fire_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5237,7 +4187,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusFire", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Fire)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5246,9 +4196,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartz", 4L, 6),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 24528),
-                setStackSize(Air_Crystal_Cluster, 4),
+                setStackSize(BotaniaList.Sunny_Quartz, 4),
+                setStackSize(GTItemList.Yellow_Garnet_Lens, 1),
+                setStackSize(ThaumcraftList.Air_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5261,7 +4211,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusShock", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Shock)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5270,9 +4220,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartz", 4L, 1),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 24500),
-                setStackSize(Water_Crystal_Cluster, 4),
+                setStackSize(BotaniaList.Mana_Quartz, 4),
+                setStackSize(GTItemList.Diamond_Lens, 1),
+                setStackSize(ThaumcraftList.Water_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5285,7 +4235,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusFrost", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Frost)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5294,9 +4244,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartz", 4L, 3),
-                getModItem(NewHorizonsCoreMod.ID, "ReinforcedGlassLense", 1L),
-                setStackSize(Mixed_Crystal_Cluster, 4),
+                setStackSize(BotaniaList.Lavender_Quartz, 4),
+                setStackSize(GTItemList.Reinforced_Glass_Lens, 1),
+                setStackSize(ThaumcraftList.Mixed_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5304,13 +4254,12 @@ public class ChaosArcaneWorktableRecipes {
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
-
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Aer, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 30))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusTrade", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Equal_Trade)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5319,9 +4268,9 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Botania.ID, "quartz", 4L, 6),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 24501),
-                setStackSize(Earth_Crystal_Cluster, 4),
+                setStackSize(BotaniaList.Sunny_Quartz, 4),
+                setStackSize(GTItemList.Emerald_Lens, 1),
+                setStackSize(ThaumcraftList.Earth_Crystal_Cluster, 4),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5334,7 +4283,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Terra, 30),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 20),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 20))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusExcavation", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Excavation)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5343,14 +4292,14 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.02", 1L, 30500),
-                getModItem(Thaumcraft.ID, "ItemResource", 1L, 15),
-                Air_Crystal_Cluster,
-                Fire_Crystal_Cluster,
-                Water_Crystal_Cluster,
-                Earth_Crystal_Cluster,
-                Order_Crystal_Cluster,
-                Entropy_Crystal_Cluster,
+                setStackSize(GemList.Exquisite_Diamond, 2),
+                setStackSize(ThaumcraftList.Primal_Charm, 1),
+                setStackSize(ThaumcraftList.Air_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Earth_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Entropy_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Fire_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Order_Crystal_Cluster, 1),
+                setStackSize(ThaumcraftList.Water_Crystal_Cluster, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 // Crystallized Essence
@@ -5360,7 +4309,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Aqua, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 75),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 75))
-            .itemOutputs(getModItem(Thaumcraft.ID, "FocusPrimal", 1L))
+            .itemOutputs(ThaumcraftList.Wand_Focus_Primal)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5369,11 +4318,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(GregTech.ID, "gt.metaitem.01", 2L, 17321),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1L, 17506),
-                getModItem(Thaumcraft.ID, "blockMirror", 1, 0),
-                getModItem(Thaumcraft.ID, "FocusPortableHole", 1),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
+                setStackSize(PlateList.Enderium_Plate, 2),
+                setStackSize(PlateList.Nether_Star_Plate, 1),
+                setStackSize(ThaumcraftList.Magic_Mirror, 1),
+                setStackSize(ThaumcraftList.Salis_Mundus, 4),
+                setStackSize(ThaumcraftList.Wand_Focus_Portable_Hole, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5383,7 +4332,7 @@ public class ChaosArcaneWorktableRecipes {
                 // Crystallized Essence
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 50),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 50))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1L))
+            .itemOutputs(ThaumicTinkererList.Wand_Focus_Ender_Rift)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);
@@ -5392,11 +4341,11 @@ public class ChaosArcaneWorktableRecipes {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 // Arcane Worktable Item 0-9
-                getModItem(Minecraft.ID, "furnace", 1L),
-                getModItem(Thaumcraft.ID, "ItemResource", 2L, 1),
-                getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
-                getModItem(Thaumcraft.ID, "FocusExcavation", 1L),
-                getModItem(Thaumcraft.ID, "FocusFire", 1L),
+                setStackSize(MinecraftList.Furnace, 1),
+                setStackSize(ThaumcraftList.Nitor, 2),
+                setStackSize(ThaumcraftList.Salis_Mundus, 4),
+                setStackSize(ThaumcraftList.Wand_Focus_Excavation, 1),
+                setStackSize(ThaumcraftList.Wand_Focus_Fire, 1),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
                 new ItemStack(Blocks.air, 0),
@@ -5408,7 +4357,7 @@ public class ChaosArcaneWorktableRecipes {
                 setStackSize(EssenceList.Crystallized_Essence_Ignis, 16),
                 setStackSize(EssenceList.Crystallized_Essence_Ordo, 12),
                 setStackSize(EssenceList.Crystallized_Essence_Perditio, 12))
-            .itemOutputs(getModItem(ThaumicTinkerer.ID, "focusSmelt", 1L))
+            .itemOutputs(ThaumicTinkererList.Wand_Focus_Efreets_Flame)
             .duration(SECONDS)
             .eut(RECIPE_LV)
             .addTo(addArcaneWorktableRecipes);

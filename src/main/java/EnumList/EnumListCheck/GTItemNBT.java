@@ -1,9 +1,8 @@
-package Item;
+package EnumList.EnumListCheck;
 
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GTModHandler.getModItem;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import util.ItemUtils;

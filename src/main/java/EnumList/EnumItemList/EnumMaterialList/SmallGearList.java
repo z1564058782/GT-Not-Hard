@@ -1,6 +1,7 @@
 package EnumList.EnumItemList.EnumMaterialList;
 
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GTModHandler.getModItem;
 
@@ -367,5 +368,57 @@ public class SmallGearList {
     public static final ItemStack Small_Ichorium_Gear = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 20978);
     public static final ItemStack Small_Cosmic_Neutronium_Gear = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 20982);
     public static final ItemStack Small_Flerovium_Gear = getModItem(GregTech.ID, "gt.metaitem.02", 1L, 20984);
+    public static final ItemStack Small_Hypogen_Gear = getModItem(GTPlusPlus.ID, "itemSmallGearHypogen", 1L);
 
+    public static final ItemStack[] SmallGear_List = new ItemStack[] { Small_Ruthenium_Gear, Small_Rhodium_Gear,
+        Small_Rhodium_Plated_Palladium_Gear, Small_Tiberium_Gear, Small_Ruridit_Gear,
+        Small_High_Durability_Compound_Steel_Gear, Small_Ademic_Steel_Gear, Small_Atomic_Separation_Catalyst_Gear,
+        Small_Extremely_Unstable_Naquadah_Gear, Small_Zircaloy_4_Gear, Small_Zircaloy_2_Gear, Small_Incoloy_903_Gear,
+        Small_Adamantium_Alloy_Gear, Small_MAR_M200_Steel_Gear, Small_MAR_Ce_M200_Steel_Gear, Small_Signalium_Gear,
+        Small_Lumiium_Gear, Small_Artherium_Sn_Gear, Small_Tanmolyium_Beta_C_Gear, Small_Dalisenite_Gear,
+        Small_Hikarium_Gear, Small_Tairitsu_Gear, Small_Precious_Metals_Alloy_Gear, Small_Enriched_Naquadah_Alloy_Gear,
+        Small_Metastable_Oganesson_Gear, Small_Shirabon_Gear, Small_Mu_metal_Gear, Small_Carbon_Gear,
+        Small_Aluminium_Gear, Small_Titanium_Gear, Small_Chrome_Gear, Small_Iron_Gear, Small_Cobalt_Gear,
+        Small_Nickel_Gear, Small_Copper_Gear, Small_Strontium_Gear, Small_Palladium_Gear, Small_Silver_Gear,
+        Small_Tin_Gear, Small_Neodymium_Gear, Small_Tungsten_Gear, Small_Osmium_Gear, Small_Iridium_Gear,
+        Small_Platinum_Gear, Small_Gold_Gear, Small_Lead_Gear, Small_Bismuth_Gear, Small_Purified_Tengam_Gear,
+        Small_Attuned_Tengam_Gear, Small_Neutronium_Gear, Small_Netherite_Gear, Small_Universium_Gear,
+        Small_Eternity_Gear, Small_Magmatter_Gear, Small_Six_Phased_Copper_Gear, Small_Mellion_Gear, Small_Creon_Gear,
+        Small_Hot_Proto_Halkonite_Steel_Gear, Small_Proto_Halkonite_Steel_Gear, Small_Hot_Exo_Halkonite_Steel_Gear,
+        Small_Exo_Halkonite_Steel_Gear, Small_Hexanite_Gear, Small_Shijima_Gear, Small_Churitsu_Gear,
+        Small_Manasteel_Gear, Small_Terrasteel_Gear, Small_Elven_Elementium_Gear, Small_Livingrock_Gear,
+        Small_Gaia_Spirit_Gear, Small_Livingwood_Gear, Small_Dreamwood_Gear, Small_Stone_Gear, Small_Bronze_Gear,
+        Small_Brass_Gear, Small_Invar_Gear, Small_Electrum_Gear, Small_Cast_Iron_Gear, Small_Steel_Gear,
+        Small_Stainless_Steel_Gear, Small_Magnalium_Gear, Small_Tungstensteel_Gear, Small_Osmiridium_Gear,
+        Small_Sunnarium_Gear, Small_Adamantium_Gear, Small_Fluxed_Electrum_Gear, Small_Enderium_Gear,
+        Small_Infused_Gold_Gear, Small_Naquadah_Gear, Small_Naquadah_Alloy_Gear, Small_Thaumium_Gear,
+        Small_Black_Steel_Gear, Small_Damascus_Steel_Gear, Small_Ironwood_Gear, Small_Steeleaf_Gear,
+        Small_Cobalt_Brass_Gear, Small_Ultimet_Gear, Small_Annealed_Copper_Gear, Small_Fiery_Steel_Gear,
+        Small_Red_Steel_Gear, Small_Blue_Steel_Gear, Small_Sterling_Silver_Gear, Small_Rose_Gold_Gear,
+        Small_Black_Bronze_Gear, Small_Bismuth_Bronze_Gear, Small_Magnetic_Iron_Gear, Small_Magnetic_Steel_Gear,
+        Small_Magnetic_Neodymium_Gear, Small_Vanadium_Gallium_Gear, Small_Knightmetal_Gear, Small_Tin_Alloy_Gear,
+        Small_Dark_Steel_Gear, Small_Electrical_Steel_Gear, Small_Energetic_Alloy_Gear, Small_Vibrant_Alloy_Gear,
+        Small_Shadow_Metal_Gear, Small_Conductive_Iron_Gear, Small_Tungstencarbide_Gear, Small_Vanadiumsteel_Gear,
+        Small_HSSG_Gear, Small_HSSE_Gear, Small_HSSS_Gear, Small_Pulsating_Iron_Gear, Small_Soularium_Gear,
+        Small_Enderium_Base_Gear, Small_Redstone_Alloy_Gear, Small_Ardite_Gear, Small_Reinforced_Gear,
+        Small_Galgadorian_Gear, Small_Enhanced_Galgadorian_Gear, Small_Manyullyn_Gear, Small_Mytryl_Gear,
+        Small_Black_Plutonium_Gear, Small_Callisto_Ice_Gear, Small_Ledox_Gear, Small_Quantium_Gear,
+        Small_Duralumin_Gear, Small_Oriharukon_Gear, Small_Infinity_Catalyst_Gear, Small_Infinity_Gear,
+        Small_Mysterious_Crystal_Gear, Small_Magnetic_Samarium_Gear, Small_Obzinite_Gear, Small_End_Steel_Gear,
+        Small_Clay_Compound_Gear, Small_Crystalline_Alloy_Gear, Small_Melodic_Alloy_Gear, Small_Stellar_Alloy_Gear,
+        Small_Crystalline_Pink_Slime_Gear, Small_Energetic_Silver_Gear, Small_Vivid_Alloy_Gear, Small_Epoxid_Gear,
+        Small_Silicone_Rubber_Gear, Small_Polycaprolactam_PCL_Gear, Small_Polytetrafluoroethylene_PTFE_Gear,
+        Small_Alduorite_Gear, Small_Rubracium_Gear, Small_Vulcanite_Gear, Small_Diamond_Gear, Small_Force_Gear,
+        Small_Vinteum_Gear, Small_Aer_Gear, Small_Ignis_Gear, Small_Terra_Gear, Small_Aqua_Gear, Small_Perditio_Gear,
+        Small_Ordo_Gear, Small_TPV_Alloy_Gear, Small_Transcendent_Metal_Gear,
+        Small_Magnetohydrodynamically_Constrained_Star_Matter_Gear, Small_White_Dwarf_Matter_Gear,
+        Small_Black_Dwarf_Matter_Gear, Small_SpaceTime_Gear, Small_Polybenzimidazole_PBI_Gear,
+        Small_Fiber_Reinforced_Epoxy_Resin_Gear, Small_Nickel_Zinc_Ferrite_Gear, Small_Polyphenylene_Sulfide_PPS_Gear,
+        Small_Styrene_Butadiene_Rubber_SBR_Gear, Small_Polystyrene_PS_Gear, Small_Polyvinyl_Chloride_PVC_Gear,
+        Small_Kevlar_Gear, Small_Endium_Gear, Small_Wood_Gear, Small_Basalt_Gear, Small_Marble_Gear,
+        Small_Black_Granite_Gear, Small_Red_Granite_Gear, Small_Construction_Foam_Gear, Small_Trinium_Gear,
+        Small_Polyethylene_PE_Gear, Small_Rubber_Gear, Small_Desh_Gear, Small_Sealed_Wood_Gear, Small_Chrysotile_Gear,
+        Small_Realgar_Gear, Small_Ceruclase_Gear, Small_Orichalcum_Gear, Small_Void_Metal_Gear, Small_Draconium_Gear,
+        Small_Awakened_Draconium_Gear, Small_Blood_Infused_Iron_Gear, Small_Ichorium_Gear, Small_Cosmic_Neutronium_Gear,
+        Small_Flerovium_Gear };
 }

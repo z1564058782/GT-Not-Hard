@@ -140,6 +140,8 @@ public class OreProductDustList {
         DustList.Aluminium_Dust, DustList.Beryllium_Dust, DustList.Emerald_Dust, DustList.Raw_Silicon_Dust,
         DustList.Silicon_Dioxide_Dust };
 
+    public static final ItemStack[] Carbon_Ore_Product_Dust = new ItemStack[] { DustList.Carbon_Dust };
+
     public static final ItemStack[] Magnesium_Ore_Product_Dust = new ItemStack[] { DustList.Iron_Dust,
         DustList.Magnesium_Dust, DustList.Olivine_Dust, DustList.Raw_Silicon_Dust, DustList.Silicon_Dioxide_Dust };
 
@@ -814,6 +816,8 @@ public class OreProductDustList {
     public static final ItemStack[] Talc_Product_Dust = new ItemStack[] { DustList.Magnesium_Dust,
         DustList.Raw_Silicon_Dust, DustList.Talc };
 
+    public static final ItemStack[] Trona_Ore_Product_Dust = new ItemStack[] { DustList.Trona_Dust };
+
     public static final ItemStack[] Barite_Ore_Product_Dust = new ItemStack[] { DustList.Barite_Dust,
         DustList.Barium_Dust, DustList.Sulfur_Dust };
 
@@ -863,6 +867,8 @@ public class OreProductDustList {
 
     public static final ItemStack[] Realgar_Ore_Product_Dust = new ItemStack[] { DustList.Arsenic_Dust,
         DustList.Realgar_Dust, DustList.Sulfur_Dust };
+
+    public static final ItemStack[] Dolomite_Ore_Product_Dust = new ItemStack[] { DustList.Dolomite_Dust };
 
     public static final ItemStack[] Wollastonite_Ore_Product_Dust = new ItemStack[] { DustList.Calcium_Dust,
         DustList.Raw_Silicon_Dust, DustList.Silicon_Dioxide_Dust, DustList.Wollastonite_Dust };
@@ -1141,6 +1147,9 @@ public class OreProductDustList {
 
     public static final ItemStack[] Lautarite_Ore_Product_Dust = new ItemStack[] { DustList.Calcium_Dust,
         DustList.Iodine_Dust_BartWorks, DustList.Lautarite_Dust };
+
+    public static final ItemStack[] Lafossaite_Ore_Product_Dust = new ItemStack[] { DustList.Lafossaite_Dust,
+        DustList.Thallium_Dust };
 
     public static final ItemStack[] Demicheleite_Br_Ore_Product_Dust = new ItemStack[] { DustList.Bismuth_Dust,
         DustList.Demicheleite_Br_Dust, DustList.Sulfur_Dust };

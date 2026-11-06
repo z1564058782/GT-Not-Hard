@@ -1,119 +1,127 @@
 package Recipes.SingularityRecipes_VoidGem;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.util.GTModHandler.getModItem;
+import static util.AggregateItemStackArray.addCompressAggregateArray;
 
 import net.minecraft.item.ItemStack;
 
-import gregtech.api.enums.Materials;
+import EnumList.EnumItemList.EnumOreProductList.OreProductGemList;
 
 public class SmallOre_Gem {
 
-    // Amber Ore
-    public static final ItemStack[] Amber_SmallOre = new ItemStack[] {
-        //
-        Materials.Amber.getGems(1) };
+    // Overworld SmallOre
+    public static final ItemStack[] Overworld_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Coal_Ore_Product_Gem,
+        OreProductGemList.Lapis_Ore_Product_Gem,
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Amethyst Ore
-    public static final ItemStack[] Amethyst_SmallOre = new ItemStack[] {
-        //
-        Materials.Amethyst.getGems(1) };
+    // Nether SmallOre
+    public static final ItemStack[] Nether_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Bismutite_Ore_Product_Gem,
+        OreProductGemList.Nether_Quartz_Ore_Product_Gem,
+        OreProductGemList.Certus_Quartz_Ore_Product_Gem);
 
-    // Blue Topaz Ore
-    public static final ItemStack[] Blue_Topaz_SmallOre = new ItemStack[] {
-        //
-        Materials.BlueTopaz.getGems(1) };
+    // Twilight SmallOre
+    public static final ItemStack[] Twilight_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Emerald_Ore_Product_Gem,
+        OreProductGemList.Ruby_Ore_Product_Gem,
+        OreProductGemList.Green_Sapphire_Ore_Product_Gem,
+        OreProductGemList.Olivine_Ore_Product_Gem,
+        OreProductGemList.Topaz_Ore_Product_Gem,
+        OreProductGemList.Tanzanite_Ore_Product_Gem,
+        OreProductGemList.Amethyst_Ore_Product_Gem,
+        OreProductGemList.Opal_Ore_Product_Gem,
+        OreProductGemList.Jasper_Ore_Product_Gem,
+        OreProductGemList.Blue_Topaz_Ore_Product_Gem,
+        OreProductGemList.Amber_Ore_Product_Gem,
+        OreProductGemList.Spinel_Ore_Product_Gem,
+        OreProductGemList.Red_Garnet_Ore_Product_Gem,
+        OreProductGemList.Yellow_Garnet_Ore_Product_Gem,
+        OreProductGemList.Jade_Ore_Product_Gem);
 
-    // Certus Quartz Ore
-    public static final ItemStack[] Certus_Quartz_SmallOre = new ItemStack[] {
-        //
-        Materials.CertusQuartz.getGems(1) };
+    // Deimos SmallOre
+    public static final ItemStack[] Deimos_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Charged Certus Quartz Ore
-    public static final ItemStack[] Charged_Certus_Quartz_SmallOre = new ItemStack[] {
-        //
-        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 1) };
+    // Phobos SmallOre
+    public static final ItemStack[] Phobos_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem);
 
-    // Coal Ore
-    public static final ItemStack[] Coal_SmallOre = new ItemStack[] {
-        //
-        Materials.Coal.getGems(1),
-        //
-        Materials.Lignite.getGems(1) };
+    // Asteroids SmallOre
+    public static final ItemStack[] Asteroids_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Diamond Ore
-    public static final ItemStack[] Diamond_SmallOre = new ItemStack[] {
-        //
-        Materials.Diamond.getGems(1) };
+    // Callisto SmallOre
+    public static final ItemStack[] Callisto_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Emerald Ore
-    public static final ItemStack[] Emerald_SmallOre = new ItemStack[] {
-        //
-        Materials.Emerald.getGems(1) };
+    // Ceres SmallOre
+    public static final ItemStack[] Ceres_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Firestone Ore
-    public static final ItemStack[] Firestone_SmallOre = new ItemStack[] {
-        //
-        getModItem(Railcraft.ID, "firestone.raw", 1L) };
+    // Ganymede SmallOre
+    public static final ItemStack[] Ganymede_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem);
 
-    // Green Sapphire Ore
-    public static final ItemStack[] Green_Sapphire_SmallOre = new ItemStack[] {
-        //
-        Materials.GreenSapphire.getGems(1) };
+    // Io SmallOre
+    public static final ItemStack[] Io_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem,
+        OreProductGemList.Firestone_Ore_Product_Gem);
 
-    // Jasper Ore
-    public static final ItemStack[] Jasper_SmallOre = new ItemStack[] {
-        //
-        Materials.Jasper.getGems(1) };
+    // Venus SmallOre
+    public static final ItemStack[] Venus_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem,
+        OreProductGemList.Firestone_Ore_Product_Gem);
 
-    // Lapis Ore
-    public static final ItemStack[] Lapis_SmallOre = new ItemStack[] {
-        //
-        Materials.Lapis.getGems(1) };
+    // Enceladus SmallOre
+    public static final ItemStack[] Enceladus_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem);
 
-    // Nether Quartz Ore
-    public static final ItemStack[] Nether_Quartz_SmallOre = new ItemStack[] {
-        //
-        Materials.Quartz.getGems(1) };
+    // Oberon SmallOre
+    public static final ItemStack[] Oberon_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem,
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Olivine Ore
-    public static final ItemStack[] Olivine_SmallOre = new ItemStack[] {
-        //
-        Materials.Olivine.getGems(1) };
+    // Titan SmallOre
+    public static final ItemStack[] Titan_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Opal Ore
-    public static final ItemStack[] Opal_SmallOre = new ItemStack[] {
-        //
-        Materials.Opal.getGems(1) };
+    // Triton SmallOre
+    public static final ItemStack[] Triton_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Red Garnet Ore
-    public static final ItemStack[] Red_Garnet_SmallOre = new ItemStack[] {
-        //
-        Materials.GarnetRed.getGems(1) };
+    // Kuiperbelt SmallOre
+    public static final ItemStack[] Kuiperbelt_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Ruby Ore
-    public static final ItemStack[] Ruby_SmallOre = new ItemStack[] {
-        //
-        Materials.Ruby.getGems(1) };
+    // TCetiE SmallOre
+    public static final ItemStack[] TCetiE_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem);
 
-    // Sapphire Ore
-    public static final ItemStack[] Sapphire_SmallOre = new ItemStack[] {
-        //
-        Materials.Sapphire.getGems(1) };
+    // VegaB SmallOre
+    public static final ItemStack[] VegaB_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Diamond_Ore_Product_Gem);
 
-    // Tanzanite Ore
-    public static final ItemStack[] Tanzanite_SmallOre = new ItemStack[] {
-        //
-        Materials.Tanzanite.getGems(1) };
+    // Horus SmallOre
+    public static final ItemStack[] Horus_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Emerald_Ore_Product_Gem,
+        OreProductGemList.Ruby_Ore_Product_Gem,
+        OreProductGemList.Green_Sapphire_Ore_Product_Gem,
+        OreProductGemList.Olivine_Ore_Product_Gem,
+        OreProductGemList.Topaz_Ore_Product_Gem,
+        OreProductGemList.Tanzanite_Ore_Product_Gem,
+        OreProductGemList.Amethyst_Ore_Product_Gem,
+        OreProductGemList.Opal_Ore_Product_Gem,
+        OreProductGemList.Jasper_Ore_Product_Gem,
+        OreProductGemList.Blue_Topaz_Ore_Product_Gem,
+        OreProductGemList.Spinel_Ore_Product_Gem,
+        OreProductGemList.Red_Garnet_Ore_Product_Gem,
+        OreProductGemList.Yellow_Garnet_Ore_Product_Gem,
+        OreProductGemList.Certus_Quartz_Ore_Product_Gem,
+        OreProductGemList.Jade_Ore_Product_Gem,
+        OreProductGemList.Charged_Certus_Quartz_Ore_Product_Gem);
 
-    // Topaz Ore
-    public static final ItemStack[] Topaz_SmallOre = new ItemStack[] {
-        //
-        Materials.Topaz.getGems(1) };
-
-    // Yellow Garnet Ore
-    public static final ItemStack[] Yellow_Garnet_SmallOre = new ItemStack[] {
-        //
-        Materials.GarnetYellow.getGems(1) };
+    // MehenBelt SmallOre
+    public static final ItemStack[] MehenBelt_SmallOre = addCompressAggregateArray(
+        OreProductGemList.Lapis_Ore_Product_Gem,
+        OreProductGemList.Olivine_Ore_Product_Gem);
 }
