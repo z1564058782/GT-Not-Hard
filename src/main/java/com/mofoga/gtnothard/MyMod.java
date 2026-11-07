@@ -2,7 +2,6 @@ package com.mofoga.gtnothard;
 
 import static loader.MachinesLoader.loaderMachines;
 
-import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Item;
 import net.minecraft.command.CommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -15,7 +14,9 @@ import EnumList.EnumListCheck.EnumFluidListCheck;
 import EnumList.EnumListCheck.EnumItemListCheck;
 import Recipes.ChaosRecipes.ChaosAntimatterRecipes;
 import Recipes.ChaosRecipes.ChaosExoticRecipes;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_CasingRecipe_Item;
 import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_CasingRecipe_Normal;
+import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Item;
 import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_HatchRecipe_Normal;
 import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Item;
 import Recipes.ChaosRecipes.ChaosOfAssemblyLine.ChaosAssemblyLine_ItemRecipe_Normal;
@@ -105,6 +106,10 @@ public class MyMod {
 
         // Chaos Recipes
         registerAssemblyRecipeGroup(
+            "ItemCasing",
+            LargeAssemblyRecipeConfig.enabledItemRecipes,
+            ChaosAssemblyLine_CasingRecipe_Item::addChaosAssemblyLine_CasingRecipe_Item);
+        registerAssemblyRecipeGroup(
             "ItemHatch",
             LargeAssemblyRecipeConfig.enabledItemRecipes,
             ChaosAssemblyLine_HatchRecipe_Item::addChaosAssemblyLine_HatchRecipe_Item);
@@ -115,7 +120,7 @@ public class MyMod {
         registerAssemblyRecipeGroup(
             "NormalCasing",
             LargeAssemblyRecipeConfig.enableNormalRecipes,
-            ChaosAssemblyLine_CasingRecipe_Normal::addChaosAssemblyLine_NormalCasingRecipe);
+            ChaosAssemblyLine_CasingRecipe_Normal::addChaosAssemblyLine_CasingRecipe_Normal);
         registerAssemblyRecipeGroup(
             "NormalHatch",
             LargeAssemblyRecipeConfig.enableNormalRecipes,

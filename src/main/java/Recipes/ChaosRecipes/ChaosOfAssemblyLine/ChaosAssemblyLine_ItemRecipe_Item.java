@@ -20,6 +20,10 @@ import static util.Utils.setStackSize;
 
 import net.minecraft.item.ItemStack;
 
+import EnumList.EnumFluidList.FluidList;
+import EnumList.EnumFluidList.GasList;
+import EnumList.EnumFluidList.MoltenList;
+import EnumList.EnumFluidList.PlasmaList;
 import EnumList.EnumItemList.EnumGTList.BatteryList;
 import EnumList.EnumItemList.EnumGTList.CircuitList;
 import EnumList.EnumItemList.EnumGTList.GTBlockList;
@@ -74,7 +78,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                 setStackSize(IngotList.Trinium_Ingot.copy(), 4),
                 setStackSize(IngotList.Tungstencarbide_Ingot.copy(), 1),
                 setStackSize(IngotList.Vibrant_Alloy_Ingot.copy(), 4))
-            .fluidInputs(requiredFluid("prismaticnaquadahcompositeslurry", 1000 * 2))
+            .fluidInputs(requiredFluid(FluidList.Prismatic_Naquadah_Composite_Slurry, 1000 * 2))
             .itemOutputs(setStackSize(GoodGeneratorList.Advanced_Radiation_Proof_Plate, 1))
             .eut(RECIPE_ZPM)
             .duration(50 * SECONDS)
@@ -100,7 +104,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                 setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 11 + 16),
                 setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 14 + 16))
-            .fluidInputs(requiredFluid("lubricant", 1000 * (64 * 2 + 32)), requiredFluid("ic2uumatter", 1000 * 10))
+            .fluidInputs(
+                requiredFluid(FluidList.Lubricant, 1000 * (64 * 2 + 32)),
+                requiredFluid(FluidList.UU_Matter, 1000 * 10))
             .itemOutputs(setStackSize(GTItemList.Carbon_Nanites, 1))
             .eut(RECIPE_UV)
             .duration(50 * SECONDS)
@@ -201,7 +207,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 64 * 16),
 
                     setStackSize(IngotList.Zeron_100_Ingot.copy(), 64 + 42))
-                .fluidInputs(requiredFluid("radon", 1000 + 250))
+                .fluidInputs(requiredFluid(GasList.Radon, 1000 + 250))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_LuV_Empty, 1))
                 .eut(RECIPE_LuV)
                 .duration(180 * SECONDS)
@@ -234,7 +240,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 64 * 16),
 
                     setStackSize(IngotList.Zeron_100_Ingot.copy(), 64 + 42))
-                .fluidInputs(requiredFluid("radon", 1000 + 250))
+                .fluidInputs(requiredFluid(GasList.Radon, 1000 + 250))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_LuV, 1))
                 .eut(RECIPE_LuV)
                 .duration(360 * SECONDS)
@@ -338,7 +344,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 24),
 
                     setStackSize(IngotList.Zeron_100_Ingot.copy(), 64 + 4))
-                .fluidInputs(requiredFluid("lubricant", 1000), requiredFluid("radon", 1000 * 8 + 500))
+                .fluidInputs(requiredFluid(FluidList.Lubricant, 1000), requiredFluid(GasList.Radon, 1000 * 8 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_ZPM_Empty, 1))
                 .eut(RECIPE_ZPM)
                 .duration(180 * SECONDS)
@@ -376,7 +382,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 24),
 
                     setStackSize(IngotList.Zeron_100_Ingot.copy(), 64 + 4))
-                .fluidInputs(requiredFluid("lubricant", 1000), requiredFluid("radon", 1000 * 8 + 500))
+                .fluidInputs(requiredFluid(FluidList.Lubricant, 1000), requiredFluid(GasList.Radon, 1000 * 8 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_ZPM, 1))
                 .eut(RECIPE_ZPM)
                 .duration(360 * SECONDS)
@@ -474,7 +480,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 5),
 
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 64 * 3))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 3), requiredFluid("radon", 1000 * 12 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 3),
+                    requiredFluid(GasList.Radon, 1000 * 12 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_UV_Empty, 1))
                 .eut(RECIPE_UV)
                 .duration(180 * SECONDS)
@@ -512,7 +520,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 5),
 
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 64 * 3))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 3), requiredFluid("radon", 1000 * 12 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 3),
+                    requiredFluid(GasList.Radon, 1000 * 12 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_UV, 1))
                 .eut(RECIPE_UV)
                 .duration(360 * SECONDS)
@@ -614,7 +624,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Titansteel_Ingot.copy(), 64 * 2 + 2),
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 28))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 40), requiredFluid("radon", 1000 * 22 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 40),
+                    requiredFluid(GasList.Radon, 1000 * 22 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_UHV_Empty, 1))
                 .eut(RECIPE_UHV)
                 .duration(180 * SECONDS)
@@ -651,7 +663,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Titansteel_Ingot.copy(), 64 * 2 + 2),
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 28))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 40), requiredFluid("radon", 1000 * 22 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 40),
+                    requiredFluid(GasList.Radon, 1000 * 22 + 500))
                 .itemOutputs(setStackSize(GTPPList.Charge_Pack_UHV, 1))
                 .eut(RECIPE_UHV)
                 .duration(360 * SECONDS)
@@ -678,9 +692,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Polybenzimidazole_PBI_Bar.copy(), 8),
                     setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 2),
-                    requiredFluid("biohmediumsterilized", 500),
-                    requiredFluid("ic2uumatter", 500))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 2),
+                    requiredFluid(FluidList.Sterilized_Bio_Catalyst_Medium, 500),
+                    requiredFluid(FluidList.UU_Matter, 500))
                 .itemOutputs(setStackSize(CircuitList.Bio_Processing_Unit, 1))
                 .eut(RECIPE_UHV)
                 .duration(30 * SECONDS)
@@ -705,9 +719,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("growthmediumsterilized", 250),
-                    requiredFluid("ic2uumatter", 250),
-                    requiredFluid("ic2coolant", 1000))
+                    requiredFluid(FluidList.Growth_Catalyst_Medium, 250),
+                    requiredFluid(FluidList.UU_Matter, 250),
+                    requiredFluid(FluidList.IC2_Coolant, 1000))
                 .itemOutputs(setStackSize(CircuitList.Neuro_Processing_Unit, 1))
                 .eut(RECIPE_ZPM)
                 .duration(30 * SECONDS)
@@ -746,7 +760,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Indalloy_140_Ingot.copy(), 20),
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                             setStackSize(IngotList.Tritanium_Ingot.copy(), 4))
-                        .fluidInputs(requiredFluid("ic2coolant", 1000 * 10), requiredFluid("radon", 1000 * 2 + 500))
+                        .fluidInputs(
+                            requiredFluid(FluidList.IC2_Coolant, 1000 * 10),
+                            requiredFluid(GasList.Radon, 1000 * 2 + 500))
                         .itemOutputs(setStackSize(CircuitList.Wetware_Mainframe, 1))
                         .eut(RECIPE_UV)
                         .duration(100 * SECONDS)
@@ -773,7 +789,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Indalloy_140_Ingot.copy(), 20),
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                             setStackSize(IngotList.Tritanium_Ingot.copy(), 4))
-                        .fluidInputs(requiredFluid("ic2coolant", 1000 * 10), requiredFluid("radon", 1000 * 2 + 500))
+                        .fluidInputs(
+                            requiredFluid(FluidList.IC2_Coolant, 1000 * 10),
+                            requiredFluid(GasList.Radon, 1000 * 2 + 500))
                         .itemOutputs(setStackSize(CircuitList.Wetware_Mainframe, 1))
                         .eut(RECIPE_UV)
                         .duration(100 * SECONDS)
@@ -817,9 +835,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Niobium_Titanium_Ingot.copy(), 4),
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16))
                         .fluidInputs(
-                            requiredFluid("molten.mutatedlivingsolder", 144 * 10),
-                            requiredFluid("biohmediumsterilized", 144 * 10),
-                            requiredFluid("supercoolant", 1000 * 10))
+                            requiredFluid(FluidList.Mutated_Living_Solder, 144 * 10),
+                            requiredFluid(FluidList.Sterilized_Bio_Catalyst_Medium, 144 * 10),
+                            requiredFluid(FluidList.Super_Coolant, 1000 * 10))
                         .itemOutputs(setStackSize(CircuitList.Bioware_Supercomputer, 1))
                         .eut(RECIPE_UV)
                         .duration(200 * SECONDS)
@@ -856,9 +874,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                             setStackSize(IngotList.Tritanium_Ingot.copy(), 8))
                         .fluidInputs(
-                            requiredFluid("molten.mutatedlivingsolder", 144 * 20),
-                            requiredFluid("biohmediumsterilized", 144 * 20),
-                            requiredFluid("supercoolant", 1000 * 20))
+                            requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20),
+                            requiredFluid(FluidList.Sterilized_Bio_Catalyst_Medium, 144 * 20),
+                            requiredFluid(FluidList.Super_Coolant, 1000 * 20))
                         .itemOutputs(setStackSize(CircuitList.Bioware_Mainframe, 1))
                         .eut(RECIPE_UHV)
                         .duration(300 * SECONDS)
@@ -886,9 +904,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                             setStackSize(IngotList.Tritanium_Ingot.copy(), 8))
                         .fluidInputs(
-                            requiredFluid("molten.mutatedlivingsolder", 144 * 20),
-                            requiredFluid("biohmediumsterilized", 144 * 20),
-                            requiredFluid("supercoolant", 1000 * 20))
+                            requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20),
+                            requiredFluid(FluidList.Sterilized_Bio_Catalyst_Medium, 144 * 20),
+                            requiredFluid(FluidList.Super_Coolant, 1000 * 20))
                         .itemOutputs(setStackSize(CircuitList.Bioware_Mainframe, 1))
                         .eut(RECIPE_UHV)
                         .duration(300 * SECONDS)
@@ -915,10 +933,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Lumiium_Ingot.copy(), 3),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 10),
-                        requiredFluid("supercoolant", 1000 * 10),
-                        requiredFluid("oganesson", 500),
-                        requiredFluid("plasma.radon", 144 * 10))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 10),
+                        requiredFluid(FluidList.Super_Coolant, 1000 * 10),
+                        requiredFluid(GasList.Oganesson, 500),
+                        requiredFluid(PlasmaList.Radon_Plasma, 144 * 10))
                     .itemOutputs(setStackSize(CircuitList.Optical_Assembly, 1))
                     .eut(RECIPE_UHV)
                     .duration(20 * SECONDS)
@@ -946,10 +964,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Polybenzimidazole_PBI_Bar.copy(), 16),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 20),
-                        requiredFluid("supercoolant", 1000 * 20),
-                        requiredFluid("oganesson", 1000),
-                        requiredFluid("plasma.radon", 144 * 20))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20),
+                        requiredFluid(FluidList.Super_Coolant, 1000 * 20),
+                        requiredFluid(GasList.Oganesson, 1000),
+                        requiredFluid(PlasmaList.Radon_Plasma, 144 * 20))
                     .itemOutputs(setStackSize(CircuitList.Optical_Supercomputer, 1))
                     .eut(RECIPE_UHV)
                     .duration(200 * SECONDS)
@@ -984,10 +1002,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                             setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 32),
                             setStackSize(IngotList.Tritanium_Ingot.copy(), 16))
                         .fluidInputs(
-                            requiredFluid("molten.mutatedlivingsolder", 144 * 40),
-                            requiredFluid("supercoolant", 1000 * 40),
-                            requiredFluid("oganesson", 1000 * 2),
-                            requiredFluid("plasma.radon", 144 * 40))
+                            requiredFluid(FluidList.Mutated_Living_Solder, 144 * 40),
+                            requiredFluid(FluidList.Super_Coolant, 1000 * 40),
+                            requiredFluid(GasList.Oganesson, 1000 * 2),
+                            requiredFluid(PlasmaList.Radon_Plasma, 144 * 40))
                         .itemOutputs(setStackSize(CircuitList.Optical_Mainframe, 1))
                         .eut(RECIPE_UEV)
                         .duration(300 * SECONDS)
@@ -1020,8 +1038,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * 20),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 26))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * 20),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 26))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Nano_Circuit, 1))
                     .eut(RECIPE_UIV)
                     .duration(400 * SECONDS)
@@ -1049,8 +1067,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Radox_Polymer_Bar.copy(), 4),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 4))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 26),
-                        requiredFluid("ic2uumatter", 1000 * 8))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 26),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Pico_Circuit, 1))
                     .eut(RECIPE_UMV)
                     .duration(500 * SECONDS)
@@ -1078,8 +1096,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 4))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 26),
-                        requiredFluid("ic2uumatter", 1000 * 24))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 26),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 24))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Quantum_Circuit, 1))
                     .eut(RECIPE_UMV)
                     .duration(1000 * SECONDS)
@@ -1126,10 +1144,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_3.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("fluid.rocketfuelmixc", 1000 * 4),
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 5),
-                    requiredFluid("radon", 1000 * 27))
+                    requiredFluid(FluidList.CN3H7O3_Rocket_Fuel, 1000 * 4),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 5),
+                    requiredFluid(GasList.Radon, 1000 * 27))
                 .itemOutputs(setStackSize(GTItemList.Drone_Level_2.copy(), 4))
                 .eut(RECIPE_UV)
                 .duration(60 * SECONDS)
@@ -1169,10 +1187,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 32))
                 .fluidInputs(
-                    requiredFluid("molten.ethylcyanoacrylatesuperglue", 1000 * 2),
-                    requiredFluid("ic2coolant", 1000 * 64 * 2),
-                    requiredFluid("lubricant", 1000 * (64 * 11 + 24)),
-                    requiredFluid("radon", 1000 * (64 * 9 + 16)))
+                    requiredFluid(FluidList.Ethyl_Cyanoacrylate_Super_Glue, 1000 * 2),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 64 * 2),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 11 + 24)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 9 + 16)))
                 .itemOutputs(setStackSize(GTItemList.Drone_Level_3, 1))
                 .eut(RECIPE_UHV)
                 .duration(60 * SECONDS)
@@ -1218,10 +1236,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 48),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 32))
                 .fluidInputs(
-                    requiredFluid("molten.ethylcyanoacrylatesuperglue", 1000 * 66),
-                    requiredFluid("ic2coolant", 1000 * 64 * 2),
-                    requiredFluid("lubricant", 1000 * (64 * 13 + 24)),
-                    requiredFluid("radon", 1000 * (64 * 14 + 36)))
+                    requiredFluid(FluidList.Ethyl_Cyanoacrylate_Super_Glue, 1000 * 66),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 64 * 2),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 13 + 24)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 14 + 36)))
                 .itemOutputs(setStackSize(GTItemList.Drone_Remote_Interface, 1))
                 .eut(RECIPE_UHV)
                 .duration(60 * SECONDS)
@@ -1260,11 +1278,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    requiredFluid("exciteddtcc", 1000 * 8),
-                    requiredFluid("ic2coolant", 1000 * 32),
-                    requiredFluid("lubricant", 1000 * (64 * 4 + 48)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 + 24)),
-                    requiredFluid("radon", 1000 * (64 * 13 + 18)))
+                    requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Crude_Catalyst, 1000 * 8),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 32),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 4 + 48)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 24)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 13 + 18)))
                 .itemOutputs(setStackSize(GTItemList.Drone_Level_4, 1))
                 .eut(RECIPE_UEV)
                 .duration(60 * SECONDS)
@@ -1313,10 +1331,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(OpenComputersList.Drone_Case_Tier3.copy(), 4),
                     setStackSize(OpenComputersList.Navigation_Upgrade.copy(), 64))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * 4),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 41),
-                    requiredFluid("radon", 1000 * 24),
-                    requiredFluid("plasma.xenon", 1000))
+                    requiredFluid(FluidList.Lubricant, 1000 * 4),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 41),
+                    requiredFluid(GasList.Radon, 1000 * 24),
+                    requiredFluid(PlasmaList.Xenon_Plasma, 1000))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Corona_Resistant_Drone_Case, 1))
                 .eut(RECIPE_UHV)
                 .duration(5 * SECONDS)
@@ -1351,10 +1369,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000),
-                    requiredFluid("lubricant", 1000 * 4),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 41),
-                    requiredFluid("radon", 1000 * 24))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000),
+                    requiredFluid(FluidList.Lubricant, 1000 * 4),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 41),
+                    requiredFluid(GasList.Radon, 1000 * 24))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Magnetically_Shielded_Femtocontroller, 1))
                 .eut(RECIPE_UHV)
                 .duration(5 * SECONDS)
@@ -1431,15 +1449,15 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000),
-                    requiredFluid("cryotheum", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 8),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 3 + 18)),
-                    requiredFluid("prismaticnaquadahcompositeslurry", 1000 * 12),
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000),
+                    requiredFluid(FluidList.Gelid_Cryotheum, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 8),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 3 + 18)),
+                    requiredFluid(FluidList.Prismatic_Naquadah_Composite_Slurry, 1000 * 12),
 
-                    requiredFluid("supercoolant", 1000 * 16),
-                    requiredFluid("radon", 1000 * 48),
-                    requiredFluid("plasma.xenon", 1000))
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 16),
+                    requiredFluid(GasList.Radon, 1000 * 48),
+                    requiredFluid(PlasmaList.Xenon_Plasma, 1000))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Dyson_Swarm_Module.copy(), 64))
                 .eut(RECIPE_UHV)
                 .duration(5 * SECONDS)
@@ -1473,9 +1491,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 64))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 8),
-                    requiredFluid("lubricant", 1000 * 2),
-                    requiredFluid("radon", 1000 * 17))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 8),
+                    requiredFluid(FluidList.Lubricant, 1000 * 2),
+                    requiredFluid(GasList.Radon, 1000 * 17))
                 .itemOutputs(setStackSize(GTItemList.Steel_Electromagnet, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -1505,9 +1523,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_ZPM_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 6),
-                    requiredFluid("radon", 1000 * 25))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 6),
+                    requiredFluid(GasList.Radon, 1000 * 25))
                 .itemOutputs(setStackSize(GTItemList.Neodymium_Electromagnet, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -1536,9 +1554,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UV_Wire_1x.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 32),
-                    requiredFluid("lubricant", 1000 * (64 + 16)),
-                    requiredFluid("radon", 1000 * 45))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 32),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 + 16)),
+                    requiredFluid(GasList.Radon, 1000 * 45))
                 .itemOutputs(setStackSize(GTItemList.Samarium_Electromagnet, 1))
                 .eut(RECIPE_UV)
                 .duration(60 * SECONDS)
@@ -1569,9 +1587,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 8))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 64),
-                    requiredFluid("lubricant", 1000 * 32),
-                    requiredFluid("radon", 1000 * (64 + 36)))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 64),
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(GasList.Radon, 1000 * (64 + 36)))
                 .itemOutputs(setStackSize(GTItemList.Tengam_Electromagnet, 1))
                 .eut(RECIPE_UHV)
                 .duration(60 * SECONDS)
@@ -1600,9 +1618,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                 setStackSize(IngotList.Quantium_Ingot.copy(), 64 * 2 + 34),
                 setStackSize(IngotList.Tritanium_Ingot.copy(), 64 + 40))
             .fluidInputs(
-                requiredFluid("lubricant", 1000 * 16),
-                requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 2 + 34)),
-                requiredFluid("radon", 1000 * (64 + 44)))
+                requiredFluid(FluidList.Lubricant, 1000 * 16),
+                requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 2 + 34)),
+                requiredFluid(GasList.Radon, 1000 * (64 + 44)))
             .itemOutputs(setStackSize(GTItemList.Empty_Quark_Release_Catalyst_Housing, 1))
             .eut(RECIPE_UIV)
             .duration(60 * SECONDS)
@@ -1704,9 +1722,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Ruridit_Ingot.copy(), 64 * 3 + 32),
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 48))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 2),
-                    requiredFluid("radon", 1000 * 17))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 2),
+                    requiredFluid(GasList.Radon, 1000 * 17))
                 .itemOutputs(setStackSize(BatteryList.Energy_Module_Empty, 1))
                 .eut(RECIPE_ZPM)
                 .duration(100 * SECONDS)
@@ -1737,9 +1755,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Ruridit_Ingot.copy(), 64 * 3 + 32),
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 48))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 2),
-                    requiredFluid("radon", 1000 * 17))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 2),
+                    requiredFluid(GasList.Radon, 1000 * 17))
                 .itemOutputs(setStackSize(BatteryList.Energy_Module, 1))
                 .eut(RECIPE_ZPM)
                 .duration(200 * SECONDS)
@@ -1769,9 +1787,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 6),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 6),
-                    requiredFluid("radon", 1000 * 25))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 6),
+                    requiredFluid(GasList.Radon, 1000 * 25))
                 .itemOutputs(setStackSize(BatteryList.Energy_Cluster_Empty, 1))
                 .eut(RECIPE_UV)
                 .duration(100 * SECONDS)
@@ -1801,9 +1819,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 6),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 6),
-                    requiredFluid("radon", 1000 * 25))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 6),
+                    requiredFluid(GasList.Radon, 1000 * 25))
                 .itemOutputs(setStackSize(BatteryList.Energy_Cluster, 1))
                 .eut(RECIPE_UV)
                 .duration(200 * SECONDS)
@@ -1835,9 +1853,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 32))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * (64 + 16)),
-                    requiredFluid("radon", 1000 * 45))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 + 16)),
+                    requiredFluid(GasList.Radon, 1000 * 45))
                 .itemOutputs(setStackSize(BatteryList.Ultimate_Battery_Empty, 1))
                 .eut(RECIPE_UV)
                 .duration(150 * SECONDS)
@@ -1869,9 +1887,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 32))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * (64 + 16)),
-                    requiredFluid("radon", 1000 * 45))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 + 16)),
+                    requiredFluid(GasList.Radon, 1000 * 45))
                 .itemOutputs(setStackSize(BatteryList.Ultimate_Battery, 1))
                 .eut(RECIPE_UV)
                 .duration(300 * SECONDS)
@@ -1904,10 +1922,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 32),
-                    requiredFluid("lubricant", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 32),
-                    requiredFluid("radon", 1000 * (64 + 26)))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 32),
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 32),
+                    requiredFluid(GasList.Radon, 1000 * (64 + 26)))
                 .itemOutputs(setStackSize(BatteryList.Really_Ultimate_Battery_Empty, 1))
                 .eut(RECIPE_UHV)
                 .duration(200 * SECONDS)
@@ -1940,10 +1958,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 32),
-                    requiredFluid("lubricant", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 32),
-                    requiredFluid("radon", 1000 * (64 + 26)))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 32),
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 32),
+                    requiredFluid(GasList.Radon, 1000 * (64 + 26)))
                 .itemOutputs(setStackSize(BatteryList.Really_Ultimate_Battery, 1))
                 .eut(RECIPE_UHV)
                 .duration(400 * SECONDS)
@@ -1978,10 +1996,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 6 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64),
-                    requiredFluid("radon", 1000 * (64 * 3 + 24)))
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 6 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 3 + 24)))
                 .itemOutputs(setStackSize(BatteryList.Extremely_Ultimate_Battery_Empty, 1))
                 .eut(RECIPE_UEV)
                 .duration(250 * SECONDS)
@@ -2016,10 +2034,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 6 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64),
-                    requiredFluid("radon", 1000 * (64 * 3 + 24)))
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 6 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 3 + 24)))
                 .itemOutputs(setStackSize(BatteryList.Extremely_Ultimate_Battery, 1))
                 .eut(RECIPE_UEV)
                 .duration(500 * SECONDS)
@@ -2057,9 +2075,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64 * 4 + 16),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 8))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 7 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64 * 2))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 7 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64 * 2))
                 .itemOutputs(setStackSize(BatteryList.Insanely_Ultimate_Battery_Empty, 1))
                 .eut(RECIPE_UIV)
                 .duration(300 * SECONDS)
@@ -2097,9 +2115,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64 * 4 + 16),
                     setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 8))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 7 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64 * 2))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 7 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64 * 2))
                 .itemOutputs(setStackSize(BatteryList.Insanely_Ultimate_Battery, 1))
                 .eut(RECIPE_UIV)
                 .duration(600 * SECONDS)
@@ -2136,9 +2154,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UMV_Wire_1x.copy(), 64 * 64))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 9 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64 * 4))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 9 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64 * 4))
                 .itemOutputs(setStackSize(BatteryList.Mega_Ultimate_Battery_Empty, 1))
                 .eut(RECIPE_UMV)
                 .duration(360 * SECONDS)
@@ -2175,9 +2193,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_UMV_Wire_1x.copy(), 64 * 64))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 32),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 9 + 4)),
-                    requiredFluid("supercoolant", 1000 * 64 * 4))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 9 + 4)),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 64 * 4))
                 .itemOutputs(setStackSize(BatteryList.Mega_Ultimate_Battery, 1))
                 .eut(RECIPE_UMV)
                 .duration(720 * SECONDS)
@@ -2206,7 +2224,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Steel_Ingot.copy(), 52),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 8))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 4))
+                .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T3, 1))
                 .eut(RECIPE_LuV)
                 .duration(20 * SECONDS)
@@ -2233,7 +2251,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Titanium_Ingot.copy(), 36),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 64 * 6 + 32))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 16))
+                .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 16))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T4, 1))
                 .eut(RECIPE_ZPM)
                 .duration(20 * SECONDS)
@@ -2273,7 +2291,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Titanium_Ingot.copy(), 64 * 12 + 2),
 
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 64 * 3 + 16))
-                .fluidInputs(requiredFluid("lubricant", 1000 * (64 + 12)), requiredFluid("radon", 1000 * (64 + 4)))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 + 12)),
+                    requiredFluid(GasList.Radon, 1000 * (64 + 4)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T5, 1))
                 .eut(RECIPE_UV)
                 .duration(20 * SECONDS)
@@ -2324,8 +2344,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 34),
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 16))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * (64 * 2 + 12)),
-                    requiredFluid("radon", 1000 * (64 * 3 + 8)))
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 2 + 12)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 3 + 8)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T6, 1))
                 .eut(RECIPE_UHV)
                 .duration(20 * SECONDS)
@@ -2375,8 +2395,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 96),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 69))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * (64 * 3 + 60)),
-                    requiredFluid("radon", 1000 * (64 * 6 + 16)))
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 3 + 60)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 6 + 16)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T7, 1))
                 .eut(RECIPE_UEV)
                 .duration(20 * SECONDS)
@@ -2425,7 +2445,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 64 * 52),
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 192),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 136))
-                .fluidInputs(requiredFluid("lubricant", 1000 * (64 * 3)), requiredFluid("radon", 1000 * (64 * 71 + 16)))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 3)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 71 + 16)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T8, 1))
                 .eut(RECIPE_UIV)
                 .duration(20 * SECONDS)
@@ -2472,8 +2494,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 64 * 52),
                     setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 10))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * (64 * 9 + 32)),
-                    requiredFluid("radon", 1000 * (64 * 2 + 52)))
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 9 + 32)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 2 + 52)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T9, 1))
                 .eut(RECIPE_UMV)
                 .duration(20 * SECONDS)
@@ -2522,9 +2544,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 64 * 52),
                     setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 30))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * (64 * 16 + 44)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 4 + 32)),
-                    requiredFluid("radon", 1000 * (64 * 6)))
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 16 + 44)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 4 + 32)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 6)))
                 .itemOutputs(setStackSize(GoodGeneratorList.Fluid_Storage_Core_T10, 1))
                 .eut(RECIPE_UXV)
                 .duration(20 * SECONDS)
@@ -2587,7 +2609,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 1),
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 16),
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 1))
-                    .fluidInputs(requiredFluid("lubricant", 250))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 250))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2607,7 +2629,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 1),
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 2))
-                    .fluidInputs(requiredFluid("lubricant", 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 500))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2625,7 +2647,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 32),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 10),
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 3))
-                    .fluidInputs(requiredFluid("lubricant", 750))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 750))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2642,7 +2664,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 1),
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 16),
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 3))
-                    .fluidInputs(requiredFluid("lubricant", 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 500))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2663,7 +2685,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 3),
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 48),
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 8))
-                    .fluidInputs(requiredFluid("lubricant", 1000 + 250))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 + 250))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2687,7 +2709,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 64 + 48),
 
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 24))
-                    .fluidInputs(requiredFluid("lubricant", 1000), requiredFluid("radon", 1000 * 8 + 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000), requiredFluid(GasList.Radon, 1000 * 8 + 500))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2710,7 +2732,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 20),
 
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 5))
-                    .fluidInputs(requiredFluid("lubricant", 250), requiredFluid("radon", 1000 + 250))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 250), requiredFluid(GasList.Radon, 1000 + 250))
                     .itemOutputs(setStackSize(GTItemList.Emitter_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2733,7 +2755,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Ruridit_Ingot.copy(), 24),
 
                         setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 5))
-                    .fluidInputs(requiredFluid("lubricant", 250), requiredFluid("radon", 1000 + 250))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 250), requiredFluid(GasList.Radon, 1000 + 250))
                     .itemOutputs(setStackSize(GTItemList.Sensor_LuV, 1))
                     .eut(RECIPE_IV)
                     .duration(30 * SECONDS)
@@ -2753,7 +2775,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 1),
                         setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 7),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 4))
-                    .fluidInputs(requiredFluid("lubricant", 750))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 750))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2773,7 +2795,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 2),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 8))
-                    .fluidInputs(requiredFluid("lubricant", 1000 + 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 + 500))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2791,7 +2813,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 21),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 20),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 12))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 2 + 250))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 2 + 250))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2808,7 +2830,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 1),
                         setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 26),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 12))
-                    .fluidInputs(requiredFluid("lubricant", 1000 + 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 + 500))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2829,7 +2851,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 3),
                         setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 51),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 32))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 3 + 750))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 3 + 750))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2854,7 +2876,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 3),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 2))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 3), requiredFluid("radon", 1000 * 12 + 500))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Lubricant, 1000 * 3),
+                        requiredFluid(GasList.Radon, 1000 * 12 + 500))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2878,7 +2902,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Trinium_Ingot.copy(), 48),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 28))
-                    .fluidInputs(requiredFluid("lubricant", 750), requiredFluid("radon", 1000 * 2 + 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 750), requiredFluid(GasList.Radon, 1000 * 2 + 500))
                     .itemOutputs(setStackSize(GTItemList.Emitter_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2902,7 +2926,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Trinium_Ingot.copy(), 48),
                         setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 18))
-                    .fluidInputs(requiredFluid("lubricant", 750), requiredFluid("radon", 1000 * 2 + 500))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 750), requiredFluid(GasList.Radon, 1000 * 2 + 500))
                     .itemOutputs(setStackSize(GTItemList.Sensor_ZPM, 1))
                     .eut(RECIPE_LuV)
                     .duration(30 * SECONDS)
@@ -2924,7 +2948,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 9),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 9))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 2))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 2))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -2945,7 +2969,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 18),
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 22),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 4))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 4))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -2965,7 +2989,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 25),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 40))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 6))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 6))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -2984,7 +3008,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 18),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 28))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 4))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -3007,7 +3031,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 45),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 57))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 10))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 10))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -3031,7 +3055,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 4 + 17),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 + 40))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 40), requiredFluid("radon", 1000 * 22 + 500))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Lubricant, 1000 * 40),
+                        requiredFluid(GasList.Radon, 1000 * 22 + 500))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -3054,7 +3080,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 64 + 2),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 23))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 10), requiredFluid("radon", 1000 * 5))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 10), requiredFluid(GasList.Radon, 1000 * 5))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -3077,7 +3103,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 64 + 2),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 27))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 10), requiredFluid("radon", 1000 * 5))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 10), requiredFluid(GasList.Radon, 1000 * 5))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UV, 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
@@ -3099,7 +3125,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 18),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 4))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3119,7 +3145,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 + 12),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 8))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 8))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 8))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3139,7 +3165,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 2),
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 40))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 12))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 12))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3158,7 +3184,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 39),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 8))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 8))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3181,7 +3207,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 64 + 26),
 
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 3))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 20))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 20))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3206,7 +3232,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 2 + 34),
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 6 + 8))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 16), requiredFluid("radon", 1000 * 45))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 16), requiredFluid(GasList.Radon, 1000 * 45))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3230,7 +3256,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 39),
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 + 16))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 4), requiredFluid("radon", 1000 * 10))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4), requiredFluid(GasList.Radon, 1000 * 10))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3254,7 +3280,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Naquadria_Ingot.copy(), 39),
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 64 + 16))
-                    .fluidInputs(requiredFluid("lubricant", 1000 * 4), requiredFluid("radon", 1000 * 10))
+                    .fluidInputs(requiredFluid(FluidList.Lubricant, 1000 * 4), requiredFluid(GasList.Radon, 1000 * 10))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UHV, 1))
                     .eut(RECIPE_UV)
                     .duration(50 * SECONDS)
@@ -3275,8 +3301,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Infinity_Ingot.copy(), 24),
                         setStackSize(IngotList.Quantium_Ingot.copy(), 18))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 18))
+                        requiredFluid(FluidList.Lubricant, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 18))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3298,8 +3324,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Lubricant, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3319,8 +3345,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 64 * 2))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 12),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 54))
+                        requiredFluid(FluidList.Lubricant, 1000 * 12),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 54))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3338,8 +3364,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Infinity_Ingot.copy(), 56),
                         setStackSize(IngotList.Quantium_Ingot.copy(), 39))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Lubricant, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3361,8 +3387,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Infinity_Ingot.copy(), 64 + 62),
                         setStackSize(IngotList.Quantium_Ingot.copy(), 64 + 26))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 20),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 + 26)))
+                        requiredFluid(FluidList.Lubricant, 1000 * 20),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 26)))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3389,9 +3415,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Quantium_Ingot.copy(), 64 * 2 + 34),
                         setStackSize(IngotList.Tritanium_Ingot.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 16),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 2 + 34)),
-                        requiredFluid("radon", 1000 * (64 + 44)))
+                        requiredFluid(FluidList.Lubricant, 1000 * 16),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 2 + 34)),
+                        requiredFluid(GasList.Radon, 1000 * (64 + 44)))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3416,9 +3442,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 32),
                         setStackSize(IngotList.Quantium_Ingot.copy(), 36))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36),
-                        requiredFluid("radon", 1000 * 24))
+                        requiredFluid(FluidList.Lubricant, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36),
+                        requiredFluid(GasList.Radon, 1000 * 24))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3443,9 +3469,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Neutronium_Ingot.copy(), 32),
                         setStackSize(IngotList.Quantium_Ingot.copy(), 39))
                     .fluidInputs(
-                        requiredFluid("lubricant", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36),
-                        requiredFluid("radon", 1000 * 24))
+                        requiredFluid(FluidList.Lubricant, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36),
+                        requiredFluid(GasList.Radon, 1000 * 24))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UEV, 1))
                     .eut(RECIPE_UHV)
                     .duration(50 * SECONDS)
@@ -3467,8 +3493,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 22))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 18))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 18))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3490,8 +3516,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 48))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3511,8 +3537,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 56))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 12),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 54))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 12),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 54))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3531,8 +3557,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 52))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3555,8 +3581,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64 * 3),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64 + 54))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 20),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 + 26)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 20),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 26)))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3583,8 +3609,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64 * 5),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64 * 2 + 8))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 16),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 2 + 34)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 16),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 2 + 34)))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3611,8 +3637,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 32))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3639,8 +3665,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 32))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UIV, 1))
                     .eut(RECIPE_UEV)
                     .duration(50 * SECONDS)
@@ -3661,8 +3687,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Quantium_Ingot.copy(), 4),
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 22))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 18))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 18))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3683,8 +3709,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 16),
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 48))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3704,8 +3730,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 56))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 12),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 54))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 12),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 54))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3723,8 +3749,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Quantium_Ingot.copy(), 12),
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 54))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3746,8 +3772,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Quantium_Ingot.copy(), 32),
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 64 + 56))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 20),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 + 36)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 20),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 36)))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3775,8 +3801,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 64 * 2 + 8),
                         setStackSize(IngotList.Titansteel_Ingot.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 16),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 2 + 34)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 16),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 2 + 34)))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3802,8 +3828,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 32),
                         setStackSize(IngotList.Titansteel_Ingot.copy(), 16))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3829,8 +3855,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 32),
                         setStackSize(IngotList.Titansteel_Ingot.copy(), 16))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 36))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UMV, 1))
                     .eut(RECIPE_UIV)
                     .duration(50 * SECONDS)
@@ -3853,7 +3879,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 12),
                         setStackSize(IngotList.Superconductor_Base_UHV_Ingot.copy(), 16),
                         setStackSize(IngotList.Universium_Ingot.copy(), 34))
-                    .fluidInputs(requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8))
+                    .fluidInputs(requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8))
                     .itemOutputs(setStackSize(GTItemList.Electric_Motor_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -3876,7 +3902,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Superconductor_Base_UHV_Ingot.copy(), 16),
                         setStackSize(IngotList.Universium_Ingot.copy(), 52))
-                    .fluidInputs(requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 16))
+                    .fluidInputs(requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 16))
                     .itemOutputs(setStackSize(GTItemList.Electric_Pump_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -3899,7 +3925,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Superconductor_Base_UHV_Ingot.copy(), 32),
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 + 24))
-                    .fluidInputs(requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 24))
+                    .fluidInputs(requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 24))
                     .itemOutputs(setStackSize(GTItemList.Conveyor_Module_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -3918,7 +3944,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.SpaceTime_Ingot.copy(), 32),
                         setStackSize(IngotList.Superconductor_Base_UHV_Ingot.copy(), 16),
                         setStackSize(IngotList.Universium_Ingot.copy(), 52))
-                    .fluidInputs(requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 16))
+                    .fluidInputs(requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 16))
                     .itemOutputs(setStackSize(GTItemList.Electric_Piston_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -3944,7 +3970,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Superconductor_Base_UHV_Ingot.copy(), 48),
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 * 2 + 10))
-                    .fluidInputs(requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 40))
+                    .fluidInputs(requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 40))
                     .itemOutputs(setStackSize(GTItemList.Robot_Arm_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -3974,8 +4000,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 * 4 + 50))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 32),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 7 + 52)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 32),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 7 + 52)))
                     .itemOutputs(setStackSize(GTItemList.Field_Generator_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -4001,8 +4027,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 + 4))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 100))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 36)))
                     .itemOutputs(setStackSize(GTItemList.Emitter_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -4028,8 +4054,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 + 4))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * 8),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 100))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 8),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 100))
                     .itemOutputs(setStackSize(GTItemList.Sensor_UXV, 1))
                     .eut(RECIPE_UMV)
                     .duration(50 * SECONDS)
@@ -4112,7 +4138,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Steel_Ingot.copy(), 12),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 12))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 12))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Heavy_Duty_Alloy_Ingot_T4.copy(), 4))
                 .eut(RECIPE_LuV)
                 .duration(15 * SECONDS)
@@ -4140,7 +4166,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Stainless_Steel_Ingot.copy(), 2),
                     setStackSize(IngotList.Steel_Ingot.copy(), 12),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 12))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 12))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Heavy_Duty_Alloy_Ingot_T5.copy(), 4))
                 .eut(RECIPE_ZPM)
                 .duration(15 * SECONDS)
@@ -4172,7 +4198,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Tritanium_Ingot.copy(), 4),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 32))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 32))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Heavy_Duty_Alloy_Ingot_T6.copy(), 4))
                 .eut(RECIPE_UV)
                 .duration(15 * SECONDS)
@@ -4206,7 +4232,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 12),
                     setStackSize(IngotList.Tritanium_Ingot.copy(), 4),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 32))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 32))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Heavy_Duty_Alloy_Ingot_T7.copy(), 4))
                 .eut(RECIPE_UHV)
                 .duration(15 * SECONDS)
@@ -4241,7 +4267,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 12),
                     setStackSize(IngotList.Tritanium_Ingot.copy(), 4),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 32))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 32))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Heavy_Duty_Alloy_Ingot_T8.copy(), 4))
                 .eut(RECIPE_UEV)
                 .duration(15 * SECONDS)
@@ -4279,7 +4305,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Tritanium_Ingot.copy(), 4),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 2))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 32))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 32))
                 .itemOutputs(setStackSize(NewHorizonsCoreModList.Lightweight_Alloy_Ingot.copy(), 4))
                 .eut(RECIPE_UEV)
                 .duration(15 * SECONDS)
@@ -4311,7 +4337,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Platinum_Ingot.copy(), 8),
 
                     setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 12))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 16))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 16))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Power_Core_MKII, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -4329,7 +4355,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Indalloy_140_Ingot.copy(), 16),
 
                     setStackSize(WireList.Superconductor_LuV_Wire_1x.copy(), 18))
-                .fluidInputs(requiredFluid("ic2coolant", 1000 * 32))
+                .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 32))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Computer_Core_MKII, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -4358,9 +4384,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Ruridit_Ingot.copy(), 64 * 2 + 24),
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 34))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 32),
-                    requiredFluid("lubricant", 1000 + 500),
-                    requiredFluid("radon", 1000 * 14))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 32),
+                    requiredFluid(FluidList.Lubricant, 1000 + 500),
+                    requiredFluid(GasList.Radon, 1000 * 14))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Teleporter_Core_MKII, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -4386,7 +4412,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Ruridit_Ingot.copy(), 64 * 2 + 48),
 
                     setStackSize(IngotList.Yttrium_Barium_Cuprate_Ingot.copy(), 32))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 2 + 500), requiredFluid("radon", 1000 * 8 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 2 + 500),
+                    requiredFluid(GasList.Radon, 1000 * 8 + 500))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Lens_Assembly_MKII, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -4421,10 +4449,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(WireList.Superconductor_ZPM_Wire_1x.copy(), 24))
                 .fluidInputs(
-                    requiredFluid("ic2coolant", 1000 * 16),
-                    requiredFluid("lubricant", 1000 * 2),
-                    requiredFluid("supercoolant", 1000 * 32),
-                    requiredFluid("radon", 1000 * 17))
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 2),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 32),
+                    requiredFluid(GasList.Radon, 1000 * 17))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Power_Core_MKIII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -4442,7 +4470,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 8),
 
                     setStackSize(WireList.Superconductor_ZPM_Wire_1x.copy(), 30))
-                .fluidInputs(requiredFluid("supercoolant", 1000 * 64))
+                .fluidInputs(requiredFluid(FluidList.Super_Coolant, 1000 * 64))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Computer_Core_MKIII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -4475,9 +4503,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Tritanium_Ingot.copy(), 16),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 2 + 56))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * 4 + 500),
-                    requiredFluid("supercoolant", 1000 * 32),
-                    requiredFluid("radon", 1000 * 22 + 500))
+                    requiredFluid(FluidList.Lubricant, 1000 * 4 + 500),
+                    requiredFluid(FluidList.Super_Coolant, 1000 * 32),
+                    requiredFluid(GasList.Radon, 1000 * 22 + 500))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Teleporter_Core_MKIII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -4504,7 +4532,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 3),
                     setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 2 + 28))
-                .fluidInputs(requiredFluid("lubricant", 1000 * 6 + 750), requiredFluid("radon", 1000 * 12 + 500))
+                .fluidInputs(
+                    requiredFluid(FluidList.Lubricant, 1000 * 6 + 750),
+                    requiredFluid(GasList.Radon, 1000 * 12 + 500))
                 .itemOutputs(setStackSize(MatterManipulatorList.Matter_Manipulator_Lens_Assembly_MKIII, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -4557,7 +4587,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(MatterManipulatorList.Blank_Manipulator_Upgrade, 1),
 
                     setStackSize(MultiMachineControllerList.Active_Transformer.copy(), 1))
-                .fluidInputs(requiredFluid("supercoolant", 1000 * 64 * 4))
+                .fluidInputs(requiredFluid(FluidList.Super_Coolant, 1000 * 64 * 4))
                 .itemOutputs(setStackSize(MatterManipulatorList.Energy_Tunnel_Manipulator_Upgrade, 1))
                 .eut(RECIPE_UEV)
                 .duration(10 * SECONDS)
@@ -4593,7 +4623,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Trinium_Ingot.copy(), 32),
 
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 16))
-                .fluidInputs(requiredFluid("liquid_drillingfluid", 1000 * 16))
+                .fluidInputs(requiredFluid(FluidList.Drilling_Fluid, 1000 * 16))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKIV_EV, 1))
                 .eut(RECIPE_EV)
                 .duration(60 * SECONDS)
@@ -4630,8 +4660,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                     setStackSize(IngotList.Steel_Ingot.copy(), 64 + 32),
                     setStackSize(IngotList.Tungstensteel_Ingot.copy(), 16))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * 32),
-                    requiredFluid("ic2coolant", 1000 * (64 + 32)))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * 32),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 + 32)))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKV_IV, 1))
                 .eut(RECIPE_IV)
                 .duration(60 * SECONDS)
@@ -4676,10 +4706,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_3.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * 64),
-                    requiredFluid("ic2coolant", 1000 * (64 + 32)),
-                    requiredFluid("lubricant", 1000 * 14),
-                    requiredFluid("radon", 1000 * 27))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * 64),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 + 32)),
+                    requiredFluid(FluidList.Lubricant, 1000 * 14),
+                    requiredFluid(GasList.Radon, 1000 * 27))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKVI_LuV, 1))
                 .eut(RECIPE_LuV)
                 .duration(60 * SECONDS)
@@ -4728,10 +4758,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_3.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 2)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 4)),
-                    requiredFluid("lubricant", 1000 * 42),
-                    requiredFluid("radon", 1000 * 45))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 2)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.Lubricant, 1000 * 42),
+                    requiredFluid(GasList.Radon, 1000 * 45))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKVII_ZPM, 1))
                 .eut(RECIPE_ZPM)
                 .duration(60 * SECONDS)
@@ -4780,10 +4810,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 4)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 4)),
-                    requiredFluid("lubricant", 1000 * (64 * 3 + 48)),
-                    requiredFluid("radon", 1000 * 64))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 3 + 48)),
+                    requiredFluid(GasList.Radon, 1000 * 64))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKVIII_UV, 1))
                 .eut(RECIPE_UV)
                 .duration(60 * SECONDS)
@@ -4834,11 +4864,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 4))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 4)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 4)),
-                    requiredFluid("lubricant", 1000 * (64 * 3 + 4)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * 20),
-                    requiredFluid("radon", 1000 * (64 + 46)))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 3 + 4)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20),
+                    requiredFluid(GasList.Radon, 1000 * (64 + 46)))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKIX_UHV, 1))
                 .eut(RECIPE_UHV)
                 .duration(60 * SECONDS)
@@ -4892,11 +4922,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 8))
                 .fluidInputs(
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 8)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 4)),
-                    requiredFluid("lubricant", 1000 * (64 * 3 + 32)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 21 + 8)),
-                    requiredFluid("radon", 1000 * (64 * 5 + 24)))
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 8)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 4)),
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 3 + 32)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 21 + 8)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 5 + 24)))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKX_UEV, 1))
                 .eut(RECIPE_UEV)
                 .duration(60 * SECONDS)
@@ -4956,10 +4986,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 16))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 3 + 32)),
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 8)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 8)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 21 + 28)))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 3 + 32)),
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 8)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 8)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 21 + 28)))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKXI_UIV, 1))
                 .eut(RECIPE_UEV)
                 .duration(60 * SECONDS)
@@ -5016,10 +5046,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 32))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 3 + 32)),
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 8)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 16)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 22 + 4)))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 3 + 32)),
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 8)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 16)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 22 + 4)))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKXII_UMV, 1))
                 .eut(RECIPE_UMV)
                 .duration(60 * SECONDS)
@@ -5078,11 +5108,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(NewHorizonsCoreModList.Heavy_Duty_Rocket_Engine_Tier_4.copy(), 64))
                 .fluidInputs(
-                    requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 7)),
-                    requiredFluid("liquid_drillingfluid", 1000 * (64 * 8)),
-                    requiredFluid("ic2coolant", 1000 * (64 * 32)),
-                    requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 28 + 8)),
-                    requiredFluid("spatialfluid", 144 * 4))
+                    requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 7)),
+                    requiredFluid(FluidList.Drilling_Fluid, 1000 * (64 * 8)),
+                    requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 32)),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 28 + 8)),
+                    requiredFluid(FluidList.Spatially_Enlarged_Fluid, 144 * 4))
                 .itemOutputs(setStackSize(GTNHIntergalacticList.Mining_Drone_MKXIII_UXV, 1))
                 .eut(RECIPE_UXV)
                 .duration(60 * SECONDS)
@@ -5118,10 +5148,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                 setStackSize(MinecraftList.Cobblestone.copy(), 64 * 672605))
             .fluidInputs(
-                requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 + 48)),
-                requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 10 + 8)),
-                requiredFluid("oganesson", 1000 * 50),
-                requiredFluid("molten.cheese", 1000 * (64 * 3 + 48)))
+                requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 + 48)),
+                requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 10 + 8)),
+                requiredFluid(GasList.Oganesson, 1000 * 50),
+                requiredFluid(MoltenList.Molten_Cheese, 1000 * (64 * 3 + 48)))
             .itemOutputs(setStackSize(BlockList.Raw_Deep_Dark_Portal_Block, 1))
             .eut(RECIPE_UMV)
             .duration(180 * SECONDS)
@@ -5244,8 +5274,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                     setStackSize(OreList.Tartarite_Ore_Stone.copy(), 64))
                 .fluidInputs(
-                    requiredFluid("lubricant", 1000 * (64 * 6 + 32)),
-                    requiredFluid("radon", 1000 * (64 * 6 + 56)))
+                    requiredFluid(FluidList.Lubricant, 1000 * (64 * 6 + 32)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 6 + 56)))
                 .itemOutputs(setStackSize(AmunRaList.Shuttle_Schematic, 1))
                 .eut(RECIPE_UEV)
                 .duration(360 * SECONDS)
@@ -5280,7 +5310,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Tritanium_Ingot.copy(), 16),
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 2))
-                    .fluidInputs(requiredFluid("ic2coolant", 1000 * 20))
+                    .fluidInputs(requiredFluid(FluidList.IC2_Coolant, 1000 * 20))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Nano_Circuit_of_Split_Origin, 1))
                     .eut(RECIPE_UEV)
                     .duration(400 * SECONDS)
@@ -5326,10 +5356,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 32))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * (64 * 5)),
-                        requiredFluid("lubricant", 1000 * (64 * 2 + 32)),
-                        requiredFluid("radon", 1000 * (64 + 16)),
-                        requiredFluid("plasma.silver", 144 * (64 * 4)))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 5)),
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 * 2 + 32)),
+                        requiredFluid(GasList.Radon, 1000 * (64 + 16)),
+                        requiredFluid(PlasmaList.Silver_Plasma, 144 * (64 * 4)))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Plate_of_Split_Origin, 1))
                     .eut(RECIPE_UHV)
                     .duration(3600 * SECONDS)
@@ -5373,9 +5403,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 64))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * (64 * 10)),
-                        requiredFluid("lubricant", 1000 * (64 * 66)),
-                        requiredFluid("plasma.silver", 144 * 64))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 10)),
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 * 66)),
+                        requiredFluid(PlasmaList.Silver_Plasma, 144 * 64))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Chevron_of_Split_Origin, 1))
                     .eut(RECIPE_UHV)
                     .duration(3600 * SECONDS)
@@ -5394,7 +5424,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Osmiridium_Ingot.copy(), 64),
 
                         setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 8))
-                    .fluidInputs(requiredFluid("wet.concrete", 144 * 64 * 8))
+                    .fluidInputs(requiredFluid(FluidList.Wet_Concrete, 144 * 64 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Frame_Part_of_Split_Origin, 1))
                     .eut(RECIPE_UHV)
                     .duration(3600 * SECONDS)
@@ -5440,7 +5470,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(NewHorizonsCoreModList.Pico_Wafer.copy(), 4),
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 4))
-                    .fluidInputs(requiredFluid("ic2coolant", 1000 * 40), requiredFluid("ic2uumatter", 1000 * 8))
+                    .fluidInputs(
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * 40),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Pico_Circuit_of_Polychrome_Contest, 1))
                     .eut(RECIPE_UEV)
                     .duration(500 * SECONDS)
@@ -5487,7 +5519,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(NewHorizonsCoreModList.Pico_Wafer.copy(), 8),
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 8))
-                    .fluidInputs(requiredFluid("ic2coolant", 1000 * (64 + 16)), requiredFluid("ic2uumatter", 1000 * 40))
+                    .fluidInputs(
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 + 16)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 40))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Quantum_Circuit_of_Polychrome_Contest, 1))
                     .eut(RECIPE_UIV)
                     .duration(1000 * SECONDS)
@@ -5549,12 +5583,12 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 128))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * (64 * 20)),
-                        requiredFluid("lubricant", 1000 * 64),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 9)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 10)),
-                        requiredFluid("radon", 1000 * (64 * 6)),
-                        requiredFluid("plasma.silver", 144 * 64 * 4))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 20)),
+                        requiredFluid(FluidList.Lubricant, 1000 * 64),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 9)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 10)),
+                        requiredFluid(GasList.Radon, 1000 * (64 * 6)),
+                        requiredFluid(PlasmaList.Silver_Plasma, 144 * 64 * 4))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Plate_of_Polychrome_Contest, 1))
                     .eut(RECIPE_UIV)
                     .duration(3600 * SECONDS)
@@ -5614,11 +5648,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 256))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * (64 * 40)),
-                        requiredFluid("lubricant", 1000 * (64 * 6)),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 27)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 20)),
-                        requiredFluid("plasma.silver", 144 * 64))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 40)),
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 * 6)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 27)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 20)),
+                        requiredFluid(PlasmaList.Silver_Plasma, 144 * 64))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Chevron_of_Polychrome_Contest, 1))
                     .eut(RECIPE_UIV)
                     .duration(3600 * SECONDS)
@@ -5637,7 +5671,7 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Osmiridium_Ingot.copy(), 64),
 
                         setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 8))
-                    .fluidInputs(requiredFluid("wet.concrete", 144 * 64 * 8))
+                    .fluidInputs(requiredFluid(FluidList.Wet_Concrete, 144 * 64 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Frame_Part_of_Polychrome_Contest, 1))
                     .eut(RECIPE_UIV)
                     .duration(3600 * SECONDS)
@@ -5678,9 +5712,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 4))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * 40),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 + 14)),
-                        requiredFluid("ic2uumatter", 1000 * 8))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * 40),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 14)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Pico_Circuit_of_Dimensional_Duplicity, 1))
                     .eut(RECIPE_UMV)
                     .duration(500 * SECONDS)
@@ -5723,9 +5757,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 8))
                     .fluidInputs(
-                        requiredFluid("ic2coolant", 1000 * (64 + 16)),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 2 + 28)),
-                        requiredFluid("ic2uumatter", 1000 * 40))
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 + 16)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 2 + 28)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 40))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Quantum_Circuit_of_Dimensional_Duplicity, 1))
                     .eut(RECIPE_UXV)
                     .duration(1000 * SECONDS)
@@ -5787,11 +5821,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 128))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 2)),
-                        requiredFluid("exciteddtec", 144 * (64 * 16)),
-                        requiredFluid("ic2coolant", 1000 * (64 * 20)),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 57)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 10)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 2)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * (64 * 16)),
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 20)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 57)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 10)))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Plate_of_Dimensional_Duplicity, 1))
                     .eut(RECIPE_UXV)
                     .duration(3600 * SECONDS)
@@ -5858,11 +5892,11 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(WireList.Superconductor_UHV_Wire_1x.copy(), 64 * 256))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 16)),
-                        requiredFluid("exciteddtec", 144 * 64 * 16),
-                        requiredFluid("ic2coolant", 1000 * (64 * 40)),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 172 + 32)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 20)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 16)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * 64 * 16),
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * (64 * 40)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 172 + 32)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 20)))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Chevron_of_Dimensional_Duplicity, 1))
                     .eut(RECIPE_UXV)
                     .duration(3600 * SECONDS)
@@ -5893,7 +5927,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Tairitsu_Ingot.copy(), 64),
 
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64))
-                    .fluidInputs(requiredFluid("exciteddtec", 144 * 64 * 16))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * 64 * 16))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Frame_Part_of_Dimensional_Duplicity, 1))
                     .eut(RECIPE_UXV)
                     .duration(3600 * SECONDS)
@@ -5947,10 +5982,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(SingularityList.Eternal_Singularity.copy(), 16),
                         setStackSize(TecTechList.Gallifreyan_Stabilisation_Field_Generator.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 4)),
-                        requiredFluid("exciteddtec", 144 * (64 * 16)),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 63)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 10)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 4)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * (64 * 16)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 63)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 10)))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Plate_of_Harmonic_Breakthrough, 1))
                     .eut(RECIPE_UMV)
                     .duration(125_000 * SECONDS)
@@ -6004,10 +6039,10 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(TecTechList.Reinforced_Spatial_Structure_Casing.copy(), 64 * 2))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 20)),
-                        requiredFluid("exciteddtec", 144 * 64 * 16),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 151)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 20)))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 20)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * 64 * 16),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 151)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 20)))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Chevron_of_Harmonic_Breakthrough, 1))
                     .eut(RECIPE_UMV)
                     .duration(125_000 * SECONDS)
@@ -6035,7 +6070,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Tairitsu_Ingot.copy(), 64),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64),
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 * 17))
-                    .fluidInputs(requiredFluid("exciteddtec", 144 * 64 * 16))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 144 * 64 * 16))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Frame_Part_of_Harmonic_Breakthrough, 1))
                     .eut(RECIPE_UMV)
                     .duration(125_000 * SECONDS)
@@ -6068,8 +6104,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(NewHorizonsCoreModList.Pico_Wafer.copy(), 4))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 26),
-                        requiredFluid("ic2uumatter", 1000 * 8))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 26),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 8))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Pico_Circuit_of_Heavenly_Fire, 1))
                     .eut(RECIPE_UMV)
                     .duration(500 * SECONDS)
@@ -6105,8 +6141,8 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
 
                         setStackSize(NewHorizonsCoreModList.Pico_Wafer.copy(), 8))
                     .fluidInputs(
-                        requiredFluid("molten.mutatedlivingsolder", 144 * 52),
-                        requiredFluid("ic2uumatter", 1000 * 40))
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 52),
+                        requiredFluid(FluidList.UU_Matter, 1000 * 40))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Quantum_Circuit_of_Heavenly_Fire, 1))
                     .eut(RECIPE_UMV)
                     .duration(1000 * SECONDS)
@@ -6163,12 +6199,12 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(TecTechList.Harmonic_Phonon_Transmission_Conduit.copy(), 32),
                         setStackSize(TecTechList.Transcendentally_Amplified_Magnetic_Confinement_Casing.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 4)),
-                        requiredFluid("exciteddtsc", 1000 * 64 * 8),
-                        requiredFluid("phononmedium", 1000 * 64 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 63)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 10)),
-                        requiredFluid("quarkgluonplasma", 1000 * 64 * 16))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 4)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Stellar_Catalyst, 1000 * 64 * 8),
+                        requiredFluid(FluidList.Lossless_Phonon_Transfer_Medium, 1000 * 64 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 63)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 10)),
+                        requiredFluid(PlasmaList.Degenerate_Quark_Gluon_Plasma, 1000 * 64 * 16))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Plate_of_Heavenly_Fire, 1))
                     .eut(RECIPE_UXV)
                     .duration(125_000 * SECONDS)
@@ -6222,12 +6258,12 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(TecTechList.Reinforced_Temporal_Structure_Casing.copy(), 64),
                         setStackSize(TecTechList.Spatially_Transcendent_Gravitational_Lens_Block.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("dimensionallyshiftedsuperfluid", 1000 * (64 * 20)),
-                        requiredFluid("exciteddtsc", 1000 * 64 * 8),
-                        requiredFluid("phononmedium", 1000 * 64 * 4),
-                        requiredFluid("molten.mutatedlivingsolder", 144 * (64 * 151)),
-                        requiredFluid("ic2uumatter", 1000 * (64 * 20)),
-                        requiredFluid("quarkgluonplasma", 1000 * 64 * 16))
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 20)),
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Stellar_Catalyst, 1000 * 64 * 8),
+                        requiredFluid(FluidList.Lossless_Phonon_Transfer_Medium, 1000 * 64 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 151)),
+                        requiredFluid(FluidList.UU_Matter, 1000 * (64 * 20)),
+                        requiredFluid(PlasmaList.Degenerate_Quark_Gluon_Plasma, 1000 * 64 * 16))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Chevron_of_Heavenly_Fire, 1))
                     .eut(RECIPE_UXV)
                     .duration(125_000 * SECONDS)
@@ -6256,9 +6292,9 @@ public class ChaosAssemblyLine_ItemRecipe_Item {
                         setStackSize(IngotList.Universium_Ingot.copy(), 64 * 17),
                         setStackSize(IngotList.White_Dwarf_Matter_Ingot.copy(), 64))
                     .fluidInputs(
-                        requiredFluid("exciteddtsc", 1000 * 64 * 8),
-                        requiredFluid("phononmedium", 1000 * 64 * 4),
-                        requiredFluid("quarkgluonplasma", 1000 * 64 * 16))
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Stellar_Catalyst, 1000 * 64 * 8),
+                        requiredFluid(FluidList.Lossless_Phonon_Transfer_Medium, 1000 * 64 * 4),
+                        requiredFluid(PlasmaList.Degenerate_Quark_Gluon_Plasma, 1000 * 64 * 16))
                     .itemOutputs(setStackSize(NewHorizonsCoreModList.Stargate_Frame_Part_of_Heavenly_Fire, 1))
                     .eut(RECIPE_UXV)
                     .duration(125_000 * SECONDS)

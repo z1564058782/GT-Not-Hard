@@ -30,8 +30,10 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
@@ -44,6 +46,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidStack;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
@@ -101,6 +104,7 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
 import gregtech.common.blocks.ItemMachines;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
+import hatch.SuperInputProcessing;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
@@ -1299,5 +1303,29 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         } else {
             currentTip.add("Machine: " + EnumChatFormatting.YELLOW + "None");
         }
+    }
+
+    /**
+     * 收集同一颜色组的完整物品分片，防止原版 ME 去重只留下一个 int 堆栈。
+     *
+     * @param color 当前输入颜色组，empty 表示不区分颜色
+     * @return 普通物品库存与完整 ME 分片的原始可消耗引用
+     */
+    @Override
+    public ArrayList<ItemStack> getStoredInputsForColor(Optional<Byte> color) {
+        // 原版结果在没有 SuperInputBusME 时原样保留，存在时按完整来源组重新收集。
+        return SuperInputProcessing.collectItemInputs(this, color, super.getStoredInputsForColor(color));
+    }
+
+    /**
+     * 收集同一颜色组的全部流体分片，防止原版按 Fluid 去重时截断大数量输入。
+     *
+     * @param color 当前输入颜色组，empty 表示不区分颜色
+     * @return 包含所有所选 FluidStack 分片原引用的列表
+     */
+    @Override
+    public ArrayList<FluidStack> getStoredFluidsForColor(Optional<Byte> color) {
+        // 调用完整来源组收集器，未接入大数量仓时继续使用原版结果。
+        return SuperInputProcessing.collectFluidInputs(this, color, super.getStoredFluidsForColor(color));
     }
 }
