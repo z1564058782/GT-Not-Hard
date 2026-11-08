@@ -1,5 +1,7 @@
 package com.mofoga.gtnothard;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import hatch.SuperInputBlockRenderer;
 
@@ -15,6 +17,7 @@ public class ClientProxy extends CommonProxy {
         super.preInit(event);
         // 只把等级 damage 映射为固定 MTE 纹理 ID，绘制仍由 GT 原版执行。
         SuperInputBlockRenderer.register();
+        MinecraftForge.EVENT_BUS.register(new SuperHatchCreativeFilter());
     }
 
 }

@@ -33,6 +33,7 @@ public final class SuperInputTierItem extends ItemMachines {
     public SuperInputTierItem(Block block) {
         // 原版 ItemMachines 构造器保留机器方块的创造栏、无耐久和子类型设置。
         super(block);
+        setCreativeTab(SuperHatchCreativeTab.INSTANCE);
     }
 
     /** @return 从关联方块读取类别；避免方块父构造器注册物品时缓存尚未初始化的 boolean */

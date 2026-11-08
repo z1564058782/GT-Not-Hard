@@ -43,6 +43,9 @@ gtnothard.superInput.outputSummary=产物（汇总）
 
 # Super Output Bus (ME)
 gt.blockmachines.superoutputbus.me.name=超级ME输出总线
+tile.gtnothard.superOutputBusMe.name=超级ME输出总线
+itemGroup.gtnothard=GT Not Hard
+gtnothard.superMe.controllerUsage=Just use on Chaos/Origin/Singularity
 gtnothard.superoutput.desc.1=使用 long 数量将物品直接输出到 ME 网络
 gtnothard.superoutput.desc.2=默认总缓存：9,223,372,036,854,775,807 个物品
 gtnothard.superoutput.desc.3=支持累计超过 2,147,483,647 的物品输出分片

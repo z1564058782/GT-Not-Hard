@@ -59,6 +59,7 @@ import gregtech.api.interfaces.IOutputBus;
 import gregtech.api.interfaces.IOutputBusTransaction;
 import gregtech.api.interfaces.IOutputTransaction;
 import gregtech.api.interfaces.ITexture;
+import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEHatchOutputBus;
@@ -67,6 +68,7 @@ import gregtech.api.util.GTUtility;
 import gregtech.common.tileentities.machines.outputme.base.MTEHatchOutputMEBase;
 import gregtech.common.tileentities.machines.outputme.util.AECacheCounter;
 import io.netty.buffer.ByteBuf;
+import loader.SuperOutputLoader;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
@@ -75,6 +77,7 @@ import mcp.mobius.waila.api.IWailaDataAccessor;
  * Native GT recipe fragments are merged by item identity (including NBT), never clamped to int.
  * Requires the GT5U 5.09.54.133 output transaction API used by this repository.
  */
+@IMetaTileEntity.SkipGenerateDescription
 public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannelState, IMEConnectable, ICellContainer,
     IGridProxyable, IPriorityHost, MTEHatchOutputMEBase.Environment<IAEItemStack> {
 
@@ -176,7 +179,24 @@ public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannel
 
     @Override
     public String getLocalName() {
-        return net.minecraft.util.StatCollector.translateToLocal("gt.blockmachines.superoutputbus.me.name");
+        return net.minecraft.util.StatCollector.translateToLocal(getLocalNameKey());
+    }
+
+    @Override
+    public String getLocalNameKey() {
+        return "tile.gtnothard.superOutputBusMe.name";
+    }
+
+    @Override
+    public String getInventoryName() {
+        return getLocalNameKey();
+    }
+
+    @Override
+    public ItemStack getStackForm(long amount) {
+        if (amount <= 0 || amount > Integer.MAX_VALUE)
+            throw new IllegalArgumentException("Invalid machine stack amount");
+        return SuperOutputLoader.getStack((int) amount);
     }
 
     @Override
@@ -185,7 +205,8 @@ public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannel
             net.minecraft.util.StatCollector.translateToLocal("gtnothard.superoutput.desc.2"),
             net.minecraft.util.StatCollector.translateToLocal("gtnothard.superoutput.desc.3"),
             net.minecraft.util.StatCollector.translateToLocal("gtnothard.superoutput.desc.4"),
-            net.minecraft.util.StatCollector.translateToLocal("gtnothard.superoutput.desc.5") };
+            net.minecraft.util.StatCollector.translateToLocal("gtnothard.superoutput.desc.5"),
+            net.minecraft.util.StatCollector.translateToLocal("gtnothard.superMe.controllerUsage") };
     }
 
     @Override

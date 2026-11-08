@@ -43,6 +43,9 @@ gtnothard.superInput.outputSummary=Outputs (summary)
 
 # Super Output Bus (ME)
 gt.blockmachines.superoutputbus.me.name=Super Output Bus (ME)
+tile.gtnothard.superOutputBusMe.name=Super Output Bus (ME)
+itemGroup.gtnothard=GT Not Hard
+gtnothard.superMe.controllerUsage=Just use on Chaos/Origin/Singularity
 gtnothard.superoutput.desc.1=Outputs items directly to ME using long quantities
 gtnothard.superoutput.desc.2=Default cache: 9,223,372,036,854,775,807 items total
 gtnothard.superoutput.desc.3=Accepts multiple output fragments above 2,147,483,647 items

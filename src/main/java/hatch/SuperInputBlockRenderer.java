@@ -10,6 +10,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.common.render.GTRendererBlock;
 import loader.SuperInputLoader;
+import loader.SuperOutputLoader;
 
 /** 只映射背包 damage，全部机器外壳与 ME 覆盖层交给 GT 原版三维方块渲染器。 */
 @SideOnly(Side.CLIENT)
@@ -32,9 +33,10 @@ public final class SuperInputBlockRenderer implements ISimpleBlockRenderingHandl
     @Override
     public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderBlocks) {
         // metadata 是 0～16 等级，GT 原渲染函数的参数却是 MTE ID，必须显式转换。
-        boolean itemBus = ((SuperInputBlock) block).isItemBus();
         // 同一类别各级使用原版相同外壳/ME 覆盖层，名称和容量由各自 Meta 区分。
-        renderer.renderInventoryBlock(block, SuperInputLoader.getMachineId(itemBus), modelId, renderBlocks);
+        int machineId = block instanceof SuperOutputBlock ? SuperOutputLoader.SUPER_OUTPUT_BUS_ME_ID
+            : SuperInputLoader.getMachineId(((SuperInputBlock) block).isItemBus());
+        renderer.renderInventoryBlock(block, machineId, modelId, renderBlocks);
     }
 
     /** 世界渲染直接读取真实 GT 实体纹理、朝向、染色和覆盖板。 */

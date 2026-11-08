@@ -40,6 +40,7 @@ public final class SuperInputBlock extends BlockMachines {
         super(SuperInputTierItem.class, itemBus ? "superInputBusMe" : "superInputHatchMe", new MaterialMachines());
         // 必须在父构造完成后保存；物品不能在其构造期间缓存这个值。
         this.itemBus = itemBus;
+        setCreativeTab(SuperHatchCreativeTab.INSTANCE);
     }
 
     /** @return 本方块对应的仓室类别 */
@@ -71,6 +72,8 @@ public final class SuperInputBlock extends BlockMachines {
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubBlocks(Item item, CreativeTabs aCreativeTab, List<ItemStack> outputSubBlocks) {
+        if (aCreativeTab != null && aCreativeTab != SuperHatchCreativeTab.INSTANCE
+            && aCreativeTab != CreativeTabs.tabAllSearch) return;
         // 只枚举等级数，不枚举理论分片数或全 GT MTE 注册表。
         for (int tierIndex = 0; tierIndex < SuperInputTier.tierCount; tierIndex++) {
             // ItemBlock 实例与 this 方块关联，damage 保持 0～16。

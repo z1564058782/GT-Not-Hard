@@ -226,6 +226,7 @@ public class SuperInputBusME extends MTEHatchInputBusME {
                 SuperInputTier.getMaxInputAmount(tierIndex)));
         // 提示合并输入模式需要控制器适配。
         description.add(StatCollector.translateToLocal("gtnothard.superInputMe.controller"));
+        description.add(StatCollector.translateToLocal("gtnothard.superMe.controllerUsage"));
         // 原版物品提示系统使用 String 数组。
         return description.toArray(new String[0]);
     }

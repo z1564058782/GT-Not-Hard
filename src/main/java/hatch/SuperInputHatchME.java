@@ -232,6 +232,7 @@ public class SuperInputHatchME extends MTEHatchInputME {
                 SuperInputTier.getMaxInputAmount(tierIndex)));
         // 提示需使用完整分片收集器。
         description.add(StatCollector.translateToLocal("gtnothard.superInputMe.controller"));
+        description.add(StatCollector.translateToLocal("gtnothard.superMe.controllerUsage"));
         // GT 描述接口接收字符串数组。
         return description.toArray(new String[0]);
     }
