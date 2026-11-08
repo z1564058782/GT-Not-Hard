@@ -3,6 +3,7 @@ package com.mofoga.gtnothard;
 import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import hatch.SuperHatchCreativeFilter;
 import hatch.SuperInputBlockRenderer;
 
 public class ClientProxy extends CommonProxy {
