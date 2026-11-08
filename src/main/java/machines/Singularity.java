@@ -58,10 +58,18 @@ import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gtneioreplugin.plugin.item.ItemDimensionDisplay;
+import hatch.SuperOutputRouting;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class Singularity extends MTEExtendedPowerMultiBlockBase<Singularity> implements ISurvivalConstructable {
+
+    /** Preserve every output fragment until the long ME transaction receives it. */
+    @Override
+    public boolean addItemOutputs(ItemStack[] outputs) {
+        if (SuperOutputRouting.hasSuperOutputBus(this)) return SuperOutputRouting.addItemOutputs(this, outputs);
+        return super.addItemOutputs(outputs);
+    }
 
     public Singularity(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);

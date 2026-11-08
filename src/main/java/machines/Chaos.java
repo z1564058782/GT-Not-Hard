@@ -108,11 +108,19 @@ import hatch.SuperInputMachineGui;
 import hatch.SuperInputOutputSummary;
 import hatch.SuperInputProcessing;
 import hatch.SuperInputProcessingLogic;
+import hatch.SuperOutputRouting;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
 
 public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISurvivalConstructable {
+
+    /** Preserve every output fragment until the long ME transaction receives it. */
+    @Override
+    public boolean addItemOutputs(ItemStack[] outputs) {
+        if (SuperOutputRouting.hasSuperOutputBus(this)) return SuperOutputRouting.addItemOutputs(this, outputs);
+        return super.addItemOutputs(outputs);
+    }
 
     // 模式 0：控制台；模式 1：追加到文件；模式 2：静默
     private static final int TRY_CATCH_MODE = 2;

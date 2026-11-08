@@ -25,22 +25,5 @@ public class MachinesLoader {
         SuperOutputLoader.registerMachines();
         // 复用已有字段，保留外部对该字段的引用和全部既有命名。
         SuperInputBusME = SuperInputLoader.superInputBusMe;
-        /*
-         * // 注册基础版SuperInputBus(ME) - 不支持自动拉取
-         * SuperInputBusME = new SuperDualInputHatchME(
-         * 25568, // ID
-         * "SuperDualInputHatchME",
-         * StatCollector.translateToLocal("SuperDualInputHatchME"),
-         * 9,
-         * true
-         * );
-         * // 注册高级版SuperInputBus(ME) - 支持自动拉取
-         * AdvancedSuperInputBusME = new SuperInputBus(
-         * 25569, // ID
-         * true, // autoPullAvailable
-         * "gt.superinputbus.me.advanced", // 名称
-         * "Advanced Super Input Bus (ME)" // 区域化名称
-         * );
-         */
     }
 }

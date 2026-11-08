@@ -98,10 +98,18 @@ import hatch.SuperInputMachineGui;
 import hatch.SuperInputOutputSummary;
 import hatch.SuperInputProcessing;
 import hatch.SuperInputProcessingLogic;
+import hatch.SuperOutputRouting;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConstructable, ISecondaryDescribable {
+
+    /** Preserve every output fragment until the long ME transaction receives it. */
+    @Override
+    public boolean addItemOutputs(ItemStack[] outputs) {
+        if (SuperOutputRouting.hasSuperOutputBus(this)) return SuperOutputRouting.addItemOutputs(this, outputs);
+        return super.addItemOutputs(outputs);
+    }
 
     /** 本 Mod 发电控制器同样使用只读输出摘要，不复制或同步逐片产物数组。 */
     private final SuperInputOutputSummary outputSummary = new SuperInputOutputSummary();
