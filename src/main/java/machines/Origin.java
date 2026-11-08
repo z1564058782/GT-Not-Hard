@@ -37,7 +37,6 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
-import hatch.SuperInputProcessing;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -46,8 +45,8 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-
 import net.minecraftforge.fluids.FluidStack;
+
 import org.jetbrains.annotations.NotNull;
 
 import com.cleanroommc.modularui.drawable.DynamicDrawable;
@@ -95,6 +94,8 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
+import hatch.SuperInputProcessing;
+import hatch.SuperInputProcessingLogic;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
@@ -500,7 +501,7 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
 
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection aFacing,
-                                 int colorIndex, boolean aActive, boolean redstoneLevel) {
+        int colorIndex, boolean aActive, boolean redstoneLevel) {
         if (side == aFacing) {
             if (aActive) {
                 return new ITexture[] { casingTexturePages[0][mcasingIndex], TextureFactory.builder()
@@ -1101,7 +1102,8 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
     @Override
     protected ProcessingLogic createProcessingLogic() {
         try {
-            return new ProcessingLogic() {
+            // 保留本控制器全部自定义验证/超频，仅扩展压缩 long 输入的匹配和扣料。
+            return new SuperInputProcessingLogic() {
 
                 // 添加一个标志位，用于跟踪是否已经计算过能量
                 private boolean energyCalculated = false;
@@ -1248,7 +1250,8 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
             };
         } catch (Exception e) {
             handleException("Origin", "createProcessingLogic", e);
-            return super.createProcessingLogic();
+            // 异常回退也必须保留 long 库存安全校验，不能退回 int 成本缓存。
+            return new SuperInputProcessingLogic().setMaxParallelSupplier(this::getMaxParallelRecipes);
         }
     }
 
@@ -1525,7 +1528,7 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
 
     @Override
     public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
-                                int z) {
+        int z) {
         try {
             super.getWailaNBTData(player, tile, tag, world, x, y, z);
             // 只在服务器端添加NBT数据，客户端从NBT读取
@@ -1551,7 +1554,7 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
 
     @Override
     public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
-                             IWailaConfigHandler config) {
+        IWailaConfigHandler config) {
         try {
             super.getWailaBody(itemStack, currentTip, accessor, config);
             final NBTTagCompound tag = accessor.getNBTData();
@@ -1573,26 +1576,26 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
     }
 
     /**
-     * 收集同一颜色组的完整物品分片，防止原版 ME 去重只留下一个 int 堆栈。
-     *
-     * @param color 当前输入颜色组，empty 表示不区分颜色
-     * @return 普通物品库存与完整 ME 分片的原始可消耗引用
+     * 收集同一颜色组的压缩物品账本，避免原版 ME 去重只保留一个 int 数量。
+     * 
+     * @param color 当前颜色组，empty 表示全部颜色
+     * @return 普通库存与每种 ME 资源的可扣料原始视图
      */
     @Override
     public ArrayList<ItemStack> getStoredInputsForColor(Optional<Byte> color) {
-        // 原版结果在没有 SuperInputBusME 时原样保留，存在时按完整来源组重新收集。
+        // 普通输入保持原行为；SuperInput 输入改用完整资源组来源选择。
         return SuperInputProcessing.collectItemInputs(this, color, super.getStoredInputsForColor(color));
     }
 
     /**
-     * 收集同一颜色组的全部流体分片，防止原版按 Fluid 去重时截断大数量输入。
-     *
-     * @param color 当前输入颜色组，empty 表示不区分颜色
-     * @return 包含所有所选 FluidStack 分片原引用的列表
+     * 收集同一颜色组的压缩流体账本，真实数量由 SuperInputProcessingLogic 处理。
+     * 
+     * @param color 当前颜色组
+     * @return 普通储罐与 ME 流体视图的原引用
      */
     @Override
     public ArrayList<FluidStack> getStoredFluidsForColor(Optional<Byte> color) {
-        // 调用完整来源组收集器，未接入大数量仓时继续使用原版结果。
+        // 不复制堆栈，以便配方消耗回写到待结算快照。
         return SuperInputProcessing.collectFluidInputs(this, color, super.getStoredFluidsForColor(color));
     }
 }

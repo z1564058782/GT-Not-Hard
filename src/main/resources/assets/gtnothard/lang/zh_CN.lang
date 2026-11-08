@@ -1,0 +1,3 @@
+# 压缩分级 ME 输入的新增描述；仓室名称按要求保留英文及罗马数字。
+gtnothard.superInputMe.limit=每种资源每次配方检查的输入上限：%s（个物品或 mB）
+gtnothard.superInputMe.controller=控制器需要接入 SuperInputProcessing 与 SuperInputProcessingLogic

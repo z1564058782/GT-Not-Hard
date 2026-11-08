@@ -1,0 +1,3 @@
+# Additional descriptions for the compressed tiered ME inputs.
+gtnothard.superInputMe.limit=Maximum input per resource/check: %s (items or mB)
+gtnothard.superInputMe.controller=Requires SuperInputProcessing and SuperInputProcessingLogic in the controller
