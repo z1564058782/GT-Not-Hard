@@ -34,6 +34,7 @@ import gregtech.api.recipe.check.CheckRecipeResultRegistry;
 import gregtech.api.recipe.check.SimpleCheckRecipeResult;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.tileentities.machines.MTEHatchInputME;
+import io.netty.buffer.ByteBuf;
 import loader.SuperInputLoader;
 
 /**
@@ -83,13 +84,13 @@ public class SuperInputHatchME extends MTEHatchInputME {
     /** 读取世界或放置物品的等级；旧版无键的 64 片仓室迁移为 III 级。 */
     @Override
     public void loadNBTData(NBTTagCompound aNBT) {
-        // 保留原版 NBT 加载和向后兼容处理。
-        super.loadNBTData(aNBT);
         // 非法数据按 I 级处理，防止损坏存档静默获得最高容量。
         int savedTierIndex = aNBT.hasKey(SuperInputTier.tierTag) ? aNBT.getInteger(SuperInputTier.tierTag)
             : SuperInputTier.legacyTierIndex;
         // 不对未验证索引执行位移。
         tierIndex = savedTierIndex >= 0 && savedTierIndex < SuperInputTier.tierCount ? savedTierIndex : 0;
+        // 权威等级先恢复，再读取全部原版配置；GT 捕获父类异常时等级也已存在。
+        super.loadNBTData(aNBT);
     }
 
     /** GT 物品放置模式初始化；不从数据棒复制等级。 */
@@ -132,6 +133,38 @@ public class SuperInputHatchME extends MTEHatchInputME {
     public ItemStack getStackForm(long aAmount) {
         // 注册器提供完整可放置物品，不把等级塞进 GT 的机器 ID 字段。
         return SuperInputLoader.getStack(false, tierIndex, aAmount);
+    }
+
+    /** @return 以实际世界等级生成的名称键；不能使用始终为 I 的注册样板名称 */
+    @Override
+    public String getLocalNameKey() {
+        // 所有 17 个键在本次资源文件中完整提供。
+        return "gtnothard.superInputHatchMe.tier." + tierIndex + ".name";
+    }
+
+    /** @return GUI 的当前世界等级名称键，修复 CommonMetaTileEntity 默认读取全局样板的 I 级名称 */
+    @Override
+    public String getInventoryName() {
+        // 注册样板只有一个，但每个实际元实体可以拥有不同等级。
+        return getLocalNameKey();
+    }
+
+    /** 完整区块描述包携带等级；单靠变化事件无法覆盖玩家首次观察已有高等级仓室的情况。 */
+    @Override
+    public void writeToStream(ByteBuf data) {
+        // 原版发送朝向、活动状态和覆盖板等数据，必须按原序保留。
+        super.writeToStream(data);
+        // 0～16 一个字节即可表达，不增加周期性网络扫描。
+        data.writeByte(tierIndex);
+    }
+
+    /** 客户端先由 GT 创建正确 MTE，再从同一描述包接收实际等级。 */
+    @Override
+    public void readFromStream(ByteBuf data) {
+        // 先消费原版部分，不能破坏 GT 的网络格式。
+        super.readFromStream(data);
+        // 本版客户端和服务端必须同步更新；旧包缺少字节时保持现有等级。
+        if (data.isReadable()) onValueUpdate(data.readByte());
     }
 
     /** 本轮每一种流体的快照；按 Fluid 去重以保持原版控制器的资源识别规则。 */

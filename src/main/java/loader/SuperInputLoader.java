@@ -9,20 +9,25 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.GregTechAPI;
+import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import hatch.SuperInputBlock;
 import hatch.SuperInputBusME;
 import hatch.SuperInputHatchME;
 import hatch.SuperInputTier;
 import hatch.SuperInputTierItem;
 
-/** 两个固定 GT ID、两个 17 子类型物品及掉落转换的统一注册入口。 */
+/** 两个真实 GT 机器方块、固定 MTE ID、17 个子类型及兼容掉落的统一注册入口。 */
 public final class SuperInputLoader {
 
     /** 用户要求保留的物品总线 MTE ID，不随等级递增。 */
     public static final int superInputBusMeId = 25568;
     /** 用户要求保留的流体仓 MTE ID。 */
     public static final int superInputHatchMeId = 25569;
+    /** 总线真实方块，自动关联 ItemMachines 方块物品，17 级不额外占用 MTE ID。 */
+    public static SuperInputBlock superInputBusMeBlock;
+    /** 流体仓真实方块，世界元实体仍为 GT BaseMetaTileEntity。 */
+    public static SuperInputBlock superInputHatchMeBlock;
     /** 真实物品注册项，damage=0～16 对应 I～XVII。 */
     public static SuperInputTierItem superInputBusMeItem;
     /** 流体仓使用独立物品注册项，避免与总线 Meta 混淆。 */
@@ -35,18 +40,18 @@ public final class SuperInputLoader {
     /** 事件总线需要一个监听实例，生产代码不进行玩家背包逐 tick 扫描。 */
     private SuperInputLoader() {}
 
-    /** preInit 注册子类型物品；机器仍在原有 init 阶段注册。 */
+    /** 保留已有入口名称；preInit 改为注册实际方块及其 ItemMachines，机器仍在 init 注册。 */
     public static void registerItems() {
         // 与 Mod 原有加载习惯一致，重复调用直接复用已有注册项。
         if (superInputBusMeItem != null) return;
-        // 所有等级共用一个物品类型。
-        superInputBusMeItem = new SuperInputTierItem(true);
-        // 物品总线注册名与 README 的 /give 命令一致。
-        GameRegistry.registerItem(superInputBusMeItem, "superInputBusMe");
-        // 仓室的 17 个子类型共用另一个物品。
-        superInputHatchMeItem = new SuperInputTierItem(false);
-        // GameRegistry 在 gtnothard 的 preInit 上下文中添加 Mod 命名空间。
-        GameRegistry.registerItem(superInputHatchMeItem, "superInputHatchMe");
+        // GTGenericBlock 自动 registerBlock 并创建关联 ItemMachines，不能再 registerItem。
+        superInputBusMeBlock = new SuperInputBlock(true);
+        // 从 Forge 实际的 Block→Item 关联取得方块物品，避免出现平面物品与方块两个独立注册项。
+        superInputBusMeItem = (SuperInputTierItem) Item.getItemFromBlock(superInputBusMeBlock);
+        // 流体仓使用独立的真实 Block，但共享所有分片和等级处理方法。
+        superInputHatchMeBlock = new SuperInputBlock(false);
+        // 旧 registry 名保持一致，已有背包中的 0～16 Meta 可由同名 ItemBlock 接续读取。
+        superInputHatchMeItem = (SuperInputTierItem) Item.getItemFromBlock(superInputHatchMeBlock);
         // 仅监听破坏和掉落实体生成，不创建周期任务。
         MinecraftForge.EVENT_BUS.register(new SuperInputLoader());
     }
@@ -101,6 +106,40 @@ public final class SuperInputLoader {
     public static ItemStack getMachineStack(boolean itemBus, int amount) {
         // 必须使用 GT 机器方块关联物品，不能把子类型物品再次递归委托给自己。
         return new ItemStack(GregTechAPI.sBlockMachines, amount, itemBus ? superInputBusMeId : superInputHatchMeId);
+    }
+
+    /** @return 类别对应的固定 GT 元实体 ID，与等级 Meta 分开 */
+    public static int getMachineId(boolean itemBus) {
+        // 只注册两个 ID，I～XVII 的物品 damage 不参与本计算。
+        return itemBus ? superInputBusMeId : superInputHatchMeId;
+    }
+
+    /**
+     * 对原版放置完成后的最终世界实体设置等级，拒绝错误 ID 或错误仓室类别。
+     * 
+     * @param gtTile    世界中真实 GT 底座，不能传注册样板
+     * @param itemBus   放置物品的类别
+     * @param tierIndex 放置物品的权威 Meta，0～16
+     */
+    public static void applyPlacedTier(IGregTechTileEntity gtTile, boolean itemBus, int tierIndex) {
+        // 先验证 Meta，避免所有非法值都被强行转换为 I。
+        SuperInputTier.checkTierIndex(tierIndex);
+        // ID 必须匹配，即使其他 Mod 在放置中替换了元实体也不能静默写入。
+        if (gtTile.getMetaTileID() != getMachineId(itemBus)) {
+            // 在实际放置路径中明确暴露错误，便于定位冲突。
+            throw new IllegalStateException("Unexpected GT ID in placed SuperInput tile");
+        }
+        // 总线继承正确父类，同时保留扩展输入收集和网络代理。
+        if (itemBus && gtTile.getMetaTileEntity() instanceof SuperInputBusME) {
+            // 修改最终新实例，不修改全局注册样板。
+            ((SuperInputBusME) gtTile.getMetaTileEntity()).setTierIndex(tierIndex);
+        } else if (!itemBus && gtTile.getMetaTileEntity() instanceof SuperInputHatchME) {
+            // 同样设置实际流体仓实例的等级。
+            ((SuperInputHatchME) gtTile.getMetaTileEntity()).setTierIndex(tierIndex);
+        } else {
+            // 错误元实体类型不得伪装为一个可正常工作的 I 级仓室。
+            throw new IllegalStateException("Unexpected MTE class in placed SuperInput tile");
+        }
     }
 
     /** @return GT 原生掉落的等价子类型物品；不相关物品返回原引用 */
