@@ -142,8 +142,9 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
             // 普通未锁定路径继续使用 GT 原生匹配和消费，只包裹数量上界。
             int[] remainingOutputParallels = { getOutputParallelLimit(recipe, remainingOutputFragments) };
             // 批处理及小于一 tick 的额外并行都经过相同的剩余数量检查。
-            helper.setMaxParallelCalculator((candidate, maxParallel, fluids, items) -> candidate
-                .maxParallelCalculatedByInputs(Math.min(maxParallel, remainingOutputParallels[0]), fluids, items));
+            helper.setMaxParallelCalculator(
+                (candidate, maxParallel, fluids, items) -> candidate
+                    .maxParallelCalculatedByInputs(Math.min(maxParallel, remainingOutputParallels[0]), fluids, items));
             // 不改原版原料消耗语义，额外批处理只可使用剩余输出预算。
             helper.setInputConsumer((candidate, parallel, fluids, items) -> {
                 // 实际成功的并行量由 GT 原生算法消费。
@@ -184,7 +185,7 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
     /**
      * 按剩余对象数计算并行上界，概率按向上取整的最坏产出估计，不能在计算后截掉产物。
      *
-     * @param recipe 当前候选配方，保持其输出、NBT 和概率不变
+     * @param recipe             当前候选配方，保持其输出、NBT 和概率不变
      * @param availableFragments 完整启动中尚可构造的对象数
      * @return 可安全计算的并行数；预算不足以容纳一次配方时返回零
      */

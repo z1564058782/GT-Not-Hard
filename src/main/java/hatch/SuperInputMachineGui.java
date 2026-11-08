@@ -1,5 +1,7 @@
 package hatch;
 
+import net.minecraft.util.StatCollector;
+
 import com.cleanroommc.modularui.api.drawable.IKey;
 import com.cleanroommc.modularui.api.widget.IWidget;
 import com.cleanroommc.modularui.screen.ModularPanel;
@@ -23,7 +25,6 @@ import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.gui.modularui.adapter.CheckRecipeResultAdapter;
 import gregtech.common.gui.modularui.adapter.ShutdownReasonAdapter;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
-import net.minecraft.util.StatCollector;
 
 /**
  * 本 Mod 专用多方块 GUI，保持 GT5U 5.09.54.133 的按钮、状态和维护同步，
@@ -152,8 +153,9 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
 
         // 唯一产物同步是有界只读文本，原版机器的 GUI 注册不受影响。
         // 注册本界面的只读产物摘要。
-        syncManager.syncValue("superInputOutputSummary", new StringSyncValue(
-            () -> outputSummary.getText(multiblock.mOutputItems, multiblock.mOutputFluids)));
+        syncManager.syncValue(
+            "superInputOutputSummary",
+            new StringSyncValue(() -> outputSummary.getText(multiblock.mOutputItems, multiblock.mOutputFluids)));
 
         // Widget Specific
         // 原电源开关回调保持不变，bool 是玩家请求的工作状态。
@@ -171,7 +173,7 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
                     wasShutDown.setValue(true);
                     // 手动关机不展示额外故障原因。
                     shutdownReasonSyncer.setValue(ShutDownReasonRegistry.NONE);
-                // 空闲时委托原版停止方法收尾。
+                    // 空闲时委托原版停止方法收尾。
                 } else multiblock.stopMachine(ShutDownReasonRegistry.NONE);
             }
         }).allowC2S();
@@ -279,18 +281,32 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
         return new ListWidget<>().fullWidth()
             .crossAxisAlignment(Alignment.CrossAxis.START)
             // 模式文本沿用控制器和原语言资源。
-            .childIf(multiblock.supportsMachineModeSwitch(), () -> IKey.dynamic(() -> StatCollector
-                .translateToLocalFormatted("gt.interact.desc.mb.mode", machineModeSyncer.getStringValue()))
-                .asWidget().marginBottom(2).fullWidth())
+            .childIf(
+                multiblock.supportsMachineModeSwitch(),
+                () -> IKey
+                    .dynamic(
+                        () -> StatCollector
+                            .translateToLocalFormatted("gt.interact.desc.mb.mode", machineModeSyncer.getStringValue()))
+                    .asWidget()
+                    .marginBottom(2)
+                    .fullWidth())
             // 首次结构检查仍正常提示。
-            .child(IKey.lang("GT5U.multiblock.startup").color(Color.WHITE.main).asWidget()
-                .textAlign(Alignment.CenterLeft).setEnabledIf(widget -> startupCheckSyncer.getValue() > 0)
-                .marginBottom(2).fullWidth())
+            .child(
+                IKey.lang("GT5U.multiblock.startup")
+                    .color(Color.WHITE.main)
+                    .asWidget()
+                    .textAlign(Alignment.CenterLeft)
+                    .setEnabledIf(widget -> startupCheckSyncer.getValue() > 0)
+                    .marginBottom(2)
+                    .fullWidth())
             // 原版运行提示使用同步后的机器状态。
-            .childIf(multiblock.hasRunningText(), () -> new TextWidget<>(
-                StatCollector.translateToLocalFormatted("gt.interact.desc.mb.running")).color(Color.WHITE.main)
-                .setEnabledIf(widget -> multiblock.getErrorDisplayID() == 0 && baseMetaTileEntity.isActive())
-                .marginBottom(2).fullWidth())
+            .childIf(
+                multiblock.hasRunningText(),
+                () -> new TextWidget<>(StatCollector.translateToLocalFormatted("gt.interact.desc.mb.running"))
+                    .color(Color.WHITE.main)
+                    .setEnabledIf(widget -> multiblock.getErrorDisplayID() == 0 && baseMetaTileEntity.isActive())
+                    .marginBottom(2)
+                    .fullWidth())
             // 复用受支持的父类状态部件，不复制其按钮和结构错误交互。
             .child(createShutdownDurationWidget(syncManager))
             // 保留详细关机原因。
@@ -298,17 +314,38 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
             // 结构错误仍可点击定位。
             .child(createStructureErrorWidget(syncManager))
             // 配方失败信息取自原来的只读同步结果。
-            .child(IKey.dynamic(() -> multiblock.getCheckRecipeResult().getDisplayString()).asWidget().fullWidth()
-                .marginBottom(2).setEnabledIf(widget -> multiblock.shouldDisplayCheckRecipeResult()))
+            .child(
+                IKey.dynamic(
+                    () -> multiblock.getCheckRecipeResult()
+                        .getDisplayString())
+                    .asWidget()
+                    .fullWidth()
+                    .marginBottom(2)
+                    .setEnabledIf(widget -> multiblock.shouldDisplayCheckRecipeResult()))
             // 只在真实运行时显示 tick 进度，避免空闲时出现 0 / 0。
-            .child(IKey.dynamic(() -> progressSyncer.getValue() + " / " + maxProgressTimeSyncer.getValue() + " ticks")
-                .asWidget().fullWidth().marginBottom(2)
-                .setEnabledIf(widget -> multiblock.showRecipeTextInGUI() && maxProgressTimeSyncer.getValue() > 0))
+            .child(
+                IKey.dynamic(() -> progressSyncer.getValue() + " / " + maxProgressTimeSyncer.getValue() + " ticks")
+                    .asWidget()
+                    .fullWidth()
+                    .marginBottom(2)
+                    .setEnabledIf(widget -> multiblock.showRecipeTextInGUI() && maxProgressTimeSyncer.getValue() > 0))
             // 摘要显示开关仍尊重控制器原本的 GUI 配方文本设置。
-            .child(IKey.lang("gtnothard.superInput.outputSummary").asWidget().fullWidth().marginBottom(2)
-                .setEnabledIf(widget -> multiblock.showRecipeTextInGUI() && !summarySyncer.getStringValue().isEmpty()))
+            .child(
+                IKey.lang("gtnothard.superInput.outputSummary")
+                    .asWidget()
+                    .fullWidth()
+                    .marginBottom(2)
+                    .setEnabledIf(
+                        widget -> multiblock.showRecipeTextInGUI() && !summarySyncer.getStringValue()
+                            .isEmpty()))
             // 数量已按 long 汇总；名称和数量只是只读文本，不建立产物槽或回写监听器。
-            .child(IKey.dynamic(summarySyncer::getStringValue).asWidget().fullWidth().marginBottom(2)
-                .setEnabledIf(widget -> multiblock.showRecipeTextInGUI() && !summarySyncer.getStringValue().isEmpty()));
+            .child(
+                IKey.dynamic(summarySyncer::getStringValue)
+                    .asWidget()
+                    .fullWidth()
+                    .marginBottom(2)
+                    .setEnabledIf(
+                        widget -> multiblock.showRecipeTextInGUI() && !summarySyncer.getStringValue()
+                            .isEmpty()));
     }
 }

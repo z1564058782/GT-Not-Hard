@@ -94,10 +94,10 @@ import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.shutdown.ShutDownReasonRegistry;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
-import hatch.SuperInputProcessing;
-import hatch.SuperInputProcessingLogic;
 import hatch.SuperInputMachineGui;
 import hatch.SuperInputOutputSummary;
+import hatch.SuperInputProcessing;
+import hatch.SuperInputProcessingLogic;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 

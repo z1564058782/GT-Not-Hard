@@ -50,7 +50,7 @@ public final class SuperInputOutputSummary {
     /**
      * 获取真实产物的显示摘要；相同数组引用直接返回缓存。
      *
-     * @param items 当前真实物品输出，允许 null、空数组及 null 元素
+     * @param items  当前真实物品输出，允许 null、空数组及 null 元素
      * @param fluids 当前真实流体输出，允许 null、空数组及 null 元素
      * @return 最多 maxSummaryBytes 个 UTF-8 字节的文本，不包含产物 NBT
      */
@@ -145,12 +145,16 @@ public final class SuperInputOutputSummary {
             String name = entry.itemStack != null ? entry.itemStack.getDisplayName()
                 : entry.fluidStack.getLocalizedName();
             // 清理控制字符并限制码点数，避免名称注入额外行。
-            text.append(safeName(name)).append(" × ").append(entry.amount);
+            text.append(safeName(name))
+                .append(" × ")
+                .append(entry.amount);
             // 流体数量明确使用 mB，不能误写成桶数。
             if (entry.fluidStack != null) text.append(" mB");
         }
         // 省略提示不携带被省略产物的大型标签。
-        if (omittedFragments > 0) text.append("\n… +").append(omittedFragments).append(" output stacks");
+        if (omittedFragments > 0) text.append("\n… +")
+            .append(omittedFragments)
+            .append(" output stacks");
         // UTF-8 字节上界独立于条目数和字符数量，中文及 emoji 同样受限。
         cachedText = limitUtf8(text.toString(), maxSummaryBytes);
         // 调用方仅拿到不可变字符串，不能借此改变真实库存。
@@ -161,8 +165,8 @@ public final class SuperInputOutputSummary {
      * 用摘要替换父类已经生成的 Waila 输出标签；保留机器状态、能源和维护数据。
      * 新版配方对象总数有界，父类遍历本身也受启动预算限制；不临时清空机器数组，避免网络线程竞争。
      *
-     * @param tag 当前 Waila 响应 NBT，允许修改这个响应对象
-     * @param items 当前真实物品输出，不修改
+     * @param tag    当前 Waila 响应 NBT，允许修改这个响应对象
+     * @param items  当前真实物品输出，不修改
      * @param fluids 当前真实流体输出，不修改
      */
     public void writeWailaSummary(NBTTagCompound tag, ItemStack[] items, FluidStack[] fluids) {
@@ -200,7 +204,7 @@ public final class SuperInputOutputSummary {
     /**
      * 在完整 Unicode 码点边界限制 UTF-8 长度，截断时用省略号提示。
      *
-     * @param text 待显示文本
+     * @param text     待显示文本
      * @param maxBytes 最大 UTF-8 字节数，至少为三，以容纳省略号
      * @return 不超过预算的原文本或截断文本
      */
