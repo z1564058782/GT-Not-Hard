@@ -96,10 +96,15 @@ import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GTPPMultiBlockBase;
 import hatch.SuperInputProcessing;
 import hatch.SuperInputProcessingLogic;
+import hatch.SuperInputMachineGui;
+import hatch.SuperInputOutputSummary;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 
 public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConstructable, ISecondaryDescribable {
+
+    /** 本 Mod 发电控制器同样使用只读输出摘要，不复制或同步逐片产物数组。 */
+    private final SuperInputOutputSummary outputSummary = new SuperInputOutputSummary();
 
     // ========== try-catch 输出模式配置 ==========
     /**
@@ -1489,7 +1494,8 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
 
     @Override
     protected @NotNull MTEMultiBlockBaseGui<?> getGui() {
-        return new MTEMultiBlockBaseGui<>(this) {
+        // 本 Mod 的 Origin 同样可能产生大量副产物，只为它接入安全摘要 GUI。
+        return new SuperInputMachineGui<>(this) {
 
             @Override
             protected void registerSyncValues(PanelSyncManager syncManager) {
@@ -1531,6 +1537,8 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
         int z) {
         try {
             super.getWailaNBTData(player, tile, tag, world, x, y, z);
+            // 响应中保留机器状态，但产物改为有字节上限的 long 数量摘要。
+            outputSummary.writeWailaSummary(tag, mOutputItems, mOutputFluids);
             // 只在服务器端添加NBT数据，客户端从NBT读取
             if (!world.isRemote) {
                 // 刷新主机插槽缓存，保证 machineName 为最新值
@@ -1557,6 +1565,8 @@ public class Origin extends GTPPMultiBlockBase<Origin> implements ISurvivalConst
         IWailaConfigHandler config) {
         try {
             super.getWailaBody(itemStack, currentTip, accessor, config);
+            // 客户端仅显示摘要，不把输出列表或 NBT 回传给服务器。
+            SuperInputOutputSummary.appendWailaSummary(currentTip, accessor.getNBTData());
             final NBTTagCompound tag = accessor.getNBTData();
             // RunningMode 显示名称改为读取缓存的 machineName（由主机物品 getDisplayName() 得到）
             if (tag.hasKey("Machine")) {

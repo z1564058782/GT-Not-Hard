@@ -19,8 +19,34 @@ import gregtech.api.util.ParallelHelper;
  */
 public class SuperInputProcessingLogic extends ProcessingLogic {
 
-    /** 每次配方最多构造约 4096 个原版输出堆栈，避免输入优化后在输出阶段分配数十亿对象。 */
-    public static final int maxOutputStackFragments = 4096;
+    /** 一次完整启动最多构造 256 个原版输出堆栈；Chaos 的最多 32 轮共用此预算，仓室 long 容量不变。 */
+    public static final int maxOutputStackFragments = 256;
+
+    /** 当前完整启动尚可构造的输出对象数；只在真实成功后扣减，不预扣原料或丢弃产物。 */
+    private int remainingOutputFragments = maxOutputStackFragments;
+
+    /** true 表示调用方正在跨多次 process 共享预算，普通单轮处理会在 process 入口重置预算。 */
+    private boolean sharedOutputBudget;
+
+    /** 在 Chaos 同步启动的 32 轮之前调用；预算属于当前机器实例，不限制其他机器。 */
+    public void beginSharedOutputBudget() {
+        // 每次完整启动独立计数，不能从上次配方继承已消耗的预算。
+        remainingOutputFragments = maxOutputStackFragments;
+        // 后续每轮 process 不再自行重置预算。
+        sharedOutputBudget = true;
+    }
+
+    /** 在调用方 finally 中释放启动作用域，失败、能源不足和异常同样必须释放。 */
+    public void endSharedOutputBudget() {
+        // 不改变已经计算的输出或库存，只恢复下一次普通调用的预算规则。
+        sharedOutputBudget = false;
+    }
+
+    /** @return 当前完整启动是否还有至少一个输出对象的预算 */
+    public boolean hasRemainingOutputBudget() {
+        // 调用方可在重新查询 ME 和配方之前退出，不制造无意义的额外启动轮次。
+        return remainingOutputFragments > 0;
+    }
 
     /** long 输入检查期间选定的锁定配方；不使用只认识 int 视图的 SingleRecipeCheck 数量缓存。 */
     private GTRecipe longLockedRecipe;
@@ -50,6 +76,8 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
     /** 保留锁定配方选择，但对压缩输入绕过 int 数量缓存，仍由原版计算输出和耗能。 */
     @Override
     public CheckRecipeResult process() {
+        // 普通控制器每次 process 有独立预算；Chaos 由外层完整启动统一重置。
+        if (!sharedOutputBudget) remainingOutputFragments = maxOutputStackFragments;
         // 普通输入无需改变任何流程。
         if (!hasLongInputs() && !(isRecipeLocked && recipeLockableMachine != null
             && recipeLockableMachine.getSingleRecipeCheck() != null)) return super.process();
@@ -109,12 +137,27 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
     protected ParallelHelper createParallelHelper(GTRecipe recipe) {
         // 先完整沿用父类设置，包括机器、电压、批处理和输出保护。
         ParallelHelper helper = super.createParallelHelper(recipe);
-        // 非压缩输入不替换 GT 的方法引用。
-        if (!longProcessing) return helper;
+        // 普通输入也需要输出预算，避免本 Mod 的控制器在换回原版仓室后重新产生巨大数组。
+        if (!longProcessing) {
+            // 普通未锁定路径继续使用 GT 原生匹配和消费，只包裹数量上界。
+            int[] remainingOutputParallels = { getOutputParallelLimit(recipe, remainingOutputFragments) };
+            // 批处理及小于一 tick 的额外并行都经过相同的剩余数量检查。
+            helper.setMaxParallelCalculator((candidate, maxParallel, fluids, items) -> candidate
+                .maxParallelCalculatedByInputs(Math.min(maxParallel, remainingOutputParallels[0]), fluids, items));
+            // 不改原版原料消耗语义，额外批处理只可使用剩余输出预算。
+            helper.setInputConsumer((candidate, parallel, fluids, items) -> {
+                // 实际成功的并行量由 GT 原生算法消费。
+                candidate.consumeInput(parallel, fluids, items);
+                // 第一轮与额外批处理的数量总和必须受限。
+                remainingOutputParallels[0] -= parallel;
+            });
+            // 原版缓存锁可能绕过上述回调；已锁定和建立锁的路径在 process 中统一接入精确计划。
+            return helper;
+        }
         // 一个候选配方复用同一需求矩阵和工作数组，包括批处理追加并行。
         SuperInputRecipePlan plan = new SuperInputRecipePlan(recipe, inputItems, inputFluids);
         // 批处理和一 tick 内追加并行共用输出预算，不能每个回调重新取得完整预算。
-        int[] remainingOutputParallels = { getOutputParallelLimit(recipe) };
+        int[] remainingOutputParallels = { getOutputParallelLimit(recipe, remainingOutputFragments) };
         // 禁用 int 消费缓存，但 process 已保留锁定配方选择。
         helper.setRecipeLocked(recipeLockableMachine, false);
         // 最大并行使用精确整数比较，不通过 double 近似 long 库存。
@@ -134,6 +177,18 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
 
     /** @return 保证 GT 原生 int 输出拆分规模有界的并行上限，无输出配方保持 int 最大并行 */
     private static int getOutputParallelLimit(GTRecipe recipe) {
+        // 保留原方法名与签名，供单轮预算检查及既有调用使用。
+        return getOutputParallelLimit(recipe, maxOutputStackFragments);
+    }
+
+    /**
+     * 按剩余对象数计算并行上界，概率按向上取整的最坏产出估计，不能在计算后截掉产物。
+     *
+     * @param recipe 当前候选配方，保持其输出、NBT 和概率不变
+     * @param availableFragments 完整启动中尚可构造的对象数
+     * @return 可安全计算的并行数；预算不足以容纳一次配方时返回零
+     */
+    private static int getOutputParallelLimit(GTRecipe recipe, int availableFragments) {
         // 只数实际输出类型，不生成输出列表。
         int outputCount = 0;
         // null 输出不占预算。
@@ -148,8 +203,10 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
         }
         // 例如无产物燃料配方，不引入无意义限制。
         if (outputCount == 0) return Integer.MAX_VALUE;
+        // 一份配方也放不下时必须拒绝，不允许 max(1, ...) 绕过整体预算。
+        if (availableFragments < outputCount) return 0;
         // 每个输出至少能产生一片；一般 GT 配方输出种类远小于预算。
-        long capacityPerOutput = (long) Integer.MAX_VALUE * Math.max(1, maxOutputStackFragments / outputCount);
+        long capacityPerOutput = (long) Integer.MAX_VALUE * (availableFragments / outputCount);
         // 初始上限沿用 GT 支持的最大 int 并行。
         long parallelLimit = Integer.MAX_VALUE;
         // 根据每份输出数量及概率的最坏倍数计算安全预算。
@@ -175,8 +232,8 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
                 // 取各输出中最严格的数量预算。
                 parallelLimit = Math.min(parallelLimit, capacityPerOutput / stack.amount / chanceFactor);
             }
-        // 合法配方至少允许运行一次，预算不会让普通单次配方失效。
-        return (int) Math.max(1L, parallelLimit);
+        // 返回零会使原生助手拒绝本轮；不能先消费再截断输出。
+        return (int) Math.max(0L, parallelLimit);
     }
 
     /**
@@ -189,6 +246,14 @@ public class SuperInputProcessingLogic extends ProcessingLogic {
         CheckRecipeResult result) {
         // 输出、耗能、时长和启动钩子保持父类完整行为。
         CheckRecipeResult appliedResult = super.applyRecipe(recipe, helper, calculator, result);
+        // 仅成功计算的真实对象占用完整启动预算，概率零产出不会消耗对象名额。
+        if (appliedResult.wasSuccessful()) {
+            // helper 的数组长度就是稍后提交给控制器的实际输出对象数。
+            int outputFragments = (helper.getItemOutputs() == null ? 0 : helper.getItemOutputs().length)
+                + (helper.getFluidOutputs() == null ? 0 : helper.getFluidOutputs().length);
+            // 输入数量回调已保证上界；这里保留非负状态以便调用方停止追加轮次。
+            remainingOutputFragments = Math.max(0, remainingOutputFragments - outputFragments);
+        }
         // 只为成功且玩家要求锁定的配方记录身份。
         if (appliedResult.wasSuccessful() && establishLongLock && getCurrentRecipeMap() != null) {
             // GT 原有 NBT 保存配方身份；全部实际成本仍由 SuperInputRecipePlan 重新校验。

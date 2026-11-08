@@ -106,6 +106,8 @@ import gregtech.common.blocks.ItemMachines;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
 import hatch.SuperInputProcessing;
 import hatch.SuperInputProcessingLogic;
+import hatch.SuperInputMachineGui;
+import hatch.SuperInputOutputSummary;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import util.ChaosManager;
@@ -205,6 +207,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     protected boolean wirelessMode = false;
     // 无线电网消耗
     private BigInteger costEU = BigInteger.ZERO;
+
+    /** Waila 的只读 long 产物摘要缓存；不修改原版输出数组或配方库存。 */
+    private final SuperInputOutputSummary outputSummary = new SuperInputOutputSummary();
 
     // 上次使用的配方映射
     private RecipeMap<?> mLastRecipeMap;
@@ -857,13 +862,23 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             boolean succeeded = false;
             CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
 
-            for (int i = 0; i < 32; i++) {
-                CheckRecipeResult result = wirelessModeProcessingLogic();
-                if (!result.wasSuccessful()) {
-                    finalResult = result;
-                    break;
+            // 预算属于整个无线启动，不能让每轮 process 重新取得完整输出对象名额。
+            SuperInputProcessingLogic startupLogic = (SuperInputProcessingLogic) processingLogic;
+            // 原料、能源及输出保护继续由每轮原生处理检查，预算只限制本次同步工作的规模。
+            startupLogic.beginSharedOutputBudget();
+            try {
+                // 保留最多 32 轮的原有无线规则，先检查预算再访问 ME 和配方表。
+                for (int i = 0; i < 32 && startupLogic.hasRemainingOutputBudget(); i++) {
+                    CheckRecipeResult result = wirelessModeProcessingLogic();
+                    if (!result.wasSuccessful()) {
+                        finalResult = result;
+                        break;
+                    }
+                    succeeded = true;
                 }
-                succeeded = true;
+            } finally {
+                // 任何失败或异常都释放作用域，不能让下一次有线/无线处理沿用旧预算。
+                startupLogic.endSharedOutputBudget();
             }
 
             updateSlots();
@@ -1214,7 +1229,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
     @Override
     protected @NotNull MTEMultiBlockBaseGui<?> getGui() {
-        return new MTEMultiBlockBaseGui<>(this) {
+        // 只替换本 Mod 控制器的产物同步与显示；原版机器仍使用它们自己的 GUI。
+        return new SuperInputMachineGui<>(this) {
 
             @Override
             protected void registerSyncValues(PanelSyncManager syncManager) {
@@ -1255,6 +1271,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     public void getWailaNBTData(EntityPlayerMP player, TileEntity tile, NBTTagCompound tag, World world, int x, int y,
         int z) {
         super.getWailaNBTData(player, tile, tag, world, x, y, z);
+        // 保留父类机器状态，移除逐片产物响应，避免观察机器时传输大量图标/堆栈标签。
+        outputSummary.writeWailaSummary(tag, mOutputItems, mOutputFluids);
         try {
             // 按原有频率在 Waila 数据入口刷新控制器槽位缓存
             refreshControllerSlotCache();
@@ -1283,6 +1301,8 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     public void getWailaBody(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor,
         IWailaConfigHandler config) {
         super.getWailaBody(itemStack, currentTip, accessor, config);
+        // 产物数量按 long 汇总显示，客户端只读，不回写服务端输出。
+        SuperInputOutputSummary.appendWailaSummary(currentTip, accessor.getNBTData());
         final NBTTagCompound tag = accessor.getNBTData();
         if (tag.hasKey("Machine")) {
             currentTip.add("Machine: " + EnumChatFormatting.YELLOW + tag.getString("Machine"));

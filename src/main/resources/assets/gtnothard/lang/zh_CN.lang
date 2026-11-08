@@ -37,3 +37,6 @@ gtnothard.superInputHatchMe.tier.13.name=Super Input Hatch XIV (ME)
 gtnothard.superInputHatchMe.tier.14.name=Super Input Hatch XV (ME)
 gtnothard.superInputHatchMe.tier.15.name=Super Input Hatch XVI (ME)
 gtnothard.superInputHatchMe.tier.16.name=Super Input Hatch XVII (ME)
+
+# SuperInput_3: bounded, server-to-client output summary for GT-Not-Hard controllers.
+gtnothard.superInput.outputSummary=产物（汇总）
