@@ -22,6 +22,7 @@ public class MachinesLoader {
         SingularityMain = new Singularity(25567, "Singularity", "Singularity").getStackForm(1);
         // 每个类别只注册一个固定 GT 元实体，全部等级由物品 Meta 和世界 NBT 区分。
         SuperInputLoader.registerMachines();
+        SuperOutputLoader.registerMachines();
         // 复用已有字段，保留外部对该字段的引用和全部既有命名。
         SuperInputBusME = SuperInputLoader.superInputBusMe;
         /*

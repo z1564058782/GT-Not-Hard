@@ -40,3 +40,11 @@ gtnothard.superInputHatchMe.tier.16.name=Super Input Hatch XVII (ME)
 
 # SuperInput_3: bounded, server-to-client output summary for GT-Not-Hard controllers.
 gtnothard.superInput.outputSummary=产物（汇总）
+
+# Super Output Bus (ME)
+gt.blockmachines.superoutputbus.me.name=超级ME输出总线
+gtnothard.superoutput.desc.1=使用 long 数量将物品直接输出到 ME 网络
+gtnothard.superoutput.desc.2=默认总缓存：9,223,372,036,854,775,807 个物品
+gtnothard.superoutput.desc.3=支持累计超过 2,147,483,647 的物品输出分片
+gtnothard.superoutput.desc.4=沿用 GT 的频道、供电、分区过滤和缓存模式
+gtnothard.superoutput.desc.5=无法恢复已被控制器截断的产物数量
