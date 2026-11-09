@@ -75,7 +75,7 @@ import mcp.mobius.waila.api.IWailaDataAccessor;
 /**
  * Placeable GT output bus with a long-count AE cache, using the same provider as Output Hatch (ME).
  * Native GT recipe fragments are merged by item identity (including NBT), never clamped to int.
- * Requires the GT5U 5.09.54.133 output transaction API used by this repository.
+ * Requires the GT5U 5.09.54.265 output transaction API used by this repository.
  */
 @IMetaTileEntity.SkipGenerateDescription
 public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannelState, IMEConnectable, ICellContainer,
@@ -120,13 +120,7 @@ public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannel
 
     EntityPlayer lastClickedPlayer = null;
 
-    private final MTEHatchOutputMEBase<IAEItemStack> provider = new MTEHatchOutputMEBase<IAEItemStack>(this, 1_600) {
-
-        {
-            // Do not change GT's shared DEFAULT_CAPACITY static field to our long capacity.
-            baseCapacity = DEFAULT_ITEM_CAPACITY;
-            cacheCapacity = DEFAULT_ITEM_CAPACITY;
-        }
+    private final MTEHatchOutputMEBase<IAEItemStack> provider = new MTEHatchOutputMEBase<IAEItemStack>(this) {
 
         @Override
         public void addToCache(IAEItemStack stack) {
@@ -224,6 +218,11 @@ public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannel
         if (provider.getCacheMode())
             return provider.isFiltered() ? OutputBusType.MECacheFiltered : OutputBusType.MECacheUnfiltered;
         else return provider.isFiltered() ? OutputBusType.MEFiltered : OutputBusType.MEUnfiltered;
+    }
+
+    @Override
+    public long getDefaultCapacity() {
+        return DEFAULT_ITEM_CAPACITY;
     }
 
     @Override
@@ -667,7 +666,7 @@ public class SuperOutputBusME extends MTEHatchOutputBus implements IPowerChannel
     }
 
     @Override
-    public boolean acceptsItemLock() {
+    public boolean acceptsConfigCopy() {
         return false;
     }
 
