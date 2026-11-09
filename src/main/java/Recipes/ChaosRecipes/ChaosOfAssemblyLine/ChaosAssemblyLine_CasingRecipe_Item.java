@@ -2280,8 +2280,7 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                         requiredFluid(FluidList.Lubricant, 1000 * 32),
                         requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 + 24)),
                         requiredFluid(GasList.Radon, 1000 * (64 + 36)),
-                        requiredFluid(PlasmaList.Plutonium_241_Plasma, 144 * 16)
-                    )
+                        requiredFluid(PlasmaList.Plutonium_241_Plasma, 144 * 16))
                     .itemOutputs(
                         setStackSize(TecTechList.Transcendentally_Amplified_Magnetic_Confinement_Casing.copy(), 8))
                     .eut(RECIPE_UIV)

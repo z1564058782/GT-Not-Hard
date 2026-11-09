@@ -21,7 +21,6 @@ import static gregtech.api.enums.Textures.BlockIcons.getTextureIndex;
 import static gregtech.api.metatileentity.implementations.MTEBasicMachine.isValidForLowGravity;
 import static gregtech.api.util.GTStructureUtility.buildHatchAdder;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
-import static java.lang.Math.pow;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -48,7 +47,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 
 import com.cleanroommc.modularui.drawable.DynamicDrawable;
@@ -102,12 +100,13 @@ import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.api.util.OverclockCalculator;
+import gregtech.api.util.shutdown.ShutDownReason;
 import gregtech.common.blocks.ItemMachines;
 import gregtech.common.gui.modularui.multiblock.base.MTEMultiBlockBaseGui;
+import gregtech.common.tileentities.machines.RecipeCheckReason;
 import hatch.SuperInputMachineGui;
 import hatch.SuperInputOutputSummary;
 import hatch.SuperInputProcessing;
-import hatch.SuperInputProcessingLogic;
 import hatch.SuperOutputRouting;
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
@@ -215,6 +214,10 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     protected boolean wirelessMode = false;
     // 无线电网消耗
     private BigInteger costEU = BigInteger.ZERO;
+    // 无线待产物不再展开成 int 数组；最多保留一批，直至全部真实交付。
+    private ChaosBigOutputBuffer bigOutputs = new ChaosBigOutputBuffer();
+    private long lastWirelessParallels;
+    private long nextBigOutputAttempt;
 
     /** Waila 的只读 long 产物摘要缓存；不修改原版输出数组或配方库存。 */
     private final SuperInputOutputSummary outputSummary = new SuperInputOutputSummary();
@@ -305,6 +308,17 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
     // === NBT数据保存 ===
 
+    @Override
+    public void setItemNBT(NBTTagCompound aNBT) {
+        super.setItemNBT(aNBT);
+        // 拆除控制器时携带已完成的余量；未完成配方沿用原生拆机损失规则。
+        if (bigOutputs.isReady() || bigOutputs.isInvalid()) {
+            bigOutputs.save(aNBT);
+            aNBT.setLong("chaosWirelessParallels", lastWirelessParallels);
+            aNBT.setByteArray("chaosWirelessCost", costEU.toByteArray());
+        }
+    }
+
     /**
      * 保存NBT数据
      * 保存机器状态到NBT标签
@@ -312,6 +326,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     public void saveNBTData(NBTTagCompound aNBT) {
         super.saveNBTData(aNBT);
+        bigOutputs.save(aNBT);
+        aNBT.setLong("chaosWirelessParallels", lastWirelessParallels);
+        aNBT.setByteArray("chaosWirelessCost", costEU.toByteArray());
         try {
             aNBT.setBoolean("wirelessMode", wirelessMode);
             aNBT.setInteger("mode", mode);
@@ -388,6 +405,12 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     public void loadNBTData(final NBTTagCompound aNBT) {
         super.loadNBTData(aNBT);
+        bigOutputs = ChaosBigOutputBuffer.load(aNBT);
+        lastWirelessParallels = Math.max(0, aNBT.getLong("chaosWirelessParallels"));
+        byte[] savedCost = aNBT.getByteArray("chaosWirelessCost");
+        costEU = savedCost.length > 0 && savedCost.length <= 128 ? new BigInteger(savedCost).max(BigInteger.ZERO)
+            : BigInteger.ZERO;
+        nextBigOutputAttempt = 0;
         // 向后兼容性处理
         if (aNBT.hasKey("mSeparate")) {
             inputSeparation = aNBT.getBoolean("mSeparate");
@@ -512,7 +535,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType("Chaos")
             .addInfo("Runs supplied machines as if placed in the world")
-            .addInfo("Parallel quantity = 2^x")
+            .addInfo("Wired parallel quantity = 2^x")
+            .addInfo("Wireless parallel quantity = 2^x * 2,147,483,647")
+            .addInfo("Wireless: x >= 32 reaches Long.MAX_VALUE")
+            .addInfo("Wireless outputs use a persistent BigInteger buffer")
+            .addInfo("Pending outputs pause the next recipe and are never voided by the voiding mode")
             .addInfo("x = Number of machines in the controller")
             .addInfo("-----------------------------------------------------------------------------")
             .addInfo("In wireless mode, the formula run time will be fixed as follows 128 ticks")
@@ -620,20 +647,18 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     // === 并行计算 ===
-    /**
-     * 计算最大并行数
-     * 基于控制器槽位中的机器数量计算：2^(机器数量)
-     */
+    /** 有线仍受 GT int 接口限制；无线入口单独使用完整 long 上限。 */
     private int getMaxParallel() {
-        // 使用全局控制器槽位缓存，避免重复调用 getControllerSlot()
-        if (controllerSlot == null) {
-            return 1;
-        }
-        if (controllerSlot.stackSize < 31 && !wirelessMode) {
-            return (int) pow(2, controllerSlot.stackSize);
-        } else {
-            return Integer.MAX_VALUE;
-        }
+        return (int) Math.min(Integer.MAX_VALUE, getParallelLimit());
+    }
+
+    /** 无线 2^机器数 × int 上限，32 个起饱和；位移是常数时间且不分配对象。 */
+    private long getParallelLimit() {
+        if (wirelessMode) return ChaosParallel.wirelessLimit(controllerSlot == null ? 0 : controllerSlot.stackSize);
+        if (controllerSlot == null) return 1;
+        int machines = controllerSlot.stackSize;
+        if (machines <= 0) return 1;
+        return machines < 31 ? 1L << machines : Integer.MAX_VALUE;
     }
 
     // === 配方映射处理 ===
@@ -848,6 +873,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     @Override
     @NotNull
     public CheckRecipeResult checkProcessing() {
+        // 包括切回有线模式；上一批未交付或存档不可识别时禁止覆盖缓存及再次扣料。
+        if (bigOutputs.hasData()) return SimpleCheckRecipeResult
+            .ofFailure(bigOutputs.isInvalid() ? "chaos_big_output_invalid" : "chaos_big_output_pending");
         // 按原有频率在配方检查入口刷新控制器槽位缓存
         refreshControllerSlotCache();
         if (!GTUtility.areStacksEqual(lastControllerStack, controllerSlot) || updateMode) {
@@ -866,36 +894,18 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             }
         }
 
-        if (mLastRecipeMap != null && wirelessMode && ownerUUID != null) {
-            boolean succeeded = false;
-            CheckRecipeResult finalResult = CheckRecipeResultRegistry.SUCCESSFUL;
-
-            // 预算属于整个无线启动，不能让每轮 process 重新取得完整输出对象名额。
-            SuperInputProcessingLogic startupLogic = (SuperInputProcessingLogic) processingLogic;
-            // 原料、能源及输出保护继续由每轮原生处理检查，预算只限制本次同步工作的规模。
-            startupLogic.beginSharedOutputBudget();
-            try {
-                // 保留最多 32 轮的原有无线规则，先检查预算再访问 ME 和配方表。
-                for (int i = 0; i < 32 && startupLogic.hasRemainingOutputBudget(); i++) {
-                    CheckRecipeResult result = wirelessModeProcessingLogic();
-                    if (!result.wasSuccessful()) {
-                        finalResult = result;
-                        break;
-                    }
-                    succeeded = true;
-                }
-            } finally {
-                // 任何失败或异常都释放作用域，不能让下一次有线/无线处理沿用旧预算。
-                startupLogic.endSharedOutputBudget();
-            }
-
+        if (wirelessMode) {
+            if (ownerUUID == null) return SimpleCheckRecipeResult.ofFailure("wireless_owner_unavailable");
+            // 一次 long 计划完成本次启动，不再额外乘 32 轮或重复访问 ME 网络。
+            CheckRecipeResult result = wirelessModeProcessingLogic();
             updateSlots();
-            if (!succeeded) return finalResult;
-
+            if (!result.wasSuccessful()) return result;
             mEfficiency = 10000;
             mEfficiencyIncrease = 10000;
             mMaxProgresstime = 128;
-
+            // 无线已经一次性结清电费，不能继承上一次有线配方的持续 EU/t。
+            lEUt = 0;
+            mEUt = 0;
             return CheckRecipeResultRegistry.SUCCESSFUL;
         }
         return super.checkProcessing();
@@ -923,34 +933,37 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
 
     // 无线模式逻辑
     public CheckRecipeResult wirelessModeProcessingLogic() {
-        if (!isRecipeProcessing) startRecipeProcessing();
-        setupProcessingLogic(processingLogic);
-        setupWirelessProcessingPowerLogic(processingLogic);
-
-        CheckRecipeResult result = doCheckRecipe();
-        if (!result.wasSuccessful()) return result;
-
-        costEU = BigInteger.valueOf(processingLogic.getCalculatedEut())
-            .multiply(BigInteger.valueOf(processingLogic.getDuration()))
-            .multiply(BigInteger.valueOf(getMaxParallel()))
-            .divide(BigInteger.valueOf(Integer.MAX_VALUE));
-
-        if (!addEUToGlobalEnergyMap(ownerUUID, costEU.multiply(BigInteger.valueOf(-1)))) {
-            return CheckRecipeResultRegistry.insufficientStartupPower(costEU);
+        // 原生 checkRecipe 已开启检查周期时，结算交回原生外层，避免重复提交 ME 扣料。
+        boolean ownsProcessingCycle = !isRecipeProcessing;
+        if (ownsProcessingCycle) startRecipeProcessing();
+        try {
+            setupProcessingLogic(processingLogic);
+            setupWirelessProcessingPowerLogic(processingLogic);
+            CheckRecipeResult result = doCheckRecipe();
+            costEU = ((ChaosWirelessProcessingLogic) processingLogic).getWirelessCost();
+            if (!result.wasSuccessful()) return result;
+            ChaosWirelessProcessingLogic logic = (ChaosWirelessProcessingLogic) processingLogic;
+            bigOutputs = logic.takeBigOutputs();
+            lastWirelessParallels = logic.getWirelessParallels();
+            markDirty();
+            // 原版输出数组保持空；全部真实产物由 BigInteger 账本持有。
+            mOutputItems = processingLogic.getOutputItems();
+            mOutputFluids = processingLogic.getOutputFluids();
+            return result;
+        } finally {
+            // 直接调用本入口时仍保证失败和电量不足都会关闭自行开启的周期。
+            if (ownsProcessingCycle) endRecipeProcessing();
         }
-
-        mOutputItems = ArrayUtils.addAll(mOutputItems, processingLogic.getOutputItems());
-        mOutputFluids = ArrayUtils.addAll(mOutputFluids, processingLogic.getOutputFluids());
-
-        endRecipeProcessing();
-        return result;
     }
 
     // 机器运行逻辑
     @Override
     protected ProcessingLogic createProcessingLogic() {
         // 保留本控制器全部自定义验证/超频，仅扩展压缩 long 输入的匹配和扣料。
-        return new SuperInputProcessingLogic() {
+        return new ChaosWirelessProcessingLogic(
+            () -> wirelessMode,
+            this::getParallelLimit,
+            amount -> ownerUUID != null && addEUToGlobalEnergyMap(ownerUUID, amount.negate())) {
 
             @Nonnull
             @Override
@@ -1018,8 +1031,41 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
     }
 
     @Override
+    protected void outputAfterRecipe() {
+        super.outputAfterRecipe();
+        if (bigOutputs.hasData()) {
+            bigOutputs.markReady();
+            nextBigOutputAttempt = 0;
+            markDirty();
+        }
+    }
+
+    @Override
+    public void stopMachine(ShutDownReason reason) {
+        // 未完成配方沿用原生紧急停机规则；已经完成的缓存不因关机或切换模式而清空。
+        if (!bigOutputs.isReady() && !bigOutputs.isInvalid()) bigOutputs = new ChaosBigOutputBuffer();
+        super.stopMachine(reason);
+    }
+
+    @Override
     public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
         super.onPostTick(aBaseMetaTileEntity, aTick);
+        if (aBaseMetaTileEntity.isServerSide() && mMachine
+            && bigOutputs.hasData()
+            && bigOutputs.isReady()
+            && !bigOutputs.isInvalid()
+            && aTick >= nextBigOutputAttempt) {
+            long beforeRevision = bigOutputs.getRevision();
+            nextBigOutputAttempt = aTick + ChaosBigOutputRouter.BLOCKED_RETRY_TICKS;
+            boolean changed;
+            try {
+                changed = bigOutputs.drain(new ChaosBigOutputRouter(this), ChaosBigOutputRouter.MAX_ENTRIES_PER_TICK);
+            } finally {
+                if (bigOutputs.getRevision() != beforeRevision) markDirty();
+            }
+            nextBigOutputAttempt = aTick + (changed ? 1 : ChaosBigOutputRouter.BLOCKED_RETRY_TICKS);
+            if (!bigOutputs.hasData()) scheduleRecipeCheck(RecipeCheckReason.IMMEDIATE);
+        }
         if (mMachine && aTick % 20 == 0) {
             // 按原有频率每20tick刷新一次控制器槽位缓存
             refreshControllerSlotCache();
@@ -1241,6 +1287,11 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         return new SuperInputMachineGui<>(this) {
 
             @Override
+            protected String getOutputSummaryText() {
+                return bigOutputs.hasData() ? bigOutputs.getSummary() : super.getOutputSummaryText();
+            }
+
+            @Override
             protected void registerSyncValues(PanelSyncManager syncManager) {
                 super.registerSyncValues(syncManager);
 
@@ -1281,18 +1332,23 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
         super.getWailaNBTData(player, tile, tag, world, x, y, z);
         // 保留父类机器状态，移除逐片产物响应，避免观察机器时传输大量图标/堆栈标签。
         outputSummary.writeWailaSummary(tag, mOutputItems, mOutputFluids);
+        if (bigOutputs.hasData())
+            tag.setString("superInputOutputSummary", SuperInputOutputSummary.limitUtf8(bigOutputs.getSummary(), 2048));
         try {
             // 按原有频率在 Waila 数据入口刷新控制器槽位缓存
             refreshControllerSlotCache();
             // 空值检查：防止 controllerSlot 为 null
             if (mLastRecipeMap != null && controllerSlot != null) {
                 tag.setString("Machine", controllerSlot.getDisplayName());
+                // 服务端发送 long 上限，Waila 不再依赖客户端的无线开关或槽位缓存。
+                tag.setLong("ParallelLimit", getParallelLimit());
                 if (getSpecialMachine()) {
                     tag.setString("MachineType", specialMachineType);
                 }
                 if (wirelessMode) {
                     DecimalFormat process = new DecimalFormat("#,###");
                     tag.setString("EnergyConsume", process.format(costEU));
+                    tag.setLong("WirelessParallels", lastWirelessParallels);
                 }
             } else if (controllerSlot == null) {
                 handleException("getWailaNBTData", "controller slot is null", null);
@@ -1317,12 +1373,9 @@ public class Chaos extends MTEExtendedPowerMultiBlockBase<Chaos> implements ISur
             if (tag.hasKey("MachineType")) {
                 currentTip.add("Machine type: " + EnumChatFormatting.YELLOW + tag.getString("MachineType"));
             }
-            // 安全地获取并行数，防止getMaxParallel()中可能的NPE
-            try {
-                currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + getMaxParallel());
-            } catch (NullPointerException e) {
-                handleException("getWailaBody", "NullPointerException in getMaxParallel", e);
-                currentTip.add("Parallel: " + EnumChatFormatting.RED + "Error");
+            currentTip.add("Parallel: " + EnumChatFormatting.YELLOW + tag.getLong("ParallelLimit"));
+            if (tag.hasKey("WirelessParallels")) {
+                currentTip.add("Actual parallel: " + EnumChatFormatting.YELLOW + tag.getLong("WirelessParallels"));
             }
             if (tag.hasKey("EnergyConsume")) {
                 currentTip.add("WirelessMode: " + EnumChatFormatting.GREEN + "True");

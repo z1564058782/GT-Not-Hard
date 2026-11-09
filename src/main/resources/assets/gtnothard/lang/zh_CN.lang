@@ -51,3 +51,10 @@ gtnothard.superoutput.desc.2=默认总缓存：9,223,372,036,854,775,807 个物�
 gtnothard.superoutput.desc.3=支持累计超过 2,147,483,647 的物品输出分片
 gtnothard.superoutput.desc.4=沿用 GT 的频道、供电、分区过滤和缓存模式
 gtnothard.superoutput.desc.5=无法恢复已被控制器截断的产物数量
+
+# Chaos BigInteger 无线待产物缓存
+GT5U.gui.text.recipe_result.chaos_big_output_pending=正在等待上一批产物交付完成
+GT5U.gui.text.recipe_result.chaos_big_output_invalid=产物缓存存档异常，已暂停处理
+gtnothard.chaos.big_output_running=本批无线产物（配方完成后可交付）：
+gtnothard.chaos.big_output_ready=待交付产物（全部交付后才会启动下一批）：
+gtnothard.chaos.big_output_invalid=产物缓存无法读取，机器已暂停；原始缓存数据已保留。

@@ -10,14 +10,14 @@ import net.minecraftforge.fluids.FluidStack;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTRecipe;
-import gregtech.api.util.ParallelHelper;
+import machines.ChaosParallel;
 
 /**
  * 不展开分片的配方数量匹配器。只在输入含压缩视图时启用，普通机器仍使用 GT 原路径。
  *
  * <p>
  * 按 GT 合并后的物品需求匹配矿辞、NBT 和候选物品，按 FluidStack.isFluidEqual 匹配流体/NBT。
- * 最大并行用精确整数二分，最多 31 次试算；矩阵和工作数组复用，不按理论片数分配对象。
+ * 最大并行用精确整数二分，int 路径最多 31 次、long 路径最多 63 次试算；矩阵和工作数组复用，不按理论片数分配对象。
  * 极少数需求乘法超过 long 时才使用 BigInteger，避免边界溢出或 double 舍入造成多算一份。
  * 多种互相重叠的替代输入按声明顺序贪心预留，与 GT 类似，可能保守拒绝但不会重复花费同一库存。
  */
@@ -164,6 +164,11 @@ public final class SuperInputRecipePlan {
 
     /** @return 当前剩余输入能支持的最大并行，精确整数计算且不修改真实库存 */
     public int getMaxParallel(int maxParallel) {
+        return (int) getMaxParallel((long) maxParallel);
+    }
+
+    /** Chaos 无线专用的 long 上界，沿用同一匹配矩阵与库存分配器。 */
+    public long getMaxParallel(long maxParallel) {
         // 零或负上限无需试算。
         if (maxParallel <= 0) return 0;
         // 网络快照可能已被同轮批处理消耗，需要重新读取当前值。
@@ -173,13 +178,13 @@ public final class SuperInputRecipePlan {
         // 小于一并行时立即失败，避免后续二分无意义地重复。
         if (maxParallel == 1 || !allocate(1, false)) return 0;
         // 下界已经证明可行。
-        int lowerParallel = 1;
+        long lowerParallel = 1;
         // 上界已经证明不可行。
-        int upperParallel = maxParallel;
+        long upperParallel = maxParallel;
         // 采用差值中点，避免 lower+upper 溢出。
         while (upperParallel - lowerParallel > 1) {
-            // 中点始终在合法正 int 范围内。
-            int middleParallel = lowerParallel + (upperParallel - lowerParallel) / 2;
+            // 中点始终在合法正 long 范围内。
+            long middleParallel = lowerParallel + (upperParallel - lowerParallel) / 2;
             // 每次试算重置工作数组，不消费实际账本。
             if (allocate(middleParallel, false)) lowerParallel = middleParallel;
             // 不可行时收紧上界。
@@ -191,6 +196,11 @@ public final class SuperInputRecipePlan {
 
     /** 为 GT ParallelHelper 消费实际输入；先完整试算，再一次性提交各来源差额。 */
     public void consume(int parallel) {
+        consume((long) parallel);
+    }
+
+    /** 精确提交 long 并行，普通库存仍只扣除其实际存在的 int 数量。 */
+    public void consume(long parallel) {
         // GT 的批处理可能传入 0，保持幂等。
         if (parallel <= 0) return;
         // 获取当前长库存，不能复用上一轮二分的过时数值。
@@ -262,7 +272,7 @@ public final class SuperInputRecipePlan {
     }
 
     /** 在可复用工作数组中分配，false 表示完全不触碰真实对象。 */
-    private boolean allocate(int parallel, boolean useChance) {
+    private boolean allocate(long parallel, boolean useChance) {
         // 每次从本次读取的完整库存开始，二分试算之间不相互影响。
         System.arraycopy(initialItems, 0, remainingItems, 0, initialItems.length);
         // 流体也重置到同一个试算起点。
@@ -270,7 +280,7 @@ public final class SuperInputRecipePlan {
         // 按合并需求顺序预留物品，同一来源不会重复申报。
         for (Requirement requirement : itemRequirements) {
             // 最大并行用 100% 数量，真实消耗才使用原版概率采样。
-            int multiplier = multiplier(requirement.chance, parallel, useChance);
+            long multiplier = multiplier(requirement.chance, parallel, useChance);
             // 先验证需求可满足，再写工作数组。
             if (!transfer(requirement, multiplier, remainingItems, false)) return false;
             // 真正操作的仍然只是试算数组。
@@ -297,7 +307,7 @@ public final class SuperInputRecipePlan {
             // 实际概率扣料严格复用已证明可行的选择，不重新贪心切换替代。
             if (!useChance) selectedFluidRequirements[requirementIndex] = selected;
             // 概率仅决定实际消耗，候选选择仍要求完整库存存在。
-            int multiplier = multiplier(selected.chance, parallel, useChance);
+            long multiplier = multiplier(selected.chance, parallel, useChance);
             // 候选已经通过完整数量验证，较少的概率数量也一定足够。
             transfer(selected, multiplier, remainingFluids, true);
         }
@@ -306,20 +316,20 @@ public final class SuperInputRecipePlan {
     }
 
     /** @return 与 GT 原版一致的概率并行倍数，不在最大并行试算中消耗随机数 */
-    private static int multiplier(int chance, int parallel, boolean useChance) {
+    private static long multiplier(int chance, long parallel, boolean useChance) {
         // 100% 消耗或纯试算直接走整数快速路径。
         if (!useChance || chance >= 10000) return parallel;
         // 原版采样一次合并需求的实际份数，不逐个物品掷骰。
-        long actualMultiplier = ParallelHelper.calculateIntegralChancedOutputMultiplier(Math.max(0, chance), parallel);
+        long actualMultiplier = ChaosParallel.chanceMultiplier(Math.max(0, chance), parallel);
         // 防止概率实现的极端舍入返回超过原始并行数的份数。
-        return (int) Math.max(0L, Math.min(parallel, actualMultiplier));
+        return Math.max(0L, Math.min(parallel, actualMultiplier));
     }
 
     /**
      * 从匹配来源分配完整需求。普通路径全用 long；需求乘法溢出才启用 BigInteger。
      * apply=false 时不改工作数组，可安全尝试另一个流体候选。
      */
-    private static boolean transfer(Requirement requirement, int multiplier, long[] amounts, boolean apply) {
+    private static boolean transfer(Requirement requirement, long multiplier, long[] amounts, boolean apply) {
         // 负配方数量属于无效定义，不能把它当成免费输入。
         if (requirement.amount < 0) return false;
         // 数量为 0 的工具仍要求匹配类型存在，允许原版零数量电路。

@@ -45,6 +45,11 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
         super(multiblock);
     }
 
+    /** 控制器可提供自己的有界产物摘要，普通调用方仍使用原有数组摘要。 */
+    protected String getOutputSummaryText() {
+        return outputSummary.getText(multiblock.mOutputItems, multiblock.mOutputFluids);
+    }
+
     /**
      * 固定依赖版本的状态注册在此完整保留，仅取消 itemOutput / fluidOutput 两个原始列表。
      * 不调用父实现，否则其列表构造器会在打开旧版大输出存档时先完整复制和编解码全部 NBT。
@@ -153,9 +158,7 @@ public class SuperInputMachineGui<T extends MTEMultiBlockBase> extends MTEMultiB
 
         // 唯一产物同步是有界只读文本，原版机器的 GUI 注册不受影响。
         // 注册本界面的只读产物摘要。
-        syncManager.syncValue(
-            "superInputOutputSummary",
-            new StringSyncValue(() -> outputSummary.getText(multiblock.mOutputItems, multiblock.mOutputFluids)));
+        syncManager.syncValue("superInputOutputSummary", new StringSyncValue(this::getOutputSummaryText));
 
         // Widget Specific
         // 原电源开关回调保持不变，bool 是玩家请求的工作状态。

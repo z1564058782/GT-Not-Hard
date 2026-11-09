@@ -51,3 +51,10 @@ gtnothard.superoutput.desc.2=Default cache: 9,223,372,036,854,775,807 items tota
 gtnothard.superoutput.desc.3=Accepts multiple output fragments above 2,147,483,647 items
 gtnothard.superoutput.desc.4=ME channels, power, partitioning and cache modes follow GT
 gtnothard.superoutput.desc.5=Cannot restore output amounts already truncated by a controller
+
+# Chaos BigInteger wireless output buffer
+GT5U.gui.text.recipe_result.chaos_big_output_pending=Waiting for pending outputs to be delivered
+GT5U.gui.text.recipe_result.chaos_big_output_invalid=Invalid output buffer data; processing paused
+gtnothard.chaos.big_output_running=Wireless outputs (available when this recipe completes):
+gtnothard.chaos.big_output_ready=Pending outputs (next recipe waits until delivery):
+gtnothard.chaos.big_output_invalid=Output buffer data could not be loaded. Processing is paused; original data is preserved.
