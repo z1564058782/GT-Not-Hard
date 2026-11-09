@@ -1212,30 +1212,6 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 .addTo(AssemblyLineItemRecipe);
         }
 
-        // "Elemental Confinement Shell"
-        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#35")
-            .itemInputsUnsafe(
-                GTUtility.getIntegratedCircuit(1),
-                setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell.copy(), 0),
-
-                getMaterialInput(OrePrefixes.circuit, Materials.IV, 4),
-                setStackSize(GTItemList.Data_Stick.copy(), 4),
-                setStackSize(GTItemList.Field_Generator_HV.copy(), 16),
-                setStackSize(GTPPList.Energy_Core_MV.copy(), 2),
-                setStackSize(IngotList.Babbit_Alloy_Ingot.copy(), 16),
-                setStackSize(IngotList.Hastelloy_N_Ingot.copy(), 8),
-                setStackSize(IngotList.Inconel_625_Ingot.copy(), 18),
-                setStackSize(IngotList.Inconel_792_Ingot.copy(), 8),
-                setStackSize(IngotList.Pikyonium_64B_Ingot.copy(), 5),
-                setStackSize(IngotList.Polytetrafluoroethylene_PTFE_Bar.copy(), 10),
-                setStackSize(IngotList.Rhodium_Plated_Palladium_Ingot.copy(), 40),
-                setStackSize(IngotList.Trinium_Naquadah_Carbonite_Ingot.copy(), 1),
-                setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 5))
-            .itemOutputs(setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell.copy(), 1))
-            .eut(RECIPE_ZPM)
-            .duration(30 * SECONDS)
-            .addTo(AssemblyLineItemRecipe);
-
         // "Eye of Harmony"
         {
             // "Reinforced Spatial Structure Casing"
@@ -1854,19 +1830,35 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Infinite Magnetic Chassis"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#47")
                     .itemInputsUnsafe(
-                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 2),
-                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
-                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
-                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 0),
 
                         getMaterialInput(OrePrefixes.circuit, Materials.UEV, 1),
-                        setStackSize(GTItemList.Emitter_UHV.copy(), 1),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
+
+                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 8),
+
+                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+
                         setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 1),
-                        setStackSize(GTItemList.Nuclear_Star.copy(), 2),
-                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 2),
-                        setStackSize(IngotList.Rhugnor_Ingot, 1))
-                    .fluidInputs(requiredFluid(FluidList.Mutated_Living_Solder, 144 * 4))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis, 1))
+                        setStackSize(IngotList.Bedrockium_Ingot.copy(), 18),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 19),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64),
+                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 39),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 4),
+                        setStackSize(IngotList.Naquadria_Ingot.copy(), 39),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 + 16),
+                        setStackSize(IngotList.Rhugnor_Ingot, 1),
+                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 2))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Lubricant, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 4),
+                        requiredFluid(GasList.Radon, 1000 * 10))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 1))
                     .eut(RECIPE_UEV)
                     .duration(30 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -1915,41 +1907,72 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Streamlined Casting Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#49")
                     .itemInputsUnsafe(
-                        setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 1),
-                        setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 16),
-                        setStackSize(MachineList.World_Accelerator_UV.copy(), 8),
-                        setStackSize(IngotList.Celestial_Tungsten_Ingot.copy(), 20),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Streamlined_Casting_Casing.copy(), 0),
 
-                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 2),
-                        setStackSize(GTItemList.Electric_Pump_UHV.copy(), 1),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 3),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UV, 23),
+                        getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 64),
+                        getMaterialInput(OrePrefixes.circuit, Materials.LuV, 64 * 2),
+
+                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 8),
+
+                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+
+                        setStackSize(IngotList.Americium_Ingot.copy(), 64 * 82),
+                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 1),
+                        setStackSize(IngotList.Bedrockium_Ingot.copy(), 26),
+                        setStackSize(IngotList.Celestial_Tungsten_Ingot.copy(), 20),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 55),
+                        setStackSize(IngotList.Enriched_Naquadah_Alloy_Ingot.copy(), 10),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64),
+                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
                         setStackSize(IngotList.Holmium_Ingot.copy(), 40),
-                        setStackSize(IngotList.Enriched_Naquadah_Alloy_Ingot.copy(), 10))
-                    .fluidInputs(requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Streamlined_Casting_Casing, 1))
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 64 * 26 + 38),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 64 * 2 + 24),
+                        setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 64 * 14 + 16),
+                        setStackSize(IngotList.Naquadah_Ingot.copy(), 64 + 32),
+                        setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 32 + 34),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 31 + 52),
+                        setStackSize(IngotList.Osmium_Ingot.copy(), 64),
+                        setStackSize(IngotList.Polybenzimidazole_PBI_Bar.copy(), 16),
+                        setStackSize(IngotList.Rhugnor_Ingot, 1),
+                        setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 64 * 5 + 40),
+                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 2),
+                        setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 16))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 * 5 + 28)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 24),
+                        requiredFluid(GasList.Radon, 1000 * 10))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Streamlined_Casting_Casing.copy(), 1))
                     .eut(RECIPE_UEV)
                     .duration(30 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
 
                 // "Elemental Confinement Shell"
-                ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#50")
+                ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#35")
                     .itemInputsUnsafe(
-                        setStackSize(GTBlockList.Machine_Hull_LuV.copy(), 5),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell.copy(), 0),
+
+                        getMaterialInput(OrePrefixes.circuit, Materials.IV, 4),
+                        setStackSize(GTItemList.Data_Stick.copy(), 4),
                         setStackSize(GTItemList.Field_Generator_HV.copy(), 16),
                         setStackSize(GTPPList.Energy_Core_MV.copy(), 2),
-                        setStackSize(IngotList.Pikyonium_64B_Ingot.copy(), 4),
-
-                        setStackSize(IngotList.Pikyonium_64B_Ingot.copy(), 1),
-                        setStackSize(IngotList.Trinium_Naquadah_Carbonite_Ingot.copy(), 1),
-                        setStackSize(IngotList.Inconel_625_Ingot.copy(), 2),
-                        getMaterialInput(OrePrefixes.circuit, Materials.IV, 4),
-                        setStackSize(IngotList.Inconel_625_Ingot.copy(), 16),
-                        setStackSize(IngotList.Inconel_792_Ingot.copy(), 8),
-                        setStackSize(IngotList.Hastelloy_N_Ingot.copy(), 8),
                         setStackSize(IngotList.Babbit_Alloy_Ingot.copy(), 16),
-
-                        setStackSize(GTItemList.Data_Stick.copy(), 4))
-                    .fluidInputs()
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell, 1))
+                        setStackSize(IngotList.Hastelloy_N_Ingot.copy(), 8),
+                        setStackSize(IngotList.Inconel_625_Ingot.copy(), 18),
+                        setStackSize(IngotList.Inconel_792_Ingot.copy(), 8),
+                        setStackSize(IngotList.Pikyonium_64B_Ingot.copy(), 5),
+                        setStackSize(IngotList.Polytetrafluoroethylene_PTFE_Bar.copy(), 10),
+                        setStackSize(IngotList.Rhodium_Plated_Palladium_Ingot.copy(), 40),
+                        setStackSize(IngotList.Trinium_Naquadah_Carbonite_Ingot.copy(), 1),
+                        setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 5))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell.copy(), 1))
                     .eut(RECIPE_ZPM)
                     .duration(30 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -1960,18 +1983,55 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Proto-Volt Stabilizer Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#51")
                     .itemInputsUnsafe(
-                        setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 1),
-                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 6),
-                        setStackSize(GTItemList.Samarium_Electromagnet.copy(), 1),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Proto_Volt_Stabilizer_Casing.copy(), 0),
+
+                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 1),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UHV, 12),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UV, 44),
+                        getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 32),
+
+                        setStackSize(CircuitList.Advanced_SMD_Diode.copy(), 16),
+                        setStackSize(CircuitList.Engraved_Lapotron_Chip.copy(), 64 * 4),
+                        setStackSize(CircuitList.HPIC_Wafer.copy(), 64 * 2),
+                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 61),
+
+                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+
                         setStackSize(GTItemList.Solar_Panel_UV.copy(), 1),
 
-                        setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 2),
-                        setStackSize(BatteryList.Energy_Cluster_Empty.copy(), 1),
+                        setStackSize(IngotList.Americium_Ingot.copy(), 64 * 7 + 32),
+                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 7),
+                        setStackSize(IngotList.Bedrockium_Ingot.copy(), 18),
+                        setStackSize(IngotList.Cobalt_Ingot.copy(), 48),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 19),
+                        setStackSize(IngotList.Europium_Ingot.copy(), 64 * 4 + 32),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64 * 2 + 16),
+                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 64 * 6 + 3),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 52),
+                        setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 64 * 4 + 24),
+                        setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 9 + 9),
                         setStackSize(IngotList.Neodymium_Ingot.copy(), 64 * 4),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 5 + 32),
+                        setStackSize(IngotList.Osmiridium_Ingot.copy(), 32),
+                        setStackSize(IngotList.Purified_Tengam_Ingot.copy(), 64),
+                        setStackSize(IngotList.Rhugnor_Ingot, 1),
                         setStackSize(IngotList.Samarium_Ingot.copy(), 64 * 2),
-                        setStackSize(IngotList.Purified_Tengam_Ingot.copy(), 64))
-                    .fluidInputs(requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Proto_Volt_Stabilizer_Casing, 1))
+                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 2),
+                        setStackSize(IngotList.Trinium_Ingot.copy(), 64 * 6),
+                        setStackSize(IngotList.Vanadium_Gallium_Ingot.copy(), 64 * 4),
+                        setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 2),
+                        setStackSize(WireList.Superconductor_UV_Wire_1x.copy(), 64 * 4))
+                    .fluidInputs(
+                        requiredFluid(FluidList.IC2_Coolant, 1000 * 48),
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 + 26)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 24),
+                        requiredFluid(GasList.Radon, 1000 * (64 + 16)))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Proto_Volt_Stabilizer_Casing.copy(), 1))
                     .eut(RECIPE_UEV)
                     .duration(30 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -1982,21 +2042,55 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Hypercooler Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#52")
                     .itemInputsUnsafe(
-                        setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 1),
-                        setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 64),
-                        setStackSize(IngotList.Callisto_Ice_Ingot.copy(), 64 * 32),
-                        setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 64 * 16),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Hypercooler_Casing.copy(), 0),
 
-                        setStackSize(MachineList.World_Accelerator_UV.copy(), 8),
-                        setStackSize(GTItemList.Electric_Pump_UIV.copy(), 4),
-                        setStackSize(GTItemList.Fluid_Regulator_UIV.copy(), 4),
-                        getMaterialInput(OrePrefixes.circuit, Materials.UIV, 2),
-                        setStackSize(IngotList.SpaceTime_Ingot, 1))
+                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 1),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UIV, 10),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UV, 23),
+                        getMaterialInput(OrePrefixes.circuit, Materials.ZPM, 64),
+                        getMaterialInput(OrePrefixes.circuit, Materials.LuV, 64 * 2),
+
+                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 3 + 8),
+
+                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+
+                        setStackSize(IngotList.Americium_Ingot.copy(), 64 * 82),
+                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 64 * 2),
+                        setStackSize(IngotList.Awakened_Draconium_Ingot.copy(), 64 + 32),
+                        setStackSize(IngotList.Bedrockium_Ingot.copy(), 18),
+                        setStackSize(IngotList.Callisto_Ice_Ingot.copy(), 64 * 32),
+                        setStackSize(IngotList.Celestial_Tungsten_Ingot.copy(), 64),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 19),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64),
+                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 64 * 26),
+                        setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 64),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 64 * 3 + 20),
+                        setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 64 * 14 + 16),
+                        setStackSize(IngotList.Naquadah_Ingot.copy(), 64 + 32),
+                        setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 24 + 15),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 24 + 40),
+                        setStackSize(IngotList.Osmium_Ingot.copy(), 64),
+                        setStackSize(IngotList.Polybenzimidazole_PBI_Bar.copy(), 16),
+                        setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64 * 8),
+                        setStackSize(IngotList.Rhugnor_Ingot, 1),
+                        setStackSize(IngotList.Silicone_Rubber_Bar.copy(), 64 * 7 + 32),
+                        setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 64 * 16),
+                        setStackSize(IngotList.SpaceTime_Ingot, 1),
+                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 2),
+                        setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 64 * 6))
                     .fluidInputs(
-                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 16)),
-                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 90),
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * (64 * 2 + 26)),
+                        requiredFluid(FluidList.Lubricant, 1000 * (64 * 5 + 20)),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 20 + 36)),
+                        requiredFluid(GasList.Radon, 1000 * 10),
                         requiredFluid(MoltenList.Molten_Proto_Halkonite_Steel_Base, 144 * 8))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Hypercooler_Casing, 1))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Hypercooler_Casing.copy(), 1))
                     .eut(RECIPE_UIV)
                     .duration(45 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -2007,20 +2101,39 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Superdense Casting Basin Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#53")
                     .itemInputsUnsafe(
-                        setStackSize(MultiMachineCasingList.Infinite_Magnetic_Chassis.copy(), 1),
-                        setStackSize(GTNHIntergalacticList.Ultra_High_Temperature_Resistant_Mesh.copy(), 16),
-                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 1),
-                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 4),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Superdense_Casting_Basin_Casing.copy(), 0),
 
-                        setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 2),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 2),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UHV, 4),
+
+                        setStackSize(CircuitList.Optically_Compatible_Memory.copy(), 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 8),
+
+                        setStackSize(GoodGeneratorList.Hi_Computation_Station_MKIV_Prototype.copy(), 4),
+
                         setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 64 * 2),
-                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 64 * 2),
-                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 2),
-                        setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 6 + 15),
+                        setStackSize(IngotList.Bedrockium_Ingot.copy(), 18),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 64 * 2 + 19),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64),
+                        setStackSize(IngotList.High_Durability_Compound_Steel_Ingot.copy(), 32),
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 39),
+                        setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 2),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Magnetic_Samarium_Ingot.copy(), 4),
                         setStackSize(IngotList.Manyullyn_Ingot.copy(), 64 + 36),
-                        setStackSize(IngotList.Precious_Metals_Alloy_Ingot.copy(), 20))
-                    .fluidInputs(requiredFluid(FluidList.Mutated_Living_Solder, 144 * 20))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Superdense_Casting_Basin_Casing, 1))
+                        setStackSize(IngotList.Naquadria_Ingot.copy(), 64 * 6 + 54),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 3 + 32),
+                        setStackSize(IngotList.Precious_Metals_Alloy_Ingot.copy(), 20),
+                        setStackSize(IngotList.Rhugnor_Ingot, 1),
+                        setStackSize(IngotList.Superconductor_Base_UEV_Ingot.copy(), 6),
+                        setStackSize(IngotList.Tantalum_Hafnium_Carbide_Ingot.copy(), 16))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Lubricant, 1000 * 4),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 24),
+                        requiredFluid(GasList.Radon, 1000 * 10))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Superdense_Casting_Basin_Casing.copy(), 1))
                     .eut(RECIPE_UEV)
                     .duration(30 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -2028,17 +2141,30 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Primary Exo-Foundry Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#54")
                     .itemInputsUnsafe(
-                        setStackSize(IngotList.Netherite_Ingot.copy(), 2),
-                        setStackSize(CircuitList.Optically_Perfected_CPU.copy(), 6),
-                        setStackSize(GoodGeneratorList.Advanced_Radiation_Proof_Plate.copy(), 8),
-                        setStackSize(IngotList.Infinity_Ingot.copy(), 1),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Primary_Exo_Foundry_Casing.copy(), 0),
 
-                        setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 2),
-                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 2))
+                        setStackSize(CircuitList.Optically_Perfected_CPU.copy(), 6),
+
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 2),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 32),
+                        setStackSize(IngotList.Indalloy_140_Ingot.copy(), 64),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 1),
+                        setStackSize(IngotList.Iridium_Ingot.copy(), 64 * 18),
+                        setStackSize(IngotList.Lead_Ingot.copy(), 64 * 2 + 8),
+                        setStackSize(IngotList.Naquadah_Alloy_Ingot.copy(), 64 * 2 + 32),
+                        setStackSize(IngotList.Netherite_Ingot.copy(), 2),
+                        setStackSize(IngotList.Osmiridium_Ingot.copy(), 32),
+                        setStackSize(IngotList.Trinium_Ingot.copy(), 32),
+                        setStackSize(IngotList.Tungstencarbide_Ingot.copy(), 8),
+                        setStackSize(IngotList.Vibrant_Alloy_Ingot.copy(), 32),
+
+                        setStackSize(WireList.Superconductor_UEV_Wire_1x.copy(), 2))
                     .fluidInputs(
                         requiredFluid(FluidList.Mutated_Living_Solder, 144 * 4),
+                        requiredFluid(FluidList.Prismatic_Naquadah_Composite_Slurry, 1000 * 16),
                         requiredFluid(GasList.Oganesson, 500))
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Primary_Exo_Foundry_Casing, 1))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Primary_Exo_Foundry_Casing.copy(), 1))
                     .eut(RECIPE_UEV)
                     .duration(15 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -2049,8 +2175,8 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                 // "Heliocast Reinforcement Casing"
                 ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#55")
                     .itemInputsUnsafe(
-                        setStackSize(MultiMachineCasingList.Eternal_Magnetic_Chassis.copy(), 1),
-                        setStackSize(TecTechList.Stellar_Energy_Siphon_Casing.copy(), 1),
+                        GTUtility.getIntegratedCircuit(1),
+                        setStackSize(MultiMachineCasingList.Heliocast_Reinforcement_Casing.copy(), 0),
                         setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 6),
                         setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 6),
 
@@ -2061,9 +2187,67 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
                         setStackSize(IngotList.Metastable_Oganesson_Ingot.copy(), 40),
                         setStackSize(IngotList.Mellion_Ingot.copy(), 20),
                         setStackSize(IngotList.Creon_Ingot.copy(), 20),
-                        setStackSize(IngotList.SpaceTime_Ingot.copy(), 5))
-                    .fluidInputs()
-                    .itemOutputs(setStackSize(MultiMachineCasingList.Heliocast_Reinforcement_Casing, 1))
+                        setStackSize(IngotList.SpaceTime_Ingot.copy(), 5),
+
+                        getMaterialInput(OrePrefixes.circuit, Materials.UIV, 8),
+
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2),
+
+                        setStackSize(GoodGeneratorList.Compact_Fusion_Coil_MKII_Finaltype.copy(), 1),
+
+                        setStackSize(GTItemList.Transcendent_Metal_Nanites.copy(), 2),
+
+                        setStackSize(IngotList.Arceus_Alloy_2B_Ingot.copy(), 16),
+                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 16),
+                        setStackSize(IngotList.Celestial_Tungsten_Ingot.copy(), 8),
+                        setStackSize(IngotList.Cinobite_A243_Ingot.copy(), 16),
+                        setStackSize(IngotList.Creon_Ingot.copy(), 8),
+                        setStackSize(IngotList.Fluxed_Electrum_Ingot.copy(), 64 * 2 + 16),
+                        setStackSize(IngotList.Ichorium_Ingot.copy(), 8),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 8),
+                        setStackSize(IngotList.Iron_Ingot.copy(), 64 * 1026),
+                        setStackSize(IngotList.Lafium_Compound_Ingot.copy(), 16),
+                        setStackSize(IngotList.Mellion_Ingot.copy(), 8),
+                        setStackSize(IngotList.Pikyonium_64B_Ingot.copy(), 16),
+                        setStackSize(IngotList.Proto_Halkonite_Steel_Ingot.copy(), 64),
+                        setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 64),
+                        setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 32),
+
+                        getMaterialInput(OrePrefixes.circuit, Materials.UEV, 64 * 2 + 32),
+                        getMaterialInput(OrePrefixes.circuit, Materials.UIV, 8),
+                        setStackSize(AmunRaList.Artificial_Gravity_Generator.copy(), 4),
+                        setStackSize(FoilList.Naquarite_Universal_Insulator_Foil.copy(), 64 * 64),
+                        setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 16),
+                        setStackSize(GTItemList.Neutronium_Heat_Capacitor_1G.copy(), 2),
+                        setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 1),
+                        setStackSize(HatchList.Laser_Target_Hatch1048576_UIV.copy(), 1),
+                        setStackSize(IngotList.Astral_Titanium_Ingot.copy(), 16),
+                        setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 64),
+                        setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 64 * 8),
+                        setStackSize(IngotList.Creon_Ingot.copy(), 60),
+                        setStackSize(IngotList.Draconium_Ingot.copy(), 64 * 2 + 48),
+                        setStackSize(IngotList.Hypogen_Ingot.copy(), 64 * 18 + 6),
+                        setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 8),
+                        setStackSize(IngotList.Infinity_Ingot.copy(), 64 * 12 + 32),
+                        setStackSize(IngotList.Mellion_Ingot.copy(), 32),
+                        setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 4 + 32),
+                        setStackSize(IngotList.Quantium_Ingot.copy(), 64 * 5 + 4),
+                        setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 32),
+                        setStackSize(IngotList.Superconductor_Base_UIV_Ingot.copy(), 32),
+                        setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 16),
+                        setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 2),
+                        setStackSize(MachineList.Plasma_Generator_UV.copy(), 64),
+                        setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4))
+                    .fluidInputs(
+                        requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 1000 * 64 * 2),
+                        requiredFluid(FluidList.Lubricant, 1000 * 32),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 5 + 36)),
+                        requiredFluid(GasList.Radon, 1000 * (64 * 3 + 24)),
+                        requiredFluid(PlasmaList.Lead_Plasma, 144 * 2),
+                        requiredFluid(FluidList.Dimensionally_Shifted_Superfluid, 1000 * 24),
+                        requiredFluid(FluidList.Mutated_Living_Solder, 144 * 36),
+                        requiredFluid(MoltenList.Molten_Proto_Halkonite_Steel_Base, 144 * 20))
+                    .itemOutputs(setStackSize(MultiMachineCasingList.Heliocast_Reinforcement_Casing.copy(), 1))
                     .eut(RECIPE_UIV)
                     .duration(45 * SECONDS)
                     .addTo(AssemblyLineItemRecipe);
@@ -2435,19 +2619,34 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
             // "Boundless Gravitationally Severed Structure Casing"
             ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#72")
                 .itemInputsUnsafe(
+                    GTUtility.getIntegratedCircuit(1),
+                    setStackSize(TecTechList.Boundless_Gravitationally_Severed_Structure_Casing.copy(), 0),
+
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 32),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 8),
+                    setStackSize(AmunRaList.Artificial_Gravity_Generator.copy(), 4),
+                    setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 16),
+                    setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 1),
+
+                    setStackSize(IngotList.Astral_Titanium_Ingot.copy(), 16),
+                    setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 64),
+                    setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 64 * 8),
+                    setStackSize(IngotList.Creon_Ingot.copy(), 6),
+                    setStackSize(IngotList.Draconium_Ingot.copy(), 64 * 2 + 48),
+                    setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 8),
+                    setStackSize(IngotList.Infinity_Ingot.copy(), 64 * 4 + 32),
                     setStackSize(IngotList.Mellion_Ingot.copy(), 32),
+                    setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 4 + 32),
+                    setStackSize(IngotList.Quantium_Ingot.copy(), 64 * 5 + 4),
                     setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 32),
                     setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 16),
-                    setStackSize(IngotList.Astral_Titanium_Ingot.copy(), 16),
-
-                    setStackSize(IngotList.Creon_Ingot.copy(), 6),
-                    setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 1),
-                    setStackSize(GTItemList.Field_Generator_UEV.copy(), 2),
-                    setStackSize(AmunRaList.Artificial_Gravity_Generator.copy(), 4))
+                    setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 2))
                 .fluidInputs(
-                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 16),
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 5 + 20)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 3 + 24)),
                     requiredFluid(PlasmaList.Lead_Plasma, 144 * 2))
-                .itemOutputs(setStackSize(TecTechList.Boundless_Gravitationally_Severed_Structure_Casing, 1))
+                .itemOutputs(setStackSize(TecTechList.Boundless_Gravitationally_Severed_Structure_Casing.copy(), 1))
                 .eut(RECIPE_UIV)
                 .duration(10 * SECONDS)
                 .addTo(AssemblyLineItemRecipe);
@@ -2455,20 +2654,41 @@ public class ChaosAssemblyLine_CasingRecipe_Item {
             // "Stellar Energy Siphon Casing"
             ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Item#73")
                 .itemInputsUnsafe(
-                    setStackSize(TecTechList.Boundless_Gravitationally_Severed_Structure_Casing.copy(), 1),
-                    setStackSize(GTBlockList.Hypogen_Coil_Block.copy(), 64 * 2),
-                    setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4),
-                    setStackSize(GTItemList.Neutronium_Heat_Capacitor_1G.copy(), 2),
+                    GTUtility.getIntegratedCircuit(1),
+                    setStackSize(TecTechList.Stellar_Energy_Siphon_Casing.copy(), 0),
 
+                    getMaterialInput(OrePrefixes.circuit, Materials.UEV, 64 * 2 + 32),
+                    getMaterialInput(OrePrefixes.circuit, Materials.UIV, 8),
+                    setStackSize(AmunRaList.Artificial_Gravity_Generator.copy(), 4),
+                    setStackSize(FoilList.Naquarite_Universal_Insulator_Foil.copy(), 64 * 64),
+                    setStackSize(GemList.Nether_Star.copy(), 64 * 2 + 16),
+                    setStackSize(GTItemList.Neutronium_Heat_Capacitor_1G.copy(), 2),
+                    setStackSize(GTItemList.Stable_Boson_Containment_Unit.copy(), 1),
                     setStackSize(HatchList.Laser_Target_Hatch1048576_UIV.copy(), 1),
-                    setStackSize(MachineList.Plasma_Generator_UV.copy(), 64),
-                    setStackSize(IngotList.Creon_Ingot.copy(), 54),
+                    setStackSize(IngotList.Astral_Titanium_Ingot.copy(), 16),
+                    setStackSize(IngotList.Attuned_Tengam_Ingot.copy(), 64),
+                    setStackSize(IngotList.Cosmic_Neutronium_Ingot.copy(), 64 * 8),
+                    setStackSize(IngotList.Creon_Ingot.copy(), 60),
+                    setStackSize(IngotList.Draconium_Ingot.copy(), 64 * 2 + 48),
+                    setStackSize(IngotList.Hypogen_Ingot.copy(), 64 * 18 + 6),
+                    setStackSize(IngotList.Infinity_Catalyst_Ingot.copy(), 64 * 8),
+                    setStackSize(IngotList.Infinity_Ingot.copy(), 64 * 12 + 32),
+                    setStackSize(IngotList.Mellion_Ingot.copy(), 32),
+                    setStackSize(IngotList.Neutronium_Ingot.copy(), 64 * 4 + 32),
+                    setStackSize(IngotList.Quantium_Ingot.copy(), 64 * 5 + 4),
+                    setStackSize(IngotList.Six_Phased_Copper_Ingot.copy(), 32),
                     setStackSize(IngotList.Superconductor_Base_UIV_Ingot.copy(), 32),
-                    setStackSize(IngotList.Hypogen_Ingot.copy(), 6))
+                    setStackSize(IngotList.Transcendent_Metal_Ingot.copy(), 16),
+                    setStackSize(IngotList.Tritanium_Ingot.copy(), 64 * 2),
+                    setStackSize(MachineList.Plasma_Generator_UV.copy(), 64),
+                    setStackSize(WireList.Superconductor_UIV_Wire_1x.copy(), 64 * 4))
                 .fluidInputs(
-                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * 16),
-                    requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 1000 * 64 * 2))
-                .itemOutputs(setStackSize(TecTechList.Stellar_Energy_Siphon_Casing, 1))
+                    requiredFluid(FluidList.Excited_Dimensionally_Transcendent_Exotic_Catalyst, 1000 * 64 * 2),
+                    requiredFluid(FluidList.Lubricant, 1000 * 32),
+                    requiredFluid(FluidList.Mutated_Living_Solder, 144 * (64 * 5 + 36)),
+                    requiredFluid(GasList.Radon, 1000 * (64 * 3 + 24)),
+                    requiredFluid(PlasmaList.Lead_Plasma, 144 * 2))
+                .itemOutputs(setStackSize(TecTechList.Stellar_Energy_Siphon_Casing.copy(), 1))
                 .eut(RECIPE_UIV)
                 .duration(10 * SECONDS)
                 .addTo(AssemblyLineItemRecipe);

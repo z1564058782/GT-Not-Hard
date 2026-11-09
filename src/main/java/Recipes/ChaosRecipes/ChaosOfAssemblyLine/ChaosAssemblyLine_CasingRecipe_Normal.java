@@ -836,30 +836,6 @@ public class ChaosAssemblyLine_CasingRecipe_Normal {
                 .addTo(AssemblyLineNormalRecipe);
         }
 
-        // "Elemental Confinement Shell"
-        ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Normal#35")
-            .itemInputsUnsafe(
-                setStackSize(GTBlockList.Machine_Hull_LuV.copy(), 5),
-                setStackSize(GTItemList.Field_Generator_HV.copy(), 16),
-                setStackSize(GTPPList.Energy_Core_MV.copy(), 2),
-                setStackSize(PlateList.Pikyonium_64B_Plate.copy(), 4),
-
-                setStackSize(ScrewList.Pikyonium_64B_Screw.copy(), 4),
-                setStackSize(BoltList.Trinium_Naquadah_Carbonite_Bolt.copy(), 8),
-                setStackSize(RodList.Inconel_625_Rod.copy(), 4),
-                getMaterialInput(OrePrefixes.circuit, Materials.IV, 4),
-
-                setStackSize(GTItemList.Data_Stick.copy(), 4))
-            .fluidInputs(
-                requiredFluid(MoltenList.Molten_Inconel_625, 144 * 16),
-                requiredFluid(MoltenList.Molten_Inconel_792, 144 * 8),
-                requiredFluid(MoltenList.Molten_Hastelloy_N, 144 * 8),
-                requiredFluid(MoltenList.Molten_Babbit_Alloy, 144 * 16))
-            .itemOutputs(setStackSize(MultiMachineCasingList.Elemental_Confinement_Shell, 1))
-            .eut(RECIPE_ZPM)
-            .duration(30 * SECONDS)
-            .addTo(AssemblyLineNormalRecipe);
-
         // "Energy Infuser"
         ChaosAssemblyRecipeBuilder.builder("ChaosAssemblyLine_CasingRecipe_Normal#36")
             .itemInputsUnsafe(

@@ -35,13 +35,13 @@
  */
 dependencies {
     // https://github.com/GTNewHorizons/DreamAssemblerXXL/tree/master/releases/manifests
-    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.54.133:dev')
-    implementation('com.github.GTNewHorizons:GTNHLib:0.11.46:dev')
-    implementation('com.github.GTNewHorizons:Galacticraft:3.4.33-GTNH:dev')
-    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.9.61:dev')
-    implementation('com.github.GTNewHorizons:Avaritia:1.99:dev')
-    compileOnly('com.github.GTNewHorizons:NotEnoughItems:2.8.130-GTNH:dev')
-    compileOnly("com.github.GTNewHorizons:Chisel:2.17.32-GTNH:dev") { transitive = false }
+    api('com.github.GTNewHorizons:GT5-Unofficial:5.09.54.265:dev')
+    implementation('com.github.GTNewHorizons:GTNHLib:0.11.54:dev')
+    implementation('com.github.GTNewHorizons:Galacticraft:3.4.37-GTNH:dev')
+    implementation('com.github.GTNewHorizons:NewHorizonsCoreMod:2.9.99:dev')
+    implementation('com.github.GTNewHorizons:Avaritia:1.100:dev')
+    compileOnly('com.github.GTNewHorizons:NotEnoughItems:2.8.171-GTNH:dev')
+    compileOnly("com.github.GTNewHorizons:Chisel:2.17.34-GTNH:dev") { transitive = false }
     /*
     api('com.github.GTNewHorizons:GT5-Unofficial:5.09.51.470:dev')
     implementation('com.github.GTNewHorizons:GTNHLib:0.6.40:dev')
